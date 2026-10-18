@@ -53,7 +53,7 @@ def node_rows(pred,all_queries,cache,split,name):
             idx=inverse.get(j,displaced.get(j))
             rows.append(dict(split=split,sample_id=name,tolerance_mm=tol,population='GT',index=j,type=str(types[j]),outcome=state,
                 error_mm=float(np.linalg.norm(px[idx]-g)) if idx is not None else None,
-                nearest_any_query_mm=float(np.linalg.norm(qx-g,axis=1).min()),
+                nearest_any_query_mm=float(np.linalg.norm(qx-g,axis=1).min()) if len(qx) else None,
                 D=float(cache['nodes'][j,0]*64),H=float(cache['nodes'][j,1]*64),W=float(cache['nodes'][j,2]*64)))
         for i in range(len(px)):
             if i in used:continue

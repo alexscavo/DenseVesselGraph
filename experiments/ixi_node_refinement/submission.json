@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-18",
+  "smoke_job": 1264051,
+  "pilot_array": 1264054,
+  "array_arms": {"0": "baseline", "1": "local_image", "2": "zero_image"},
+  "pilot_dependency": "afterok:1264051",
+  "collector_job": 1264058,
+  "collector_dependency": "afterok:1264054",
+  "updates_per_arm": 1000,
+  "batch_size": 32,
+  "gpu_time_limit_per_arm": "02:00:00"
+}

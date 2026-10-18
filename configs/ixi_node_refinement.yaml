@@ -1,0 +1,14 @@
+checkpoint: /lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_transfer_20261015/runs/ixi_delayed_spline/best.pt
+output_root: /lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_node_refinement_20261018
+seed: 181028
+updates: 1000
+monitor_interval: 500
+batch_size: 32
+learning_rate: 0.00007
+radius_vox: 4.0
+train_eval_samples: 128
+validation_samples: 128
+arms:
+  baseline: null
+  local_image: full
+  zero_image: zero

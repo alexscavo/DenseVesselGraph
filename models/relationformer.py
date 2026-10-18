@@ -95,13 +95,21 @@ class RelationFormer(nn.Module):
                                               family=spline.get('family', 'bspline'),
                                               token_inputs=spline.get('token_inputs', 'full'),
                                               local_geometry=spline.get('local_geometry'))
+        self.node_refinement = None
+        node_refinement = model.get('node_refinement', {})
+        if node_refinement.get('enabled', False):
+            from .node_refinement import LocalNodeRefinement
+            with torch.random.fork_rng(devices=[]):
+                self.node_refinement = LocalNodeRefinement(hidden_dim,
+                    radius_vox=node_refinement.get('radius_vox', 4.),
+                    image_mode=node_refinement.get('image_mode', 'full'))
         self._spline_local_features = None
-        if self.spline_head is not None and self.spline_head.local_geometry is not None:
+        if self.node_refinement is not None or (self.spline_head is not None and self.spline_head.local_geometry is not None):
             # Capture early features before SENet max pooling; this adds no
             # CNN computation or trainable image encoder.
             assert hasattr(self.encoder.layer0, 'relu1') and self.encoder.layer0.conv1.stride == (2, 2, 2)
             assert self.encoder.layer0.conv1.kernel_size == (7, 7, 7) and self.encoder.layer0.conv1.padding == (3, 3, 3)
-            assert self.encoder.layer0.bn1.num_features == spline['local_geometry'].get('channels', 64)
+            assert self.encoder.layer0.bn1.num_features == spline.get('local_geometry', {}).get('channels', 64)
             self.encoder.layer0.relu1.register_forward_hook(self._capture_local_features)
         self.domain_adaptation_enabled = bool(
             config.get("domain_adaptation", {}).get("enabled", False)
@@ -151,6 +159,10 @@ class RelationFormer(nn.Module):
             "pred_logits": self.class_embed(object_tokens),
             "pred_nodes": self.coord_embed(object_tokens).sigmoid(),
         }
+        if self.node_refinement is not None:
+            predictions['pred_nodes'], predictions['pred_logits'] = self.node_refinement(
+                object_tokens, predictions['pred_nodes'], predictions['pred_logits'],
+                self._spline_local_features, samples.shape[-3:])
         if self.spline_head is not None and self.spline_head.curve_evidence is not None:
             predictions['curve_image_features'] = self.spline_head.curve_evidence.encode(samples)
         if self.spline_head is not None and self.spline_head.local_geometry is not None:
