@@ -1,0 +1,20 @@
+{
+  "protocol": "average-pool and trilinear reconstruction; same evaluation voxels and AP as frozen probes",
+  "results": {
+    "train": {
+      "raw": 0.6439588022765049,
+      "raw_pooled_2": 0.011183945777628157,
+      "mask_pooled_2_reference": 0.07888535142662514,
+      "mask_pooled_32_reference": 0.9451333551698573,
+      "raw_ap_difference_from_float_probe": 0.000285636155712532
+    },
+    "val": {
+      "raw": 0.6801952863840085,
+      "raw_pooled_2": 0.011006547917908992,
+      "mask_pooled_2_reference": 0.06646620838944406,
+      "mask_pooled_32_reference": 0.9512287934454576,
+      "raw_ap_difference_from_float_probe": -1.6607789199429845e-07
+    }
+  },
+  "caveat": "Pooled GT mask is a label-informed resolution reference, NOT a rigorous upper bound on learned features or a deployable prediction. Spatial detail may be encoded in channels and require a richer decoder."
+}

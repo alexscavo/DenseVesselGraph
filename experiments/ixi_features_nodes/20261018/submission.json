@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-18",
+  "smoke_job": 1262339,
+  "full_job": 1262340,
+  "dependency": "afterok:1262339",
+  "smoke_time_limit": "00:30:00",
+  "full_time_limit": "02:00:00",
+  "checkpoint": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_transfer_20261015/runs/ixi_delayed_spline/best.pt",
+  "smoke_output": "experiments/ixi_features_nodes/20261018/smoke-1262339",
+  "full_output": "experiments/ixi_features_nodes/20261018/full-1262340",
+  "detector_updates": false,
+  "full_training_patches": 128,
+  "full_validation_patches": 64,
+  "smoke_state": "COMPLETED",
+  "smoke_elapsed": "00:01:00",
+  "full_state": "COMPLETED",
+  "full_elapsed": "00:01:15",
+  "exit_code": "0:0",
+  "reviewed": true
+}

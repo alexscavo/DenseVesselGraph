@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=ixi-features-nodes
+#SBATCH --account=vnc@h100
+#SBATCH --partition=gpu_p6
+#SBATCH --constraint=h100
+#SBATCH --qos=qos_gpu_h100-t3
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-task=6
+#SBATCH --hint=nomultithread
+#SBATCH --time=02:00:00
+#SBATCH --output=experiments/spline_learning/logs/ixi-features-nodes-%j.out
+#SBATCH --error=experiments/spline_learning/logs/ixi-features-nodes-%j.err
+set -eo pipefail
+export GNBM_REPO_DIR="$SLURM_SUBMIT_DIR"
+export UV_CACHE_DIR="$GNBM_REPO_DIR/.cache/uv" TORCH_EXTENSIONS_DIR="$GNBM_REPO_DIR/.cache/torch-extensions"
+export XDG_CACHE_HOME="$GNBM_REPO_DIR/.cache" MPLCONFIGDIR="$GNBM_REPO_DIR/.cache/matplotlib" TMPDIR=/tmp IDR_DEBUG=WARN WANDB_MODE=offline
+unset JOBSCRATCH
+source cluster/jean_zay/env.sh
+source cluster/jean_zay/stage_spline_runtime.sh
+trap 'if [[ "$spline_runtime_dir" == /tmp/gnbm-spline-runtime-* ]]; then rm -rf -- "$spline_runtime_dir"; fi' EXIT
+export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+mode="${1:?smoke or full}"
+if [[ "$mode" == smoke ]]; then
+  python -u scripts/diagnose_ixi_features_nodes.py --smoke --output "experiments/ixi_features_nodes/20261018/smoke-${SLURM_JOB_ID}"
+elif [[ "$mode" == full ]]; then
+  python -u scripts/diagnose_ixi_features_nodes.py --output "experiments/ixi_features_nodes/20261018/full-${SLURM_JOB_ID}"
+  python -u scripts/ixi_probe_resolution_control.py --results "experiments/ixi_features_nodes/20261018/full-${SLURM_JOB_ID}"
+else
+  exit 2
+fi

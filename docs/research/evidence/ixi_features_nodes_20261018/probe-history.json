@@ -1,0 +1,232 @@
+{
+  "early_cnn": [
+    {
+      "step": 1,
+      "balanced_fit_bce": 0.5802797079086304
+    },
+    {
+      "step": 100,
+      "balanced_fit_bce": 0.23146867752075195
+    },
+    {
+      "step": 200,
+      "balanced_fit_bce": 0.20143070816993713
+    },
+    {
+      "step": 300,
+      "balanced_fit_bce": 0.21451225876808167
+    },
+    {
+      "step": 400,
+      "balanced_fit_bce": 0.17755168676376343
+    },
+    {
+      "step": 500,
+      "balanced_fit_bce": 0.20439891517162323
+    },
+    {
+      "step": 600,
+      "balanced_fit_bce": 0.17586734890937805
+    },
+    {
+      "step": 700,
+      "balanced_fit_bce": 0.17980240285396576
+    },
+    {
+      "step": 800,
+      "balanced_fit_bce": 0.1883983314037323
+    },
+    {
+      "step": 900,
+      "balanced_fit_bce": 0.18353602290153503
+    },
+    {
+      "step": 1000,
+      "balanced_fit_bce": 0.17448534071445465
+    }
+  ],
+  "projected_cnn": [
+    {
+      "step": 1,
+      "balanced_fit_bce": 0.73896324634552
+    },
+    {
+      "step": 100,
+      "balanced_fit_bce": 0.46303337812423706
+    },
+    {
+      "step": 200,
+      "balanced_fit_bce": 0.4465421140193939
+    },
+    {
+      "step": 300,
+      "balanced_fit_bce": 0.4393545985221863
+    },
+    {
+      "step": 400,
+      "balanced_fit_bce": 0.42542168498039246
+    },
+    {
+      "step": 500,
+      "balanced_fit_bce": 0.4547063112258911
+    },
+    {
+      "step": 600,
+      "balanced_fit_bce": 0.4387585520744324
+    },
+    {
+      "step": 700,
+      "balanced_fit_bce": 0.4210699498653412
+    },
+    {
+      "step": 800,
+      "balanced_fit_bce": 0.41877156496047974
+    },
+    {
+      "step": 900,
+      "balanced_fit_bce": 0.42029088735580444
+    },
+    {
+      "step": 1000,
+      "balanced_fit_bce": 0.4038253724575043
+    }
+  ],
+  "encoder": [
+    {
+      "step": 1,
+      "balanced_fit_bce": 0.7668280601501465
+    },
+    {
+      "step": 100,
+      "balanced_fit_bce": 0.45200610160827637
+    },
+    {
+      "step": 200,
+      "balanced_fit_bce": 0.44710445404052734
+    },
+    {
+      "step": 300,
+      "balanced_fit_bce": 0.4341157376766205
+    },
+    {
+      "step": 400,
+      "balanced_fit_bce": 0.42433983087539673
+    },
+    {
+      "step": 500,
+      "balanced_fit_bce": 0.45312580466270447
+    },
+    {
+      "step": 600,
+      "balanced_fit_bce": 0.43422216176986694
+    },
+    {
+      "step": 700,
+      "balanced_fit_bce": 0.4155985713005066
+    },
+    {
+      "step": 800,
+      "balanced_fit_bce": 0.41293054819107056
+    },
+    {
+      "step": 900,
+      "balanced_fit_bce": 0.4118134677410126
+    },
+    {
+      "step": 1000,
+      "balanced_fit_bce": 0.3964312672615051
+    }
+  ],
+  "raw_intensity": [
+    {
+      "step": 1,
+      "balanced_fit_bce": 0.6228989362716675
+    },
+    {
+      "step": 100,
+      "balanced_fit_bce": 0.41942092776298523
+    },
+    {
+      "step": 200,
+      "balanced_fit_bce": 0.34407421946525574
+    },
+    {
+      "step": 300,
+      "balanced_fit_bce": 0.32553547620773315
+    },
+    {
+      "step": 400,
+      "balanced_fit_bce": 0.30920469760894775
+    },
+    {
+      "step": 500,
+      "balanced_fit_bce": 0.3047633767127991
+    },
+    {
+      "step": 600,
+      "balanced_fit_bce": 0.2875126004219055
+    },
+    {
+      "step": 700,
+      "balanced_fit_bce": 0.3010675311088562
+    },
+    {
+      "step": 800,
+      "balanced_fit_bce": 0.2760632038116455
+    },
+    {
+      "step": 900,
+      "balanced_fit_bce": 0.2829355299472809
+    },
+    {
+      "step": 1000,
+      "balanced_fit_bce": 0.27118200063705444
+    }
+  ],
+  "encoder_shuffled_labels": [
+    {
+      "step": 1,
+      "balanced_fit_bce": 0.7258234024047852
+    },
+    {
+      "step": 100,
+      "balanced_fit_bce": 0.6988077163696289
+    },
+    {
+      "step": 200,
+      "balanced_fit_bce": 0.7060582041740417
+    },
+    {
+      "step": 300,
+      "balanced_fit_bce": 0.7018557190895081
+    },
+    {
+      "step": 400,
+      "balanced_fit_bce": 0.7007554769515991
+    },
+    {
+      "step": 500,
+      "balanced_fit_bce": 0.6980990767478943
+    },
+    {
+      "step": 600,
+      "balanced_fit_bce": 0.7054728865623474
+    },
+    {
+      "step": 700,
+      "balanced_fit_bce": 0.7040432095527649
+    },
+    {
+      "step": 800,
+      "balanced_fit_bce": 0.6967130899429321
+    },
+    {
+      "step": 900,
+      "balanced_fit_bce": 0.7084673643112183
+    },
+    {
+      "step": 1000,
+      "balanced_fit_bce": 0.7098912000656128
+    }
+  ]
+}
