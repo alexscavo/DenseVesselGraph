@@ -4,7 +4,7 @@ Implemented 2026-10-16; completed verification and status review 2026-10-17.
 
 ## Status
 
-Available as an opt-in training policy in the shared `PlantsDataset`, which also loads the leaf and combined biological datasets. No augmented training submitted. Visual plausibility and geometric consistency have been checked; a learning/generalization improvement has not been demonstrated.
+Available as an opt-in training policy in the shared `PlantsDataset`, which also loads the leaf and combined biological datasets. Implementation verification initially involved no training. On 2026-10-18 the matched SyntheticMRI training chains were submitted; see [the launch record](augmented-source-comparison.md). Visual plausibility and geometric consistency have been checked; a learning/generalization improvement has not been demonstrated.
 
 ## Policy
 
@@ -62,3 +62,7 @@ The previous SyntheticMRI comparison remains led by MRI-only spline: edge F1 0.7
 ## Next decision
 
 Run a short model forward/backward smoke with the new resolved configuration before substantial training, then compare augmented versus existing source rendering under identical membership, budgets and stage policy. Existing training comparisons are the baseline, not evidence that the new augmentation improves transfer. No long runs were launched during implementation.
+
+## Follow-up submission — 2026-10-18
+
+[Three source pretrainings, six matched fine-tunings and dependent held-out tests](augmented-source-comparison.md) now queued behind running GPU smoke gates. This supersedes the earlier no-training status; results are still pending.

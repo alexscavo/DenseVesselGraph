@@ -19,17 +19,20 @@ export XDG_CACHE_HOME="$GNBM_REPO_DIR/.cache" MPLCONFIGDIR="$GNBM_REPO_DIR/.cach
 unset JOBSCRATCH
 source cluster/jean_zay/env.sh
 source cluster/jean_zay/stage_spline_runtime.sh
+trap 'rm -rf -- "$spline_runtime_dir"' EXIT
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
 mode="${1:?verify, test or collect}"
+plan="${EVALUATION_PLAN:-experiments/combined_pretraining/evaluation-plan.json}"
 if [[ "$mode" == collect ]]; then
-    python scripts/evaluate_source_transfer.py --config experiments/combined_pretraining/evaluation-plan.json --collect test
+    python scripts/evaluate_source_transfer.py --config "$plan" --collect test
 else
     arms=(combined_straight combined_spline)
+    if [[ -n "${EVALUATION_ARMS:-}" ]]; then IFS=: read -r -a arms <<< "$EVALUATION_ARMS"; fi
     arm="${arms[$SLURM_ARRAY_TASK_ID]}"
     if [[ "$mode" == verify ]]; then
-        python scripts/evaluate_source_transfer.py --config experiments/combined_pretraining/evaluation-plan.json --arm "$arm" --smoke
+        python scripts/evaluate_source_transfer.py --config "$plan" --arm "$arm" --smoke
     elif [[ "$mode" == test ]]; then
-        python scripts/evaluate_source_transfer.py --config experiments/combined_pretraining/evaluation-plan.json --arm "$arm"
+        python scripts/evaluate_source_transfer.py --config "$plan" --arm "$arm"
     else
         exit 2
     fi

@@ -1,0 +1,116 @@
+{
+  "plants_verify": {
+    "id": "1255158",
+    "JobState": "RUNNING",
+    "Dependency": "(null)",
+    "TimeLimit": "01:00:00"
+  },
+  "plants_pretrain25": {
+    "id": "1255159",
+    "JobState": "PENDING",
+    "Dependency": "afterok:1255158(unfulfilled)",
+    "TimeLimit": "12:00:00"
+  },
+  "plants_pretrain50": {
+    "id": "1255160",
+    "JobState": "PENDING",
+    "Dependency": "aftercorr:1255159_*(unfulfilled)",
+    "TimeLimit": "12:00:00"
+  },
+  "plants_finetune50": {
+    "id": "1255161",
+    "JobState": "PENDING",
+    "Dependency": "afterok:1255160_*(unfulfilled)",
+    "TimeLimit": "06:00:00"
+  },
+  "plants_finetune100": {
+    "id": "1255162",
+    "JobState": "PENDING",
+    "Dependency": "aftercorr:1255161_*(unfulfilled)",
+    "TimeLimit": "06:00:00"
+  },
+  "plants_test": {
+    "id": "1255163",
+    "JobState": "PENDING",
+    "Dependency": "aftercorr:1255162_*(unfulfilled)",
+    "TimeLimit": "03:00:00"
+  },
+  "leaves_verify": {
+    "id": "1255164",
+    "JobState": "RUNNING",
+    "Dependency": "(null)",
+    "TimeLimit": "01:00:00"
+  },
+  "leaves_pretrain25": {
+    "id": "1255165",
+    "JobState": "PENDING",
+    "Dependency": "afterok:1255164(unfulfilled)",
+    "TimeLimit": "12:00:00"
+  },
+  "leaves_pretrain50": {
+    "id": "1255166",
+    "JobState": "PENDING",
+    "Dependency": "aftercorr:1255165_*(unfulfilled)",
+    "TimeLimit": "12:00:00"
+  },
+  "leaves_finetune50": {
+    "id": "1255167",
+    "JobState": "PENDING",
+    "Dependency": "afterok:1255166_*(unfulfilled)",
+    "TimeLimit": "06:00:00"
+  },
+  "leaves_finetune100": {
+    "id": "1255168",
+    "JobState": "PENDING",
+    "Dependency": "aftercorr:1255167_*(unfulfilled)",
+    "TimeLimit": "06:00:00"
+  },
+  "leaves_test": {
+    "id": "1255169",
+    "JobState": "PENDING",
+    "Dependency": "aftercorr:1255168_*(unfulfilled)",
+    "TimeLimit": "03:00:00"
+  },
+  "combined_verify": {
+    "id": "1255170",
+    "JobState": "RUNNING",
+    "Dependency": "(null)",
+    "TimeLimit": "01:00:00"
+  },
+  "combined_pretrain25": {
+    "id": "1255171",
+    "JobState": "PENDING",
+    "Dependency": "afterok:1255170(unfulfilled)",
+    "TimeLimit": "12:00:00"
+  },
+  "combined_pretrain50": {
+    "id": "1255172",
+    "JobState": "PENDING",
+    "Dependency": "aftercorr:1255171_*(unfulfilled)",
+    "TimeLimit": "12:00:00"
+  },
+  "combined_finetune50": {
+    "id": "1255173",
+    "JobState": "PENDING",
+    "Dependency": "afterok:1255172_*(unfulfilled)",
+    "TimeLimit": "06:00:00"
+  },
+  "combined_finetune100": {
+    "id": "1255174",
+    "JobState": "PENDING",
+    "Dependency": "aftercorr:1255173_*(unfulfilled)",
+    "TimeLimit": "06:00:00"
+  },
+  "combined_test": {
+    "id": "1255175",
+    "JobState": "PENDING",
+    "Dependency": "aftercorr:1255174_*(unfulfilled)",
+    "TimeLimit": "03:00:00"
+  },
+  "comparison": {
+    "id": "1255176",
+    "JobState": "PENDING",
+    "Dependency": "afterok:1255163_*(unfulfilled),afterok:1255169_*(unfulfilled),afterok:1255175_*(unfulfilled)",
+    "TimeLimit": "00:10:00"
+  }
+}

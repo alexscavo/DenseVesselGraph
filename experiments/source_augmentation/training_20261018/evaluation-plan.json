@@ -1,0 +1,83 @@
+{
+  "seed": 364505,
+  "runs": {
+    "leaves_straight": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/leaf_generalization_20261015/runs/mixed_straight",
+    "leaves_spline": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/leaf_generalization_20261015/runs/mixed_spline",
+    "plants_straight": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/plant_generalization_20261014_da_b32_w1_restart/runs/mixed_straight",
+    "plants_spline": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/plant_generalization_20261014_da_b32_w1_restart/runs/mixed_spline",
+    "mri_only_straight": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/plant_generalization_20261014_da_b32_w1_restart/runs/vessels_straight",
+    "mri_only_spline": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/plant_generalization_20261014_da_b32_w1_restart/runs/vessels_spline",
+    "combined_straight": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/combined_generalization_20261015/runs/mixed_straight",
+    "combined_spline": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/combined_generalization_20261015/runs/mixed_spline",
+    "plants_aug_straight": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/plant_generalization_20261014_da_b32_w1_restart_source_aug_20261016/runs/mixed_straight",
+    "plants_aug_spline": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/plant_generalization_20261014_da_b32_w1_restart_source_aug_20261016/runs/mixed_spline",
+    "leaves_aug_straight": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/leaf_generalization_20261015_source_aug_20261016/runs/mixed_straight",
+    "leaves_aug_spline": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/leaf_generalization_20261015_source_aug_20261016/runs/mixed_spline",
+    "combined_aug_straight": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/combined_generalization_20261015_source_aug_20261016/runs/mixed_straight",
+    "combined_aug_spline": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/combined_generalization_20261015_source_aug_20261016/runs/mixed_spline"
+  },
+  "population_manifest": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/scratch_comparison_10k_300ep/comparison-manifest.json",
+  "test_ids_sha256": "da2198257d23e59101acce5d469e5d9b0cf462f6ef12ed5a34d5eba9fac8c269",
+  "dataset_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/scratch_comparison_10k_300ep/spline",
+  "evaluation_protocol": {
+    "bn_calibration_batches": 0,
+    "checkpoint_loss_components": [
+      "boxes",
+      "class",
+      "cardinality",
+      "nodes",
+      "edges"
+    ],
+    "edge_threshold": null,
+    "interval_epochs": 5,
+    "node_threshold": null,
+    "node_type_degree_caps": false,
+    "node_type_degree_penalty": 0.0,
+    "protocol": {
+      "edge_half_width": 0.1,
+      "f1_iou_threshold": 0.5,
+      "folds": 5,
+      "iou_thresholds": [
+        0.5,
+        0.55,
+        0.6,
+        0.65,
+        0.7,
+        0.75,
+        0.8,
+        0.85,
+        0.9,
+        0.95
+      ],
+      "max_detections": 120,
+      "smd_epsilon": 1e-07,
+      "smd_iterations": 100,
+      "smd_points": 100,
+      "target_node_size": 0.2
+    },
+    "spline_branch_threshold_mm": 1.0,
+    "training_metrics": {
+      "dataset": "synthetic_mri",
+      "enabled": false,
+      "max_samples": 200,
+      "save_best_checkpoint": false,
+      "save_f1_checkpoints": false,
+      "selection_metric": "edge_mAP",
+      "selection_mode": "max"
+    },
+    "validation_visualizations": 4
+  },
+  "output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/augmented_source_tests_20261018",
+  "report_root": "docs/research/pretraining/augmented-transfer-results",
+  "baseline_diagnostic": "experiments/spline_learning/metadata/metrics/branch-relations-v1/summary.json",
+  "existing_results": {
+    "leaves_straight": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/source_transfer_test_20261015/leaves_straight",
+    "leaves_spline": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/source_transfer_test_20261015/leaves_spline",
+    "plants_straight": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/source_transfer_test_20261015/plants_straight",
+    "plants_spline": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/source_transfer_test_20261015/plants_spline",
+    "mri_only_straight": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/source_transfer_test_20261015/mri_only_straight",
+    "mri_only_spline": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/source_transfer_test_20261015/mri_only_spline",
+    "combined_straight": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/source_transfer_test_20261015/combined_straight",
+    "combined_spline": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/source_transfer_test_20261015/combined_spline"
+  }
+}

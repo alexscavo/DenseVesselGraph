@@ -17,7 +17,8 @@ def collect(plan, split):
             assert len(folders)==1,(arm,folders)
             folder=folders[0]
         else:
-            summary=json.loads((Path(plan['output_root'])/arm/'summary.json').read_text())
+            result_root=Path(plan.get('existing_results',{}).get(arm,str(Path(plan['output_root'])/arm)))
+            summary=json.loads((result_root/'summary.json').read_text())
             assert summary['sample_ids_sha256']==plan['test_ids_sha256']
             folder=Path(summary['metrics_directory'])
         native=json.loads((folder/'summary.json').read_text())
