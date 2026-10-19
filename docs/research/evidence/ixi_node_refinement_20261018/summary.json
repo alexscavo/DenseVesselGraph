@@ -1,0 +1,2464 @@
+{
+  "baseline": {
+    "provenance": {
+      "plan": {
+        "checkpoint": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_transfer_20261015/runs/ixi_delayed_spline/best.pt",
+        "output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_node_refinement_20261018",
+        "seed": 181028,
+        "updates": 1000,
+        "monitor_interval": 500,
+        "batch_size": 32,
+        "learning_rate": 7e-05,
+        "radius_vox": 4.0,
+        "train_eval_samples": 128,
+        "validation_samples": 128,
+        "arms": {
+          "baseline": null,
+          "local_image": "full",
+          "zero_image": "zero"
+        }
+      },
+      "arm": "baseline",
+      "updates": 1000,
+      "initial_checkpoint": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_transfer_20261015/runs/ixi_delayed_spline/best.pt",
+      "frozen_state_sha256": "9401771f67f0b9d7ce10ba9cd62d337d46d114881fdb0d9e1239c2014c275c4e",
+      "trainable": [
+        "class_embed.weight",
+        "class_embed.bias",
+        "coord_embed.layers.0.weight",
+        "coord_embed.layers.0.bias",
+        "coord_embed.layers.1.weight",
+        "coord_embed.layers.1.bias",
+        "coord_embed.layers.2.weight",
+        "coord_embed.layers.2.bias"
+      ],
+      "bn": "fixed saved statistics; all modules eval",
+      "augmentation": false,
+      "objectives": "unchanged original losses; spline weight zero since geometry frozen; relation token losses cannot update frozen detector",
+      "endpoint_sampling": "detached input coordinates; early convolution centre i maps to voxel 2*i; 27 samples within +/-4 voxels",
+      "checkpoint_storage": "only trained parameters saved; load parent checkpoint then overlay adapter parameters",
+      "batch_order_sha256": "f006832181ff272a20a7b806c630d3859af620dbeea4dd5917ad88f6c25d011e",
+      "final_frozen_state_sha256": "9401771f67f0b9d7ce10ba9cd62d337d46d114881fdb0d9e1239c2014c275c4e"
+    },
+    "initial": {
+      "step": 0,
+      "validation": {
+        "native_node_f1": 0.4811578372474058,
+        "native_edge_f1": 0.15577626764244643,
+        "same_endpoint_chord_common_curve_f1": 0.11406159048117444,
+        "common_anchor_f1": 0.05313254723682341,
+        "common_branch_f1": 0.006141820212171971,
+        "common_curve_f1": 0.11694796495815998,
+        "common_guide_distance_mm": 0.6144438338004726,
+        "common_branch_coverage": 0.003694994961370507
+      },
+      "elapsed_seconds": 15.354962000041269,
+      "relations": {
+        "1.0": {
+          "predicted_nodes": 3807,
+          "target_nodes": 3517,
+          "matched_nodes": 868,
+          "predicted_edges": 849,
+          "target_edges": 2977,
+          "predicted_edges_with_unmatched_endpoint": 803,
+          "excluded_closed_or_parallel_targets": 0,
+          "supported_target_edges": 2977,
+          "recoverable_edges": 223,
+          "correct_direct_edges": 31,
+          "missing_direct_edges": 192,
+          "node_recall": 0.24680125106624964,
+          "node_precision": 0.22800105069608614,
+          "endpoint_pair_recovery": 0.07490762512596574,
+          "conditional_direct_recall": 0.13901345291479822,
+          "indirect_path": 7,
+          "degree2_chain": 5,
+          "indirect_path_guide_aligned": 4,
+          "arc_bin": [
+            {
+              "bin": 0,
+              "targets": 864,
+              "recoverable": 85,
+              "direct": 16,
+              "endpoint_pair_recovery": 0.09837962962962964,
+              "conditional_direct_recall": 0.18823529411764706
+            },
+            {
+              "bin": 1,
+              "targets": 749,
+              "recoverable": 58,
+              "direct": 6,
+              "endpoint_pair_recovery": 0.0774365821094793,
+              "conditional_direct_recall": 0.10344827586206896
+            },
+            {
+              "bin": 2,
+              "targets": 707,
+              "recoverable": 31,
+              "direct": 7,
+              "endpoint_pair_recovery": 0.04384724186704385,
+              "conditional_direct_recall": 0.22580645161290322
+            },
+            {
+              "bin": 3,
+              "targets": 657,
+              "recoverable": 49,
+              "direct": 2,
+              "endpoint_pair_recovery": 0.0745814307458143,
+              "conditional_direct_recall": 0.04081632653061224
+            }
+          ],
+          "chord_bin": [
+            {
+              "bin": 0,
+              "targets": 869,
+              "recoverable": 85,
+              "direct": 16,
+              "endpoint_pair_recovery": 0.09781357882623705,
+              "conditional_direct_recall": 0.18823529411764706
+            },
+            {
+              "bin": 1,
+              "targets": 743,
+              "recoverable": 58,
+              "direct": 6,
+              "endpoint_pair_recovery": 0.07806191117092867,
+              "conditional_direct_recall": 0.10344827586206896
+            },
+            {
+              "bin": 2,
+              "targets": 730,
+              "recoverable": 35,
+              "direct": 7,
+              "endpoint_pair_recovery": 0.04794520547945205,
+              "conditional_direct_recall": 0.2
+            },
+            {
+              "bin": 3,
+              "targets": 635,
+              "recoverable": 45,
+              "direct": 2,
+              "endpoint_pair_recovery": 0.07086614173228346,
+              "conditional_direct_recall": 0.044444444444444446
+            }
+          ],
+          "candidate_pairs_by_gt_chord": [
+            {
+              "positive_candidates": 85,
+              "positive_selected": 16,
+              "negative_candidates": 32,
+              "negative_selected": 6,
+              "true_positive_rate": 0.18823529411764706,
+              "false_positive_rate": 0.1875,
+              "precision": 0.7272727272727273
+            },
+            {
+              "positive_candidates": 58,
+              "positive_selected": 6,
+              "negative_candidates": 325,
+              "negative_selected": 4,
+              "true_positive_rate": 0.10344827586206896,
+              "false_positive_rate": 0.012307692307692308,
+              "precision": 0.6
+            },
+            {
+              "positive_candidates": 35,
+              "positive_selected": 7,
+              "negative_candidates": 523,
+              "negative_selected": 3,
+              "true_positive_rate": 0.2,
+              "false_positive_rate": 0.0057361376673040155,
+              "precision": 0.7
+            },
+            {
+              "positive_candidates": 45,
+              "positive_selected": 2,
+              "negative_candidates": 3391,
+              "negative_selected": 2,
+              "true_positive_rate": 0.044444444444444446,
+              "false_positive_rate": 0.0005897965202005308,
+              "precision": 0.5
+            }
+          ]
+        },
+        "2.0": {
+          "predicted_nodes": 3807,
+          "target_nodes": 3517,
+          "matched_nodes": 1784,
+          "predicted_edges": 849,
+          "target_edges": 2977,
+          "predicted_edges_with_unmatched_endpoint": 673,
+          "excluded_closed_or_parallel_targets": 0,
+          "supported_target_edges": 2977,
+          "recoverable_edges": 880,
+          "correct_direct_edges": 114,
+          "missing_direct_edges": 766,
+          "node_recall": 0.5072504975831674,
+          "node_precision": 0.46861045442605725,
+          "endpoint_pair_recovery": 0.2955995969096406,
+          "conditional_direct_recall": 0.12954545454545455,
+          "indirect_path": 24,
+          "degree2_chain": 14,
+          "indirect_path_guide_aligned": 18,
+          "arc_bin": [
+            {
+              "bin": 0,
+              "targets": 864,
+              "recoverable": 273,
+              "direct": 42,
+              "endpoint_pair_recovery": 0.3159722222222222,
+              "conditional_direct_recall": 0.15384615384615385
+            },
+            {
+              "bin": 1,
+              "targets": 749,
+              "recoverable": 249,
+              "direct": 44,
+              "endpoint_pair_recovery": 0.3324432576769025,
+              "conditional_direct_recall": 0.17670682730923695
+            },
+            {
+              "bin": 2,
+              "targets": 707,
+              "recoverable": 178,
+              "direct": 22,
+              "endpoint_pair_recovery": 0.25176803394625175,
+              "conditional_direct_recall": 0.12359550561797752
+            },
+            {
+              "bin": 3,
+              "targets": 657,
+              "recoverable": 180,
+              "direct": 6,
+              "endpoint_pair_recovery": 0.273972602739726,
+              "conditional_direct_recall": 0.03333333333333333
+            }
+          ],
+          "chord_bin": [
+            {
+              "bin": 0,
+              "targets": 869,
+              "recoverable": 271,
+              "direct": 41,
+              "endpoint_pair_recovery": 0.31185270425776757,
+              "conditional_direct_recall": 0.15129151291512916
+            },
+            {
+              "bin": 1,
+              "targets": 743,
+              "recoverable": 252,
+              "direct": 44,
+              "endpoint_pair_recovery": 0.3391655450874832,
+              "conditional_direct_recall": 0.1746031746031746
+            },
+            {
+              "bin": 2,
+              "targets": 730,
+              "recoverable": 186,
+              "direct": 22,
+              "endpoint_pair_recovery": 0.2547945205479452,
+              "conditional_direct_recall": 0.11827956989247312
+            },
+            {
+              "bin": 3,
+              "targets": 635,
+              "recoverable": 171,
+              "direct": 7,
+              "endpoint_pair_recovery": 0.2692913385826772,
+              "conditional_direct_recall": 0.04093567251461988
+            }
+          ],
+          "candidate_pairs_by_gt_chord": [
+            {
+              "positive_candidates": 271,
+              "positive_selected": 41,
+              "negative_candidates": 104,
+              "negative_selected": 12,
+              "true_positive_rate": 0.15129151291512916,
+              "false_positive_rate": 0.11538461538461539,
+              "precision": 0.7735849056603774
+            },
+            {
+              "positive_candidates": 252,
+              "positive_selected": 44,
+              "negative_candidates": 1058,
+              "negative_selected": 32,
+              "true_positive_rate": 0.1746031746031746,
+              "false_positive_rate": 0.030245746691871456,
+              "precision": 0.5789473684210527
+            },
+            {
+              "positive_candidates": 186,
+              "positive_selected": 22,
+              "negative_candidates": 2132,
+              "negative_selected": 11,
+              "true_positive_rate": 0.11827956989247312,
+              "false_positive_rate": 0.005159474671669793,
+              "precision": 0.6666666666666666
+            },
+            {
+              "positive_candidates": 171,
+              "positive_selected": 7,
+              "negative_candidates": 15298,
+              "negative_selected": 7,
+              "true_positive_rate": 0.04093567251461988,
+              "false_positive_rate": 0.00045757615374558767,
+              "precision": 0.5
+            }
+          ]
+        }
+      },
+      "train": {
+        "native_node_f1": 0.5639300134589502,
+        "native_edge_f1": 0.19461563412260785,
+        "same_endpoint_chord_common_curve_f1": 0.12914779344995855,
+        "common_anchor_f1": 0.07909604519774012,
+        "common_branch_f1": 0.01265377855887522,
+        "common_curve_f1": 0.13659333858385822,
+        "common_guide_distance_mm": 0.6426981707051734,
+        "common_branch_coverage": 0.007992895204262877
+      },
+      "node_subtypes": {
+        "val": {
+          "1.0": {
+            "boundary": {
+              "total": 1400,
+              "recovered": 479,
+              "displaced": 386,
+              "missing": 535
+            },
+            "junction": {
+              "total": 1199,
+              "recovered": 253,
+              "displaced": 302,
+              "missing": 644
+            },
+            "termination": {
+              "total": 916,
+              "recovered": 136,
+              "displaced": 159,
+              "missing": 621
+            },
+            "other": {
+              "total": 2,
+              "recovered": 0,
+              "displaced": 0,
+              "missing": 2
+            }
+          },
+          "2.0": {
+            "boundary": {
+              "total": 1400,
+              "recovered": 881,
+              "displaced": 210,
+              "missing": 309
+            },
+            "junction": {
+              "total": 1199,
+              "recovered": 581,
+              "displaced": 203,
+              "missing": 415
+            },
+            "termination": {
+              "total": 916,
+              "recovered": 321,
+              "displaced": 156,
+              "missing": 439
+            },
+            "other": {
+              "total": 2,
+              "recovered": 1,
+              "displaced": 0,
+              "missing": 1
+            }
+          }
+        },
+        "train": {
+          "1.0": {
+            "boundary": {
+              "total": 1127,
+              "recovered": 451,
+              "displaced": 312,
+              "missing": 364
+            },
+            "junction": {
+              "total": 877,
+              "recovered": 280,
+              "displaced": 272,
+              "missing": 325
+            },
+            "termination": {
+              "total": 717,
+              "recovered": 168,
+              "displaced": 150,
+              "missing": 399
+            },
+            "other": {
+              "total": 0,
+              "recovered": 0,
+              "displaced": 0,
+              "missing": 0
+            }
+          },
+          "2.0": {
+            "boundary": {
+              "total": 1127,
+              "recovered": 785,
+              "displaced": 152,
+              "missing": 190
+            },
+            "junction": {
+              "total": 877,
+              "recovered": 593,
+              "displaced": 134,
+              "missing": 150
+            },
+            "termination": {
+              "total": 717,
+              "recovered": 348,
+              "displaced": 121,
+              "missing": 248
+            },
+            "other": {
+              "total": 0,
+              "recovered": 0,
+              "displaced": 0,
+              "missing": 0
+            }
+          }
+        }
+      }
+    },
+    "final": {
+      "step": 1000,
+      "validation": {
+        "native_node_f1": 0.485698719694906,
+        "native_edge_f1": 0.1552892131318395,
+        "same_endpoint_chord_common_curve_f1": 0.11335225683899441,
+        "common_anchor_f1": 0.05220598666477515,
+        "common_branch_f1": 0.005016722408026756,
+        "common_curve_f1": 0.11713128217714401,
+        "common_guide_distance_mm": 0.44223065151384394,
+        "common_branch_coverage": 0.0030231776956667787
+      },
+      "elapsed_seconds": 298.7931081580464,
+      "relations": {
+        "1.0": {
+          "predicted_nodes": 3825,
+          "target_nodes": 3517,
+          "matched_nodes": 866,
+          "predicted_edges": 861,
+          "target_edges": 2977,
+          "predicted_edges_with_unmatched_endpoint": 812,
+          "excluded_closed_or_parallel_targets": 0,
+          "supported_target_edges": 2977,
+          "recoverable_edges": 225,
+          "correct_direct_edges": 33,
+          "missing_direct_edges": 192,
+          "node_recall": 0.24623258458913846,
+          "node_precision": 0.22640522875816993,
+          "endpoint_pair_recovery": 0.07557944239166947,
+          "conditional_direct_recall": 0.14666666666666667,
+          "indirect_path": 8,
+          "degree2_chain": 5,
+          "indirect_path_guide_aligned": 4,
+          "arc_bin": [
+            {
+              "bin": 0,
+              "targets": 864,
+              "recoverable": 84,
+              "direct": 19,
+              "endpoint_pair_recovery": 0.09722222222222222,
+              "conditional_direct_recall": 0.2261904761904762
+            },
+            {
+              "bin": 1,
+              "targets": 749,
+              "recoverable": 66,
+              "direct": 7,
+              "endpoint_pair_recovery": 0.08811748998664887,
+              "conditional_direct_recall": 0.10606060606060606
+            },
+            {
+              "bin": 2,
+              "targets": 707,
+              "recoverable": 31,
+              "direct": 6,
+              "endpoint_pair_recovery": 0.04384724186704385,
+              "conditional_direct_recall": 0.1935483870967742
+            },
+            {
+              "bin": 3,
+              "targets": 657,
+              "recoverable": 44,
+              "direct": 1,
+              "endpoint_pair_recovery": 0.0669710806697108,
+              "conditional_direct_recall": 0.022727272727272728
+            }
+          ],
+          "chord_bin": [
+            {
+              "bin": 0,
+              "targets": 869,
+              "recoverable": 83,
+              "direct": 19,
+              "endpoint_pair_recovery": 0.09551208285385501,
+              "conditional_direct_recall": 0.2289156626506024
+            },
+            {
+              "bin": 1,
+              "targets": 743,
+              "recoverable": 67,
+              "direct": 7,
+              "endpoint_pair_recovery": 0.0901749663526245,
+              "conditional_direct_recall": 0.1044776119402985
+            },
+            {
+              "bin": 2,
+              "targets": 730,
+              "recoverable": 33,
+              "direct": 6,
+              "endpoint_pair_recovery": 0.045205479452054796,
+              "conditional_direct_recall": 0.18181818181818182
+            },
+            {
+              "bin": 3,
+              "targets": 635,
+              "recoverable": 42,
+              "direct": 1,
+              "endpoint_pair_recovery": 0.06614173228346457,
+              "conditional_direct_recall": 0.023809523809523808
+            }
+          ],
+          "candidate_pairs_by_gt_chord": [
+            {
+              "positive_candidates": 83,
+              "positive_selected": 19,
+              "negative_candidates": 28,
+              "negative_selected": 4,
+              "true_positive_rate": 0.2289156626506024,
+              "false_positive_rate": 0.14285714285714285,
+              "precision": 0.8260869565217391
+            },
+            {
+              "positive_candidates": 67,
+              "positive_selected": 7,
+              "negative_candidates": 316,
+              "negative_selected": 6,
+              "true_positive_rate": 0.1044776119402985,
+              "false_positive_rate": 0.0189873417721519,
+              "precision": 0.5384615384615384
+            },
+            {
+              "positive_candidates": 33,
+              "positive_selected": 6,
+              "negative_candidates": 538,
+              "negative_selected": 4,
+              "true_positive_rate": 0.18181818181818182,
+              "false_positive_rate": 0.007434944237918215,
+              "precision": 0.6
+            },
+            {
+              "positive_candidates": 42,
+              "positive_selected": 1,
+              "negative_candidates": 3367,
+              "negative_selected": 2,
+              "true_positive_rate": 0.023809523809523808,
+              "false_positive_rate": 0.000594000594000594,
+              "precision": 0.3333333333333333
+            }
+          ]
+        },
+        "2.0": {
+          "predicted_nodes": 3825,
+          "target_nodes": 3517,
+          "matched_nodes": 1798,
+          "predicted_edges": 861,
+          "target_edges": 2977,
+          "predicted_edges_with_unmatched_endpoint": 687,
+          "excluded_closed_or_parallel_targets": 0,
+          "supported_target_edges": 2977,
+          "recoverable_edges": 899,
+          "correct_direct_edges": 111,
+          "missing_direct_edges": 788,
+          "node_recall": 0.5112311629229457,
+          "node_precision": 0.4700653594771242,
+          "endpoint_pair_recovery": 0.301981860933826,
+          "conditional_direct_recall": 0.12347052280311457,
+          "indirect_path": 24,
+          "degree2_chain": 13,
+          "indirect_path_guide_aligned": 19,
+          "arc_bin": [
+            {
+              "bin": 0,
+              "targets": 864,
+              "recoverable": 275,
+              "direct": 45,
+              "endpoint_pair_recovery": 0.31828703703703703,
+              "conditional_direct_recall": 0.16363636363636364
+            },
+            {
+              "bin": 1,
+              "targets": 749,
+              "recoverable": 252,
+              "direct": 38,
+              "endpoint_pair_recovery": 0.3364485981308411,
+              "conditional_direct_recall": 0.15079365079365079
+            },
+            {
+              "bin": 2,
+              "targets": 707,
+              "recoverable": 183,
+              "direct": 20,
+              "endpoint_pair_recovery": 0.25884016973125884,
+              "conditional_direct_recall": 0.1092896174863388
+            },
+            {
+              "bin": 3,
+              "targets": 657,
+              "recoverable": 189,
+              "direct": 8,
+              "endpoint_pair_recovery": 0.2876712328767123,
+              "conditional_direct_recall": 0.042328042328042326
+            }
+          ],
+          "chord_bin": [
+            {
+              "bin": 0,
+              "targets": 869,
+              "recoverable": 273,
+              "direct": 44,
+              "endpoint_pair_recovery": 0.3141542002301496,
+              "conditional_direct_recall": 0.16117216117216118
+            },
+            {
+              "bin": 1,
+              "targets": 743,
+              "recoverable": 254,
+              "direct": 38,
+              "endpoint_pair_recovery": 0.34185733512786004,
+              "conditional_direct_recall": 0.14960629921259844
+            },
+            {
+              "bin": 2,
+              "targets": 730,
+              "recoverable": 195,
+              "direct": 23,
+              "endpoint_pair_recovery": 0.2671232876712329,
+              "conditional_direct_recall": 0.11794871794871795
+            },
+            {
+              "bin": 3,
+              "targets": 635,
+              "recoverable": 177,
+              "direct": 6,
+              "endpoint_pair_recovery": 0.27874015748031494,
+              "conditional_direct_recall": 0.03389830508474576
+            }
+          ],
+          "candidate_pairs_by_gt_chord": [
+            {
+              "positive_candidates": 273,
+              "positive_selected": 44,
+              "negative_candidates": 105,
+              "negative_selected": 13,
+              "true_positive_rate": 0.16117216117216118,
+              "false_positive_rate": 0.12380952380952381,
+              "precision": 0.7719298245614035
+            },
+            {
+              "positive_candidates": 254,
+              "positive_selected": 38,
+              "negative_candidates": 1075,
+              "negative_selected": 31,
+              "true_positive_rate": 0.14960629921259844,
+              "false_positive_rate": 0.02883720930232558,
+              "precision": 0.5507246376811594
+            },
+            {
+              "positive_candidates": 195,
+              "positive_selected": 23,
+              "negative_candidates": 2172,
+              "negative_selected": 12,
+              "true_positive_rate": 0.11794871794871795,
+              "false_positive_rate": 0.0055248618784530384,
+              "precision": 0.6571428571428571
+            },
+            {
+              "positive_candidates": 177,
+              "positive_selected": 6,
+              "negative_candidates": 15503,
+              "negative_selected": 7,
+              "true_positive_rate": 0.03389830508474576,
+              "false_positive_rate": 0.00045152551119138234,
+              "precision": 0.46153846153846156
+            }
+          ]
+        }
+      },
+      "train": {
+        "native_node_f1": 0.5657784481313893,
+        "native_edge_f1": 0.20135527589545016,
+        "same_endpoint_chord_common_curve_f1": 0.13128571305014414,
+        "common_anchor_f1": 0.08204225352112676,
+        "common_branch_f1": 0.015411558669001752,
+        "common_curve_f1": 0.1388078981463036,
+        "common_guide_distance_mm": 0.6088205453043388,
+        "common_branch_coverage": 0.009769094138543518
+      },
+      "node_subtypes": {
+        "val": {
+          "1.0": {
+            "boundary": {
+              "total": 1400,
+              "recovered": 468,
+              "displaced": 395,
+              "missing": 537
+            },
+            "junction": {
+              "total": 1199,
+              "recovered": 265,
+              "displaced": 301,
+              "missing": 633
+            },
+            "termination": {
+              "total": 916,
+              "recovered": 133,
+              "displaced": 170,
+              "missing": 613
+            },
+            "other": {
+              "total": 2,
+              "recovered": 0,
+              "displaced": 1,
+              "missing": 1
+            }
+          },
+          "2.0": {
+            "boundary": {
+              "total": 1400,
+              "recovered": 884,
+              "displaced": 198,
+              "missing": 318
+            },
+            "junction": {
+              "total": 1199,
+              "recovered": 592,
+              "displaced": 196,
+              "missing": 411
+            },
+            "termination": {
+              "total": 916,
+              "recovered": 321,
+              "displaced": 156,
+              "missing": 439
+            },
+            "other": {
+              "total": 2,
+              "recovered": 1,
+              "displaced": 0,
+              "missing": 1
+            }
+          }
+        },
+        "train": {
+          "1.0": {
+            "boundary": {
+              "total": 1127,
+              "recovered": 467,
+              "displaced": 306,
+              "missing": 354
+            },
+            "junction": {
+              "total": 877,
+              "recovered": 281,
+              "displaced": 277,
+              "missing": 319
+            },
+            "termination": {
+              "total": 717,
+              "recovered": 167,
+              "displaced": 156,
+              "missing": 394
+            },
+            "other": {
+              "total": 0,
+              "recovered": 0,
+              "displaced": 0,
+              "missing": 0
+            }
+          },
+          "2.0": {
+            "boundary": {
+              "total": 1127,
+              "recovered": 798,
+              "displaced": 147,
+              "missing": 182
+            },
+            "junction": {
+              "total": 877,
+              "recovered": 604,
+              "displaced": 123,
+              "missing": 150
+            },
+            "termination": {
+              "total": 717,
+              "recovered": 353,
+              "displaced": 121,
+              "missing": 243
+            },
+            "other": {
+              "total": 0,
+              "recovered": 0,
+              "displaced": 0,
+              "missing": 0
+            }
+          }
+        }
+      }
+    }
+  },
+  "local_image": {
+    "provenance": {
+      "plan": {
+        "checkpoint": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_transfer_20261015/runs/ixi_delayed_spline/best.pt",
+        "output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_node_refinement_20261018",
+        "seed": 181028,
+        "updates": 1000,
+        "monitor_interval": 500,
+        "batch_size": 32,
+        "learning_rate": 7e-05,
+        "radius_vox": 4.0,
+        "train_eval_samples": 128,
+        "validation_samples": 128,
+        "arms": {
+          "baseline": null,
+          "local_image": "full",
+          "zero_image": "zero"
+        }
+      },
+      "arm": "local_image",
+      "updates": 1000,
+      "initial_checkpoint": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_transfer_20261015/runs/ixi_delayed_spline/best.pt",
+      "frozen_state_sha256": "61754f5954c48cee42cea7e2c009c763ac7fc34f1fb957839cf061019fc2f759",
+      "trainable": [
+        "class_embed.weight",
+        "class_embed.bias",
+        "coord_embed.layers.0.weight",
+        "coord_embed.layers.0.bias",
+        "coord_embed.layers.1.weight",
+        "coord_embed.layers.1.bias",
+        "coord_embed.layers.2.weight",
+        "coord_embed.layers.2.bias",
+        "node_refinement.network.0.weight",
+        "node_refinement.network.0.bias",
+        "node_refinement.network.2.weight",
+        "node_refinement.network.2.bias"
+      ],
+      "bn": "fixed saved statistics; all modules eval",
+      "augmentation": false,
+      "objectives": "unchanged original losses; spline weight zero since geometry frozen; relation token losses cannot update frozen detector",
+      "endpoint_sampling": "detached input coordinates; early convolution centre i maps to voxel 2*i; 27 samples within +/-4 voxels",
+      "checkpoint_storage": "only trained parameters saved; load parent checkpoint then overlay adapter parameters",
+      "batch_order_sha256": "f006832181ff272a20a7b806c630d3859af620dbeea4dd5917ad88f6c25d011e",
+      "final_frozen_state_sha256": "61754f5954c48cee42cea7e2c009c763ac7fc34f1fb957839cf061019fc2f759"
+    },
+    "initial": {
+      "step": 0,
+      "validation": {
+        "native_node_f1": 0.4811578372474058,
+        "native_edge_f1": 0.15577626764244643,
+        "same_endpoint_chord_common_curve_f1": 0.11406159048117444,
+        "common_anchor_f1": 0.05313254723682341,
+        "common_branch_f1": 0.006141820212171971,
+        "common_curve_f1": 0.11694796495815998,
+        "common_guide_distance_mm": 0.6144438338004726,
+        "common_branch_coverage": 0.003694994961370507
+      },
+      "elapsed_seconds": 16.303165165998507,
+      "relations": {
+        "1.0": {
+          "predicted_nodes": 3807,
+          "target_nodes": 3517,
+          "matched_nodes": 868,
+          "predicted_edges": 849,
+          "target_edges": 2977,
+          "predicted_edges_with_unmatched_endpoint": 803,
+          "excluded_closed_or_parallel_targets": 0,
+          "supported_target_edges": 2977,
+          "recoverable_edges": 223,
+          "correct_direct_edges": 31,
+          "missing_direct_edges": 192,
+          "node_recall": 0.24680125106624964,
+          "node_precision": 0.22800105069608614,
+          "endpoint_pair_recovery": 0.07490762512596574,
+          "conditional_direct_recall": 0.13901345291479822,
+          "indirect_path": 7,
+          "degree2_chain": 5,
+          "indirect_path_guide_aligned": 4,
+          "arc_bin": [
+            {
+              "bin": 0,
+              "targets": 864,
+              "recoverable": 85,
+              "direct": 16,
+              "endpoint_pair_recovery": 0.09837962962962964,
+              "conditional_direct_recall": 0.18823529411764706
+            },
+            {
+              "bin": 1,
+              "targets": 749,
+              "recoverable": 58,
+              "direct": 6,
+              "endpoint_pair_recovery": 0.0774365821094793,
+              "conditional_direct_recall": 0.10344827586206896
+            },
+            {
+              "bin": 2,
+              "targets": 707,
+              "recoverable": 31,
+              "direct": 7,
+              "endpoint_pair_recovery": 0.04384724186704385,
+              "conditional_direct_recall": 0.22580645161290322
+            },
+            {
+              "bin": 3,
+              "targets": 657,
+              "recoverable": 49,
+              "direct": 2,
+              "endpoint_pair_recovery": 0.0745814307458143,
+              "conditional_direct_recall": 0.04081632653061224
+            }
+          ],
+          "chord_bin": [
+            {
+              "bin": 0,
+              "targets": 869,
+              "recoverable": 85,
+              "direct": 16,
+              "endpoint_pair_recovery": 0.09781357882623705,
+              "conditional_direct_recall": 0.18823529411764706
+            },
+            {
+              "bin": 1,
+              "targets": 743,
+              "recoverable": 58,
+              "direct": 6,
+              "endpoint_pair_recovery": 0.07806191117092867,
+              "conditional_direct_recall": 0.10344827586206896
+            },
+            {
+              "bin": 2,
+              "targets": 730,
+              "recoverable": 35,
+              "direct": 7,
+              "endpoint_pair_recovery": 0.04794520547945205,
+              "conditional_direct_recall": 0.2
+            },
+            {
+              "bin": 3,
+              "targets": 635,
+              "recoverable": 45,
+              "direct": 2,
+              "endpoint_pair_recovery": 0.07086614173228346,
+              "conditional_direct_recall": 0.044444444444444446
+            }
+          ],
+          "candidate_pairs_by_gt_chord": [
+            {
+              "positive_candidates": 85,
+              "positive_selected": 16,
+              "negative_candidates": 32,
+              "negative_selected": 6,
+              "true_positive_rate": 0.18823529411764706,
+              "false_positive_rate": 0.1875,
+              "precision": 0.7272727272727273
+            },
+            {
+              "positive_candidates": 58,
+              "positive_selected": 6,
+              "negative_candidates": 325,
+              "negative_selected": 4,
+              "true_positive_rate": 0.10344827586206896,
+              "false_positive_rate": 0.012307692307692308,
+              "precision": 0.6
+            },
+            {
+              "positive_candidates": 35,
+              "positive_selected": 7,
+              "negative_candidates": 523,
+              "negative_selected": 3,
+              "true_positive_rate": 0.2,
+              "false_positive_rate": 0.0057361376673040155,
+              "precision": 0.7
+            },
+            {
+              "positive_candidates": 45,
+              "positive_selected": 2,
+              "negative_candidates": 3391,
+              "negative_selected": 2,
+              "true_positive_rate": 0.044444444444444446,
+              "false_positive_rate": 0.0005897965202005308,
+              "precision": 0.5
+            }
+          ]
+        },
+        "2.0": {
+          "predicted_nodes": 3807,
+          "target_nodes": 3517,
+          "matched_nodes": 1784,
+          "predicted_edges": 849,
+          "target_edges": 2977,
+          "predicted_edges_with_unmatched_endpoint": 673,
+          "excluded_closed_or_parallel_targets": 0,
+          "supported_target_edges": 2977,
+          "recoverable_edges": 880,
+          "correct_direct_edges": 114,
+          "missing_direct_edges": 766,
+          "node_recall": 0.5072504975831674,
+          "node_precision": 0.46861045442605725,
+          "endpoint_pair_recovery": 0.2955995969096406,
+          "conditional_direct_recall": 0.12954545454545455,
+          "indirect_path": 24,
+          "degree2_chain": 14,
+          "indirect_path_guide_aligned": 18,
+          "arc_bin": [
+            {
+              "bin": 0,
+              "targets": 864,
+              "recoverable": 273,
+              "direct": 42,
+              "endpoint_pair_recovery": 0.3159722222222222,
+              "conditional_direct_recall": 0.15384615384615385
+            },
+            {
+              "bin": 1,
+              "targets": 749,
+              "recoverable": 249,
+              "direct": 44,
+              "endpoint_pair_recovery": 0.3324432576769025,
+              "conditional_direct_recall": 0.17670682730923695
+            },
+            {
+              "bin": 2,
+              "targets": 707,
+              "recoverable": 178,
+              "direct": 22,
+              "endpoint_pair_recovery": 0.25176803394625175,
+              "conditional_direct_recall": 0.12359550561797752
+            },
+            {
+              "bin": 3,
+              "targets": 657,
+              "recoverable": 180,
+              "direct": 6,
+              "endpoint_pair_recovery": 0.273972602739726,
+              "conditional_direct_recall": 0.03333333333333333
+            }
+          ],
+          "chord_bin": [
+            {
+              "bin": 0,
+              "targets": 869,
+              "recoverable": 271,
+              "direct": 41,
+              "endpoint_pair_recovery": 0.31185270425776757,
+              "conditional_direct_recall": 0.15129151291512916
+            },
+            {
+              "bin": 1,
+              "targets": 743,
+              "recoverable": 252,
+              "direct": 44,
+              "endpoint_pair_recovery": 0.3391655450874832,
+              "conditional_direct_recall": 0.1746031746031746
+            },
+            {
+              "bin": 2,
+              "targets": 730,
+              "recoverable": 186,
+              "direct": 22,
+              "endpoint_pair_recovery": 0.2547945205479452,
+              "conditional_direct_recall": 0.11827956989247312
+            },
+            {
+              "bin": 3,
+              "targets": 635,
+              "recoverable": 171,
+              "direct": 7,
+              "endpoint_pair_recovery": 0.2692913385826772,
+              "conditional_direct_recall": 0.04093567251461988
+            }
+          ],
+          "candidate_pairs_by_gt_chord": [
+            {
+              "positive_candidates": 271,
+              "positive_selected": 41,
+              "negative_candidates": 104,
+              "negative_selected": 12,
+              "true_positive_rate": 0.15129151291512916,
+              "false_positive_rate": 0.11538461538461539,
+              "precision": 0.7735849056603774
+            },
+            {
+              "positive_candidates": 252,
+              "positive_selected": 44,
+              "negative_candidates": 1058,
+              "negative_selected": 32,
+              "true_positive_rate": 0.1746031746031746,
+              "false_positive_rate": 0.030245746691871456,
+              "precision": 0.5789473684210527
+            },
+            {
+              "positive_candidates": 186,
+              "positive_selected": 22,
+              "negative_candidates": 2132,
+              "negative_selected": 11,
+              "true_positive_rate": 0.11827956989247312,
+              "false_positive_rate": 0.005159474671669793,
+              "precision": 0.6666666666666666
+            },
+            {
+              "positive_candidates": 171,
+              "positive_selected": 7,
+              "negative_candidates": 15298,
+              "negative_selected": 7,
+              "true_positive_rate": 0.04093567251461988,
+              "false_positive_rate": 0.00045757615374558767,
+              "precision": 0.5
+            }
+          ]
+        }
+      },
+      "train": {
+        "native_node_f1": 0.5639300134589502,
+        "native_edge_f1": 0.19461563412260785,
+        "same_endpoint_chord_common_curve_f1": 0.12914779344995855,
+        "common_anchor_f1": 0.07909604519774012,
+        "common_branch_f1": 0.01265377855887522,
+        "common_curve_f1": 0.13659333858385822,
+        "common_guide_distance_mm": 0.6426981707051734,
+        "common_branch_coverage": 0.007992895204262877
+      },
+      "node_subtypes": {
+        "val": {
+          "1.0": {
+            "boundary": {
+              "total": 1400,
+              "recovered": 479,
+              "displaced": 386,
+              "missing": 535
+            },
+            "junction": {
+              "total": 1199,
+              "recovered": 253,
+              "displaced": 302,
+              "missing": 644
+            },
+            "termination": {
+              "total": 916,
+              "recovered": 136,
+              "displaced": 159,
+              "missing": 621
+            },
+            "other": {
+              "total": 2,
+              "recovered": 0,
+              "displaced": 0,
+              "missing": 2
+            }
+          },
+          "2.0": {
+            "boundary": {
+              "total": 1400,
+              "recovered": 881,
+              "displaced": 210,
+              "missing": 309
+            },
+            "junction": {
+              "total": 1199,
+              "recovered": 581,
+              "displaced": 203,
+              "missing": 415
+            },
+            "termination": {
+              "total": 916,
+              "recovered": 321,
+              "displaced": 156,
+              "missing": 439
+            },
+            "other": {
+              "total": 2,
+              "recovered": 1,
+              "displaced": 0,
+              "missing": 1
+            }
+          }
+        },
+        "train": {
+          "1.0": {
+            "boundary": {
+              "total": 1127,
+              "recovered": 451,
+              "displaced": 312,
+              "missing": 364
+            },
+            "junction": {
+              "total": 877,
+              "recovered": 280,
+              "displaced": 272,
+              "missing": 325
+            },
+            "termination": {
+              "total": 717,
+              "recovered": 168,
+              "displaced": 150,
+              "missing": 399
+            },
+            "other": {
+              "total": 0,
+              "recovered": 0,
+              "displaced": 0,
+              "missing": 0
+            }
+          },
+          "2.0": {
+            "boundary": {
+              "total": 1127,
+              "recovered": 785,
+              "displaced": 152,
+              "missing": 190
+            },
+            "junction": {
+              "total": 877,
+              "recovered": 593,
+              "displaced": 134,
+              "missing": 150
+            },
+            "termination": {
+              "total": 717,
+              "recovered": 348,
+              "displaced": 121,
+              "missing": 248
+            },
+            "other": {
+              "total": 0,
+              "recovered": 0,
+              "displaced": 0,
+              "missing": 0
+            }
+          }
+        }
+      }
+    },
+    "final": {
+      "step": 1000,
+      "validation": {
+        "native_node_f1": 0.5196078431372549,
+        "native_edge_f1": 0.16727272727272727,
+        "same_endpoint_chord_common_curve_f1": 0.16409011388973155,
+        "common_anchor_f1": 0.07236095346197503,
+        "common_branch_f1": 0.012222222222222223,
+        "common_curve_f1": 0.16758707304214315,
+        "common_guide_distance_mm": 0.5912017867490349,
+        "common_branch_coverage": 0.007389989922741014
+      },
+      "elapsed_seconds": 300.1050685419468,
+      "relations": {
+        "1.0": {
+          "predicted_nodes": 3827,
+          "target_nodes": 3517,
+          "matched_nodes": 1293,
+          "predicted_edges": 873,
+          "target_edges": 2977,
+          "predicted_edges_with_unmatched_endpoint": 788,
+          "excluded_closed_or_parallel_targets": 0,
+          "supported_target_edges": 2977,
+          "recoverable_edges": 507,
+          "correct_direct_edges": 57,
+          "missing_direct_edges": 450,
+          "node_recall": 0.3676428774523742,
+          "node_precision": 0.33786255552652206,
+          "endpoint_pair_recovery": 0.1703056768558952,
+          "conditional_direct_recall": 0.11242603550295859,
+          "indirect_path": 13,
+          "degree2_chain": 8,
+          "indirect_path_guide_aligned": 9,
+          "arc_bin": [
+            {
+              "bin": 0,
+              "targets": 864,
+              "recoverable": 172,
+              "direct": 28,
+              "endpoint_pair_recovery": 0.19907407407407407,
+              "conditional_direct_recall": 0.16279069767441862
+            },
+            {
+              "bin": 1,
+              "targets": 749,
+              "recoverable": 135,
+              "direct": 15,
+              "endpoint_pair_recovery": 0.1802403204272363,
+              "conditional_direct_recall": 0.1111111111111111
+            },
+            {
+              "bin": 2,
+              "targets": 707,
+              "recoverable": 90,
+              "direct": 9,
+              "endpoint_pair_recovery": 0.1272984441301273,
+              "conditional_direct_recall": 0.1
+            },
+            {
+              "bin": 3,
+              "targets": 657,
+              "recoverable": 110,
+              "direct": 5,
+              "endpoint_pair_recovery": 0.167427701674277,
+              "conditional_direct_recall": 0.045454545454545456
+            }
+          ],
+          "chord_bin": [
+            {
+              "bin": 0,
+              "targets": 869,
+              "recoverable": 171,
+              "direct": 28,
+              "endpoint_pair_recovery": 0.19677790563866512,
+              "conditional_direct_recall": 0.16374269005847952
+            },
+            {
+              "bin": 1,
+              "targets": 743,
+              "recoverable": 136,
+              "direct": 15,
+              "endpoint_pair_recovery": 0.18304172274562583,
+              "conditional_direct_recall": 0.11029411764705882
+            },
+            {
+              "bin": 2,
+              "targets": 730,
+              "recoverable": 97,
+              "direct": 9,
+              "endpoint_pair_recovery": 0.13287671232876713,
+              "conditional_direct_recall": 0.09278350515463918
+            },
+            {
+              "bin": 3,
+              "targets": 635,
+              "recoverable": 103,
+              "direct": 5,
+              "endpoint_pair_recovery": 0.16220472440944883,
+              "conditional_direct_recall": 0.04854368932038835
+            }
+          ],
+          "candidate_pairs_by_gt_chord": [
+            {
+              "positive_candidates": 171,
+              "positive_selected": 28,
+              "negative_candidates": 48,
+              "negative_selected": 7,
+              "true_positive_rate": 0.16374269005847952,
+              "false_positive_rate": 0.14583333333333334,
+              "precision": 0.8
+            },
+            {
+              "positive_candidates": 136,
+              "positive_selected": 15,
+              "negative_candidates": 522,
+              "negative_selected": 10,
+              "true_positive_rate": 0.11029411764705882,
+              "false_positive_rate": 0.019157088122605363,
+              "precision": 0.6
+            },
+            {
+              "positive_candidates": 97,
+              "positive_selected": 9,
+              "negative_candidates": 1067,
+              "negative_selected": 5,
+              "true_positive_rate": 0.09278350515463918,
+              "false_positive_rate": 0.004686035613870665,
+              "precision": 0.6428571428571429
+            },
+            {
+              "positive_candidates": 103,
+              "positive_selected": 5,
+              "negative_candidates": 7972,
+              "negative_selected": 6,
+              "true_positive_rate": 0.04854368932038835,
+              "false_positive_rate": 0.0007526342197691922,
+              "precision": 0.45454545454545453
+            }
+          ]
+        },
+        "2.0": {
+          "predicted_nodes": 3827,
+          "target_nodes": 3517,
+          "matched_nodes": 1979,
+          "predicted_edges": 873,
+          "target_edges": 2977,
+          "predicted_edges_with_unmatched_endpoint": 666,
+          "excluded_closed_or_parallel_targets": 0,
+          "supported_target_edges": 2977,
+          "recoverable_edges": 1130,
+          "correct_direct_edges": 141,
+          "missing_direct_edges": 989,
+          "node_recall": 0.562695479101507,
+          "node_precision": 0.517115233864646,
+          "endpoint_pair_recovery": 0.37957675512260663,
+          "conditional_direct_recall": 0.12477876106194691,
+          "indirect_path": 30,
+          "degree2_chain": 15,
+          "indirect_path_guide_aligned": 22,
+          "arc_bin": [
+            {
+              "bin": 0,
+              "targets": 864,
+              "recoverable": 333,
+              "direct": 52,
+              "endpoint_pair_recovery": 0.3854166666666667,
+              "conditional_direct_recall": 0.15615615615615616
+            },
+            {
+              "bin": 1,
+              "targets": 749,
+              "recoverable": 307,
+              "direct": 53,
+              "endpoint_pair_recovery": 0.4098798397863818,
+              "conditional_direct_recall": 0.17263843648208468
+            },
+            {
+              "bin": 2,
+              "targets": 707,
+              "recoverable": 252,
+              "direct": 27,
+              "endpoint_pair_recovery": 0.3564356435643564,
+              "conditional_direct_recall": 0.10714285714285714
+            },
+            {
+              "bin": 3,
+              "targets": 657,
+              "recoverable": 238,
+              "direct": 9,
+              "endpoint_pair_recovery": 0.3622526636225266,
+              "conditional_direct_recall": 0.037815126050420166
+            }
+          ],
+          "chord_bin": [
+            {
+              "bin": 0,
+              "targets": 869,
+              "recoverable": 332,
+              "direct": 52,
+              "endpoint_pair_recovery": 0.38204833141542005,
+              "conditional_direct_recall": 0.1566265060240964
+            },
+            {
+              "bin": 1,
+              "targets": 743,
+              "recoverable": 309,
+              "direct": 53,
+              "endpoint_pair_recovery": 0.4158815612382234,
+              "conditional_direct_recall": 0.1715210355987055
+            },
+            {
+              "bin": 2,
+              "targets": 730,
+              "recoverable": 257,
+              "direct": 28,
+              "endpoint_pair_recovery": 0.35205479452054794,
+              "conditional_direct_recall": 0.10894941634241245
+            },
+            {
+              "bin": 3,
+              "targets": 635,
+              "recoverable": 232,
+              "direct": 8,
+              "endpoint_pair_recovery": 0.3653543307086614,
+              "conditional_direct_recall": 0.034482758620689655
+            }
+          ],
+          "candidate_pairs_by_gt_chord": [
+            {
+              "positive_candidates": 332,
+              "positive_selected": 52,
+              "negative_candidates": 113,
+              "negative_selected": 15,
+              "true_positive_rate": 0.1566265060240964,
+              "false_positive_rate": 0.13274336283185842,
+              "precision": 0.7761194029850746
+            },
+            {
+              "positive_candidates": 309,
+              "positive_selected": 53,
+              "negative_candidates": 1146,
+              "negative_selected": 32,
+              "true_positive_rate": 0.1715210355987055,
+              "false_positive_rate": 0.027923211169284468,
+              "precision": 0.6235294117647059
+            },
+            {
+              "positive_candidates": 257,
+              "positive_selected": 28,
+              "negative_candidates": 2440,
+              "negative_selected": 10,
+              "true_positive_rate": 0.10894941634241245,
+              "false_positive_rate": 0.004098360655737705,
+              "precision": 0.7368421052631579
+            },
+            {
+              "positive_candidates": 232,
+              "positive_selected": 8,
+              "negative_candidates": 19225,
+              "negative_selected": 9,
+              "true_positive_rate": 0.034482758620689655,
+              "false_positive_rate": 0.00046814044213263977,
+              "precision": 0.47058823529411764
+            }
+          ]
+        }
+      },
+      "train": {
+        "native_node_f1": 0.6006357704534048,
+        "native_edge_f1": 0.20907044065615954,
+        "same_endpoint_chord_common_curve_f1": 0.17943012127882385,
+        "common_anchor_f1": 0.10103854955113536,
+        "common_branch_f1": 0.01819454163750875,
+        "common_curve_f1": 0.18824595179584258,
+        "common_guide_distance_mm": 0.5556726769917562,
+        "common_branch_coverage": 0.011545293072824156
+      },
+      "node_subtypes": {
+        "val": {
+          "1.0": {
+            "boundary": {
+              "total": 1400,
+              "recovered": 673,
+              "displaced": 251,
+              "missing": 476
+            },
+            "junction": {
+              "total": 1199,
+              "recovered": 444,
+              "displaced": 210,
+              "missing": 545
+            },
+            "termination": {
+              "total": 916,
+              "recovered": 176,
+              "displaced": 130,
+              "missing": 610
+            },
+            "other": {
+              "total": 2,
+              "recovered": 0,
+              "displaced": 1,
+              "missing": 1
+            }
+          },
+          "2.0": {
+            "boundary": {
+              "total": 1400,
+              "recovered": 946,
+              "displaced": 112,
+              "missing": 342
+            },
+            "junction": {
+              "total": 1199,
+              "recovered": 698,
+              "displaced": 110,
+              "missing": 391
+            },
+            "termination": {
+              "total": 916,
+              "recovered": 334,
+              "displaced": 116,
+              "missing": 466
+            },
+            "other": {
+              "total": 2,
+              "recovered": 1,
+              "displaced": 1,
+              "missing": 0
+            }
+          }
+        },
+        "train": {
+          "1.0": {
+            "boundary": {
+              "total": 1127,
+              "recovered": 610,
+              "displaced": 208,
+              "missing": 309
+            },
+            "junction": {
+              "total": 877,
+              "recovered": 431,
+              "displaced": 174,
+              "missing": 272
+            },
+            "termination": {
+              "total": 717,
+              "recovered": 173,
+              "displaced": 157,
+              "missing": 387
+            },
+            "other": {
+              "total": 0,
+              "recovered": 0,
+              "displaced": 0,
+              "missing": 0
+            }
+          },
+          "2.0": {
+            "boundary": {
+              "total": 1127,
+              "recovered": 841,
+              "displaced": 89,
+              "missing": 197
+            },
+            "junction": {
+              "total": 877,
+              "recovered": 667,
+              "displaced": 67,
+              "missing": 143
+            },
+            "termination": {
+              "total": 717,
+              "recovered": 366,
+              "displaced": 91,
+              "missing": 260
+            },
+            "other": {
+              "total": 0,
+              "recovered": 0,
+              "displaced": 0,
+              "missing": 0
+            }
+          }
+        }
+      }
+    }
+  },
+  "zero_image": {
+    "provenance": {
+      "plan": {
+        "checkpoint": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_transfer_20261015/runs/ixi_delayed_spline/best.pt",
+        "output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_node_refinement_20261018",
+        "seed": 181028,
+        "updates": 1000,
+        "monitor_interval": 500,
+        "batch_size": 32,
+        "learning_rate": 7e-05,
+        "radius_vox": 4.0,
+        "train_eval_samples": 128,
+        "validation_samples": 128,
+        "arms": {
+          "baseline": null,
+          "local_image": "full",
+          "zero_image": "zero"
+        }
+      },
+      "arm": "zero_image",
+      "updates": 1000,
+      "initial_checkpoint": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_transfer_20261015/runs/ixi_delayed_spline/best.pt",
+      "frozen_state_sha256": "61754f5954c48cee42cea7e2c009c763ac7fc34f1fb957839cf061019fc2f759",
+      "trainable": [
+        "class_embed.weight",
+        "class_embed.bias",
+        "coord_embed.layers.0.weight",
+        "coord_embed.layers.0.bias",
+        "coord_embed.layers.1.weight",
+        "coord_embed.layers.1.bias",
+        "coord_embed.layers.2.weight",
+        "coord_embed.layers.2.bias",
+        "node_refinement.network.0.weight",
+        "node_refinement.network.0.bias",
+        "node_refinement.network.2.weight",
+        "node_refinement.network.2.bias"
+      ],
+      "bn": "fixed saved statistics; all modules eval",
+      "augmentation": false,
+      "objectives": "unchanged original losses; spline weight zero since geometry frozen; relation token losses cannot update frozen detector",
+      "endpoint_sampling": "detached input coordinates; early convolution centre i maps to voxel 2*i; 27 samples within +/-4 voxels",
+      "checkpoint_storage": "only trained parameters saved; load parent checkpoint then overlay adapter parameters",
+      "batch_order_sha256": "f006832181ff272a20a7b806c630d3859af620dbeea4dd5917ad88f6c25d011e",
+      "final_frozen_state_sha256": "61754f5954c48cee42cea7e2c009c763ac7fc34f1fb957839cf061019fc2f759"
+    },
+    "initial": {
+      "step": 0,
+      "validation": {
+        "native_node_f1": 0.4811578372474058,
+        "native_edge_f1": 0.15577626764244643,
+        "same_endpoint_chord_common_curve_f1": 0.11406159048117444,
+        "common_anchor_f1": 0.05313254723682341,
+        "common_branch_f1": 0.006141820212171971,
+        "common_curve_f1": 0.11694796495815998,
+        "common_guide_distance_mm": 0.6144438338004726,
+        "common_branch_coverage": 0.003694994961370507
+      },
+      "elapsed_seconds": 14.669446829007939,
+      "relations": {
+        "1.0": {
+          "predicted_nodes": 3807,
+          "target_nodes": 3517,
+          "matched_nodes": 868,
+          "predicted_edges": 849,
+          "target_edges": 2977,
+          "predicted_edges_with_unmatched_endpoint": 803,
+          "excluded_closed_or_parallel_targets": 0,
+          "supported_target_edges": 2977,
+          "recoverable_edges": 223,
+          "correct_direct_edges": 31,
+          "missing_direct_edges": 192,
+          "node_recall": 0.24680125106624964,
+          "node_precision": 0.22800105069608614,
+          "endpoint_pair_recovery": 0.07490762512596574,
+          "conditional_direct_recall": 0.13901345291479822,
+          "indirect_path": 7,
+          "degree2_chain": 5,
+          "indirect_path_guide_aligned": 4,
+          "arc_bin": [
+            {
+              "bin": 0,
+              "targets": 864,
+              "recoverable": 85,
+              "direct": 16,
+              "endpoint_pair_recovery": 0.09837962962962964,
+              "conditional_direct_recall": 0.18823529411764706
+            },
+            {
+              "bin": 1,
+              "targets": 749,
+              "recoverable": 58,
+              "direct": 6,
+              "endpoint_pair_recovery": 0.0774365821094793,
+              "conditional_direct_recall": 0.10344827586206896
+            },
+            {
+              "bin": 2,
+              "targets": 707,
+              "recoverable": 31,
+              "direct": 7,
+              "endpoint_pair_recovery": 0.04384724186704385,
+              "conditional_direct_recall": 0.22580645161290322
+            },
+            {
+              "bin": 3,
+              "targets": 657,
+              "recoverable": 49,
+              "direct": 2,
+              "endpoint_pair_recovery": 0.0745814307458143,
+              "conditional_direct_recall": 0.04081632653061224
+            }
+          ],
+          "chord_bin": [
+            {
+              "bin": 0,
+              "targets": 869,
+              "recoverable": 85,
+              "direct": 16,
+              "endpoint_pair_recovery": 0.09781357882623705,
+              "conditional_direct_recall": 0.18823529411764706
+            },
+            {
+              "bin": 1,
+              "targets": 743,
+              "recoverable": 58,
+              "direct": 6,
+              "endpoint_pair_recovery": 0.07806191117092867,
+              "conditional_direct_recall": 0.10344827586206896
+            },
+            {
+              "bin": 2,
+              "targets": 730,
+              "recoverable": 35,
+              "direct": 7,
+              "endpoint_pair_recovery": 0.04794520547945205,
+              "conditional_direct_recall": 0.2
+            },
+            {
+              "bin": 3,
+              "targets": 635,
+              "recoverable": 45,
+              "direct": 2,
+              "endpoint_pair_recovery": 0.07086614173228346,
+              "conditional_direct_recall": 0.044444444444444446
+            }
+          ],
+          "candidate_pairs_by_gt_chord": [
+            {
+              "positive_candidates": 85,
+              "positive_selected": 16,
+              "negative_candidates": 32,
+              "negative_selected": 6,
+              "true_positive_rate": 0.18823529411764706,
+              "false_positive_rate": 0.1875,
+              "precision": 0.7272727272727273
+            },
+            {
+              "positive_candidates": 58,
+              "positive_selected": 6,
+              "negative_candidates": 325,
+              "negative_selected": 4,
+              "true_positive_rate": 0.10344827586206896,
+              "false_positive_rate": 0.012307692307692308,
+              "precision": 0.6
+            },
+            {
+              "positive_candidates": 35,
+              "positive_selected": 7,
+              "negative_candidates": 523,
+              "negative_selected": 3,
+              "true_positive_rate": 0.2,
+              "false_positive_rate": 0.0057361376673040155,
+              "precision": 0.7
+            },
+            {
+              "positive_candidates": 45,
+              "positive_selected": 2,
+              "negative_candidates": 3391,
+              "negative_selected": 2,
+              "true_positive_rate": 0.044444444444444446,
+              "false_positive_rate": 0.0005897965202005308,
+              "precision": 0.5
+            }
+          ]
+        },
+        "2.0": {
+          "predicted_nodes": 3807,
+          "target_nodes": 3517,
+          "matched_nodes": 1784,
+          "predicted_edges": 849,
+          "target_edges": 2977,
+          "predicted_edges_with_unmatched_endpoint": 673,
+          "excluded_closed_or_parallel_targets": 0,
+          "supported_target_edges": 2977,
+          "recoverable_edges": 880,
+          "correct_direct_edges": 114,
+          "missing_direct_edges": 766,
+          "node_recall": 0.5072504975831674,
+          "node_precision": 0.46861045442605725,
+          "endpoint_pair_recovery": 0.2955995969096406,
+          "conditional_direct_recall": 0.12954545454545455,
+          "indirect_path": 24,
+          "degree2_chain": 14,
+          "indirect_path_guide_aligned": 18,
+          "arc_bin": [
+            {
+              "bin": 0,
+              "targets": 864,
+              "recoverable": 273,
+              "direct": 42,
+              "endpoint_pair_recovery": 0.3159722222222222,
+              "conditional_direct_recall": 0.15384615384615385
+            },
+            {
+              "bin": 1,
+              "targets": 749,
+              "recoverable": 249,
+              "direct": 44,
+              "endpoint_pair_recovery": 0.3324432576769025,
+              "conditional_direct_recall": 0.17670682730923695
+            },
+            {
+              "bin": 2,
+              "targets": 707,
+              "recoverable": 178,
+              "direct": 22,
+              "endpoint_pair_recovery": 0.25176803394625175,
+              "conditional_direct_recall": 0.12359550561797752
+            },
+            {
+              "bin": 3,
+              "targets": 657,
+              "recoverable": 180,
+              "direct": 6,
+              "endpoint_pair_recovery": 0.273972602739726,
+              "conditional_direct_recall": 0.03333333333333333
+            }
+          ],
+          "chord_bin": [
+            {
+              "bin": 0,
+              "targets": 869,
+              "recoverable": 271,
+              "direct": 41,
+              "endpoint_pair_recovery": 0.31185270425776757,
+              "conditional_direct_recall": 0.15129151291512916
+            },
+            {
+              "bin": 1,
+              "targets": 743,
+              "recoverable": 252,
+              "direct": 44,
+              "endpoint_pair_recovery": 0.3391655450874832,
+              "conditional_direct_recall": 0.1746031746031746
+            },
+            {
+              "bin": 2,
+              "targets": 730,
+              "recoverable": 186,
+              "direct": 22,
+              "endpoint_pair_recovery": 0.2547945205479452,
+              "conditional_direct_recall": 0.11827956989247312
+            },
+            {
+              "bin": 3,
+              "targets": 635,
+              "recoverable": 171,
+              "direct": 7,
+              "endpoint_pair_recovery": 0.2692913385826772,
+              "conditional_direct_recall": 0.04093567251461988
+            }
+          ],
+          "candidate_pairs_by_gt_chord": [
+            {
+              "positive_candidates": 271,
+              "positive_selected": 41,
+              "negative_candidates": 104,
+              "negative_selected": 12,
+              "true_positive_rate": 0.15129151291512916,
+              "false_positive_rate": 0.11538461538461539,
+              "precision": 0.7735849056603774
+            },
+            {
+              "positive_candidates": 252,
+              "positive_selected": 44,
+              "negative_candidates": 1058,
+              "negative_selected": 32,
+              "true_positive_rate": 0.1746031746031746,
+              "false_positive_rate": 0.030245746691871456,
+              "precision": 0.5789473684210527
+            },
+            {
+              "positive_candidates": 186,
+              "positive_selected": 22,
+              "negative_candidates": 2132,
+              "negative_selected": 11,
+              "true_positive_rate": 0.11827956989247312,
+              "false_positive_rate": 0.005159474671669793,
+              "precision": 0.6666666666666666
+            },
+            {
+              "positive_candidates": 171,
+              "positive_selected": 7,
+              "negative_candidates": 15298,
+              "negative_selected": 7,
+              "true_positive_rate": 0.04093567251461988,
+              "false_positive_rate": 0.00045757615374558767,
+              "precision": 0.5
+            }
+          ]
+        }
+      },
+      "train": {
+        "native_node_f1": 0.5639300134589502,
+        "native_edge_f1": 0.19461563412260785,
+        "same_endpoint_chord_common_curve_f1": 0.12914779344995855,
+        "common_anchor_f1": 0.07909604519774012,
+        "common_branch_f1": 0.01265377855887522,
+        "common_curve_f1": 0.13659333858385822,
+        "common_guide_distance_mm": 0.6426981707051734,
+        "common_branch_coverage": 0.007992895204262877
+      },
+      "node_subtypes": {
+        "val": {
+          "1.0": {
+            "boundary": {
+              "total": 1400,
+              "recovered": 479,
+              "displaced": 386,
+              "missing": 535
+            },
+            "junction": {
+              "total": 1199,
+              "recovered": 253,
+              "displaced": 302,
+              "missing": 644
+            },
+            "termination": {
+              "total": 916,
+              "recovered": 136,
+              "displaced": 159,
+              "missing": 621
+            },
+            "other": {
+              "total": 2,
+              "recovered": 0,
+              "displaced": 0,
+              "missing": 2
+            }
+          },
+          "2.0": {
+            "boundary": {
+              "total": 1400,
+              "recovered": 881,
+              "displaced": 210,
+              "missing": 309
+            },
+            "junction": {
+              "total": 1199,
+              "recovered": 581,
+              "displaced": 203,
+              "missing": 415
+            },
+            "termination": {
+              "total": 916,
+              "recovered": 321,
+              "displaced": 156,
+              "missing": 439
+            },
+            "other": {
+              "total": 2,
+              "recovered": 1,
+              "displaced": 0,
+              "missing": 1
+            }
+          }
+        },
+        "train": {
+          "1.0": {
+            "boundary": {
+              "total": 1127,
+              "recovered": 451,
+              "displaced": 312,
+              "missing": 364
+            },
+            "junction": {
+              "total": 877,
+              "recovered": 280,
+              "displaced": 272,
+              "missing": 325
+            },
+            "termination": {
+              "total": 717,
+              "recovered": 168,
+              "displaced": 150,
+              "missing": 399
+            },
+            "other": {
+              "total": 0,
+              "recovered": 0,
+              "displaced": 0,
+              "missing": 0
+            }
+          },
+          "2.0": {
+            "boundary": {
+              "total": 1127,
+              "recovered": 785,
+              "displaced": 152,
+              "missing": 190
+            },
+            "junction": {
+              "total": 877,
+              "recovered": 593,
+              "displaced": 134,
+              "missing": 150
+            },
+            "termination": {
+              "total": 717,
+              "recovered": 348,
+              "displaced": 121,
+              "missing": 248
+            },
+            "other": {
+              "total": 0,
+              "recovered": 0,
+              "displaced": 0,
+              "missing": 0
+            }
+          }
+        }
+      }
+    },
+    "final": {
+      "step": 1000,
+      "validation": {
+        "native_node_f1": 0.48290889282309685,
+        "native_edge_f1": 0.15376596299192077,
+        "same_endpoint_chord_common_curve_f1": 0.11296595204913232,
+        "common_anchor_f1": 0.05331064795122643,
+        "common_branch_f1": 0.004458066313736417,
+        "common_curve_f1": 0.1164345266009412,
+        "common_guide_distance_mm": 0.4135879821892693,
+        "common_branch_coverage": 0.0026872690628149142
+      },
+      "elapsed_seconds": 303.27081203099806,
+      "relations": {
+        "1.0": {
+          "predicted_nodes": 3826,
+          "target_nodes": 3517,
+          "matched_nodes": 868,
+          "predicted_edges": 860,
+          "target_edges": 2977,
+          "predicted_edges_with_unmatched_endpoint": 812,
+          "excluded_closed_or_parallel_targets": 0,
+          "supported_target_edges": 2977,
+          "recoverable_edges": 217,
+          "correct_direct_edges": 32,
+          "missing_direct_edges": 185,
+          "node_recall": 0.24680125106624964,
+          "node_precision": 0.2268687924725562,
+          "endpoint_pair_recovery": 0.07289217332885455,
+          "conditional_direct_recall": 0.14746543778801843,
+          "indirect_path": 8,
+          "degree2_chain": 5,
+          "indirect_path_guide_aligned": 6,
+          "arc_bin": [
+            {
+              "bin": 0,
+              "targets": 864,
+              "recoverable": 83,
+              "direct": 20,
+              "endpoint_pair_recovery": 0.09606481481481481,
+              "conditional_direct_recall": 0.24096385542168675
+            },
+            {
+              "bin": 1,
+              "targets": 749,
+              "recoverable": 59,
+              "direct": 6,
+              "endpoint_pair_recovery": 0.0787716955941255,
+              "conditional_direct_recall": 0.1016949152542373
+            },
+            {
+              "bin": 2,
+              "targets": 707,
+              "recoverable": 28,
+              "direct": 5,
+              "endpoint_pair_recovery": 0.039603960396039604,
+              "conditional_direct_recall": 0.17857142857142858
+            },
+            {
+              "bin": 3,
+              "targets": 657,
+              "recoverable": 47,
+              "direct": 1,
+              "endpoint_pair_recovery": 0.0715372907153729,
+              "conditional_direct_recall": 0.02127659574468085
+            }
+          ],
+          "chord_bin": [
+            {
+              "bin": 0,
+              "targets": 869,
+              "recoverable": 82,
+              "direct": 20,
+              "endpoint_pair_recovery": 0.09436133486766399,
+              "conditional_direct_recall": 0.24390243902439024
+            },
+            {
+              "bin": 1,
+              "targets": 743,
+              "recoverable": 60,
+              "direct": 6,
+              "endpoint_pair_recovery": 0.08075370121130551,
+              "conditional_direct_recall": 0.1
+            },
+            {
+              "bin": 2,
+              "targets": 730,
+              "recoverable": 30,
+              "direct": 5,
+              "endpoint_pair_recovery": 0.0410958904109589,
+              "conditional_direct_recall": 0.16666666666666666
+            },
+            {
+              "bin": 3,
+              "targets": 635,
+              "recoverable": 45,
+              "direct": 1,
+              "endpoint_pair_recovery": 0.07086614173228346,
+              "conditional_direct_recall": 0.022222222222222223
+            }
+          ],
+          "candidate_pairs_by_gt_chord": [
+            {
+              "positive_candidates": 82,
+              "positive_selected": 20,
+              "negative_candidates": 31,
+              "negative_selected": 4,
+              "true_positive_rate": 0.24390243902439024,
+              "false_positive_rate": 0.12903225806451613,
+              "precision": 0.8333333333333334
+            },
+            {
+              "positive_candidates": 60,
+              "positive_selected": 6,
+              "negative_candidates": 307,
+              "negative_selected": 6,
+              "true_positive_rate": 0.1,
+              "false_positive_rate": 0.019543973941368076,
+              "precision": 0.5
+            },
+            {
+              "positive_candidates": 30,
+              "positive_selected": 5,
+              "negative_candidates": 545,
+              "negative_selected": 4,
+              "true_positive_rate": 0.16666666666666666,
+              "false_positive_rate": 0.007339449541284404,
+              "precision": 0.5555555555555556
+            },
+            {
+              "positive_candidates": 45,
+              "positive_selected": 1,
+              "negative_candidates": 3364,
+              "negative_selected": 2,
+              "true_positive_rate": 0.022222222222222223,
+              "false_positive_rate": 0.0005945303210463733,
+              "precision": 0.3333333333333333
+            }
+          ]
+        },
+        "2.0": {
+          "predicted_nodes": 3826,
+          "target_nodes": 3517,
+          "matched_nodes": 1799,
+          "predicted_edges": 860,
+          "target_edges": 2977,
+          "predicted_edges_with_unmatched_endpoint": 687,
+          "excluded_closed_or_parallel_targets": 0,
+          "supported_target_edges": 2977,
+          "recoverable_edges": 907,
+          "correct_direct_edges": 112,
+          "missing_direct_edges": 795,
+          "node_recall": 0.5115154961615013,
+          "node_precision": 0.4702038682697334,
+          "endpoint_pair_recovery": 0.3046691299966409,
+          "conditional_direct_recall": 0.12348401323042998,
+          "indirect_path": 24,
+          "degree2_chain": 13,
+          "indirect_path_guide_aligned": 19,
+          "arc_bin": [
+            {
+              "bin": 0,
+              "targets": 864,
+              "recoverable": 273,
+              "direct": 45,
+              "endpoint_pair_recovery": 0.3159722222222222,
+              "conditional_direct_recall": 0.16483516483516483
+            },
+            {
+              "bin": 1,
+              "targets": 749,
+              "recoverable": 252,
+              "direct": 38,
+              "endpoint_pair_recovery": 0.3364485981308411,
+              "conditional_direct_recall": 0.15079365079365079
+            },
+            {
+              "bin": 2,
+              "targets": 707,
+              "recoverable": 187,
+              "direct": 20,
+              "endpoint_pair_recovery": 0.26449787835926447,
+              "conditional_direct_recall": 0.10695187165775401
+            },
+            {
+              "bin": 3,
+              "targets": 657,
+              "recoverable": 195,
+              "direct": 9,
+              "endpoint_pair_recovery": 0.2968036529680365,
+              "conditional_direct_recall": 0.046153846153846156
+            }
+          ],
+          "chord_bin": [
+            {
+              "bin": 0,
+              "targets": 869,
+              "recoverable": 271,
+              "direct": 44,
+              "endpoint_pair_recovery": 0.31185270425776757,
+              "conditional_direct_recall": 0.16236162361623616
+            },
+            {
+              "bin": 1,
+              "targets": 743,
+              "recoverable": 254,
+              "direct": 38,
+              "endpoint_pair_recovery": 0.34185733512786004,
+              "conditional_direct_recall": 0.14960629921259844
+            },
+            {
+              "bin": 2,
+              "targets": 730,
+              "recoverable": 199,
+              "direct": 23,
+              "endpoint_pair_recovery": 0.2726027397260274,
+              "conditional_direct_recall": 0.11557788944723618
+            },
+            {
+              "bin": 3,
+              "targets": 635,
+              "recoverable": 183,
+              "direct": 7,
+              "endpoint_pair_recovery": 0.28818897637795277,
+              "conditional_direct_recall": 0.03825136612021858
+            }
+          ],
+          "candidate_pairs_by_gt_chord": [
+            {
+              "positive_candidates": 271,
+              "positive_selected": 44,
+              "negative_candidates": 104,
+              "negative_selected": 12,
+              "true_positive_rate": 0.16236162361623616,
+              "false_positive_rate": 0.11538461538461539,
+              "precision": 0.7857142857142857
+            },
+            {
+              "positive_candidates": 254,
+              "positive_selected": 38,
+              "negative_candidates": 1065,
+              "negative_selected": 31,
+              "true_positive_rate": 0.14960629921259844,
+              "false_positive_rate": 0.02910798122065728,
+              "precision": 0.5507246376811594
+            },
+            {
+              "positive_candidates": 199,
+              "positive_selected": 23,
+              "negative_candidates": 2181,
+              "negative_selected": 12,
+              "true_positive_rate": 0.11557788944723618,
+              "false_positive_rate": 0.005502063273727648,
+              "precision": 0.6571428571428571
+            },
+            {
+              "positive_candidates": 183,
+              "positive_selected": 7,
+              "negative_candidates": 15516,
+              "negative_selected": 6,
+              "true_positive_rate": 0.03825136612021858,
+              "false_positive_rate": 0.0003866976024748647,
+              "precision": 0.5384615384615384
+            }
+          ]
+        }
+      },
+      "train": {
+        "native_node_f1": 0.5668789808917197,
+        "native_edge_f1": 0.20077469335054873,
+        "same_endpoint_chord_common_curve_f1": 0.1304507200857263,
+        "common_anchor_f1": 0.08030996829869673,
+        "common_branch_f1": 0.01331931300385559,
+        "common_curve_f1": 0.1377977626196755,
+        "common_guide_distance_mm": 0.6137413201942101,
+        "common_branch_coverage": 0.008436944937833037
+      },
+      "node_subtypes": {
+        "val": {
+          "1.0": {
+            "boundary": {
+              "total": 1400,
+              "recovered": 466,
+              "displaced": 397,
+              "missing": 537
+            },
+            "junction": {
+              "total": 1199,
+              "recovered": 264,
+              "displaced": 301,
+              "missing": 634
+            },
+            "termination": {
+              "total": 916,
+              "recovered": 138,
+              "displaced": 167,
+              "missing": 611
+            },
+            "other": {
+              "total": 2,
+              "recovered": 0,
+              "displaced": 1,
+              "missing": 1
+            }
+          },
+          "2.0": {
+            "boundary": {
+              "total": 1400,
+              "recovered": 882,
+              "displaced": 201,
+              "missing": 317
+            },
+            "junction": {
+              "total": 1199,
+              "recovered": 598,
+              "displaced": 193,
+              "missing": 408
+            },
+            "termination": {
+              "total": 916,
+              "recovered": 318,
+              "displaced": 154,
+              "missing": 444
+            },
+            "other": {
+              "total": 2,
+              "recovered": 1,
+              "displaced": 0,
+              "missing": 1
+            }
+          }
+        },
+        "train": {
+          "1.0": {
+            "boundary": {
+              "total": 1127,
+              "recovered": 461,
+              "displaced": 312,
+              "missing": 354
+            },
+            "junction": {
+              "total": 877,
+              "recovered": 281,
+              "displaced": 276,
+              "missing": 320
+            },
+            "termination": {
+              "total": 717,
+              "recovered": 170,
+              "displaced": 152,
+              "missing": 395
+            },
+            "other": {
+              "total": 0,
+              "recovered": 0,
+              "displaced": 0,
+              "missing": 0
+            }
+          },
+          "2.0": {
+            "boundary": {
+              "total": 1127,
+              "recovered": 798,
+              "displaced": 146,
+              "missing": 183
+            },
+            "junction": {
+              "total": 877,
+              "recovered": 600,
+              "displaced": 122,
+              "missing": 155
+            },
+            "termination": {
+              "total": 717,
+              "recovered": 354,
+              "displaced": 120,
+              "missing": 243
+            },
+            "other": {
+              "total": 0,
+              "recovered": 0,
+              "displaced": 0,
+              "missing": 0
+            }
+          }
+        }
+      }
+    }
+  }
+}

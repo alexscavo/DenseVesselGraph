@@ -62,3 +62,38 @@ Implementations: `models/node_refinement.py`, opt-in integration in `models/rela
 ## Smoke completion
 
 All three arms completed their three GPU updates, metrics and image export successfully. The collector passed on the smoke artifacts: batch-order hashes and initial validation scores agree exactly. Frozen parameters/buffers remained unchanged, active heads had finite gradients, and the new head began as the identity. A local-image smoke validation projection was visually inspected. These checks establish execution correctness only; three-update scores are not evidence of benefit. Compact checks: `experiments/ixi_node_refinement/smoke-checks.json`.
+
+
+## Completed results — reviewed 2026-10-19
+
+All jobs exited 0: baseline 6m36s, local_image 6m40s, zero_image 6m10s; collector 2s. Same initial scores and training-batch hashes verified; frozen parameters/buffers unchanged. Results below are on the fixed 128 validation patches, one seed, final update 1000 (not the held-out test set).
+
+| Arm | Node recall 2mm | Node precision 2mm | Native node F1 | Native edge F1 | Common curve F1 |
+|---|---:|---:|---:|---:|---:|
+| Baseline continuation |0.5112|0.4701|0.4857|0.1553|0.1171|
+| Local image refinement |**0.5627**|**0.5171**|**0.5196**|**0.1673**|**0.1676**|
+| Zero-image control |0.5115|0.4702|0.4829|0.1538|0.1164|
+
+Native F1 uses its original benchmark matching; do not derive it directly from the separate position-only 2mm precision/recall columns.
+
+### Interpretation
+
+Local image evidence helps beyond simply adding an MLP: node precision and recall both improve, while the zero-image control stays near baseline. This is evidence for the proposed direction in this pilot, not multi-seed/test-set proof or proof that the 2³ grid alone caused the original problem. The intervention changes coordinate and confidence prediction jointly; their individual contributions remain unisolated.
+
+Relative to baseline, local refinement adds 0.0339 node F1, 0.0120 edge F1, and 0.0505 curve F1. Validation curve F1 rises from 0.1169 initially to 0.1622 at 500 updates and 0.1676 at 1000. Training curve F1 rises from 0.1366 to 0.1882; improvement is not restricted to training patches.
+
+At 2mm, recoverable endpoint pairs increase from 30.20% (baseline final) to 37.96% (local final), but conditional direct relation recall is essentially unchanged: 12.35% versus 12.48%. This supports improved localization/endpoint recovery, not improved relation-head learning (that head was frozen). Conditional populations differ between arms, so this is not a causal relation comparison.
+
+Junction recall improves from 592/1199 (49.37%) to 698/1199 (58.22%); boundary recall from 884/1400 (63.14%) to 946/1400 (67.57%). Interior termination recall remains low: 321/916 (35.04%) versus 334/916 (36.46%). No claim that all node types are solved.
+
+Same-endpoint straight-chord curve F1 improves from 0.1134 to 0.1641, close to the spline gain (0.1171→0.1676). Most geometric improvement therefore appears attributable to corrected endpoints, not extra learned curvature; the spline head was frozen.
+
+### Visual inspection and evidence
+
+Inspected the fixed sample `sample_000040_0078` baseline/local final projection panels directly. Node positions move toward some visible branches, but misplaced points, missing branches and incorrect connections remain. Projection crossings cannot establish anatomical topology. Panels copied to the evidence folder; no favorable example search was performed.
+
+[Comparison table and CSV](../evidence/ixi_node_refinement_20261018/comparison.md), `comparison.csv`, and all-arm `summary.json` preserve results. Fixed-example images: `baseline-sample_000040_0078.png`, `local_image-sample_000040_0078.png` in the same folder. Original predictions and other fixed examples remain in the run directories.
+
+### Next decision (not launched)
+
+Retain local image refinement as a promising node-localization option. Next isolate relations using recovered/GT endpoint pairs, because connectivity remains poor even when endpoints are available. A controlled longer node-refinement continuation can assess stability, but should preserve both controls and validation-based decisions. Do not claim improved curvature or schedule a full training based only on this pilot.
