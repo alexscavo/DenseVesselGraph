@@ -33,3 +33,30 @@ Smoke uses four train/four validation patches. Full job is gated on smoke succes
 ## Submission
 
 Smoke1279545 completed in57seconds with exit0. Full job1279574 follows with afterok dependency. Submission metadata: `experiments/ixi_threshold_calibration/submission.json`.
+
+
+## Completed results — 2026-10-19
+
+Full1279574 completed in40seconds, exit0.256 train/128 validation patches, model frozen. Both selected thresholds were fixed from training before evaluating validation. No unsupported closed/parallel GT was encountered.
+
+| Validation policy | Threshold | Precision | Recall | Positional edge F1 | β0 MAE | β1 MAE |
+|---|---:|---:|---:|---:|---:|---:|
+| Baseline |0.5000|0.1623|0.0477|0.0737|19.2891|1.0391|
+| Train-max-F1 |0.3820|0.1226|0.2338|0.1608|2.3203|19.5234|
+| Train-preserve-precision |0.4977|0.1654|0.0511|0.0780|19.0234|1.0859|
+
+These are full-graph positional edge metrics: all predicted pairs can contribute FPs, including unmatched endpoints. They are not comparable numerically to the recovered-endpoint precision0.686 from report4 or native edge F1 from report3, whose matching protocol differs.
+
+### Interpretation
+
+The lower threshold recovers additional GT edges but introduces many false edges under the declared GT matching. Component count error drops while cycle count error increases strongly. Merely making the graph less fragmented does not establish correct topology. The conservative threshold gives a small validation gain and a small increase in cycle error; it is not a substantial solution. The threshold tradeoff exists on training too: train-max-F1 raises cycle MAE0.9805→16.3555.
+
+Keep the model's production/evaluation default unchanged for now. Focus the next research step on discriminating wrong relations, particularly nearby nonadjacent candidates, and on endpoint errors contributing to false predicted edges. Threshold calibration alone does not justify adopting the F1-maximizing graph. No further jobs launched in this step.
+
+### Inspection method and concrete examples
+
+Inspected [the validation comparison chart](../evidence/ixi_threshold_calibration_20261019/overview.png), generated directly from the saved aggregate metrics. Left bars compare precision/recall/F1; right bars compare component/cycle errors under each fixed threshold. Its visible pattern is rising recall alongside sharply rising cycle error under train-max-F1.
+
+Also inspected the per-patch graph counts for the same two fixed image examples used previously. `sample_000040_0078`: baseline TP0/FP8 becomes TP0/FP17 with train-max-F1; component error falls4→0 while cycle error rises2→7. This illustrates how matching the GT component count can coincide with incorrect extra edges. `sample_000166_0036`: TP remains0, FP rises5→6 and cycle error2→3. The conservative policy leaves these two examples unchanged. These are numerical connectivity audits using the fixed2mm matching convention; anatomical judgments still depend on the image/reference review described in earlier reports.
+
+Tables, per-patch CSV and summary are preserved under `docs/research/evidence/ixi_threshold_calibration_20261019/`. The compressed complete scored pair graphs remain in `experiments/ixi_threshold_calibration/full-1279574/pair-graphs.json.gz` for reinspection without model inference.

@@ -7,5 +7,8 @@
   "smoke_elapsed": "00:00:57",
   "training_patches": 256,
   "validation_patches": 128,
-  "model_updates": false
+  "model_updates": false,
+  "full_state": "COMPLETED",
+  "full_elapsed": "00:00:40",
+  "results_reviewed": true
 }
