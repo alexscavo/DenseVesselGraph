@@ -97,3 +97,10 @@ Inspected the fixed sample `sample_000040_0078` baseline/local final projection 
 ### Next decision (not launched)
 
 Retain local image refinement as a promising node-localization option. Next isolate relations using recovered/GT endpoint pairs, because connectivity remains poor even when endpoints are available. A controlled longer node-refinement continuation can assess stability, but should preserve both controls and validation-based decisions. Do not claim improved curvature or schedule a full training based only on this pilot.
+
+
+## Image inspection: method and observed examples
+
+Use the same fixed validation patch and final update for each arm. The six-panel renderer shows maximum-intensity projections along D/H/W: the top row overlays original GT paths and nodes in orange, and the bottom overlays decoded predicted curves/nodes in cyan. This permits direct visual comparison of displacement, omitted structures and spurious connections on the same input. Projections preserve bright structures across depth, so apparent crossings require slice-level confirmation.
+
+For `sample_000040_0078` at update1000, the local-image variant shifts several nodes/segments toward the bright vessel compared with the baseline; isolated nodes and incorrect small connections remain. The annotated images are preserved as `baseline-sample_000040_0078.png` and `local_image-sample_000040_0078.png` beside the comparison table. Aggregate positional matching shows improved node precision/recall, while conditional relation recall stays nearly constant. Thus the image comparison and metrics support better endpoint placement while identifying connectivity as unresolved.

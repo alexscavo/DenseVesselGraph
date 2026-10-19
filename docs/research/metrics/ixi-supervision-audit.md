@@ -71,3 +71,12 @@ python scripts/audit_ixi_supervision.py \
 ```
 
 Checks: syntax/imports; small physical-coordinate/anisotropic-axis check; voxel-face boundary support, outside exclusion and empty predictions; successful 16-patch run; partition counts add exactly. Initial audit-only bounds and orthogonality checks were corrected for actual voxel-face clipping and affine float precision before recording results. No dataset/model changes. Interactive browser execution was not tested on the cluster; static rendered images were inspected.
+
+
+## Image inspection: method and observed examples
+
+The raw MRI is displayed in its native voxel axes, with grayscale display limits at the patch's 1st/99.5th intensity percentiles. Static panels show the slice with greatest mask area along each axis; the HTML viewer allows adjacent-slice navigation and independent overlay toggles. Cyan contours mark mask foreground; green sampled paths/crosses show GT curves/nodes; magenta marks predictions. Only points within 0.75 voxel of a displayed slice are overlaid.
+
+Inspected static examples: `sample_000012_0032` shows GT paths running inside bright branching structures and predicted points sometimes displaced from them; `sample_000001_0133` shows GT support on multiple bright vessel sections with predictions concentrated on a smaller portion; `sample_000166_0057` shows strong background texture and sparse predictions despite visible reference vessels. `sample_000163_0050` was additionally reviewed after a completeness flag. These views motivate review of possible omissions but do not resolve all anatomy through a complete slice sequence.
+
+Quantitative checks use nearest-voxel mask occupancy, physical nearest-foreground distance, raw intensity sampled at graph points and thickness-aware mask coverage. They complement the displayed image evidence; they are not pixelwise model segmentation predictions.

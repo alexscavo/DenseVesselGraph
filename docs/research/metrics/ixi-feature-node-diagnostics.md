@@ -126,3 +126,10 @@ Direct raw-intensity AP differs from the float fitted scalar readout by 0.000286
 ### Preserved evidence
 
 Reviewed results, CSVs, fitting histories, small fitted probes and the five PNG panels are copied to [the evidence folder](../evidence/ixi_features_nodes_20261018/results.md). The original job output remains intact. This is about 2.5 MB; no detector weights or feature caches were duplicated. The research interpretation above is authoritative over the automatically generated descriptive tables.
+
+
+## Image inspection: method and observed examples
+
+The overview plots measured foreground average precision and GT node outcome fractions. For fixed training/validation examples, panels display raw MRI, the binary mask, node crosses, and spatial foreground scores from fitted linear classifiers. These score maps are obtained by applying each readout to frozen features, trilinearly interpolating logits to the input grid, then applying sigmoid. A single greatest-mask-area slice along axis0 is displayed. Node overlays include points within1.5voxels of the slice. The maps visualize what a small supervised readout can recover from each feature stage.
+
+Inspected `val-sample_000040_0078.png`: the early-CNN map follows the bright curved vessel region, whereas projected-CNN/encoder maps vary smoothly over broad areas. In `val-sample_000166_0036.png`, early-CNN scores also light up a bright tissue boundary outside the vessel mask, showing that fine spatial response does not guarantee vessel specificity. The raw-intensity control highlights bright image structures as expected. These observations agree with the coarse2³ versus early32³ feature grids and motivate resolution-aware interpretation of AP.
