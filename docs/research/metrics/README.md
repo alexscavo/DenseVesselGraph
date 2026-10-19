@@ -18,3 +18,13 @@ Legacy results retain their original definitions. The new suite has its own
 version and output directory. No training or model inference is needed.
 
 - [Generalization audit and plant pretraining recovery](generalization-audit.md): earlier vs final checkpoints, split statistics, and next controlled experiment (2026-10-14).
+
+
+## IXI diagnostic reports — reading order
+
+1. [GT supervision and foreground support](1-ixi-supervision-audit.md).
+2. [Frozen feature probes and node error breakdown](2-ixi-feature-node-diagnostics.md).
+3. [Higher-resolution node refinement](3-ixi-node-refinement-pilot.md).
+4. [Relation isolation and image inspection](4-ixi-relation-isolation.md).
+
+Each report describes its quantitative methods, image inspection method, observed examples and interpretation.

@@ -1,4 +1,4 @@
-# IXI relation isolation — 2026-10-19
+# 4. IXI relation isolation — 2026-10-19
 
 ## Question and submitted design
 
@@ -66,3 +66,37 @@ Cross-family token/image comparisons also differ in fitting population (matched 
 Smoke1278142 completed successfully in1m05s, including feature extraction, all three readout fits, metrics, frozen-state check and figures. Inspected `sample_000040_0078-pairs.png` directly. The cyan positive-pair chord cuts across the inside of a curved reference path, demonstrating why chord-centred sampling can miss part of a tortuous branch. The magenta nonadjacent pair is closer (6.83mm versus13.23mm for this positive) and lies near bright vessel structures in the projections. This is an example of why distance alone can be misleading, while projection overlap still requires depth-aware review. “Nonadjacent” means no direct GT edge; nodes may still be connected through other graph nodes.
 
 The displayed smoke classifier scores come from10 updates on four training patches and are execution checks, not performance conclusions. The example is preserved as [the inspected smoke panel](../evidence/ixi_relation_isolation_20261019/smoke-sample_000040_0078-pairs.png). Full-run panels use the same deterministic selection rule and will carry the fitted1000-update scores.
+
+
+## Completed full diagnostic — 2026-10-19
+
+Full job1278148 completed in44seconds, exit0; verified256 training/128 validation IDs, smoke=false,1000 fitting updates per probe, unchanged frozen state. Feature extraction and small readout fitting share one GPU process.
+
+### Results: recovered-endpoint population
+
+All four rows use the same24,054 validation candidate pairs, with1,130 adjacent pairs (4.70% prevalence).
+
+| Scorer | Training AP | Validation AP | Validation precision @0.5 | Validation recall @0.5 |
+|---|---:|---:|---:|---:|
+| Existing relation head |0.4848|**0.4702**|0.6860|0.1257|
+| Refit relation head |**0.5976**|0.3774|0.2571|0.8142|
+| Geometry-only probe |0.4020|0.4043|0.1505|0.8841|
+| Image+geometry probe |0.4848|0.4261|0.1864|0.8929|
+
+The current relation head contains useful ranking information, but operates at low recall with its existing threshold. Balanced refitting improves training ranking and worsens validation ranking: evidence of a generalization problem in this conditional refit. Its large recall increase is accompanied by lower precision and must not be presented as improved connectivity. New probes trained on balanced pairs are not calibrated at0.5.
+
+### Results: all GT-endpoint pairs
+
+77,550 validation candidates,2,977 positives (3.84% prevalence). Geometry-only AP: train0.3692 / val0.3483. Image+geometry AP: train0.4733 / val0.3505. Added chord-local image information helps fitting but provides little aggregate validation AP gain in this setup. On the matched subset it gives a modest gain over geometry alone (0.4043→0.4261), still below the existing token relation head. Different fitting populations/architectures prevent attributing cross-family gaps solely to features.
+
+Native matched-pair recall is15.62% in the shortest positive arc quartile and3.80% in the longest, consistent with difficulty on long branches. At0.5, nearby-negative FPR on matched pairs is2.44% native,72.10% after token refit,100% geometry-only and89.98% image+geometry. These uncalibrated-probe values expose the precision/recall tradeoff, not a fair final threshold comparison.
+
+### Full-run image observations
+
+Inspected both fixed final panels directly. For `sample_000040_0078`, the adjacent branch bends away from the cyan chord; image scoring raises this positive above the geometry score (0.608 versus0.286), but also assigns the closer nonadjacent pair a high score (0.811 versus0.694). Thus this example visibly illustrates a curved positive missed by simple distance scoring and a nearby distractor that remains difficult. For `sample_000166_0036`, the short positive scores high (image0.895, geometry0.835), while the nonadjacent pair still exceeds0.5 (0.580/0.566). Raw projections show substantial tissue background and can superimpose different vessel depths. Labels come from GT adjacency; projections alone do not verify anatomical connection.
+
+Final panels, exact pair IDs and scores are preserved with the tables under `docs/research/evidence/ixi_relation_isolation_20261019/`. Smoke and full panels have distinct filenames.
+
+### Next research decision
+
+Retain the original relation scorer while testing its operating point with thresholds calibrated on training data and applied unchanged to validation. Its validation AP shows useful ranking that the present cutoff may underuse; quantify the precision/topology cost before changing decoding. Investigate nearby-negative discrimination and image context beyond a straight chord if ranking remains limiting. A repeatable validation benefit from this simple image relation probe has not been established. Keep the successful node-refinement result distinct from these relation results. Further training or threshold experiments have not been launched here.

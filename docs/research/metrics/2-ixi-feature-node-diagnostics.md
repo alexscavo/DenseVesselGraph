@@ -1,8 +1,8 @@
-# IXI feature and node diagnostics — 2026-10-18
+# 2. IXI feature and node diagnostics — 2026-10-18
 
 ## Research question and status
 
-Follow-up to [the supervision audit](ixi-supervision-audit.md). **Completed and inspected.** Smoke 1262339 completed in 1m00s; full diagnostics 1262340 completed in 1m15s (Slurm elapsed, including setup). Both exit 0. The detector remained frozen, including BN buffers.
+Follow-up to [the supervision audit](1-ixi-supervision-audit.md). **Completed and inspected.** Smoke 1262339 completed in 1m00s; full diagnostics 1262340 completed in 1m15s (Slurm elapsed, including setup). Both exit 0. The detector remained frozen, including BN buffers.
 
 - Smoke job **1262339**: four train/four validation patches, 20 probe updates; GPU inference, hooks, frozen-state checks, probe fitting, node accounting and rendering.
 - Full job **1262340**, `afterok:1262339`: 128 training / 64 validation patches, 1000 fixed probe updates. One H100, six CPUs, two-hour allocation (a limit, not a runtime estimate).

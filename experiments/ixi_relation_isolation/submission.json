@@ -11,5 +11,11 @@
   "detector_frozen": true,
   "smoke_state": "COMPLETED",
   "smoke_elapsed": "00:01:05",
-  "smoke_image_inspected": "sample_000040_0078-pairs.png"
+  "smoke_image_inspected": "sample_000040_0078-pairs.png",
+  "full_state": "COMPLETED",
+  "full_elapsed": "00:00:44",
+  "full_images_inspected": [
+    "sample_000040_0078",
+    "sample_000166_0036"
+  ]
 }

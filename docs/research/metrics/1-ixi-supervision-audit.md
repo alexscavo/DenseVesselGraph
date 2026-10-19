@@ -1,4 +1,4 @@
-# IXI supervision and prediction audit — 2026-10-18
+# 1. IXI supervision and prediction audit — 2026-10-18
 
 ## Scope and conclusion
 

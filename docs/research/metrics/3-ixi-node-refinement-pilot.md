@@ -1,8 +1,8 @@
-# IXI higher-resolution node refinement pilot — 2026-10-18
+# 3. IXI higher-resolution node refinement pilot — 2026-10-18
 
 ## Question and design
 
-Follow-up to [frozen feature/node diagnostics](ixi-feature-node-diagnostics.md): can early 32³ CNN features improve node localization compared with the existing node heads fed by transformer tokens derived from a 2³ image grid?
+Follow-up to [frozen feature/node diagnostics](2-ixi-feature-node-diagnostics.md): can early 32³ CNN features improve node localization compared with the existing node heads fed by transformer tokens derived from a 2³ image grid?
 
 Three matched arms from **IXI-only delayed B-spline best checkpoint, step 28170**:
 
