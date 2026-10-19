@@ -27,4 +27,6 @@ version and output directory. No training or model inference is needed.
 3. [Higher-resolution node refinement](3-ixi-node-refinement-pilot.md).
 4. [Relation isolation and image inspection](4-ixi-relation-isolation.md).
 
+5. [Training-calibrated relation thresholds](5-ixi-threshold-calibration.md).
+
 Each report describes its quantitative methods, image inspection method, observed examples and interpretation.
