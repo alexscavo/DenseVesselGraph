@@ -72,6 +72,9 @@ def evaluate(plan, arm, smoke):
     folder=out/f"test-{checkpoint['steps']:06d}"
     baseline=json.loads(Path(plan['baseline_diagnostic']).read_text())
     prediction_diagnostics(folder/'predictions.json',Path(plan['dataset_root']),'test',baseline,core=True)
+    if plan.get('duplicate_nodes'):
+        from scripts.limited_data_support import duplicate_diagnostics
+        duplicate_diagnostics(folder/'predictions.json',Path(plan['dataset_root']),'test')
     write_json(out/'summary.json',dict(checkpoint=str(run/'best.pt'),epoch=checkpoint['epoch'],samples=len(loader.dataset),sample_ids_sha256=plan['test_ids_sha256'] if not smoke else None,metrics_directory=str(folder),metrics=metrics))
     print(json.dumps(metrics))
 

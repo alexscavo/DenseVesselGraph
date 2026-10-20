@@ -1,0 +1,62 @@
+{
+  "seed": 364505,
+  "runs": {
+    "vessel_only": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/limited_botanical_200_20261020/runs/vessels_spline",
+    "leaves_vessels": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/limited_botanical_200_20261020/runs/mixed_spline"
+  },
+  "population_manifest": "experiments/limited_botanical_transfer/population-manifest.json",
+  "test_ids_sha256": "da2198257d23e59101acce5d469e5d9b0cf462f6ef12ed5a34d5eba9fac8c269",
+  "dataset_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/scratch_comparison_10k_300ep/spline",
+  "evaluation_protocol": {
+    "bn_calibration_batches": 0,
+    "checkpoint_loss_components": [
+      "boxes",
+      "class",
+      "cardinality",
+      "nodes",
+      "edges"
+    ],
+    "edge_threshold": null,
+    "interval_epochs": 5,
+    "node_threshold": null,
+    "node_type_degree_caps": false,
+    "node_type_degree_penalty": 0.0,
+    "protocol": {
+      "edge_half_width": 0.1,
+      "f1_iou_threshold": 0.5,
+      "folds": 5,
+      "iou_thresholds": [
+        0.5,
+        0.55,
+        0.6,
+        0.65,
+        0.7,
+        0.75,
+        0.8,
+        0.85,
+        0.9,
+        0.95
+      ],
+      "max_detections": 120,
+      "smd_epsilon": 1e-07,
+      "smd_iterations": 100,
+      "smd_points": 100,
+      "target_node_size": 0.2
+    },
+    "spline_branch_threshold_mm": 1.0,
+    "training_metrics": {
+      "dataset": "synthetic_mri",
+      "enabled": false,
+      "max_samples": 200,
+      "save_best_checkpoint": false,
+      "save_f1_checkpoints": false,
+      "selection_metric": "edge_mAP",
+      "selection_mode": "max"
+    },
+    "validation_visualizations": 4
+  },
+  "output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/limited_botanical_200_20261020/test",
+  "report_root": "experiments/limited_botanical_transfer/results",
+  "baseline_diagnostic": "experiments/spline_learning/metadata/metrics/branch-relations-v1/summary.json",
+  "duplicate_nodes": true
+}

@@ -1,0 +1,133 @@
+{
+  "plan": "experiments/limited_botanical_transfer/plan.yaml",
+  "existing_h100_jobs": [
+    "1332029",
+    "1339159",
+    "1339161",
+    "1339163",
+    "1339164"
+  ],
+  "cpu_correctness_job": "1344027",
+  "concurrency": "Wait for every currently active/pending H100 job; smoke uses one GPU, subsequent arrays use at most two. Whole-array stage barriers prevent overlap.",
+  "jobs": {
+    "smoke": {
+      "id": "1344474",
+      "dependency": "afterok:1344027,afterany:1332029:1339159:1339161:1339163:1339164",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--job-name=limited-smoke",
+        "--time=00:30:00",
+        "--dependency=afterok:1344027,afterany:1332029:1339159:1339161:1339163:1339164",
+        "--export=ALL,GENERALIZATION_CONFIG=experiments/limited_botanical_transfer/plan.yaml,LIMITED_DATA_VERIFY=1",
+        "cluster/jean_zay/plant_generalization.slurm",
+        "verify"
+      ]
+    },
+    "pre25": {
+      "id": "1344475",
+      "dependency": "afterok:1344474",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--job-name=limited-pre25",
+        "--time=12:00:00",
+        "--array=0-1%2",
+        "--dependency=afterok:1344474",
+        "--export=ALL,GENERALIZATION_CONFIG=experiments/limited_botanical_transfer/plan.yaml,LIMITED_DATA_VERIFY=1",
+        "cluster/jean_zay/plant_generalization.slurm",
+        "pretrain",
+        "25"
+      ]
+    },
+    "pre50": {
+      "id": "1344484",
+      "dependency": "afterok:1344475",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--job-name=limited-pre50",
+        "--time=12:00:00",
+        "--array=0-1%2",
+        "--dependency=afterok:1344475",
+        "--export=ALL,GENERALIZATION_CONFIG=experiments/limited_botanical_transfer/plan.yaml,LIMITED_DATA_VERIFY=1",
+        "cluster/jean_zay/plant_generalization.slurm",
+        "pretrain",
+        "50"
+      ]
+    },
+    "fine50": {
+      "id": "1344485",
+      "dependency": "afterok:1344484",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--job-name=limited-fine50",
+        "--time=06:00:00",
+        "--array=1,3%2",
+        "--dependency=afterok:1344484",
+        "--export=ALL,GENERALIZATION_CONFIG=experiments/limited_botanical_transfer/plan.yaml,LIMITED_DATA_VERIFY=1",
+        "cluster/jean_zay/plant_generalization.slurm",
+        "finetune",
+        "50"
+      ]
+    },
+    "fine100": {
+      "id": "1344486",
+      "dependency": "afterok:1344485",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--job-name=limited-fine100",
+        "--time=06:00:00",
+        "--array=1,3%2",
+        "--dependency=afterok:1344485",
+        "--export=ALL,GENERALIZATION_CONFIG=experiments/limited_botanical_transfer/plan.yaml,LIMITED_DATA_VERIFY=1",
+        "cluster/jean_zay/plant_generalization.slurm",
+        "finetune",
+        "100"
+      ]
+    },
+    "test": {
+      "id": "1344487",
+      "dependency": "afterok:1344486",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--job-name=limited-test",
+        "--time=03:00:00",
+        "--array=0-1%2",
+        "--dependency=afterok:1344486",
+        "--export=ALL,EVALUATION_PLAN=experiments/limited_botanical_transfer/evaluation-plan.json,EVALUATION_ARMS=vessel_only:leaves_vessels,LIMITED_DATA_VERIFY=1",
+        "cluster/jean_zay/combined_transfer_test.slurm",
+        "test"
+      ]
+    },
+    "collect": {
+      "id": "1344488",
+      "dependency": "afterok:1344487",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--job-name=limited-collect",
+        "--time=00:10:00",
+        "--dependency=afterok:1344487",
+        "cluster/jean_zay/collect_limited_botanical.slurm"
+      ]
+    }
+  },
+  "source_sha256": {
+    "scripts/train_plant_generalization.py": "ede7ff23b3f24110e6332faa1422c02ba9faf728198deff970e7c0a56363e6e5",
+    "scripts/limited_data_support.py": "6280926afd4a27cdba1cc127cf1da3209b32f36c7344698c1840c76d4797521f",
+    "scripts/limited_botanical_transfer.py": "f5b7b4f65c5ff801ea2ddd735f18bac80e932ac9becc697cac6ab85058ea342d",
+    "experiments/limited_botanical_transfer/plan.yaml": "dff499ed351f6e3cc76f2e969be246a455471f807d891e9d3d0901112831d3ea",
+    "experiments/limited_botanical_transfer/population-manifest.json": "55afb8e2dc0a9e4d72919c7b4dca7748ca8f2324bbab33006358befd2ef99e83"
+  }
+}

@@ -40,7 +40,7 @@ def configuration(plan, arm):
     cfg['experiment'].update(name=arm,seed=plan['seed'])
     cfg['runtime']['workers']=plan['workers']
     cfg['data'].update(train_augmentation=True,batch_size=plan['batch_size'],validation_batch_size=plan['batch_size'])
-    mri=cfg['data']['datasets']['synthetic_mri'];mri.update(train_samples=None,validation_samples=None)
+    mri=cfg['data']['datasets']['synthetic_mri'];mri.update(train_samples=plan.get('train_samples'),validation_samples=None)
     cfg['data']['datasets']={'synthetic_mri':mri}
     if mixed:
         cfg['data']['datasets']['plants']=dict(role='source',root=plan['plant_root'],train_samples=None,validation_samples=None,coordinate_order_on_disk=['y','x'])
@@ -71,7 +71,10 @@ def main():
     p.add_argument('--arm',required=True,choices=['pretrain_mixed','pretrain_vessels','mixed_straight','mixed_spline','vessels_straight','vessels_spline'])
     p.add_argument('--until-epoch',type=int,required=True);p.add_argument('--smoke',action='store_true')
     a=p.parse_args();plan=yaml.safe_load(a.config.read_text())
-    if a.smoke:
+    limited=plan.get('fixed_update_budget',False)
+    if limited and not a.smoke:
+        assert (Path(plan['output_root'])/'SMOKE_PASSED').is_file(), 'Full-batch smoke must pass before training'
+    if a.smoke and not limited:
         plan['plant_root']=str(Path(plan['plant_root']).parent/'plants-smoke')
     cfg=configuration(plan,a.arm)
     pretrain=a.arm.startswith('pretrain_');weighted=cfg['loss']['weights']['spline']>0
@@ -87,7 +90,11 @@ def main():
     mri_train,_=build_data_loaders(mri_cfg)
     manifest=json.loads(Path(plan['population_manifest']).read_text())
     assert [r.sample_id for r in mri_train.dataset.datasets[0].records]==manifest['train_ids']
-    if a.arm=='pretrain_vessels':
+    if limited:
+        from scripts.limited_data_support import budget_loader, Exposures, initialize
+        draws=plan['pretrain_draws_per_epoch'] if pretrain else plan['finetune_draws_per_epoch']
+        train=budget_loader(train,3*plan['batch_size'] if a.smoke else draws,plan['seed'])
+    elif a.arm=='pretrain_vessels':
         generator=torch.Generator().manual_seed(plan['seed'])
         sampler=RandomSampler(train.dataset,replacement=True,num_samples=3*plan['batch_size'] if a.smoke else plan['pretrain_draws_per_epoch'],generator=generator)
         train=DataLoader(train.dataset,batch_size=plan['batch_size'],sampler=sampler,num_workers=plan['workers'],
@@ -100,17 +107,27 @@ def main():
     write_json(out/'dataset-manifest.json',dict(train=dataset_sample_manifest(train.dataset),validation=dataset_sample_manifest(val.dataset)))
     write_json(out/'evaluation-sample-ids.json',ids)
     (out/'resolved-config.yaml').write_text(yaml.safe_dump(cfg))
+    if limited:seed(plan['seed'])  # Dataset construction cannot alter scratch initialization.
     model=build_model(cfg).cuda()
+    initializer=None;initial_digest=None
+    if limited:initializer,initial_digest=initialize(model,plan,pretrain,a.smoke)
     # Identical architecture/initialization in controls; unused curve parameters stay frozen.
     for parameter in model.spline_head.parameters():parameter.requires_grad_(weighted)
     criterion=TransferCriterion(cfg,build_matcher(cfg),model.relation_embed,spline_head=model.spline_head,route='graph_only').cuda()
     optimizer=build_optimizer(cfg,model);scheduler=build_scheduler(cfg,optimizer,len(train))
     start=0;step=0;best=(-1.,-1.);best_epoch=0;initial_weights=None
+    if limited and not pretrain:
+        initial_weights=Path(plan['output_root'])/'runs'/(('smoke-' if a.smoke else '')+'pretrain_'+a.arm.split('_')[0])/'best.pt'
+    exposure=Exposures(train) if limited else None
     if (out/'latest.pt').exists() and not a.smoke:
         checkpoint=load_checkpoint_file(out/'latest.pt');model.load_state_dict(checkpoint['net'])
         optimizer.load_state_dict(checkpoint['optimizer']);scheduler.load_state_dict(checkpoint['scheduler'])
         start=checkpoint['epoch'];step=checkpoint['steps'];best=tuple(checkpoint['best_score']);best_epoch=checkpoint['best_epoch']
         restore_rng(checkpoint['rng'],train)
+        if limited:
+            train.sampler.sampler.generator.set_state(checkpoint['sampling_rng'])
+            exposure=Exposures(train,checkpoint['exposure'])
+            assert exposure.updates==step
     elif not pretrain:
         initial_weights=Path(plan['output_root'])/'runs'/(('smoke-' if a.smoke else '')+'pretrain_'+a.arm.split('_')[0])/'best.pt'
         checkpoint=load_checkpoint_file(initial_weights)
@@ -119,10 +136,14 @@ def main():
         report=model.load_state_dict(state,strict=False)
         assert not report.unexpected_keys and all(k.startswith('spline_head.') for k in report.missing_keys)
     write_json(out/'provenance.json',dict(arm=a.arm,pretrain=pretrain,initial_weights=str(initial_weights),
-        seed=plan['seed'],draws_per_epoch=train.sampler.num_samples if pretrain else len(train.dataset),source=plan,
+        seed=plan['seed'],draws_per_epoch=train.sampler.num_samples if pretrain or limited else len(train.dataset),source=plan,
         gradient_route='graph_only',plant_geometry_supervised=False,
         best_selection='validation common_branch_f1 then native_edge_f1, unchanged from previous paired study',
-        bn='training statistics during updates; saved running statistics during evaluation'))
+        bn='training statistics during updates; saved running statistics during evaluation',
+        **(dict(common_initializer=initializer,initial_detector_spline_sha256=initial_digest,
+                resumed_at_update=step,
+                fixed_stage_updates=len(train)*cfg['training']['epochs'],
+                full_batch_size=plan['batch_size']) if limited else {})))
     cfg['tracking']['enabled']=not a.smoke
     tracker=build_tracker(cfg,out,resume=start>0,launch_metadata={'arm':a.arm})
     started=time.monotonic();epoch=start;history=[]
@@ -130,7 +151,8 @@ def main():
     target_root=Path(mri_cfg['data']['datasets']['synthetic_mri']['root'])
     def payload():
         return dict(net=model.state_dict(),config=cfg,epoch=epoch,steps=step,optimizer=optimizer.state_dict(),
-            scheduler=scheduler.state_dict(),rng=capture_rng(train),best_score=best,best_epoch=best_epoch)
+            scheduler=scheduler.state_dict(),rng=capture_rng(train),best_score=best,best_epoch=best_epoch,
+            **(dict(exposure=exposure.state(),sampling_rng=train.sampler.sampler.generator.get_state()) if limited else {}))
     def monitor():
         nonlocal best,best_epoch
         with monitoring_rng():
@@ -143,7 +165,8 @@ def main():
         score=(metrics['common_branch_f1'],metrics['native_edge_f1'])
         if score>best:
             best=score;best_epoch=epoch;atomic_checkpoint(out/'best.pt',payload())
-        row=dict(epoch=epoch,step=step,elapsed_seconds=time.monotonic()-started,validation=metrics,train=train_metrics,relation_diagnostic=relation,best_epoch=best_epoch)
+        row=dict(epoch=epoch,step=step,elapsed_seconds=time.monotonic()-started,validation=metrics,train=train_metrics,relation_diagnostic=relation,best_epoch=best_epoch,
+                 **(dict(exposure=exposure.summary()) if limited else {}))
         history.append(row)
         with (out/'history.jsonl').open('a') as f:f.write(json.dumps(row)+'\n')
         print(json.dumps(row),flush=True)
@@ -152,10 +175,17 @@ def main():
         limit=min(a.until_epoch,cfg['training']['epochs'])
         stop=False
         for epoch in range(start+1,limit+1):
+            epoch_losses={};epoch_batches=0
             for batch_index,batch in enumerate(train):
                 step+=1
                 if a.smoke:torch.cuda.reset_peak_memory_stats();torch.cuda.synchronize();batch_started=time.monotonic()
                 loss=train_step(model,criterion,optimizer,scheduler,batch,cfg,'cuda',epoch=epoch,iteration=step,total_iterations=len(train)*cfg['training']['epochs'])
+                if limited:
+                    assert loss is not None
+                    exposure.consume(batch_index,batch)
+                    for key,value in loss.items():
+                        if torch.is_tensor(value) and value.numel()==1:epoch_losses[key]=epoch_losses.get(key,0.)+float(value.detach())
+                    epoch_batches+=1
                 if a.smoke:
                     torch.cuda.synchronize()
                     diagnostic=dict(step=step,batch_size=len(batch[2]),seconds=time.monotonic()-batch_started,peak_memory_gib=torch.cuda.max_memory_allocated()/2**30,domain_loss=float(loss['domain'].detach()) if 'domain' in loss else None,domain_labels=batch[-1].tolist())
@@ -171,6 +201,12 @@ def main():
                 if tracker and step%100==0:
                     tracker.log_training({k:float(v.detach()) for k,v in loss.items() if torch.is_tensor(v) and v.numel()==1},iteration=step,epoch=epoch,learning_rate=optimizer.param_groups[0]['lr'])
                 if a.smoke and batch_index==2:break
+            if limited:
+                assert exposure.updates==step
+                with (out/'training-losses.jsonl').open('a') as f:
+                    f.write(json.dumps(dict(epoch=epoch,step=step,losses={k:v/epoch_batches for k,v in epoch_losses.items()},
+                                           learning_rate=optimizer.param_groups[0]['lr'],exposure=exposure.summary()))+'\n')
+                write_json(out/'exposure.json',exposure.state())
             if a.smoke or epoch%plan['monitor_epochs']==0 or epoch==limit:
                 monitor()
                 stop=plan.get('early_stopping',True) and not pretrain and epoch>=plan['min_finetune_epochs'] and epoch-best_epoch>=plan['patience_epochs']
@@ -196,7 +232,11 @@ def main():
                     best_metrics=geometry(model,full,mri_cfg,best_output,best_checkpoint['steps'],None,best_checkpoint['epoch'],True)
                     write_json(out/'best-full-validation.json',best_metrics)
                     prediction_diagnostics(best_output/f"validation-{best_checkpoint['steps']:06d}"/'predictions.json',target_root,'val',baseline,core=True)
-            write_json(out/'summary.json',dict(epoch=epoch,steps=step,early_stopped=stop,train=train_metrics,best_epoch=best_epoch))
+                    if limited:
+                        from scripts.limited_data_support import duplicate_diagnostics
+                        duplicate_diagnostics(best_output/f"validation-{best_checkpoint['steps']:06d}"/'predictions.json',target_root,'val')
+            write_json(out/'summary.json',dict(epoch=epoch,steps=step,early_stopped=stop,train=train_metrics,best_epoch=best_epoch,
+                                             **(dict(exposure=exposure.summary()) if limited else {})))
             if not a.smoke:(out/'COMPLETE').write_text('complete\n')
         if tracker:tracker.finish()
     except BaseException:

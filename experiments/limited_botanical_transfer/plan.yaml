@@ -1,0 +1,40 @@
+{
+  "base_config": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/runs/scratch_extend300_20261012/detached_spline/epoch300/resolved-config.yaml",
+  "population_manifest": "experiments/limited_botanical_transfer/population-manifest.json",
+  "evaluation_membership_run": "experiments/limited_botanical_transfer",
+  "output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/limited_botanical_200_20261020",
+  "plant_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/HALVS_DATASET/patches_3d_transfer_20261015/leaves-k8",
+  "seed": 364505,
+  "pretrain_epochs": 50,
+  "finetune_epochs": 100,
+  "pretrain_draws_per_epoch": 50016,
+  "batch_size": 32,
+  "workers": 4,
+  "monitor_epochs": 5,
+  "patience_epochs": 30,
+  "min_finetune_epochs": 30,
+  "spline_weight": 1.4739989612791453,
+  "learning_rate": 7e-05,
+  "tracking_group": "limited-botanical-200-20261020",
+  "augmentation": {
+    "rotate_90": true,
+    "gaussian_noise_probability": 0.35,
+    "gaussian_noise_max_std": 0.015,
+    "zoom": false
+  },
+  "domain_adaptation": {
+    "enabled": false,
+    "weight": 1.0,
+    "class_weights": [
+      0.05,
+      0.95
+    ],
+    "learning_rate": 7e-05
+  },
+  "early_stopping": false,
+  "train_samples": 200,
+  "fixed_update_budget": true,
+  "domain_policy": "none",
+  "finetune_draws_per_epoch": 10016,
+  "source_augmentation": {}
+}

@@ -17,9 +17,16 @@ export GNBM_REPO_DIR="$SLURM_SUBMIT_DIR"
 export UV_CACHE_DIR="$GNBM_REPO_DIR/.cache/uv" TORCH_EXTENSIONS_DIR="$GNBM_REPO_DIR/.cache/torch-extensions"
 export XDG_CACHE_HOME="$GNBM_REPO_DIR/.cache" MPLCONFIGDIR="$GNBM_REPO_DIR/.cache/matplotlib" TMPDIR=/tmp IDR_DEBUG=WARN WANDB_MODE=offline
 unset JOBSCRATCH
+if [[ "${LIMITED_DATA_VERIFY:-0}" == 1 ]]; then
+    export JOBSCRATCH="/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/limited_botanical_200_20261020/runtime/$SLURM_JOB_ID"
+    export TMPDIR="$JOBSCRATCH"
+fi
 source cluster/jean_zay/env.sh
+trap 'if [[ -n "${spline_runtime_dir:-}" ]]; then rm -rf -- "$spline_runtime_dir"; fi' EXIT
 source cluster/jean_zay/stage_spline_runtime.sh
-trap 'rm -rf -- "$spline_runtime_dir"' EXIT
+if [[ "${LIMITED_DATA_VERIFY:-0}" == 1 ]]; then
+    source cluster/jean_zay/ixi_mechanism_runtime.sh
+fi
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
 mode="${1:?verify, test or collect}"
 plan="${EVALUATION_PLAN:-experiments/combined_pretraining/evaluation-plan.json}"
