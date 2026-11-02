@@ -63,6 +63,9 @@ class MSDeformAttn(nn.Module):
         self.n_heads = n_heads
         self.n_points = n_points
         self.use_cuda_extension = bool(use_cuda_extension)
+        self.disable_fine = False  # Diagnostic intervention; no saved parameters.
+        self.fine_logit_offset = 0.0  # Optional fixed warm-in, zero at saved final inference.
+        self.record_level_diagnostics = False
 
         self.sampling_offsets = nn.Linear(d_model, n_heads * n_levels * n_points * 3)   # 3 -> offset of ref coords 
         self.attention_weights = nn.Linear(d_model, n_heads * n_levels * n_points)
@@ -122,7 +125,14 @@ class MSDeformAttn(nn.Module):
 
         sampling_offsets = self.sampling_offsets(query).view(N, Len_q, self.n_heads, self.n_levels, self.n_points, 3)   # [Batch, AllLvlPatches, NumHeads, Lvls, NumPoints, Offset]
 
-        attention_weights = self.attention_weights(query).view(N, Len_q, self.n_heads, self.n_levels * self.n_points)
+        attention_weights = self.attention_weights(query).view(N, Len_q, self.n_heads, self.n_levels, self.n_points)
+        if self.n_levels > 1 and self.fine_logit_offset:
+            attention_weights = attention_weights.clone()
+            attention_weights[..., 1:, :] += self.fine_logit_offset
+        if self.disable_fine and self.n_levels > 1:
+            attention_weights = attention_weights.clone()
+            attention_weights[..., 1:, :] = -torch.inf
+        attention_weights = attention_weights.flatten(-2)
         attention_weights = F.softmax(attention_weights, -1).view(N, Len_q, self.n_heads, self.n_levels, self.n_points) # [Batch, AllLvlPatches, NumHeads, Lvls, NumPoints]
 
         if reference_points.shape[-1] == 2:
@@ -140,6 +150,11 @@ class MSDeformAttn(nn.Module):
                 "Last dimension of reference_points must be 2 or 3, "
                 f"got {reference_points.shape[-1]}"
             )
+
+        if self.record_level_diagnostics:
+            self.last_level_mass = attention_weights.detach().mean((0, 1, 2)).sum(-1)
+            inside = ((sampling_locations >= 0) & (sampling_locations <= 1)).all(-1)
+            self.last_inside_mass = (attention_weights.detach() * inside).mean((0, 1, 2)).sum(-1)
 
         if self.use_cuda_extension:
             if not value.is_cuda:

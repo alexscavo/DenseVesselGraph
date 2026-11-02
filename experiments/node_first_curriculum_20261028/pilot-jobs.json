@@ -1,0 +1,78 @@
+{
+  "stage": "pilot",
+  "submitted_at": "2026-10-28T18:57:53+0100",
+  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-node-first-curriculum-20261028",
+  "initializers": "random step0; no pretrained graph weights",
+  "max_h100": 2,
+  "shared_global_limit": 2,
+  "queue_at_submission": "1670234|native2d-long-data|PENDING|N/A|cpu_p1",
+  "prior_gpu_jobs": [],
+  "updates": 15640,
+  "seeds": [
+    364505
+  ],
+  "training_walltime": "03:00:00",
+  "jobs": {
+    "gpu_smoke": {
+      "id": "1670253",
+      "options": [
+        "--time=00:40:00"
+      ],
+      "arguments": [
+        "smoke"
+      ]
+    },
+    "cpu_smoke": {
+      "id": "1670254",
+      "options": [
+        "--dependency=afterok:1670253",
+        "--kill-on-invalid-dep=yes",
+        "--time=00:40:00"
+      ],
+      "arguments": [
+        "smoke"
+      ]
+    },
+    "training": {
+      "id": "1670255",
+      "options": [
+        "--array=0-1%2",
+        "--time=03:00:00",
+        "--dependency=afterok:1670254",
+        "--kill-on-invalid-dep=yes"
+      ],
+      "arguments": [
+        "train",
+        "--stage",
+        "pilot"
+      ]
+    },
+    "evaluation": {
+      "id": "1670256",
+      "options": [
+        "--array=0-1%2",
+        "--dependency=aftercorr:1670255",
+        "--kill-on-invalid-dep=yes"
+      ],
+      "arguments": [
+        "arm",
+        "--stage",
+        "pilot"
+      ]
+    },
+    "collector": {
+      "id": "1670257",
+      "options": [
+        "--dependency=afterok:1670256",
+        "--kill-on-invalid-dep=yes"
+      ],
+      "arguments": [
+        "collect",
+        "--stage",
+        "pilot",
+        "--auto-promote"
+      ]
+    }
+  },
+  "all_accepted": true
+}

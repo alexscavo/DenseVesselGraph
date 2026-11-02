@@ -1,0 +1,32 @@
+# Loaded by native2d.config.load_config, preserving the 3D loader and defaults.
+experiment:
+  name: native2d_correctness
+  seed: 364505
+data:
+  spatial_dims: 2
+  image_size: [128, 128]
+model:
+  encoder:
+    backbone: resnet101
+    init_weights: null
+    train_all: true
+  decoder:
+    hidden_dim: 512
+    attention_heads: 8
+    encoder_layers: 3
+    decoder_layers: 3
+    feature_levels: 4
+    object_queries: 80
+    relation_tokens: 5
+    feedforward_dim: 1024
+    dropout: 0.1
+    relation_attention: false
+  node_refinement:
+    enabled: false
+    radius_pixels: 4.0
+    image_mode: full
+  spline:
+    enabled: true
+    controls: 8
+    samples: 64
+    gradient_route: graph_only

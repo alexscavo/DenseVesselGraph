@@ -1,0 +1,6 @@
+1670256_1|node-first-cpu|PENDING|aftercorr:1670255_*(unfulfilled)|N/A
+1670257|node-first-cpu|PENDING|afterok:1670256_*(unfulfilled)|N/A
+1670256_0|node-first-cpu|PENDING|aftercorr:1670255_*(unfulfilled)|N/A
+1670254|node-first-cpu|PENDING|afterok:1670253(unfulfilled)|N/A
+1670255_[0-1%2]|node-first-gpu|PENDING|afterok:1670254(unfulfilled)|gres/gpu:1
+1670253|node-first-gpu|PENDING|(null)|gres/gpu:1

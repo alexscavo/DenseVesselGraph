@@ -55,6 +55,7 @@ def build_parser():
     parser.add_argument("--png", action="store_true", help="Also write a PNG via Plotly/Kaleido when available")
     parser.add_argument("--error-analysis", action="store_true", help="Overlay likely node/edge errors using visualization-time matching")
     parser.add_argument("--match-distance", type=float, default=0.1, help="Maximum normalized D/H/W distance for visualization-time node matching")
+    parser.add_argument("--paired", action="store_true", help="Show segmentation + GT beside segmentation + prediction with linked 3D cameras")
     return parser
 
 
@@ -70,7 +71,7 @@ def _list_records(records):
         print(f"{str(record.get('sample_id', '')):<18} {record.get('source_sample_id', '')}")
 
 
-def _add_mri_slices(figure, volume, *, visible):
+def _add_mri_slices(figure, volume, *, visible, scene="scene"):
     import plotly.graph_objects as go
 
     depth, height, width = volume.shape
@@ -90,12 +91,12 @@ def _add_mri_slices(figure, volume, *, visible):
         figure.add_trace(go.Surface(
             x=x, y=y, z=z, surfacecolor=values, colorscale="Gray",
             cmin=float(low), cmax=float(high), opacity=0.38, showscale=False,
-            name="MRI slices", legendgroup="mri", showlegend=index == 0,
-            visible=visible, hovertemplate=f"MRI {plane}<extra></extra>",
+            name="MRI slices", legendgroup="mri", showlegend=index == 0 and scene == "scene",
+            visible=visible, scene=scene, hovertemplate=f"MRI {plane}<extra></extra>",
         ))
 
 
-def _add_segmentation(figure, segmentation, *, visible):
+def _add_segmentation(figure, segmentation, *, visible, scene="scene"):
     import plotly.graph_objects as go
 
     mask = np.asarray(segmentation) > 0.5
@@ -110,6 +111,7 @@ def _add_segmentation(figure, segmentation, *, visible):
         i=faces[:, 0], j=faces[:, 1], k=faces[:, 2],
         color="#77aa88", opacity=0.20, flatshading=True,
         name="Segmentation", legendgroup="segmentation", visible=visible,
+        showlegend=scene == "scene", scene=scene,
         hoverinfo="skip",
     ))
 
@@ -122,7 +124,7 @@ def _edge_coordinates(nodes_xyz, edges):
     return x, y, z
 
 
-def _add_graph(figure, nodes_xyz, edges, *, scores=None, edge_scores=None, color, name, visible):
+def _add_graph(figure, nodes_xyz, edges, *, scores=None, edge_scores=None, color, name, visible, scene="scene"):
     import plotly.graph_objects as go
 
     if len(edges):
@@ -151,7 +153,7 @@ def _add_graph(figure, nodes_xyz, edges, *, scores=None, edge_scores=None, color
             figure.add_trace(go.Scatter3d(
                 x=x, y=y, z=z, mode="lines", text=hover,
                 line={"color": edge_color, "width": width},
-                name=f"{name} edges", legendgroup=name, visible=visible,
+                name=f"{name} edges", legendgroup=name, visible=visible, scene=scene,
                 showlegend=group_index == 0,
                 hovertemplate="%{text}<extra></extra>" if hover else None,
                 hoverinfo=None if hover else "skip",
@@ -165,11 +167,11 @@ def _add_graph(figure, nodes_xyz, edges, *, scores=None, edge_scores=None, color
         figure.add_trace(go.Scatter3d(
             x=nodes_xyz[:, 0], y=nodes_xyz[:, 1], z=nodes_xyz[:, 2], mode="markers",
             marker=marker, text=hover, hovertemplate="%{text}<extra></extra>" if hover else None,
-            name=f"{name} nodes", legendgroup=name, visible=visible,
+            name=f"{name} nodes", legendgroup=name, visible=visible, scene=scene,
         ))
 
 
-def _add_error_overlays(figure, classification, predicted_xyz, gt_xyz):
+def _add_error_overlays(figure, classification, predicted_xyz, gt_xyz, *, scene="scene"):
     import plotly.graph_objects as go
 
     def nodes(indices, coordinates, color, name, symbol):
@@ -179,7 +181,7 @@ def _add_error_overlays(figure, classification, predicted_xyz, gt_xyz):
         figure.add_trace(go.Scatter3d(
             x=points[:, 0], y=points[:, 1], z=points[:, 2], mode="markers",
             marker={"size": 9, "color": color, "symbol": symbol, "line": {"color": "black", "width": 1}},
-            name=name, legendgroup="likely-errors",
+            name=name, legendgroup="likely-errors", scene=scene,
         ))
 
     def edges(edge_values, coordinates, color, name, dash="solid"):
@@ -188,7 +190,7 @@ def _add_error_overlays(figure, classification, predicted_xyz, gt_xyz):
         x, y, z = _edge_coordinates(coordinates, edge_values)
         figure.add_trace(go.Scatter3d(
             x=x, y=y, z=z, mode="lines", line={"color": color, "width": 7, "dash": dash},
-            name=name, legendgroup="likely-errors", hoverinfo="skip",
+            name=name, legendgroup="likely-errors", hoverinfo="skip", scene=scene,
         ))
 
     nodes(classification.unmatched_predicted_nodes, predicted_xyz, "#ff8c00", "Likely node FP", "x")
@@ -215,13 +217,95 @@ def _metadata_html(record, provenance, gt_nodes, gt_edges, prediction, args):
     note = ""
     if args.error_analysis:
         note = f"<p><strong>Error overlay:</strong> visualization-time one-to-one Euclidean matching in normalized D/H/W, maximum distance {args.match_distance:g}. This is not the official evaluation or training Hungarian assignment.</p>"
-    return f"<h1>SyntheticMRI graph prediction</h1><table>{rows}</table>{note}<h2>Exported per-sample metrics</h2><table>{metric_rows or '<tr><td>None</td></tr>'}</table>"
+    if args.paired:
+        note = '<p><label><input id="link-cameras" type="checkbox" checked> Link 3D cameras</label> — rotate, pan, or zoom either view. Uncheck to move them independently.</p>' + note
+    return f"<h1>Vessel graph prediction</h1><table>{rows}</table>{note}<h2>Exported per-sample metrics</h2><table>{metric_rows or '<tr><td>None</td></tr>'}</table>"
 
 
-def _write_html(path, figure, metadata):
+def _write_html(path, figure, metadata, *, sync_cameras=False):
     plot = figure.to_html(full_html=False, include_plotlyjs=True, config={"responsive": True, "displaylogo": False})
-    document = f"""<!doctype html><html><head><meta charset=\"utf-8\"><title>SyntheticMRI graph prediction</title><style>body{{font-family:system-ui,sans-serif;margin:1.5rem;color:#222}}table{{border-collapse:collapse;margin-bottom:1rem}}th,td{{text-align:left;border:1px solid #ccc;padding:.35rem .55rem}}th{{background:#f3f3f3}}p{{max-width:80rem}}</style></head><body>{metadata}{plot}</body></html>"""
+    camera_sync = ""
+    if sync_cameras:
+        camera_sync = """<script>
+(function bindLinkedCameras() {
+  const graph = document.querySelector('.plotly-graph-div');
+  if (!graph || typeof graph.on !== 'function') {
+    setTimeout(bindLinkedCameras, 50);
+    return;
+  }
+  const toggle = document.getElementById('link-cameras');
+  let syncing = false;
+  toggle.addEventListener('change', function () {
+    if (!toggle.checked || !graph.layout.scene.camera) return;
+    syncing = true;
+    Promise.resolve(Plotly.relayout(graph, {'scene2.camera': graph.layout.scene.camera}))
+      .finally(function () { syncing = false; });
+  });
+  graph.on('plotly_relayout', function (update) {
+    if (syncing || !toggle.checked) return;
+    const keys = Object.keys(update);
+    const source = ['scene', 'scene2'].find(function (name) {
+      return keys.some(function (key) {
+        return key === name + '.camera' || key.startsWith(name + '.camera.');
+      });
+    });
+    if (!source) return;
+    const target = source === 'scene' ? 'scene2' : 'scene';
+    const camera = update[source + '.camera'] || graph.layout[source].camera;
+    if (!camera) return;
+    syncing = true;
+    Promise.resolve(Plotly.relayout(graph, {[target + '.camera']: camera}))
+      .finally(function () { syncing = false; });
+  });
+})();
+</script>"""
+    document = f"""<!doctype html><html><head><meta charset=\"utf-8\"><title>Vessel graph prediction</title><style>body{{font-family:system-ui,sans-serif;margin:1.5rem;color:#222}}table{{border-collapse:collapse;margin-bottom:1rem}}th,td{{text-align:left;border:1px solid #ccc;padding:.35rem .55rem}}th{{background:#f3f3f3}}p{{max-width:80rem}}</style></head><body>{metadata}{plot}{camera_sync}</body></html>"""
     path.write_text(document, encoding="utf-8")
+
+
+def _write_paired_png(path, segmentation, gt_xyz, gt_edges, predicted_xyz, predicted_edges):
+    """Save a matching static view without requiring a browser or Kaleido."""
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from mpl_toolkits.mplot3d.art3d import Line3DCollection, Poly3DCollection
+    from skimage.measure import marching_cubes
+
+    mask = np.asarray(segmentation) > 0.5
+    if mask.any() and not mask.all():
+        vertices_dhw, faces, _, _ = marching_cubes(mask.astype(np.float32), level=0.5)
+        vertices = vertices_dhw[:, [2, 1, 0]]
+        stride = max(1, len(faces) // 12000)
+        mesh_faces = vertices[faces[::stride]]
+    else:
+        mesh_faces = None
+
+    depth, height, width = mask.shape
+    figure = plt.figure(figsize=(14, 7), constrained_layout=True)
+    for panel, (nodes, edges, color, title) in enumerate((
+        (gt_xyz, gt_edges, "#d62728", "Segmentation + ground truth"),
+        (predicted_xyz, predicted_edges, "#1f77b4", "Segmentation + prediction"),
+    ), start=1):
+        axis = figure.add_subplot(1, 2, panel, projection="3d")
+        if mesh_faces is not None:
+            axis.add_collection3d(Poly3DCollection(
+                mesh_faces, facecolor="#77aa88", edgecolor="none", alpha=0.12
+            ))
+        if len(edges):
+            axis.add_collection3d(Line3DCollection(
+                nodes[np.asarray(edges, dtype=np.int64)], colors=color,
+                linewidths=0.8, alpha=0.85,
+            ))
+        if len(nodes):
+            axis.scatter(*nodes.T, color=color, s=8, depthshade=False)
+        axis.set(xlim=(0, width), ylim=(0, height), zlim=(0, depth),
+                 xlabel="X / W", ylabel="Y / H", zlabel="Z / D")
+        axis.set_box_aspect((width, height, depth))
+        axis.view_init(elev=22, azim=-58)
+        axis.set_title(f"{title}\n{len(nodes)} nodes · {len(edges)} edges")
+    figure.savefig(path, dpi=180)
+    plt.close(figure)
 
 
 def main(argv=None):
@@ -255,37 +339,61 @@ def main(argv=None):
     import plotly.graph_objects as go
 
     figure = go.Figure()
-    _add_mri_slices(figure, raw, visible=args.show_mri)
-    _add_segmentation(figure, segmentation, visible=args.show_segmentation)
-    _add_graph(figure, gt_xyz, gt_edges, color="#d62728", name="Ground truth", visible=args.show_ground_truth)
-    _add_graph(figure, predicted_xyz, prediction.edges, scores=prediction.node_scores, edge_scores=prediction.edge_scores, color="#1f77b4", name="Prediction", visible=args.show_prediction)
+    if args.paired:
+        for scene in ("scene", "scene2"):
+            _add_mri_slices(figure, raw, visible=args.show_mri, scene=scene)
+            _add_segmentation(figure, segmentation, visible=args.show_segmentation, scene=scene)
+        _add_graph(figure, gt_xyz, gt_edges, color="#d62728", name="Ground truth", visible=args.show_ground_truth, scene="scene")
+        _add_graph(figure, predicted_xyz, prediction.edges, scores=prediction.node_scores, edge_scores=prediction.edge_scores, color="#1f77b4", name="Prediction", visible=args.show_prediction, scene="scene2")
+    else:
+        _add_mri_slices(figure, raw, visible=args.show_mri)
+        _add_segmentation(figure, segmentation, visible=args.show_segmentation)
+        _add_graph(figure, gt_xyz, gt_edges, color="#d62728", name="Ground truth", visible=args.show_ground_truth)
+        _add_graph(figure, predicted_xyz, prediction.edges, scores=prediction.node_scores, edge_scores=prediction.edge_scores, color="#1f77b4", name="Prediction", visible=args.show_prediction)
     if args.error_analysis:
         classification = classify_visualization_errors(prediction.nodes_dhw, prediction.edges, gt_nodes, gt_edges, max_distance=args.match_distance)
-        _add_error_overlays(figure, classification, predicted_xyz, gt_xyz)
+        _add_error_overlays(figure, classification, predicted_xyz, gt_xyz, scene="scene2" if args.paired else "scene")
     depth, height, width = raw.shape
-    figure.update_layout(
-        scene={
-            "xaxis": {"title": "X / W (voxels)", "range": [0, width]},
-            "yaxis": {"title": "Y / H (voxels)", "range": [0, height]},
-            "zaxis": {"title": "Z / D (voxels)", "range": [0, depth]},
-            "aspectmode": "data",
-        },
-        legend={"groupclick": "togglegroup"}, margin={"l": 0, "r": 0, "b": 0, "t": 25}, height=850,
-    )
+    scene_layout = {
+        "xaxis": {"title": "X / W (voxels)", "range": [0, width]},
+        "yaxis": {"title": "Y / H (voxels)", "range": [0, height]},
+        "zaxis": {"title": "Z / D (voxels)", "range": [0, depth]},
+        "aspectmode": "data",
+    }
+    if args.paired:
+        camera = {"eye": {"x": 1.45, "y": 1.45, "z": 1.1}}
+        figure.update_layout(
+            scene={**scene_layout, "domain": {"x": [0, 0.49], "y": [0, 1]}, "camera": camera},
+            scene2={**scene_layout, "domain": {"x": [0.51, 1], "y": [0, 1]}, "camera": camera},
+            annotations=[
+                {"text": "Segmentation + ground truth", "x": 0.245, "y": 1.04, "xref": "paper", "yref": "paper", "showarrow": False},
+                {"text": "Segmentation + prediction", "x": 0.755, "y": 1.04, "xref": "paper", "yref": "paper", "showarrow": False},
+            ],
+            legend={"groupclick": "togglegroup"}, margin={"l": 0, "r": 0, "b": 0, "t": 45}, height=850,
+        )
+    else:
+        figure.update_layout(
+            scene=scene_layout,
+            legend={"groupclick": "togglegroup"}, margin={"l": 0, "r": 0, "b": 0, "t": 25}, height=850,
+        )
     args.output_dir.mkdir(parents=True, exist_ok=True)
     provenance = load_patch_provenance(args.dataset_root, source_id)
     metadata = _metadata_html(record, provenance, gt_nodes, gt_edges, prediction, args)
     stem = source_id + "__" + str(record.get("sample_id", "evaluation"))
     if args.html:
         html_path = args.output_dir / f"{stem}.html"
-        _write_html(html_path, figure, metadata)
+        _write_html(html_path, figure, metadata, sync_cameras=args.paired)
         print(f"Wrote interactive HTML: {html_path}")
     if args.png:
         png_path = args.output_dir / f"{stem}.png"
-        try:
-            figure.write_image(png_path, width=1600, height=1000, scale=1.5)
-        except Exception as error:
-            raise RuntimeError("PNG export requires a working headless Plotly image backend (install a Plotly-compatible Kaleido version). The HTML output is unaffected.") from error
+        if args.paired:
+            _write_paired_png(png_path, segmentation, gt_xyz, gt_edges,
+                              predicted_xyz, prediction.edges)
+        else:
+            try:
+                figure.write_image(png_path, width=1600, height=1000, scale=1.5)
+            except Exception as error:
+                raise RuntimeError("PNG export requires a working headless Plotly image backend (install a Plotly-compatible Kaleido version). The HTML output is unaffected.") from error
         print(f"Wrote static PNG: {png_path}")
     return 0
 

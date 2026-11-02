@@ -1,0 +1,11 @@
+defaults:
+  - finetune_ixi_vessels_q256.yaml
+
+# Continue from epoch 100 to epoch 300 (200 additional epochs). The resume
+# checkpoint's polynomial scheduler is rebased to start this stage at 10% of
+# the original base learning rate, then decay smoothly through epoch 300.
+experiment:
+  name: finetune_ixi_vessels_q256_extend200
+
+training:
+  epochs: 300
