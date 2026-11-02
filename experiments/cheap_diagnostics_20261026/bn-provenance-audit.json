@@ -1,0 +1,299 @@
+{
+  "archive": "/lustre/fsstor/projects/rech/vnc/upz25mj/archives/2026-10-06/job-runs-2026-08.tar.gz",
+  "evaluations_scanned": 32,
+  "enabled_legacy": [
+    {
+      "log": "job-runs/logs/eval3d-from-all_available-wd1_supcl-826640.out",
+      "sha256": "2350bf089a4fb6a1e8c209f028185cce82736ddf4a702988e129c9a7304ca91c",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-roads-only-708435.out",
+      "sha256": "d81942b778de7261c36d5ebd4834e3e58facc975138cbbfd2255423299484ac2",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-baseline-697088.out",
+      "sha256": "5c802c691ab238518378cac6a558691b1ef6fb7b885f0fc410023dab2a7b8429",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-halvs_only-wd1-806212.out",
+      "sha256": "805553e5a6da6cca20e47ae9d185d5dc8a3d5a8b8e20ba01cc650faffdac6e8c",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-all_available_supcl-wd1-827368.out",
+      "sha256": "5a4af7653cb735c14ffe543861d9682d2d0497aeb3fb50ecce27676de71c6410",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-all_available_supcl-wd1_supcl-827524.out",
+      "sha256": "678f3899923c5cc2b09025751fe1d7ce354591acc80ea6f67f0712db3bcba768",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-baseline_supcl-lambda1-856700.out",
+      "sha256": "a77d816492c3912d9d5608fcc3bdde68664aa671d003deacebd6c6551a378fc1",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-baseline_supcl-wd1_supcl-822861.out",
+      "sha256": "1eacab341fe80191bdc7b4793a6c7006e1626fe46abd72d317d0d7b26369187c",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-equal-mix-695051.out",
+      "sha256": "285a2c9b52a4c0a945483a6f358754e5076feb1f24f868c9aac96cadf37a763d",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-roads_only-wd1_supcl-821051.out",
+      "sha256": "377e2732e990bfaf968b0034253e53adc125dac566ea6c44dbaa3c8b5929bf7c",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-equal_mix-wd1-808883.out",
+      "sha256": "d8a22ea43f3c693b584db78b1bd8854403fc95606a8d69a7386a3798bf20c085",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-plants-only-695050.out",
+      "sha256": "bf03762d68c267db29133a2eea50d103f142ecf56b47f04fd01684ba1871d30e",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-all_available_supcl-lambda1-868490.out",
+      "sha256": "c3527fa55fdeec16a1a508673f4b8804150250b474b1960491a792412ee188ab",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-all-avail-supcl-776266.out",
+      "sha256": "21b8b6c0f9552e6b151bf2a363ddd39defdd32373ff9a3b3be6a33d7ee480f61",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-baseline-wd1_supcl-818887.out",
+      "sha256": "9772a5649bf880cfdfa0035870e6d15a818074e7e61f36ec4018a4438a91ef66",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-halvs-only-695049.out",
+      "sha256": "712307f91749c005103c8909f5932d05e88041579555a83eb5630f415d14fd0d",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-all-avail-708436.out",
+      "sha256": "2b0b4fd496203d7089f5074a3338a2f7702491d207581c5ffbad194eefb00d4e",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-baseline-supcl-776265.out",
+      "sha256": "9a53e59d0959c0f7218ef738c177fd5c58e323557639c3abd967d38a2a3786a9",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-baseline_supcl-lambda1_supcl-857862.out",
+      "sha256": "cc0471957c0b5c7a200eb395e4333cec18a5bec18a0f010375811eb016196b79",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-all-avail-supcl-both-783961.out",
+      "sha256": "1a18989dff5b4992b9ffe5cb27967c854c276be3adf9b56d2359f23d86bc97d7",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-all_available-wd1-826481.out",
+      "sha256": "16d9939402af4c03c5c496013df17209ef210d12874dad5ff5a4b95c8280c1f0",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-halvs_only-wd1_supcl-806410.out",
+      "sha256": "28c22844adb692a8c36ed8f27d36c53d5d6527697b36102f6ad12fb94e7ac1aa",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-plants_only-wd1_supcl-816547.out",
+      "sha256": "e15e3162bb65a8539861448a29fd8108d4ffdf8caf8117a360c37733d746d748",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-baseline_supcl-wd1-822369.out",
+      "sha256": "f8c9ef103b68f0a7cf123b33e44aae857c3243c68424542cd2f0a83edef1628a",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-equal_mix-wd1_supcl-809087.out",
+      "sha256": "4edb23f1140186342e5bf2955af4cd51df581ba9261f0b5975daa8ebc5ea8f45",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-roads_only-wd1-820297.out",
+      "sha256": "4653eda3e140893623729134c35950df8a99f21505f7eb3f3fb255cf97b314b0",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-all_available_supcl-lambda1_supcl-868963.out",
+      "sha256": "1a1cf53df1280cd502fd847ecb9345d079e41b9b3c12af6f349723f2c0f5e4c4",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-baseline-supcl-both-783850.out",
+      "sha256": "c563854cfcc27227fb89bccbd9d09c4b6625ebb949cf35afad1d5662c0fd68f3",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-baseline-wd1-818988.out",
+      "sha256": "17fc3830adcd124387a3f7bd017f7ee6795877db09cd54d494886cc24737c3bf",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    },
+    {
+      "log": "job-runs/logs/eval3d-from-plants_only-wd1-815889.out",
+      "sha256": "932d088c7015c8d5123a875d7ac31211470d2aa47cdaaf62f9d5b6f8278ef195",
+      "requested": 100,
+      "observed_progress": 32,
+      "loader_batches": 32,
+      "saved_results": true,
+      "calibration_source": "validation loader, legacy implementation"
+    }
+  ],
+  "current_plans": [
+    {
+      "plan": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/plan.json",
+      "bn_calibration_batches": 0,
+      "sha256": "8c1b83531211fdf5e5669720054256570a8c12c32cd9ec401233f1ce3c13948f"
+    },
+    {
+      "plan": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/fine_feature_architecture/plan.json",
+      "bn_calibration_batches": 0,
+      "sha256": "8cfbef57c3d9481fb7a73a5cbf9a48bce3918cc335b84b13616c9c9fb2c52dd3"
+    },
+    {
+      "plan": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/multiscale_pretrained/plan.json",
+      "bn_calibration_batches": 0,
+      "sha256": "12a6e1cd630d8768e322f0a67c2708093ef8909fc9249f80f797408b6b21f705"
+    }
+  ],
+  "notes": [
+    "Legacy calibration used validation images, not training-only.",
+    "Job762225 compared saved versus batch statistics, not post-hoc train-only recalibration.",
+    "BRAVA tiny-set train/eval BN comparison was not recalibration.",
+    "Current training-mode BN updates do not imply evaluation recalibration."
+  ]
+}
