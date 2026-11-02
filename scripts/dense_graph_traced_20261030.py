@@ -38,6 +38,12 @@ TAU = 0.5            # centreline mask threshold
 SEED_RADIUS = 2      # voxels of mask forced around each node so it connects to the centreline
 MAX_ITERS = 320      # geodesic propagation cap (longest BRAVA arc ~ 190 voxels)
 INTERIOR = (6, 14, 22)  # K8 / K16 / K24
+# Opt-in variants (2 Nov 2026); defaults reproduce the original traced model exactly.
+#   soft:         no hard centreline mask; ink may cross any voxel at cost 1/(p+0.05)
+#   knn_fallback: add 16-NN pairs (straight paths) to the traced candidates
+#   gap_features: edge/geometry heads also read centreline-probability statistics along the path
+MODE = dict(soft=False, knn_fallback=True, gap_features=False)
+GAP_FEATURES = 5
 OFFSETS = [(i, j, k) for i in (-1, 0, 1) for j in (-1, 0, 1) for k in (-1, 0, 1) if (i, j, k) != (0, 0, 0)]
 HALF = [o for o in OFFSETS if o > (0, 0, 0)]
 BALL = [(i, j, k) for i in range(-2, 3) for j in range(-2, 3) for k in range(-2, 3) if i * i + j * j + k * k <= SEED_RADIUS ** 2]
@@ -53,7 +59,7 @@ def neighbours(x, fill, offsets=OFFSETS):
 def geodesic_regions(prob, seeds):
     """Geodesic Voronoi labels/distances inside the centreline mask for each patch's seeds."""
     B, dev = prob.shape[0], prob.device
-    mask = prob >= TAU
+    mask = torch.ones_like(prob, dtype=torch.bool) if MODE['soft'] else prob >= TAU
     dist = torch.full_like(prob, float('inf'))
     label = torch.full_like(prob, -1.0)
     ball = torch.tensor(BALL, device=dev)
@@ -203,9 +209,10 @@ def choose_interior(paths_mm, traced):
 
 
 class TracedDenseGraph(D.DenseGraph):
-    def __init__(self, radius=12.0):
+    def __init__(self, radius=12.0, gap_features=False):
         super().__init__('spline', 6, radius)
-        width = self.edge_head[0].in_features + 1  # + traced arc length
+        self.gap_features = gap_features
+        width = self.edge_head[0].in_features + 1 + (GAP_FEATURES if gap_features else 0)  # + arc length (+ gap statistics)
         self.edge_head = nn.Sequential(nn.Linear(width, 256), nn.GELU(), nn.Linear(256, 1))
         del self.geometry_head  # replaced by the per-K heads below
         self.heads = nn.ModuleDict()
@@ -218,7 +225,7 @@ class TracedDenseGraph(D.DenseGraph):
             self.register_buffer(f'basis{m}', basis)
             self.register_buffer(f'greville{m}', greville[1:-1])
 
-    def path_features(self, volume, heat, paths):
+    def path_features(self, volume, heat, paths, prob=None):
         a, b = paths[:, 0], paths[:, -1]
         p24 = resample(paths, L)
         t, u, w = frames(p24)
@@ -231,8 +238,11 @@ class TracedDenseGraph(D.DenseGraph):
         point = F.grid_sample(torch.cat([volume, heat], 0)[None], g, align_corners=True).view(volume.shape[0] + 1, len(paths), 2)
         d = b - a
         arc = (paths[:, 1:] - paths[:, :-1]).norm(dim=-1).sum(-1, keepdim=True)
-        return torch.cat([self.corridor(corridor).flatten(1), d.norm(dim=-1, keepdim=True) / SIZE, d / SIZE,
-                          point[:-1].permute(1, 2, 0).reshape(len(paths), -1), point[-1], arc / SIZE], -1)
+        parts = [self.corridor(corridor).flatten(1), d.norm(dim=-1, keepdim=True) / SIZE, d / SIZE,
+                 point[:-1].permute(1, 2, 0).reshape(len(paths), -1), point[-1], arc / SIZE]
+        if self.gap_features:
+            parts.append(gap_statistics(prob, paths))
+        return torch.cat(parts, -1)
 
     def path_curves(self, x, paths, interior, traced):
         """Adaptive-K B-spline around the path; residuals in path frames (12 vox chord / 4 vox traced)."""
@@ -253,7 +263,27 @@ class TracedDenseGraph(D.DenseGraph):
         return curves
 
 
+@torch.no_grad()
+def gap_statistics(prob, paths):
+    """Centreline probability along each path (64 samples): mean, min, fraction < 0.5,
+    longest run < 0.5 (fraction of the path), log of the mean traversal cost 1/(p+0.05)."""
+    g = (paths / (SIZE - 1) * 2 - 1).flip(-1).view(1, -1, 1, 1, 3)
+    p = F.grid_sample(prob[None, None], g, align_corners=True).view(len(paths), -1)
+    low = p < TAU
+    run = torch.zeros(len(paths), device=p.device)
+    best = torch.zeros_like(run)
+    for j in range(p.shape[1]):
+        run = (run + 1) * low[:, j]
+        best = torch.maximum(best, run)
+    return torch.stack([p.mean(1), p.min(1).values, low.float().mean(1), best / p.shape[1],
+                        torch.log(1.0 / (p + 0.05)).mean(1)], 1)
+
+
 def patch_candidates(cand, metric, contacts):
+    if not MODE['knn_fallback']:
+        if not contacts:
+            return torch.zeros(0, 2, dtype=torch.long, device=cand.device)
+        return torch.tensor(sorted(contacts), dtype=torch.long, device=cand.device)
     knn = D.candidate_pairs(cand @ metric.T)
     keys = {tuple(p) for p in knn.tolist()} | set(contacts)
     if not keys:
@@ -261,17 +291,19 @@ def patch_candidates(cand, metric, contacts):
     return torch.tensor(sorted(keys), dtype=torch.long, device=cand.device)
 
 
-def patch_terms(model, feats, heat, cand, gt_vox, gt_edges, guides, metric, mapping, contacts, dist_b, label_b):
+def patch_terms(model, feats, heat, cand, gt_vox, gt_edges, guides, metric, mapping, contacts, dist_b, label_b, prob_b=None):
     if len(cand) < 2:
         return None
     pairs = patch_candidates(cand, metric, contacts)
+    if len(pairs) == 0:
+        return None
     labels = D.pair_labels(pairs, mapping, gt_edges)
     negatives = torch.nonzero(labels == 0).squeeze(-1)
     if len(negatives) > D.MAX_NEGATIVES:
         keep = torch.cat([torch.nonzero(labels > 0).squeeze(-1), negatives[torch.randperm(len(negatives), device=negatives.device)[:D.MAX_NEGATIVES]]])
         pairs, labels = pairs[keep], labels[keep]
     paths, traced = build_paths(cand, pairs, contacts, dist_b, label_b)
-    x = model.path_features(feats, heat, paths)
+    x = model.path_features(feats, heat, paths, prob_b)
     logits = model.edge_head(x).squeeze(-1)
     pos = labels.sum()
     edge = F.binary_cross_entropy_with_logits(logits, labels, pos_weight=((len(labels) - pos) / pos.clamp_min(1)).clamp(max=20.0))
@@ -302,10 +334,10 @@ def predict(model, ds, device, node_threshold, workers, batch=8):
             metric = geometry[b]['metric'].to(device) / SIZE
             row = dict(nodes=(p / SIZE).cpu().numpy(), node_scores=score.cpu().numpy(), pairs=np.zeros((0, 2), int),
                        edge_scores=None, curves=None, traced=None, interior=None)
-            if len(p) >= 2:
-                pairs = patch_candidates(p, metric, contacts[b])
+            pairs = patch_candidates(p, metric, contacts[b]) if len(p) >= 2 else None
+            if pairs is not None and len(pairs):
                 paths, traced = build_paths(p, pairs, contacts[b], dist[b], label[b])
-                x = model.path_features(feats[b], heat[b], paths)
+                x = model.path_features(feats[b], heat[b], paths, prob[b])
                 interior = choose_interior(to_mm(paths, metric[None].expand(len(paths), 3, 3)), traced)
                 row.update(pairs=pairs.cpu().numpy(), edge_scores=model.edge_head(x).squeeze(-1).sigmoid().cpu().numpy(),
                            curves=(model.path_curves(x, paths, interior, traced) / SIZE).cpu().numpy(),
@@ -355,10 +387,10 @@ def final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final.js
     edge_t = D.select_edge_threshold(train_rows, node_t)
     val_rows = predict(model, val_ds, device, node_t, a.workers, a.eval_batch)
     (out_dir / name.replace('.json', '-validation-rows.pkl')).write_bytes(pickle.dumps(val_rows))
-    traced_share = float(np.mean(np.concatenate([r['traced'] for r in val_rows if r['traced'] is not None])))
-    interior = np.concatenate([r['interior'] for r in val_rows if r['interior'] is not None])
-    result = dict(dataset=a.dataset, model='traced+adaptive', updates=a.updates, batch=a.batch, lr=a.lr,
-                  thresholds=dict(node=node_t, edge=edge_t, policy='train monitor only; candidates = geodesic contacts U 16-NN over retained nodes'),
+    traced_share = float(np.mean(np.concatenate([r['traced'] for r in val_rows if r['traced'] is not None] or [np.zeros(0)])))
+    interior = np.concatenate([r['interior'] for r in val_rows if r['interior'] is not None] or [np.zeros(0, int)])
+    result = dict(dataset=a.dataset, model='traced+adaptive', mode=dict(MODE), updates=a.updates, batch=a.batch, lr=a.lr,
+                  thresholds=dict(node=node_t, edge=edge_t, policy='train monitor only; candidates = geodesic contacts' + (' U 16-NN over retained nodes' if MODE['knn_fallback'] else ' only')),
                   train_monitor=D.evaluate(train_rows, node_t, edge_t), validation=D.evaluate(val_rows, node_t, edge_t),
                   validation_by_arc_length=length_breakdown(val_rows, node_t, edge_t),
                   validation_candidates=dict(traced_fraction=traced_share, interior_histogram={str(m): int((interior == m).sum()) for m in INTERIOR}))
@@ -389,10 +421,14 @@ def main():
     p.add_argument('--smoke', action='store_true')
     p.add_argument('--init-from', type=Path, help='Warm start from a dense-model checkpoint (matching tensors)')
     p.add_argument('--run-name', default=None, help='Output subfolder name')
+    p.add_argument('--soft-tracing', action='store_true', help='No hard centreline mask: cost 1/(p+0.05) everywhere')
+    p.add_argument('--no-knn-fallback', action='store_true', help='Candidates = geodesic contacts only')
+    p.add_argument('--gap-features', action='store_true', help='Edge/geometry heads read centreline statistics along the path')
     p.add_argument('--evaluate-only', action='store_true')
     p.add_argument('--breakdown-rows', type=Path, help='Only compute the arc-length breakdown for saved rows (CPU)')
     p.add_argument('--breakdown-thresholds', type=float, nargs=2)
     a = p.parse_args()
+    MODE.update(soft=a.soft_tracing, knn_fallback=not a.no_knn_fallback, gap_features=a.gap_features)
     if a.breakdown_rows:
         rows = pickle.loads(a.breakdown_rows.read_bytes())
         print(json.dumps(length_breakdown(rows, *a.breakdown_thresholds), indent=1))
@@ -406,7 +442,7 @@ def main():
     if a.smoke:
         train_ids, val_ids, monitor = train_ids[:8], val_ids[:4], train_ids[:4]
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    model = TracedDenseGraph().to(device)
+    model = TracedDenseGraph(gap_features=MODE['gap_features']).to(device)
     if a.evaluate_only:
         model.load_state_dict(torch.load(out_dir / 'model.pt', map_location=device)['model'])
         final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final-v2.json')
@@ -450,7 +486,7 @@ def main():
             for b in range(len(images)):
                 metric = geometry[b]['metric'].to(device) / SIZE
                 res = patch_terms(model, feats[b], heat[b], cands[b], nodes[b].to(device) * SIZE, edges[b].to(device),
-                                  geometry[b]['guides'].to(device) * SIZE, metric, maps[b], contacts[b], dist[b], label[b])
+                                  geometry[b]['guides'].to(device) * SIZE, metric, maps[b], contacts[b], dist[b], label[b], prob[b])
                 if res is None:
                     continue
                 edge_terms.append(res[0])
