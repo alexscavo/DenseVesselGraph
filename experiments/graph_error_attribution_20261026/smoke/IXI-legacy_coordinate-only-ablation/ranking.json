@@ -1,0 +1,146 @@
+[
+  {
+    "case": "IXI-legacy/coordinate-only-ablation",
+    "split": "train",
+    "tolerance": 1.0,
+    "condition": "normal",
+    "candidates": 783,
+    "positives": 20,
+    "conditional_ap": 0.5749355472326251
+  },
+  {
+    "case": "IXI-legacy/coordinate-only-ablation",
+    "split": "train",
+    "tolerance": 1.0,
+    "condition": "delete_unmatched",
+    "candidates": 783,
+    "positives": 20,
+    "conditional_ap": 0.5749355472326251
+  },
+  {
+    "case": "IXI-legacy/coordinate-only-ablation",
+    "split": "train",
+    "tolerance": 1.0,
+    "condition": "raw_spatial_oracle",
+    "candidates": 1467,
+    "positives": 42,
+    "conditional_ap": 0.4174900228727429
+  },
+  {
+    "case": "IXI-legacy/coordinate-only-ablation",
+    "split": "train",
+    "tolerance": 1.0,
+    "condition": "hungarian_selected",
+    "candidates": 751,
+    "positives": 20,
+    "conditional_ap": 0.5909811814646884
+  },
+  {
+    "case": "IXI-legacy/coordinate-only-ablation",
+    "split": "train",
+    "tolerance": 2.0,
+    "condition": "normal",
+    "candidates": 1780,
+    "positives": 51,
+    "conditional_ap": 0.45054297231175533
+  },
+  {
+    "case": "IXI-legacy/coordinate-only-ablation",
+    "split": "train",
+    "tolerance": 2.0,
+    "condition": "delete_unmatched",
+    "candidates": 1780,
+    "positives": 51,
+    "conditional_ap": 0.45054297231175533
+  },
+  {
+    "case": "IXI-legacy/coordinate-only-ablation",
+    "split": "train",
+    "tolerance": 2.0,
+    "condition": "raw_spatial_oracle",
+    "candidates": 2437,
+    "positives": 71,
+    "conditional_ap": 0.40224929186362274
+  },
+  {
+    "case": "IXI-legacy/coordinate-only-ablation",
+    "split": "train",
+    "tolerance": 2.0,
+    "condition": "hungarian_selected",
+    "candidates": 1858,
+    "positives": 50,
+    "conditional_ap": 0.44939277413127005
+  },
+  {
+    "case": "IXI-legacy/coordinate-only-ablation",
+    "split": "val",
+    "tolerance": 1.0,
+    "condition": "normal",
+    "candidates": 3,
+    "positives": 0,
+    "conditional_ap": null
+  },
+  {
+    "case": "IXI-legacy/coordinate-only-ablation",
+    "split": "val",
+    "tolerance": 1.0,
+    "condition": "delete_unmatched",
+    "candidates": 3,
+    "positives": 0,
+    "conditional_ap": null
+  },
+  {
+    "case": "IXI-legacy/coordinate-only-ablation",
+    "split": "val",
+    "tolerance": 1.0,
+    "condition": "raw_spatial_oracle",
+    "candidates": 6,
+    "positives": 3,
+    "conditional_ap": 0.8055555555555556
+  },
+  {
+    "case": "IXI-legacy/coordinate-only-ablation",
+    "split": "val",
+    "tolerance": 1.0,
+    "condition": "hungarian_selected",
+    "candidates": 3,
+    "positives": 0,
+    "conditional_ap": null
+  },
+  {
+    "case": "IXI-legacy/coordinate-only-ablation",
+    "split": "val",
+    "tolerance": 2.0,
+    "condition": "normal",
+    "candidates": 6,
+    "positives": 0,
+    "conditional_ap": null
+  },
+  {
+    "case": "IXI-legacy/coordinate-only-ablation",
+    "split": "val",
+    "tolerance": 2.0,
+    "condition": "delete_unmatched",
+    "candidates": 6,
+    "positives": 0,
+    "conditional_ap": null
+  },
+  {
+    "case": "IXI-legacy/coordinate-only-ablation",
+    "split": "val",
+    "tolerance": 2.0,
+    "condition": "raw_spatial_oracle",
+    "candidates": 13,
+    "positives": 4,
+    "conditional_ap": 0.5845238095238094
+  },
+  {
+    "case": "IXI-legacy/coordinate-only-ablation",
+    "split": "val",
+    "tolerance": 2.0,
+    "condition": "hungarian_selected",
+    "candidates": 6,
+    "positives": 0,
+    "conditional_ap": null
+  }
+]

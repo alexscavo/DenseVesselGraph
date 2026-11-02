@@ -1,0 +1,11 @@
+dataset,split,subject,sample_id,nodes,edges,isolated_nodes,degree1_nodes,degree2_nodes,junction_nodes,boundary_nodes,n07_subset
+IXI,train,IXI_000018,sample_000018_0066,135,134,0,69,0,66,12,False
+IXI,train,IXI_000150,sample_000150_0066,153,153,0,80,0,73,23,True
+IXI,train,IXI_000150,sample_000150_0069,129,128,0,68,0,61,12,False
+IXI,train,IXI_000152,sample_000152_0084,122,121,0,65,0,57,16,False
+IXI,train,IXI_000152,sample_000152_0085,121,123,0,62,0,59,17,False
+IXI,val,IXI_000006,sample_000006_0067,141,144,0,70,0,71,18,False
+IXI,val,IXI_000058,sample_000058_0067,126,124,1,65,0,60,24,False
+IXI,val,IXI_000058,sample_000058_0085,124,123,1,63,0,60,21,True
+IXI,val,IXI_000147,sample_000147_0048,122,118,0,66,0,56,32,False
+IXI,val,IXI_000166,sample_000166_0067,133,128,0,73,0,60,14,False

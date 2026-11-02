@@ -1,0 +1,7 @@
+{
+  "raw_nearest": "maximum cardinality within tolerance then minimum distance",
+  "raw_confidence": "maximum cardinality within tolerance then minimum 1-p+1e-5*distance/(1+tolerance)",
+  "coordinates_replaced": false,
+  "GT_edges_added": false,
+  "relation_scores_changed": false
+}

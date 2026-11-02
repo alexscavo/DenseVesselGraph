@@ -1,0 +1,35 @@
+{
+  "branch": "research/cheap-diagnostics-20261026",
+  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-cheap-diagnostics-20261026",
+  "scope": "cache-only relation analysis and weight-frozen training-only BN inference; no optimization",
+  "bn_output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/cheap_diagnostics_20261026",
+  "datasets": [
+    "IXI",
+    "SyntheticMRI"
+  ],
+  "calibration_patches": 256,
+  "calibration_batch_size": 8,
+  "calibration_batches": 32,
+  "validation_patches": 128,
+  "inference_batch_size": 1,
+  "thresholds": {
+    "node": 0.5,
+    "edge": 0.5
+  },
+  "checkpoints": {
+    "ixi_spline": {
+      "path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_transfer_20261015/runs/ixi_delayed_spline/best.pt",
+      "sha256": "1cd9caf35a3683ef643c541ea4c4d06b247c490a4215d4a250f4519992d68eb3"
+    },
+    "synthetic_spline": {
+      "path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/plant_generalization_20261014_da_b32_w1_restart/runs/vessels_spline/best.pt",
+      "sha256": "06513f58b7b032c9eb4f7be7820312941e7bac08fb97915f263d48f1b894facb",
+      "training_population_manifest": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/scratch_comparison_10k_300ep/comparison-manifest.json",
+      "training_population_manifest_sha256": "31c5cfa2515e09cabb1eb87271cc9d383e990cd0039c9424548073797bebff41"
+    }
+  },
+  "source_plan_sha256": "4fc155630e3f49137204d31560ce97e6eb0433346bccba7aba000360f217d252",
+  "max_concurrent_h100": 1,
+  "global_h100": 2,
+  "training_submitted": false
+}

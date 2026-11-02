@@ -1,0 +1,29 @@
+{
+  "gates": "1653554",
+  "full_training_submitted": true,
+  "global_h100_limit": 2,
+  "gate_qos": "qos_gpu_h100-t3",
+  "qos_change": "not applied; job had already started",
+  "queue_at_submission": "1653861|PENDING|N/A|ixi-components-report\n1653860_[0-5%1]|PENDING|gres/gpu:1|ixi-local-components\n1653859|PENDING|gres/gpu:1|ixi-local-components\n1653858|RUNNING|gres/gpu:1|ixi-local-components",
+  "prior_gpu_jobs": [
+    "1653858",
+    "1653859",
+    "1653860"
+  ],
+  "dependency": "afterok:1653554,afterany:1653858:1653859:1653860",
+  "updates": 6000,
+  "peak_concurrent_h100": 2,
+  "Axyz": "1653991",
+  "collector": "1653994",
+  "dependency_by_arm": {
+    "B0": "afterok:1653554",
+    "Axyz": "afterany:1654241"
+  },
+  "native2d_peak_concurrent_h100": 1,
+  "scheduling_reason": "Verified IXI 1653858 -> 1653859 -> 1653860[0-5%1] uses one H100; native2d serializes in second slot",
+  "queue_at_reschedule": "1653994|PENDING|N/A|native2d-study-report\n1653861|PENDING|N/A|ixi-components-report\n1653991|PENDING|gres/gpu:1|native2d-Axyz\n1653987|PENDING|gres/gpu:1|native2d-B0\n1653860_[0-5%1]|PENDING|gres/gpu:1|ixi-local-components\n1653859|PENDING|gres/gpu:1|ixi-local-components\n1653858|RUNNING|gres/gpu:1|ixi-local-components\n",
+  "aborted_B0": "1653987",
+  "initial_evaluation_fix": "aborted before first optimizer update; skip only curve distances at step0; preserve all trained/final metrics",
+  "B0": "1654241",
+  "collector_dependency": "afterany:1654241:1653991"
+}

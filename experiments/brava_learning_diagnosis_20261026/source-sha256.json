@@ -1,0 +1,10 @@
+{
+  "scripts/brava_learning_audit.py": "ddb1bc4d1ee131a8d3092726e959553f2a319c6e445ea35cf5e54bf660b93865",
+  "scripts/brava_learning_diagnosis.py": "8e07850bff6b3b0b9e07c77392e4777875e139f96e704c134dce51769c79f61b",
+  "scripts/collect_brava_learning_diagnosis.py": "91ed517f2e78afde6f3370a2205e977264e4e173ab97c42563615231c278f3e9",
+  "scripts/show_brava_learning_diagnosis.py": "30ccda184c704e6f91d5827750741d8e451a4cb14914a50f72730b34aa2a7f6f",
+  "scripts/check_brava_learning_augmentation.py": "d44754bc56bc31e72ab32209eb4e573366c2a6023f5c879d79c4a10b99e6e3ab",
+  "tests/test_brava_learning_diagnosis.py": "2ffc6861c31f854f7d2b22e0c38153647565e10011d813d07c4e181d806fad79",
+  "cluster/jean_zay/brava_learning_diagnosis_gpu.slurm": "b4c7bb4c12f102b9a807b5bd3ec6c1bdfc567a954643d220ee1da5d614121dc7",
+  "cluster/jean_zay/brava_learning_diagnosis_cpu.slurm": "7ada21537b21a7762a3a73e3671771e33fd7fb2ad36d692e77c6271a900d34ac"
+}

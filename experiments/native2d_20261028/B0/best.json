@@ -1,0 +1,8 @@
+{
+  "step": 6000,
+  "score": 0.0,
+  "rule": "best trained checkpoint, latest on exact tie",
+  "repaired_after_completion": true,
+  "excluded_initialization": "excluded-initialization.pt",
+  "no_training_or_new_inference": true
+}

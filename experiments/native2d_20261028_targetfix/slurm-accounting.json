@@ -1,0 +1,26 @@
+{
+  "gates": {
+    "job": "1659581",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:01:26"
+  },
+  "B0": {
+    "job": "1659729",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:10:02"
+  },
+  "Axyz": {
+    "job": "1659730",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:08:27"
+  },
+  "collector": {
+    "job": "1659731",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:00:05"
+  }
+}

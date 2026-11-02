@@ -1,0 +1,6 @@
+{
+  "completed": true,
+  "model_updates": 0,
+  "scope": "Report/registry interpretation from collected metrics only; numerical results unchanged.",
+  "outcome": "CNN information used, no convincing R1 advantage, final AP/F1 below R0 in both seeds; confirmation gate failed."
+}

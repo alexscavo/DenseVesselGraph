@@ -1,0 +1,7 @@
+{
+  "B0_training_entrypoint_sha256": "cd97cd99a5c36bdbd8d6b1f467fea227f545d3ca61181cf22cdc0486e3dffb15",
+  "B0_archive": "source-final.zip",
+  "Axyz_training_entrypoint_sha256": "3a2480c3682f7d818be39b1321d78c8a248a9e8948b335c18a5a1bcaadc9e068",
+  "difference": "post-training checkpoint selection only: step0 excluded, ties prefer later trained checkpoint; optimizer/data/loss/initialization identical",
+  "primary_results": "fixed6000 checkpoints, both full506-crop evaluations"
+}

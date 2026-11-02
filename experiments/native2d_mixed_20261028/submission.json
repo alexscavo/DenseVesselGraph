@@ -1,0 +1,64 @@
+{
+  "global_h100_limit": 2,
+  "runs": {
+    "avwide_scratch_B0": "1673549",
+    "avwide_scratch_Axyz": "1673551",
+    "reaver_scratch_B0": "1673553",
+    "reaver_scratch_Axyz": "1673555",
+    "reaver_mixedpretrain_50": "1673557",
+    "reaver_mixed_B0": "1673560",
+    "reaver_mixed_Axyz": "1673562",
+    "octasynth_mixedpretrain_50": "1673564",
+    "octasynth_mixed_B0": "1673566",
+    "avwide_mixedpretrain_50": "1673568",
+    "avwide_mixed_B0": "1673572",
+    "avwide_mixed_Axyz": "1673574",
+    "octasynth_scratch_B0": "1673576",
+    "octasynth_scratch_Axyz": "1673578",
+    "octasynth_mixed_Axyz": "1673580"
+  },
+  "collectors": {
+    "avwide_scratch_B0": "1673550",
+    "avwide_scratch_Axyz": "1673552",
+    "reaver_scratch_B0": "1673554",
+    "reaver_scratch_Axyz": "1673556",
+    "reaver_mixedpretrain_50": "1673558",
+    "reaver_mixed_B0": "1673561",
+    "reaver_mixed_Axyz": "1673563",
+    "octasynth_mixedpretrain_50": "1673565",
+    "octasynth_mixed_B0": "1673567",
+    "avwide_mixedpretrain_50": "1673571",
+    "avwide_mixed_B0": "1673573",
+    "avwide_mixed_Axyz": "1673575",
+    "octasynth_scratch_B0": "1673577",
+    "octasynth_scratch_Axyz": "1673579",
+    "octasynth_mixed_Axyz": "1673581"
+  },
+  "queue_at_gates": "1670256_1|PENDING|N/A|node-first-cpu\n1670257|PENDING|N/A|node-first-cpu\n1670256_0|PENDING|N/A|node-first-cpu\n1670255_0|RUNNING|gres/gpu:1|node-first-gpu\n1670255_1|RUNNING|gres/gpu:1|node-first-gpu",
+  "gates": "1671559",
+  "train_launcher": "1671560",
+  "gate_collector": "1671561",
+  "queue_at_train": "1670257|PENDING|N/A|node-first-cpu\n1670256_0|RUNNING|N/A|node-first-cpu\n1671560|RUNNING|N/A|native2d-long-stage\n1671561|RUNNING|N/A|native2d-long-report\n1670256_1|RUNNING|N/A|node-first-cpu",
+  "lanes": [
+    [
+      "avwide_scratch_B0",
+      "avwide_scratch_Axyz",
+      "reaver_scratch_B0",
+      "reaver_scratch_Axyz",
+      "reaver_mixedpretrain_50",
+      "reaver_mixed_B0",
+      "reaver_mixed_Axyz",
+      "octasynth_mixedpretrain_50",
+      "octasynth_mixed_B0"
+    ],
+    [
+      "avwide_mixedpretrain_50",
+      "avwide_mixed_B0",
+      "avwide_mixed_Axyz",
+      "octasynth_scratch_B0",
+      "octasynth_scratch_Axyz",
+      "octasynth_mixed_Axyz"
+    ]
+  ],
+  "full_training_submitted": true
+}

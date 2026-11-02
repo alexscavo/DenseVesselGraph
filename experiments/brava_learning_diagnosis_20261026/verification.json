@@ -1,0 +1,12 @@
+{
+  "syntax_passed": true,
+  "targeted_tests_passed": 2,
+  "actual_loader_rotation_checks": 256,
+  "real_cache_collector_smoke": true,
+  "initial_smoke_failure_fixed": "float32 self-distance cancellation; use direct float64 pair distances",
+  "gpu_smoke_pending": true,
+  "no_training_submitted": true,
+  "active_gpu_job": "1598848",
+  "active_collector": "1598849",
+  "reports_hash_guarded": true
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "dataset": "IXI",
+    "split": "train",
+    "sample_id": "sample_000000_0003",
+    "nodes": 4,
+    "edges": 2,
+    "vtp_header_parity": true
+  },
+  {
+    "dataset": "IXI",
+    "split": "train",
+    "sample_id": "sample_000150_0066",
+    "nodes": 153,
+    "edges": 153,
+    "vtp_header_parity": true
+  },
+  {
+    "dataset": "IXI",
+    "split": "val",
+    "sample_id": "sample_000001_0005",
+    "nodes": 8,
+    "edges": 5,
+    "vtp_header_parity": true
+  },
+  {
+    "dataset": "IXI",
+    "split": "val",
+    "sample_id": "sample_000006_0067",
+    "nodes": 141,
+    "edges": 144,
+    "vtp_header_parity": true
+  },
+  {
+    "dataset": "BRAVA",
+    "split": "train",
+    "sample_id": "sample_000002_0006",
+    "nodes": 6,
+    "edges": 3,
+    "vtp_header_parity": true
+  },
+  {
+    "dataset": "BRAVA",
+    "split": "train",
+    "sample_id": "sample_000010_0107",
+    "nodes": 64,
+    "edges": 39,
+    "vtp_header_parity": true
+  },
+  {
+    "dataset": "BRAVA",
+    "split": "val",
+    "sample_id": "sample_000000_0006",
+    "nodes": 4,
+    "edges": 2,
+    "vtp_header_parity": true
+  },
+  {
+    "dataset": "BRAVA",
+    "split": "val",
+    "sample_id": "sample_000001_0131",
+    "nodes": 69,
+    "edges": 51,
+    "vtp_header_parity": true
+  }
+]

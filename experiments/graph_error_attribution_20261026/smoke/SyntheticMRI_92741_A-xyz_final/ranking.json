@@ -1,0 +1,146 @@
+[
+  {
+    "case": "SyntheticMRI/92741/A-xyz/final",
+    "split": "train",
+    "tolerance": 1.0,
+    "condition": "normal",
+    "candidates": 91,
+    "positives": 10,
+    "conditional_ap": 0.9999999999999999
+  },
+  {
+    "case": "SyntheticMRI/92741/A-xyz/final",
+    "split": "train",
+    "tolerance": 1.0,
+    "condition": "delete_unmatched",
+    "candidates": 91,
+    "positives": 10,
+    "conditional_ap": 0.9999999999999999
+  },
+  {
+    "case": "SyntheticMRI/92741/A-xyz/final",
+    "split": "train",
+    "tolerance": 1.0,
+    "condition": "raw_spatial_oracle",
+    "candidates": 144,
+    "positives": 12,
+    "conditional_ap": 0.9117003367003367
+  },
+  {
+    "case": "SyntheticMRI/92741/A-xyz/final",
+    "split": "train",
+    "tolerance": 1.0,
+    "condition": "hungarian_selected",
+    "candidates": 111,
+    "positives": 10,
+    "conditional_ap": 0.9999999999999999
+  },
+  {
+    "case": "SyntheticMRI/92741/A-xyz/final",
+    "split": "train",
+    "tolerance": 2.0,
+    "condition": "normal",
+    "candidates": 183,
+    "positives": 16,
+    "conditional_ap": 1.0
+  },
+  {
+    "case": "SyntheticMRI/92741/A-xyz/final",
+    "split": "train",
+    "tolerance": 2.0,
+    "condition": "delete_unmatched",
+    "candidates": 183,
+    "positives": 16,
+    "conditional_ap": 1.0
+  },
+  {
+    "case": "SyntheticMRI/92741/A-xyz/final",
+    "split": "train",
+    "tolerance": 2.0,
+    "condition": "raw_spatial_oracle",
+    "candidates": 240,
+    "positives": 23,
+    "conditional_ap": 0.966565870080526
+  },
+  {
+    "case": "SyntheticMRI/92741/A-xyz/final",
+    "split": "train",
+    "tolerance": 2.0,
+    "condition": "hungarian_selected",
+    "candidates": 211,
+    "positives": 20,
+    "conditional_ap": 1.0
+  },
+  {
+    "case": "SyntheticMRI/92741/A-xyz/final",
+    "split": "val",
+    "tolerance": 1.0,
+    "condition": "normal",
+    "candidates": 141,
+    "positives": 8,
+    "conditional_ap": 0.855006105006105
+  },
+  {
+    "case": "SyntheticMRI/92741/A-xyz/final",
+    "split": "val",
+    "tolerance": 1.0,
+    "condition": "delete_unmatched",
+    "candidates": 141,
+    "positives": 8,
+    "conditional_ap": 0.855006105006105
+  },
+  {
+    "case": "SyntheticMRI/92741/A-xyz/final",
+    "split": "val",
+    "tolerance": 1.0,
+    "condition": "raw_spatial_oracle",
+    "candidates": 202,
+    "positives": 16,
+    "conditional_ap": 0.8435920095906508
+  },
+  {
+    "case": "SyntheticMRI/92741/A-xyz/final",
+    "split": "val",
+    "tolerance": 1.0,
+    "condition": "hungarian_selected",
+    "candidates": 141,
+    "positives": 8,
+    "conditional_ap": 0.855006105006105
+  },
+  {
+    "case": "SyntheticMRI/92741/A-xyz/final",
+    "split": "val",
+    "tolerance": 2.0,
+    "condition": "normal",
+    "candidates": 301,
+    "positives": 25,
+    "conditional_ap": 0.9534388432992553
+  },
+  {
+    "case": "SyntheticMRI/92741/A-xyz/final",
+    "split": "val",
+    "tolerance": 2.0,
+    "condition": "delete_unmatched",
+    "candidates": 301,
+    "positives": 25,
+    "conditional_ap": 0.9534388432992553
+  },
+  {
+    "case": "SyntheticMRI/92741/A-xyz/final",
+    "split": "val",
+    "tolerance": 2.0,
+    "condition": "raw_spatial_oracle",
+    "candidates": 322,
+    "positives": 27,
+    "conditional_ap": 0.874126746228399
+  },
+  {
+    "case": "SyntheticMRI/92741/A-xyz/final",
+    "split": "val",
+    "tolerance": 2.0,
+    "condition": "hungarian_selected",
+    "candidates": 322,
+    "positives": 27,
+    "conditional_ap": 0.9485878502529825
+  }
+]

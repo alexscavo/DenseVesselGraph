@@ -98,3 +98,27 @@ temp/
 /experiments/**/*.out
 /experiments/**/*.err
 *.md.*.lock
+
+# Large data and archives kept on WORK but out of git (projects refactor 2026-11-02)
+/experiments/brava_representation_20261026/predictions/original/001000.zip
+/experiments/brava_representation_20261026/predictions/original/002000.zip
+/experiments/brava_representation_20261026/predictions/original/004000.zip
+/experiments/brava_representation_20261026/predictions/split/001000.zip
+/experiments/brava_representation_20261026/predictions/split/002000.zip
+/experiments/brava_representation_20261026/predictions/split/004000.zip
+/experiments/brava_representation_20261026/targets.pkl
+/experiments/native2d_20261027/prepared/
+/experiments/native2d_20261028/prepared/
+/experiments/native2d_20261028/reaver-diaphragm/
+/experiments/native2d_20261028_targetfix/prepared/
+/experiments/native2d_20261028_targetfix/reaver-diaphragm/
+/experiments/native2d_long_20261028/avwide/
+/experiments/native2d_long_20261028/octasynth/
+/experiments/native2d_long_20261028/octasynth/targets.zip
+/experiments/native2d_long_20261028/plants/
+/experiments/native2d_long_20261028/plants/targets.zip
+/experiments/native2d_long_20261028/reaver/
+/experiments/oracle_representatives_20261026/graph-pairs.csv.gz
+*.pt
+*.pth
+*.ckpt

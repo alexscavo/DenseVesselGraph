@@ -1,0 +1,39 @@
+{
+  "failure": "Audit helper prepended worktree ROOT before GraphCriterion imported models.matcher, caching the legacy five-output model package.",
+  "fix": "Pin frozen models package before helper imports and assert its resolved source location.",
+  "regression_command": "source cluster/jean_zay/env.sh; python scripts/check_r07_checkpoint_loading.py",
+  "reproduced_before_fix": "Constructed (5,128), source (3,128)",
+  "after_fix": {
+    "passed": true,
+    "device": "cpu",
+    "sources": [
+      {
+        "seed": 364505,
+        "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt",
+        "shape": [
+          3,
+          128
+        ],
+        "strict_load": true,
+        "model_source": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r07-matched-supervision-20261027/experiments/r07_matched_supervision_20261027/frozen-source-snapshot/models/relationformer.py",
+        "coordinate_only": true
+      },
+      {
+        "seed": 92741,
+        "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/92741/runs/A-xyz/model-12000.pt",
+        "shape": [
+          3,
+          128
+        ],
+        "strict_load": true,
+        "model_source": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r07-matched-supervision-20261027/experiments/r07_matched_supervision_20261027/frozen-source-snapshot/models/relationformer.py",
+        "coordinate_only": true
+      }
+    ]
+  },
+  "focused_tests_passed": 6,
+  "scientific_protocol_unchanged": true,
+  "plan_sha256": "33c983edd524027a0f6eca3af78a04879b1a1b62b286d142bed0052b0fa97abe",
+  "preserved_failed_attempt": "failed-attempt-1613828",
+  "gpu_gate": "new smoke required before training"
+}

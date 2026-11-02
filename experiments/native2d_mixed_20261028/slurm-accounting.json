@@ -1,0 +1,98 @@
+{
+  "1671559": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:04:41",
+    "allocated_tres": "billing=1,cpu=8,energy=133415,gres/gpu:h100=1,gres/gpu=1,mem=20000M,node=1"
+  },
+  "1673549": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:36:10",
+    "allocated_tres": "billing=1,cpu=8,energy=1184141,gres/gpu:h100=1,gres/gpu=1,mem=20000M,node=1"
+  },
+  "1673551": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:33:24",
+    "allocated_tres": "billing=1,cpu=8,energy=1034413,gres/gpu:h100=1,gres/gpu=1,mem=20000M,node=1"
+  },
+  "1673553": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:08:04",
+    "allocated_tres": "billing=1,cpu=8,energy=242450,gres/gpu:h100=1,gres/gpu=1,mem=20000M,node=1"
+  },
+  "1673555": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:07:21",
+    "allocated_tres": "billing=1,cpu=8,energy=218653,gres/gpu:h100=1,gres/gpu=1,mem=20000M,node=1"
+  },
+  "1673557": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "04:07:32",
+    "allocated_tres": "billing=1,cpu=8,energy=7641026,gres/gpu:h100=1,gres/gpu=1,mem=20000M,node=1"
+  },
+  "1673560": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:07:24",
+    "allocated_tres": "billing=1,cpu=8,energy=224625,gres/gpu:h100=1,gres/gpu=1,mem=20000M,node=1"
+  },
+  "1673562": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:06:43",
+    "allocated_tres": "billing=1,cpu=8,energy=193078,gres/gpu:h100=1,gres/gpu=1,mem=20000M,node=1"
+  },
+  "1673564": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "03:47:31",
+    "allocated_tres": "billing=1,cpu=8,energy=7393539,gres/gpu:h100=1,gres/gpu=1,mem=20000M,node=1"
+  },
+  "1673566": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "04:32:12",
+    "allocated_tres": "billing=1,cpu=8,energy=8726931,gres/gpu:h100=1,gres/gpu=1,mem=20000M,node=1"
+  },
+  "1673568": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "03:43:38",
+    "allocated_tres": "billing=1,cpu=8,energy=6513289,gres/gpu:h100=1,gres/gpu=1,mem=20000M,node=1"
+  },
+  "1673572": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:38:13",
+    "allocated_tres": "billing=1,cpu=8,energy=1179960,gres/gpu:h100=1,gres/gpu=1,mem=20000M,node=1"
+  },
+  "1673574": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:34:53",
+    "allocated_tres": "billing=1,cpu=8,energy=1072053,gres/gpu:h100=1,gres/gpu=1,mem=20000M,node=1"
+  },
+  "1673576": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "03:57:32",
+    "allocated_tres": "billing=1,cpu=8,energy=6960012,gres/gpu:h100=1,gres/gpu=1,mem=20000M,node=1"
+  },
+  "1673578": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "03:56:36",
+    "allocated_tres": "billing=1,cpu=8,energy=6931667,gres/gpu:h100=1,gres/gpu=1,mem=20000M,node=1"
+  },
+  "1673580": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "04:47:03",
+    "allocated_tres": "billing=1,cpu=8,energy=8400072,gres/gpu:h100=1,gres/gpu=1,mem=20000M,node=1"
+  }
+}

@@ -66,7 +66,7 @@ def components(n, edges):
     return int(b0), int(len(edges)-n+b0)
 
 
-def measure(c, ids, tolerance=2., graph=True):
+def measure(c, ids, tolerance=2., graph=True, edge_threshold=.5):
     ids=np.asarray(ids,int);gt=c['truth'];x=c['physical']
     local=association(x[ids],gt,tolerance);mapping={int(ids[i]):j for i,j in local.items()}
     recovered=set(mapping.values());key=('_baseline',float(tolerance))
@@ -81,10 +81,10 @@ def measure(c, ids, tolerance=2., graph=True):
         links={tuple(sorted(map(int,e))) for e in c['gt_edges']}
         labels=np.array([a in mapping and b in mapping and tuple(sorted((mapping[a],mapping[b]))) in links for a,b in pairs],bool)
         eligible=sum(a in recovered and b in recovered for a,b in links)
-        chosen=pairs[scores>.5];remap={int(q):i for i,q in enumerate(ids)}
+        chosen=pairs[scores>edge_threshold];remap={int(q):i for i,q in enumerate(ids)}
         edges=np.array([[remap[int(a)],remap[int(b)]] for a,b in chosen],int).reshape(-1,2)
         p0,p1=components(len(ids),edges);g0,g1=components(len(gt),c['gt_edges'])
-        out.update(edges=len(chosen),gt_edges=len(links),edge_tp=int(labels[scores>.5].sum()),eligible=eligible,beta0_error=abs(p0-g0),beta1_error=abs(p1-g1))
+        out.update(edges=len(chosen),gt_edges=len(links),edge_tp=int(labels[scores>edge_threshold].sum()),eligible=eligible,beta0_error=abs(p0-g0),beta1_error=abs(p1-g1))
     return out
 
 

@@ -115,14 +115,14 @@ def crop_graph(graph,start_xy,shape_hw):
                 if current:fragments.append(np.asarray(current));current=[]
                 continue
             left,right=piece
-            if current and not np.allclose(current[-1],left,atol=1e-8):
+            if current and not np.allclose(current[-1],left,atol=1e-8,rtol=0):
                 fragments.append(np.asarray(current));current=[]
             if not current:current.append(left)
             current.append(right)
         if current:fragments.append(np.asarray(current))
         for i,path2 in enumerate(fragments):
-            ka=('source',int(a)) if np.allclose(path2[0],graph.nodes[a]) else ('boundary',edge_id,i,0)
-            kb=('source',int(b)) if np.allclose(path2[-1],graph.nodes[b]) else ('boundary',edge_id,i,1)
+            ka=('source',int(a)) if np.allclose(path2[0],graph.nodes[a],atol=1e-8,rtol=0) else ('boundary',edge_id,i,0)
+            kb=('source',int(b)) if np.allclose(path2[-1],graph.nodes[b],atol=1e-8,rtol=0) else ('boundary',edge_id,i,1)
             branches.append((ka,kb,path2-start))
     degrees=np.bincount(graph.edges.ravel(),minlength=len(graph.nodes))
     isolates=[(('source',i),p-start) for i,p in enumerate(graph.nodes) if degrees[i]==0 and np.all(p>=start) and np.all(p<=high)]
@@ -137,10 +137,12 @@ def fit_controls(path,k=8):
     if len(path)<2:raise ValueError('Cannot fit a zero-length branch')
     arc=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(path,axis=0),axis=1))]
     knots=np.r_[np.zeros(4),np.arange(1,k-3)/(k-3),np.ones(4)]
-    t=arc/arc[-1]
-    # Densify very short paths to make the underdetermined fit a chord.
-    if len(path)<k:
-        t=np.linspace(0,1,max(k,16));path=np.stack([np.interp(t*arc[-1],arc,path[:,a]) for a in range(2)],1)
+    # Fit uniformly along the SAME piecewise-linear guide. Irregular source
+    # vertices can leave a whole B-spline knot span unsampled even when len>=k;
+    # unconstrained controls then explode. Uniform samples make this a stable
+    # arc-length-weighted approximation without changing the reference graph.
+    t=np.linspace(0,1,max(64,8*k))
+    path=np.stack([np.interp(t*arc[-1],arc,path[:,a]) for a in range(2)],1)
     basis=BSpline.design_matrix(t,knots,3).toarray()
     endpoints=path[[0,-1]]
     residual=path-basis[:,[0]]*endpoints[0]-basis[:,[-1]]*endpoints[1]

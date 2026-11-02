@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "training_submitted": true,
+  "source_and_dataset_preserved": true,
+  "cpu_preflight": "1636355",
+  "gpu_smoke": "1636935",
+  "production_array": "1637025",
+  "final_array": "1637046",
+  "final_collector": "1637047",
+  "batch_size": 32,
+  "total_updates_per_arm": 82200,
+  "epochs": 300,
+  "fixed_milestones": [
+    25,
+    50,
+    100,
+    150,
+    200,
+    300
+  ],
+  "max_global_h100": 2,
+  "observed_matching_complete_epochs": 3,
+  "test_data_accessed": false
+}

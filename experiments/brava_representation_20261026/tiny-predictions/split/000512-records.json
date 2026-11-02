@@ -1,0 +1,130 @@
+[
+  {
+    "member": "split_K8/sample_000002_0027.npz",
+    "sample": "sample_000002_0027",
+    "subject": "BG0003",
+    "split": "train",
+    "arm": "split_K8",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8/train/spline/sample_000002_0027.npz"
+  },
+  {
+    "member": "split_K8/sample_000005_0012.npz",
+    "sample": "sample_000005_0012",
+    "subject": "BG0006",
+    "split": "train",
+    "arm": "split_K8",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8/train/spline/sample_000005_0012.npz"
+  },
+  {
+    "member": "split_K8/sample_000008_0011.npz",
+    "sample": "sample_000008_0011",
+    "subject": "BG0009",
+    "split": "train",
+    "arm": "split_K8",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8/train/spline/sample_000008_0011.npz"
+  },
+  {
+    "member": "split_K8/sample_000011_0008.npz",
+    "sample": "sample_000011_0008",
+    "subject": "BG0012",
+    "split": "train",
+    "arm": "split_K8",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8/train/spline/sample_000011_0008.npz"
+  },
+  {
+    "member": "split_K8/sample_000014_0007.npz",
+    "sample": "sample_000014_0007",
+    "subject": "BG0017",
+    "split": "train",
+    "arm": "split_K8",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8/train/spline/sample_000014_0007.npz"
+  },
+  {
+    "member": "split_K8/sample_000019_0008.npz",
+    "sample": "sample_000019_0008",
+    "subject": "BG0022",
+    "split": "train",
+    "arm": "split_K8",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8/train/spline/sample_000019_0008.npz"
+  },
+  {
+    "member": "split_K8/sample_000022_0011.npz",
+    "sample": "sample_000022_0011",
+    "subject": "BH0005",
+    "split": "train",
+    "arm": "split_K8",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8/train/spline/sample_000022_0011.npz"
+  },
+  {
+    "member": "split_K8/sample_000025_0043.npz",
+    "sample": "sample_000025_0043",
+    "subject": "BH0009",
+    "split": "train",
+    "arm": "split_K8",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8/train/spline/sample_000025_0043.npz"
+  },
+  {
+    "member": "split_K8/sample_000028_0052.npz",
+    "sample": "sample_000028_0052",
+    "subject": "BH0012",
+    "split": "train",
+    "arm": "split_K8",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8/train/spline/sample_000028_0052.npz"
+  },
+  {
+    "member": "split_K8/sample_000030_0008.npz",
+    "sample": "sample_000030_0008",
+    "subject": "BH0014",
+    "split": "train",
+    "arm": "split_K8",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8/train/spline/sample_000030_0008.npz"
+  },
+  {
+    "member": "split_K8/sample_000033_0007.npz",
+    "sample": "sample_000033_0007",
+    "subject": "BH0017",
+    "split": "train",
+    "arm": "split_K8",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8/train/spline/sample_000033_0007.npz"
+  },
+  {
+    "member": "split_K8/sample_000037_0012.npz",
+    "sample": "sample_000037_0012",
+    "subject": "BH0021",
+    "split": "train",
+    "arm": "split_K8",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8/train/spline/sample_000037_0012.npz"
+  },
+  {
+    "member": "split_K8/sample_000040_0061.npz",
+    "sample": "sample_000040_0061",
+    "subject": "BH0024",
+    "split": "train",
+    "arm": "split_K8",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8/train/spline/sample_000040_0061.npz"
+  },
+  {
+    "member": "split_K8/sample_000045_0014.npz",
+    "sample": "sample_000045_0014",
+    "subject": "BH0030",
+    "split": "train",
+    "arm": "split_K8",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8/train/spline/sample_000045_0014.npz"
+  },
+  {
+    "member": "split_K8/sample_000049_0008.npz",
+    "sample": "sample_000049_0008",
+    "subject": "BH0034",
+    "split": "train",
+    "arm": "split_K8",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8/train/spline/sample_000049_0008.npz"
+  },
+  {
+    "member": "split_K8/sample_000055_0027.npz",
+    "sample": "sample_000055_0027",
+    "subject": "BH0040",
+    "split": "train",
+    "arm": "split_K8",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8/train/spline/sample_000055_0027.npz"
+  }
+]

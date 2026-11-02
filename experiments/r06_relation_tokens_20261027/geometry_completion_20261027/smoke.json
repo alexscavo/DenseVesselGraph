@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "real_patches": 2,
+  "source_and_manifest_identity": true,
+  "baseline_geometry_parity": [
+    {
+      "seed": 364505,
+      "sample": "sample_000013_0003",
+      "direct_vs_saved_baseline": true
+    },
+    {
+      "seed": 92741,
+      "sample": "sample_000013_0003",
+      "direct_vs_saved_baseline": true
+    }
+  ],
+  "no_inference_or_training": true
+}

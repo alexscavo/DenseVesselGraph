@@ -1,0 +1,88 @@
+Outputs: /lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_local_components_20261026
+Execution audit as of 2026-10-28T10:38:26.134482+01:00
+Scientific comparison: NOT RUN ; PARTIAL / RECOVERY
+Replacement job states: {'1583591': 'TIMEOUT', '1583592': 'CANCELLED', '1583593': 'CANCELLED', '1583594': 'CANCELLED'}
+Smoke blocker: OSError: AF_UNIX path too long
+Next step: Repair short SCRATCH multiprocessing TMPDIR; rerun isolated correctness gate before any matched 256-query N07 pilot. No GPU submission in this CPU/status audit.
+Audit: /lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/experiments/n07_status_audit_20261028/status.json
+{
+  "submitted_at": "2026-10-26T15:02:34+0100",
+  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026",
+  "branch": "research/ixi-local-components-20261026",
+  "max_h100": 1,
+  "shared_global_limit": 2,
+  "prior_gpu_jobs": [
+    "1583544",
+    "1583545",
+    "1583546",
+    "1583547"
+  ],
+  "queue_at_submission": "1583553|brava-representation|PENDING|N/A|cpu_p1\n1583552|brava-representation|PENDING|N/A|cpu_p1\n1583551|brava-representation|PENDING|N/A|cpu_p1\n1583550|brava-representation|PENDING|N/A|cpu_p1\n1583549|brava-representation|PENDING|N/A|cpu_p1\n1583548|brava-representation|PENDING|N/A|cpu_p1\n1583536|brava-representation|PENDING|N/A|cpu_p1\n1583547|brava-representation|PENDING|gres/gpu:1|gpu_p6\n1583546|brava-representation|PENDING|gres/gpu:1|gpu_p6\n1583545|brava-representation|PENDING|gres/gpu:1|gpu_p6\n1583544|brava-representation|PENDING|gres/gpu:1|gpu_p6",
+  "jobs": {
+    "smoke": {
+      "id": "1583591",
+      "options": [
+        "--time=00:30:00",
+        "--dependency=afterany:1583544:1583545:1583546:1583547"
+      ],
+      "args": [
+        "smoke"
+      ]
+    },
+    "zero_shot": {
+      "id": "1583592",
+      "options": [
+        "--time=01:15:00",
+        "--dependency=afterok:1583591",
+        "--kill-on-invalid-dep=yes"
+      ],
+      "args": [
+        "zero"
+      ]
+    },
+    "training": {
+      "id": "1583593",
+      "options": [
+        "--array=0-5%1",
+        "--dependency=afterok:1583592",
+        "--kill-on-invalid-dep=yes"
+      ],
+      "args": [
+        "train"
+      ]
+    },
+    "collector": {
+      "id": "1583594",
+      "options": [
+        "--dependency=afterok:1583593",
+        "--kill-on-invalid-dep=yes"
+      ],
+      "args": []
+    }
+  },
+  "all_accepted": true
+}
+
+smoke.json {
+  "completed": false,
+  "arms": {},
+  "dataset_audit": {
+    "subjects": 149,
+    "physical_voxel_mm_min": [
+      0.4599999785423279,
+      0.4599999785423279,
+      0.7999999523162842
+    ],
+    "physical_voxel_mm_max": [
+      0.4882810115814209,
+      0.4882810413837433,
+      0.8000000715255737
+    ],
+    "checked_nodes_max": 71
+  },
+  "batch1_vs4_max_normalized_coordinate_drift": 0.0010903775691986084,
+  "same_batch1_repeat_max_normalized_coordinate_drift": 0.0,
+  "evaluation_batch_size": 1
+}
+
+Scientific jobs did not run; see the dated execution audit. This command performs no inference or training.

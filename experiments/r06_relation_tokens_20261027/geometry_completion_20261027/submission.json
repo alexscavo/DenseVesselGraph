@@ -1,0 +1,11 @@
+{
+  "collector": "1625936",
+  "kind": "CPU-only completion of missing Branch/Curve reporting",
+  "training_jobs": [],
+  "gpu_jobs": [],
+  "primary_R06_already_completed": true,
+  "smoke_passed": true,
+  "source_R07_is_original_frozen_geometry_only": true,
+  "wall_time": "00:45:00",
+  "cpus": 2
+}

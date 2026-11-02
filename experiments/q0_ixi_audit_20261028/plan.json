@@ -1,0 +1,12 @@
+{
+  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-q0-ixi-audit-20261028",
+  "branch": "research/q0-ixi-audit-20261028",
+  "scope": "Q0/J00/J02 read-only train/val target and status audit; no GPU or training",
+  "source_hashes": {
+    "scripts/audit_q0_ixi_targets.py": "658126595ac9cb1220f75758ce22a27a519361e45f04a51c6667662e5d9a5c0f",
+    "cluster/jean_zay/q0_ixi_audit_cpu.slurm": "b6141075b4f5ba8fa67d9ae13e9e50ed37774a025a77b341fffd7cf4bcb651e0"
+  },
+  "smoke_patches": 6,
+  "test_data_access": false,
+  "pre_submission_correction": "Scheduler rejected --mem before allocating a job. Removed the flag to use standard CPU-node memory policy; no data/code/scientific change."
+}

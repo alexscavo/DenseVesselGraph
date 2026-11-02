@@ -1,0 +1,231 @@
+{
+  "other_studies_verified_serial": [
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026",
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-cheap-diagnostics-20261026"
+  ],
+  "cpu_targets": "1584757",
+  "queue_at_submission": "1584594|PENDING|N/A|cpu_p1\n1583594|PENDING|N/A|cpu_p1\n1584593_[0-1%1]|PENDING|gres/gpu:1|gpu_p6\n1583593_[0-5%1]|PENDING|gres/gpu:1|gpu_p6\n1583592|PENDING|gres/gpu:1|gpu_p6\n1583591|RUNNING|gres/gpu:1|gpu_p6",
+  "other_claims": [
+    {
+      "state": "accepted",
+      "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-cheap-diagnostics-20261026",
+      "concurrent_h100": 1,
+      "global_limit": 2,
+      "prior_gpu_jobs": [
+        "1583591",
+        "1583592",
+        "1583593"
+      ],
+      "release_after": "1584594",
+      "jobs": {
+        "bn": {
+          "id": "1584593",
+          "dependencies": [
+            "1583591",
+            "1583592",
+            "1583593"
+          ]
+        },
+        "collector": {
+          "id": "1584594",
+          "dependency": "1584593"
+        }
+      },
+      "report_ownership": [
+        "docs/research/spline_learning/spline-collapse-diagnosis.md",
+        "docs/research/metrics/9-ixi-image-aware-relation-learning.md"
+      ],
+      "roadmap": "Append only if unchanged since audit; no future automatic roadmap edits"
+    },
+    {
+      "state": "accepted",
+      "concurrent_h100": 1,
+      "global_limit": 2,
+      "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026",
+      "release_after": "1583594",
+      "jobs": {
+        "smoke": {
+          "id": "1583591",
+          "options": [
+            "--time=00:30:00",
+            "--dependency=afterany:1583544:1583545:1583546:1583547"
+          ],
+          "args": [
+            "smoke"
+          ]
+        },
+        "zero_shot": {
+          "id": "1583592",
+          "options": [
+            "--time=01:15:00",
+            "--dependency=afterok:1583591",
+            "--kill-on-invalid-dep=yes"
+          ],
+          "args": [
+            "zero"
+          ]
+        },
+        "training": {
+          "id": "1583593",
+          "options": [
+            "--array=0-5%1",
+            "--dependency=afterok:1583592",
+            "--kill-on-invalid-dep=yes"
+          ],
+          "args": [
+            "train"
+          ]
+        },
+        "collector": {
+          "id": "1583594",
+          "options": [
+            "--dependency=afterok:1583593",
+            "--kill-on-invalid-dep=yes"
+          ],
+          "args": []
+        }
+      }
+    }
+  ],
+  "unknown_gpu_prerequisites": [],
+  "max_study_h100": 1,
+  "max_global_h100": 2,
+  "submitted_at": "2026-10-26T15:42:19+0100",
+  "jobs": {
+    "tiny_original": {
+      "id": "1586043",
+      "args": [
+        "tiny",
+        "--group",
+        "original"
+      ],
+      "options": [
+        "--dependency=afterok:1584757",
+        "--kill-on-invalid-dep=yes",
+        "--time=00:30:00"
+      ]
+    },
+    "tiny_split": {
+      "id": "1586044",
+      "args": [
+        "tiny",
+        "--group",
+        "split"
+      ],
+      "options": [
+        "--dependency=afterok:1586043",
+        "--kill-on-invalid-dep=yes",
+        "--time=00:30:00"
+      ]
+    },
+    "train_original": {
+      "id": "1586045",
+      "args": [
+        "train",
+        "--group",
+        "original"
+      ],
+      "options": [
+        "--dependency=afterok:1586044",
+        "--kill-on-invalid-dep=yes"
+      ]
+    },
+    "train_split": {
+      "id": "1586046",
+      "args": [
+        "train",
+        "--group",
+        "split"
+      ],
+      "options": [
+        "--dependency=afterok:1586045",
+        "--kill-on-invalid-dep=yes"
+      ]
+    },
+    "evaluate_original_1000": {
+      "id": "1586047",
+      "args": [
+        "evaluate",
+        "--group",
+        "original",
+        "--step",
+        "1000"
+      ],
+      "options": [
+        "--dependency=afterok:1586045",
+        "--kill-on-invalid-dep=yes"
+      ]
+    },
+    "evaluate_original_2000": {
+      "id": "1586048",
+      "args": [
+        "evaluate",
+        "--group",
+        "original",
+        "--step",
+        "2000"
+      ],
+      "options": [
+        "--dependency=afterok:1586045",
+        "--kill-on-invalid-dep=yes"
+      ]
+    },
+    "evaluate_original_4000": {
+      "id": "1586049",
+      "args": [
+        "evaluate",
+        "--group",
+        "original",
+        "--step",
+        "4000"
+      ],
+      "options": [
+        "--dependency=afterok:1586045",
+        "--kill-on-invalid-dep=yes"
+      ]
+    },
+    "evaluate_split_1000": {
+      "id": "1586050",
+      "args": [
+        "evaluate",
+        "--group",
+        "split",
+        "--step",
+        "1000"
+      ],
+      "options": [
+        "--dependency=afterok:1586046",
+        "--kill-on-invalid-dep=yes"
+      ]
+    },
+    "evaluate_split_2000": {
+      "id": "1586051",
+      "args": [
+        "evaluate",
+        "--group",
+        "split",
+        "--step",
+        "2000"
+      ],
+      "options": [
+        "--dependency=afterok:1586046",
+        "--kill-on-invalid-dep=yes"
+      ]
+    },
+    "evaluate_split_4000": {
+      "id": "1586052",
+      "args": [
+        "evaluate",
+        "--group",
+        "split",
+        "--step",
+        "4000"
+      ],
+      "options": [
+        "--dependency=afterok:1586046",
+        "--kill-on-invalid-dep=yes"
+      ]
+    }
+  },
+  "all_accepted": true
+}

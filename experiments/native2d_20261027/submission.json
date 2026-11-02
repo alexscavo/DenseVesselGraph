@@ -1,0 +1,29 @@
+{
+  "gpu": "1637307",
+  "gpu_dependency": "afterany:1637025:1637027:1637032:1637034:1637036:1637037:1637039:1637040:1637042:1637044:1637045:1637046",
+  "prior_gpu_jobs": [
+    "1637025",
+    "1637027",
+    "1637032",
+    "1637034",
+    "1637036",
+    "1637037",
+    "1637039",
+    "1637040",
+    "1637042",
+    "1637044",
+    "1637045",
+    "1637046"
+  ],
+  "queue_at_submission": "1637047|PENDING|N/A|brava-long-report-300\n1637041|PENDING|N/A|brava-long-report-200\n1637038|PENDING|N/A|brava-long-report-150\n1637035|PENDING|N/A|brava-long-report-100\n1637029|PENDING|N/A|brava-long-report-50\n1637026|PENDING|N/A|brava-long-report-25\n1637046_[0-1%2]|PENDING|gres/gpu:1|fbrava-300\n1637045_[0-1%2]|PENDING|gres/gpu:1|fbrava-275\n1637044_[0-1%2]|PENDING|gres/gpu:1|fbrava-250\n1637042_[0-1%2]|PENDING|gres/gpu:1|fbrava-225\n1637040_[0-1%2]|PENDING|gres/gpu:1|fbrava-200\n1637039_[0-1%2]|PENDING|gres/gpu:1|fbrava-175\n1637037_[0-1%2]|PENDING|gres/gpu:1|fbrava-150\n1637036_[0-1%2]|PENDING|gres/gpu:1|fbrava-125\n1637034_[0-1%2]|PENDING|gres/gpu:1|fbrava-100\n1637032_[0-1%2]|PENDING|gres/gpu:1|fbrava-75\n1637027_[0-1%2]|PENDING|gres/gpu:1|fbrava-50\n1637025_0|RUNNING|gres/gpu:1|fbrava-25\n1637025_1|RUNNING|gres/gpu:1|fbrava-25",
+  "maximum_simultaneous_h100": 1,
+  "global_h100_limit": 2,
+  "walltime": "00:20:00",
+  "tiny_updates": 1000,
+  "tiny_training_crops": 2,
+  "validation_development_crops": 2,
+  "full_architecture_optimizer_updates": 0,
+  "full_training_submitted": false,
+  "collector": "1637308",
+  "collector_dependency": "afterany:1637307"
+}

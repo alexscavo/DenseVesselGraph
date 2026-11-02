@@ -1,0 +1,7 @@
+{
+  "primary_comparison": "final 6000-update checkpoint on all 506 validation tiles in both arms",
+  "diagnostic_initialization": "not a trained checkpoint; never use its random graph for selected-checkpoint curve evaluation",
+  "selection_tie": "prefer later trained checkpoint for equal interim edge F1",
+  "B0_loaded_code": "original selection can retain step0 on a zero-score tie; preserve original artifact and use the final checkpoint for the primary comparison; stop redundant untrained evaluation after final metrics are saved",
+  "training_changes": false
+}

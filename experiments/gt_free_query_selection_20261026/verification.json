@@ -1,0 +1,39 @@
+{
+  "targeted_tests_passed": 5,
+  "smoke_passed": true,
+  "cpu_only": true,
+  "gpu_jobs": [],
+  "training": false,
+  "normal_cache_metrics_reproduced": true,
+  "per_patch_count_controls_exact": true,
+  "GT_free_selector_signature": [
+    "coordinates",
+    "node_scores",
+    "pairs",
+    "relation_scores",
+    "method",
+    "weight"
+  ],
+  "train_only_weight_selection": true,
+  "both_seeds_failed_prespecified_benefit_gate": true,
+  "publications": {
+    "report": {
+      "completed": true,
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/metrics/6-ixi-query-attribution.md",
+      "before_sha256": "a77934d1111c226f20f9c115dff468dc6c0662ca32fe6485ed341701d66a1600",
+      "after_sha256": "28206b2ec115a073fd10a21b677b80753475d010e68818772a4f42f0b7e47107"
+    },
+    "registry": {
+      "completed": true,
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/research/experiments.md",
+      "before_sha256": "27408fd1d52003ab3b01592e9264492fbb2fd1946389ee60a4d28a24c3016489",
+      "after_sha256": "241cb4263b9547ea2f7db5334564cdcd75b7ecb03f9f04d460385535eb3f180a"
+    },
+    "roadmap": {
+      "completed": true,
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/research/roadmap.md",
+      "before_sha256": "b2f643636a569c4eaf6d9e1dafdc46b0ec6fee35edb743689953ad7c660c49dd",
+      "after_sha256": "d02d3be97bd7811b1a54bb598ccdc9b7141156d8c8f242f3a0c7a6a059d1711a"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "main": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation",
+  "new_files": [
+    "native2d/__init__.py",
+    "native2d/attention.py",
+    "native2d/backbone.py",
+    "native2d/config.py",
+    "native2d/data.py",
+    "native2d/evaluation.py",
+    "native2d/geometry.py",
+    "native2d/losses.py",
+    "native2d/model.py",
+    "native2d/position_encoding.py",
+    "native2d/structures.py",
+    "native2d/targets.py",
+    "native2d/transformer.py",
+    "configs/native2d.yaml",
+    "tests/test_native2d.py",
+    "scripts/check_native2d.py",
+    "scripts/prepare_native2d_smoke.py",
+    "scripts/show_native2d.py",
+    "scripts/collect_native2d.py",
+    "cluster/jean_zay/native2d_smoke_gpu.slurm",
+    "cluster/jean_zay/native2d_collect_cpu.slurm",
+    "cluster/jean_zay/submit_native2d_smoke.py"
+  ],
+  "changed_factory": "models/__init__.py",
+  "preserved_3d_implementations": true
+}

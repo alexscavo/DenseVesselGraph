@@ -1,0 +1,46 @@
+{
+  "jobs": {
+    "smoke": "1624151",
+    "prior_gpu_jobs": [],
+    "smoke_dependency": null,
+    "queue_at_submission": "",
+    "global_h100_limit": 2,
+    "replaces": {
+      "smoke": "1613828",
+      "prior_gpu_jobs": [],
+      "smoke_dependency": null,
+      "queue_at_submission": "",
+      "global_h100_limit": 2,
+      "training_array": "1613829",
+      "training_dependency": "afterok:1613828",
+      "seed_tasks": {
+        "0": 364505,
+        "1": 92741
+      },
+      "arms_per_seed": [
+        "S0",
+        "S1"
+      ],
+      "collector": "1613830",
+      "collector_dependency": "afterok:1613829"
+    },
+    "recovery": "Pin frozen model import before audit helper path mutation; both full source checkpoints strictly loaded on CPU; protocol unchanged.",
+    "training_array": "1624152",
+    "training_dependency": "afterok:1624151",
+    "seed_tasks": {
+      "0": 364505,
+      "1": 92741
+    },
+    "arms_per_seed": [
+      "S0",
+      "S1"
+    ],
+    "collector": "1624153",
+    "collector_dependency": "afterok:1624152"
+  },
+  "report": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/metrics/8-ixi-relation-matching-calibration.md",
+  "registry": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/research/VASCULAR_GRAPH_EXPERIMENT_REGISTRY_2026-10-26_UPDATED.md",
+  "report_sha256": "f7084c7329f961bf6e3d02138c56ae85a6ebec53bd5c24b5d53b1dcc38d24900",
+  "registry_sha256": "c416cb7feba7bf8410619bce4314a98c2248410d5b0ba52dce697536d9cb4874",
+  "scientific_results": "pending"
+}

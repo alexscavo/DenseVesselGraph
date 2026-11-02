@@ -1,0 +1,46 @@
+{
+  "AV-DRIVE": {
+    "file": "AV-DRIVE/training/21_manual1.mat",
+    "top_keys": [
+      "G"
+    ],
+    "meta_graph_fields": [
+      "A",
+      "label",
+      "root",
+      "protected"
+    ],
+    "embedded_image_shaped_candidates": [
+      {
+        "path": "G.meta_graph.A",
+        "shape": [
+          190,
+          190
+        ],
+        "dtype": "uint8"
+      }
+    ]
+  },
+  "AV-INSPIRE": {
+    "file": "AV-INSPIRE/image1.mat",
+    "top_keys": [
+      "G"
+    ],
+    "meta_graph_fields": [
+      "A",
+      "label",
+      "root",
+      "protected"
+    ],
+    "embedded_image_shaped_candidates": [
+      {
+        "path": "G.meta_graph.A",
+        "shape": [
+          312,
+          312
+        ],
+        "dtype": "uint8"
+      }
+    ]
+  }
+}

@@ -1,0 +1,148 @@
+[
+  {
+    "name": "SyntheticMRI/364505/B0/final",
+    "dataset": "SyntheticMRI",
+    "arm": "B0",
+    "seed": 364505,
+    "phase": "final",
+    "step": 12000,
+    "prediction_archive": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/B0/step-12000/caches.zip",
+    "prediction_archive_sha256": "60917e16c062b6bbcbd996f0e8b428eb40f4afd73bc5b4f4909a51b6f5735bdb",
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/B0/model-12000.pt",
+    "checkpoint_identity": {
+      "path": "experiments/local_refinement_long/364505/runs/B0/model-12000.pt",
+      "bytes": 1382188141,
+      "sha256": "91ac46e091bb3f74c5748758235c26dc7c8814a232adda03dd49def0c1c8a3de"
+    },
+    "sample_ids_sha256": "4cc81e4b836670196df3e40cd3762ee0e46600b155dc1bf6e240a300faff870c",
+    "samples": 608
+  },
+  {
+    "name": "SyntheticMRI/364505/A-xyz/final",
+    "dataset": "SyntheticMRI",
+    "arm": "A-xyz",
+    "seed": 364505,
+    "phase": "final",
+    "step": 12000,
+    "prediction_archive": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A-xyz/step-12000/caches.zip",
+    "prediction_archive_sha256": "dede3cef8680bdeb26918c63088401515ef78abdf97eb2640c370007089d500f",
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt",
+    "checkpoint_identity": {
+      "path": "experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt",
+      "bytes": 1385706077,
+      "sha256": "a1210fe958dffe0e588d38222cb62bf48b58e9b238fc57c027ec1c7a795277c9"
+    },
+    "sample_ids_sha256": "4cc81e4b836670196df3e40cd3762ee0e46600b155dc1bf6e240a300faff870c",
+    "samples": 608
+  },
+  {
+    "name": "SyntheticMRI/364505/A-xyz/selected",
+    "dataset": "SyntheticMRI",
+    "arm": "A-xyz",
+    "seed": 364505,
+    "phase": "selected",
+    "step": 9000,
+    "prediction_archive": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A-xyz/step-9000/caches.zip",
+    "prediction_archive_sha256": "78286aa8cb45776b1eb4aea430e88397dfc1f1f5b3cb678329ea8b1b3ec0bd16",
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A-xyz/model-9000.pt",
+    "checkpoint_identity": {
+      "path": "experiments/local_refinement_long/364505/runs/A-xyz/model-9000.pt",
+      "bytes": 1385703384,
+      "sha256": "fe2c06cef0c9e52fbc396f79e2b551c418d3486208c9382a0acc161c9b79eea3"
+    },
+    "sample_ids_sha256": "4cc81e4b836670196df3e40cd3762ee0e46600b155dc1bf6e240a300faff870c",
+    "samples": 608
+  },
+  {
+    "name": "SyntheticMRI/92741/B0/final",
+    "dataset": "SyntheticMRI",
+    "arm": "B0",
+    "seed": 92741,
+    "phase": "final",
+    "step": 12000,
+    "prediction_archive": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/92741/runs/B0/step-12000/caches.zip",
+    "prediction_archive_sha256": "005b34ce4d80e6810d202bb2a5a2d21e7822f29bb8db3aee483f207de0116843",
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/92741/runs/B0/model-12000.pt",
+    "checkpoint_identity": {
+      "path": "experiments/local_refinement_long/92741/runs/B0/model-12000.pt",
+      "bytes": 1382188141,
+      "sha256": "8b90d07292761244991f7f1e2fbe07d52c1a0fb93175c1fa863176a2c6337afe"
+    },
+    "sample_ids_sha256": "4cc81e4b836670196df3e40cd3762ee0e46600b155dc1bf6e240a300faff870c",
+    "samples": 608
+  },
+  {
+    "name": "SyntheticMRI/92741/A-xyz/final",
+    "dataset": "SyntheticMRI",
+    "arm": "A-xyz",
+    "seed": 92741,
+    "phase": "final",
+    "step": 12000,
+    "prediction_archive": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/92741/runs/A-xyz/step-12000/caches.zip",
+    "prediction_archive_sha256": "e5bfcdff76cf0f1cbd5ae8e101066fdddbf700c8bab2562ddaac4be440c32cd4",
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/92741/runs/A-xyz/model-12000.pt",
+    "checkpoint_identity": {
+      "path": "experiments/local_refinement_long/92741/runs/A-xyz/model-12000.pt",
+      "bytes": 1385706077,
+      "sha256": "9646b7b266dec3463d94d16cfbcef0332044a9bf0d599c2319a2eff2c93d3e53"
+    },
+    "sample_ids_sha256": "4cc81e4b836670196df3e40cd3762ee0e46600b155dc1bf6e240a300faff870c",
+    "samples": 608
+  },
+  {
+    "name": "IXI-legacy/parent",
+    "dataset": "IXI-legacy",
+    "arm": "parent",
+    "seed": 181028,
+    "phase": "legacy",
+    "step": 28170,
+    "checkpoint": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_transfer_20261015/runs/ixi_delayed_spline/best.pt",
+    "checkpoint_sha256": "1cd9caf35a3683ef643c541ea4c4d06b247c490a4215d4a250f4519992d68eb3",
+    "adapter_sha256": null,
+    "dataset_manifest_sha256": "b97e1cc3567942e6ffbda151c4b48ae459b7aa8bfc9c4b9a00f5a46a52b8d525",
+    "sample_ids_sha256": "59037a0b74463f9b7197796db88afb4998ac8c6a5b5930a6ddb3185a35c23d84",
+    "samples": 384
+  },
+  {
+    "name": "IXI-legacy/baseline",
+    "dataset": "IXI-legacy",
+    "arm": "baseline",
+    "seed": 181028,
+    "phase": "legacy",
+    "step": 1000,
+    "checkpoint": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_transfer_20261015/runs/ixi_delayed_spline/best.pt",
+    "checkpoint_sha256": "1cd9caf35a3683ef643c541ea4c4d06b247c490a4215d4a250f4519992d68eb3",
+    "adapter_sha256": "54a8e3ded49396f9f86f4b46b1417154d54aa4ed14c38b3de8b3b5c7b46f4055",
+    "dataset_manifest_sha256": "b97e1cc3567942e6ffbda151c4b48ae459b7aa8bfc9c4b9a00f5a46a52b8d525",
+    "sample_ids_sha256": "59037a0b74463f9b7197796db88afb4998ac8c6a5b5930a6ddb3185a35c23d84",
+    "samples": 384
+  },
+  {
+    "name": "IXI-legacy/local_image",
+    "dataset": "IXI-legacy",
+    "arm": "local_image",
+    "seed": 181028,
+    "phase": "legacy",
+    "step": 1000,
+    "checkpoint": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_transfer_20261015/runs/ixi_delayed_spline/best.pt",
+    "checkpoint_sha256": "1cd9caf35a3683ef643c541ea4c4d06b247c490a4215d4a250f4519992d68eb3",
+    "adapter_sha256": "37edc1448323518e626c0062b110335be2846c64646993727aefa976582a8ec3",
+    "dataset_manifest_sha256": "b97e1cc3567942e6ffbda151c4b48ae459b7aa8bfc9c4b9a00f5a46a52b8d525",
+    "sample_ids_sha256": "59037a0b74463f9b7197796db88afb4998ac8c6a5b5930a6ddb3185a35c23d84",
+    "samples": 384
+  },
+  {
+    "name": "IXI-legacy/coordinate-only-ablation",
+    "dataset": "IXI-legacy",
+    "arm": "coordinate-only-ablation",
+    "seed": 181028,
+    "phase": "inference component ablation",
+    "step": 1000,
+    "checkpoint": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_transfer_20261015/runs/ixi_delayed_spline/best.pt",
+    "checkpoint_sha256": "1cd9caf35a3683ef643c541ea4c4d06b247c490a4215d4a250f4519992d68eb3",
+    "adapter_sha256": "37edc1448323518e626c0062b110335be2846c64646993727aefa976582a8ec3",
+    "dataset_manifest_sha256": "b97e1cc3567942e6ffbda151c4b48ae459b7aa8bfc9c4b9a00f5a46a52b8d525",
+    "sample_ids_sha256": "59037a0b74463f9b7197796db88afb4998ac8c6a5b5930a6ddb3185a35c23d84",
+    "samples": 384
+  }
+]

@@ -1,0 +1,2499 @@
+{
+  "headers": [
+    {
+      "file": "wide_image_01.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            727,
+            1297,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "train"
+    },
+    {
+      "file": "wide_image_02.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            809,
+            1237,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "validation"
+    },
+    {
+      "file": "wide_image_03.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            937,
+            1551,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "train"
+    },
+    {
+      "file": "wide_image_04.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            731,
+            1300,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "train"
+    },
+    {
+      "file": "wide_image_05.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            871,
+            1371,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "train"
+    },
+    {
+      "file": "wide_image_06.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            711,
+            1403,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "train"
+    },
+    {
+      "file": "wide_image_07.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            961,
+            1217,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "excluded"
+    },
+    {
+      "file": "wide_image_08.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            829,
+            1301,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "train"
+    },
+    {
+      "file": "wide_image_09.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            1007,
+            1337,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "train"
+    },
+    {
+      "file": "wide_image_10.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            773,
+            1427,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "train"
+    },
+    {
+      "file": "wide_image_11.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            899,
+            1279,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "train"
+    },
+    {
+      "file": "wide_image_12.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            833,
+            1505,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "train"
+    },
+    {
+      "file": "wide_image_13.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            829,
+            1531,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "train"
+    },
+    {
+      "file": "wide_image_14.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            765,
+            1373,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "train"
+    },
+    {
+      "file": "wide_image_15.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            731,
+            1288,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "train"
+    },
+    {
+      "file": "wide_image_16.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            812,
+            1327,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "train"
+    },
+    {
+      "file": "wide_image_17.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            977,
+            1516,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "train"
+    },
+    {
+      "file": "wide_image_18.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            1046,
+            1516,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "train"
+    },
+    {
+      "file": "wide_image_19.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            969,
+            1507,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "train"
+    },
+    {
+      "file": "wide_image_20.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            881,
+            1631,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "validation"
+    },
+    {
+      "file": "wide_image_21.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            820,
+            1529,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "validation"
+    },
+    {
+      "file": "wide_image_22.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            904,
+            1283,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "validation"
+    },
+    {
+      "file": "wide_image_23.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            933,
+            1433,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "validation"
+    },
+    {
+      "file": "wide_image_24.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            839,
+            1347,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "validation"
+    },
+    {
+      "file": "wide_image_25.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            923,
+            1357,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "test"
+    },
+    {
+      "file": "wide_image_26.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            808,
+            1438,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "test"
+    },
+    {
+      "file": "wide_image_27.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            979,
+            1511,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "test"
+    },
+    {
+      "file": "wide_image_28.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            854,
+            1393,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "test"
+    },
+    {
+      "file": "wide_image_29.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            872,
+            1565,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "test"
+    },
+    {
+      "file": "wide_image_30.mat",
+      "variables": [
+        [
+          "G",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "I2",
+          [
+            967,
+            1499,
+            3
+          ],
+          "uint8"
+        ]
+      ],
+      "split": "test"
+    }
+  ],
+  "images": [
+    {
+      "file": "wide_image_01.mat",
+      "split": "train",
+      "image_shape": [
+        727,
+        1297,
+        3
+      ],
+      "dense_nodes": 5233,
+      "dense_edges": 5284,
+      "contracted_nodes": 359,
+      "contracted_edges": 410,
+      "topology": [
+        1,
+        52
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 52,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "unclear",
+        "lvl",
+        "changed",
+        "thick",
+        "inten",
+        "norms",
+        "vertex_colors",
+        "vertex_selected",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "V2",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "indices",
+        "subscripts",
+        "EC",
+        "EE",
+        "num_cycles",
+        "cycle_vertices",
+        "improv_vector",
+        "orients_analyzed",
+        "marked_new",
+        "EC2",
+        "root_pos",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "onh_norms",
+        "ab_onh_norms",
+        "art",
+        "ven",
+        "unsure",
+        "other",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "missing_paths",
+        "meta_graph"
+      ],
+      "tiles": 66,
+      "tile_nodes_min": 4,
+      "tile_nodes_max": 34,
+      "boundary_nodes": 456,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_02.mat",
+      "split": "validation",
+      "image_shape": [
+        809,
+        1237,
+        3
+      ],
+      "dense_nodes": 5695,
+      "dense_edges": 5772,
+      "contracted_nodes": 464,
+      "contracted_edges": 541,
+      "topology": [
+        1,
+        78
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 80,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "lvl",
+        "changed_vertices",
+        "V2",
+        "subscripts",
+        "EC",
+        "thick",
+        "inten",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "loc_ind",
+        "EI",
+        "sig",
+        "cycle_vertex",
+        "RB",
+        "total_cost",
+        "split_costs",
+        "split_ids",
+        "cycle_vertices",
+        "marked_new",
+        "norms",
+        "ids",
+        "shifted",
+        "root_pos",
+        "changed",
+        "unclear",
+        "vertex_colors",
+        "vertex_selected",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "indices",
+        "EE",
+        "num_cycles",
+        "improv_vector",
+        "orients_analyzed",
+        "EC2",
+        "art",
+        "ven",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "onh_norms",
+        "ab_onh_norms",
+        "unsure",
+        "other",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "missing_paths",
+        "meta_graph"
+      ],
+      "tiles": 70,
+      "tile_nodes_min": 0,
+      "tile_nodes_max": 58,
+      "boundary_nodes": 524,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_03.mat",
+      "split": "train",
+      "image_shape": [
+        937,
+        1551,
+        3
+      ],
+      "dense_nodes": 9750,
+      "dense_edges": 9880,
+      "contracted_nodes": 933,
+      "contracted_edges": 1063,
+      "topology": [
+        1,
+        131
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 133,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "lvl",
+        "changed_vertices",
+        "V2",
+        "subscripts",
+        "EC",
+        "thick",
+        "inten",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "loc_ind",
+        "EI",
+        "sig",
+        "cycle_vertex",
+        "RB",
+        "total_cost",
+        "split_costs",
+        "split_ids",
+        "cycle_vertices",
+        "marked_new",
+        "norms",
+        "ids",
+        "shifted",
+        "root_pos",
+        "changed",
+        "unclear",
+        "vertex_colors",
+        "vertex_selected",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "indices",
+        "EE",
+        "num_cycles",
+        "improv_vector",
+        "orients_analyzed",
+        "EC2",
+        "art",
+        "ven",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "onh_norms",
+        "ab_onh_norms",
+        "unsure",
+        "other",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "missing_paths",
+        "meta_graph"
+      ],
+      "tiles": 104,
+      "tile_nodes_min": 0,
+      "tile_nodes_max": 58,
+      "boundary_nodes": 846,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_04.mat",
+      "split": "train",
+      "image_shape": [
+        731,
+        1300,
+        3
+      ],
+      "dense_nodes": 6372,
+      "dense_edges": 6451,
+      "contracted_nodes": 587,
+      "contracted_edges": 666,
+      "topology": [
+        1,
+        80
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 80,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "unclear",
+        "lvl",
+        "changed",
+        "thick",
+        "inten",
+        "norms",
+        "vertex_colors",
+        "vertex_selected",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "V2",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "indices",
+        "subscripts",
+        "EC",
+        "EE",
+        "num_cycles",
+        "cycle_vertices",
+        "improv_vector",
+        "orients_analyzed",
+        "marked_new",
+        "EC2",
+        "root_pos",
+        "art",
+        "ven",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "onh_norms",
+        "ab_onh_norms",
+        "unsure",
+        "other",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "missing_paths",
+        "meta_graph"
+      ],
+      "tiles": 66,
+      "tile_nodes_min": 2,
+      "tile_nodes_max": 57,
+      "boundary_nodes": 531,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_05.mat",
+      "split": "train",
+      "image_shape": [
+        871,
+        1371,
+        3
+      ],
+      "dense_nodes": 6987,
+      "dense_edges": 7066,
+      "contracted_nodes": 562,
+      "contracted_edges": 641,
+      "topology": [
+        1,
+        80
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 79,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "lvl",
+        "changed_vertices",
+        "V2",
+        "subscripts",
+        "EC",
+        "thick",
+        "inten",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "loc_ind",
+        "EI",
+        "sig",
+        "cycle_vertex",
+        "RB",
+        "total_cost",
+        "split_costs",
+        "split_ids",
+        "cycle_vertices",
+        "marked_new",
+        "norms",
+        "ids",
+        "shifted",
+        "root_pos",
+        "changed",
+        "unclear",
+        "vertex_colors",
+        "vertex_selected",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "indices",
+        "EE",
+        "num_cycles",
+        "improv_vector",
+        "orients_analyzed",
+        "EC2",
+        "art",
+        "ven",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "onh_norms",
+        "ab_onh_norms",
+        "unsure",
+        "other",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "missing_paths",
+        "meta_graph"
+      ],
+      "tiles": 77,
+      "tile_nodes_min": 0,
+      "tile_nodes_max": 55,
+      "boundary_nodes": 531,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_06.mat",
+      "split": "train",
+      "image_shape": [
+        711,
+        1403,
+        3
+      ],
+      "dense_nodes": 6754,
+      "dense_edges": 6835,
+      "contracted_nodes": 579,
+      "contracted_edges": 660,
+      "topology": [
+        1,
+        82
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 83,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "lvl",
+        "changed_vertices",
+        "V2",
+        "subscripts",
+        "EC",
+        "thick",
+        "inten",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "loc_ind",
+        "EI",
+        "sig",
+        "cycle_vertex",
+        "RB",
+        "total_cost",
+        "split_costs",
+        "split_ids",
+        "cycle_vertices",
+        "marked_new",
+        "norms",
+        "ids",
+        "shifted",
+        "root_pos",
+        "changed",
+        "unclear",
+        "vertex_colors",
+        "vertex_selected",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "indices",
+        "EE",
+        "num_cycles",
+        "improv_vector",
+        "orients_analyzed",
+        "EC2",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "onh_norms",
+        "ab_onh_norms",
+        "art",
+        "ven",
+        "unsure",
+        "other",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "missing_paths",
+        "meta_graph"
+      ],
+      "tiles": 66,
+      "tile_nodes_min": 2,
+      "tile_nodes_max": 50,
+      "boundary_nodes": 562,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_07.mat",
+      "split": "excluded",
+      "reason": "diagonal self-loop without a geometric path",
+      "diagonal_node_ids": [
+        1268
+      ]
+    },
+    {
+      "file": "wide_image_08.mat",
+      "split": "train",
+      "image_shape": [
+        829,
+        1301,
+        3
+      ],
+      "dense_nodes": 7556,
+      "dense_edges": 7644,
+      "contracted_nodes": 745,
+      "contracted_edges": 833,
+      "topology": [
+        1,
+        89
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 92,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "lvl",
+        "changed_vertices",
+        "V2",
+        "subscripts",
+        "EC",
+        "thick",
+        "inten",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "loc_ind",
+        "EI",
+        "sig",
+        "cycle_vertex",
+        "RB",
+        "total_cost",
+        "split_costs",
+        "split_ids",
+        "cycle_vertices",
+        "marked_new",
+        "norms",
+        "ids",
+        "shifted",
+        "root_pos",
+        "changed",
+        "unclear",
+        "vertex_colors",
+        "vertex_selected",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "indices",
+        "EE",
+        "num_cycles",
+        "improv_vector",
+        "orients_analyzed",
+        "EC2",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "onh_norms",
+        "ab_onh_norms",
+        "art",
+        "ven",
+        "unsure",
+        "other",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "missing_paths",
+        "meta_graph"
+      ],
+      "tiles": 77,
+      "tile_nodes_min": 4,
+      "tile_nodes_max": 55,
+      "boundary_nodes": 677,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_09.mat",
+      "split": "train",
+      "image_shape": [
+        1007,
+        1337,
+        3
+      ],
+      "dense_nodes": 7663,
+      "dense_edges": 7747,
+      "contracted_nodes": 658,
+      "contracted_edges": 742,
+      "topology": [
+        1,
+        85
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 88,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "lvl",
+        "changed_vertices",
+        "V2",
+        "subscripts",
+        "EC",
+        "thick",
+        "inten",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "loc_ind",
+        "EI",
+        "sig",
+        "cycle_vertex",
+        "RB",
+        "total_cost",
+        "split_costs",
+        "split_ids",
+        "cycle_vertices",
+        "marked_new",
+        "norms",
+        "ids",
+        "shifted",
+        "root_pos",
+        "changed",
+        "unclear",
+        "vertex_colors",
+        "vertex_selected",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "indices",
+        "EE",
+        "improv_vector",
+        "orients_analyzed",
+        "EC2",
+        "num_cycles",
+        "art",
+        "ven",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "onh_norms",
+        "ab_onh_norms",
+        "unsure",
+        "other",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "missing_paths",
+        "meta_graph"
+      ],
+      "tiles": 88,
+      "tile_nodes_min": 0,
+      "tile_nodes_max": 55,
+      "boundary_nodes": 680,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_10.mat",
+      "split": "train",
+      "image_shape": [
+        773,
+        1427,
+        3
+      ],
+      "dense_nodes": 7507,
+      "dense_edges": 7607,
+      "contracted_nodes": 640,
+      "contracted_edges": 740,
+      "topology": [
+        1,
+        101
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 105,
+      "outside_source_extent_nodes": 3,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "lvl",
+        "changed_vertices",
+        "V2",
+        "subscripts",
+        "EC",
+        "thick",
+        "inten",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "loc_ind",
+        "EI",
+        "sig",
+        "cycle_vertex",
+        "RB",
+        "total_cost",
+        "split_costs",
+        "split_ids",
+        "cycle_vertices",
+        "marked_new",
+        "norms",
+        "ids",
+        "shifted",
+        "root_pos",
+        "changed",
+        "unclear",
+        "vertex_colors",
+        "vertex_selected",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "show_markings",
+        "indices",
+        "EE",
+        "pseudo_edited",
+        "improv_vector",
+        "orients_analyzed",
+        "EC2",
+        "art",
+        "ven",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "onh_norms",
+        "ab_onh_norms",
+        "unsure",
+        "other",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "missing_paths",
+        "meta_graph"
+      ],
+      "tiles": 84,
+      "tile_nodes_min": 0,
+      "tile_nodes_max": 65,
+      "boundary_nodes": 655,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_11.mat",
+      "split": "train",
+      "image_shape": [
+        899,
+        1279,
+        3
+      ],
+      "dense_nodes": 7116,
+      "dense_edges": 7205,
+      "contracted_nodes": 597,
+      "contracted_edges": 686,
+      "topology": [
+        1,
+        90
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 95,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "lvl",
+        "changed_vertices",
+        "V2",
+        "subscripts",
+        "EC",
+        "thick",
+        "inten",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "loc_ind",
+        "EI",
+        "sig",
+        "cycle_vertex",
+        "RB",
+        "total_cost",
+        "split_costs",
+        "split_ids",
+        "marked_new",
+        "norms",
+        "cycle_vertices",
+        "ids",
+        "shifted",
+        "root_pos",
+        "changed",
+        "unclear",
+        "vertex_colors",
+        "vertex_selected",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "show_markings",
+        "indices",
+        "EE",
+        "pseudo_edited",
+        "improv_vector",
+        "orients_analyzed",
+        "EC2",
+        "num_cycles",
+        "art",
+        "ven",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "onh_norms",
+        "ab_onh_norms",
+        "unsure",
+        "other",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "missing_paths",
+        "meta_graph"
+      ],
+      "tiles": 80,
+      "tile_nodes_min": 0,
+      "tile_nodes_max": 76,
+      "boundary_nodes": 587,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_12.mat",
+      "split": "train",
+      "image_shape": [
+        833,
+        1505,
+        3
+      ],
+      "dense_nodes": 8280,
+      "dense_edges": 8374,
+      "contracted_nodes": 713,
+      "contracted_edges": 807,
+      "topology": [
+        1,
+        95
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 98,
+      "outside_source_extent_nodes": 2,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "lvl",
+        "changed_vertices",
+        "V2",
+        "subscripts",
+        "EC",
+        "thick",
+        "inten",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "loc_ind",
+        "EI",
+        "sig",
+        "cycle_vertex",
+        "RB",
+        "total_cost",
+        "split_costs",
+        "split_ids",
+        "cycle_vertices",
+        "marked_new",
+        "norms",
+        "ids",
+        "shifted",
+        "root_pos",
+        "changed",
+        "unclear",
+        "vertex_colors",
+        "vertex_selected",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "show_markings",
+        "indices",
+        "EE",
+        "pseudo_edited",
+        "improv_vector",
+        "orients_analyzed",
+        "EC2",
+        "num_cycles",
+        "art",
+        "ven",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "onh_norms",
+        "ab_onh_norms",
+        "unsure",
+        "other",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "missing_paths",
+        "meta_graph"
+      ],
+      "tiles": 84,
+      "tile_nodes_min": 2,
+      "tile_nodes_max": 59,
+      "boundary_nodes": 683,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_13.mat",
+      "split": "train",
+      "image_shape": [
+        829,
+        1531,
+        3
+      ],
+      "dense_nodes": 9113,
+      "dense_edges": 9257,
+      "contracted_nodes": 894,
+      "contracted_edges": 1038,
+      "topology": [
+        1,
+        145
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 145,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "unclear",
+        "lvl",
+        "changed",
+        "thick",
+        "inten",
+        "norms",
+        "vertex_colors",
+        "vertex_selected",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "V2",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "indices",
+        "subscripts",
+        "EC",
+        "EE",
+        "num_cycles",
+        "cycle_vertices",
+        "improv_vector",
+        "orients_analyzed",
+        "marked_new",
+        "EC2",
+        "root_pos",
+        "art",
+        "ven",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "onh_norms",
+        "ab_onh_norms",
+        "unsure",
+        "other",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "missing_paths",
+        "meta_graph"
+      ],
+      "tiles": 84,
+      "tile_nodes_min": 2,
+      "tile_nodes_max": 61,
+      "boundary_nodes": 803,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_14.mat",
+      "split": "train",
+      "image_shape": [
+        765,
+        1373,
+        3
+      ],
+      "dense_nodes": 6201,
+      "dense_edges": 6279,
+      "contracted_nodes": 500,
+      "contracted_edges": 578,
+      "topology": [
+        1,
+        79
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 79,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "unclear",
+        "lvl",
+        "changed",
+        "thick",
+        "inten",
+        "norms",
+        "vertex_colors",
+        "vertex_selected",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "V2",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "indices",
+        "subscripts",
+        "EC",
+        "EE",
+        "improv_vector",
+        "orients_analyzed",
+        "marked_new",
+        "EC2",
+        "num_cycles",
+        "cycle_vertices",
+        "root_pos",
+        "art",
+        "ven",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "onh_norms",
+        "ab_onh_norms",
+        "unsure",
+        "other",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "missing_paths",
+        "meta_graph"
+      ],
+      "tiles": 66,
+      "tile_nodes_min": 0,
+      "tile_nodes_max": 56,
+      "boundary_nodes": 523,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_15.mat",
+      "split": "train",
+      "image_shape": [
+        731,
+        1288,
+        3
+      ],
+      "dense_nodes": 7783,
+      "dense_edges": 7916,
+      "contracted_nodes": 754,
+      "contracted_edges": 887,
+      "topology": [
+        1,
+        134
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 134,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "unclear",
+        "lvl",
+        "changed",
+        "thick",
+        "inten",
+        "norms",
+        "vertex_colors",
+        "vertex_selected",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "V2",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "indices",
+        "subscripts",
+        "EC",
+        "EE",
+        "num_cycles",
+        "cycle_vertices",
+        "improv_vector",
+        "orients_analyzed",
+        "marked_new",
+        "EC2",
+        "root_pos",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "onh_norms",
+        "ab_onh_norms",
+        "art",
+        "ven",
+        "unsure",
+        "other",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "missing_paths",
+        "meta_graph"
+      ],
+      "tiles": 66,
+      "tile_nodes_min": 2,
+      "tile_nodes_max": 57,
+      "boundary_nodes": 670,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_16.mat",
+      "split": "train",
+      "image_shape": [
+        812,
+        1327,
+        3
+      ],
+      "dense_nodes": 7397,
+      "dense_edges": 7489,
+      "contracted_nodes": 762,
+      "contracted_edges": 854,
+      "topology": [
+        1,
+        93
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 95,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "unclear",
+        "lvl",
+        "changed",
+        "thick",
+        "inten",
+        "norms",
+        "vertex_colors",
+        "vertex_selected",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "V2",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "art",
+        "ven",
+        "unsure",
+        "other",
+        "indices",
+        "subscripts",
+        "EC",
+        "EE",
+        "num_cycles",
+        "cycle_vertices",
+        "root_pos",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "image2_type",
+        "missing_paths",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "meta_graph"
+      ],
+      "tiles": 77,
+      "tile_nodes_min": 2,
+      "tile_nodes_max": 60,
+      "boundary_nodes": 707,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_17.mat",
+      "split": "train",
+      "image_shape": [
+        977,
+        1516,
+        3
+      ],
+      "dense_nodes": 7877,
+      "dense_edges": 7955,
+      "contracted_nodes": 637,
+      "contracted_edges": 715,
+      "topology": [
+        1,
+        79
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 80,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "unclear",
+        "lvl",
+        "changed",
+        "thick",
+        "inten",
+        "norms",
+        "vertex_colors",
+        "vertex_selected",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "V2",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "art",
+        "ven",
+        "unsure",
+        "other",
+        "indices",
+        "subscripts",
+        "EC",
+        "EE",
+        "num_cycles",
+        "cycle_vertices",
+        "root_pos",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "image2_type",
+        "missing_paths",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "meta_graph"
+      ],
+      "tiles": 96,
+      "tile_nodes_min": 0,
+      "tile_nodes_max": 59,
+      "boundary_nodes": 680,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_18.mat",
+      "split": "train",
+      "image_shape": [
+        1046,
+        1516,
+        3
+      ],
+      "dense_nodes": 9500,
+      "dense_edges": 9628,
+      "contracted_nodes": 864,
+      "contracted_edges": 992,
+      "topology": [
+        1,
+        129
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 130,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "unclear",
+        "lvl",
+        "changed",
+        "thick",
+        "inten",
+        "norms",
+        "vertex_colors",
+        "vertex_selected",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "V2",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "art",
+        "ven",
+        "unsure",
+        "other",
+        "indices",
+        "subscripts",
+        "EC",
+        "EE",
+        "root_pos",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "image2_type",
+        "missing_paths",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "meta_graph"
+      ],
+      "tiles": 108,
+      "tile_nodes_min": 2,
+      "tile_nodes_max": 61,
+      "boundary_nodes": 844,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_19.mat",
+      "split": "train",
+      "image_shape": [
+        969,
+        1507,
+        3
+      ],
+      "dense_nodes": 6727,
+      "dense_edges": 6820,
+      "contracted_nodes": 512,
+      "contracted_edges": 605,
+      "topology": [
+        1,
+        94
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 94,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "unclear",
+        "lvl",
+        "changed",
+        "thick",
+        "inten",
+        "norms",
+        "vertex_colors",
+        "vertex_selected",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "V2",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "art",
+        "ven",
+        "unsure",
+        "other",
+        "indices",
+        "subscripts",
+        "EC",
+        "EE",
+        "num_cycles",
+        "cycle_vertices",
+        "root_pos",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "image2_type",
+        "missing_paths",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "meta_graph"
+      ],
+      "tiles": 96,
+      "tile_nodes_min": 0,
+      "tile_nodes_max": 72,
+      "boundary_nodes": 562,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_20.mat",
+      "split": "validation",
+      "image_shape": [
+        881,
+        1631,
+        3
+      ],
+      "dense_nodes": 8750,
+      "dense_edges": 8869,
+      "contracted_nodes": 741,
+      "contracted_edges": 860,
+      "topology": [
+        1,
+        120
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 125,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "unclear",
+        "lvl",
+        "changed",
+        "thick",
+        "inten",
+        "norms",
+        "vertex_colors",
+        "vertex_selected",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "V2",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "art",
+        "ven",
+        "unsure",
+        "other",
+        "indices",
+        "subscripts",
+        "EC",
+        "EE",
+        "num_cycles",
+        "cycle_vertices",
+        "root_pos",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "image2_type",
+        "missing_paths",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "meta_graph"
+      ],
+      "tiles": 91,
+      "tile_nodes_min": 2,
+      "tile_nodes_max": 48,
+      "boundary_nodes": 738,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_21.mat",
+      "split": "validation",
+      "image_shape": [
+        820,
+        1529,
+        3
+      ],
+      "dense_nodes": 7947,
+      "dense_edges": 8056,
+      "contracted_nodes": 679,
+      "contracted_edges": 788,
+      "topology": [
+        1,
+        110
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 115,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "unclear",
+        "lvl",
+        "changed",
+        "thick",
+        "inten",
+        "norms",
+        "vertex_colors",
+        "vertex_selected",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "V2",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "art",
+        "ven",
+        "unsure",
+        "other",
+        "indices",
+        "subscripts",
+        "EC",
+        "EE",
+        "root_pos",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "image2_type",
+        "missing_paths",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "meta_graph"
+      ],
+      "tiles": 84,
+      "tile_nodes_min": 2,
+      "tile_nodes_max": 63,
+      "boundary_nodes": 700,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_22.mat",
+      "split": "validation",
+      "image_shape": [
+        904,
+        1283,
+        3
+      ],
+      "dense_nodes": 7081,
+      "dense_edges": 7178,
+      "contracted_nodes": 609,
+      "contracted_edges": 706,
+      "topology": [
+        1,
+        98
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 98,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "unclear",
+        "lvl",
+        "changed",
+        "thick",
+        "inten",
+        "norms",
+        "vertex_colors",
+        "vertex_selected",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "V2",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "art",
+        "ven",
+        "unsure",
+        "other",
+        "indices",
+        "subscripts",
+        "EC",
+        "EE",
+        "num_cycles",
+        "cycle_vertices",
+        "root_pos",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "image2_type",
+        "missing_paths",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "meta_graph"
+      ],
+      "tiles": 88,
+      "tile_nodes_min": 2,
+      "tile_nodes_max": 65,
+      "boundary_nodes": 653,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_23.mat",
+      "split": "validation",
+      "image_shape": [
+        933,
+        1433,
+        3
+      ],
+      "dense_nodes": 7150,
+      "dense_edges": 7233,
+      "contracted_nodes": 617,
+      "contracted_edges": 700,
+      "topology": [
+        1,
+        84
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 85,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "unclear",
+        "lvl",
+        "changed",
+        "thick",
+        "inten",
+        "norms",
+        "vertex_colors",
+        "vertex_selected",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "V2",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "art",
+        "ven",
+        "unsure",
+        "other",
+        "indices",
+        "subscripts",
+        "EC",
+        "EE",
+        "num_cycles",
+        "cycle_vertices",
+        "root_pos",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "image2_type",
+        "missing_paths",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "meta_graph"
+      ],
+      "tiles": 96,
+      "tile_nodes_min": 0,
+      "tile_nodes_max": 63,
+      "boundary_nodes": 583,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    },
+    {
+      "file": "wide_image_24.mat",
+      "split": "validation",
+      "image_shape": [
+        839,
+        1347,
+        3
+      ],
+      "dense_nodes": 6467,
+      "dense_edges": 6576,
+      "contracted_nodes": 597,
+      "contracted_edges": 706,
+      "topology": [
+        1,
+        110
+      ],
+      "duplicate_coordinate_nodes": 0,
+      "degree4plus": 110,
+      "outside_source_extent_nodes": 0,
+      "graph_fields": [
+        "V",
+        "A",
+        "v_ids",
+        "E",
+        "root",
+        "marked",
+        "unclear",
+        "lvl",
+        "changed",
+        "thick",
+        "inten",
+        "norms",
+        "vertex_colors",
+        "vertex_selected",
+        "twins",
+        "twins_flag",
+        "twins_pairs",
+        "V2",
+        "jitter_twins",
+        "draw_stat",
+        "edited",
+        "pseudo_edited",
+        "show_markings",
+        "art",
+        "ven",
+        "unsure",
+        "other",
+        "indices",
+        "subscripts",
+        "EC",
+        "EE",
+        "num_cycles",
+        "cycle_vertices",
+        "root_pos",
+        "onh_pos",
+        "onh_width",
+        "onh",
+        "image2_type",
+        "missing_paths",
+        "conn_paths",
+        "conn_subpaths",
+        "junctions",
+        "meta_graph"
+      ],
+      "tiles": 77,
+      "tile_nodes_min": 0,
+      "tile_nodes_max": 66,
+      "boundary_nodes": 588,
+      "subject_metadata": "No patient/eye identifier in supplied README or graph fields"
+    }
+  ],
+  "passed": true,
+  "scope": "23 development images fully audited; image07 excluded; 6 test headers only",
+  "training_node_quantiles": {
+    "min": 0.0,
+    "p50": 13.0,
+    "p90": 32.600000000000136,
+    "p95": 41.0,
+    "p99": 58.0,
+    "max": 76.0
+  },
+  "queries": 96,
+  "samples": {
+    "train": 1385,
+    "validation": 506
+  },
+  "limitations": [
+    "patient independence unknown",
+    "graph labels are supplied AV-analysis topology, not new independent tracing",
+    "image-level metrics are crop macro/micro; full mosaic reconstruction not evaluated",
+    "unknown physical calibration: pixels only"
+  ]
+}

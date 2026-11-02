@@ -1,0 +1,20 @@
+[
+  {
+    "seed": 364505,
+    "archive": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A-xyz/step-12000/caches.zip",
+    "sha256": "dede3cef8680bdeb26918c63088401515ef78abdf97eb2640c370007089d500f",
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt",
+    "config_sha256": "bf96eda5dab5ce10502f3af01b2c4d1ca1e424b20ca7d47be31c2b6a69a9103e",
+    "hungarian_replay_max_mm": 0.0,
+    "embedding_cached": false
+  },
+  {
+    "seed": 92741,
+    "archive": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/92741/runs/A-xyz/step-12000/caches.zip",
+    "sha256": "e5bfcdff76cf0f1cbd5ae8e101066fdddbf700c8bab2562ddaac4be440c32cd4",
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/92741/runs/A-xyz/model-12000.pt",
+    "config_sha256": "0f9f8a916ba01f933e6afd7a151396c1121995994d9e2fa27a2508e65df626af",
+    "hungarian_replay_max_mm": 0.0,
+    "embedding_cached": false
+  }
+]

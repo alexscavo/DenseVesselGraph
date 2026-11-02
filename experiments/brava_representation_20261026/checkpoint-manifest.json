@@ -1,0 +1,52 @@
+[
+  {
+    "path": "experiments/brava_representation_20261026/runs/original/geometry-C1-final.pt",
+    "bytes": 6457895,
+    "sha256": "128af2cc16eac76b8ce5c93940024c1970d0bb5f0c5fbaa9a9122cf0f04e820c"
+  },
+  {
+    "path": "experiments/brava_representation_20261026/runs/original/geometry-K24-final.pt",
+    "bytes": 6442162,
+    "sha256": "37de59c84db0f87827b3a14ded81a47fdc11e24165c5f420fb423b0141f50e84"
+  },
+  {
+    "path": "experiments/brava_representation_20261026/runs/original/geometry-K8-final.pt",
+    "bytes": 6319328,
+    "sha256": "62bf06e376a8d417a248f9101b57bb0d75d358fa7a6b67b29cb954db5801925c"
+  },
+  {
+    "path": "experiments/brava_representation_20261026/runs/original/model-001000.pt",
+    "bytes": 1420862838,
+    "sha256": "14e1bef957411bc6727e3bc9bb6b4b48a427f16e48c3e369f9805ca17a0146fa"
+  },
+  {
+    "path": "experiments/brava_representation_20261026/runs/original/model-002000.pt",
+    "bytes": 1420862838,
+    "sha256": "0aaa8cbcaa57743743bc4f2b0476a921955c5d892c5014b17745f422b59b1cbb"
+  },
+  {
+    "path": "experiments/brava_representation_20261026/runs/original/model-004000.pt",
+    "bytes": 1420862838,
+    "sha256": "ea85a1b393a69a153d03c226314ed9ef1c2a4d96228745f652431e3720086be6"
+  },
+  {
+    "path": "experiments/brava_representation_20261026/runs/split/geometry-K8-final.pt",
+    "bytes": 6319328,
+    "sha256": "1e175790eb90521f3806ecee742e390ffd852a5e2803f848c2b9d2768c5d59e9"
+  },
+  {
+    "path": "experiments/brava_representation_20261026/runs/split/model-001000.pt",
+    "bytes": 1382193442,
+    "sha256": "9a6a73402d9aaf7cec6e754c8762d3f7e128849ffeeb3b1bb77238de41d4b573"
+  },
+  {
+    "path": "experiments/brava_representation_20261026/runs/split/model-002000.pt",
+    "bytes": 1382193442,
+    "sha256": "49b3e04bcdbdb9773cd0adce0bda6c7e15260f40f01906ec82aa5cdaef7e75e5"
+  },
+  {
+    "path": "experiments/brava_representation_20261026/runs/split/model-004000.pt",
+    "bytes": 1382193442,
+    "sha256": "464c9ef45c83a5b0dfe065c154ebf635be1f0be96f7ced57f408d68e5da2af01"
+  }
+]

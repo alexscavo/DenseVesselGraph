@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=ixi-local-components
+#SBATCH --account=vnc@h100
+#SBATCH --partition=gpu_p6
+#SBATCH --constraint=h100
+#SBATCH --qos=qos_gpu_h100-t3
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-task=6
+#SBATCH --hint=nomultithread
+#SBATCH --time=03:00:00
+#SBATCH --output=experiments/ixi_local_components_20261026/logs/%A_%a.out
+#SBATCH --error=experiments/ixi_local_components_20261026/logs/%A_%a.err
+set -eo pipefail
+export GNBM_REPO_DIR="$SLURM_SUBMIT_DIR" UV_CACHE_DIR="$SLURM_SUBMIT_DIR/.cache/uv" TORCH_EXTENSIONS_DIR="$SLURM_SUBMIT_DIR/.cache/torch"
+export XDG_CACHE_HOME="$SLURM_SUBMIT_DIR/.cache" MPLCONFIGDIR="$SLURM_SUBMIT_DIR/.cache/matplotlib" IDR_DEBUG=WARN WANDB_MODE=offline
+export JOBSCRATCH="$SCRATCH/experiments/gnbm/ixi_local_components_20261026/runtime/$SLURM_JOB_ID" TMPDIR="$SCRATCH/experiments/gnbm/ixi_local_components_20261026/runtime/$SLURM_JOB_ID"
+mkdir -p "$JOBSCRATCH"
+trap 'rm -rf -- "$JOBSCRATCH" "${IXI_LOCAL_TMPDIR:-$JOBSCRATCH}"' EXIT
+unset PYTHONPATH
+source cluster/jean_zay/env.sh
+source cluster/jean_zay/ixi_local_tmp.sh
+runtime_python="$(python -c 'import sys; print(sys.base_prefix)')/bin/python"
+source cluster/jean_zay/stage_spline_runtime.sh
+source cluster/jean_zay/ixi_mechanism_runtime.sh
+export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+if [[ "$1" == smoke ]]; then
+ "$runtime_python" -m unittest tests.test_ixi_local_components tests.test_ixi_local_runtime -v
+fi
+if [[ "$1" == train ]]; then set -- "$@" --index "$SLURM_ARRAY_TASK_ID"; fi
+"$runtime_python" -u scripts/ixi_local_components.py "$@"

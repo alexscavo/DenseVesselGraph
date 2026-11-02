@@ -1,0 +1,7 @@
+{
+  "script": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/scripts/visualize_native2d_results_20261029.py",
+  "script_sha256": "c2dc023aa5774b2208cd5654633cde565ab19318fc0a33cf7f10c72befebe09b",
+  "evaluation": "final.pt, epoch100, validation only, node/edge cuts0.5, unchanged metrics",
+  "test_arrays_opened": 0,
+  "selection_is_prediction_independent": true
+}

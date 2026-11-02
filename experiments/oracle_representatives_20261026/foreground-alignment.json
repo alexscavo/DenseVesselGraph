@@ -1,0 +1,32 @@
+{
+  "reference": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/syntheticMRI/transfer_source_k8_25k_20261015/val/seg/sample_000013_0003_seg.nii.gz",
+  "nibabel_vs_SimpleITK_native_axes_exact": true,
+  "coordinate_formula": "voxel = (physical @ inverse(metric.T)) * native_shape",
+  "metric_example": [
+    [
+      -64,
+      0,
+      0
+    ],
+    [
+      0,
+      -64,
+      0
+    ],
+    [
+      0,
+      0,
+      64
+    ]
+  ],
+  "mask_values": [
+    0,
+    1
+  ],
+  "native_shape": [
+    64,
+    64,
+    64
+  ],
+  "foreground_sampling": "nearest voxel and trilinear support; interpolated EDT to foreground voxel centers; offline only"
+}

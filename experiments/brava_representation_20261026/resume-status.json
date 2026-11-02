@@ -1,0 +1,147 @@
+{
+  "status": "Completed: all bounded experiments/evaluations collected and primary BRAVA reports updated",
+  "jobs": {
+    "tiny_original": {
+      "id": "1586043",
+      "args": [
+        "tiny",
+        "--group",
+        "original"
+      ],
+      "options": [
+        "--dependency=afterok:1584757",
+        "--kill-on-invalid-dep=yes",
+        "--time=00:30:00"
+      ]
+    },
+    "tiny_split": {
+      "id": "1586044",
+      "args": [
+        "tiny",
+        "--group",
+        "split"
+      ],
+      "options": [
+        "--dependency=afterok:1586043",
+        "--kill-on-invalid-dep=yes",
+        "--time=00:30:00"
+      ]
+    },
+    "train_original": {
+      "id": "1586045",
+      "args": [
+        "train",
+        "--group",
+        "original"
+      ],
+      "options": [
+        "--dependency=afterok:1586044",
+        "--kill-on-invalid-dep=yes"
+      ]
+    },
+    "train_split": {
+      "id": "1586046",
+      "args": [
+        "train",
+        "--group",
+        "split"
+      ],
+      "options": [
+        "--dependency=afterok:1586045",
+        "--kill-on-invalid-dep=yes"
+      ]
+    },
+    "evaluate_original_1000": {
+      "id": "1586047",
+      "args": [
+        "evaluate",
+        "--group",
+        "original",
+        "--step",
+        "1000"
+      ],
+      "options": [
+        "--dependency=afterok:1586045",
+        "--kill-on-invalid-dep=yes"
+      ]
+    },
+    "evaluate_original_2000": {
+      "id": "1586048",
+      "args": [
+        "evaluate",
+        "--group",
+        "original",
+        "--step",
+        "2000"
+      ],
+      "options": [
+        "--dependency=afterok:1586045",
+        "--kill-on-invalid-dep=yes"
+      ]
+    },
+    "evaluate_original_4000": {
+      "id": "1586049",
+      "args": [
+        "evaluate",
+        "--group",
+        "original",
+        "--step",
+        "4000"
+      ],
+      "options": [
+        "--dependency=afterok:1586045",
+        "--kill-on-invalid-dep=yes"
+      ]
+    },
+    "evaluate_split_1000": {
+      "id": "1586050",
+      "args": [
+        "evaluate",
+        "--group",
+        "split",
+        "--step",
+        "1000"
+      ],
+      "options": [
+        "--dependency=afterok:1586046",
+        "--kill-on-invalid-dep=yes"
+      ]
+    },
+    "evaluate_split_2000": {
+      "id": "1586051",
+      "args": [
+        "evaluate",
+        "--group",
+        "split",
+        "--step",
+        "2000"
+      ],
+      "options": [
+        "--dependency=afterok:1586046",
+        "--kill-on-invalid-dep=yes"
+      ]
+    },
+    "evaluate_split_4000": {
+      "id": "1586052",
+      "args": [
+        "evaluate",
+        "--group",
+        "split",
+        "--step",
+        "4000"
+      ],
+      "options": [
+        "--dependency=afterok:1586046",
+        "--kill-on-invalid-dep=yes"
+      ]
+    }
+  },
+  "cpu_audit": "1584757 completed",
+  "gradient_check": "experiments/brava_representation_20261026/tiny/original/gradient-check.json",
+  "next_actions": [],
+  "estimated_check_minutes": "10\u201320 plus scheduler delay",
+  "estimated_bounded_study_hours": "1\u20132 plus scheduler delay",
+  "archive_policy": "Consult existing storage-cleanup manifests and read/extract individual members only when needed",
+  "gpu_jobs_pending": false,
+  "report_publication": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/experiments/brava_representation_20261026/report-publication.json"
+}

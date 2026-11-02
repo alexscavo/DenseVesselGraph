@@ -1,0 +1,326 @@
+[
+  {
+    "scorer": "token_geometry/1000",
+    "reference": "original",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.004922596789093195,
+    "ci95_low": 0.0025317612728645036,
+    "ci95_high": 0.00755243390018762
+  },
+  {
+    "scorer": "token_geometry/1000",
+    "reference": "original",
+    "policy": "max_f1",
+    "tolerance_mm": 2,
+    "delta_edge_f1": -0.0009422554339088007,
+    "ci95_low": -0.002780153134804246,
+    "ci95_high": 0.0009153249406407968
+  },
+  {
+    "scorer": "token_geometry/1000",
+    "reference": "original",
+    "policy": "preserve_precision",
+    "tolerance_mm": 2,
+    "delta_edge_f1": -0.0055994657595542785,
+    "ci95_low": -0.008626072449489682,
+    "ci95_high": -0.002825239669863166
+  },
+  {
+    "scorer": "token_geometry/2000",
+    "reference": "original",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.008364512831092116,
+    "ci95_low": 0.005542573140689957,
+    "ci95_high": 0.01125866579973786
+  },
+  {
+    "scorer": "token_geometry/2000",
+    "reference": "original",
+    "policy": "max_f1",
+    "tolerance_mm": 2,
+    "delta_edge_f1": -0.0006474066023811897,
+    "ci95_low": -0.0023528208769962255,
+    "ci95_high": 0.001213921736772558
+  },
+  {
+    "scorer": "token_geometry/2000",
+    "reference": "original",
+    "policy": "preserve_precision",
+    "tolerance_mm": 2,
+    "delta_edge_f1": -0.00528578349861035,
+    "ci95_low": -0.007542978765749615,
+    "ci95_high": -0.00302881810559398
+  },
+  {
+    "scorer": "token_geometry/65600",
+    "reference": "original",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.02555594502768481,
+    "ci95_low": 0.01639564404310556,
+    "ci95_high": 0.03467465594617227
+  },
+  {
+    "scorer": "token_geometry/65600",
+    "reference": "original",
+    "policy": "max_f1",
+    "tolerance_mm": 2,
+    "delta_edge_f1": -0.02963105511596481,
+    "ci95_low": -0.03528401185266811,
+    "ci95_high": -0.024790314783437944
+  },
+  {
+    "scorer": "token_geometry/65600",
+    "reference": "original",
+    "policy": "preserve_precision",
+    "tolerance_mm": 2,
+    "delta_edge_f1": -0.06293324846773515,
+    "ci95_low": -0.07088341931018766,
+    "ci95_high": -0.05420825871923425
+  },
+  {
+    "scorer": "endpoints/1000",
+    "reference": "original",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.017598044640007998,
+    "ci95_low": 0.013162145720388159,
+    "ci95_high": 0.022360012149783073
+  },
+  {
+    "scorer": "endpoints/1000",
+    "reference": "original",
+    "policy": "max_f1",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.004380759972600179,
+    "ci95_low": 0.0023242628797445113,
+    "ci95_high": 0.006437802182962905
+  },
+  {
+    "scorer": "endpoints/1000",
+    "reference": "original",
+    "policy": "preserve_precision",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.05032441481571273,
+    "ci95_low": 0.0441119070609754,
+    "ci95_high": 0.056417266840205184
+  },
+  {
+    "scorer": "endpoints/2000",
+    "reference": "original",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.02187313669020667,
+    "ci95_low": 0.017960120117080522,
+    "ci95_high": 0.0257632306371384
+  },
+  {
+    "scorer": "endpoints/2000",
+    "reference": "original",
+    "policy": "max_f1",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.004924164967788441,
+    "ci95_low": 0.0028878286480768906,
+    "ci95_high": 0.0068745448819250675
+  },
+  {
+    "scorer": "endpoints/2000",
+    "reference": "original",
+    "policy": "preserve_precision",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.054103670104360985,
+    "ci95_low": 0.047217732684074504,
+    "ci95_high": 0.06105408229067136
+  },
+  {
+    "scorer": "endpoints/65600",
+    "reference": "original",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.027944174691682783,
+    "ci95_low": 0.01919982816216452,
+    "ci95_high": 0.03717053258096275
+  },
+  {
+    "scorer": "endpoints/65600",
+    "reference": "original",
+    "policy": "max_f1",
+    "tolerance_mm": 2,
+    "delta_edge_f1": -0.029735215380644484,
+    "ci95_low": -0.03375452025648674,
+    "ci95_high": -0.02560147345390804
+  },
+  {
+    "scorer": "endpoints/65600",
+    "reference": "original",
+    "policy": "preserve_precision",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.023092121567280036,
+    "ci95_low": 0.014503302959480576,
+    "ci95_high": 0.0316555784125786
+  },
+  {
+    "scorer": "chord/1000",
+    "reference": "original",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.01747321288229206,
+    "ci95_low": 0.013914505699836217,
+    "ci95_high": 0.02137769661791173
+  },
+  {
+    "scorer": "chord/1000",
+    "reference": "original",
+    "policy": "max_f1",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.005012092621604514,
+    "ci95_low": 0.003388592243319632,
+    "ci95_high": 0.00688367169226297
+  },
+  {
+    "scorer": "chord/1000",
+    "reference": "original",
+    "policy": "preserve_precision",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.04161355753410233,
+    "ci95_low": 0.03515023974240043,
+    "ci95_high": 0.04798486687493745
+  },
+  {
+    "scorer": "chord/2000",
+    "reference": "original",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.024437197041990835,
+    "ci95_low": 0.01987978376366643,
+    "ci95_high": 0.02942705524648038
+  },
+  {
+    "scorer": "chord/2000",
+    "reference": "original",
+    "policy": "max_f1",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.006662327288053216,
+    "ci95_low": 0.004465989070837344,
+    "ci95_high": 0.009001500149313592
+  },
+  {
+    "scorer": "chord/2000",
+    "reference": "original",
+    "policy": "preserve_precision",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.05100420337608416,
+    "ci95_low": 0.04431449437659035,
+    "ci95_high": 0.058124918980127185
+  },
+  {
+    "scorer": "chord/65600",
+    "reference": "original",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.0437699391480873,
+    "ci95_low": 0.035636836581138,
+    "ci95_high": 0.05174441405726498
+  },
+  {
+    "scorer": "chord/65600",
+    "reference": "original",
+    "policy": "max_f1",
+    "tolerance_mm": 2,
+    "delta_edge_f1": -0.019800892697510758,
+    "ci95_low": -0.024754430304066963,
+    "ci95_high": -0.014899474574338508
+  },
+  {
+    "scorer": "chord/65600",
+    "reference": "original",
+    "policy": "preserve_precision",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.03699358331420359,
+    "ci95_low": 0.02917970490875659,
+    "ci95_high": 0.04479893765058703
+  },
+  {
+    "scorer": "corridor/1000",
+    "reference": "original",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.014418505764167214,
+    "ci95_low": 0.01102173509137458,
+    "ci95_high": 0.01818569749287209
+  },
+  {
+    "scorer": "corridor/1000",
+    "reference": "original",
+    "policy": "max_f1",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.003284960056060021,
+    "ci95_low": 0.0012893276317061159,
+    "ci95_high": 0.005440115382074115
+  },
+  {
+    "scorer": "corridor/1000",
+    "reference": "original",
+    "policy": "preserve_precision",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.038238145770123855,
+    "ci95_low": 0.03248082134495142,
+    "ci95_high": 0.04367432071855689
+  },
+  {
+    "scorer": "corridor/2000",
+    "reference": "original",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.02212406175202003,
+    "ci95_low": 0.01698632090386868,
+    "ci95_high": 0.026856368059114594
+  },
+  {
+    "scorer": "corridor/2000",
+    "reference": "original",
+    "policy": "max_f1",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.007521667911602942,
+    "ci95_low": 0.005003412413382155,
+    "ci95_high": 0.010043222349087914
+  },
+  {
+    "scorer": "corridor/2000",
+    "reference": "original",
+    "policy": "preserve_precision",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.05802732160177876,
+    "ci95_low": 0.05089062563863087,
+    "ci95_high": 0.06549656887692457
+  },
+  {
+    "scorer": "corridor/65600",
+    "reference": "original",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.03889276119389129,
+    "ci95_low": 0.030212243576871415,
+    "ci95_high": 0.046976287722130784
+  },
+  {
+    "scorer": "corridor/65600",
+    "reference": "original",
+    "policy": "max_f1",
+    "tolerance_mm": 2,
+    "delta_edge_f1": -0.027243532687254768,
+    "ci95_low": -0.03179630552440167,
+    "ci95_high": -0.0224989216446706
+  },
+  {
+    "scorer": "corridor/65600",
+    "reference": "original",
+    "policy": "preserve_precision",
+    "tolerance_mm": 2,
+    "delta_edge_f1": 0.04776064189886922,
+    "ci95_low": 0.038454138770136474,
+    "ci95_high": 0.05720232762995877
+  }
+]

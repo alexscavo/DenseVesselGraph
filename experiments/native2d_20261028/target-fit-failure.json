@@ -1,0 +1,9 @@
+{
+  "sample": "wide13_x128_y256",
+  "edge": 7,
+  "original_control_max_abs_pixel": 56890.073578728014,
+  "training_loss_spike_update": 4500,
+  "cause": "irregular arc samples leave a spline basis span nearly unsupervised; uniform arc resampling preserves the guide and fixes conditioning",
+  "geometry_conclusion": "blocked on original pilot; preserve all evidence",
+  "correction": "one fresh same-budget matched pair in native2d_20261028_targetfix; no additional architectures or sweeps"
+}

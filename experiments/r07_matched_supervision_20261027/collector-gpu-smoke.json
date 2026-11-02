@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "real_patches": 8,
+  "graph_curve_aggregation_and_identical_pairing": true,
+  "note": "Execution check after three updates only; not a scientific result."
+}

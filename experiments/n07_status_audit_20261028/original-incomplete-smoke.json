@@ -1,0 +1,21 @@
+{
+  "completed": false,
+  "arms": {},
+  "dataset_audit": {
+    "subjects": 149,
+    "physical_voxel_mm_min": [
+      0.4599999785423279,
+      0.4599999785423279,
+      0.7999999523162842
+    ],
+    "physical_voxel_mm_max": [
+      0.4882810115814209,
+      0.4882810413837433,
+      0.8000000715255737
+    ],
+    "checked_nodes_max": 71
+  },
+  "batch1_vs4_max_normalized_coordinate_drift": 0.0010903775691986084,
+  "same_batch1_repeat_max_normalized_coordinate_drift": 0.0,
+  "evaluation_batch_size": 1
+}

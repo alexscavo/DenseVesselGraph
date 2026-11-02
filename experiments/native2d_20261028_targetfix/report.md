@@ -1,0 +1,29 @@
+## Native2D-03: corrected-target held-out AV-WIDE study — 28 October 2026
+
+Authorized bounded B0 versus A-xyz pilot, following Native2D-01. All measurements below refer to image-disjoint validation, never test data. Patient independence is unverified. Distances are pixels.
+
+Cohort: 17 train / 6 validation images; six reserved test images have header-only inspection. Image 07 excluded for its diagonal self-loop. 1385 train / 506 validation 128² tiles; 96 object queries selected from contracted training GT. All spatial tiles retained, including empty graphs.
+Correction: uniform64 arc-length samples of the same polyline before K8 fitting. All graph/image/split/reference-path tensors are exactly unchanged. Refit 25263 branches; control max absolute coordinate 2007485.8→131.2 px, uniform design condition number4.55. One fresh fixed-budget pair only; original checkpoints are not resumed.
+Full ResNet101/512D, 3 encoder + 3 decoder layers, 5 relation tokens: gates PASSED; 1200 optimizer updates on two 128² training tiles before the experiment. Shared initialization and graph-only gradient checks passed. Budget fixed to 6000 updates per arm, batch 4, no automatic extension.
+Throughput (existing PyTorch deformable attention): B0 0.0558s/update, 71.72 images/s, Axyz 0.0559s/update, 71.59 images/s.
+Slurm: gates `1659581`, B0 `1659729`, Axyz `1659730`, collector `1659731`.
+
+Primary comparison: **final fixed-budget checkpoints**, all validation tiles. Branch/Curve columns use GT edge-positive crops; all-crop aggregates are also retained in JSON, where empty/empty graphs can receive perfect scores.
+
+| Arm | State | Final update | Node F1 @2 px | Edge F1 @2 px | Branch F1 @1 px | K8 Curve F1 @1 px | Chord Curve F1 @1 px |
+|---|---|---:|---:|---:|---:|---:|---:|
+| B0 | complete | 6000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+| Axyz | complete | 6000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+
+| Arm | Node mAP | Node mAR | Edge mAP | Edge mAR | Raw node recall @2 px, micro | Filtered node recall @2 px |
+|---|---:|---:|---:|---:|---:|---:|
+| B0 | 0.0880 | 0.4497 | 0.0375 | 0.3138 | 0.2374 | 0.0000 |
+| Axyz | 0.0920 | 0.4120 | 0.0267 | 0.2918 | 0.2142 | 0.0000 |
+
+**Negative bounded pilot:** both final checkpoints retain zero nodes/edges at the predeclared0.5 confidence thresholds, missing 7,613 GT nodes and 6,308 GT edges. Conditional relation performance is undefined because no filtered endpoint pairs remain; zero duplicates are a consequence of empty predictions. There is no evidence of A-xyz benefit or spline superiority. The8 edge-empty target crops inflate all-crop Branch/Curve macro F1 to0.01581; on 498 edge-positive crops these metrics are exactly zero. Pixel-space raw coverage and unthresholded AP remain visible, and no validation-driven operating-point change is made. Stop at the fixed budget; no automatic extension.
+
+Intermediate validation uses 24 fixed spatial tiles (4/image); final and selected trained checkpoints are evaluated on every validation tile. Curve points at final therefore use a larger population; do not interpret that discontinuity as a training change. Selection uses the same 24 tiles throughout, excludes initialization, and resolves trained ties toward later updates. Best and final outcomes are both saved.
+
+Detection AP/AR uses unthresholded query scores, IoU .50:.05:.95, node limit equal to query capacity and edge top300; reported AP is crop macro. Physical node/edge F1 is micro over crops at 1/2/4 px, including crop-boundary anchors. Branch/Curve F1 is crop macro at 1 px, .25 px sampling. Spline/chord use identical inferred nodes/edges; topology cannot change. Raw/filtered recall, relation AP populations, duplicates and Betti errors are retained per crop. No subject-level uncertainty claim, full-image stitching, independent manual topology or pretraining benefit is established.
+
+Evidence and checkpoints: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261028_targetfix`. [Protocol and dataset readiness](/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/native2d_heldout_20261028.md). Learning curves: `learning-curves.png`; full metrics: `B0/best-heldout.json`, `Axyz/best-heldout.json`; final metrics: `<arm>/validation-<budget>.json`; weights/optimizer: `<arm>/best.pt`, `<arm>/latest.pt`. Failed gates and jobs are reported without automatic resubmission.

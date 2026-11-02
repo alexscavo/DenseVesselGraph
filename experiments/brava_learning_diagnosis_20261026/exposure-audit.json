@@ -1,0 +1,19 @@
+{
+  "tiny": {
+    "updates": 512,
+    "batch": 8,
+    "patches": 16,
+    "draws_per_patch": 256.0,
+    "augmentation": false,
+    "schedule": "20-update warmup then constant peak"
+  },
+  "larger": {
+    "updates": 4000,
+    "batch": 8,
+    "patches": 1248,
+    "draws_per_patch": 25.641025641025642,
+    "augmentation": true,
+    "schedule": "100-update warmup then cosine to 30% peak"
+  },
+  "interpretation": "Tiny and larger runs differ in per-patch exposure, augmentation and schedule. These counts do not establish that more updates alone would solve failure."
+}

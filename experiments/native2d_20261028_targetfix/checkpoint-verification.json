@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "checkpoints": [
+    {
+      "arm": "B0",
+      "passed": true,
+      "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261028_targetfix/B0/latest.pt",
+      "step": 6000,
+      "parameters": 72316886,
+      "strict_state_load": true,
+      "finite_parameters": true,
+      "initialization_sha256": "cbe09d04296ccc975783dd0d991a844ba44a13cc32525710993e4006e07bcc28",
+      "exposure_sha256": "3e39df64203284b64927c88fc02c9ad68203758ccb5902940bad7971edd5a740",
+      "units": "pixel",
+      "spatial_dims": 2,
+      "backbone": "resnet101",
+      "hidden_dim": 512,
+      "layers_encoder_decoder": [
+        3,
+        3
+      ],
+      "object_queries": 96,
+      "relation_tokens": 5,
+      "spline_controls": 8,
+      "refinement": false,
+      "manifest": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261028_targetfix/manifest.json"
+    },
+    {
+      "arm": "Axyz",
+      "passed": true,
+      "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261028_targetfix/Axyz/latest.pt",
+      "step": 6000,
+      "parameters": 72456792,
+      "strict_state_load": true,
+      "finite_parameters": true,
+      "initialization_sha256": "cbe09d04296ccc975783dd0d991a844ba44a13cc32525710993e4006e07bcc28",
+      "exposure_sha256": "3e39df64203284b64927c88fc02c9ad68203758ccb5902940bad7971edd5a740",
+      "units": "pixel",
+      "spatial_dims": 2,
+      "backbone": "resnet101",
+      "hidden_dim": 512,
+      "layers_encoder_decoder": [
+        3,
+        3
+      ],
+      "object_queries": 96,
+      "relation_tokens": 5,
+      "spline_controls": 8,
+      "refinement": true,
+      "manifest": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261028_targetfix/manifest.json"
+    }
+  ]
+}

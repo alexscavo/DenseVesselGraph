@@ -1,1 +1,42 @@
-/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r07-matched-supervision-20261027/experiments/r07_matched_supervision_20261027/submission.json
+{
+  "smoke": "1624151",
+  "prior_gpu_jobs": [],
+  "smoke_dependency": null,
+  "queue_at_submission": "",
+  "global_h100_limit": 2,
+  "replaces": {
+    "smoke": "1613828",
+    "prior_gpu_jobs": [],
+    "smoke_dependency": null,
+    "queue_at_submission": "",
+    "global_h100_limit": 2,
+    "training_array": "1613829",
+    "training_dependency": "afterok:1613828",
+    "seed_tasks": {
+      "0": 364505,
+      "1": 92741
+    },
+    "arms_per_seed": [
+      "S0",
+      "S1"
+    ],
+    "collector": "1613830",
+    "collector_dependency": "afterok:1613829"
+  },
+  "recovery": "Pin frozen model import before audit helper path mutation; both full source checkpoints strictly loaded on CPU; protocol unchanged.",
+  "training_array": "1624152",
+  "training_dependency": "afterok:1624151",
+  "seed_tasks": {
+    "0": 364505,
+    "1": 92741
+  },
+  "arms_per_seed": [
+    "S0",
+    "S1"
+  ],
+  "collector": "1624612",
+  "collector_dependency": "GPU completion verified in sacct and all four run manifests; report-only restart",
+  "collector_before_threshold_fix": "1624153",
+  "postprocessing_fix": "threshold-decoding-fix.json",
+  "new_gpu_runs_for_postprocessing_fix": 0
+}

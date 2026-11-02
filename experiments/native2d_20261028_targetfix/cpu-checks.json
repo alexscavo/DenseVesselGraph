@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "regressions": 9,
+  "original_fit_replay": "fails on56890px control as expected",
+  "corrected_fit": "passes bounds/endpoints/curve fidelity",
+  "exact_noncontrol_tensor_parity": true,
+  "full_dataset_target_fit_audit": true
+}

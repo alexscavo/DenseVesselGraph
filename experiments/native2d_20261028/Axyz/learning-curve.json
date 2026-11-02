@@ -1,0 +1,589 @@
+[
+  {
+    "step": 0,
+    "elapsed": 4.7356724720448256,
+    "validation": {
+      "samples": 24,
+      "units": "pixel",
+      "1.0": {
+        "node": {
+          "tp": 0,
+          "fp": 2247,
+          "fn": 377,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 104067,
+          "fn": 322,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.0
+      },
+      "2.0": {
+        "node": {
+          "tp": 1,
+          "fp": 2246,
+          "fn": 376,
+          "f1": 0.0007621951219512195,
+          "recall": 0.002652519893899204,
+          "precision": 0.0004450378282153983
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 104067,
+          "fn": 322,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.0008680555555555555
+      },
+      "4.0": {
+        "node": {
+          "tp": 2,
+          "fp": 2245,
+          "fn": 375,
+          "f1": 0.001524390243902439,
+          "recall": 0.005305039787798408,
+          "precision": 0.0008900756564307966
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 104067,
+          "fn": 322,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 16,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.0022569444444444447
+      },
+      "node_mAP_crop_macro": 0.0,
+      "node_mAR_crop_macro": 0.0,
+      "edge_mAP_crop_macro": 0.000500206262707555,
+      "edge_mAR_crop_macro": 0.0007716049440205097,
+      "beta0_signed_error_crop_macro": -1.5833333333333333,
+      "beta1_signed_error_crop_macro": 4243.208333333333
+    }
+  },
+  {
+    "step": 1000,
+    "elapsed": 146.53794430708513,
+    "validation": {
+      "samples": 24,
+      "units": "pixel",
+      "1.0": {
+        "node": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 377,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 322,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.06276949834564312
+      },
+      "2.0": {
+        "node": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 377,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 322,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.18964128312243486
+      },
+      "4.0": {
+        "node": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 377,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 322,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.3065742102036621
+      },
+      "node_mAP_crop_macro": 0.06474342606731322,
+      "node_mAR_crop_macro": 0.2795744160345445,
+      "edge_mAP_crop_macro": 0.010864370035900114,
+      "edge_mAR_crop_macro": 0.15759097523987295,
+      "beta0_signed_error_crop_macro": -2.5833333333333335,
+      "beta1_signed_error_crop_macro": -0.2916666666666667,
+      "spline": {
+        "common_branch_f1": 0.0,
+        "common_curve_f1": 0.0
+      },
+      "chord": {
+        "common_branch_f1": 0.0,
+        "common_curve_f1": 0.0
+      }
+    }
+  },
+  {
+    "step": 2000,
+    "elapsed": 219.13399069802836,
+    "validation": {
+      "samples": 24,
+      "units": "pixel",
+      "1.0": {
+        "node": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 377,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 322,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.07421339982481287
+      },
+      "2.0": {
+        "node": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 377,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 322,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.19005857090240763
+      },
+      "4.0": {
+        "node": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 377,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 322,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.39191069454280597
+      },
+      "node_mAP_crop_macro": 0.06016623984954398,
+      "node_mAR_crop_macro": 0.33134535447849583,
+      "edge_mAP_crop_macro": 0.01842786081930778,
+      "edge_mAR_crop_macro": 0.27165711240377277,
+      "beta0_signed_error_crop_macro": -2.5833333333333335,
+      "beta1_signed_error_crop_macro": -0.2916666666666667,
+      "spline": {
+        "common_branch_f1": 0.0,
+        "common_curve_f1": 0.0
+      },
+      "chord": {
+        "common_branch_f1": 0.0,
+        "common_curve_f1": 0.0
+      }
+    }
+  },
+  {
+    "step": 3000,
+    "elapsed": 293.5409672241658,
+    "validation": {
+      "samples": 24,
+      "units": "pixel",
+      "1.0": {
+        "node": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 377,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 322,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.0548052026775431
+      },
+      "2.0": {
+        "node": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 377,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 322,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.16524119221563718
+      },
+      "4.0": {
+        "node": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 377,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 322,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.39072820552353393
+      },
+      "node_mAP_crop_macro": 0.06333942806801739,
+      "node_mAR_crop_macro": 0.3343531550451493,
+      "edge_mAP_crop_macro": 0.016028600094280896,
+      "edge_mAR_crop_macro": 0.2715965488692746,
+      "beta0_signed_error_crop_macro": -2.5833333333333335,
+      "beta1_signed_error_crop_macro": -0.2916666666666667,
+      "spline": {
+        "common_branch_f1": 0.0,
+        "common_curve_f1": 0.0
+      },
+      "chord": {
+        "common_branch_f1": 0.0,
+        "common_curve_f1": 0.0
+      }
+    }
+  },
+  {
+    "step": 4000,
+    "elapsed": 389.28755291504785,
+    "validation": {
+      "samples": 24,
+      "units": "pixel",
+      "1.0": {
+        "node": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 377,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 322,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.04891727326105217
+      },
+      "2.0": {
+        "node": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 377,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 322,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.20569039856013724
+      },
+      "4.0": {
+        "node": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 377,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 322,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.43153041165587425
+      },
+      "node_mAP_crop_macro": 0.06497738961164334,
+      "node_mAR_crop_macro": 0.3906260316182548,
+      "edge_mAP_crop_macro": 0.02686744053547348,
+      "edge_mAR_crop_macro": 0.28169694039970633,
+      "beta0_signed_error_crop_macro": -2.5833333333333335,
+      "beta1_signed_error_crop_macro": -0.2916666666666667,
+      "spline": {
+        "common_branch_f1": 0.0,
+        "common_curve_f1": 0.0
+      },
+      "chord": {
+        "common_branch_f1": 0.0,
+        "common_curve_f1": 0.0
+      }
+    }
+  },
+  {
+    "step": 5000,
+    "elapsed": 477.76384490611963,
+    "validation": {
+      "samples": 24,
+      "units": "pixel",
+      "1.0": {
+        "node": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 377,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 322,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.11008616944093354
+      },
+      "2.0": {
+        "node": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 377,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 322,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.2607830993975189
+      },
+      "4.0": {
+        "node": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 377,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 322,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.5470321490788651
+      },
+      "node_mAP_crop_macro": 0.0787404057145371,
+      "node_mAR_crop_macro": 0.44540949024570486,
+      "edge_mAP_crop_macro": 0.02984825155569221,
+      "edge_mAR_crop_macro": 0.31833886525904137,
+      "beta0_signed_error_crop_macro": -2.5833333333333335,
+      "beta1_signed_error_crop_macro": -0.2916666666666667,
+      "spline": {
+        "common_branch_f1": 0.0,
+        "common_curve_f1": 0.0
+      },
+      "chord": {
+        "common_branch_f1": 0.0,
+        "common_curve_f1": 0.0
+      }
+    }
+  },
+  {
+    "step": 6000,
+    "elapsed": 599.7041373520624,
+    "validation": {
+      "samples": 506,
+      "units": "pixel",
+      "1.0": {
+        "node": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 7613,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 6308,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.09510709136680556
+      },
+      "2.0": {
+        "node": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 7613,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 6308,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.24175585932515056
+      },
+      "4.0": {
+        "node": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 7613,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "edge": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 6308,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "duplicates": 0,
+        "conditional_relation_recall": null,
+        "raw_node_recall_macro": 0.5183134372086302
+      },
+      "node_mAP_crop_macro": 0.08334452954874418,
+      "node_mAR_crop_macro": 0.42855967714761695,
+      "edge_mAP_crop_macro": 0.02890613718068581,
+      "edge_mAR_crop_macro": 0.31866081191047313,
+      "beta0_signed_error_crop_macro": -2.966403162055336,
+      "beta1_signed_error_crop_macro": -0.38735177865612647,
+      "spline": {
+        "common_branch_f1": 0.015810276679841896,
+        "common_curve_f1": 0.015810276679841896
+      },
+      "chord": {
+        "common_branch_f1": 0.015810276679841896,
+        "common_curve_f1": 0.015810276679841896
+      }
+    }
+  }
+]

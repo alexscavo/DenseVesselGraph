@@ -1,0 +1,1874 @@
+{
+  "SyntheticMRI/364505/B0/final": {
+    "1.0": {
+      "tortuosity_adjusted_for_chord": {
+        "field": "tortuosity",
+        "adjust_for": "chord_mm",
+        "delta_high_minus_low": -0.03458848747395534,
+        "ci95": [
+          -0.05217022050465883,
+          -0.017716425756125996
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            231,
+            17
+          ],
+          [
+            102,
+            69
+          ],
+          [
+            62,
+            129
+          ],
+          [
+            31,
+            221
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            230,
+            17
+          ],
+          [
+            102,
+            69
+          ],
+          [
+            60,
+            124
+          ],
+          [
+            31,
+            195
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "curvature_adjusted_for_arc": {
+        "field": "curvature_per_mm",
+        "adjust_for": "arc_mm",
+        "delta_high_minus_low": -0.04073604963077052,
+        "ci95": [
+          -0.07126750753301302,
+          -0.01103170275743886
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            197,
+            52
+          ],
+          [
+            97,
+            87
+          ],
+          [
+            64,
+            119
+          ],
+          [
+            54,
+            116
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            196,
+            51
+          ],
+          [
+            97,
+            86
+          ],
+          [
+            64,
+            116
+          ],
+          [
+            53,
+            99
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "false_edge_uncertainty": {
+        "unmatched_fp_fraction_ci95": [
+          0.9773436711200157,
+          0.9849616337838285
+        ],
+        "subjects": 13
+      }
+    },
+    "2.0": {
+      "tortuosity_adjusted_for_chord": {
+        "field": "tortuosity",
+        "adjust_for": "chord_mm",
+        "delta_high_minus_low": -0.02631361523435556,
+        "ci95": [
+          -0.038946763722468206,
+          -0.01058331247353743
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            607,
+            58
+          ],
+          [
+            266,
+            214
+          ],
+          [
+            135,
+            390
+          ],
+          [
+            71,
+            619
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            605,
+            58
+          ],
+          [
+            262,
+            213
+          ],
+          [
+            130,
+            372
+          ],
+          [
+            68,
+            535
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "curvature_adjusted_for_arc": {
+        "field": "curvature_per_mm",
+        "adjust_for": "arc_mm",
+        "delta_high_minus_low": -0.017622511040809086,
+        "ci95": [
+          -0.03211512631519233,
+          -0.00019371793428578214
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            521,
+            139
+          ],
+          [
+            245,
+            283
+          ],
+          [
+            157,
+            358
+          ],
+          [
+            129,
+            332
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            519,
+            136
+          ],
+          [
+            242,
+            282
+          ],
+          [
+            150,
+            345
+          ],
+          [
+            121,
+            286
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "false_edge_uncertainty": {
+        "unmatched_fp_fraction_ci95": [
+          0.8326125318564733,
+          0.861586241106591
+        ],
+        "subjects": 13
+      }
+    }
+  },
+  "SyntheticMRI/364505/A-xyz/final": {
+    "1.0": {
+      "tortuosity_adjusted_for_chord": {
+        "field": "tortuosity",
+        "adjust_for": "chord_mm",
+        "delta_high_minus_low": -0.04194411179875239,
+        "ci95": [
+          -0.05616566094844701,
+          -0.027933132533602554
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            326,
+            18
+          ],
+          [
+            148,
+            97
+          ],
+          [
+            78,
+            191
+          ],
+          [
+            35,
+            328
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            325,
+            18
+          ],
+          [
+            146,
+            97
+          ],
+          [
+            76,
+            182
+          ],
+          [
+            35,
+            283
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "curvature_adjusted_for_arc": {
+        "field": "curvature_per_mm",
+        "adjust_for": "arc_mm",
+        "delta_high_minus_low": -0.02669189492347433,
+        "ci95": [
+          -0.045752348840481086,
+          -0.0037731954264432297
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            282,
+            66
+          ],
+          [
+            140,
+            125
+          ],
+          [
+            90,
+            175
+          ],
+          [
+            67,
+            177
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            281,
+            65
+          ],
+          [
+            138,
+            125
+          ],
+          [
+            87,
+            169
+          ],
+          [
+            66,
+            153
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "false_edge_uncertainty": {
+        "unmatched_fp_fraction_ci95": [
+          0.9633370442435158,
+          0.9755827365667233
+        ],
+        "subjects": 13
+      }
+    },
+    "2.0": {
+      "tortuosity_adjusted_for_chord": {
+        "field": "tortuosity",
+        "adjust_for": "chord_mm",
+        "delta_high_minus_low": -0.028752308346622246,
+        "ci95": [
+          -0.042551180414104904,
+          -0.013836235079110238
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            637,
+            58
+          ],
+          [
+            280,
+            239
+          ],
+          [
+            152,
+            440
+          ],
+          [
+            76,
+            650
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            635,
+            58
+          ],
+          [
+            276,
+            235
+          ],
+          [
+            148,
+            417
+          ],
+          [
+            71,
+            555
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "curvature_adjusted_for_arc": {
+        "field": "curvature_per_mm",
+        "adjust_for": "arc_mm",
+        "delta_high_minus_low": -0.01666569035786756,
+        "ci95": [
+          -0.02998817910798106,
+          -0.005229810526264876
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            551,
+            152
+          ],
+          [
+            258,
+            308
+          ],
+          [
+            170,
+            396
+          ],
+          [
+            136,
+            355
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            549,
+            149
+          ],
+          [
+            253,
+            305
+          ],
+          [
+            165,
+            380
+          ],
+          [
+            125,
+            307
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "false_edge_uncertainty": {
+        "unmatched_fp_fraction_ci95": [
+          0.8054775939502015,
+          0.8418822597676874
+        ],
+        "subjects": 13
+      }
+    }
+  },
+  "SyntheticMRI/364505/A-xyz/selected": {
+    "1.0": {
+      "tortuosity_adjusted_for_chord": {
+        "field": "tortuosity",
+        "adjust_for": "chord_mm",
+        "delta_high_minus_low": -0.04196733797911437,
+        "ci95": [
+          -0.05311448916709856,
+          -0.03052143252554375
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            311,
+            20
+          ],
+          [
+            145,
+            96
+          ],
+          [
+            72,
+            189
+          ],
+          [
+            37,
+            344
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            309,
+            20
+          ],
+          [
+            145,
+            96
+          ],
+          [
+            70,
+            179
+          ],
+          [
+            37,
+            302
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "curvature_adjusted_for_arc": {
+        "field": "curvature_per_mm",
+        "adjust_for": "arc_mm",
+        "delta_high_minus_low": -0.021147832175874567,
+        "ci95": [
+          -0.0426365942067302,
+          0.0003181416329069885
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            269,
+            67
+          ],
+          [
+            138,
+            127
+          ],
+          [
+            88,
+            170
+          ],
+          [
+            67,
+            185
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            267,
+            66
+          ],
+          [
+            138,
+            127
+          ],
+          [
+            83,
+            164
+          ],
+          [
+            65,
+            160
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "false_edge_uncertainty": {
+        "unmatched_fp_fraction_ci95": [
+          0.9626495945488247,
+          0.9718338123914131
+        ],
+        "subjects": 13
+      }
+    },
+    "2.0": {
+      "tortuosity_adjusted_for_chord": {
+        "field": "tortuosity",
+        "adjust_for": "chord_mm",
+        "delta_high_minus_low": -0.028124975464058455,
+        "ci95": [
+          -0.04369873415932975,
+          -0.012262137819735633
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            633,
+            61
+          ],
+          [
+            288,
+            235
+          ],
+          [
+            153,
+            447
+          ],
+          [
+            73,
+            641
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            631,
+            61
+          ],
+          [
+            286,
+            233
+          ],
+          [
+            149,
+            422
+          ],
+          [
+            68,
+            548
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "curvature_adjusted_for_arc": {
+        "field": "curvature_per_mm",
+        "adjust_for": "arc_mm",
+        "delta_high_minus_low": -0.01431311946529765,
+        "ci95": [
+          -0.026169734591846995,
+          -0.0031755762195732036
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            547,
+            153
+          ],
+          [
+            266,
+            309
+          ],
+          [
+            176,
+            402
+          ],
+          [
+            134,
+            348
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            545,
+            150
+          ],
+          [
+            263,
+            308
+          ],
+          [
+            169,
+            387
+          ],
+          [
+            123,
+            299
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "false_edge_uncertainty": {
+        "unmatched_fp_fraction_ci95": [
+          0.8093641108332342,
+          0.8410678573277759
+        ],
+        "subjects": 13
+      }
+    }
+  },
+  "SyntheticMRI/92741/B0/final": {
+    "1.0": {
+      "tortuosity_adjusted_for_chord": {
+        "field": "tortuosity",
+        "adjust_for": "chord_mm",
+        "delta_high_minus_low": -0.030764067226734967,
+        "ci95": [
+          -0.04620461909662932,
+          -0.013825135395906333
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            245,
+            20
+          ],
+          [
+            110,
+            73
+          ],
+          [
+            63,
+            123
+          ],
+          [
+            30,
+            221
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            244,
+            20
+          ],
+          [
+            109,
+            73
+          ],
+          [
+            62,
+            117
+          ],
+          [
+            30,
+            200
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "curvature_adjusted_for_arc": {
+        "field": "curvature_per_mm",
+        "adjust_for": "arc_mm",
+        "delta_high_minus_low": -0.03262995846843131,
+        "ci95": [
+          -0.06359164402150877,
+          -0.0038326567421284523
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            205,
+            54
+          ],
+          [
+            106,
+            95
+          ],
+          [
+            66,
+            125
+          ],
+          [
+            53,
+            119
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            204,
+            53
+          ],
+          [
+            105,
+            94
+          ],
+          [
+            66,
+            121
+          ],
+          [
+            52,
+            105
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "false_edge_uncertainty": {
+        "unmatched_fp_fraction_ci95": [
+          0.9772650856730486,
+          0.9849991989278886
+        ],
+        "subjects": 13
+      }
+    },
+    "2.0": {
+      "tortuosity_adjusted_for_chord": {
+        "field": "tortuosity",
+        "adjust_for": "chord_mm",
+        "delta_high_minus_low": -0.02555910911040907,
+        "ci95": [
+          -0.03752644086009007,
+          -0.012466621072069967
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            610,
+            59
+          ],
+          [
+            278,
+            215
+          ],
+          [
+            138,
+            398
+          ],
+          [
+            73,
+            602
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            606,
+            59
+          ],
+          [
+            273,
+            213
+          ],
+          [
+            134,
+            381
+          ],
+          [
+            70,
+            522
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "curvature_adjusted_for_arc": {
+        "field": "curvature_per_mm",
+        "adjust_for": "arc_mm",
+        "delta_high_minus_low": -0.00873149268849189,
+        "ci95": [
+          -0.02146799851286194,
+          0.004268225902812073
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            527,
+            141
+          ],
+          [
+            253,
+            286
+          ],
+          [
+            167,
+            355
+          ],
+          [
+            128,
+            331
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            524,
+            140
+          ],
+          [
+            249,
+            284
+          ],
+          [
+            159,
+            344
+          ],
+          [
+            121,
+            290
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "false_edge_uncertainty": {
+        "unmatched_fp_fraction_ci95": [
+          0.84054343724502,
+          0.8674394920347066
+        ],
+        "subjects": 13
+      }
+    }
+  },
+  "SyntheticMRI/92741/A-xyz/final": {
+    "1.0": {
+      "tortuosity_adjusted_for_chord": {
+        "field": "tortuosity",
+        "adjust_for": "chord_mm",
+        "delta_high_minus_low": -0.032749442581834376,
+        "ci95": [
+          -0.05228135330084188,
+          -0.014157893389756144
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            338,
+            19
+          ],
+          [
+            153,
+            104
+          ],
+          [
+            87,
+            200
+          ],
+          [
+            41,
+            324
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            335,
+            19
+          ],
+          [
+            151,
+            104
+          ],
+          [
+            84,
+            188
+          ],
+          [
+            40,
+            280
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "curvature_adjusted_for_arc": {
+        "field": "curvature_per_mm",
+        "adjust_for": "arc_mm",
+        "delta_high_minus_low": -0.027295221730292727,
+        "ci95": [
+          -0.04723165076268654,
+          -0.006097870864783674
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            292,
+            64
+          ],
+          [
+            147,
+            144
+          ],
+          [
+            99,
+            186
+          ],
+          [
+            67,
+            166
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            289,
+            63
+          ],
+          [
+            145,
+            142
+          ],
+          [
+            96,
+            177
+          ],
+          [
+            64,
+            141
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "false_edge_uncertainty": {
+        "unmatched_fp_fraction_ci95": [
+          0.9611650062729742,
+          0.9729833450151378
+        ],
+        "subjects": 13
+      }
+    },
+    "2.0": {
+      "tortuosity_adjusted_for_chord": {
+        "field": "tortuosity",
+        "adjust_for": "chord_mm",
+        "delta_high_minus_low": -0.027777350486787134,
+        "ci95": [
+          -0.03742928107813887,
+          -0.018592785827838396
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            640,
+            62
+          ],
+          [
+            286,
+            242
+          ],
+          [
+            150,
+            453
+          ],
+          [
+            78,
+            647
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            636,
+            62
+          ],
+          [
+            282,
+            239
+          ],
+          [
+            144,
+            426
+          ],
+          [
+            73,
+            548
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "curvature_adjusted_for_arc": {
+        "field": "curvature_per_mm",
+        "adjust_for": "arc_mm",
+        "delta_high_minus_low": -0.015250336875279605,
+        "ci95": [
+          -0.028037073429671655,
+          -0.00421245957561535
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            557,
+            149
+          ],
+          [
+            261,
+            314
+          ],
+          [
+            172,
+            393
+          ],
+          [
+            138,
+            346
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            553,
+            146
+          ],
+          [
+            257,
+            311
+          ],
+          [
+            163,
+            377
+          ],
+          [
+            128,
+            295
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "false_edge_uncertainty": {
+        "unmatched_fp_fraction_ci95": [
+          0.8150993299110055,
+          0.8477046844007975
+        ],
+        "subjects": 13
+      }
+    }
+  },
+  "IXI-legacy/parent": {
+    "1.0": {
+      "tortuosity_adjusted_for_chord": {
+        "field": "tortuosity",
+        "adjust_for": "chord_mm",
+        "delta_high_minus_low": 0.2,
+        "ci95": [
+          0.0,
+          1.0
+        ],
+        "valid_draws": 1252,
+        "eligible_by_stratum": [
+          [
+            76,
+            0
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            0,
+            16
+          ],
+          [
+            0,
+            29
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            10,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "curvature_adjusted_for_arc": {
+        "field": "curvature_per_mm",
+        "adjust_for": "arc_mm",
+        "delta_high_minus_low": 0.6928947368421052,
+        "ci95": [
+          0.0,
+          0.7427881294979293
+        ],
+        "valid_draws": 1918,
+        "eligible_by_stratum": [
+          [
+            76,
+            1
+          ],
+          [
+            4,
+            19
+          ],
+          [
+            0,
+            13
+          ],
+          [
+            0,
+            12
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            10,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "false_edge_uncertainty": {
+        "unmatched_fp_fraction_ci95": [
+          0.9667456461802107,
+          0.9938335363064137
+        ],
+        "subjects": 26
+      }
+    },
+    "2.0": {
+      "tortuosity_adjusted_for_chord": {
+        "field": "tortuosity",
+        "adjust_for": "chord_mm",
+        "delta_high_minus_low": -0.13927377451967615,
+        "ci95": [
+          -0.2698316563467492,
+          -0.02765110167438391
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            244,
+            2
+          ],
+          [
+            28,
+            22
+          ],
+          [
+            0,
+            46
+          ],
+          [
+            0,
+            108
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            33,
+            0
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "curvature_adjusted_for_arc": {
+        "field": "curvature_per_mm",
+        "adjust_for": "arc_mm",
+        "delta_high_minus_low": -0.01582926710769375,
+        "ci95": [
+          -0.16394630765782706,
+          0.19107052050879778
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            243,
+            8
+          ],
+          [
+            31,
+            66
+          ],
+          [
+            0,
+            51
+          ],
+          [
+            0,
+            63
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            33,
+            1
+          ],
+          [
+            7,
+            13
+          ],
+          [
+            0,
+            9
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "false_edge_uncertainty": {
+        "unmatched_fp_fraction_ci95": [
+          0.8930704489026118,
+          0.9394871521281014
+        ],
+        "subjects": 26
+      }
+    }
+  },
+  "IXI-legacy/baseline": {
+    "1.0": {
+      "tortuosity_adjusted_for_chord": {
+        "field": "tortuosity",
+        "adjust_for": "chord_mm",
+        "delta_high_minus_low": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "valid_draws": 1732,
+        "eligible_by_stratum": [
+          [
+            75,
+            0
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            0,
+            13
+          ],
+          [
+            0,
+            30
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            15,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "curvature_adjusted_for_arc": {
+        "field": "curvature_per_mm",
+        "adjust_for": "arc_mm",
+        "delta_high_minus_low": 0.6110726643598616,
+        "ci95": [
+          0.0,
+          0.6766971146566736
+        ],
+        "valid_draws": 1991,
+        "eligible_by_stratum": [
+          [
+            75,
+            1
+          ],
+          [
+            9,
+            17
+          ],
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            12
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            15,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "false_edge_uncertainty": {
+        "unmatched_fp_fraction_ci95": [
+          0.9687488886913229,
+          0.9917933013179251
+        ],
+        "subjects": 26
+      }
+    },
+    "2.0": {
+      "tortuosity_adjusted_for_chord": {
+        "field": "tortuosity",
+        "adjust_for": "chord_mm",
+        "delta_high_minus_low": -0.14695737866469571,
+        "ci95": [
+          -0.33333333333333326,
+          -0.009859805764411077
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            246,
+            1
+          ],
+          [
+            30,
+            20
+          ],
+          [
+            0,
+            50
+          ],
+          [
+            0,
+            110
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            36,
+            0
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            0,
+            9
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "curvature_adjusted_for_arc": {
+        "field": "curvature_per_mm",
+        "adjust_for": "arc_mm",
+        "delta_high_minus_low": 0.029652062204706606,
+        "ci95": [
+          -0.17556711555833043,
+          0.3523655266837503
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            245,
+            5
+          ],
+          [
+            34,
+            62
+          ],
+          [
+            0,
+            56
+          ],
+          [
+            0,
+            63
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            36,
+            1
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            0,
+            11
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "false_edge_uncertainty": {
+        "unmatched_fp_fraction_ci95": [
+          0.8904075427868684,
+          0.9431296837729375
+        ],
+        "subjects": 26
+      }
+    }
+  },
+  "IXI-legacy/local_image": {
+    "1.0": {
+      "tortuosity_adjusted_for_chord": {
+        "field": "tortuosity",
+        "adjust_for": "chord_mm",
+        "delta_high_minus_low": -0.13280999905846907,
+        "ci95": [
+          -0.25,
+          0.20833333333333331
+        ],
+        "valid_draws": 1995,
+        "eligible_by_stratum": [
+          [
+            152,
+            2
+          ],
+          [
+            13,
+            5
+          ],
+          [
+            0,
+            29
+          ],
+          [
+            0,
+            65
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            22,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "curvature_adjusted_for_arc": {
+        "field": "curvature_per_mm",
+        "adjust_for": "arc_mm",
+        "delta_high_minus_low": 0.06908715639365792,
+        "ci95": [
+          -0.2053941574772572,
+          0.5700843425605533
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            152,
+            4
+          ],
+          [
+            15,
+            33
+          ],
+          [
+            0,
+            27
+          ],
+          [
+            0,
+            33
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            22,
+            1
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "false_edge_uncertainty": {
+        "unmatched_fp_fraction_ci95": [
+          0.9455819487760776,
+          0.9820971867007673
+        ],
+        "subjects": 26
+      }
+    },
+    "2.0": {
+      "tortuosity_adjusted_for_chord": {
+        "field": "tortuosity",
+        "adjust_for": "chord_mm",
+        "delta_high_minus_low": 0.16875105570757742,
+        "ci95": [
+          -0.16667739237943735,
+          0.3465894809428004
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            299,
+            3
+          ],
+          [
+            36,
+            22
+          ],
+          [
+            0,
+            60
+          ],
+          [
+            0,
+            146
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            43,
+            1
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            0,
+            9
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "curvature_adjusted_for_arc": {
+        "field": "curvature_per_mm",
+        "adjust_for": "arc_mm",
+        "delta_high_minus_low": 0.018132761288572195,
+        "ci95": [
+          -0.13690571324344736,
+          0.24762610331990187
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            298,
+            7
+          ],
+          [
+            42,
+            70
+          ],
+          [
+            0,
+            72
+          ],
+          [
+            0,
+            84
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            43,
+            1
+          ],
+          [
+            6,
+            15
+          ],
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            6
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "false_edge_uncertainty": {
+        "unmatched_fp_fraction_ci95": [
+          0.8853851765200704,
+          0.9364645383051091
+        ],
+        "subjects": 26
+      }
+    }
+  },
+  "IXI-legacy/coordinate-only-ablation": {
+    "1.0": {
+      "tortuosity_adjusted_for_chord": {
+        "field": "tortuosity",
+        "adjust_for": "chord_mm",
+        "delta_high_minus_low": -0.13628925912796883,
+        "ci95": [
+          -0.25,
+          0.20833333333333331
+        ],
+        "valid_draws": 1995,
+        "eligible_by_stratum": [
+          [
+            155,
+            2
+          ],
+          [
+            13,
+            5
+          ],
+          [
+            0,
+            29
+          ],
+          [
+            0,
+            66
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            23,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "curvature_adjusted_for_arc": {
+        "field": "curvature_per_mm",
+        "adjust_for": "arc_mm",
+        "delta_high_minus_low": 0.06520352868194425,
+        "ci95": [
+          -0.21226214604313667,
+          0.5581535624556537
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            155,
+            4
+          ],
+          [
+            15,
+            34
+          ],
+          [
+            0,
+            27
+          ],
+          [
+            0,
+            33
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            23,
+            1
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "false_edge_uncertainty": {
+        "unmatched_fp_fraction_ci95": [
+          0.9475132480643643,
+          0.9828228091978511
+        ],
+        "subjects": 26
+      }
+    },
+    "2.0": {
+      "tortuosity_adjusted_for_chord": {
+        "field": "tortuosity",
+        "adjust_for": "chord_mm",
+        "delta_high_minus_low": 0.16136270909832717,
+        "ci95": [
+          -0.1804338408824977,
+          0.33942688452969844
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            301,
+            3
+          ],
+          [
+            36,
+            21
+          ],
+          [
+            0,
+            61
+          ],
+          [
+            0,
+            149
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            44,
+            1
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            0,
+            9
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "curvature_adjusted_for_arc": {
+        "field": "curvature_per_mm",
+        "adjust_for": "arc_mm",
+        "delta_high_minus_low": 0.014951928514873881,
+        "ci95": [
+          -0.14025184230951226,
+          0.24296971625583072
+        ],
+        "valid_draws": 2000,
+        "eligible_by_stratum": [
+          [
+            300,
+            7
+          ],
+          [
+            42,
+            72
+          ],
+          [
+            0,
+            72
+          ],
+          [
+            0,
+            87
+          ]
+        ],
+        "success_by_stratum": [
+          [
+            44,
+            1
+          ],
+          [
+            6,
+            15
+          ],
+          [
+            0,
+            11
+          ],
+          [
+            0,
+            6
+          ]
+        ],
+        "interpretation": "descriptive conditional association, not a causal curvature effect"
+      },
+      "false_edge_uncertainty": {
+        "unmatched_fp_fraction_ci95": [
+          0.8920112957430918,
+          0.9411764705882353
+        ],
+        "subjects": 26
+      }
+    }
+  }
+}

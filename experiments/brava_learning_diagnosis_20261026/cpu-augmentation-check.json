@@ -1,0 +1,6 @@
+{
+  "checks": 256,
+  "passed": true,
+  "noise_test": "geometry-independent Gaussian noise; actual noisy inference measured separately",
+  "brain_mask_role": "legacy unused image-input slot; no vessel support or supervision"
+}
