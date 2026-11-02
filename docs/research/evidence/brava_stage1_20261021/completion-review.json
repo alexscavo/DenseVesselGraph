@@ -1,0 +1,83 @@
+{
+  "complete_model_evaluations": true,
+  "final_collector_complete": true,
+  "rows": [
+    {
+      "model": "synthetic_spline",
+      "checkpoint": "zero",
+      "node_precision": 0.005009561132226918,
+      "node_recall": 0.03446371727408562,
+      "raw_query_recall": 0.035145845514194765,
+      "mean_nodes": 117.92594654788418,
+      "mean_edges": 5.860801781737194,
+      "tp": 10,
+      "fp": 10516,
+      "f1": 0.0006672894701721607,
+      "common_branch_f1": 0.0,
+      "common_curve_f1": 0.014413216372121732,
+      "chord_curve_f1": 0.013978305010738516
+    },
+    {
+      "model": "synthetic_straight",
+      "checkpoint": "zero",
+      "node_precision": 0.0051799782988158705,
+      "node_recall": 0.035665562268563634,
+      "raw_query_recall": 0.03638017280582083,
+      "mean_nodes": 118.02338530066815,
+      "mean_edges": 16.898106904231625,
+      "tp": 19,
+      "fp": 30330,
+      "f1": 0.000763128828195602,
+      "common_branch_f1": 0.0,
+      "common_curve_f1": 0.016671906001633135,
+      "chord_curve_f1": 0.016671906001633135
+    },
+    {
+      "model": "ixi_spline",
+      "checkpoint": "zero",
+      "node_precision": 0.24227348621664907,
+      "node_recall": 0.23094913272266615,
+      "raw_query_recall": 0.5192620022087963,
+      "mean_nodes": 16.3402004454343,
+      "mean_edges": 4.752783964365256,
+      "tp": 376,
+      "fp": 8160,
+      "f1": 0.026874419269530412,
+      "common_branch_f1": 0.002425000977822975,
+      "common_curve_f1": 0.05802164831075203,
+      "chord_curve_f1": 0.05537927909565018
+    },
+    {
+      "model": "standard",
+      "checkpoint": "023500",
+      "node_precision": 0.07897240723120837,
+      "node_recall": 0.10784122653154031,
+      "raw_query_recall": 0.3218995647372182,
+      "mean_nodes": 23.407572383073497,
+      "mean_edges": 0.12806236080178174,
+      "tp": 4,
+      "fp": 226,
+      "f1": 0.0004065867046147591,
+      "common_branch_f1": 0.0,
+      "common_curve_f1": 0.0003375607677000826,
+      "chord_curve_f1": 0.0003191937469668863
+    },
+    {
+      "model": "coordinate_refinement",
+      "checkpoint": "023500",
+      "node_precision": 0.07501225189904435,
+      "node_recall": 0.07954914571558501,
+      "raw_query_recall": 0.3467810043526278,
+      "mean_nodes": 18.178173719376392,
+      "mean_edges": 0.03841870824053452,
+      "tp": 1,
+      "fp": 68,
+      "f1": 0.00010248526774276198,
+      "common_branch_f1": 0.0,
+      "common_curve_f1": 0.00012738093466136045,
+      "chord_curve_f1": 0.00013408189571591098
+    }
+  ],
+  "GT_representation_analysis_complete": true,
+  "results_path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_graph_study_20261021-102438/results/results.md"
+}

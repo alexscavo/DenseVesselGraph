@@ -1,0 +1,470 @@
+[
+  {
+    "experiment": "A",
+    "tolerance_mm": 1.0,
+    "baseline": "normal",
+    "policy": "previous_oracle",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.005252798381206488,
+        0.010948336948639385
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_branch_f1": [
+        -0.004584076682590852,
+        0.006422709225657771
+      ],
+      "common_curve_f1": [
+        -0.14615341196088438,
+        -0.12312804064238422
+      ]
+    }
+  },
+  {
+    "experiment": "A",
+    "tolerance_mm": 1.0,
+    "baseline": "normal",
+    "policy": "raw_oracle",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.020349941555522957,
+        0.04987868187290253
+      ],
+      "node_recall": [
+        0.21869510910748918,
+        0.24646350659098532
+      ],
+      "common_branch_f1": [
+        -0.0015792326814524638,
+        0.014971399513018744
+      ],
+      "common_curve_f1": [
+        -0.12815840918065427,
+        -0.10230074717786851
+      ]
+    }
+  },
+  {
+    "experiment": "A",
+    "tolerance_mm": 2.0,
+    "baseline": "normal",
+    "policy": "previous_oracle",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.012180303822562818,
+        0.019495543737058654
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_branch_f1": [
+        -0.004961467636319929,
+        0.005795936235754855
+      ],
+      "common_curve_f1": [
+        -0.10671817718831259,
+        -0.08703333287961776
+      ]
+    }
+  },
+  {
+    "experiment": "A",
+    "tolerance_mm": 2.0,
+    "baseline": "normal",
+    "policy": "raw_oracle",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.006161190542497852,
+        0.04451066114813388
+      ],
+      "node_recall": [
+        0.25595882358142913,
+        0.28868566077420743
+      ],
+      "common_branch_f1": [
+        -0.0014363981088857652,
+        0.015802041238084034
+      ],
+      "common_curve_f1": [
+        -0.10084486915689127,
+        -0.07053074548971737
+      ]
+    }
+  },
+  {
+    "experiment": "C",
+    "tolerance_mm": 1.0,
+    "baseline": "neither_local_residual",
+    "policy": "baseline_continuation",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.004020994757574511,
+        0.004424495522964485
+      ],
+      "node_recall": [
+        -0.004341231538833802,
+        0.014681513669377854
+      ],
+      "common_branch_f1": [
+        -0.002947743986272229,
+        0.0018511458841150832
+      ],
+      "common_curve_f1": [
+        -0.004348779729960806,
+        0.003865756324484947
+      ]
+    }
+  },
+  {
+    "experiment": "C",
+    "tolerance_mm": 1.0,
+    "baseline": "neither_local_residual",
+    "policy": "both",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.006933763548585944,
+        0.019330407327581216
+      ],
+      "node_recall": [
+        0.10878961840392928,
+        0.14466577409347053
+      ],
+      "common_branch_f1": [
+        0.002689615305808616,
+        0.011272170523264454
+      ],
+      "common_curve_f1": [
+        0.043158247443100026,
+        0.05680613723553814
+      ]
+    }
+  },
+  {
+    "experiment": "C",
+    "tolerance_mm": 1.0,
+    "baseline": "neither_local_residual",
+    "policy": "classification_only",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        8.004639329507244e-05,
+        0.00027609604945998286
+      ],
+      "node_recall": [
+        -0.001977503750307876,
+        0.0005949042076289225
+      ],
+      "common_branch_f1": [
+        6.181642530697786e-06,
+        7.851070757280533e-05
+      ],
+      "common_curve_f1": [
+        -0.0033276927766508124,
+        0.0012828297560643206
+      ]
+    }
+  },
+  {
+    "experiment": "C",
+    "tolerance_mm": 1.0,
+    "baseline": "neither_local_residual",
+    "policy": "coordinates_only",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.006968621812709995,
+        0.019603433086409522
+      ],
+      "node_recall": [
+        0.10938796376008614,
+        0.14683523618364372
+      ],
+      "common_branch_f1": [
+        0.0023091373829025067,
+        0.010041984825721488
+      ],
+      "common_curve_f1": [
+        0.04518160164259602,
+        0.05927508498107015
+      ]
+    }
+  },
+  {
+    "experiment": "C",
+    "tolerance_mm": 2.0,
+    "baseline": "neither_local_residual",
+    "policy": "baseline_continuation",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.005707296654000374,
+        0.006603326200762451
+      ],
+      "node_recall": [
+        0.0011705002381709574,
+        0.014003513381917968
+      ],
+      "common_branch_f1": [
+        -0.002947743986272229,
+        0.0018511458841150832
+      ],
+      "common_curve_f1": [
+        -0.004348779729960806,
+        0.003865756324484947
+      ]
+    }
+  },
+  {
+    "experiment": "C",
+    "tolerance_mm": 2.0,
+    "baseline": "neither_local_residual",
+    "policy": "both",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.00973669406169907,
+        0.021226684610148053
+      ],
+      "node_recall": [
+        0.04474098897477739,
+        0.0721627781979449
+      ],
+      "common_branch_f1": [
+        0.002689615305808616,
+        0.011272170523264454
+      ],
+      "common_curve_f1": [
+        0.043158247443100026,
+        0.05680613723553814
+      ]
+    }
+  },
+  {
+    "experiment": "C",
+    "tolerance_mm": 2.0,
+    "baseline": "neither_local_residual",
+    "policy": "classification_only",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.0024823514915135684,
+        0.002002899072596908
+      ],
+      "node_recall": [
+        -0.004883777726817982,
+        0.0
+      ],
+      "common_branch_f1": [
+        6.181642530697786e-06,
+        7.851070757280533e-05
+      ],
+      "common_curve_f1": [
+        -0.0033276927766508124,
+        0.0012828297560643206
+      ]
+    }
+  },
+  {
+    "experiment": "C",
+    "tolerance_mm": 2.0,
+    "baseline": "neither_local_residual",
+    "policy": "coordinates_only",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.008736737456023979,
+        0.020666393211248715
+      ],
+      "node_recall": [
+        0.04805630900164252,
+        0.078978600961304
+      ],
+      "common_branch_f1": [
+        0.0023091373829025067,
+        0.010041984825721488
+      ],
+      "common_curve_f1": [
+        0.04518160164259602,
+        0.05927508498107015
+      ]
+    }
+  },
+  {
+    "experiment": "D",
+    "tolerance_mm": 1.0,
+    "baseline": "regularized",
+    "policy": "focal_control",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.01979510686841839,
+        -0.004523755598621104
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_branch_f1": [
+        -0.01913166674160391,
+        -0.007240720525796273
+      ],
+      "common_curve_f1": [
+        -0.1039560102197659,
+        -0.06617750601178847
+      ]
+    }
+  },
+  {
+    "experiment": "D",
+    "tolerance_mm": 1.0,
+    "baseline": "regularized",
+    "policy": "hard_matched",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.011442746181588186,
+        -0.002484560728625442
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_branch_f1": [
+        -0.016422123555981584,
+        -0.007969515931968311
+      ],
+      "common_curve_f1": [
+        -0.06025779630333843,
+        -0.03865737268059722
+      ]
+    }
+  },
+  {
+    "experiment": "D",
+    "tolerance_mm": 1.0,
+    "baseline": "regularized",
+    "policy": "hard_unmatched",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.0025987869910818143,
+        0.006489616658656398
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_branch_f1": [
+        -0.006175872136754283,
+        0.006443270570289899
+      ],
+      "common_curve_f1": [
+        -0.06512116352460036,
+        -0.04045725935514552
+      ]
+    }
+  },
+  {
+    "experiment": "D",
+    "tolerance_mm": 2.0,
+    "baseline": "regularized",
+    "policy": "focal_control",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.03516260344806643,
+        -0.013552935666081749
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_branch_f1": [
+        -0.01913166674160391,
+        -0.007240720525796273
+      ],
+      "common_curve_f1": [
+        -0.1039560102197659,
+        -0.06617750601178847
+      ]
+    }
+  },
+  {
+    "experiment": "D",
+    "tolerance_mm": 2.0,
+    "baseline": "regularized",
+    "policy": "hard_matched",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.019117082766695662,
+        -0.006831376941239196
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_branch_f1": [
+        -0.016422123555981584,
+        -0.007969515931968311
+      ],
+      "common_curve_f1": [
+        -0.06025779630333843,
+        -0.03865737268059722
+      ]
+    }
+  },
+  {
+    "experiment": "D",
+    "tolerance_mm": 2.0,
+    "baseline": "regularized",
+    "policy": "hard_unmatched",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.009906285529992832,
+        0.0037350577881383796
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_branch_f1": [
+        -0.006175872136754283,
+        0.006443270570289899
+      ],
+      "common_curve_f1": [
+        -0.06512116352460036,
+        -0.04045725935514552
+      ]
+    }
+  }
+]

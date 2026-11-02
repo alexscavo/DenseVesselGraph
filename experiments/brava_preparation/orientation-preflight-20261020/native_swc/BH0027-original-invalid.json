@@ -1,0 +1,6 @@
+{
+  "path": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0027.CNG.swc",
+  "sha256": "0431c9f5c65d422e8751f50fb57ecb193df82dbcd33eb0d00cbd7e900dbfc40d",
+  "error": "the number of columns changed from 7 to 6 at row 3407; use `usecols` to select a subset and avoid this error",
+  "action": "Original preserved; no parent IDs or edges invented; use complete paired variant"
+}

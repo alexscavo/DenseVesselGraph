@@ -1,5 +1,7 @@
 # Ordered Research and Implementation Roadmap
 
+> **Research consolidation, 23 October 2026:** [Consolidated current roadmap](../../research/roadmap.md). This document retains its detailed and dated historical context.
+
 ## Goal
 
 This file lists the recommended order of work for the next stage after GrEVE.

@@ -1,0 +1,6498 @@
+[
+  {
+    "subject": "BG0001",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 169.5,
+      "mean": 189.8426971435547,
+      "brain_fraction": 0.9971530249110321,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 169.5,
+      "mean": 189.8426971435547,
+      "brain_fraction": 0.9971530249110321,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 169.5,
+        "mean": 189.8426971435547,
+        "brain_fraction": 0.9971530249110321,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 133.0,
+        "mean": 127.240478515625,
+        "brain_fraction": 0.9633451957295374,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 126.0,
+        "mean": 120.05097961425781,
+        "brain_fraction": 0.88932384341637,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 132.0,
+        "mean": 123.15880584716797,
+        "brain_fraction": 0.907829181494662,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 127.0,
+        "mean": 125.71379089355469,
+        "brain_fraction": 0.9501779359430605,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 131.125,
+        "mean": 124.35596466064453,
+        "brain_fraction": 0.9483985765124555,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 126.5,
+        "mean": 118.42713165283203,
+        "brain_fraction": 0.8943060498220641,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 130.0,
+        "mean": 122.10649108886719,
+        "brain_fraction": 0.8985765124555161,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0002",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 179.0,
+      "mean": 201.72189331054688,
+      "brain_fraction": 0.9963005122367672,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 179.0,
+      "mean": 201.72189331054688,
+      "brain_fraction": 0.9963005122367672,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 179.0,
+        "mean": 201.72189331054688,
+        "brain_fraction": 0.9963005122367672,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 139.0,
+        "mean": 133.92771911621094,
+        "brain_fraction": 0.9442231075697212,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 135.0,
+        "mean": 131.5529327392578,
+        "brain_fraction": 0.8986909504837791,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 141.0,
+        "mean": 136.49615478515625,
+        "brain_fraction": 0.9504837791690381,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 131.0,
+        "mean": 129.97474670410156,
+        "brain_fraction": 0.9758110415480934,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 141.0,
+        "mean": 135.42344665527344,
+        "brain_fraction": 0.9447922595332954,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 134.0,
+        "mean": 130.1185302734375,
+        "brain_fraction": 0.8978372225384178,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 139.0,
+        "mean": 133.7556915283203,
+        "brain_fraction": 0.939954467842914,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0003",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 173.0,
+      "mean": 191.81253051757812,
+      "brain_fraction": 0.9962536023054755,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 173.0,
+      "mean": 191.81253051757812,
+      "brain_fraction": 0.9962536023054755,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 173.0,
+        "mean": 191.81253051757812,
+        "brain_fraction": 0.9962536023054755,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 143.0,
+        "mean": 130.21246337890625,
+        "brain_fraction": 0.9296829971181556,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 145.0,
+        "mean": 138.60980224609375,
+        "brain_fraction": 0.9121037463976945,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 142.0,
+        "mean": 132.74581909179688,
+        "brain_fraction": 0.9063400576368876,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 144.0,
+        "mean": 142.24380493164062,
+        "brain_fraction": 0.9763688760806917,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 141.0,
+        "mean": 128.4148406982422,
+        "brain_fraction": 0.924207492795389,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 146.5,
+        "mean": 138.1768798828125,
+        "brain_fraction": 0.9121037463976945,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 142.0,
+        "mean": 132.71829223632812,
+        "brain_fraction": 0.8997118155619597,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0004",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 170.5,
+      "mean": 186.18153381347656,
+      "brain_fraction": 0.99546553808948,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 170.5,
+      "mean": 186.18153381347656,
+      "brain_fraction": 0.99546553808948,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 170.5,
+        "mean": 186.18153381347656,
+        "brain_fraction": 0.99546553808948,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 136.5,
+        "mean": 130.26284790039062,
+        "brain_fraction": 0.9830713422007256,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 137.0,
+        "mean": 130.50559997558594,
+        "brain_fraction": 0.8872430471584039,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 137.0,
+        "mean": 128.9888153076172,
+        "brain_fraction": 0.9050785973397824,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 137.5,
+        "mean": 132.6392822265625,
+        "brain_fraction": 0.9353083434099153,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 139.0,
+        "mean": 131.76715087890625,
+        "brain_fraction": 0.939540507859734,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 138.0,
+        "mean": 130.64805603027344,
+        "brain_fraction": 0.8830108827085853,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 138.0,
+        "mean": 129.81060791015625,
+        "brain_fraction": 0.905683192261185,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0005",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 180.0,
+      "mean": 199.4746551513672,
+      "brain_fraction": 0.9949937421777222,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 180.0,
+      "mean": 199.4746551513672,
+      "brain_fraction": 0.9949937421777222,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 180.0,
+        "mean": 199.4746551513672,
+        "brain_fraction": 0.9949937421777222,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 145.0,
+        "mean": 135.9535369873047,
+        "brain_fraction": 0.9439924906132666,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 144.5,
+        "mean": 137.9585418701172,
+        "brain_fraction": 0.91270337922403,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 144.0,
+        "mean": 135.29983520507812,
+        "brain_fraction": 0.882665832290363,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 140.0,
+        "mean": 140.10693359375,
+        "brain_fraction": 0.9643304130162703,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 143.875,
+        "mean": 131.58103942871094,
+        "brain_fraction": 0.9217772215269087,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 142.0,
+        "mean": 135.31007385253906,
+        "brain_fraction": 0.904881101376721,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 144.0,
+        "mean": 134.7316131591797,
+        "brain_fraction": 0.8811013767209012,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0006",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 196.5,
+      "mean": 218.80592346191406,
+      "brain_fraction": 0.9989626556016598,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 196.5,
+      "mean": 218.80592346191406,
+      "brain_fraction": 0.9989626556016598,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 196.5,
+        "mean": 218.80592346191406,
+        "brain_fraction": 0.9989626556016598,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 139.0,
+        "mean": 137.3091278076172,
+        "brain_fraction": 0.9844398340248963,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 132.75,
+        "mean": 130.65499877929688,
+        "brain_fraction": 0.896957123098202,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 136.5,
+        "mean": 130.7993621826172,
+        "brain_fraction": 0.919432918395574,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 136.0,
+        "mean": 141.63209533691406,
+        "brain_fraction": 0.9923928077455049,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 139.5,
+        "mean": 135.64834594726562,
+        "brain_fraction": 0.9806362378976486,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 132.0,
+        "mean": 129.13226318359375,
+        "brain_fraction": 0.9024896265560166,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 135.0,
+        "mean": 129.94190979003906,
+        "brain_fraction": 0.9197786998616874,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0007",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 163.0,
+      "mean": 184.43572998046875,
+      "brain_fraction": 0.9970751681778298,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 163.0,
+      "mean": 184.43572998046875,
+      "brain_fraction": 0.9970751681778298,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 163.0,
+        "mean": 184.43572998046875,
+        "brain_fraction": 0.9970751681778298,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 141.0,
+        "mean": 136.15655517578125,
+        "brain_fraction": 0.9751389295115531,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 135.5,
+        "mean": 124.66064453125,
+        "brain_fraction": 0.8403041825095057,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 137.5,
+        "mean": 125.48120880126953,
+        "brain_fraction": 0.8563907575314419,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 140.0,
+        "mean": 136.39024353027344,
+        "brain_fraction": 0.9599298040362679,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 142.0,
+        "mean": 133.43675231933594,
+        "brain_fraction": 0.9496928926586721,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 137.0,
+        "mean": 125.71511840820312,
+        "brain_fraction": 0.8473237788827143,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 137.5,
+        "mean": 125.10858154296875,
+        "brain_fraction": 0.8578531734425271,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0008",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 180.0,
+      "mean": 206.0716552734375,
+      "brain_fraction": 0.9963583394027676,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 180.0,
+      "mean": 206.0716552734375,
+      "brain_fraction": 0.9963583394027676,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 180.0,
+        "mean": 206.0716552734375,
+        "brain_fraction": 0.9963583394027676,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 143.5,
+        "mean": 132.71121215820312,
+        "brain_fraction": 0.9213401310997815,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 138.0,
+        "mean": 132.0570831298828,
+        "brain_fraction": 0.8863801893663511,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 141.5,
+        "mean": 129.0809326171875,
+        "brain_fraction": 0.8623452294246177,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 138.0,
+        "mean": 136.46713256835938,
+        "brain_fraction": 0.9628550619082301,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 143.0,
+        "mean": 131.424072265625,
+        "brain_fraction": 0.9071376547705754,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 139.5,
+        "mean": 132.40850830078125,
+        "brain_fraction": 0.8852876911871813,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 142.5,
+        "mean": 130.2181396484375,
+        "brain_fraction": 0.8634377276037873,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0009",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 180.5,
+      "mean": 203.82785034179688,
+      "brain_fraction": 0.9966676764616783,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 180.5,
+      "mean": 203.82785034179688,
+      "brain_fraction": 0.9966676764616783,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 180.5,
+        "mean": 203.82785034179688,
+        "brain_fraction": 0.9966676764616783,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 136.5,
+        "mean": 126.24439239501953,
+        "brain_fraction": 0.9118448954862163,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 138.0,
+        "mean": 132.45547485351562,
+        "brain_fraction": 0.9121478339897001,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 138.0,
+        "mean": 128.76461791992188,
+        "brain_fraction": 0.8585277188730688,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 137.0,
+        "mean": 136.62640380859375,
+        "brain_fraction": 0.9697061496516207,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 137.5,
+        "mean": 125.79505920410156,
+        "brain_fraction": 0.9009391093607998,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 138.5,
+        "mean": 132.2269744873047,
+        "brain_fraction": 0.9103302029687973,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 138.5,
+        "mean": 129.93820190429688,
+        "brain_fraction": 0.8594365343835202,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0010",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 186.0,
+      "mean": 204.56900024414062,
+      "brain_fraction": 0.9962003454231434,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 186.0,
+      "mean": 204.56900024414062,
+      "brain_fraction": 0.9962003454231434,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 186.0,
+        "mean": 204.56900024414062,
+        "brain_fraction": 0.9962003454231434,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 149.0,
+        "mean": 143.7967987060547,
+        "brain_fraction": 0.9837651122625216,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 152.5,
+        "mean": 149.2949981689453,
+        "brain_fraction": 0.9215889464594128,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 153.5,
+        "mean": 149.214599609375,
+        "brain_fraction": 0.944041450777202,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 151.0,
+        "mean": 154.5727081298828,
+        "brain_fraction": 0.9903281519861831,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 149.0,
+        "mean": 142.9435272216797,
+        "brain_fraction": 0.9806563039723661,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 153.0,
+        "mean": 147.73817443847656,
+        "brain_fraction": 0.9198618307426597,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 152.0,
+        "mean": 148.3876495361328,
+        "brain_fraction": 0.9461139896373058,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0011",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 177.0,
+      "mean": 198.73561096191406,
+      "brain_fraction": 0.9959076293481438,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 177.0,
+      "mean": 198.73561096191406,
+      "brain_fraction": 0.9959076293481438,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 177.0,
+        "mean": 198.73561096191406,
+        "brain_fraction": 0.9959076293481438,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 139.0,
+        "mean": 129.5533447265625,
+        "brain_fraction": 0.9500146156094709,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 138.0,
+        "mean": 129.01564025878906,
+        "brain_fraction": 0.8599824612686349,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 137.25,
+        "mean": 124.93663787841797,
+        "brain_fraction": 0.8471207249342297,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 137.0,
+        "mean": 127.63373565673828,
+        "brain_fraction": 0.9102601578485823,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 137.0,
+        "mean": 124.20396423339844,
+        "brain_fraction": 0.884536685179772,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 138.5,
+        "mean": 128.93203735351562,
+        "brain_fraction": 0.8912598655363929,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 139.0,
+        "mean": 126.73253631591797,
+        "brain_fraction": 0.8763519438760596,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0012",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 148.0,
+      "mean": 165.7867889404297,
+      "brain_fraction": 0.9980111376292761,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 148.0,
+      "mean": 165.7867889404297,
+      "brain_fraction": 0.9980111376292761,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 148.0,
+        "mean": 165.7867889404297,
+        "brain_fraction": 0.9980111376292761,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 123.0,
+        "mean": 120.13136291503906,
+        "brain_fraction": 0.9753381066030231,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 125.0,
+        "mean": 122.12788391113281,
+        "brain_fraction": 0.9598249801113763,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 128.5,
+        "mean": 123.51402282714844,
+        "brain_fraction": 0.958631662688942,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 123.5,
+        "mean": 121.56980895996094,
+        "brain_fraction": 0.9761336515513126,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 126.0,
+        "mean": 120.07587432861328,
+        "brain_fraction": 0.951073985680191,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 125.0,
+        "mean": 121.21231079101562,
+        "brain_fraction": 0.9474940334128878,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 124.5,
+        "mean": 121.79296112060547,
+        "brain_fraction": 0.9466984884645983,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0014",
+    "passed": false,
+    "best": {
+      "relative_flip": [
+        true,
+        false,
+        false
+      ],
+      "median": 167.5,
+      "mean": 192.39161682128906,
+      "brain_fraction": 0.9977116704805492,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 140.0,
+      "mean": 139.39434814453125,
+      "brain_fraction": 0.9758454106280193,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 140.0,
+        "mean": 139.39434814453125,
+        "brain_fraction": 0.9758454106280193,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 141.5,
+        "mean": 131.9295654296875,
+        "brain_fraction": 0.9021103483346046,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 140.0,
+        "mean": 133.0141143798828,
+        "brain_fraction": 0.927027714213069,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 143.0,
+        "mean": 133.6470947265625,
+        "brain_fraction": 0.9183829138062548,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 167.5,
+        "mean": 192.39161682128906,
+        "brain_fraction": 0.9977116704805492,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 141.5,
+        "mean": 133.85983276367188,
+        "brain_fraction": 0.9105008899059243,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 140.0,
+        "mean": 134.4138641357422,
+        "brain_fraction": 0.9333841851004322,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 142.5,
+        "mean": 133.58523559570312,
+        "brain_fraction": 0.9171116196287821,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0015",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 174.0,
+      "mean": 191.6792755126953,
+      "brain_fraction": 0.9974826935179358,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 174.0,
+      "mean": 191.6792755126953,
+      "brain_fraction": 0.9974826935179358,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 174.0,
+        "mean": 191.6792755126953,
+        "brain_fraction": 0.9974826935179358,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 138.0,
+        "mean": 131.61981201171875,
+        "brain_fraction": 0.9741976085588421,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 139.5,
+        "mean": 136.3302459716797,
+        "brain_fraction": 0.9398993077407174,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 139.5,
+        "mean": 135.0047149658203,
+        "brain_fraction": 0.9380113278791693,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 138.0,
+        "mean": 135.60707092285156,
+        "brain_fraction": 0.9757709251101322,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 138.0,
+        "mean": 128.712158203125,
+        "brain_fraction": 0.9578351164254248,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 140.5,
+        "mean": 136.59597778320312,
+        "brain_fraction": 0.9373820012586532,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 139.5,
+        "mean": 133.72537231445312,
+        "brain_fraction": 0.9446192573945877,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0017",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 183.0,
+      "mean": 204.89309692382812,
+      "brain_fraction": 1.0,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 183.0,
+      "mean": 204.89309692382812,
+      "brain_fraction": 1.0,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 183.0,
+        "mean": 204.89309692382812,
+        "brain_fraction": 1.0,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 145.0,
+        "mean": 138.5040283203125,
+        "brain_fraction": 0.9198450536352801,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 141.0,
+        "mean": 136.90695190429688,
+        "brain_fraction": 0.9264004767580453,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 146.5,
+        "mean": 137.32859802246094,
+        "brain_fraction": 0.902264600715137,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 138.0,
+        "mean": 135.93682861328125,
+        "brain_fraction": 0.9231227651966627,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 142.5,
+        "mean": 133.24098205566406,
+        "brain_fraction": 0.8861740166865316,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 142.0,
+        "mean": 135.7592315673828,
+        "brain_fraction": 0.91626936829559,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 144.0,
+        "mean": 135.88595581054688,
+        "brain_fraction": 0.902264600715137,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0018",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 170.0,
+      "mean": 191.59815979003906,
+      "brain_fraction": 0.9960244648318043,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 170.0,
+      "mean": 191.59815979003906,
+      "brain_fraction": 0.9960244648318043,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 170.0,
+        "mean": 191.59815979003906,
+        "brain_fraction": 0.9960244648318043,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 143.0,
+        "mean": 138.26904296875,
+        "brain_fraction": 0.9636085626911315,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 140.0,
+        "mean": 133.33355712890625,
+        "brain_fraction": 0.9247706422018349,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 143.0,
+        "mean": 134.7836456298828,
+        "brain_fraction": 0.9370030581039756,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 139.5,
+        "mean": 137.0133819580078,
+        "brain_fraction": 0.9785932721712538,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 143.5,
+        "mean": 137.88096618652344,
+        "brain_fraction": 0.9608562691131498,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 140.5,
+        "mean": 133.20314025878906,
+        "brain_fraction": 0.9229357798165138,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 141.0,
+        "mean": 134.4058837890625,
+        "brain_fraction": 0.9382262996941896,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0019",
+    "passed": false,
+    "best": {
+      "relative_flip": [
+        true,
+        false,
+        false
+      ],
+      "median": 178.0,
+      "mean": 199.62942504882812,
+      "brain_fraction": 0.9970264644662503,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 148.0,
+      "mean": 145.564453125,
+      "brain_fraction": 0.9708593517692536,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 148.0,
+        "mean": 145.564453125,
+        "brain_fraction": 0.9708593517692536,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 148.0,
+        "mean": 139.67596435546875,
+        "brain_fraction": 0.9467737139458816,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 145.5,
+        "mean": 136.21238708496094,
+        "brain_fraction": 0.8605411834671425,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 146.0,
+        "mean": 135.8358612060547,
+        "brain_fraction": 0.8691644365150164,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 178.0,
+        "mean": 199.62942504882812,
+        "brain_fraction": 0.9970264644662503,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 147.5,
+        "mean": 140.7735595703125,
+        "brain_fraction": 0.9539101992268808,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 142.5,
+        "mean": 134.25616455078125,
+        "brain_fraction": 0.8611358905738924,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 145.5,
+        "mean": 136.0975341796875,
+        "brain_fraction": 0.8679750223015165,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0020",
+    "passed": false,
+    "best": {
+      "relative_flip": [
+        true,
+        false,
+        false
+      ],
+      "median": 172.5,
+      "mean": 190.5051727294922,
+      "brain_fraction": 0.9954707214493691,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 137.0,
+      "mean": 132.3620147705078,
+      "brain_fraction": 0.9553542542866387,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 137.0,
+        "mean": 132.3620147705078,
+        "brain_fraction": 0.9553542542866387,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 147.5,
+        "mean": 134.75331115722656,
+        "brain_fraction": 0.9340019411193788,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 140.0,
+        "mean": 132.00784301757812,
+        "brain_fraction": 0.9107085085732772,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 147.0,
+        "mean": 139.72613525390625,
+        "brain_fraction": 0.9440310579100615,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 172.5,
+        "mean": 190.5051727294922,
+        "brain_fraction": 0.9954707214493691,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 146.0,
+        "mean": 136.43125915527344,
+        "brain_fraction": 0.9417664186347461,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 142.5,
+        "mean": 133.28810119628906,
+        "brain_fraction": 0.9019734713684892,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 147.0,
+        "mean": 139.91702270507812,
+        "brain_fraction": 0.9395017793594306,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0021",
+    "passed": false,
+    "best": {
+      "relative_flip": [
+        true,
+        false,
+        false
+      ],
+      "median": 190.0,
+      "mean": 213.90634155273438,
+      "brain_fraction": 0.9978360833107925,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 155.0,
+      "mean": 154.41729736328125,
+      "brain_fraction": 0.987827968623208,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 155.0,
+        "mean": 154.41729736328125,
+        "brain_fraction": 0.987827968623208,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 159.0,
+        "mean": 151.36827087402344,
+        "brain_fraction": 0.9642953746280768,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 156.0,
+        "mean": 145.78192138671875,
+        "brain_fraction": 0.9134433324317014,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 160.0,
+        "mean": 152.9650421142578,
+        "brain_fraction": 0.9567216662158506,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 190.0,
+        "mean": 213.90634155273438,
+        "brain_fraction": 0.9978360833107925,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 159.0,
+        "mean": 151.79605102539062,
+        "brain_fraction": 0.9642953746280768,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 157.0,
+        "mean": 147.12875366210938,
+        "brain_fraction": 0.911008926156343,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 160.5,
+        "mean": 153.79273986816406,
+        "brain_fraction": 0.9459020827698134,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BG0022",
+    "passed": false,
+    "best": {
+      "relative_flip": [
+        true,
+        false,
+        false
+      ],
+      "median": 176.0,
+      "mean": 194.66265869140625,
+      "brain_fraction": 0.9982482482482482,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 148.5,
+      "mean": 148.844970703125,
+      "brain_fraction": 0.9762262262262262,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 148.5,
+        "mean": 148.844970703125,
+        "brain_fraction": 0.9762262262262262,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 148.0,
+        "mean": 141.29498291015625,
+        "brain_fraction": 0.9456956956956957,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 151.0,
+        "mean": 144.45721435546875,
+        "brain_fraction": 0.9176676676676677,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 151.5,
+        "mean": 147.11192321777344,
+        "brain_fraction": 0.9361861861861862,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 176.0,
+        "mean": 194.66265869140625,
+        "brain_fraction": 0.9982482482482482,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 148.0,
+        "mean": 141.48385620117188,
+        "brain_fraction": 0.9461961961961962,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 149.0,
+        "mean": 143.355224609375,
+        "brain_fraction": 0.9166666666666666,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 151.0,
+        "mean": 146.6417694091797,
+        "brain_fraction": 0.9334334334334334,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0003",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 141.5,
+      "mean": 164.13572692871094,
+      "brain_fraction": 0.9989976612094889,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 141.5,
+      "mean": 164.13572692871094,
+      "brain_fraction": 0.9989976612094889,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 141.5,
+        "mean": 164.13572692871094,
+        "brain_fraction": 0.9989976612094889,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 120.0,
+        "mean": 111.95865631103516,
+        "brain_fraction": 0.8950885399264952,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 118.0,
+        "mean": 109.8457260131836,
+        "brain_fraction": 0.8593384563982626,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 116.0,
+        "mean": 106.11026000976562,
+        "brain_fraction": 0.8640160374206481,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 120.0,
+        "mean": 116.31239318847656,
+        "brain_fraction": 0.9605746742398931,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 122.0,
+        "mean": 112.36701965332031,
+        "brain_fraction": 0.89074507183428,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 119.0,
+        "mean": 108.85574340820312,
+        "brain_fraction": 0.8526561977948547,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 116.0,
+        "mean": 104.93242645263672,
+        "brain_fraction": 0.8479786167724691,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0004",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 155.0,
+      "mean": 178.8271484375,
+      "brain_fraction": 0.9984627209838586,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 155.0,
+      "mean": 178.8271484375,
+      "brain_fraction": 0.9984627209838586,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 155.0,
+        "mean": 178.8271484375,
+        "brain_fraction": 0.9984627209838586,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 126.0,
+        "mean": 121.13604736328125,
+        "brain_fraction": 0.9331283627978478,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 124.0,
+        "mean": 120.43572235107422,
+        "brain_fraction": 0.9000768639508071,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 126.0,
+        "mean": 119.11404418945312,
+        "brain_fraction": 0.9012298232129131,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 124.0,
+        "mean": 120.70310974121094,
+        "brain_fraction": 0.9611837048424289,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 127.0,
+        "mean": 119.70417022705078,
+        "brain_fraction": 0.925826287471176,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 122.0,
+        "mean": 116.20042419433594,
+        "brain_fraction": 0.9054573405073021,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 124.0,
+        "mean": 117.90679931640625,
+        "brain_fraction": 0.90315142198309,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0005",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 155.5,
+      "mean": 181.44052124023438,
+      "brain_fraction": 0.9978028876333961,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 155.5,
+      "mean": 181.44052124023438,
+      "brain_fraction": 0.9978028876333961,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 155.5,
+        "mean": 181.44052124023438,
+        "brain_fraction": 0.9978028876333961,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 127.0,
+        "mean": 120.92945861816406,
+        "brain_fraction": 0.9635907093534212,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 123.5,
+        "mean": 120.3720932006836,
+        "brain_fraction": 0.9416195856873822,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 128.0,
+        "mean": 122.19052124023438,
+        "brain_fraction": 0.9516635279347144,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 123.5,
+        "mean": 125.15348052978516,
+        "brain_fraction": 0.9843063402385436,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 127.0,
+        "mean": 120.2027587890625,
+        "brain_fraction": 0.9598242310106717,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 124.0,
+        "mean": 118.37774658203125,
+        "brain_fraction": 0.9287507846829881,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 127.5,
+        "mean": 120.04645538330078,
+        "brain_fraction": 0.9497802887633396,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0006",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 151.0,
+      "mean": 173.7672119140625,
+      "brain_fraction": 0.9994901860820801,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 151.0,
+      "mean": 173.7672119140625,
+      "brain_fraction": 0.9994901860820801,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 151.0,
+        "mean": 173.7672119140625,
+        "brain_fraction": 0.9994901860820801,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 121.0,
+        "mean": 113.69392395019531,
+        "brain_fraction": 0.8661738465460107,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 124.0,
+        "mean": 119.72208404541016,
+        "brain_fraction": 0.9046647973489677,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 122.5,
+        "mean": 114.8271713256836,
+        "brain_fraction": 0.886821310221769,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 121.0,
+        "mean": 119.9874496459961,
+        "brain_fraction": 0.9824114198317614,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 121.0,
+        "mean": 112.1754379272461,
+        "brain_fraction": 0.8564873821055314,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 124.0,
+        "mean": 119.309326171875,
+        "brain_fraction": 0.9102727504460871,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 124.0,
+        "mean": 116.14612579345703,
+        "brain_fraction": 0.8842722406321692,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0008",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 153.375,
+      "mean": 173.00526428222656,
+      "brain_fraction": 0.9990284974093264,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 153.375,
+      "mean": 173.00526428222656,
+      "brain_fraction": 0.9990284974093264,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 153.375,
+        "mean": 173.00526428222656,
+        "brain_fraction": 0.9990284974093264,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 132.5,
+        "mean": 124.42438507080078,
+        "brain_fraction": 0.8895725388601037,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 136.0,
+        "mean": 132.6309051513672,
+        "brain_fraction": 0.9468911917098446,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 135.5,
+        "mean": 128.24400329589844,
+        "brain_fraction": 0.8905440414507773,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 131.5,
+        "mean": 133.96356201171875,
+        "brain_fraction": 0.9792746113989638,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 133.0,
+        "mean": 124.77865600585938,
+        "brain_fraction": 0.8908678756476683,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 134.0,
+        "mean": 129.61471557617188,
+        "brain_fraction": 0.9300518134715026,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 134.0,
+        "mean": 125.88633728027344,
+        "brain_fraction": 0.8869818652849741,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0009",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 148.0,
+      "mean": 166.65133666992188,
+      "brain_fraction": 0.9981296758104738,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 148.0,
+      "mean": 166.65133666992188,
+      "brain_fraction": 0.9981296758104738,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 148.0,
+        "mean": 166.65133666992188,
+        "brain_fraction": 0.9981296758104738,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 121.0,
+        "mean": 117.43134307861328,
+        "brain_fraction": 0.9710099750623441,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 119.0,
+        "mean": 114.75763702392578,
+        "brain_fraction": 0.9379675810473815,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 121.0,
+        "mean": 115.85317993164062,
+        "brain_fraction": 0.9429551122194514,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 117.5,
+        "mean": 116.76995086669922,
+        "brain_fraction": 0.9666458852867831,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 122.0,
+        "mean": 117.10442352294922,
+        "brain_fraction": 0.9519950124688279,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 119.5,
+        "mean": 114.8900375366211,
+        "brain_fraction": 0.9314214463840399,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 121.0,
+        "mean": 115.74890899658203,
+        "brain_fraction": 0.9448254364089775,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0010",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 168.0,
+      "mean": 182.3198699951172,
+      "brain_fraction": 0.9944928866452502,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 168.0,
+      "mean": 182.3198699951172,
+      "brain_fraction": 0.9944928866452502,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 168.0,
+        "mean": 182.3198699951172,
+        "brain_fraction": 0.9944928866452502,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 131.0,
+        "mean": 123.29841613769531,
+        "brain_fraction": 0.9550252409362092,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 133.0,
+        "mean": 127.9919662475586,
+        "brain_fraction": 0.9013308857273978,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 135.0,
+        "mean": 126.3038101196289,
+        "brain_fraction": 0.911427260211106,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 136.0,
+        "mean": 132.20364379882812,
+        "brain_fraction": 0.9027076640660854,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 131.0,
+        "mean": 120.22636413574219,
+        "brain_fraction": 0.8797613584212942,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 134.5,
+        "mean": 126.57836151123047,
+        "brain_fraction": 0.8871041762276274,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 133.0,
+        "mean": 124.49919891357422,
+        "brain_fraction": 0.8898577329050023,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0011",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 158.0,
+      "mean": 180.98699951171875,
+      "brain_fraction": 0.9981137159795204,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 158.0,
+      "mean": 180.98699951171875,
+      "brain_fraction": 0.9981137159795204,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 158.0,
+        "mean": 180.98699951171875,
+        "brain_fraction": 0.9981137159795204,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 128.5,
+        "mean": 119.72776794433594,
+        "brain_fraction": 0.883589329021827,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 126.0,
+        "mean": 121.42266082763672,
+        "brain_fraction": 0.9021827000808408,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 128.0,
+        "mean": 119.20014953613281,
+        "brain_fraction": 0.8973322554567502,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 131.0,
+        "mean": 134.271484375,
+        "brain_fraction": 0.9827539746699003,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 128.5,
+        "mean": 119.86540222167969,
+        "brain_fraction": 0.8811641067097817,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 126.0,
+        "mean": 120.71907806396484,
+        "brain_fraction": 0.9021827000808408,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 128.0,
+        "mean": 118.86883544921875,
+        "brain_fraction": 0.8959849097278362,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0012",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 146.75,
+      "mean": 158.4167022705078,
+      "brain_fraction": 0.9949587534372135,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 146.75,
+      "mean": 158.4167022705078,
+      "brain_fraction": 0.9949587534372135,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 146.75,
+        "mean": 158.4167022705078,
+        "brain_fraction": 0.9949587534372135,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 126.25,
+        "mean": 121.16704559326172,
+        "brain_fraction": 0.962878093492209,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 124.0,
+        "mean": 119.0843276977539,
+        "brain_fraction": 0.922089825847846,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 126.0,
+        "mean": 119.30854797363281,
+        "brain_fraction": 0.9303391384051329,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 120.0,
+        "mean": 115.45027160644531,
+        "brain_fraction": 0.9440879926672777,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 126.5,
+        "mean": 120.48075103759766,
+        "brain_fraction": 0.9326306141154904,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 123.0,
+        "mean": 115.72296142578125,
+        "brain_fraction": 0.9225481209899175,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 124.625,
+        "mean": 118.12705993652344,
+        "brain_fraction": 0.9280476626947755,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0013",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 158.0,
+      "mean": 176.3783721923828,
+      "brain_fraction": 1.0,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 158.0,
+      "mean": 176.3783721923828,
+      "brain_fraction": 1.0,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 158.0,
+        "mean": 176.3783721923828,
+        "brain_fraction": 1.0,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 128.5,
+        "mean": 122.92223358154297,
+        "brain_fraction": 0.9351944167497508,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 126.0,
+        "mean": 121.70014953613281,
+        "brain_fraction": 0.9297108673978066,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 128.0,
+        "mean": 119.6368408203125,
+        "brain_fraction": 0.8958125623130608,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 127.0,
+        "mean": 124.31393432617188,
+        "brain_fraction": 0.9551345962113659,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 131.0,
+        "mean": 123.11103820800781,
+        "brain_fraction": 0.909272183449651,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 127.5,
+        "mean": 121.10518646240234,
+        "brain_fraction": 0.9252243270189432,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 127.0,
+        "mean": 119.60456085205078,
+        "brain_fraction": 0.8943170488534397,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0014",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 204.0,
+      "mean": 229.52610778808594,
+      "brain_fraction": 0.9981481481481481,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 204.0,
+      "mean": 229.52610778808594,
+      "brain_fraction": 0.9981481481481481,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 204.0,
+        "mean": 229.52610778808594,
+        "brain_fraction": 0.9981481481481481,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 171.5,
+        "mean": 163.79037475585938,
+        "brain_fraction": 0.9388888888888889,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 166.5,
+        "mean": 156.9959259033203,
+        "brain_fraction": 0.9137037037037037,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 173.0,
+        "mean": 162.78009033203125,
+        "brain_fraction": 0.932962962962963,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 165.0,
+        "mean": 160.89332580566406,
+        "brain_fraction": 0.9662962962962963,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 171.0,
+        "mean": 162.13815307617188,
+        "brain_fraction": 0.9366666666666666,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 165.25,
+        "mean": 154.4576873779297,
+        "brain_fraction": 0.9151851851851852,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 171.5,
+        "mean": 160.26055908203125,
+        "brain_fraction": 0.9333333333333333,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0015",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 191.0,
+      "mean": 219.8589630126953,
+      "brain_fraction": 0.9988954344624448,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 191.0,
+      "mean": 219.8589630126953,
+      "brain_fraction": 0.9988954344624448,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 191.0,
+        "mean": 219.8589630126953,
+        "brain_fraction": 0.9988954344624448,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 161.5,
+        "mean": 153.44998168945312,
+        "brain_fraction": 0.9127393225331369,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 163.0,
+        "mean": 153.66259765625,
+        "brain_fraction": 0.8969072164948454,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 163.0,
+        "mean": 152.96951293945312,
+        "brain_fraction": 0.9189985272459499,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 155.0,
+        "mean": 151.21046447753906,
+        "brain_fraction": 0.9506627393225331,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 163.0,
+        "mean": 152.2652130126953,
+        "brain_fraction": 0.8958026509572902,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 159.5,
+        "mean": 151.79736328125,
+        "brain_fraction": 0.8932253313696613,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 161.0,
+        "mean": 152.1897430419922,
+        "brain_fraction": 0.9201030927835051,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0016",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 180.0,
+      "mean": 200.0996856689453,
+      "brain_fraction": 0.9954988747186797,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 180.0,
+      "mean": 200.0996856689453,
+      "brain_fraction": 0.9954988747186797,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 180.0,
+        "mean": 200.0996856689453,
+        "brain_fraction": 0.9954988747186797,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 151.0,
+        "mean": 143.56451416015625,
+        "brain_fraction": 0.9786196549137285,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 146.5,
+        "mean": 139.42311096191406,
+        "brain_fraction": 0.8769692423105776,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 150.0,
+        "mean": 139.15707397460938,
+        "brain_fraction": 0.9077269317329333,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 145.0,
+        "mean": 138.1822052001953,
+        "brain_fraction": 0.9504876219054764,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 151.25,
+        "mean": 143.61056518554688,
+        "brain_fraction": 0.9651162790697675,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 147.0,
+        "mean": 138.70217895507812,
+        "brain_fraction": 0.877344336084021,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 150.0,
+        "mean": 140.18060302734375,
+        "brain_fraction": 0.9006001500375094,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0017",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 189.0,
+      "mean": 216.4813232421875,
+      "brain_fraction": 0.9978028014281791,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 189.0,
+      "mean": 216.4813232421875,
+      "brain_fraction": 0.9978028014281791,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 189.0,
+        "mean": 216.4813232421875,
+        "brain_fraction": 0.9978028014281791,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 155.0,
+        "mean": 152.12057495117188,
+        "brain_fraction": 0.9681406207085965,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 149.0,
+        "mean": 143.9384765625,
+        "brain_fraction": 0.8692666849766547,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 152.0,
+        "mean": 143.70811462402344,
+        "brain_fraction": 0.9057951112331777,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 152.0,
+        "mean": 152.76084899902344,
+        "brain_fraction": 0.9837956605328206,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 155.0,
+        "mean": 149.36404418945312,
+        "brain_fraction": 0.9601757758857457,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 148.0,
+        "mean": 142.36659240722656,
+        "brain_fraction": 0.866245536940401,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 151.0,
+        "mean": 144.15716552734375,
+        "brain_fraction": 0.9033232628398792,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0018",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 177.125,
+      "mean": 200.4862823486328,
+      "brain_fraction": 0.9991334488734835,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 177.125,
+      "mean": 200.4862823486328,
+      "brain_fraction": 0.9991334488734835,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 177.125,
+        "mean": 200.4862823486328,
+        "brain_fraction": 0.9991334488734835,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 153.0,
+        "mean": 143.71627807617188,
+        "brain_fraction": 0.9058347775852109,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 148.0,
+        "mean": 141.42901611328125,
+        "brain_fraction": 0.8807047949162334,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 155.0,
+        "mean": 145.05242919921875,
+        "brain_fraction": 0.9292316580011554,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 152.0,
+        "mean": 149.8459014892578,
+        "brain_fraction": 0.9844020797227037,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 154.0,
+        "mean": 143.5782012939453,
+        "brain_fraction": 0.902946273830156,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 148.0,
+        "mean": 141.32510375976562,
+        "brain_fraction": 0.8714615829000578,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 152.0,
+        "mean": 143.68601989746094,
+        "brain_fraction": 0.9188330444829578,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0019",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 182.5,
+      "mean": 210.74371337890625,
+      "brain_fraction": 0.9979879275653923,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 182.5,
+      "mean": 210.74371337890625,
+      "brain_fraction": 0.9979879275653923,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 182.5,
+        "mean": 210.74371337890625,
+        "brain_fraction": 0.9979879275653923,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 157.5,
+        "mean": 148.83702087402344,
+        "brain_fraction": 0.9496981891348089,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 150.0,
+        "mean": 140.7236785888672,
+        "brain_fraction": 0.89738430583501,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 154.0,
+        "mean": 141.7652587890625,
+        "brain_fraction": 0.9366197183098591,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 152.5,
+        "mean": 150.6815948486328,
+        "brain_fraction": 0.9902749832327297,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 157.0,
+        "mean": 148.69692993164062,
+        "brain_fraction": 0.9483568075117371,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 151.0,
+        "mean": 140.27749633789062,
+        "brain_fraction": 0.8987256874580818,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 153.0,
+        "mean": 141.25511169433594,
+        "brain_fraction": 0.9366197183098591,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0020",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 173.5,
+      "mean": 197.79681396484375,
+      "brain_fraction": 0.9983601180714988,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 173.5,
+      "mean": 197.79681396484375,
+      "brain_fraction": 0.9983601180714988,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 173.5,
+        "mean": 197.79681396484375,
+        "brain_fraction": 0.9983601180714988,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 149.5,
+        "mean": 145.3328094482422,
+        "brain_fraction": 0.9786815349294851,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 146.0,
+        "mean": 140.9948272705078,
+        "brain_fraction": 0.8858642177763201,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 149.0,
+        "mean": 143.70948791503906,
+        "brain_fraction": 0.9143981633322401,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 147.0,
+        "mean": 148.423583984375,
+        "brain_fraction": 0.9760577238438832,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 148.0,
+        "mean": 143.12808227539062,
+        "brain_fraction": 0.9724499836011807,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 146.0,
+        "mean": 141.74295043945312,
+        "brain_fraction": 0.8904558871761233,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 148.5,
+        "mean": 143.29608154296875,
+        "brain_fraction": 0.9150541161036405,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0021",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 183.0,
+      "mean": 209.74217224121094,
+      "brain_fraction": 0.9980830670926517,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 183.0,
+      "mean": 209.74217224121094,
+      "brain_fraction": 0.9980830670926517,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 183.0,
+        "mean": 209.74217224121094,
+        "brain_fraction": 0.9980830670926517,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 147.5,
+        "mean": 140.8986358642578,
+        "brain_fraction": 0.9146964856230032,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 147.5,
+        "mean": 141.8229217529297,
+        "brain_fraction": 0.918849840255591,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 150.0,
+        "mean": 142.01365661621094,
+        "brain_fraction": 0.9242811501597444,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 146.0,
+        "mean": 142.1617431640625,
+        "brain_fraction": 0.950479233226837,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 148.5,
+        "mean": 140.8411407470703,
+        "brain_fraction": 0.9012779552715655,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 148.0,
+        "mean": 139.92308044433594,
+        "brain_fraction": 0.8929712460063898,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 148.0,
+        "mean": 140.1782684326172,
+        "brain_fraction": 0.9,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0022",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 183.0,
+      "mean": 211.43325805664062,
+      "brain_fraction": 0.998507017020006,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 183.0,
+      "mean": 211.43325805664062,
+      "brain_fraction": 0.998507017020006,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 183.0,
+        "mean": 211.43325805664062,
+        "brain_fraction": 0.998507017020006,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 159.5,
+        "mean": 153.23768615722656,
+        "brain_fraction": 0.9558077037921767,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 149.0,
+        "mean": 138.01522827148438,
+        "brain_fraction": 0.8363690653926545,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 151.0,
+        "mean": 140.72640991210938,
+        "brain_fraction": 0.8889220662884443,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 155.0,
+        "mean": 152.32859802246094,
+        "brain_fraction": 0.9575992833681696,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 157.5,
+        "mean": 149.92071533203125,
+        "brain_fraction": 0.93251716930427,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 150.0,
+        "mean": 137.0735321044922,
+        "brain_fraction": 0.8241266049567035,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 152.0,
+        "mean": 141.86898803710938,
+        "brain_fraction": 0.8754852194684981,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0023",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 188.5,
+      "mean": 219.56690979003906,
+      "brain_fraction": 0.9990999099909991,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 188.5,
+      "mean": 219.56690979003906,
+      "brain_fraction": 0.9990999099909991,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 188.5,
+        "mean": 219.56690979003906,
+        "brain_fraction": 0.9990999099909991,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 157.0,
+        "mean": 151.3955841064453,
+        "brain_fraction": 0.946894689468947,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 152.5,
+        "mean": 144.41224670410156,
+        "brain_fraction": 0.8820882088208821,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 157.0,
+        "mean": 146.0125274658203,
+        "brain_fraction": 0.9036903690369037,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 152.0,
+        "mean": 146.22509765625,
+        "brain_fraction": 0.9510951095109511,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 160.0,
+        "mean": 151.74400329589844,
+        "brain_fraction": 0.9366936693669367,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 150.0,
+        "mean": 141.49205017089844,
+        "brain_fraction": 0.8958895889588959,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 155.0,
+        "mean": 144.43038940429688,
+        "brain_fraction": 0.9057905790579058,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0024",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 187.75,
+      "mean": 205.19464111328125,
+      "brain_fraction": 0.9957038995373431,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 187.75,
+      "mean": 205.19464111328125,
+      "brain_fraction": 0.9957038995373431,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 187.75,
+        "mean": 205.19464111328125,
+        "brain_fraction": 0.9957038995373431,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 151.0,
+        "mean": 143.61045837402344,
+        "brain_fraction": 0.9289491077329808,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 151.0,
+        "mean": 147.65921020507812,
+        "brain_fraction": 0.9487772637144746,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 152.5,
+        "mean": 143.57955932617188,
+        "brain_fraction": 0.9259748843357568,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 148.0,
+        "mean": 146.26611328125,
+        "brain_fraction": 0.9669530733641771,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 149.25,
+        "mean": 141.5028076171875,
+        "brain_fraction": 0.9127561136814276,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 149.0,
+        "mean": 144.3311309814453,
+        "brain_fraction": 0.9395241242564442,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 151.0,
+        "mean": 141.55221557617188,
+        "brain_fraction": 0.9163912756113681,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0025",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 202.5,
+      "mean": 227.02352905273438,
+      "brain_fraction": 0.9965022735222105,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 202.5,
+      "mean": 227.02352905273438,
+      "brain_fraction": 0.9965022735222105,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 202.5,
+        "mean": 227.02352905273438,
+        "brain_fraction": 0.9965022735222105,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 158.0,
+        "mean": 149.15565490722656,
+        "brain_fraction": 0.9636236446309898,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 156.5,
+        "mean": 148.7899627685547,
+        "brain_fraction": 0.8915704791885275,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 155.0,
+        "mean": 145.89602661132812,
+        "brain_fraction": 0.9160545645330536,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 158.0,
+        "mean": 152.02500915527344,
+        "brain_fraction": 0.9356418328086744,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 158.0,
+        "mean": 146.8902587890625,
+        "brain_fraction": 0.9433368310598111,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 158.0,
+        "mean": 149.7599639892578,
+        "brain_fraction": 0.8961175236096537,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 157.0,
+        "mean": 147.73277282714844,
+        "brain_fraction": 0.9181532004197271,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0026",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 186.0,
+      "mean": 216.8498077392578,
+      "brain_fraction": 0.9931170108161259,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 186.0,
+      "mean": 216.8498077392578,
+      "brain_fraction": 0.9931170108161259,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 186.0,
+        "mean": 216.8498077392578,
+        "brain_fraction": 0.9931170108161259,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 149.5,
+        "mean": 144.82029724121094,
+        "brain_fraction": 0.9678793838085874,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 147.0,
+        "mean": 140.6480712890625,
+        "brain_fraction": 0.8757784333005572,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 151.0,
+        "mean": 142.3812713623047,
+        "brain_fraction": 0.9111766633890528,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 146.0,
+        "mean": 148.29605102539062,
+        "brain_fraction": 0.9773844641101278,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 150.0,
+        "mean": 144.34307861328125,
+        "brain_fraction": 0.9639462471320879,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 145.0,
+        "mean": 139.7255859375,
+        "brain_fraction": 0.8816781383153065,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 151.0,
+        "mean": 142.92527770996094,
+        "brain_fraction": 0.9180596525729269,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0027",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 172.6774139404297,
+      "mean": 191.0282745361328,
+      "brain_fraction": 0.9979454065159965,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 172.6774139404297,
+      "mean": 191.0282745361328,
+      "brain_fraction": 0.9979454065159965,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 172.6774139404297,
+        "mean": 191.0282745361328,
+        "brain_fraction": 0.9979454065159965,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 146.0,
+        "mean": 133.83551025390625,
+        "brain_fraction": 0.8597006163780452,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 146.83871459960938,
+        "mean": 136.88209533691406,
+        "brain_fraction": 0.8796595245083652,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 144.0,
+        "mean": 134.6766815185547,
+        "brain_fraction": 0.885529791605518,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 144.4193572998047,
+        "mean": 139.5828094482422,
+        "brain_fraction": 0.9407103023187555,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 147.5,
+        "mean": 134.58306884765625,
+        "brain_fraction": 0.8441444085705899,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 148.5483856201172,
+        "mean": 138.34201049804688,
+        "brain_fraction": 0.8579395362488993,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 145.66128540039062,
+        "mean": 134.56666564941406,
+        "brain_fraction": 0.8682125036689169,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0029",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 174.25,
+      "mean": 199.8002166748047,
+      "brain_fraction": 0.9989939637826962,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 174.25,
+      "mean": 199.8002166748047,
+      "brain_fraction": 0.9989939637826962,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 174.25,
+        "mean": 199.8002166748047,
+        "brain_fraction": 0.9989939637826962,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 156.0,
+        "mean": 148.97787475585938,
+        "brain_fraction": 0.9792085848423877,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 147.5,
+        "mean": 137.73507690429688,
+        "brain_fraction": 0.8383635144198525,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 153.0,
+        "mean": 138.9573211669922,
+        "brain_fraction": 0.8329979879275654,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 149.0,
+        "mean": 145.10153198242188,
+        "brain_fraction": 0.966130114017438,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 157.0,
+        "mean": 148.85614013671875,
+        "brain_fraction": 0.9631120053655265,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 147.0,
+        "mean": 136.04820251464844,
+        "brain_fraction": 0.8313212608987257,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 155.0,
+        "mean": 139.21873474121094,
+        "brain_fraction": 0.8360160965794768,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0030",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 183.5,
+      "mean": 211.32693481445312,
+      "brain_fraction": 0.9987464744594171,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 183.5,
+      "mean": 211.32693481445312,
+      "brain_fraction": 0.9987464744594171,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 183.5,
+        "mean": 211.32693481445312,
+        "brain_fraction": 0.9987464744594171,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 153.0,
+        "mean": 147.95040893554688,
+        "brain_fraction": 0.9567533688498903,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 152.5,
+        "mean": 149.73715209960938,
+        "brain_fraction": 0.9088060169225948,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 155.5,
+        "mean": 150.35592651367188,
+        "brain_fraction": 0.9473519272955186,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 148.5,
+        "mean": 150.4588623046875,
+        "brain_fraction": 0.9909119398307741,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 154.0,
+        "mean": 146.51809692382812,
+        "brain_fraction": 0.9570667502350361,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 152.0,
+        "mean": 146.84165954589844,
+        "brain_fraction": 0.9075524913820119,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 154.5,
+        "mean": 148.3885955810547,
+        "brain_fraction": 0.9445314948292072,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0031",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 194.0,
+      "mean": 223.40139770507812,
+      "brain_fraction": 0.9974946313528991,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 194.0,
+      "mean": 223.40139770507812,
+      "brain_fraction": 0.9974946313528991,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 194.0,
+        "mean": 223.40139770507812,
+        "brain_fraction": 0.9974946313528991,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 159.0,
+        "mean": 155.1516571044922,
+        "brain_fraction": 0.98067287043665,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 154.0,
+        "mean": 148.1201629638672,
+        "brain_fraction": 0.8951324266284896,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 159.0,
+        "mean": 149.6218719482422,
+        "brain_fraction": 0.9226914817465999,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 155.0,
+        "mean": 155.82569885253906,
+        "brain_fraction": 0.9835361488904796,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 159.0,
+        "mean": 153.9402313232422,
+        "brain_fraction": 0.9763779527559056,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 153.5,
+        "mean": 145.57891845703125,
+        "brain_fraction": 0.8929849677881174,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 159.0,
+        "mean": 149.6821746826172,
+        "brain_fraction": 0.9191123836793128,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0032",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 182.5,
+      "mean": 201.82518005371094,
+      "brain_fraction": 0.9996713769306605,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 182.5,
+      "mean": 201.82518005371094,
+      "brain_fraction": 0.9996713769306605,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 182.5,
+        "mean": 201.82518005371094,
+        "brain_fraction": 0.9996713769306605,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 162.0,
+        "mean": 154.75567626953125,
+        "brain_fraction": 0.943805455142951,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 158.0,
+        "mean": 151.92843627929688,
+        "brain_fraction": 0.9523496549457772,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 162.0,
+        "mean": 152.73973083496094,
+        "brain_fraction": 0.9608938547486033,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 149.0,
+        "mean": 148.85186767578125,
+        "brain_fraction": 0.9934275386132106,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 162.0,
+        "mean": 154.5087890625,
+        "brain_fraction": 0.9474203089056852,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 157.0,
+        "mean": 151.2770233154297,
+        "brain_fraction": 0.9516924088070983,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 161.5,
+        "mean": 152.98948669433594,
+        "brain_fraction": 0.9546500164311534,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0033",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 189.375,
+      "mean": 207.94998168945312,
+      "brain_fraction": 0.9971707818930041,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 189.375,
+      "mean": 207.94998168945312,
+      "brain_fraction": 0.9971707818930041,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 189.375,
+        "mean": 207.94998168945312,
+        "brain_fraction": 0.9971707818930041,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 168.0,
+        "mean": 159.36367797851562,
+        "brain_fraction": 0.9789094650205762,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 163.5,
+        "mean": 156.8146209716797,
+        "brain_fraction": 0.9395576131687243,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 167.5,
+        "mean": 158.3030548095703,
+        "brain_fraction": 0.9629629629629629,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 158.5,
+        "mean": 155.61483764648438,
+        "brain_fraction": 0.9801954732510288,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 166.0,
+        "mean": 156.7691650390625,
+        "brain_fraction": 0.9794238683127572,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 163.0,
+        "mean": 156.23707580566406,
+        "brain_fraction": 0.9423868312757202,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 168.0,
+        "mean": 158.2947540283203,
+        "brain_fraction": 0.9681069958847737,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0034",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 204.0,
+      "mean": 232.0599822998047,
+      "brain_fraction": 0.9983723958333334,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 204.0,
+      "mean": 232.0599822998047,
+      "brain_fraction": 0.9983723958333334,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 204.0,
+        "mean": 232.0599822998047,
+        "brain_fraction": 0.9983723958333334,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 168.5,
+        "mean": 157.0542755126953,
+        "brain_fraction": 0.939453125,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 162.25,
+        "mean": 150.3255157470703,
+        "brain_fraction": 0.8645833333333334,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 168.5,
+        "mean": 154.42041015625,
+        "brain_fraction": 0.8642578125,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 159.0,
+        "mean": 154.63720703125,
+        "brain_fraction": 0.955078125,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 169.5,
+        "mean": 155.726806640625,
+        "brain_fraction": 0.939453125,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 164.5,
+        "mean": 151.7421875,
+        "brain_fraction": 0.8587239583333334,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 169.0,
+        "mean": 155.4200897216797,
+        "brain_fraction": 0.8753255208333334,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0035",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 200.0,
+      "mean": 229.48492431640625,
+      "brain_fraction": 0.9983708932935107,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 200.0,
+      "mean": 229.48492431640625,
+      "brain_fraction": 0.9983708932935107,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 200.0,
+        "mean": 229.48492431640625,
+        "brain_fraction": 0.9983708932935107,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 163.0,
+        "mean": 155.2806854248047,
+        "brain_fraction": 0.959543850122183,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 163.5,
+        "mean": 158.73431396484375,
+        "brain_fraction": 0.9606299212598425,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 163.75,
+        "mean": 155.28909301757812,
+        "brain_fraction": 0.9614444746130871,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 161.5,
+        "mean": 161.6499481201172,
+        "brain_fraction": 0.9904968775454792,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 163.0,
+        "mean": 154.1051483154297,
+        "brain_fraction": 0.9538419766494706,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 163.5,
+        "mean": 157.77667236328125,
+        "brain_fraction": 0.9633450991039914,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 164.0,
+        "mean": 155.4142608642578,
+        "brain_fraction": 0.9560141189247896,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0036",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 186.0,
+      "mean": 211.9073944091797,
+      "brain_fraction": 0.9973109243697479,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 186.0,
+      "mean": 211.9073944091797,
+      "brain_fraction": 0.9973109243697479,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 186.0,
+        "mean": 211.9073944091797,
+        "brain_fraction": 0.9973109243697479,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 154.5,
+        "mean": 150.2399139404297,
+        "brain_fraction": 0.9926050420168068,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 152.0,
+        "mean": 142.99429321289062,
+        "brain_fraction": 0.8635294117647059,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 154.0,
+        "mean": 142.52345275878906,
+        "brain_fraction": 0.9045378151260505,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 153.5,
+        "mean": 151.04815673828125,
+        "brain_fraction": 0.9899159663865547,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 154.0,
+        "mean": 147.23638916015625,
+        "brain_fraction": 0.9895798319327731,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 150.5,
+        "mean": 140.5904998779297,
+        "brain_fraction": 0.8652100840336134,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 154.0,
+        "mean": 143.4462127685547,
+        "brain_fraction": 0.9031932773109244,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0037",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 196.0,
+      "mean": 218.2831573486328,
+      "brain_fraction": 0.989997142040583,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 196.0,
+      "mean": 218.2831573486328,
+      "brain_fraction": 0.989997142040583,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 196.0,
+        "mean": 218.2831573486328,
+        "brain_fraction": 0.989997142040583,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 169.0,
+        "mean": 160.76150512695312,
+        "brain_fraction": 0.9519862817947985,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 163.5,
+        "mean": 153.53536987304688,
+        "brain_fraction": 0.9119748499571306,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 167.0,
+        "mean": 154.09210205078125,
+        "brain_fraction": 0.9308373821091741,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 162.0,
+        "mean": 161.43740844726562,
+        "brain_fraction": 0.9854244069734209,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 168.5,
+        "mean": 160.72384643554688,
+        "brain_fraction": 0.948556730494427,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 161.0,
+        "mean": 151.0848846435547,
+        "brain_fraction": 0.9131180337239211,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 166.0,
+        "mean": 153.3287353515625,
+        "brain_fraction": 0.935410117176336,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0038",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 190.0,
+      "mean": 216.10836791992188,
+      "brain_fraction": 0.999450247388675,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 190.0,
+      "mean": 216.10836791992188,
+      "brain_fraction": 0.999450247388675,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 190.0,
+        "mean": 216.10836791992188,
+        "brain_fraction": 0.999450247388675,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 155.0,
+        "mean": 148.4387664794922,
+        "brain_fraction": 0.9455744914788345,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 146.0,
+        "mean": 136.7559051513672,
+        "brain_fraction": 0.8490929081913139,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 149.125,
+        "mean": 139.8049774169922,
+        "brain_fraction": 0.9134139637163277,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 149.0,
+        "mean": 151.5148468017578,
+        "brain_fraction": 0.980483782297966,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 156.0,
+        "mean": 147.96653747558594,
+        "brain_fraction": 0.9409015942825728,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 145.0,
+        "mean": 134.56768798828125,
+        "brain_fraction": 0.8460692688290269,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 149.0,
+        "mean": 138.89361572265625,
+        "brain_fraction": 0.9106652006597031,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0039",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 189.0,
+      "mean": 210.79339599609375,
+      "brain_fraction": 0.9996202050892518,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 189.0,
+      "mean": 210.79339599609375,
+      "brain_fraction": 0.9996202050892518,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 189.0,
+        "mean": 210.79339599609375,
+        "brain_fraction": 0.9996202050892518,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 148.0,
+        "mean": 141.55184936523438,
+        "brain_fraction": 0.9548044056209647,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 146.0,
+        "mean": 136.33384704589844,
+        "brain_fraction": 0.8860615267755412,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 148.0,
+        "mean": 136.5233612060547,
+        "brain_fraction": 0.9126471705279149,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 146.0,
+        "mean": 140.30194091796875,
+        "brain_fraction": 0.9764527155336119,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 146.5,
+        "mean": 138.0435791015625,
+        "brain_fraction": 0.9369540448157995,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 146.5,
+        "mean": 136.44056701660156,
+        "brain_fraction": 0.8890998860615268,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 148.0,
+        "mean": 138.76499938964844,
+        "brain_fraction": 0.9229016331181162,
+        "inside_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "subject": "BH0040",
+    "passed": true,
+    "best": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 178.5,
+      "mean": 202.6125946044922,
+      "brain_fraction": 0.9977851605758582,
+      "inside_fraction": 1.0
+    },
+    "current": {
+      "relative_flip": [
+        false,
+        false,
+        false
+      ],
+      "median": 178.5,
+      "mean": 202.6125946044922,
+      "brain_fraction": 0.9977851605758582,
+      "inside_fraction": 1.0
+    },
+    "alternatives": [
+      {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 178.5,
+        "mean": 202.6125946044922,
+        "brain_fraction": 0.9977851605758582,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          false,
+          true
+        ],
+        "median": 153.5,
+        "mean": 146.95921325683594,
+        "brain_fraction": 0.9568106312292359,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          false
+        ],
+        "median": 150.5,
+        "mean": 143.8585205078125,
+        "brain_fraction": 0.9040236249538575,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          false,
+          true,
+          true
+        ],
+        "median": 154.0,
+        "mean": 146.90753173828125,
+        "brain_fraction": 0.9427833148763382,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 145.0,
+        "mean": 144.62449645996094,
+        "brain_fraction": 0.9704688076781101,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          false,
+          true
+        ],
+        "median": 152.5,
+        "mean": 146.74935913085938,
+        "brain_fraction": 0.9605020302694721,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          false
+        ],
+        "median": 148.5,
+        "mean": 141.27767944335938,
+        "brain_fraction": 0.8999630860095976,
+        "inside_fraction": 1.0
+      },
+      {
+        "relative_flip": [
+          true,
+          true,
+          true
+        ],
+        "median": 154.0,
+        "mean": 146.99288940429688,
+        "brain_fraction": 0.9453672942045035,
+        "inside_fraction": 1.0
+      }
+    ]
+  }
+]

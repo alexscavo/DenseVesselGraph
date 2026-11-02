@@ -1,0 +1,119 @@
+{
+  "completed": true,
+  "models": [
+    {
+      "name": "synthetic_spline",
+      "path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/plant_generalization_20261014_da_b32_w1_restart/runs/vessels_spline/best.pt",
+      "strict_load": true,
+      "object_queries": 120,
+      "spline": {
+        "controls": 8,
+        "enabled": true,
+        "local_geometry": {
+          "channels": 64,
+          "enabled": true,
+          "image_mode": "full",
+          "samples": 32,
+          "scale": 1.0
+        },
+        "residual_scale": "mm",
+        "samples": 64,
+        "token_inputs": "full"
+      },
+      "refinement": null,
+      "node_threshold": null,
+      "edge_threshold": null,
+      "source_datasets": {
+        "synthetic_mri": {
+          "coordinate_space_on_disk": "normalized",
+          "foreground_mean": 0.33335259556770325,
+          "role": "target",
+          "root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/scratch_comparison_10k_300ep/spline",
+          "sample_cap_seed": 364505,
+          "sample_cap_selection": "seeded_random",
+          "spline_controls": 8,
+          "train_samples": null,
+          "validation_samples": null
+        }
+      },
+      "spline_loss_weight": 1.4739989612791453
+    },
+    {
+      "name": "synthetic_straight",
+      "path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/plant_generalization_20261014_da_b32_w1_restart/runs/vessels_straight/best.pt",
+      "strict_load": true,
+      "object_queries": 120,
+      "spline": {
+        "controls": 8,
+        "enabled": true,
+        "local_geometry": {
+          "channels": 64,
+          "enabled": true,
+          "image_mode": "full",
+          "samples": 32,
+          "scale": 1.0
+        },
+        "residual_scale": "mm",
+        "samples": 64,
+        "token_inputs": "full"
+      },
+      "refinement": null,
+      "node_threshold": null,
+      "edge_threshold": null,
+      "source_datasets": {
+        "synthetic_mri": {
+          "coordinate_space_on_disk": "normalized",
+          "foreground_mean": 0.33335259556770325,
+          "role": "target",
+          "root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/scratch_comparison_10k_300ep/spline",
+          "sample_cap_seed": 364505,
+          "sample_cap_selection": "seeded_random",
+          "spline_controls": 8,
+          "train_samples": null,
+          "validation_samples": null
+        }
+      },
+      "spline_loss_weight": 0.0
+    },
+    {
+      "name": "ixi_spline",
+      "path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_transfer_20261015/runs/ixi_delayed_spline/best.pt",
+      "strict_load": true,
+      "object_queries": 256,
+      "spline": {
+        "controls": 8,
+        "enabled": true,
+        "local_geometry": {
+          "channels": 64,
+          "enabled": true,
+          "image_mode": "full",
+          "samples": 32,
+          "scale": 1.0
+        },
+        "residual_scale": "mm",
+        "samples": 64,
+        "token_inputs": "full"
+      },
+      "refinement": null,
+      "node_threshold": null,
+      "edge_threshold": null,
+      "source_datasets": {
+        "synthetic_mri": {
+          "coordinate_space_on_disk": "normalized",
+          "foreground_mean": 0.33335259556770325,
+          "role": "target",
+          "root": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/IXI/transfer_splines_k8_20261015",
+          "sample_cap_seed": 364505,
+          "sample_cap_selection": "seeded_random",
+          "spline_controls": 8,
+          "train_samples": null,
+          "validation_samples": null,
+          "patch_selection": "all",
+          "spline_family": "bspline"
+        }
+      },
+      "spline_loss_weight": 1.4739989612791453
+    }
+  ],
+  "shared_fresh_state": "d2b05beaa80eb1c2b95a74c0977fe24d8085b05f96428710d5e4a60040afb9ec"
+}

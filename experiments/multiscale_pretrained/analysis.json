@@ -1,0 +1,4799 @@
+{
+  "complete": {
+    "B0": {
+      "completed": true,
+      "updates": 2000,
+      "batch_sha256": "57ade5d3a3f187e36a7b4f3bbccbe8a4b25142debbb62c0406de0de205b8b8a1",
+      "seconds": 717.143712759018,
+      "projection_relative_change": {
+        "input_proj.weight": 0.08717124164104462,
+        "input_proj.bias": 0.04219405725598335
+      },
+      "job_id": "1492968",
+      "peak_gpu_gib": 2.6578078269958496
+    },
+    "B1": {
+      "completed": true,
+      "updates": 2000,
+      "batch_sha256": "57ade5d3a3f187e36a7b4f3bbccbe8a4b25142debbb62c0406de0de205b8b8a1",
+      "seconds": 757.1893916130066,
+      "projection_relative_change": {
+        "input_proj.weight": 0.08573140949010849,
+        "input_proj.bias": 0.0400535874068737,
+        "fine_input_proj.weight": 0.04790285974740982,
+        "fine_input_proj.bias": 0.04648756608366966
+      },
+      "job_id": "1492969",
+      "peak_gpu_gib": 2.6810364723205566
+    }
+  },
+  "correctness": {
+    "cuda_reference_max_error": 3.5762786865234375e-07,
+    "cuda_gradient_max_errors": [
+      9.5367431640625e-07,
+      1.52587890625e-05,
+      1.9073486328125e-06
+    ],
+    "parity": {
+      "pred_nodes": {
+        "blocked_max_error": 7.748603820800781e-07,
+        "active_max_error": 0.0009205639362335205
+      },
+      "pred_logits": {
+        "blocked_max_error": 7.033348083496094e-06,
+        "active_max_error": 0.008972525596618652
+      }
+    },
+    "coarse_shape": [
+      4,
+      552,
+      2,
+      2,
+      2
+    ],
+    "fine_shape": [
+      4,
+      1024,
+      4,
+      4,
+      4
+    ],
+    "migration": {
+      "copied_tensors": 847,
+      "expanded_tensors": [
+        "decoder.decoder.layers.0.cross_attn1.attention_weights.bias",
+        "decoder.decoder.layers.0.cross_attn1.attention_weights.weight",
+        "decoder.decoder.layers.0.cross_attn1.sampling_offsets.bias",
+        "decoder.decoder.layers.0.cross_attn1.sampling_offsets.weight",
+        "decoder.decoder.layers.1.cross_attn1.attention_weights.bias",
+        "decoder.decoder.layers.1.cross_attn1.attention_weights.weight",
+        "decoder.decoder.layers.1.cross_attn1.sampling_offsets.bias",
+        "decoder.decoder.layers.1.cross_attn1.sampling_offsets.weight",
+        "decoder.decoder.layers.2.cross_attn1.attention_weights.bias",
+        "decoder.decoder.layers.2.cross_attn1.attention_weights.weight",
+        "decoder.decoder.layers.2.cross_attn1.sampling_offsets.bias",
+        "decoder.decoder.layers.2.cross_attn1.sampling_offsets.weight",
+        "decoder.decoder.layers.3.cross_attn1.attention_weights.bias",
+        "decoder.decoder.layers.3.cross_attn1.attention_weights.weight",
+        "decoder.decoder.layers.3.cross_attn1.sampling_offsets.bias",
+        "decoder.decoder.layers.3.cross_attn1.sampling_offsets.weight",
+        "decoder.encoder.layers.0.self_attn.attention_weights.bias",
+        "decoder.encoder.layers.0.self_attn.attention_weights.weight",
+        "decoder.encoder.layers.0.self_attn.sampling_offsets.bias",
+        "decoder.encoder.layers.0.self_attn.sampling_offsets.weight",
+        "decoder.encoder.layers.1.self_attn.attention_weights.bias",
+        "decoder.encoder.layers.1.self_attn.attention_weights.weight",
+        "decoder.encoder.layers.1.self_attn.sampling_offsets.bias",
+        "decoder.encoder.layers.1.self_attn.sampling_offsets.weight",
+        "decoder.encoder.layers.2.self_attn.attention_weights.bias",
+        "decoder.encoder.layers.2.self_attn.attention_weights.weight",
+        "decoder.encoder.layers.2.self_attn.sampling_offsets.bias",
+        "decoder.encoder.layers.2.self_attn.sampling_offsets.weight",
+        "decoder.encoder.layers.3.self_attn.attention_weights.bias",
+        "decoder.encoder.layers.3.self_attn.attention_weights.weight",
+        "decoder.encoder.layers.3.self_attn.sampling_offsets.bias",
+        "decoder.encoder.layers.3.self_attn.sampling_offsets.weight",
+        "decoder.encoder.layers.4.self_attn.attention_weights.bias",
+        "decoder.encoder.layers.4.self_attn.attention_weights.weight",
+        "decoder.encoder.layers.4.self_attn.sampling_offsets.bias",
+        "decoder.encoder.layers.4.self_attn.sampling_offsets.weight",
+        "decoder.encoder.layers.5.self_attn.attention_weights.bias",
+        "decoder.encoder.layers.5.self_attn.attention_weights.weight",
+        "decoder.encoder.layers.5.self_attn.sampling_offsets.bias",
+        "decoder.encoder.layers.5.self_attn.sampling_offsets.weight"
+      ],
+      "new_tensors": [
+        "fine_input_proj.bias",
+        "fine_input_proj.weight"
+      ],
+      "fine_prior": 0.0001,
+      "fine_offsets": "zero query weights; radial biases at (1..P)/P fine cells"
+    },
+    "initial_attention": {
+      "decoder.encoder.layers.0.self_attn": {
+        "mass": [
+          0.9999001026153564,
+          9.998999303206801e-05
+        ],
+        "inside_mass": [
+          0.0,
+          8.564023301005363e-05
+        ]
+      },
+      "decoder.encoder.layers.1.self_attn": {
+        "mass": [
+          0.9999000430107117,
+          9.998997848015279e-05
+        ],
+        "inside_mass": [
+          0.0,
+          8.5429783212021e-05
+        ]
+      },
+      "decoder.encoder.layers.2.self_attn": {
+        "mass": [
+          0.9999000430107117,
+          9.998999303206801e-05
+        ],
+        "inside_mass": [
+          0.0,
+          8.531099592801183e-05
+        ]
+      },
+      "decoder.encoder.layers.3.self_attn": {
+        "mass": [
+          0.9999001026153564,
+          9.999000030802563e-05
+        ],
+        "inside_mass": [
+          0.0,
+          8.538724796380848e-05
+        ]
+      },
+      "decoder.encoder.layers.4.self_attn": {
+        "mass": [
+          0.9998999238014221,
+          9.999000030802563e-05
+        ],
+        "inside_mass": [
+          0.0018938223365694284,
+          8.536058885511011e-05
+        ]
+      },
+      "decoder.encoder.layers.5.self_attn": {
+        "mass": [
+          0.9998999834060669,
+          9.99899857561104e-05
+        ],
+        "inside_mass": [
+          0.014796862378716469,
+          8.581767906434834e-05
+        ]
+      },
+      "decoder.decoder.layers.0.cross_attn1": {
+        "mass": [
+          0.9998999834060669,
+          9.998999303206801e-05
+        ],
+        "inside_mass": [
+          0.2556045651435852,
+          8.96093770279549e-05
+        ]
+      },
+      "decoder.decoder.layers.1.cross_attn1": {
+        "mass": [
+          0.9999000430107117,
+          9.998999303206801e-05
+        ],
+        "inside_mass": [
+          0.07113392651081085,
+          8.551271457690746e-05
+        ]
+      },
+      "decoder.decoder.layers.2.cross_attn1": {
+        "mass": [
+          0.9998999834060669,
+          9.99899857561104e-05
+        ],
+        "inside_mass": [
+          0.08571668714284897,
+          8.601535228081048e-05
+        ]
+      },
+      "decoder.decoder.layers.3.cross_attn1": {
+        "mass": [
+          0.9998999834060669,
+          9.998999303206801e-05
+        ],
+        "inside_mass": [
+          0.1248902902007103,
+          8.669320232002065e-05
+        ]
+      }
+    },
+    "job_id": "1492967",
+    "B0_gradients": {
+      "encoder.": 10.75739574432373,
+      "decoder.": 11.548194885253906,
+      "class_embed.": 1.4529471397399902,
+      "coord_embed.": 13.437152862548828,
+      "relation_embed.": 4.130153179168701,
+      "spline_head.": 1.2768914699554443,
+      "input_proj.": 2.2241241931915283,
+      "new_attention_rows": {}
+    },
+    "B1_gradients": {
+      "encoder.": 10.752603530883789,
+      "decoder.": 11.53709888458252,
+      "class_embed.": 1.4498355388641357,
+      "coord_embed.": 13.436102867126465,
+      "relation_embed.": 4.12700891494751,
+      "spline_head.": 1.2773233652114868,
+      "input_proj.": 2.2253007888793945,
+      "fine_input_proj.": 0.0033694759476929903,
+      "new_attention_rows": {
+        "decoder.encoder.layers.0.self_attn": {
+          "sampling_offsets": 0.0003636098699644208,
+          "attention_weights": 0.00024649142869748175
+        },
+        "decoder.encoder.layers.1.self_attn": {
+          "sampling_offsets": 0.0003477558493614197,
+          "attention_weights": 0.000303536158753559
+        },
+        "decoder.encoder.layers.2.self_attn": {
+          "sampling_offsets": 0.0003288421139586717,
+          "attention_weights": 0.00021553081751335412
+        },
+        "decoder.encoder.layers.3.self_attn": {
+          "sampling_offsets": 0.000266510178335011,
+          "attention_weights": 0.00029229253414087
+        },
+        "decoder.encoder.layers.4.self_attn": {
+          "sampling_offsets": 0.0008107119356282055,
+          "attention_weights": 0.0010188001906499267
+        },
+        "decoder.encoder.layers.5.self_attn": {
+          "sampling_offsets": 0.00046466494677588344,
+          "attention_weights": 0.0010211948538199067
+        },
+        "decoder.decoder.layers.0.cross_attn1": {
+          "sampling_offsets": 0.0003497606376186013,
+          "attention_weights": 0.00038795897853560746
+        },
+        "decoder.decoder.layers.1.cross_attn1": {
+          "sampling_offsets": 0.0006890904041938484,
+          "attention_weights": 0.0007520167273469269
+        },
+        "decoder.decoder.layers.2.cross_attn1": {
+          "sampling_offsets": 0.0005707709933631122,
+          "attention_weights": 0.0006198787014000118
+        },
+        "decoder.decoder.layers.3.cross_attn1": {
+          "sampling_offsets": 0.0005952692008577287,
+          "attention_weights": 0.0006994614959694445
+        }
+      }
+    },
+    "completed": true
+  },
+  "tiny": {
+    "B0": [
+      {
+        "step": 0,
+        "metrics": {
+          "nodes": 145.0,
+          "gt_nodes": 140.0,
+          "node_tp": 114.0,
+          "duplicates": 6.0,
+          "rescued": 0.0,
+          "lost": 0.0,
+          "patches": 8.0,
+          "edges": 106.0,
+          "gt_edges": 103.0,
+          "edge_tp": 59.0,
+          "eligible": 67.0,
+          "beta0_error": 9.0,
+          "beta1_error": 7.0,
+          "raw_tp": 125.0,
+          "hungarian_mm_sum": 177.29738998413086,
+          "hungarian_n": 140.0,
+          "nearest_mm_sum": 141.67730331420898,
+          "localized_mm_sum": 98.42817522585392,
+          "node_precision": 0.7862068965517242,
+          "node_recall": 0.8142857142857143,
+          "node_f1": 0.8,
+          "duplicate_rate": 0.041379310344827586,
+          "edge_precision": 0.5566037735849056,
+          "edge_recall": 0.5728155339805825,
+          "edge_f1": 0.5645933014354066,
+          "conditional_recall": 0.8805970149253731,
+          "beta0_mae": 1.125,
+          "beta1_mae": 0.875,
+          "raw_recall": 0.8928571428571429,
+          "hungarian_mm": 1.2664099284580776,
+          "nearest_mm": 1.0119807379586356,
+          "localized_mm": 0.8634050458408239,
+          "mean_patch_conditional_ap": 0.9572798122288718
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              1.0000001192092896
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              1.0000001192092896
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              0.9999998807907104
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0012173542054370046
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.01996886357665062
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.25563013553619385
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.07215303182601929
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.08413780480623245
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.11991953104734421
+            ]
+          }
+        }
+      },
+      {
+        "step": 128,
+        "metrics": {
+          "nodes": 140.0,
+          "gt_nodes": 140.0,
+          "node_tp": 140.0,
+          "duplicates": 0.0,
+          "rescued": 0.0,
+          "lost": 0.0,
+          "patches": 8.0,
+          "edges": 103.0,
+          "gt_edges": 103.0,
+          "edge_tp": 103.0,
+          "eligible": 103.0,
+          "beta0_error": 0.0,
+          "beta1_error": 0.0,
+          "raw_tp": 140.0,
+          "hungarian_mm_sum": 59.93826866149902,
+          "hungarian_n": 140.0,
+          "nearest_mm_sum": 57.10352373123169,
+          "localized_mm_sum": 59.93826766870916,
+          "node_precision": 1.0,
+          "node_recall": 1.0,
+          "node_f1": 1.0,
+          "duplicate_rate": 0.0,
+          "edge_precision": 1.0,
+          "edge_recall": 1.0,
+          "edge_f1": 1.0,
+          "conditional_recall": 1.0,
+          "beta0_mae": 0.0,
+          "beta1_mae": 0.0,
+          "raw_recall": 1.0,
+          "hungarian_mm": 0.42813049043927875,
+          "nearest_mm": 0.40788231236594064,
+          "localized_mm": 0.4281304833479226,
+          "mean_patch_conditional_ap": 1.0
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              1.0000001192092896
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              1.0000001192092896
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              1.0000001192092896
+            ],
+            "inside_mass": [
+              0.0013984361430630088
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.013077272102236748
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.2511427700519562
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.070845827460289
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.08500464260578156
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.11818964779376984
+            ]
+          }
+        }
+      },
+      {
+        "step": 512,
+        "metrics": {
+          "nodes": 140.0,
+          "gt_nodes": 140.0,
+          "node_tp": 140.0,
+          "duplicates": 0.0,
+          "rescued": 0.0,
+          "lost": 0.0,
+          "patches": 8.0,
+          "edges": 103.0,
+          "gt_edges": 103.0,
+          "edge_tp": 103.0,
+          "eligible": 103.0,
+          "beta0_error": 0.0,
+          "beta1_error": 0.0,
+          "raw_tp": 140.0,
+          "hungarian_mm_sum": 38.21923875808716,
+          "hungarian_n": 140.0,
+          "nearest_mm_sum": 37.775837659835815,
+          "localized_mm_sum": 38.219238452613354,
+          "node_precision": 1.0,
+          "node_recall": 1.0,
+          "node_f1": 1.0,
+          "duplicate_rate": 0.0,
+          "edge_precision": 1.0,
+          "edge_recall": 1.0,
+          "edge_f1": 1.0,
+          "conditional_recall": 1.0,
+          "beta0_mae": 0.0,
+          "beta1_mae": 0.0,
+          "raw_recall": 1.0,
+          "hungarian_mm": 0.27299456255776544,
+          "nearest_mm": 0.2698274118559701,
+          "localized_mm": 0.27299456037580966,
+          "mean_patch_conditional_ap": 1.0
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              1.0000001192092896
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0011250425595790148
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.00728399446234107
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.25331971049308777
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.06995890289545059
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.08387552201747894
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.11364997923374176
+            ]
+          }
+        }
+      }
+    ],
+    "B1": [
+      {
+        "step": 0,
+        "metrics": {
+          "nodes": 145.0,
+          "gt_nodes": 140.0,
+          "node_tp": 114.0,
+          "duplicates": 6.0,
+          "rescued": 0.0,
+          "lost": 0.0,
+          "patches": 8.0,
+          "edges": 106.0,
+          "gt_edges": 103.0,
+          "edge_tp": 59.0,
+          "eligible": 67.0,
+          "beta0_error": 9.0,
+          "beta1_error": 7.0,
+          "raw_tp": 125.0,
+          "hungarian_mm_sum": 177.3144245147705,
+          "hungarian_n": 140.0,
+          "nearest_mm_sum": 141.7000913619995,
+          "localized_mm_sum": 98.42736543715,
+          "node_precision": 0.7862068965517242,
+          "node_recall": 0.8142857142857143,
+          "node_f1": 0.8,
+          "duplicate_rate": 0.041379310344827586,
+          "edge_precision": 0.5566037735849056,
+          "edge_recall": 0.5728155339805825,
+          "edge_f1": 0.5645933014354066,
+          "conditional_recall": 0.8805970149253731,
+          "beta0_mae": 1.125,
+          "beta1_mae": 0.875,
+          "raw_recall": 0.8928571428571429,
+          "hungarian_mm": 1.2665316036769323,
+          "nearest_mm": 1.012143509728568,
+          "localized_mm": 0.8633979424311403,
+          "mean_patch_conditional_ap": 0.9572798122288718
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              0.9998999238014221,
+              9.998999303206801e-05
+            ],
+            "inside_mass": [
+              0.0,
+              8.564098970964551e-05
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              0.9998999834060669,
+              9.99899857561104e-05
+            ],
+            "inside_mass": [
+              0.0,
+              8.543228614144027e-05
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              0.9998999834060669,
+              9.998997848015279e-05
+            ],
+            "inside_mass": [
+              0.0,
+              8.531269850209355e-05
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              0.9998999834060669,
+              9.998999303206801e-05
+            ],
+            "inside_mass": [
+              0.0,
+              8.538903784938157e-05
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              0.9998999834060669,
+              9.998999303206801e-05
+            ],
+            "inside_mass": [
+              0.0018279931973665953,
+              8.536512905266136e-05
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              0.9999001026153564,
+              9.998997848015279e-05
+            ],
+            "inside_mass": [
+              0.015949206426739693,
+              8.582597365602851e-05
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              0.9998999834060669,
+              9.998999303206801e-05
+            ],
+            "inside_mass": [
+              0.2556045651435852,
+              8.96093770279549e-05
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              0.9998999834060669,
+              9.998999303206801e-05
+            ],
+            "inside_mass": [
+              0.07214593887329102,
+              8.54737008921802e-05
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              0.9998999834060669,
+              9.998999303206801e-05
+            ],
+            "inside_mass": [
+              0.0841294378042221,
+              8.588765922468156e-05
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              0.9998999834060669,
+              9.998999303206801e-05
+            ],
+            "inside_mass": [
+              0.11990649998188019,
+              8.664427150506526e-05
+            ]
+          }
+        }
+      },
+      {
+        "step": 128,
+        "metrics": {
+          "nodes": 140.0,
+          "gt_nodes": 140.0,
+          "node_tp": 140.0,
+          "duplicates": 0.0,
+          "rescued": 0.0,
+          "lost": 0.0,
+          "patches": 8.0,
+          "edges": 103.0,
+          "gt_edges": 103.0,
+          "edge_tp": 103.0,
+          "eligible": 103.0,
+          "beta0_error": 0.0,
+          "beta1_error": 0.0,
+          "raw_tp": 140.0,
+          "hungarian_mm_sum": 52.33801460266113,
+          "hungarian_n": 140.0,
+          "nearest_mm_sum": 50.599414348602295,
+          "localized_mm_sum": 52.33801608905196,
+          "node_precision": 1.0,
+          "node_recall": 1.0,
+          "node_f1": 1.0,
+          "duplicate_rate": 0.0,
+          "edge_precision": 1.0,
+          "edge_recall": 1.0,
+          "edge_f1": 1.0,
+          "conditional_recall": 1.0,
+          "beta0_mae": 0.0,
+          "beta1_mae": 0.0,
+          "raw_recall": 1.0,
+          "hungarian_mm": 0.3738429614475795,
+          "nearest_mm": 0.3614243882043021,
+          "localized_mm": 0.3738429720646569,
+          "mean_patch_conditional_ap": 1.0
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              0.9999176263809204,
+              8.245925710070878e-05
+            ],
+            "inside_mass": [
+              0.0,
+              6.584574293810874e-05
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              0.9999264478683472,
+              7.358702714554965e-05
+            ],
+            "inside_mass": [
+              0.0,
+              5.833155591972172e-05
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              0.9999274611473083,
+              7.260336133185774e-05
+            ],
+            "inside_mass": [
+              0.0,
+              5.81233216507826e-05
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              0.9999327063560486,
+              6.725202547386289e-05
+            ],
+            "inside_mass": [
+              0.0,
+              5.358412454370409e-05
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              0.999904453754425,
+              9.555582073517144e-05
+            ],
+            "inside_mass": [
+              0.002155469497665763,
+              7.874536095187068e-05
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              0.9999059438705444,
+              9.396883251611143e-05
+            ],
+            "inside_mass": [
+              0.0093521848320961,
+              7.818404992576689e-05
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              0.9999039769172668,
+              9.602878708392382e-05
+            ],
+            "inside_mass": [
+              0.25429224967956543,
+              8.569240162614733e-05
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              0.9999008178710938,
+              9.924854384735227e-05
+            ],
+            "inside_mass": [
+              0.07101404666900635,
+              8.526284364052117e-05
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              0.9999008178710938,
+              9.914079419104382e-05
+            ],
+            "inside_mass": [
+              0.08460366725921631,
+              8.597962732892483e-05
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              0.999901294708252,
+              9.876613330561668e-05
+            ],
+            "inside_mass": [
+              0.11804370582103729,
+              8.509970939485356e-05
+            ]
+          }
+        }
+      },
+      {
+        "step": 512,
+        "metrics": {
+          "nodes": 140.0,
+          "gt_nodes": 140.0,
+          "node_tp": 140.0,
+          "duplicates": 0.0,
+          "rescued": 0.0,
+          "lost": 0.0,
+          "patches": 8.0,
+          "edges": 103.0,
+          "gt_edges": 103.0,
+          "edge_tp": 103.0,
+          "eligible": 103.0,
+          "beta0_error": 0.0,
+          "beta1_error": 0.0,
+          "raw_tp": 140.0,
+          "hungarian_mm_sum": 39.12296748161316,
+          "hungarian_n": 140.0,
+          "nearest_mm_sum": 38.51354646682739,
+          "localized_mm_sum": 39.12296709418297,
+          "node_precision": 1.0,
+          "node_recall": 1.0,
+          "node_f1": 1.0,
+          "duplicate_rate": 0.0,
+          "edge_precision": 1.0,
+          "edge_recall": 1.0,
+          "edge_f1": 1.0,
+          "conditional_recall": 1.0,
+          "beta0_mae": 0.0,
+          "beta1_mae": 0.0,
+          "raw_recall": 1.0,
+          "hungarian_mm": 0.27944976772580826,
+          "nearest_mm": 0.2750967604773385,
+          "localized_mm": 0.27944976495844975,
+          "mean_patch_conditional_ap": 1.0
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              0.9999243021011353,
+              7.577078213216737e-05
+            ],
+            "inside_mass": [
+              0.0,
+              6.066255446057767e-05
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              0.9999467730522156,
+              5.3261013817973435e-05
+            ],
+            "inside_mass": [
+              0.0,
+              4.155087663093582e-05
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              0.9999412298202515,
+              5.8771358453668654e-05
+            ],
+            "inside_mass": [
+              0.0,
+              4.669367626775056e-05
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              0.9999498128890991,
+              5.015380884287879e-05
+            ],
+            "inside_mass": [
+              0.0,
+              3.985622606705874e-05
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              0.9999203085899353,
+              7.968820864334702e-05
+            ],
+            "inside_mass": [
+              0.002349714981392026,
+              6.598819163627923e-05
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              0.9999176263809204,
+              8.245123899541795e-05
+            ],
+            "inside_mass": [
+              0.006569875869899988,
+              6.978857709327713e-05
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              0.9999080896377563,
+              9.18773002922535e-05
+            ],
+            "inside_mass": [
+              0.25515681505203247,
+              8.064778376137838e-05
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              0.9999039769172668,
+              9.6011848654598e-05
+            ],
+            "inside_mass": [
+              0.07167919725179672,
+              8.067736052908003e-05
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              0.9999039173126221,
+              9.615007729735225e-05
+            ],
+            "inside_mass": [
+              0.08536763489246368,
+              8.216621790779755e-05
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              0.9999051094055176,
+              9.489830699749291e-05
+            ],
+            "inside_mass": [
+              0.11485332995653152,
+              7.942738739075139e-05
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "matched_batches": {
+    "index_sha256": "57ade5d3a3f187e36a7b4f3bbccbe8a4b25142debbb62c0406de0de205b8b8a1",
+    "first_volumes_sha256": "562ce271969488ac0eacdb0f16b6c046677cb4e6959472341f58c5a27e663076",
+    "first_samples": [
+      "sample_000127_0546",
+      "sample_000026_0816",
+      "sample_000133_0064",
+      "sample_000083_0442",
+      "sample_000052_0202",
+      "sample_000091_0134",
+      "sample_000132_0159",
+      "sample_000134_0706"
+    ]
+  },
+  "metrics": {
+    "B0": {
+      "train": {
+        "1.0": {
+          "nodes": 2620.0,
+          "gt_nodes": 2764.0,
+          "node_tp": 578.0,
+          "duplicates": 10.0,
+          "rescued": 0.0,
+          "lost": 0.0,
+          "patches": 128.0,
+          "edges": 1955.0,
+          "gt_edges": 2132.0,
+          "edge_tp": 61.0,
+          "eligible": 74.0,
+          "beta0_error": 282.0,
+          "beta1_error": 225.0,
+          "raw_tp": 899.0,
+          "hungarian_mm_sum": 5650.129068374634,
+          "hungarian_n": 2764.0,
+          "nearest_mm_sum": 4393.814882278442,
+          "localized_mm_sum": 382.59035784751177,
+          "node_precision": 0.22061068702290076,
+          "node_recall": 0.20911722141823444,
+          "node_f1": 0.21471025260029716,
+          "duplicate_rate": 0.003816793893129771,
+          "edge_precision": 0.031202046035805626,
+          "edge_recall": 0.028611632270168854,
+          "edge_f1": 0.029850746268656716,
+          "conditional_recall": 0.8243243243243243,
+          "beta0_mae": 2.203125,
+          "beta1_mae": 1.7578125,
+          "raw_recall": 0.3252532561505065,
+          "hungarian_mm": 2.044185625316438,
+          "nearest_mm": 1.589658061605804,
+          "localized_mm": 0.6619210343382557,
+          "mean_patch_conditional_ap": 0.9859417344173442
+        },
+        "2.0": {
+          "nodes": 2620.0,
+          "gt_nodes": 2764.0,
+          "node_tp": 1581.0,
+          "duplicates": 84.0,
+          "rescued": 0.0,
+          "lost": 0.0,
+          "patches": 128.0,
+          "edges": 1955.0,
+          "gt_edges": 2132.0,
+          "edge_tp": 491.0,
+          "eligible": 599.0,
+          "beta0_error": 282.0,
+          "beta1_error": 225.0,
+          "raw_tp": 2013.0,
+          "hungarian_mm_sum": 5650.129068374634,
+          "hungarian_n": 2764.0,
+          "nearest_mm_sum": 4393.814882278442,
+          "localized_mm_sum": 1837.9006213620305,
+          "node_precision": 0.6034351145038168,
+          "node_recall": 0.5719971056439942,
+          "node_f1": 0.587295690936107,
+          "duplicate_rate": 0.03206106870229008,
+          "edge_precision": 0.25115089514066496,
+          "edge_recall": 0.2303001876172608,
+          "edge_f1": 0.2402740396378762,
+          "conditional_recall": 0.8196994991652755,
+          "beta0_mae": 2.203125,
+          "beta1_mae": 1.7578125,
+          "raw_recall": 0.7282923299565847,
+          "hungarian_mm": 2.044185625316438,
+          "nearest_mm": 1.589658061605804,
+          "localized_mm": 1.1624924866300004,
+          "mean_patch_conditional_ap": 0.9165657583915505
+        }
+      },
+      "val": {
+        "1.0": {
+          "nodes": 9591.0,
+          "gt_nodes": 10080.0,
+          "node_tp": 2243.0,
+          "duplicates": 57.0,
+          "rescued": 0.0,
+          "lost": 0.0,
+          "patches": 480.0,
+          "edges": 7327.0,
+          "gt_edges": 7679.0,
+          "edge_tp": 267.0,
+          "eligible": 312.0,
+          "beta0_error": 971.0,
+          "beta1_error": 958.0,
+          "raw_tp": 3439.0,
+          "hungarian_mm_sum": 20504.949875354767,
+          "hungarian_n": 10080.0,
+          "nearest_mm_sum": 15751.359807491302,
+          "localized_mm_sum": 1502.227047752589,
+          "node_precision": 0.23386508184756544,
+          "node_recall": 0.22251984126984126,
+          "node_f1": 0.2280514462914951,
+          "duplicate_rate": 0.0059430716296528,
+          "edge_precision": 0.036440562303807836,
+          "edge_recall": 0.03477015236358901,
+          "edge_f1": 0.03558576569372251,
+          "conditional_recall": 0.8557692307692307,
+          "beta0_mae": 2.0229166666666667,
+          "beta1_mae": 1.9958333333333333,
+          "raw_recall": 0.34117063492063493,
+          "hungarian_mm": 2.0342212177931316,
+          "nearest_mm": 1.5626349015368355,
+          "localized_mm": 0.6697401015392729,
+          "mean_patch_conditional_ap": 0.9606073740175683
+        },
+        "2.0": {
+          "nodes": 9591.0,
+          "gt_nodes": 10080.0,
+          "node_tp": 5903.0,
+          "duplicates": 266.0,
+          "rescued": 0.0,
+          "lost": 0.0,
+          "patches": 480.0,
+          "edges": 7327.0,
+          "gt_edges": 7679.0,
+          "edge_tp": 2022.0,
+          "eligible": 2433.0,
+          "beta0_error": 971.0,
+          "beta1_error": 958.0,
+          "raw_tp": 7490.0,
+          "hungarian_mm_sum": 20504.949875354767,
+          "hungarian_n": 10080.0,
+          "nearest_mm_sum": 15751.359807491302,
+          "localized_mm_sum": 6881.241620015353,
+          "node_precision": 0.6154728391200084,
+          "node_recall": 0.5856150793650794,
+          "node_f1": 0.6001728432718214,
+          "duplicate_rate": 0.027734334271713065,
+          "edge_precision": 0.2759656066602975,
+          "edge_recall": 0.26331553587706735,
+          "edge_f1": 0.2694922031187525,
+          "conditional_recall": 0.8310727496917386,
+          "beta0_mae": 2.0229166666666667,
+          "beta1_mae": 1.9958333333333333,
+          "raw_recall": 0.7430555555555556,
+          "hungarian_mm": 2.0342212177931316,
+          "nearest_mm": 1.5626349015368355,
+          "localized_mm": 1.1657194003075306,
+          "mean_patch_conditional_ap": 0.9010025517389272
+        }
+      }
+    },
+    "B1": {
+      "train": {
+        "1.0": {
+          "nodes": 2625.0,
+          "gt_nodes": 2764.0,
+          "node_tp": 685.0,
+          "duplicates": 20.0,
+          "rescued": 0.0,
+          "lost": 0.0,
+          "patches": 128.0,
+          "edges": 1905.0,
+          "gt_edges": 2132.0,
+          "edge_tp": 68.0,
+          "eligible": 78.0,
+          "beta0_error": 334.0,
+          "beta1_error": 232.0,
+          "raw_tp": 975.0,
+          "hungarian_mm_sum": 5526.9692277908325,
+          "hungarian_n": 2764.0,
+          "nearest_mm_sum": 4329.693059921265,
+          "localized_mm_sum": 463.7179636657238,
+          "node_precision": 0.26095238095238094,
+          "node_recall": 0.24782923299565845,
+          "node_f1": 0.2542215624420115,
+          "duplicate_rate": 0.007619047619047619,
+          "edge_precision": 0.03569553805774278,
+          "edge_recall": 0.03189493433395872,
+          "edge_f1": 0.03368838246222442,
+          "conditional_recall": 0.8717948717948718,
+          "beta0_mae": 2.609375,
+          "beta1_mae": 1.8125,
+          "raw_recall": 0.35274963820549926,
+          "hungarian_mm": 1.9996270722832246,
+          "nearest_mm": 1.5664591389006022,
+          "localized_mm": 0.6769605308988669,
+          "mean_patch_conditional_ap": 0.9811728395061728
+        },
+        "2.0": {
+          "nodes": 2625.0,
+          "gt_nodes": 2764.0,
+          "node_tp": 1640.0,
+          "duplicates": 89.0,
+          "rescued": 0.0,
+          "lost": 0.0,
+          "patches": 128.0,
+          "edges": 1905.0,
+          "gt_edges": 2132.0,
+          "edge_tp": 528.0,
+          "eligible": 645.0,
+          "beta0_error": 334.0,
+          "beta1_error": 232.0,
+          "raw_tp": 2039.0,
+          "hungarian_mm_sum": 5526.9692277908325,
+          "hungarian_n": 2764.0,
+          "nearest_mm_sum": 4329.693059921265,
+          "localized_mm_sum": 1864.0192503035069,
+          "node_precision": 0.6247619047619047,
+          "node_recall": 0.5933429811866859,
+          "node_f1": 0.6086472443867137,
+          "duplicate_rate": 0.0339047619047619,
+          "edge_precision": 0.27716535433070866,
+          "edge_recall": 0.24765478424015008,
+          "edge_f1": 0.2615803814713896,
+          "conditional_recall": 0.8186046511627907,
+          "beta0_mae": 2.609375,
+          "beta1_mae": 1.8125,
+          "raw_recall": 0.7376989869753979,
+          "hungarian_mm": 1.9996270722832246,
+          "nearest_mm": 1.5664591389006022,
+          "localized_mm": 1.1365971038436018,
+          "mean_patch_conditional_ap": 0.9275965174484848
+        }
+      },
+      "val": {
+        "1.0": {
+          "nodes": 9517.0,
+          "gt_nodes": 10080.0,
+          "node_tp": 2400.0,
+          "duplicates": 47.0,
+          "rescued": 0.0,
+          "lost": 0.0,
+          "patches": 480.0,
+          "edges": 6971.0,
+          "gt_edges": 7679.0,
+          "edge_tp": 263.0,
+          "eligible": 318.0,
+          "beta0_error": 1070.0,
+          "beta1_error": 837.0,
+          "raw_tp": 3555.0,
+          "hungarian_mm_sum": 20384.673812389374,
+          "hungarian_n": 10080.0,
+          "nearest_mm_sum": 15806.493992805481,
+          "localized_mm_sum": 1596.0580989196897,
+          "node_precision": 0.25218030892087845,
+          "node_recall": 0.23809523809523808,
+          "node_f1": 0.2449354493034648,
+          "duplicate_rate": 0.004938531049700536,
+          "edge_precision": 0.03772772916367809,
+          "edge_recall": 0.03424925120458393,
+          "edge_f1": 0.03590443686006826,
+          "conditional_recall": 0.8270440251572327,
+          "beta0_mae": 2.2291666666666665,
+          "beta1_mae": 1.74375,
+          "raw_recall": 0.35267857142857145,
+          "hungarian_mm": 2.022289068689422,
+          "nearest_mm": 1.5681045627783214,
+          "localized_mm": 0.665024207883204,
+          "mean_patch_conditional_ap": 0.9449897613960114
+        },
+        "2.0": {
+          "nodes": 9517.0,
+          "gt_nodes": 10080.0,
+          "node_tp": 6003.0,
+          "duplicates": 254.0,
+          "rescued": 0.0,
+          "lost": 0.0,
+          "patches": 480.0,
+          "edges": 6971.0,
+          "gt_edges": 7679.0,
+          "edge_tp": 1949.0,
+          "eligible": 2403.0,
+          "beta0_error": 1070.0,
+          "beta1_error": 837.0,
+          "raw_tp": 7475.0,
+          "hungarian_mm_sum": 20384.673812389374,
+          "hungarian_n": 10080.0,
+          "nearest_mm_sum": 15806.493992805481,
+          "localized_mm_sum": 6887.054156146944,
+          "node_precision": 0.6307659976883472,
+          "node_recall": 0.5955357142857143,
+          "node_f1": 0.6126447925702914,
+          "duplicate_rate": 0.0266890826941263,
+          "edge_precision": 0.27958685984794146,
+          "edge_recall": 0.25380908972522465,
+          "edge_f1": 0.2660750853242321,
+          "conditional_recall": 0.8110694964627548,
+          "beta0_mae": 2.2291666666666665,
+          "beta1_mae": 1.74375,
+          "raw_recall": 0.7415674603174603,
+          "hungarian_mm": 2.022289068689422,
+          "nearest_mm": 1.5681045627783214,
+          "localized_mm": 1.1472687249953262,
+          "mean_patch_conditional_ap": 0.8917387289516573
+        }
+      }
+    }
+  },
+  "learning_curve": {
+    "B0": {
+      "0": {
+        "train": {
+          "1.0": {
+            "nodes": 717.0,
+            "gt_nodes": 686.0,
+            "node_tp": 305.0,
+            "duplicates": 13.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 32.0,
+            "edges": 520.0,
+            "gt_edges": 535.0,
+            "edge_tp": 81.0,
+            "eligible": 94.0,
+            "beta0_error": 89.0,
+            "beta1_error": 43.0,
+            "raw_tp": 369.0,
+            "hungarian_mm_sum": 1102.672402381897,
+            "hungarian_n": 686.0,
+            "nearest_mm_sum": 821.7067537307739,
+            "localized_mm_sum": 188.70292872190475,
+            "node_precision": 0.42538354253835425,
+            "node_recall": 0.4446064139941691,
+            "node_f1": 0.43478260869565216,
+            "duplicate_rate": 0.01813110181311018,
+            "edge_precision": 0.15576923076923077,
+            "edge_recall": 0.15140186915887852,
+            "edge_f1": 0.15355450236966825,
+            "conditional_recall": 0.8617021276595744,
+            "beta0_mae": 2.78125,
+            "beta1_mae": 1.34375,
+            "raw_recall": 0.5379008746355685,
+            "hungarian_mm": 1.607394172568363,
+            "nearest_mm": 1.197823256167309
+          },
+          "2.0": {
+            "nodes": 717.0,
+            "gt_nodes": 686.0,
+            "node_tp": 538.0,
+            "duplicates": 26.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 32.0,
+            "edges": 520.0,
+            "gt_edges": 535.0,
+            "edge_tp": 260.0,
+            "eligible": 320.0,
+            "beta0_error": 89.0,
+            "beta1_error": 43.0,
+            "raw_tp": 601.0,
+            "hungarian_mm_sum": 1102.672402381897,
+            "hungarian_n": 686.0,
+            "nearest_mm_sum": 821.7067537307739,
+            "localized_mm_sum": 523.4844106435776,
+            "node_precision": 0.7503486750348675,
+            "node_recall": 0.7842565597667639,
+            "node_f1": 0.766928011404134,
+            "duplicate_rate": 0.03626220362622036,
+            "edge_precision": 0.5,
+            "edge_recall": 0.48598130841121495,
+            "edge_f1": 0.4928909952606635,
+            "conditional_recall": 0.8125,
+            "beta0_mae": 2.78125,
+            "beta1_mae": 1.34375,
+            "raw_recall": 0.8760932944606414,
+            "hungarian_mm": 1.607394172568363,
+            "nearest_mm": 1.197823256167309
+          }
+        },
+        "val": {
+          "1.0": {
+            "nodes": 1487.0,
+            "gt_nodes": 1378.0,
+            "node_tp": 605.0,
+            "duplicates": 26.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 64.0,
+            "edges": 1097.0,
+            "gt_edges": 1033.0,
+            "edge_tp": 148.0,
+            "eligible": 177.0,
+            "beta0_error": 176.0,
+            "beta1_error": 119.0,
+            "raw_tp": 735.0,
+            "hungarian_mm_sum": 2214.1694202423096,
+            "hungarian_n": 1378.0,
+            "nearest_mm_sum": 1627.6254091262817,
+            "localized_mm_sum": 364.9516777601093,
+            "node_precision": 0.40685944855413586,
+            "node_recall": 0.4390420899854862,
+            "node_f1": 0.4223385689354276,
+            "duplicate_rate": 0.017484868863483525,
+            "edge_precision": 0.1349134001823154,
+            "edge_recall": 0.14327202323330107,
+            "edge_f1": 0.13896713615023473,
+            "conditional_recall": 0.8361581920903954,
+            "beta0_mae": 2.75,
+            "beta1_mae": 1.859375,
+            "raw_recall": 0.5333817126269956,
+            "hungarian_mm": 1.6067992890002247,
+            "nearest_mm": 1.1811505146054295
+          },
+          "2.0": {
+            "nodes": 1487.0,
+            "gt_nodes": 1378.0,
+            "node_tp": 1071.0,
+            "duplicates": 68.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 64.0,
+            "edges": 1097.0,
+            "gt_edges": 1033.0,
+            "edge_tp": 475.0,
+            "eligible": 622.0,
+            "beta0_error": 176.0,
+            "beta1_error": 119.0,
+            "raw_tp": 1179.0,
+            "hungarian_mm_sum": 2214.1694202423096,
+            "hungarian_n": 1378.0,
+            "nearest_mm_sum": 1627.6254091262817,
+            "localized_mm_sum": 1021.2861345242709,
+            "node_precision": 0.7202420981842637,
+            "node_recall": 0.7772133526850508,
+            "node_f1": 0.7476439790575916,
+            "duplicate_rate": 0.04572965702757229,
+            "edge_precision": 0.43299908842297175,
+            "edge_recall": 0.45982575024201355,
+            "edge_f1": 0.4460093896713615,
+            "conditional_recall": 0.7636655948553055,
+            "beta0_mae": 2.75,
+            "beta1_mae": 1.859375,
+            "raw_recall": 0.8555878084179971,
+            "hungarian_mm": 1.6067992890002247,
+            "nearest_mm": 1.1811505146054295
+          }
+        }
+      },
+      "250": {
+        "train": {
+          "1.0": {
+            "nodes": 676.0,
+            "gt_nodes": 686.0,
+            "node_tp": 150.0,
+            "duplicates": 4.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 32.0,
+            "edges": 603.0,
+            "gt_edges": 535.0,
+            "edge_tp": 17.0,
+            "eligible": 19.0,
+            "beta0_error": 55.0,
+            "beta1_error": 107.0,
+            "raw_tp": 235.0,
+            "hungarian_mm_sum": 1382.6529140472412,
+            "hungarian_n": 686.0,
+            "nearest_mm_sum": 1076.436508178711,
+            "localized_mm_sum": 97.49293428659439,
+            "node_precision": 0.22189349112426035,
+            "node_recall": 0.21865889212827988,
+            "node_f1": 0.22026431718061673,
+            "duplicate_rate": 0.005917159763313609,
+            "edge_precision": 0.028192371475953566,
+            "edge_recall": 0.03177570093457944,
+            "edge_f1": 0.029876977152899824,
+            "conditional_recall": 0.8947368421052632,
+            "beta0_mae": 1.71875,
+            "beta1_mae": 3.34375,
+            "raw_recall": 0.3425655976676385,
+            "hungarian_mm": 2.0155290292233836,
+            "nearest_mm": 1.56914942883194
+          },
+          "2.0": {
+            "nodes": 676.0,
+            "gt_nodes": 686.0,
+            "node_tp": 398.0,
+            "duplicates": 29.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 32.0,
+            "edges": 603.0,
+            "gt_edges": 535.0,
+            "edge_tp": 125.0,
+            "eligible": 144.0,
+            "beta0_error": 55.0,
+            "beta1_error": 107.0,
+            "raw_tp": 506.0,
+            "hungarian_mm_sum": 1382.6529140472412,
+            "hungarian_n": 686.0,
+            "nearest_mm_sum": 1076.436508178711,
+            "localized_mm_sum": 454.68553844094276,
+            "node_precision": 0.5887573964497042,
+            "node_recall": 0.5801749271137027,
+            "node_f1": 0.5844346549192364,
+            "duplicate_rate": 0.042899408284023666,
+            "edge_precision": 0.20729684908789386,
+            "edge_recall": 0.2336448598130841,
+            "edge_f1": 0.21968365553602812,
+            "conditional_recall": 0.8680555555555556,
+            "beta0_mae": 1.71875,
+            "beta1_mae": 3.34375,
+            "raw_recall": 0.7376093294460642,
+            "hungarian_mm": 2.0155290292233836,
+            "nearest_mm": 1.56914942883194
+          }
+        },
+        "val": {
+          "1.0": {
+            "nodes": 1404.0,
+            "gt_nodes": 1378.0,
+            "node_tp": 369.0,
+            "duplicates": 20.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 64.0,
+            "edges": 1265.0,
+            "gt_edges": 1033.0,
+            "edge_tp": 62.0,
+            "eligible": 67.0,
+            "beta0_error": 102.0,
+            "beta1_error": 252.0,
+            "raw_tp": 502.0,
+            "hungarian_mm_sum": 2759.3822355270386,
+            "hungarian_n": 1378.0,
+            "nearest_mm_sum": 2070.646304130554,
+            "localized_mm_sum": 246.0575391203165,
+            "node_precision": 0.26282051282051283,
+            "node_recall": 0.2677793904208999,
+            "node_f1": 0.2652767792954709,
+            "duplicate_rate": 0.014245014245014245,
+            "edge_precision": 0.04901185770750988,
+            "edge_recall": 0.060019361084220714,
+            "edge_f1": 0.053959965187119235,
+            "conditional_recall": 0.9253731343283582,
+            "beta0_mae": 1.59375,
+            "beta1_mae": 3.9375,
+            "raw_recall": 0.36429608127721336,
+            "hungarian_mm": 2.0024544524869654,
+            "nearest_mm": 1.5026460842747127
+          },
+          "2.0": {
+            "nodes": 1404.0,
+            "gt_nodes": 1378.0,
+            "node_tp": 867.0,
+            "duplicates": 54.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 64.0,
+            "edges": 1265.0,
+            "gt_edges": 1033.0,
+            "edge_tp": 298.0,
+            "eligible": 361.0,
+            "beta0_error": 102.0,
+            "beta1_error": 252.0,
+            "raw_tp": 1042.0,
+            "hungarian_mm_sum": 2759.3822355270386,
+            "hungarian_n": 1378.0,
+            "nearest_mm_sum": 2070.646304130554,
+            "localized_mm_sum": 976.115301027894,
+            "node_precision": 0.6175213675213675,
+            "node_recall": 0.6291727140783745,
+            "node_f1": 0.6232925952552121,
+            "duplicate_rate": 0.038461538461538464,
+            "edge_precision": 0.23557312252964427,
+            "edge_recall": 0.2884801548886738,
+            "edge_f1": 0.25935596170583114,
+            "conditional_recall": 0.8254847645429363,
+            "beta0_mae": 1.59375,
+            "beta1_mae": 3.9375,
+            "raw_recall": 0.7561683599419449,
+            "hungarian_mm": 2.0024544524869654,
+            "nearest_mm": 1.5026460842747127
+          }
+        }
+      },
+      "1000": {
+        "train": {
+          "1.0": {
+            "nodes": 651.0,
+            "gt_nodes": 686.0,
+            "node_tp": 149.0,
+            "duplicates": 6.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 32.0,
+            "edges": 521.0,
+            "gt_edges": 535.0,
+            "edge_tp": 24.0,
+            "eligible": 26.0,
+            "beta0_error": 70.0,
+            "beta1_error": 83.0,
+            "raw_tp": 222.0,
+            "hungarian_mm_sum": 1395.0998573303223,
+            "hungarian_n": 686.0,
+            "nearest_mm_sum": 1075.0003747940063,
+            "localized_mm_sum": 98.15637224912643,
+            "node_precision": 0.22887864823348694,
+            "node_recall": 0.21720116618075802,
+            "node_f1": 0.22288706058339566,
+            "duplicate_rate": 0.009216589861751152,
+            "edge_precision": 0.046065259117082535,
+            "edge_recall": 0.044859813084112146,
+            "edge_f1": 0.045454545454545456,
+            "conditional_recall": 0.9230769230769231,
+            "beta0_mae": 2.1875,
+            "beta1_mae": 2.59375,
+            "raw_recall": 0.3236151603498542,
+            "hungarian_mm": 2.033673261414464,
+            "nearest_mm": 1.5670559399329538
+          },
+          "2.0": {
+            "nodes": 651.0,
+            "gt_nodes": 686.0,
+            "node_tp": 393.0,
+            "duplicates": 20.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 32.0,
+            "edges": 521.0,
+            "gt_edges": 535.0,
+            "edge_tp": 131.0,
+            "eligible": 151.0,
+            "beta0_error": 70.0,
+            "beta1_error": 83.0,
+            "raw_tp": 510.0,
+            "hungarian_mm_sum": 1395.0998573303223,
+            "hungarian_n": 686.0,
+            "nearest_mm_sum": 1075.0003747940063,
+            "localized_mm_sum": 457.2176271080971,
+            "node_precision": 0.6036866359447005,
+            "node_recall": 0.5728862973760933,
+            "node_f1": 0.5878833208676141,
+            "duplicate_rate": 0.030721966205837174,
+            "edge_precision": 0.2514395393474088,
+            "edge_recall": 0.24485981308411214,
+            "edge_f1": 0.2481060606060606,
+            "conditional_recall": 0.8675496688741722,
+            "beta0_mae": 2.1875,
+            "beta1_mae": 2.59375,
+            "raw_recall": 0.7434402332361516,
+            "hungarian_mm": 2.033673261414464,
+            "nearest_mm": 1.5670559399329538
+          }
+        },
+        "val": {
+          "1.0": {
+            "nodes": 1318.0,
+            "gt_nodes": 1378.0,
+            "node_tp": 311.0,
+            "duplicates": 5.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 64.0,
+            "edges": 968.0,
+            "gt_edges": 1033.0,
+            "edge_tp": 33.0,
+            "eligible": 37.0,
+            "beta0_error": 153.0,
+            "beta1_error": 126.0,
+            "raw_tp": 481.0,
+            "hungarian_mm_sum": 2845.1697759628296,
+            "hungarian_n": 1378.0,
+            "nearest_mm_sum": 2166.5033082962036,
+            "localized_mm_sum": 209.2095472700894,
+            "node_precision": 0.23596358118361152,
+            "node_recall": 0.22568940493468795,
+            "node_f1": 0.23071216617210683,
+            "duplicate_rate": 0.0037936267071320183,
+            "edge_precision": 0.03409090909090909,
+            "edge_recall": 0.031945788964181994,
+            "edge_f1": 0.03298350824587706,
+            "conditional_recall": 0.8918918918918919,
+            "beta0_mae": 2.390625,
+            "beta1_mae": 1.96875,
+            "raw_recall": 0.3490566037735849,
+            "hungarian_mm": 2.0647095616566253,
+            "nearest_mm": 1.5722084965865049
+          },
+          "2.0": {
+            "nodes": 1318.0,
+            "gt_nodes": 1378.0,
+            "node_tp": 805.0,
+            "duplicates": 27.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 64.0,
+            "edges": 968.0,
+            "gt_edges": 1033.0,
+            "edge_tp": 253.0,
+            "eligible": 311.0,
+            "beta0_error": 153.0,
+            "beta1_error": 126.0,
+            "raw_tp": 1018.0,
+            "hungarian_mm_sum": 2845.1697759628296,
+            "hungarian_n": 1378.0,
+            "nearest_mm_sum": 2166.5033082962036,
+            "localized_mm_sum": 934.7334986515343,
+            "node_precision": 0.6107738998482549,
+            "node_recall": 0.5841799709724238,
+            "node_f1": 0.5971810089020771,
+            "duplicate_rate": 0.0204855842185129,
+            "edge_precision": 0.26136363636363635,
+            "edge_recall": 0.24491771539206195,
+            "edge_f1": 0.25287356321839083,
+            "conditional_recall": 0.8135048231511254,
+            "beta0_mae": 2.390625,
+            "beta1_mae": 1.96875,
+            "raw_recall": 0.7387518142235123,
+            "hungarian_mm": 2.0647095616566253,
+            "nearest_mm": 1.5722084965865049
+          }
+        }
+      },
+      "2000": {
+        "train": {
+          "1.0": {
+            "nodes": 649.0,
+            "gt_nodes": 686.0,
+            "node_tp": 136.0,
+            "duplicates": 1.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 32.0,
+            "edges": 471.0,
+            "gt_edges": 535.0,
+            "edge_tp": 18.0,
+            "eligible": 22.0,
+            "beta0_error": 80.0,
+            "beta1_error": 49.0,
+            "raw_tp": 215.0,
+            "hungarian_mm_sum": 1427.3617763519287,
+            "hungarian_n": 686.0,
+            "nearest_mm_sum": 1105.3415908813477,
+            "localized_mm_sum": 90.03154417872429,
+            "node_precision": 0.20955315870570107,
+            "node_recall": 0.19825072886297376,
+            "node_f1": 0.20374531835205992,
+            "duplicate_rate": 0.0015408320493066256,
+            "edge_precision": 0.03821656050955414,
+            "edge_recall": 0.03364485981308411,
+            "edge_f1": 0.03578528827037773,
+            "conditional_recall": 0.8181818181818182,
+            "beta0_mae": 2.5,
+            "beta1_mae": 1.53125,
+            "raw_recall": 0.31341107871720114,
+            "hungarian_mm": 2.080702297889109,
+            "nearest_mm": 1.6112851179028391
+          },
+          "2.0": {
+            "nodes": 649.0,
+            "gt_nodes": 686.0,
+            "node_tp": 386.0,
+            "duplicates": 16.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 32.0,
+            "edges": 471.0,
+            "gt_edges": 535.0,
+            "edge_tp": 118.0,
+            "eligible": 138.0,
+            "beta0_error": 80.0,
+            "beta1_error": 49.0,
+            "raw_tp": 494.0,
+            "hungarian_mm_sum": 1427.3617763519287,
+            "hungarian_n": 686.0,
+            "nearest_mm_sum": 1105.3415908813477,
+            "localized_mm_sum": 450.4430637061596,
+            "node_precision": 0.5947611710323575,
+            "node_recall": 0.5626822157434402,
+            "node_f1": 0.5782771535580524,
+            "duplicate_rate": 0.02465331278890601,
+            "edge_precision": 0.2505307855626327,
+            "edge_recall": 0.2205607476635514,
+            "edge_f1": 0.2345924453280318,
+            "conditional_recall": 0.855072463768116,
+            "beta0_mae": 2.5,
+            "beta1_mae": 1.53125,
+            "raw_recall": 0.7201166180758017,
+            "hungarian_mm": 2.080702297889109,
+            "nearest_mm": 1.6112851179028391
+          }
+        },
+        "val": {
+          "1.0": {
+            "nodes": 1337.0,
+            "gt_nodes": 1378.0,
+            "node_tp": 289.0,
+            "duplicates": 6.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 64.0,
+            "edges": 1019.0,
+            "gt_edges": 1033.0,
+            "edge_tp": 28.0,
+            "eligible": 32.0,
+            "beta0_error": 130.0,
+            "beta1_error": 141.0,
+            "raw_tp": 453.0,
+            "hungarian_mm_sum": 2845.048825263977,
+            "hungarian_n": 1378.0,
+            "nearest_mm_sum": 2177.548143386841,
+            "localized_mm_sum": 197.457739174366,
+            "node_precision": 0.2161555721765146,
+            "node_recall": 0.20972423802612483,
+            "node_f1": 0.2128913443830571,
+            "duplicate_rate": 0.004487658937920718,
+            "edge_precision": 0.02747791952894995,
+            "edge_recall": 0.027105517909002903,
+            "edge_f1": 0.02729044834307992,
+            "conditional_recall": 0.875,
+            "beta0_mae": 2.03125,
+            "beta1_mae": 2.203125,
+            "raw_recall": 0.32873730043541366,
+            "hungarian_mm": 2.0646217890159484,
+            "nearest_mm": 1.580223616391031
+          },
+          "2.0": {
+            "nodes": 1337.0,
+            "gt_nodes": 1378.0,
+            "node_tp": 819.0,
+            "duplicates": 34.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 64.0,
+            "edges": 1019.0,
+            "gt_edges": 1033.0,
+            "edge_tp": 280.0,
+            "eligible": 346.0,
+            "beta0_error": 130.0,
+            "beta1_error": 141.0,
+            "raw_tp": 1029.0,
+            "hungarian_mm_sum": 2845.048825263977,
+            "hungarian_n": 1378.0,
+            "nearest_mm_sum": 2177.548143386841,
+            "localized_mm_sum": 967.908745765686,
+            "node_precision": 0.612565445026178,
+            "node_recall": 0.5943396226415094,
+            "node_f1": 0.6033149171270719,
+            "duplicate_rate": 0.025430067314884067,
+            "edge_precision": 0.2747791952894995,
+            "edge_recall": 0.271055179090029,
+            "edge_f1": 0.2729044834307992,
+            "conditional_recall": 0.8092485549132948,
+            "beta0_mae": 2.03125,
+            "beta1_mae": 2.203125,
+            "raw_recall": 0.7467343976777939,
+            "hungarian_mm": 2.0646217890159484,
+            "nearest_mm": 1.580223616391031
+          }
+        }
+      }
+    },
+    "B1": {
+      "0": {
+        "train": {
+          "1.0": {
+            "nodes": 717.0,
+            "gt_nodes": 686.0,
+            "node_tp": 305.0,
+            "duplicates": 13.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 32.0,
+            "edges": 519.0,
+            "gt_edges": 535.0,
+            "edge_tp": 81.0,
+            "eligible": 94.0,
+            "beta0_error": 90.0,
+            "beta1_error": 43.0,
+            "raw_tp": 369.0,
+            "hungarian_mm_sum": 1102.715401649475,
+            "hungarian_n": 686.0,
+            "nearest_mm_sum": 821.7563333511353,
+            "localized_mm_sum": 188.68939051777124,
+            "node_precision": 0.42538354253835425,
+            "node_recall": 0.4446064139941691,
+            "node_f1": 0.43478260869565216,
+            "duplicate_rate": 0.01813110181311018,
+            "edge_precision": 0.15606936416184972,
+            "edge_recall": 0.15140186915887852,
+            "edge_f1": 0.15370018975332067,
+            "conditional_recall": 0.8617021276595744,
+            "beta0_mae": 2.8125,
+            "beta1_mae": 1.34375,
+            "raw_recall": 0.5379008746355685,
+            "hungarian_mm": 1.607456853716436,
+            "nearest_mm": 1.197895529666378
+          },
+          "2.0": {
+            "nodes": 717.0,
+            "gt_nodes": 686.0,
+            "node_tp": 538.0,
+            "duplicates": 26.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 32.0,
+            "edges": 519.0,
+            "gt_edges": 535.0,
+            "edge_tp": 260.0,
+            "eligible": 320.0,
+            "beta0_error": 90.0,
+            "beta1_error": 43.0,
+            "raw_tp": 601.0,
+            "hungarian_mm_sum": 1102.715401649475,
+            "hungarian_n": 686.0,
+            "nearest_mm_sum": 821.7563333511353,
+            "localized_mm_sum": 523.4745225682855,
+            "node_precision": 0.7503486750348675,
+            "node_recall": 0.7842565597667639,
+            "node_f1": 0.766928011404134,
+            "duplicate_rate": 0.03626220362622036,
+            "edge_precision": 0.5009633911368016,
+            "edge_recall": 0.48598130841121495,
+            "edge_f1": 0.49335863377609107,
+            "conditional_recall": 0.8125,
+            "beta0_mae": 2.8125,
+            "beta1_mae": 1.34375,
+            "raw_recall": 0.8760932944606414,
+            "hungarian_mm": 1.607456853716436,
+            "nearest_mm": 1.197895529666378
+          }
+        },
+        "val": {
+          "1.0": {
+            "nodes": 1485.0,
+            "gt_nodes": 1378.0,
+            "node_tp": 603.0,
+            "duplicates": 26.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 64.0,
+            "edges": 1091.0,
+            "gt_edges": 1033.0,
+            "edge_tp": 148.0,
+            "eligible": 177.0,
+            "beta0_error": 178.0,
+            "beta1_error": 117.0,
+            "raw_tp": 733.0,
+            "hungarian_mm_sum": 2213.307716369629,
+            "hungarian_n": 1378.0,
+            "nearest_mm_sum": 1627.7454404830933,
+            "localized_mm_sum": 363.009449634701,
+            "node_precision": 0.40606060606060607,
+            "node_recall": 0.4375907111756168,
+            "node_f1": 0.4212364652462452,
+            "duplicate_rate": 0.017508417508417508,
+            "edge_precision": 0.13565536205316223,
+            "edge_recall": 0.14327202323330107,
+            "edge_f1": 0.1393596986817326,
+            "conditional_recall": 0.8361581920903954,
+            "beta0_mae": 2.78125,
+            "beta1_mae": 1.828125,
+            "raw_recall": 0.5319303338171263,
+            "hungarian_mm": 1.6061739596296292,
+            "nearest_mm": 1.1812376200893275
+          },
+          "2.0": {
+            "nodes": 1485.0,
+            "gt_nodes": 1378.0,
+            "node_tp": 1070.0,
+            "duplicates": 68.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 64.0,
+            "edges": 1091.0,
+            "gt_edges": 1033.0,
+            "edge_tp": 473.0,
+            "eligible": 619.0,
+            "beta0_error": 178.0,
+            "beta1_error": 117.0,
+            "raw_tp": 1179.0,
+            "hungarian_mm_sum": 2213.307716369629,
+            "hungarian_n": 1378.0,
+            "nearest_mm_sum": 1627.7454404830933,
+            "localized_mm_sum": 1020.2694904245436,
+            "node_precision": 0.7205387205387206,
+            "node_recall": 0.7764876632801161,
+            "node_f1": 0.7474676912329724,
+            "duplicate_rate": 0.04579124579124579,
+            "edge_precision": 0.43354720439963335,
+            "edge_recall": 0.4578896418199419,
+            "edge_f1": 0.4453860640301318,
+            "conditional_recall": 0.7641357027463651,
+            "beta0_mae": 2.78125,
+            "beta1_mae": 1.828125,
+            "raw_recall": 0.8555878084179971,
+            "hungarian_mm": 1.6061739596296292,
+            "nearest_mm": 1.1812376200893275
+          }
+        }
+      },
+      "250": {
+        "train": {
+          "1.0": {
+            "nodes": 674.0,
+            "gt_nodes": 686.0,
+            "node_tp": 159.0,
+            "duplicates": 4.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 32.0,
+            "edges": 582.0,
+            "gt_edges": 535.0,
+            "edge_tp": 24.0,
+            "eligible": 26.0,
+            "beta0_error": 66.0,
+            "beta1_error": 95.0,
+            "raw_tp": 244.0,
+            "hungarian_mm_sum": 1364.7644214630127,
+            "hungarian_n": 686.0,
+            "nearest_mm_sum": 1054.2890405654907,
+            "localized_mm_sum": 101.59869033657014,
+            "node_precision": 0.23590504451038577,
+            "node_recall": 0.23177842565597667,
+            "node_f1": 0.2338235294117647,
+            "duplicate_rate": 0.005934718100890208,
+            "edge_precision": 0.041237113402061855,
+            "edge_recall": 0.044859813084112146,
+            "edge_f1": 0.04297224709042077,
+            "conditional_recall": 0.9230769230769231,
+            "beta0_mae": 2.0625,
+            "beta1_mae": 2.96875,
+            "raw_recall": 0.3556851311953353,
+            "hungarian_mm": 1.9894525094213014,
+            "nearest_mm": 1.5368644906202489
+          },
+          "2.0": {
+            "nodes": 674.0,
+            "gt_nodes": 686.0,
+            "node_tp": 414.0,
+            "duplicates": 17.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 32.0,
+            "edges": 582.0,
+            "gt_edges": 535.0,
+            "edge_tp": 153.0,
+            "eligible": 180.0,
+            "beta0_error": 66.0,
+            "beta1_error": 95.0,
+            "raw_tp": 518.0,
+            "hungarian_mm_sum": 1364.7644214630127,
+            "hungarian_n": 686.0,
+            "nearest_mm_sum": 1054.2890405654907,
+            "localized_mm_sum": 481.9724651630968,
+            "node_precision": 0.6142433234421365,
+            "node_recall": 0.6034985422740525,
+            "node_f1": 0.6088235294117647,
+            "duplicate_rate": 0.025222551928783383,
+            "edge_precision": 0.26288659793814434,
+            "edge_recall": 0.28598130841121494,
+            "edge_f1": 0.2739480752014324,
+            "conditional_recall": 0.85,
+            "beta0_mae": 2.0625,
+            "beta1_mae": 2.96875,
+            "raw_recall": 0.7551020408163265,
+            "hungarian_mm": 1.9894525094213014,
+            "nearest_mm": 1.5368644906202489
+          }
+        },
+        "val": {
+          "1.0": {
+            "nodes": 1400.0,
+            "gt_nodes": 1378.0,
+            "node_tp": 339.0,
+            "duplicates": 8.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 64.0,
+            "edges": 1205.0,
+            "gt_edges": 1033.0,
+            "edge_tp": 39.0,
+            "eligible": 51.0,
+            "beta0_error": 111.0,
+            "beta1_error": 219.0,
+            "raw_tp": 535.0,
+            "hungarian_mm_sum": 2706.128415107727,
+            "hungarian_n": 1378.0,
+            "nearest_mm_sum": 1972.0521354675293,
+            "localized_mm_sum": 224.1079154126346,
+            "node_precision": 0.24214285714285713,
+            "node_recall": 0.24600870827285923,
+            "node_f1": 0.24406047516198703,
+            "duplicate_rate": 0.005714285714285714,
+            "edge_precision": 0.03236514522821577,
+            "edge_recall": 0.0377541142303969,
+            "edge_f1": 0.03485254691689008,
+            "conditional_recall": 0.7647058823529411,
+            "beta0_mae": 1.734375,
+            "beta1_mae": 3.421875,
+            "raw_recall": 0.38824383164005805,
+            "hungarian_mm": 1.9638087192363767,
+            "nearest_mm": 1.431097340687612
+          },
+          "2.0": {
+            "nodes": 1400.0,
+            "gt_nodes": 1378.0,
+            "node_tp": 867.0,
+            "duplicates": 49.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 64.0,
+            "edges": 1205.0,
+            "gt_edges": 1033.0,
+            "edge_tp": 311.0,
+            "eligible": 392.0,
+            "beta0_error": 111.0,
+            "beta1_error": 219.0,
+            "raw_tp": 1093.0,
+            "hungarian_mm_sum": 2706.128415107727,
+            "hungarian_n": 1378.0,
+            "nearest_mm_sum": 1972.0521354675293,
+            "localized_mm_sum": 989.5790141932666,
+            "node_precision": 0.6192857142857143,
+            "node_recall": 0.6291727140783745,
+            "node_f1": 0.6241900647948164,
+            "duplicate_rate": 0.035,
+            "edge_precision": 0.25809128630705397,
+            "edge_recall": 0.3010648596321394,
+            "edge_f1": 0.2779267202859696,
+            "conditional_recall": 0.7933673469387755,
+            "beta0_mae": 1.734375,
+            "beta1_mae": 3.421875,
+            "raw_recall": 0.793178519593614,
+            "hungarian_mm": 1.9638087192363767,
+            "nearest_mm": 1.431097340687612
+          }
+        }
+      },
+      "1000": {
+        "train": {
+          "1.0": {
+            "nodes": 632.0,
+            "gt_nodes": 686.0,
+            "node_tp": 159.0,
+            "duplicates": 3.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 32.0,
+            "edges": 519.0,
+            "gt_edges": 535.0,
+            "edge_tp": 21.0,
+            "eligible": 22.0,
+            "beta0_error": 52.0,
+            "beta1_error": 66.0,
+            "raw_tp": 231.0,
+            "hungarian_mm_sum": 1482.674596786499,
+            "hungarian_n": 686.0,
+            "nearest_mm_sum": 1151.7357749938965,
+            "localized_mm_sum": 104.75172099005431,
+            "node_precision": 0.25158227848101267,
+            "node_recall": 0.23177842565597667,
+            "node_f1": 0.24127465857359637,
+            "duplicate_rate": 0.004746835443037975,
+            "edge_precision": 0.04046242774566474,
+            "edge_recall": 0.03925233644859813,
+            "edge_f1": 0.03984819734345351,
+            "conditional_recall": 0.9545454545454546,
+            "beta0_mae": 1.625,
+            "beta1_mae": 2.0625,
+            "raw_recall": 0.336734693877551,
+            "hungarian_mm": 2.1613332314671996,
+            "nearest_mm": 1.6789151238978084
+          },
+          "2.0": {
+            "nodes": 632.0,
+            "gt_nodes": 686.0,
+            "node_tp": 371.0,
+            "duplicates": 15.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 32.0,
+            "edges": 519.0,
+            "gt_edges": 535.0,
+            "edge_tp": 114.0,
+            "eligible": 133.0,
+            "beta0_error": 52.0,
+            "beta1_error": 66.0,
+            "raw_tp": 485.0,
+            "hungarian_mm_sum": 1482.674596786499,
+            "hungarian_n": 686.0,
+            "nearest_mm_sum": 1151.7357749938965,
+            "localized_mm_sum": 424.0846459073946,
+            "node_precision": 0.5870253164556962,
+            "node_recall": 0.5408163265306123,
+            "node_f1": 0.5629742033383915,
+            "duplicate_rate": 0.023734177215189875,
+            "edge_precision": 0.21965317919075145,
+            "edge_recall": 0.2130841121495327,
+            "edge_f1": 0.21631878557874762,
+            "conditional_recall": 0.8571428571428571,
+            "beta0_mae": 1.625,
+            "beta1_mae": 2.0625,
+            "raw_recall": 0.706997084548105,
+            "hungarian_mm": 2.1613332314671996,
+            "nearest_mm": 1.6789151238978084
+          }
+        },
+        "val": {
+          "1.0": {
+            "nodes": 1296.0,
+            "gt_nodes": 1378.0,
+            "node_tp": 279.0,
+            "duplicates": 5.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 64.0,
+            "edges": 1050.0,
+            "gt_edges": 1033.0,
+            "edge_tp": 18.0,
+            "eligible": 20.0,
+            "beta0_error": 112.0,
+            "beta1_error": 169.0,
+            "raw_tp": 469.0,
+            "hungarian_mm_sum": 2937.2278842926025,
+            "hungarian_n": 1378.0,
+            "nearest_mm_sum": 2223.948558807373,
+            "localized_mm_sum": 174.34073930978775,
+            "node_precision": 0.2152777777777778,
+            "node_recall": 0.20246734397677793,
+            "node_f1": 0.20867614061331338,
+            "duplicate_rate": 0.0038580246913580245,
+            "edge_precision": 0.017142857142857144,
+            "edge_recall": 0.017424975798644726,
+            "edge_f1": 0.01728276524243879,
+            "conditional_recall": 0.9,
+            "beta0_mae": 1.75,
+            "beta1_mae": 2.640625,
+            "raw_recall": 0.34034833091436867,
+            "hungarian_mm": 2.131515155509871,
+            "nearest_mm": 1.6138959062462794
+          },
+          "2.0": {
+            "nodes": 1296.0,
+            "gt_nodes": 1378.0,
+            "node_tp": 772.0,
+            "duplicates": 44.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 64.0,
+            "edges": 1050.0,
+            "gt_edges": 1033.0,
+            "edge_tp": 234.0,
+            "eligible": 287.0,
+            "beta0_error": 112.0,
+            "beta1_error": 169.0,
+            "raw_tp": 992.0,
+            "hungarian_mm_sum": 2937.2278842926025,
+            "hungarian_n": 1378.0,
+            "nearest_mm_sum": 2223.948558807373,
+            "localized_mm_sum": 903.5958985090256,
+            "node_precision": 0.595679012345679,
+            "node_recall": 0.5602322206095791,
+            "node_f1": 0.5774121166791324,
+            "duplicate_rate": 0.033950617283950615,
+            "edge_precision": 0.22285714285714286,
+            "edge_recall": 0.2265246853823814,
+            "edge_f1": 0.22467594815170427,
+            "conditional_recall": 0.8153310104529616,
+            "beta0_mae": 1.75,
+            "beta1_mae": 2.640625,
+            "raw_recall": 0.7198838896952104,
+            "hungarian_mm": 2.131515155509871,
+            "nearest_mm": 1.6138959062462794
+          }
+        }
+      },
+      "2000": {
+        "train": {
+          "1.0": {
+            "nodes": 654.0,
+            "gt_nodes": 686.0,
+            "node_tp": 170.0,
+            "duplicates": 4.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 32.0,
+            "edges": 471.0,
+            "gt_edges": 535.0,
+            "edge_tp": 18.0,
+            "eligible": 21.0,
+            "beta0_error": 90.0,
+            "beta1_error": 54.0,
+            "raw_tp": 235.0,
+            "hungarian_mm_sum": 1398.45485496521,
+            "hungarian_n": 686.0,
+            "nearest_mm_sum": 1112.3819360733032,
+            "localized_mm_sum": 119.19165644794703,
+            "node_precision": 0.2599388379204893,
+            "node_recall": 0.2478134110787172,
+            "node_f1": 0.2537313432835821,
+            "duplicate_rate": 0.0061162079510703364,
+            "edge_precision": 0.03821656050955414,
+            "edge_recall": 0.03364485981308411,
+            "edge_f1": 0.03578528827037773,
+            "conditional_recall": 0.8571428571428571,
+            "beta0_mae": 2.8125,
+            "beta1_mae": 1.6875,
+            "raw_recall": 0.3425655976676385,
+            "hungarian_mm": 2.0385639285207144,
+            "nearest_mm": 1.6215480117686636
+          },
+          "2.0": {
+            "nodes": 654.0,
+            "gt_nodes": 686.0,
+            "node_tp": 397.0,
+            "duplicates": 24.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 32.0,
+            "edges": 471.0,
+            "gt_edges": 535.0,
+            "edge_tp": 124.0,
+            "eligible": 157.0,
+            "beta0_error": 90.0,
+            "beta1_error": 54.0,
+            "raw_tp": 496.0,
+            "hungarian_mm_sum": 1398.45485496521,
+            "hungarian_n": 686.0,
+            "nearest_mm_sum": 1112.3819360733032,
+            "localized_mm_sum": 446.53318501263857,
+            "node_precision": 0.6070336391437309,
+            "node_recall": 0.5787172011661808,
+            "node_f1": 0.5925373134328358,
+            "duplicate_rate": 0.03669724770642202,
+            "edge_precision": 0.2632696390658174,
+            "edge_recall": 0.23177570093457944,
+            "edge_f1": 0.24652087475149106,
+            "conditional_recall": 0.7898089171974523,
+            "beta0_mae": 2.8125,
+            "beta1_mae": 1.6875,
+            "raw_recall": 0.7230320699708455,
+            "hungarian_mm": 2.0385639285207144,
+            "nearest_mm": 1.6215480117686636
+          }
+        },
+        "val": {
+          "1.0": {
+            "nodes": 1326.0,
+            "gt_nodes": 1378.0,
+            "node_tp": 312.0,
+            "duplicates": 9.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 64.0,
+            "edges": 969.0,
+            "gt_edges": 1033.0,
+            "edge_tp": 38.0,
+            "eligible": 43.0,
+            "beta0_error": 147.0,
+            "beta1_error": 119.0,
+            "raw_tp": 470.0,
+            "hungarian_mm_sum": 2888.2843503952026,
+            "hungarian_n": 1378.0,
+            "nearest_mm_sum": 2222.4799947738647,
+            "localized_mm_sum": 210.34520372748375,
+            "node_precision": 0.23529411764705882,
+            "node_recall": 0.22641509433962265,
+            "node_f1": 0.23076923076923078,
+            "duplicate_rate": 0.006787330316742082,
+            "edge_precision": 0.0392156862745098,
+            "edge_recall": 0.036786060019361085,
+            "edge_f1": 0.03796203796203796,
+            "conditional_recall": 0.8837209302325582,
+            "beta0_mae": 2.296875,
+            "beta1_mae": 1.859375,
+            "raw_recall": 0.34107402031930334,
+            "hungarian_mm": 2.095997351520466,
+            "nearest_mm": 1.6128301848866944
+          },
+          "2.0": {
+            "nodes": 1326.0,
+            "gt_nodes": 1378.0,
+            "node_tp": 810.0,
+            "duplicates": 41.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 64.0,
+            "edges": 969.0,
+            "gt_edges": 1033.0,
+            "edge_tp": 253.0,
+            "eligible": 327.0,
+            "beta0_error": 147.0,
+            "beta1_error": 119.0,
+            "raw_tp": 996.0,
+            "hungarian_mm_sum": 2888.2843503952026,
+            "hungarian_n": 1378.0,
+            "nearest_mm_sum": 2222.4799947738647,
+            "localized_mm_sum": 943.7929397374392,
+            "node_precision": 0.6108597285067874,
+            "node_recall": 0.5878084179970973,
+            "node_f1": 0.599112426035503,
+            "duplicate_rate": 0.03092006033182504,
+            "edge_precision": 0.26109391124871,
+            "edge_recall": 0.24491771539206195,
+            "edge_f1": 0.25274725274725274,
+            "conditional_recall": 0.7737003058103975,
+            "beta0_mae": 2.296875,
+            "beta1_mae": 1.859375,
+            "raw_recall": 0.7227866473149492,
+            "hungarian_mm": 2.095997351520466,
+            "nearest_mm": 1.6128301848866944
+          }
+        }
+      }
+    }
+  },
+  "attention": {
+    "B0": {
+      "decoder.encoder.layers.0.self_attn": {
+        "mass": [
+          1.0000000157834668
+        ],
+        "inside_mass": [
+          0.0
+        ]
+      },
+      "decoder.encoder.layers.1.self_attn": {
+        "mass": [
+          1.0000000149011612
+        ],
+        "inside_mass": [
+          0.0
+        ]
+      },
+      "decoder.encoder.layers.2.self_attn": {
+        "mass": [
+          1.0000000170579082
+        ],
+        "inside_mass": [
+          0.0
+        ]
+      },
+      "decoder.encoder.layers.3.self_attn": {
+        "mass": [
+          1.0000000184303837
+        ],
+        "inside_mass": [
+          0.0
+        ]
+      },
+      "decoder.encoder.layers.4.self_attn": {
+        "mass": [
+          1.0000000188225193
+        ],
+        "inside_mass": [
+          0.0002892379768522197
+        ]
+      },
+      "decoder.encoder.layers.5.self_attn": {
+        "mass": [
+          1.0000000159795348
+        ],
+        "inside_mass": [
+          0.014026820414552563
+        ]
+      },
+      "decoder.decoder.layers.0.cross_attn1": {
+        "mass": [
+          1.0
+        ],
+        "inside_mass": [
+          0.2413276582956314
+        ]
+      },
+      "decoder.decoder.layers.1.cross_attn1": {
+        "mass": [
+          0.9999999980393209
+        ],
+        "inside_mass": [
+          0.06904323954184197
+        ]
+      },
+      "decoder.decoder.layers.2.cross_attn1": {
+        "mass": [
+          0.9999999984314567
+        ],
+        "inside_mass": [
+          0.08577290511886149
+        ]
+      },
+      "decoder.decoder.layers.3.cross_attn1": {
+        "mass": [
+          0.9999999975491511
+        ],
+        "inside_mass": [
+          0.1338682754185835
+        ]
+      }
+    },
+    "B1": {
+      "decoder.encoder.layers.0.self_attn": {
+        "mass": [
+          0.9999424441668548,
+          5.756049605870909e-05
+        ],
+        "inside_mass": [
+          1.0175724352023963e-05,
+          4.508901970199842e-05
+        ]
+      },
+      "decoder.encoder.layers.1.self_attn": {
+        "mass": [
+          0.9999864454332151,
+          1.3558242323752942e-05
+        ],
+        "inside_mass": [
+          0.0,
+          9.233945757171713e-06
+        ]
+      },
+      "decoder.encoder.layers.2.self_attn": {
+        "mass": [
+          0.9999848258142409,
+          1.5182918306927126e-05
+        ],
+        "inside_mass": [
+          0.0,
+          1.0577672629539703e-05
+        ]
+      },
+      "decoder.encoder.layers.3.self_attn": {
+        "mass": [
+          0.9999862722072163,
+          1.3738292352627468e-05
+        ],
+        "inside_mass": [
+          0.0,
+          1.028608156311269e-05
+        ]
+      },
+      "decoder.encoder.layers.4.self_attn": {
+        "mass": [
+          0.9999689742138511,
+          3.103210492315013e-05
+        ],
+        "inside_mass": [
+          0.0010866911504164914,
+          2.182865299454007e-05
+        ]
+      },
+      "decoder.encoder.layers.5.self_attn": {
+        "mass": [
+          0.9999547825243912,
+          4.522389245889108e-05
+        ],
+        "inside_mass": [
+          0.013251039207189981,
+          3.445700959123075e-05
+        ]
+      },
+      "decoder.decoder.layers.0.cross_attn1": {
+        "mass": [
+          0.999940037727356,
+          6.0002545069437474e-05
+        ],
+        "inside_mass": [
+          0.2437831163406372,
+          4.5837055949959904e-05
+        ]
+      },
+      "decoder.decoder.layers.1.cross_attn1": {
+        "mass": [
+          0.9999347100720594,
+          6.530699267003863e-05
+        ],
+        "inside_mass": [
+          0.06863824573443517,
+          5.047632587799231e-05
+        ]
+      },
+      "decoder.decoder.layers.2.cross_attn1": {
+        "mass": [
+          0.9999346878183516,
+          6.532917297207812e-05
+        ],
+        "inside_mass": [
+          0.08085815727367605,
+          4.448691164557922e-05
+        ]
+      },
+      "decoder.decoder.layers.3.cross_attn1": {
+        "mass": [
+          0.9999358585398448,
+          6.415557344266027e-05
+        ],
+        "inside_mass": [
+          0.13758188152783796,
+          4.4142757623807195e-05
+        ]
+      }
+    }
+  },
+  "step_zero_population_parity": {
+    "patches": 96,
+    "maxima": {
+      "nodes_mm_max": 0.14942637085914612,
+      "object_probability_max": 0.010711610317230225,
+      "relation_probability_max": 0.002302110195159912,
+      "retained_node_flips": 1
+    },
+    "total_retained_node_flips": 2
+  },
+  "paired_B1_minus_B0": {
+    "1.0": {
+      "subjects": 13,
+      "patches": 480,
+      "draws": 2000,
+      "metrics": {
+        "raw_recall": {
+          "delta": 0.011507936507936523,
+          "ci95": [
+            0.003751537322053573,
+            0.01971506517261848
+          ]
+        },
+        "node_recall": {
+          "delta": 0.015575396825396826,
+          "ci95": [
+            0.0024981708202194103,
+            0.028507489836712585
+          ]
+        },
+        "node_precision": {
+          "delta": 0.018315227073313012,
+          "ci95": [
+            0.0047266145575132895,
+            0.031967472022675573
+          ]
+        },
+        "node_f1": {
+          "delta": 0.01688400301196971,
+          "ci95": [
+            0.003363773076856169,
+            0.030170790287919504
+          ]
+        },
+        "edge_recall": {
+          "delta": -0.0005209011590050841,
+          "ci95": [
+            -0.005976146879794128,
+            0.004564829556111689
+          ]
+        },
+        "edge_f1": {
+          "delta": 0.0003186711663457492,
+          "ci95": [
+            -0.0053562459157238595,
+            0.005569246846222582
+          ]
+        },
+        "conditional_recall": {
+          "delta": -0.028725205611997984,
+          "ci95": [
+            -0.0632377821887456,
+            0.010549720009890191
+          ]
+        },
+        "hungarian_mm": {
+          "delta": -0.011932149103709655,
+          "ci95": [
+            -0.03371852696998951,
+            0.011814171483052426
+          ]
+        },
+        "nearest_mm": {
+          "delta": 0.005469661241485957,
+          "ci95": [
+            -0.010892245531853584,
+            0.02356434733836407
+          ]
+        },
+        "beta0_mae": {
+          "delta": 0.20624999999999982,
+          "ci95": [
+            0.054093840786497996,
+            0.3429332037186019
+          ]
+        },
+        "beta1_mae": {
+          "delta": -0.25208333333333344,
+          "ci95": [
+            -0.47005317263381796,
+            -0.07312138948008516
+          ]
+        }
+      }
+    },
+    "2.0": {
+      "subjects": 13,
+      "patches": 480,
+      "draws": 2000,
+      "metrics": {
+        "raw_recall": {
+          "delta": -0.0014880952380952328,
+          "ci95": [
+            -0.008338802586700302,
+            0.004867641236651224
+          ]
+        },
+        "node_recall": {
+          "delta": 0.009920634920634885,
+          "ci95": [
+            0.003781987078694318,
+            0.015636577546407474
+          ]
+        },
+        "node_precision": {
+          "delta": 0.015293158568338794,
+          "ci95": [
+            0.007217399371633191,
+            0.023213304254488983
+          ]
+        },
+        "node_f1": {
+          "delta": 0.012471949298469953,
+          "ci95": [
+            0.006072014145077176,
+            0.018490348187076473
+          ]
+        },
+        "edge_recall": {
+          "delta": -0.009506446151842707,
+          "ci95": [
+            -0.022654863303353395,
+            0.002317066691710772
+          ]
+        },
+        "edge_f1": {
+          "delta": -0.003417117794520419,
+          "ci95": [
+            -0.017034274929298966,
+            0.008863091736443033
+          ]
+        },
+        "conditional_recall": {
+          "delta": -0.020003253228983775,
+          "ci95": [
+            -0.030590393538937836,
+            -0.010208788323649293
+          ]
+        },
+        "hungarian_mm": {
+          "delta": -0.011932149103709655,
+          "ci95": [
+            -0.03371852696998951,
+            0.011814171483052426
+          ]
+        },
+        "nearest_mm": {
+          "delta": 0.005469661241485957,
+          "ci95": [
+            -0.010892245531853584,
+            0.02356434733836407
+          ]
+        },
+        "beta0_mae": {
+          "delta": 0.20624999999999982,
+          "ci95": [
+            0.054093840786497996,
+            0.3429332037186019
+          ]
+        },
+        "beta1_mae": {
+          "delta": -0.25208333333333344,
+          "ci95": [
+            -0.47005317263381796,
+            -0.07312138948008516
+          ]
+        }
+      }
+    }
+  },
+  "interventions": {
+    "blocked": {
+      "paired": {
+        "1.0": {
+          "subjects": 13,
+          "patches": 128,
+          "draws": 2000,
+          "metrics": {
+            "raw_recall": {
+              "delta": -0.0003679175864606532,
+              "ci95": [
+                -0.0011144337897778301,
+                0.0
+              ]
+            },
+            "node_recall": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "node_precision": {
+              "delta": -9.545549721023949e-05,
+              "ci95": [
+                -0.0003033809481337912,
+                0.0
+              ]
+            },
+            "node_f1": {
+              "delta": -4.5839308227824116e-05,
+              "ci95": [
+                -0.00014765565076082233,
+                0.0
+              ]
+            },
+            "edge_recall": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "edge_f1": {
+              "delta": -3.973808077645247e-05,
+              "ci95": [
+                -0.0001344396356080406,
+                0.0
+              ]
+            },
+            "conditional_recall": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "hungarian_mm": {
+              "delta": -0.000277857468178766,
+              "ci95": [
+                -0.0008689710112464444,
+                0.00011247458439880286
+              ]
+            },
+            "nearest_mm": {
+              "delta": 1.3740208326673553e-06,
+              "ci95": [
+                -2.3405755430172535e-05,
+                2.8406293200067265e-05
+              ]
+            },
+            "beta0_mae": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "beta1_mae": {
+              "delta": 0.0234375,
+              "ci95": [
+                0.0,
+                0.07086614173228334
+              ]
+            }
+          }
+        },
+        "2.0": {
+          "subjects": 13,
+          "patches": 128,
+          "draws": 2000,
+          "metrics": {
+            "raw_recall": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "node_recall": {
+              "delta": 0.0003679175864605977,
+              "ci95": [
+                0.0,
+                0.0011144337897777744
+              ]
+            },
+            "node_precision": {
+              "delta": 0.00014706891505666952,
+              "ci95": [
+                0.0,
+                0.00044129303600538015
+              ]
+            },
+            "node_f1": {
+              "delta": 0.0002620093178428151,
+              "ci95": [
+                0.0,
+                0.0007847511433842462
+              ]
+            },
+            "edge_recall": {
+              "delta": 0.00048473097430926093,
+              "ci95": [
+                0.0,
+                0.0014706062660473653
+              ]
+            },
+            "edge_f1": {
+              "delta": 0.0002507523198362338,
+              "ci95": [
+                0.0,
+                0.0007771250503761031
+              ]
+            },
+            "conditional_recall": {
+              "delta": 0.0003420225095102092,
+              "ci95": [
+                0.0,
+                0.001075122995716068
+              ]
+            },
+            "hungarian_mm": {
+              "delta": -0.000277857468178766,
+              "ci95": [
+                -0.0008689710112464444,
+                0.00011247458439880286
+              ]
+            },
+            "nearest_mm": {
+              "delta": 1.3740208326673553e-06,
+              "ci95": [
+                -2.3405755430172535e-05,
+                2.8406293200067265e-05
+              ]
+            },
+            "beta0_mae": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "beta1_mae": {
+              "delta": 0.0234375,
+              "ci95": [
+                0.0,
+                0.07086614173228334
+              ]
+            }
+          }
+        }
+      },
+      "metrics": {
+        "val": {
+          "1.0": {
+            "nodes": 2612.0,
+            "gt_nodes": 2718.0,
+            "node_tp": 651.0,
+            "duplicates": 14.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 128.0,
+            "edges": 1927.0,
+            "gt_edges": 2063.0,
+            "edge_tp": 79.0,
+            "eligible": 97.0,
+            "beta0_error": 293.0,
+            "beta1_error": 239.0,
+            "raw_tp": 950.0,
+            "hungarian_mm_sum": 5566.377549171448,
+            "hungarian_n": 2718.0,
+            "nearest_mm_sum": 4323.789891242981,
+            "localized_mm_sum": 431.9771033599973,
+            "node_precision": 0.2492343032159265,
+            "node_recall": 0.23951434878587197,
+            "node_f1": 0.24427767354596622,
+            "duplicate_rate": 0.005359877488514548,
+            "edge_precision": 0.04099636741048261,
+            "edge_recall": 0.03829374697043141,
+            "edge_f1": 0.039598997493734335,
+            "conditional_recall": 0.8144329896907216,
+            "beta0_mae": 2.2890625,
+            "beta1_mae": 1.8671875,
+            "raw_recall": 0.34952170713760117,
+            "hungarian_mm": 2.0479681932198117,
+            "nearest_mm": 1.5907983411489997,
+            "localized_mm": 0.6635592985560634,
+            "mean_patch_conditional_ap": 0.9432149362477231
+          },
+          "2.0": {
+            "nodes": 2612.0,
+            "gt_nodes": 2718.0,
+            "node_tp": 1609.0,
+            "duplicates": 72.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 128.0,
+            "edges": 1927.0,
+            "gt_edges": 2063.0,
+            "edge_tp": 499.0,
+            "eligible": 638.0,
+            "beta0_error": 293.0,
+            "beta1_error": 239.0,
+            "raw_tp": 1991.0,
+            "hungarian_mm_sum": 5566.377549171448,
+            "hungarian_n": 2718.0,
+            "nearest_mm_sum": 4323.789891242981,
+            "localized_mm_sum": 1846.3692969307303,
+            "node_precision": 0.6160030627871363,
+            "node_recall": 0.5919793966151582,
+            "node_f1": 0.6037523452157598,
+            "duplicate_rate": 0.027565084226646247,
+            "edge_precision": 0.25895173845355474,
+            "edge_recall": 0.24188075618031993,
+            "edge_f1": 0.25012531328320803,
+            "conditional_recall": 0.7821316614420063,
+            "beta0_mae": 2.2890625,
+            "beta1_mae": 1.8671875,
+            "raw_recall": 0.7325239146431199,
+            "hungarian_mm": 2.0479681932198117,
+            "nearest_mm": 1.5907983411489997,
+            "localized_mm": 1.147525976961299,
+            "mean_patch_conditional_ap": 0.8698188925414235
+          }
+        }
+      },
+      "prediction_changes": {
+        "node_mm": 0.001666380670030776,
+        "score": 3.568205167425731e-05,
+        "retained_flips": 0.0078125
+      }
+    },
+    "roll": {
+      "paired": {
+        "1.0": {
+          "subjects": 13,
+          "patches": 128,
+          "draws": 2000,
+          "metrics": {
+            "raw_recall": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "node_recall": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "node_precision": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "node_f1": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "edge_recall": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "edge_f1": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "conditional_recall": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "hungarian_mm": {
+              "delta": -0.00016305690481877022,
+              "ci95": [
+                -0.0005067110078886605,
+                0.00017089069480771246
+              ]
+            },
+            "nearest_mm": {
+              "delta": 2.6631302652013744e-07,
+              "ci95": [
+                -1.3652993059998232e-07,
+                6.03828273521012e-07
+              ]
+            },
+            "beta0_mae": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "beta1_mae": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "2.0": {
+          "subjects": 13,
+          "patches": 128,
+          "draws": 2000,
+          "metrics": {
+            "raw_recall": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "node_recall": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "node_precision": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "node_f1": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "edge_recall": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "edge_f1": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "conditional_recall": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "hungarian_mm": {
+              "delta": -0.00016305690481877022,
+              "ci95": [
+                -0.0005067110078886605,
+                0.00017089069480771246
+              ]
+            },
+            "nearest_mm": {
+              "delta": 2.6631302652013744e-07,
+              "ci95": [
+                -1.3652993059998232e-07,
+                6.03828273521012e-07
+              ]
+            },
+            "beta0_mae": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "beta1_mae": {
+              "delta": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      },
+      "metrics": {
+        "val": {
+          "1.0": {
+            "nodes": 2611.0,
+            "gt_nodes": 2718.0,
+            "node_tp": 651.0,
+            "duplicates": 14.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 128.0,
+            "edges": 1923.0,
+            "gt_edges": 2063.0,
+            "edge_tp": 79.0,
+            "eligible": 97.0,
+            "beta0_error": 293.0,
+            "beta1_error": 236.0,
+            "raw_tp": 951.0,
+            "hungarian_mm_sum": 5566.689577102661,
+            "hungarian_n": 2718.0,
+            "nearest_mm_sum": 4323.786880493164,
+            "localized_mm_sum": 431.982547365129,
+            "node_precision": 0.24932975871313673,
+            "node_recall": 0.23951434878587197,
+            "node_f1": 0.24432351285419404,
+            "duplicate_rate": 0.005361930294906166,
+            "edge_precision": 0.041081643265730626,
+            "edge_recall": 0.03829374697043141,
+            "edge_f1": 0.03963873557451079,
+            "conditional_recall": 0.8144329896907216,
+            "beta0_mae": 2.2890625,
+            "beta1_mae": 1.84375,
+            "raw_recall": 0.3498896247240618,
+            "hungarian_mm": 2.0480829937831717,
+            "nearest_mm": 1.5907972334411935,
+            "localized_mm": 0.6635676610831475,
+            "mean_patch_conditional_ap": 0.9441308243727599
+          },
+          "2.0": {
+            "nodes": 2611.0,
+            "gt_nodes": 2718.0,
+            "node_tp": 1608.0,
+            "duplicates": 72.0,
+            "rescued": 0.0,
+            "lost": 0.0,
+            "patches": 128.0,
+            "edges": 1923.0,
+            "gt_edges": 2063.0,
+            "edge_tp": 498.0,
+            "eligible": 637.0,
+            "beta0_error": 293.0,
+            "beta1_error": 236.0,
+            "raw_tp": 1991.0,
+            "hungarian_mm_sum": 5566.689577102661,
+            "hungarian_n": 2718.0,
+            "nearest_mm_sum": 4323.786880493164,
+            "localized_mm_sum": 1845.3678579255939,
+            "node_precision": 0.6158559938720797,
+            "node_recall": 0.5916114790286976,
+            "node_f1": 0.603490335897917,
+            "duplicate_rate": 0.027575641516660282,
+            "edge_precision": 0.2589703588143526,
+            "edge_recall": 0.24139602520601067,
+            "edge_f1": 0.2498745609633718,
+            "conditional_recall": 0.7817896389324961,
+            "beta0_mae": 2.2890625,
+            "beta1_mae": 1.84375,
+            "raw_recall": 0.7325239146431199,
+            "hungarian_mm": 2.0480829937831717,
+            "nearest_mm": 1.5907972334411935,
+            "localized_mm": 1.1476168270681555,
+            "mean_patch_conditional_ap": 0.8698188925414235
+          }
+        }
+      },
+      "prediction_changes": {
+        "node_mm": 3.4472004131202993e-05,
+        "score": 2.8244436700575193e-07,
+        "retained_flips": 0.0
+      }
+    }
+  },
+  "training": {
+    "B0": [
+      {
+        "step": 1,
+        "losses": {
+          "class": 0.04538244381546974,
+          "nodes": 0.03126661852002144,
+          "boxes": 0.2516961395740509,
+          "cardinality": 0.01458333432674408,
+          "edges": 0.16491171717643738,
+          "degree": -0.0,
+          "spline": 0.10865360498428345,
+          "spline_control_mm": 1.3842960596084595,
+          "spline_curve_mm": 1.3423632383346558,
+          "spline_endpoint_mm": 1.4703458547592163,
+          "spline_positive_edges": 126.0,
+          "betti_h0": -0.0,
+          "betti_h0_weighted": -0.0,
+          "betti_h1": -0.0,
+          "betti_h1_weighted": -0.0,
+          "total": 2.1604437828063965
+        },
+        "gradients": {
+          "encoder.": 6.542447566986084,
+          "decoder.": 6.4103498458862305,
+          "class_embed.": 1.123624324798584,
+          "coord_embed.": 6.898904800415039,
+          "relation_embed.": 3.8793554306030273,
+          "spline_head.": 0.46028652787208557,
+          "input_proj.": 1.4751064777374268,
+          "new_attention_rows": {}
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              1.0000001192092896
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0016884793294593692
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.018354197964072227
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.25563013553619385
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.07233042269945145
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0846845805644989
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.11885583400726318
+            ]
+          }
+        }
+      },
+      {
+        "step": 100,
+        "losses": {
+          "class": 0.022587796673178673,
+          "nodes": 0.037173643708229065,
+          "boxes": 0.30002361536026,
+          "cardinality": 0.015625,
+          "edges": 0.1251872032880783,
+          "degree": -0.0,
+          "spline": 0.12731008231639862,
+          "spline_control_mm": 1.740012764930725,
+          "spline_curve_mm": 1.6973539590835571,
+          "spline_endpoint_mm": 1.8483304977416992,
+          "spline_positive_edges": 127.0,
+          "betti_h0": -0.0,
+          "betti_h0_weighted": -0.0,
+          "betti_h1": -0.0,
+          "betti_h1_weighted": -0.0,
+          "total": 2.016047477722168
+        },
+        "gradients": {
+          "encoder.": 3.3429596424102783,
+          "decoder.": 6.696022033691406,
+          "class_embed.": 0.5920194983482361,
+          "coord_embed.": 13.246542930603027,
+          "relation_embed.": 2.312260866165161,
+          "spline_head.": 0.5486969351768494,
+          "input_proj.": 1.2000547647476196,
+          "new_attention_rows": {}
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0014697599690407515
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.021920550614595413
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.2429557740688324
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.07035563141107559
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.08339841663837433
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              1.0000001192092896
+            ],
+            "inside_mass": [
+              0.1198359876871109
+            ]
+          }
+        }
+      },
+      {
+        "step": 250,
+        "losses": {
+          "class": 0.03469374030828476,
+          "nodes": 0.04810064658522606,
+          "boxes": 0.3695737421512604,
+          "cardinality": 0.01875000074505806,
+          "edges": 0.1345132738351822,
+          "degree": -0.0,
+          "spline": 0.09710188210010529,
+          "spline_control_mm": 2.067720413208008,
+          "spline_curve_mm": 2.0346028804779053,
+          "spline_endpoint_mm": 2.2546403408050537,
+          "spline_positive_edges": 145.0,
+          "betti_h0": -0.0,
+          "betti_h0_weighted": -0.0,
+          "betti_h1": -0.0,
+          "betti_h1_weighted": -0.0,
+          "total": 2.3089053630828857
+        },
+        "gradients": {
+          "encoder.": 5.147333145141602,
+          "decoder.": 7.546285152435303,
+          "class_embed.": 0.9444068074226379,
+          "coord_embed.": 10.468602180480957,
+          "relation_embed.": 1.9920287132263184,
+          "spline_head.": 0.47726231813430786,
+          "input_proj.": 1.3284105062484741,
+          "new_attention_rows": {}
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.00021508887584786862
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.017150722444057465
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.24571946263313293
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.07144352793693542
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.08090575784444809
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.1208672970533371
+            ]
+          }
+        }
+      },
+      {
+        "step": 1000,
+        "losses": {
+          "class": 0.022587867453694344,
+          "nodes": 0.04051061347126961,
+          "boxes": 0.32382792234420776,
+          "cardinality": 0.01145833358168602,
+          "edges": 0.1344252973794937,
+          "degree": -0.0,
+          "spline": 0.1374020129442215,
+          "spline_control_mm": 1.7587112188339233,
+          "spline_curve_mm": 1.7258775234222412,
+          "spline_endpoint_mm": 1.8398926258087158,
+          "spline_positive_edges": 113.0,
+          "betti_h0": -0.0,
+          "betti_h0_weighted": -0.0,
+          "betti_h1": -0.0,
+          "betti_h1_weighted": -0.0,
+          "total": 2.1611053943634033
+        },
+        "gradients": {
+          "encoder.": 4.847795009613037,
+          "decoder.": 8.688904762268066,
+          "class_embed.": 0.40835151076316833,
+          "coord_embed.": 14.920476913452148,
+          "relation_embed.": 1.5090301036834717,
+          "spline_head.": 0.555971086025238,
+          "input_proj.": 1.3446602821350098,
+          "new_attention_rows": {}
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              1.0000001192092896
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0005720887565985322
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.016317281872034073
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.24819332361221313
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.06793951988220215
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0779225081205368
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.12180793285369873
+            ]
+          }
+        }
+      },
+      {
+        "step": 2000,
+        "losses": {
+          "class": 0.024300293996930122,
+          "nodes": 0.0477655865252018,
+          "boxes": 0.3658621609210968,
+          "cardinality": 0.00937500037252903,
+          "edges": 0.12063407897949219,
+          "degree": -0.0,
+          "spline": 0.1287159025669098,
+          "spline_control_mm": 1.9480516910552979,
+          "spline_curve_mm": 1.9062663316726685,
+          "spline_endpoint_mm": 2.1114721298217773,
+          "spline_positive_edges": 123.0,
+          "betti_h0": -0.0,
+          "betti_h0_weighted": -0.0,
+          "betti_h1": -0.0,
+          "betti_h1_weighted": -0.0,
+          "total": 2.211350679397583
+        },
+        "gradients": {
+          "encoder.": 6.549080848693848,
+          "decoder.": 7.218240261077881,
+          "class_embed.": 0.7759090065956116,
+          "coord_embed.": 13.0181245803833,
+          "relation_embed.": 2.0010616779327393,
+          "spline_head.": 0.5999057292938232,
+          "input_proj.": 1.4920377731323242,
+          "new_attention_rows": {}
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              1.0000001192092896
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              1.0000001192092896
+            ],
+            "inside_mass": [
+              0.014106975868344307
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.2399044781923294
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.06960074603557587
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.08549359440803528
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.13324908912181854
+            ]
+          }
+        }
+      }
+    ],
+    "B1": [
+      {
+        "step": 1,
+        "losses": {
+          "class": 0.045375604182481766,
+          "nodes": 0.03126963973045349,
+          "boxes": 0.2517407238483429,
+          "cardinality": 0.01458333432674408,
+          "edges": 0.16566090285778046,
+          "degree": -0.0,
+          "spline": 0.10864392668008804,
+          "spline_control_mm": 1.3952785730361938,
+          "spline_curve_mm": 1.3534139394760132,
+          "spline_endpoint_mm": 1.4808543920516968,
+          "spline_positive_edges": 126.0,
+          "betti_h0": -0.0,
+          "betti_h0_weighted": -0.0,
+          "betti_h1": -0.0,
+          "betti_h1_weighted": -0.0,
+          "total": 2.165036916732788
+        },
+        "gradients": {
+          "encoder.": 6.4136643409729,
+          "decoder.": 6.419334888458252,
+          "class_embed.": 1.1214590072631836,
+          "coord_embed.": 6.897913932800293,
+          "relation_embed.": 3.8620665073394775,
+          "spline_head.": 0.4599420726299286,
+          "input_proj.": 1.4676905870437622,
+          "fine_input_proj.": 0.00274019967764616,
+          "new_attention_rows": {
+            "decoder.encoder.layers.0.self_attn": {
+              "sampling_offsets": 0.00020285836944822222,
+              "attention_weights": 0.00018381746485829353
+            },
+            "decoder.encoder.layers.1.self_attn": {
+              "sampling_offsets": 0.0001672429352765903,
+              "attention_weights": 0.00013405231584329158
+            },
+            "decoder.encoder.layers.2.self_attn": {
+              "sampling_offsets": 0.00019564256945159286,
+              "attention_weights": 0.00020578387193381786
+            },
+            "decoder.encoder.layers.3.self_attn": {
+              "sampling_offsets": 0.0001823463971959427,
+              "attention_weights": 0.0001598061207914725
+            },
+            "decoder.encoder.layers.4.self_attn": {
+              "sampling_offsets": 0.00042478874092921615,
+              "attention_weights": 0.00070667959516868
+            },
+            "decoder.encoder.layers.5.self_attn": {
+              "sampling_offsets": 0.0004897863836959004,
+              "attention_weights": 0.0009491011733189225
+            },
+            "decoder.decoder.layers.0.cross_attn1": {
+              "sampling_offsets": 0.00023388293629977852,
+              "attention_weights": 0.00022846808133181185
+            },
+            "decoder.decoder.layers.1.cross_attn1": {
+              "sampling_offsets": 0.000338889891281724,
+              "attention_weights": 0.0003883351164404303
+            },
+            "decoder.decoder.layers.2.cross_attn1": {
+              "sampling_offsets": 0.00036336469929665327,
+              "attention_weights": 0.00042903845314867795
+            },
+            "decoder.decoder.layers.3.cross_attn1": {
+              "sampling_offsets": 0.0004383247869554907,
+              "attention_weights": 0.000540743232704699
+            }
+          }
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              0.9998999834060669,
+              9.998999303206801e-05
+            ],
+            "inside_mass": [
+              0.0,
+              8.563562005292624e-05
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              0.9998998641967773,
+              9.998997848015279e-05
+            ],
+            "inside_mass": [
+              0.0,
+              8.542866999050602e-05
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              0.9999000430107117,
+              9.998999303206801e-05
+            ],
+            "inside_mass": [
+              0.0,
+              8.531058847438544e-05
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              0.9998999834060669,
+              9.999000758398324e-05
+            ],
+            "inside_mass": [
+              0.0,
+              8.53865931276232e-05
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              0.9999000430107117,
+              9.998999303206801e-05
+            ],
+            "inside_mass": [
+              0.001671979553066194,
+              8.536297536920756e-05
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              0.9999001026153564,
+              9.998997848015279e-05
+            ],
+            "inside_mass": [
+              0.015518962405622005,
+              8.581830479670316e-05
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              0.9998999834060669,
+              9.998999303206801e-05
+            ],
+            "inside_mass": [
+              0.2556045651435852,
+              8.96093770279549e-05
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              0.9999000430107117,
+              9.999000030802563e-05
+            ],
+            "inside_mass": [
+              0.07232314348220825,
+              8.548428013455123e-05
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              0.9999001026153564,
+              9.99899857561104e-05
+            ],
+            "inside_mass": [
+              0.08467713743448257,
+              8.587910269852728e-05
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              0.9998999834060669,
+              9.998999303206801e-05
+            ],
+            "inside_mass": [
+              0.11884303390979767,
+              8.66679911268875e-05
+            ]
+          }
+        }
+      },
+      {
+        "step": 100,
+        "losses": {
+          "class": 0.03985729441046715,
+          "nodes": 0.03531508147716522,
+          "boxes": 0.29068341851234436,
+          "cardinality": 0.01770833507180214,
+          "edges": 0.12499590218067169,
+          "degree": -0.0,
+          "spline": 0.12091807276010513,
+          "spline_control_mm": 1.555772304534912,
+          "spline_curve_mm": 1.5087069272994995,
+          "spline_endpoint_mm": 1.619004487991333,
+          "spline_positive_edges": 127.0,
+          "betti_h0": -0.0,
+          "betti_h0_weighted": -0.0,
+          "betti_h1": -0.0,
+          "betti_h1_weighted": -0.0,
+          "total": 2.044484853744507
+        },
+        "gradients": {
+          "encoder.": 7.065427780151367,
+          "decoder.": 9.619879722595215,
+          "class_embed.": 0.6874322295188904,
+          "coord_embed.": 9.09373950958252,
+          "relation_embed.": 1.8732236623764038,
+          "spline_head.": 0.5206393003463745,
+          "input_proj.": 1.7680814266204834,
+          "fine_input_proj.": 0.00036469066981226206,
+          "new_attention_rows": {
+            "decoder.encoder.layers.0.self_attn": {
+              "sampling_offsets": 0.00013049194240011275,
+              "attention_weights": 6.530012615257874e-05
+            },
+            "decoder.encoder.layers.1.self_attn": {
+              "sampling_offsets": 8.65959664224647e-05,
+              "attention_weights": 9.312037582276389e-05
+            },
+            "decoder.encoder.layers.2.self_attn": {
+              "sampling_offsets": 6.0628055507550016e-05,
+              "attention_weights": 9.499000589130446e-05
+            },
+            "decoder.encoder.layers.3.self_attn": {
+              "sampling_offsets": 8.170327782863751e-05,
+              "attention_weights": 9.117374429479241e-05
+            },
+            "decoder.encoder.layers.4.self_attn": {
+              "sampling_offsets": 0.0003078236186411232,
+              "attention_weights": 0.0005598617717623711
+            },
+            "decoder.encoder.layers.5.self_attn": {
+              "sampling_offsets": 0.00023586129827890545,
+              "attention_weights": 0.0004793263506144285
+            },
+            "decoder.decoder.layers.0.cross_attn1": {
+              "sampling_offsets": 0.0001808438973966986,
+              "attention_weights": 0.0002993563248310238
+            },
+            "decoder.decoder.layers.1.cross_attn1": {
+              "sampling_offsets": 0.0003164600639138371,
+              "attention_weights": 0.0007269536727108061
+            },
+            "decoder.decoder.layers.2.cross_attn1": {
+              "sampling_offsets": 0.0003150887496303767,
+              "attention_weights": 0.0003888079372700304
+            },
+            "decoder.decoder.layers.3.cross_attn1": {
+              "sampling_offsets": 0.00030649598920717835,
+              "attention_weights": 0.0003595785819925368
+            }
+          }
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              0.9999221563339233,
+              7.784205809002742e-05
+            ],
+            "inside_mass": [
+              0.0022161942906677723,
+              6.204669625731185e-05
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              0.9999396204948425,
+              6.03336411586497e-05
+            ],
+            "inside_mass": [
+              0.0,
+              4.6832683437969536e-05
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              0.9999440908432007,
+              5.59396248718258e-05
+            ],
+            "inside_mass": [
+              0.0,
+              4.448216350283474e-05
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              0.9999435544013977,
+              5.642009637085721e-05
+            ],
+            "inside_mass": [
+              0.0,
+              4.520366928773001e-05
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              0.9999191761016846,
+              8.080220140982419e-05
+            ],
+            "inside_mass": [
+              0.0009398403926752508,
+              6.580546323675662e-05
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              0.9999148845672607,
+              8.520152186974883e-05
+            ],
+            "inside_mass": [
+              0.017227444797754288,
+              7.099006325006485e-05
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              0.9999036192893982,
+              9.643657540436834e-05
+            ],
+            "inside_mass": [
+              0.24964971840381622,
+              8.566562610212713e-05
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              0.9999047517776489,
+              9.521977335680276e-05
+            ],
+            "inside_mass": [
+              0.06609423458576202,
+              8.081988198682666e-05
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              0.9999046921730042,
+              9.528116788715124e-05
+            ],
+            "inside_mass": [
+              0.08875232934951782,
+              8.038671512622386e-05
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              0.9999104738235474,
+              8.954193617682904e-05
+            ],
+            "inside_mass": [
+              0.1170884370803833,
+              7.455975719494745e-05
+            ]
+          }
+        }
+      },
+      {
+        "step": 250,
+        "losses": {
+          "class": 0.036841776221990585,
+          "nodes": 0.04609682783484459,
+          "boxes": 0.3589671850204468,
+          "cardinality": 0.01875000074505806,
+          "edges": 0.12972167134284973,
+          "degree": -0.0,
+          "spline": 0.0956234484910965,
+          "spline_control_mm": 1.985749363899231,
+          "spline_curve_mm": 1.9540249109268188,
+          "spline_endpoint_mm": 2.1871113777160645,
+          "spline_positive_edges": 145.0,
+          "betti_h0": 0.0,
+          "betti_h0_weighted": 0.0,
+          "betti_h1": 0.0,
+          "betti_h1_weighted": 0.0,
+          "total": 2.2507410049438477
+        },
+        "gradients": {
+          "encoder.": 3.8776180744171143,
+          "decoder.": 8.202859878540039,
+          "class_embed.": 0.7953029274940491,
+          "coord_embed.": 12.595097541809082,
+          "relation_embed.": 1.735215187072754,
+          "spline_head.": 0.45142754912376404,
+          "input_proj.": 1.2811874151229858,
+          "fine_input_proj.": 0.00020571054483298212,
+          "new_attention_rows": {
+            "decoder.encoder.layers.0.self_attn": {
+              "sampling_offsets": 3.888014907715842e-05,
+              "attention_weights": 2.4532746465411037e-05
+            },
+            "decoder.encoder.layers.1.self_attn": {
+              "sampling_offsets": 3.998646207037382e-05,
+              "attention_weights": 3.342208219692111e-05
+            },
+            "decoder.encoder.layers.2.self_attn": {
+              "sampling_offsets": 6.005531031405553e-05,
+              "attention_weights": 6.219842907739803e-05
+            },
+            "decoder.encoder.layers.3.self_attn": {
+              "sampling_offsets": 3.004979225806892e-05,
+              "attention_weights": 5.957745815976523e-05
+            },
+            "decoder.encoder.layers.4.self_attn": {
+              "sampling_offsets": 0.00021169896353967488,
+              "attention_weights": 0.0001642867282498628
+            },
+            "decoder.encoder.layers.5.self_attn": {
+              "sampling_offsets": 0.0002518756373319775,
+              "attention_weights": 0.0003592980501707643
+            },
+            "decoder.decoder.layers.0.cross_attn1": {
+              "sampling_offsets": 0.00013905756350141019,
+              "attention_weights": 0.00017897981160786003
+            },
+            "decoder.decoder.layers.1.cross_attn1": {
+              "sampling_offsets": 0.00020437668717931956,
+              "attention_weights": 0.00027914319070987403
+            },
+            "decoder.decoder.layers.2.cross_attn1": {
+              "sampling_offsets": 0.00022080935013946146,
+              "attention_weights": 0.00024350793682970107
+            },
+            "decoder.decoder.layers.3.cross_attn1": {
+              "sampling_offsets": 0.0002376744378125295,
+              "attention_weights": 0.0002951750357169658
+            }
+          }
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              0.9999278783798218,
+              7.209848990896717e-05
+            ],
+            "inside_mass": [
+              0.0032741825561970472,
+              5.625643098028377e-05
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              0.9999575614929199,
+              4.249006451573223e-05
+            ],
+            "inside_mass": [
+              0.0,
+              3.137366729788482e-05
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              0.9999603033065796,
+              3.971286059822887e-05
+            ],
+            "inside_mass": [
+              0.0,
+              3.0790666642133147e-05
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              0.9999574422836304,
+              4.250288475304842e-05
+            ],
+            "inside_mass": [
+              0.0,
+              3.341348929097876e-05
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              0.9999353885650635,
+              6.463560566771775e-05
+            ],
+            "inside_mass": [
+              0.0030769892036914825,
+              5.170023723621853e-05
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              0.9999233484268188,
+              7.667188037885353e-05
+            ],
+            "inside_mass": [
+              0.017733601853251457,
+              6.356120866257697e-05
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              0.999911904335022,
+              8.808342681732029e-05
+            ],
+            "inside_mass": [
+              0.24482101202011108,
+              7.693871884839609e-05
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              0.9999062418937683,
+              9.376675734529272e-05
+            ],
+            "inside_mass": [
+              0.07109792530536652,
+              7.786207424942404e-05
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              0.9999104738235474,
+              8.955360681284219e-05
+            ],
+            "inside_mass": [
+              0.0835399404168129,
+              7.332248060265556e-05
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              0.9999139904975891,
+              8.602548041380942e-05
+            ],
+            "inside_mass": [
+              0.12000779807567596,
+              6.886459595989436e-05
+            ]
+          }
+        }
+      },
+      {
+        "step": 1000,
+        "losses": {
+          "class": 0.021790210157632828,
+          "nodes": 0.04413975775241852,
+          "boxes": 0.34374022483825684,
+          "cardinality": 0.013541667722165585,
+          "edges": 0.1285456269979477,
+          "degree": -0.0,
+          "spline": 0.1337617188692093,
+          "spline_control_mm": 1.9885783195495605,
+          "spline_curve_mm": 1.9630299806594849,
+          "spline_endpoint_mm": 2.10227108001709,
+          "spline_positive_edges": 113.0,
+          "betti_h0": 0.0,
+          "betti_h0_weighted": 0.0,
+          "betti_h1": 0.0,
+          "betti_h1_weighted": 0.0,
+          "total": 2.1859326362609863
+        },
+        "gradients": {
+          "encoder.": 4.110934734344482,
+          "decoder.": 7.001440525054932,
+          "class_embed.": 0.479958176612854,
+          "coord_embed.": 18.514501571655273,
+          "relation_embed.": 1.6105690002441406,
+          "spline_head.": 0.47755420207977295,
+          "input_proj.": 1.2319865226745605,
+          "fine_input_proj.": 7.523701788159087e-05,
+          "new_attention_rows": {
+            "decoder.encoder.layers.0.self_attn": {
+              "sampling_offsets": 2.402214340690989e-05,
+              "attention_weights": 2.4073253371170722e-05
+            },
+            "decoder.encoder.layers.1.self_attn": {
+              "sampling_offsets": 1.3011687769903801e-05,
+              "attention_weights": 2.1805270080221817e-05
+            },
+            "decoder.encoder.layers.2.self_attn": {
+              "sampling_offsets": 2.9482269383152016e-05,
+              "attention_weights": 2.4037262846832164e-05
+            },
+            "decoder.encoder.layers.3.self_attn": {
+              "sampling_offsets": 1.3040719750279095e-05,
+              "attention_weights": 2.1828513126820326e-05
+            },
+            "decoder.encoder.layers.4.self_attn": {
+              "sampling_offsets": 4.5999833673704416e-05,
+              "attention_weights": 8.758003241382539e-05
+            },
+            "decoder.encoder.layers.5.self_attn": {
+              "sampling_offsets": 6.726889114361256e-05,
+              "attention_weights": 0.00017939062672667205
+            },
+            "decoder.decoder.layers.0.cross_attn1": {
+              "sampling_offsets": 9.167275129584596e-05,
+              "attention_weights": 0.0001143982372013852
+            },
+            "decoder.decoder.layers.1.cross_attn1": {
+              "sampling_offsets": 0.00016938116459641606,
+              "attention_weights": 0.00023444580438081175
+            },
+            "decoder.decoder.layers.2.cross_attn1": {
+              "sampling_offsets": 0.00018161983462050557,
+              "attention_weights": 0.00021663693769369274
+            },
+            "decoder.decoder.layers.3.cross_attn1": {
+              "sampling_offsets": 0.00017040256352629513,
+              "attention_weights": 0.0002715009031817317
+            }
+          }
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              0.999934732913971,
+              6.53458118904382e-05
+            ],
+            "inside_mass": [
+              0.00013199845852795988,
+              5.12518199684564e-05
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              0.999977707862854,
+              2.2271917259786278e-05
+            ],
+            "inside_mass": [
+              0.0,
+              1.5509243894484825e-05
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              0.9999777674674988,
+              2.225887874374166e-05
+            ],
+            "inside_mass": [
+              0.0,
+              1.5126368452911265e-05
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              0.9999783039093018,
+              2.173336542909965e-05
+            ],
+            "inside_mass": [
+              0.0,
+              1.6514281014679e-05
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              0.9999626278877258,
+              3.746056245290674e-05
+            ],
+            "inside_mass": [
+              0.0008089073235169053,
+              2.7766598577727564e-05
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              0.9999465942382812,
+              5.339486233424395e-05
+            ],
+            "inside_mass": [
+              0.01966266706585884,
+              4.0918512240750715e-05
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              0.9999260902404785,
+              7.396367436740547e-05
+            ],
+            "inside_mass": [
+              0.2468401938676834,
+              6.104185013100505e-05
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              0.9999206066131592,
+              7.94331863289699e-05
+            ],
+            "inside_mass": [
+              0.06775001436471939,
+              6.373459473252296e-05
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              0.9999231100082397,
+              7.691360951866955e-05
+            ],
+            "inside_mass": [
+              0.07903759181499481,
+              5.8273471950087696e-05
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              0.9999256134033203,
+              7.442758942488581e-05
+            ],
+            "inside_mass": [
+              0.11751362681388855,
+              5.436348510556854e-05
+            ]
+          }
+        }
+      },
+      {
+        "step": 2000,
+        "losses": {
+          "class": 0.021882614120841026,
+          "nodes": 0.04424814134836197,
+          "boxes": 0.3339778184890747,
+          "cardinality": 0.01458333432674408,
+          "edges": 0.1250820904970169,
+          "degree": -0.0,
+          "spline": 0.13085921108722687,
+          "spline_control_mm": 1.921474575996399,
+          "spline_curve_mm": 1.8748067617416382,
+          "spline_endpoint_mm": 2.088797092437744,
+          "spline_positive_edges": 123.0,
+          "betti_h0": -0.0,
+          "betti_h0_weighted": -0.0,
+          "betti_h1": -0.0,
+          "betti_h1_weighted": -0.0,
+          "total": 2.1330058574676514
+        },
+        "gradients": {
+          "encoder.": 3.793560743331909,
+          "decoder.": 7.606738567352295,
+          "class_embed.": 1.075925588607788,
+          "coord_embed.": 13.001733779907227,
+          "relation_embed.": 2.0560142993927,
+          "spline_head.": 0.648348867893219,
+          "input_proj.": 1.3399933576583862,
+          "fine_input_proj.": 3.2192729122471064e-05,
+          "new_attention_rows": {
+            "decoder.encoder.layers.0.self_attn": {
+              "sampling_offsets": 1.1925935723411385e-05,
+              "attention_weights": 6.1535970417025965e-06
+            },
+            "decoder.encoder.layers.1.self_attn": {
+              "sampling_offsets": 6.150793979031732e-06,
+              "attention_weights": 8.140201316564344e-06
+            },
+            "decoder.encoder.layers.2.self_attn": {
+              "sampling_offsets": 3.797171984842862e-06,
+              "attention_weights": 1.6224925275309943e-05
+            },
+            "decoder.encoder.layers.3.self_attn": {
+              "sampling_offsets": 4.39755149272969e-06,
+              "attention_weights": 1.2653187695832457e-05
+            },
+            "decoder.encoder.layers.4.self_attn": {
+              "sampling_offsets": 3.1146173569140956e-05,
+              "attention_weights": 6.183353252708912e-05
+            },
+            "decoder.encoder.layers.5.self_attn": {
+              "sampling_offsets": 5.0987113354494795e-05,
+              "attention_weights": 0.00010888787073781714
+            },
+            "decoder.decoder.layers.0.cross_attn1": {
+              "sampling_offsets": 5.931733176112175e-05,
+              "attention_weights": 0.00012060887820553035
+            },
+            "decoder.decoder.layers.1.cross_attn1": {
+              "sampling_offsets": 9.749570017447695e-05,
+              "attention_weights": 0.0001709075877442956
+            },
+            "decoder.decoder.layers.2.cross_attn1": {
+              "sampling_offsets": 0.00011092890781583264,
+              "attention_weights": 0.0001602734555490315
+            },
+            "decoder.decoder.layers.3.cross_attn1": {
+              "sampling_offsets": 0.0001173292548628524,
+              "attention_weights": 0.00019024530774913728
+            }
+          }
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              0.9999423027038574,
+              5.772787699243054e-05
+            ],
+            "inside_mass": [
+              4.0235327105619945e-06,
+              4.522903327597305e-05
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              0.9999864101409912,
+              1.355268159386469e-05
+            ],
+            "inside_mass": [
+              0.0,
+              9.175280865747482e-06
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              0.999984860420227,
+              1.5183068171609193e-05
+            ],
+            "inside_mass": [
+              0.0,
+              1.057753343047807e-05
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              0.9999862313270569,
+              1.3734196727455128e-05
+            ],
+            "inside_mass": [
+              0.0,
+              1.028420592774637e-05
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              0.9999690055847168,
+              3.102614573435858e-05
+            ],
+            "inside_mass": [
+              0.0010443192441016436,
+              2.180892988690175e-05
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              0.9999548196792603,
+              4.5199794840300456e-05
+            ],
+            "inside_mass": [
+              0.012803320772945881,
+              3.443819878157228e-05
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              0.9999399781227112,
+              6.0035181377315894e-05
+            ],
+            "inside_mass": [
+              0.24373507499694824,
+              4.587227158481255e-05
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              0.9999347925186157,
+              6.525617209263146e-05
+            ],
+            "inside_mass": [
+              0.06927159428596497,
+              5.044618228566833e-05
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              0.9999347925186157,
+              6.523942283820361e-05
+            ],
+            "inside_mass": [
+              0.07944894582033157,
+              4.441836790647358e-05
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              0.9999358057975769,
+              6.422861770261079e-05
+            ],
+            "inside_mass": [
+              0.1361624300479889,
+              4.416175215737894e-05
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

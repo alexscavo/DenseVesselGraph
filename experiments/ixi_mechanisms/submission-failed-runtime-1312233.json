@@ -1,0 +1,137 @@
+{
+  "output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_mechanisms_20261019-220355",
+  "train_patches": 256,
+  "validation_patches": 128,
+  "test_evaluation": false,
+  "jobs": {
+    "cpu_smoke": {
+      "id": "1312233",
+      "dependency": null,
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=00:30:00",
+        "cluster/jean_zay/ixi_mechanisms_cpu.slurm",
+        "smoke",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_mechanisms_20261019-220355"
+      ]
+    },
+    "features": {
+      "id": "1312237",
+      "dependency": "afterok:1312233",
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=02:00:00",
+        "--dependency=afterok:1312233",
+        "cluster/jean_zay/ixi_mechanisms_cpu.slurm",
+        "prepare",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_mechanisms_20261019-220355"
+      ]
+    },
+    "ABC": {
+      "id": "1312240",
+      "dependency": "afterok:1312237",
+      "array": "0-2%3",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=02:00:00",
+        "--dependency=afterok:1312237",
+        "--array=0-2%3",
+        "cluster/jean_zay/ixi_mechanisms_cpu.slurm",
+        "abc",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_mechanisms_20261019-220355"
+      ]
+    },
+    "relation_smoke": {
+      "id": "1312241",
+      "dependency": "afterok:1312233",
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=00:30:00",
+        "--dependency=afterok:1312233",
+        "cluster/jean_zay/ixi_mechanisms_relation.slurm",
+        "smoke",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_mechanisms_20261019-220355"
+      ]
+    },
+    "D": {
+      "id": "1312248",
+      "dependency": "afterok:1312241",
+      "array": "0-3%2",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=02:00:00",
+        "--dependency=afterok:1312241",
+        "--array=0-3%2",
+        "cluster/jean_zay/ixi_mechanisms_relation.slurm",
+        "pilot",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_mechanisms_20261019-220355"
+      ]
+    },
+    "D_evaluation": {
+      "id": "1312250",
+      "dependency": "aftercorr:1312248,afterok:1312237",
+      "array": "0-3%2",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=02:00:00",
+        "--dependency=aftercorr:1312248,afterok:1312237",
+        "--array=0-3%2",
+        "cluster/jean_zay/ixi_mechanisms_cpu.slurm",
+        "relation",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_mechanisms_20261019-220355"
+      ]
+    },
+    "collection": {
+      "id": "1312251",
+      "dependency": "afterok:1312240:1312250",
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=00:30:00",
+        "--dependency=afterok:1312240:1312250",
+        "cluster/jean_zay/ixi_mechanisms_cpu.slurm",
+        "collect",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_mechanisms_20261019-220355"
+      ]
+    }
+  },
+  "git_commit": "8a4b6c4a1bbb53a0fcd004e77a4cdbb8ac62f2be",
+  "source_sha256": {
+    "cluster/jean_zay/ixi_mechanism_runtime.sh": "71211be7c6a17165f64cb164de21c754b3c2cd8afd39b11af1ed515f145a58af",
+    "cluster/jean_zay/ixi_mechanisms_cpu.slurm": "52564148bd8c64c112e3d145b7ea82deb7be77d51e0a95b711840579793bbd2b",
+    "cluster/jean_zay/ixi_mechanisms_relation.slurm": "49a4e9e9debbe4fac2327d288fb06a9e23f4e191559de8b42da1f8f86e83d8da",
+    "cluster/jean_zay/submit_ixi_mechanisms.py": "8c703f8f590431880327da76937c788cb71f84378951ba3a12d07c65e543ef5a",
+    "metrics/common_vessel_metrics.py": "0bb7c0c78e578f108b0660faca84f6782e9d748933cfbf97097d9a6f36fc72ef",
+    "models/local_spline_geometry.py": "f88473b610653b970ba1c7f925e263c2102a4885bc30d361f404d5090f370bd7",
+    "models/matcher.py": "e3e235b87f74c486eb08e274ab5844fc90b99e0ec6affb2dbf4c13d2e2af28a1",
+    "models/spline.py": "f7be323dae0fcd592f8f892dd51fe112a2d1a0a6ab44b0f2482949ab7989a530",
+    "scripts/collect_ixi_mechanisms.py": "c09096335bff71e6f0d98ddaf2c95d8aa24227732b4d394553ebcbe08224e799",
+    "scripts/ixi_cached_mechanisms.py": "4913bc1295618d92371315e60660f96b7ad4b475dbaf7bf21535d9645fe04901",
+    "scripts/ixi_query_diagnostics.py": "6fb3f23ac3de686144d82e212ad9b23a1db95a1bc74d7b3d2ead103e77887b2d",
+    "scripts/prepare_ixi_mechanism_features.py": "1abf71ef492532f62aa0740d50a501da262411ede684b8dbb0eae3b29e949147",
+    "scripts/run_ixi_cached_mechanisms.py": "663a213d110adee44bf03750a120ce53ee02e161823dafbb8b35059f33d6cc45",
+    "scripts/train_ixi_relation_mechanisms.py": "e183b782e0e13aa0e893e901dbed22b068697c7019600c504e535e3b5d152567",
+    "tests/test_ixi_cached_mechanisms.py": "dbc57c1e2df9194a44ca567f318a869ff92335c6d461b6f333731a1827e66634",
+    "training/evaluation/inference.py": "d2b45b5c4a4787a9fb773f51613bbde1051f284d59f0838dad3f6f7ae851929f",
+    "training/losses/criterion.py": "6f389dfc1ec96bd15c5af0efd4d22912ad8921726373f6b045e745f98a1a72b0",
+    "training/losses/focal.py": "dfd6781dc22ed9489de54bbaa0a457cea00a5d66e7b201f27ba2e965f9d53d1e"
+  },
+  "submitted": true
+}

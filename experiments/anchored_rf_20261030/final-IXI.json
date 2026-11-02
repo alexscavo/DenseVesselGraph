@@ -1,0 +1,455 @@
+{
+ "thresholds": {
+  "node": 0.45,
+  "edge": 0.5,
+  "policy": "monitor_train only; node by node F1 at edge 0.5, then edge"
+ },
+ "train_monitor_selected": {
+  "node_threshold": 0.45,
+  "edge_threshold": 0.5,
+  "node_f1": 0.6605721660572166,
+  "node_precision": 0.7681340670335167,
+  "node_recall": 0.5794339622641509,
+  "edge_f1": 0.2906690824382037,
+  "edge_precision": 0.32242319839219064,
+  "edge_recall": 0.26460885956644675,
+  "missed_edges_without_endpoint_pair": 0.8779237423902595,
+  "false_edges_MM_MU_UU": [
+   1006,
+   1014,
+   340
+  ],
+  "beta0_mae": 1.70703125,
+  "beta1_mae": 2.96875,
+  "patches": 256,
+  "common_branch_f1": 0.13788056206088992,
+  "common_curve_f1": 0.4477702132772571,
+  "common_curve_precision": 0.5992492976557823,
+  "common_curve_recall": 0.35742086251018274,
+  "common_guide_distance_mm": 0.8116365179821203,
+  "common_anchor_f1": 0.35569422776911075
+ },
+ "train_monitor_fixed_0p5": {
+  "node_threshold": 0.5,
+  "edge_threshold": 0.5,
+  "node_f1": 0.6422378915732285,
+  "node_precision": 0.8290062667860341,
+  "node_recall": 0.5241509433962264,
+  "edge_f1": 0.28040689960194604,
+  "edge_precision": 0.37455691217014575,
+  "edge_recall": 0.22408105560791705,
+  "missed_edges_without_endpoint_pair": 0.9019131491041603,
+  "false_edges_MM_MU_UU": [
+   828,
+   617,
+   143
+  ],
+  "beta0_mae": 1.65234375,
+  "beta1_mae": 1.62109375,
+  "patches": 256,
+  "common_branch_f1": 0.13569321533923304,
+  "common_curve_f1": 0.4085380301842034,
+  "common_curve_precision": 0.6288823538662347,
+  "common_curve_recall": 0.3025368430580355,
+  "common_guide_distance_mm": 0.7947643465618388,
+  "common_anchor_f1": 0.3371608832807571
+ },
+ "validation_selected": {
+  "node_threshold": 0.45,
+  "edge_threshold": 0.5,
+  "node_f1": 0.640128096784237,
+  "node_precision": 0.7670824005969513,
+  "node_recall": 0.549229125324378,
+  "edge_f1": 0.2627075481307935,
+  "edge_precision": 0.29759981537041313,
+  "edge_recall": 0.23513858497447118,
+  "missed_edges_without_endpoint_pair": 0.8722136130647277,
+  "false_edges_MM_MU_UU": [
+   2680,
+   2621,
+   786
+  ],
+  "beta0_mae": 1.93359375,
+  "beta1_mae": 3.630859375,
+  "patches": 512,
+  "common_branch_f1": 0.12328220334150652,
+  "common_curve_f1": 0.4723181514353294,
+  "common_curve_precision": 0.6271079961521094,
+  "common_curve_recall": 0.3788148195469242,
+  "common_guide_distance_mm": 0.7126946358318068,
+  "common_anchor_f1": 0.35516509550367703
+ },
+ "validation_fixed_0p5": {
+  "node_threshold": 0.5,
+  "edge_threshold": 0.5,
+  "node_f1": 0.6204670590468958,
+  "node_precision": 0.8204870700477027,
+  "node_recall": 0.4988551366203633,
+  "edge_f1": 0.24950065628031728,
+  "edge_precision": 0.3334858886346301,
+  "edge_recall": 0.19930707512764406,
+  "missed_edges_without_endpoint_pair": 0.8928490093372808,
+  "false_edges_MM_MU_UU": [
+   2241,
+   1732,
+   396
+  ],
+  "beta0_mae": 1.978515625,
+  "beta1_mae": 2.1640625,
+  "patches": 512,
+  "common_branch_f1": 0.11597318831415201,
+  "common_curve_f1": 0.4323533526201974,
+  "common_curve_precision": 0.646114372351592,
+  "common_curve_recall": 0.3248723217739732,
+  "common_guide_distance_mm": 0.7094335787645314,
+  "common_anchor_f1": 0.3363263611356205
+ },
+ "anchor_upper_bound": {
+  "train_monitor": {
+   "one_to_one_recall": 0.79,
+   "any_anchor_within_2mm": 0.9739622641509434,
+   "gt_nodes": 5300,
+   "mean_real_peaks": 256.0,
+   "padded_patch_fraction": 0.0,
+   "mean_anchors_score_ge_0p05": 102.13671875,
+   "patches": 256
+  },
+  "validation": {
+   "one_to_one_recall": 0.7544649671805831,
+   "any_anchor_within_2mm": 0.9693939856510456,
+   "gt_nodes": 13102,
+   "mean_real_peaks": 256.0,
+   "padded_patch_fraction": 0.0,
+   "mean_anchors_score_ge_0p05": 106.640625,
+   "patches": 512
+  }
+ },
+ "populations": {
+  "monitor_train": 256,
+  "validation": 512
+ },
+ "inference_seconds": 14.022958792047575,
+ "total_seconds": 248.91572612710297,
+ "dataset": "IXI",
+ "method": "heatmap-anchored RelationFormer",
+ "updates": 14976,
+ "epochs": 117,
+ "batch_size": 32,
+ "training_seconds": 5312.017813015031,
+ "curve": [
+  {
+   "step": 2500,
+   "epoch": 20,
+   "seconds": 865.4359506659675,
+   "train_monitor_first64": {
+    "node_threshold": 0.5,
+    "edge_threshold": 0.5,
+    "node_f1": 0.6444766039556199,
+    "node_precision": 0.8434343434343434,
+    "node_recall": 0.5214676034348166,
+    "edge_f1": 0.21503957783641162,
+    "edge_precision": 0.32341269841269843,
+    "edge_recall": 0.16106719367588934,
+    "missed_edges_without_endpoint_pair": 0.8716136631330977,
+    "false_edges_MM_MU_UU": [
+     226,
+     99,
+     16
+    ],
+    "beta0_mae": 2.203125,
+    "beta1_mae": 1.34375,
+    "patches": 64
+   },
+   "validation_first128": {
+    "node_threshold": 0.5,
+    "edge_threshold": 0.5,
+    "node_f1": 0.6524401558730748,
+    "node_precision": 0.8319924278277331,
+    "node_recall": 0.5366300366300366,
+    "edge_f1": 0.2419134396355353,
+    "edge_precision": 0.3377862595419847,
+    "edge_recall": 0.18843151171043293,
+    "missed_edges_without_endpoint_pair": 0.85002186270223,
+    "false_edges_MM_MU_UU": [
+     579,
+     380,
+     82
+    ],
+    "beta0_mae": 3.5234375,
+    "beta1_mae": 2.4375,
+    "patches": 128
+   },
+   "anchor_upper_bound_validation_first128": {
+    "one_to_one_recall": 0.7637362637362637,
+    "any_anchor_within_2mm": 0.9764957264957265,
+    "gt_nodes": 3276,
+    "mean_real_peaks": 256.0,
+    "padded_patch_fraction": 0.0,
+    "mean_anchors_score_ge_0p05": 96.15625,
+    "patches": 128
+   }
+  },
+  {
+   "step": 5000,
+   "epoch": 40,
+   "seconds": 1753.4165409388952,
+   "train_monitor_first64": {
+    "node_threshold": 0.5,
+    "edge_threshold": 0.5,
+    "node_f1": 0.6556603773584906,
+    "node_precision": 0.8283671036948749,
+    "node_recall": 0.5425448868071819,
+    "edge_f1": 0.22192691029900333,
+    "edge_precision": 0.33874239350912777,
+    "edge_recall": 0.1650197628458498,
+    "missed_edges_without_endpoint_pair": 0.8603550295857988,
+    "false_edges_MM_MU_UU": [
+     171,
+     117,
+     38
+    ],
+    "beta0_mae": 2.640625,
+    "beta1_mae": 1.125,
+    "patches": 64
+   },
+   "validation_first128": {
+    "node_threshold": 0.5,
+    "edge_threshold": 0.5,
+    "node_f1": 0.6562043795620438,
+    "node_precision": 0.8157894736842105,
+    "node_recall": 0.5488400488400489,
+    "edge_f1": 0.24471370871941078,
+    "edge_precision": 0.3702372393961179,
+    "edge_recall": 0.18275372604684173,
+    "missed_edges_without_endpoint_pair": 0.8310898827616153,
+    "false_edges_MM_MU_UU": [
+     443,
+     342,
+     91
+    ],
+    "beta0_mae": 4.3125,
+    "beta1_mae": 1.5859375,
+    "patches": 128
+   },
+   "anchor_upper_bound_validation_first128": {
+    "one_to_one_recall": 0.7637362637362637,
+    "any_anchor_within_2mm": 0.9764957264957265,
+    "gt_nodes": 3276,
+    "mean_real_peaks": 256.0,
+    "padded_patch_fraction": 0.0,
+    "mean_anchors_score_ge_0p05": 96.15625,
+    "patches": 128
+   }
+  },
+  {
+   "step": 7500,
+   "epoch": 59,
+   "seconds": 2639.5510074929334,
+   "train_monitor_first64": {
+    "node_threshold": 0.5,
+    "edge_threshold": 0.5,
+    "node_f1": 0.6532522227421619,
+    "node_precision": 0.8154205607476636,
+    "node_recall": 0.5448868071818892,
+    "edge_f1": 0.25370480142264373,
+    "edge_precision": 0.31703703703703706,
+    "edge_recall": 0.21146245059288538,
+    "missed_edges_without_endpoint_pair": 0.9060150375939849,
+    "false_edges_MM_MU_UU": [
+     274,
+     147,
+     40
+    ],
+    "beta0_mae": 1.609375,
+    "beta1_mae": 2.140625,
+    "patches": 64
+   },
+   "validation_first128": {
+    "node_threshold": 0.5,
+    "edge_threshold": 0.5,
+    "node_f1": 0.6634057971014493,
+    "node_precision": 0.8159536541889483,
+    "node_recall": 0.5589133089133089,
+    "edge_f1": 0.2756463719766472,
+    "edge_precision": 0.33417593528816986,
+    "edge_recall": 0.23456352022711144,
+    "missed_edges_without_endpoint_pair": 0.8720445062586927,
+    "false_edges_MM_MU_UU": [
+     732,
+     474,
+     111
+    ],
+    "beta0_mae": 2.25,
+    "beta1_mae": 2.984375,
+    "patches": 128
+   },
+   "anchor_upper_bound_validation_first128": {
+    "one_to_one_recall": 0.7637362637362637,
+    "any_anchor_within_2mm": 0.9764957264957265,
+    "gt_nodes": 3276,
+    "mean_real_peaks": 256.0,
+    "padded_patch_fraction": 0.0,
+    "mean_anchors_score_ge_0p05": 96.15625,
+    "patches": 128
+   }
+  },
+  {
+   "step": 10000,
+   "epoch": 79,
+   "seconds": 3529.5723016590346,
+   "train_monitor_first64": {
+    "node_threshold": 0.5,
+    "edge_threshold": 0.5,
+    "node_f1": 0.6584905660377358,
+    "node_precision": 0.831942789034565,
+    "node_recall": 0.5448868071818892,
+    "edge_f1": 0.27527405602923266,
+    "edge_precision": 0.35873015873015873,
+    "edge_recall": 0.22332015810276679,
+    "missed_edges_without_endpoint_pair": 0.910941475826972,
+    "false_edges_MM_MU_UU": [
+     232,
+     138,
+     34
+    ],
+    "beta0_mae": 1.703125,
+    "beta1_mae": 1.734375,
+    "patches": 64
+   },
+   "validation_first128": {
+    "node_threshold": 0.5,
+    "edge_threshold": 0.5,
+    "node_f1": 0.6605872697428415,
+    "node_precision": 0.8205709107385591,
+    "node_recall": 0.5528083028083028,
+    "edge_f1": 0.2794086136704521,
+    "edge_precision": 0.3526230394808004,
+    "edge_recall": 0.2313697657913414,
+    "missed_edges_without_endpoint_pair": 0.8693444136657433,
+    "false_edges_MM_MU_UU": [
+     650,
+     443,
+     104
+    ],
+    "beta0_mae": 2.3671875,
+    "beta1_mae": 2.4453125,
+    "patches": 128
+   },
+   "anchor_upper_bound_validation_first128": {
+    "one_to_one_recall": 0.7637362637362637,
+    "any_anchor_within_2mm": 0.9764957264957265,
+    "gt_nodes": 3276,
+    "mean_real_peaks": 256.0,
+    "padded_patch_fraction": 0.0,
+    "mean_anchors_score_ge_0p05": 96.15625,
+    "patches": 128
+   }
+  },
+  {
+   "step": 12500,
+   "epoch": 98,
+   "seconds": 4419.934852822917,
+   "train_monitor_first64": {
+    "node_threshold": 0.5,
+    "edge_threshold": 0.5,
+    "node_f1": 0.6569274269557022,
+    "node_precision": 0.8287752675386445,
+    "node_recall": 0.5441061670569868,
+    "edge_f1": 0.27074235807860264,
+    "edge_precision": 0.36717428087986465,
+    "edge_recall": 0.21442687747035574,
+    "missed_edges_without_endpoint_pair": 0.8981132075471698,
+    "false_edges_MM_MU_UU": [
+     211,
+     129,
+     34
+    ],
+    "beta0_mae": 1.6875,
+    "beta1_mae": 1.390625,
+    "patches": 64
+   },
+   "validation_first128": {
+    "node_threshold": 0.5,
+    "edge_threshold": 0.5,
+    "node_f1": 0.664,
+    "node_precision": 0.8210431654676259,
+    "node_recall": 0.5573870573870574,
+    "edge_f1": 0.28478402431083133,
+    "edge_precision": 0.36668529904974845,
+    "edge_recall": 0.23278921220723917,
+    "missed_edges_without_endpoint_pair": 0.8691026827012026,
+    "false_edges_MM_MU_UU": [
+     588,
+     444,
+     101
+    ],
+    "beta0_mae": 2.3359375,
+    "beta1_mae": 1.96875,
+    "patches": 128
+   },
+   "anchor_upper_bound_validation_first128": {
+    "one_to_one_recall": 0.7637362637362637,
+    "any_anchor_within_2mm": 0.9764957264957265,
+    "gt_nodes": 3276,
+    "mean_real_peaks": 256.0,
+    "padded_patch_fraction": 0.0,
+    "mean_anchors_score_ge_0p05": 96.15625,
+    "patches": 128
+   }
+  },
+  {
+   "step": 14976,
+   "epoch": 117,
+   "seconds": 5296.695978008909,
+   "train_monitor_first64": {
+    "node_threshold": 0.5,
+    "edge_threshold": 0.5,
+    "node_f1": 0.6569411764705883,
+    "node_precision": 0.8270142180094787,
+    "node_recall": 0.5448868071818892,
+    "edge_f1": 0.2738537794299876,
+    "edge_precision": 0.36710963455149503,
+    "edge_recall": 0.2183794466403162,
+    "missed_edges_without_endpoint_pair": 0.9039190897597977,
+    "false_edges_MM_MU_UU": [
+     212,
+     134,
+     35
+    ],
+    "beta0_mae": 1.6875,
+    "beta1_mae": 1.453125,
+    "patches": 64
+   },
+   "validation_first128": {
+    "node_threshold": 0.5,
+    "edge_threshold": 0.5,
+    "node_f1": 0.6650926262259353,
+    "node_precision": 0.8210762331838565,
+    "node_recall": 0.5589133089133089,
+    "edge_f1": 0.28455458235419784,
+    "edge_precision": 0.357487922705314,
+    "edge_recall": 0.23633782824698368,
+    "missed_edges_without_endpoint_pair": 0.8698884758364313,
+    "false_edges_MM_MU_UU": [
+     642,
+     450,
+     105
+    ],
+    "beta0_mae": 2.1015625,
+    "beta1_mae": 2.203125,
+    "patches": 128
+   },
+   "anchor_upper_bound_validation_first128": {
+    "one_to_one_recall": 0.7637362637362637,
+    "any_anchor_within_2mm": 0.9764957264957265,
+    "gt_nodes": 3276,
+    "mean_real_peaks": 256.0,
+    "padded_patch_fraction": 0.0,
+    "mean_anchors_score_ge_0p05": 96.15625,
+    "patches": 128
+   }
+  }
+ ],
+ "checkpoint": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/anchored_rf_20261030/runs/IXI/model-final.pt",
+ "job_id": "1732539"
+}

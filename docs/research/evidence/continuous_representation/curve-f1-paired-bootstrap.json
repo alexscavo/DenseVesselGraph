@@ -1,0 +1,39 @@
+{
+  "seed": 221039,
+  "resamples": 1000,
+  "method": "Paired subject resampling; pooled common-v2 Curve F1 recomputed within each resample; standard-library Random",
+  "comparisons": [
+    {
+      "method": "K16",
+      "reference": "K8",
+      "difference": 0.00013703429473672923,
+      "low": -3.0841479595172805e-05,
+      "high": 0.0003556650904790182,
+      "subjects": 8
+    },
+    {
+      "method": "K24",
+      "reference": "K8",
+      "difference": 0.00036337095143969267,
+      "low": 0.00014454782955774376,
+      "high": 0.0006114840716718098,
+      "subjects": 8
+    },
+    {
+      "method": "K8",
+      "reference": "original_pretrained_K8",
+      "difference": 0.0026817379995546925,
+      "low": 0.00198600577035455,
+      "high": 0.0034083875059250923,
+      "subjects": 8
+    },
+    {
+      "method": "K24",
+      "reference": "original_pretrained_K8",
+      "difference": 0.003045108950994385,
+      "low": 0.002301016241216196,
+      "high": 0.003888079750783077,
+      "subjects": 8
+    }
+  ]
+}

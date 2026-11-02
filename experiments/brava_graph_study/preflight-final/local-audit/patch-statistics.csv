@@ -1,0 +1,13 @@
+components,cycles,dense_guide_points,edges,nodes,sample_id,split,subject
+3,0,12,3,6,sample_000002_0006,train,BG0003
+1,0,3,1,2,sample_000004_0006,train,BG0005
+1,0,2,1,2,sample_000005_0001,train,BG0006
+1,0,2,1,2,sample_000006_0001,train,BG0007
+2,0,8,2,4,sample_000000_0006,val,BG0001
+3,0,17,3,6,sample_000001_0006,val,BG0002
+2,0,20,2,4,sample_000009_0007,val,BG0010
+3,0,21,3,6,sample_000023_0006,val,BH0006
+2,0,28,4,6,sample_000034_0007,val,BH0018
+1,0,3,1,2,sample_000041_0002,val,BH0025
+4,0,23,5,9,sample_000042_0006,val,BH0026
+1,0,7,1,2,sample_000054_0006,val,BH0039

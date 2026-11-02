@@ -1,0 +1,73 @@
+{
+ "dataset": "BRAVA",
+ "subjects": 8,
+ "patches": 1796,
+ "thresholds": {
+  "dense": {
+   "node": 0.25,
+   "edge": 0.75,
+   "policy": "train monitor only; candidates = 16-NN over retained nodes"
+  },
+  "anchored": {
+   "node": 0.4,
+   "edge": 0.55,
+   "policy": "monitor_train only; node by node F1 at edge 0.5, then edge"
+  }
+ },
+ "dense": {
+  "node_f1": 0.542927951849885,
+  "edge_f1": 0.217007303402593,
+  "branch_f1": 0.053593886040437265,
+  "curve_f1": 0.3647485698080478
+ },
+ "anchored": {
+  "node_f1": 0.5471054216402353,
+  "edge_f1": 0.15436748613239515,
+  "branch_f1": 0.034602937515558874,
+  "curve_f1": 0.22887230501235264
+ },
+ "dense_minus_anchored": {
+  "node_f1": {
+   "point": -0.0041774697903503855,
+   "ci95": [
+    -0.006623921517026415,
+    -0.0012859584625448195
+   ]
+  },
+  "edge_f1": {
+   "point": 0.06263981727019785,
+   "ci95": [
+    0.056562076610679274,
+    0.06797641229002852
+   ]
+  },
+  "branch_f1": {
+   "point": 0.01899094852487839,
+   "ci95": [
+    0.01677953824966358,
+    0.02108674980784695
+   ]
+  },
+  "curve_f1": {
+   "point": 0.13587626479569517,
+   "ci95": [
+    0.11390294219699611,
+    0.15577230244259194
+   ]
+  }
+ },
+ "parity_abs_difference_vs_reported": {
+  "dense": {
+   "node_f1": 0.0,
+   "edge_f1": 0.0,
+   "branch_f1": 0.0,
+   "curve_f1": 0.0
+  },
+  "anchored": {
+   "node_f1": 0.0,
+   "edge_f1": 0.0,
+   "branch_f1": 0.0,
+   "curve_f1": 0.0
+  }
+ }
+}

@@ -1,0 +1,66 @@
+{
+  "arc_cuts_mm": [
+    1.141429364681244,
+    3.4097096920013428,
+    8.753914594650269
+  ],
+  "matching_tolerance_mm": 2.0,
+  "near_distance_mm": 5.0,
+  "cuts_source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/IXI/transfer_splines_k8_20261015/monitoring.json",
+  "splits": {
+    "train": {
+      "arc_quartiles": [
+        {
+          "targets": 1208,
+          "recovered_endpoints": 680,
+          "direct": 78
+        },
+        {
+          "targets": 1220,
+          "recovered_endpoints": 674,
+          "direct": 124
+        },
+        {
+          "targets": 1196,
+          "recovered_endpoints": 413,
+          "direct": 65
+        },
+        {
+          "targets": 1213,
+          "recovered_endpoints": 409,
+          "direct": 28
+        }
+      ],
+      "near_nonedge_candidates": 5529,
+      "near_nonedge_selected": 78,
+      "near_nonedge_fpr": 0.01410743353228432
+    },
+    "val": {
+      "arc_quartiles": [
+        {
+          "targets": 864,
+          "recovered_endpoints": 273,
+          "direct": 42
+        },
+        {
+          "targets": 749,
+          "recovered_endpoints": 249,
+          "direct": 44
+        },
+        {
+          "targets": 707,
+          "recovered_endpoints": 178,
+          "direct": 22
+        },
+        {
+          "targets": 657,
+          "recovered_endpoints": 180,
+          "direct": 6
+        }
+      ],
+      "near_nonedge_candidates": 1995,
+      "near_nonedge_selected": 52,
+      "near_nonedge_fpr": 0.02606516290726817
+    }
+  }
+}

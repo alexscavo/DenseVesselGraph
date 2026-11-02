@@ -96,7 +96,11 @@ class SyntheticMRIDataset(Dataset):
         rng=None,
         spline_controls=None,
         spline_family='bspline',
+        input_modality='raw_mra',
     ):
+        if input_modality not in {'raw_mra', 'vessel_mask'}:
+            raise ValueError('input_modality must be raw_mra or vessel_mask')
+        self.input_modality = input_modality
         if coordinate_space not in {"normalized", "voxel"}:
             raise ValueError("coordinate_space must be 'normalized' or 'voxel'")
         if len(image_size) != 3 or any(int(value) <= 0 for value in image_size):
@@ -130,31 +134,40 @@ class SyntheticMRIDataset(Dataset):
         self.rng = rng if rng is not None else random
         self.intensity_transform = (
             intensity_transform
-            if intensity_transform is not None or not self.augment
+            if intensity_transform is not None or not self.augment or self.input_modality == 'vessel_mask'
             else _build_training_intensity_transform(
                 float(gaussian_noise_probability),
                 float(gaussian_noise_max_std),
                 clamp_range,
             )
         )
+        if self.input_modality == 'vessel_mask':
+            self.intensity_transform = None
 
     def __len__(self) -> int:
         return len(self.records)
 
     def __getitem__(self, index: int) -> DatasetSample:
         record = self.records[index]
-        raw_image = self.volume_reader(record.image).float()
+        mask = self.volume_reader(record.segmentation).float()
+        if self.input_modality == 'vessel_mask':
+            if not torch.isfinite(mask).all() or not ((mask == 0) | (mask == 1)).all():
+                raise ValueError(f'Vessel-mask input must be finite and binary: {record.segmentation}')
+            raw_image = mask
+        else:
+            raw_image = self.volume_reader(record.image).float()
         source_shape = tuple(int(value) for value in raw_image.shape[-3:])
-        image = raw_image.unsqueeze(0) - self.foreground_mean
-        segmentation = self.volume_reader(record.segmentation).float().unsqueeze(0) - 0.5
+        image = raw_image.unsqueeze(0)
+        if self.input_modality == 'raw_mra':
+            image = image - self.foreground_mean
+        segmentation = mask.unsqueeze(0) - 0.5
         nodes, edges = self.graph_reader(record.graph)
 
         if tuple(image.shape[-3:]) != self.image_size:
             image = F.interpolate(
                 image.unsqueeze(0),
                 size=self.image_size,
-                mode="trilinear",
-                align_corners=False,
+                **({'mode': 'nearest'} if self.input_modality == 'vessel_mask' else {'mode': 'trilinear', 'align_corners': False}),
             ).squeeze(0)
         if tuple(segmentation.shape[-3:]) != self.image_size:
             segmentation = F.interpolate(
@@ -200,13 +213,17 @@ class SyntheticMRIDataset(Dataset):
 
             if self.zoom_range is not None:
                 zoom_factor = self.rng.uniform(*self.zoom_range)
-                image = zoom_volume(image, zoom_factor, mode="bilinear")
+                image = zoom_volume(image, zoom_factor, mode="nearest" if self.input_modality == 'vessel_mask' else "bilinear")
                 segmentation = zoom_volume(segmentation, zoom_factor, mode="nearest")
                 nodes = zoom_coordinates(
                     nodes, zoom_factor, segmentation.shape[-3:],
                     allow_patch_faces=True,
                 )
-            image = self.intensity_transform(image)
+            if self.input_modality == 'raw_mra':
+                image = self.intensity_transform(image)
+
+        if self.input_modality == 'vessel_mask' and not ((image == 0) | (image == 1)).all():
+            raise ValueError('Spatial augmentation changed a binary vessel-mask value')
 
         return (
             [image],

@@ -1,5 +1,7 @@
 # Vascular graph roadmap implementation tracker
 
+> **Research consolidation, 23 October 2026:** [Consolidated decisions and alternatives](../../research/decisions.md). This document retains its detailed and dated historical context.
+
 ## Purpose
 
 This is the living execution record for
@@ -14,21 +16,23 @@ screenshot under `evidence/<task-id>/` so results can be independently reviewed.
 
 ## Current position
 
-- Current phase: Phase 5 — IXI-only training integration smoke test. The
+- Current phase: Phase 5 — IXI-only model evaluation. The
   focused Phase 2 study is complete on 30 real stratified volumes (scope and
   caveats: [`evidence/T05/`](evidence/T05/)). Phase 3 Branch F1 is integrated
   in the evaluator in physical coordinates. Phase 4 controlled metric checks,
   including SMD and node/edge detection contrasts, are complete; see
   [`evidence/T08/`](evidence/T08/). The 220-volume Vedo-original production
   extraction and graph-positive patch sets are validated in
-  [`VEDO_PRODUCTION_RUN.md`](VEDO_PRODUCTION_RUN.md). No model-quality or
-  convergence result has been established yet.
-- Next task: monitor the IXI-only 100-epoch adaptive-GT run (two H100s,
-  Slurm job 93539), inspect its validation curves and real graph predictions,
-  then evaluate the selected checkpoint. The protocol and timing pilot are in
-  [`evidence/T09_long/`](evidence/T09_long/); the earlier bounded integration
-  smoke is in [`evidence/T09/`](evidence/T09/).
-  False fused-vessel loops remain independent QC work.
+  [`VEDO_PRODUCTION_RUN.md`](VEDO_PRODUCTION_RUN.md). The 300-epoch IXI run
+  and full 2,384-patch held-out test are complete. Test node F1 is 0.409,
+  edge F1 0.307, and physical Branch F1 0.00535; predictions contain far
+  too many edges and cycles. See [`evidence/T09_long/test_results.md`](evidence/T09_long/test_results.md)
+  and its linked-camera real-patch views.
+- Next task: diagnose edge overconnection using validation-only confidence
+  calibration and topology constraints before another test evaluation. The
+  original Work quota failure, epoch-100 recovery, 300-epoch extension, and
+  its test are recorded in [`evidence/T09_long/`](evidence/T09_long/).
+  False fused-vessel loops in input segmentation remain independent QC work.
 
 ## Ordered task list
 
@@ -42,8 +46,9 @@ screenshot under `evidence/<task-id>/` so results can be independently reviewed.
 | T06 | Run the rate-distortion study across sites and acquisition resolutions | 2 | complete (five sampled strata; transfer caveats) |
 | T07 | Implement degree-2 contraction, physical anchor matching, and Branch F1 | 3 | complete (evaluator + 2 real IXI patch ablations) |
 | T08 | Validate metrics on the prescribed handcrafted failure cases | 4 | complete (metric behavior only; not extractor/model quality) |
-| T09 | Generate/smoke-test IXI patches and retrain with optimization unchanged | 5 | in progress (100-epoch two-H100 job 93539 submitted; no quality result yet) |
+| T09 | Train the 256-query IXI model through epoch 300 and evaluate the held-out test split | 5 | complete (job 113928; test job 138721; poor edge topology documented) |
 | T10 | Benchmark 120 versus 192 and 192 versus 256 object queries on paired real IXI patches | 5 | complete |
+| T11 | Diagnose predicted edge overconnection using validation-only decisions | 5 | not started |
 
 ### 2026-09-22 — physical Branch F1 integration and real patch checks
 

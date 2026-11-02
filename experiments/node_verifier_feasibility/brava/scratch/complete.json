@@ -1,0 +1,139 @@
+{
+  "completed": true,
+  "updates": 512,
+  "training_patches": [
+    "sample_000002_0024",
+    "sample_000004_0007",
+    "sample_000005_0049",
+    "sample_000006_0054",
+    "sample_000007_0064",
+    "sample_000008_0013",
+    "sample_000010_0012",
+    "sample_000011_0019"
+  ],
+  "subjects": [
+    "BG0003",
+    "BG0005",
+    "BG0006",
+    "BG0007",
+    "BG0008",
+    "BG0009",
+    "BG0011",
+    "BG0012"
+  ],
+  "seconds": 51.22734022140503,
+  "gradients": [
+    {
+      "step": 1,
+      "localization_loss": 0.8760663866996765,
+      "localization_gradient_norms": {
+        "coord_embed.": 1.300688624382019,
+        "encoder.": 12.344826698303223,
+        "decoder.": 54.10108184814453
+      },
+      "losses": {
+        "class": 0.4380635619163513,
+        "nodes": 0.8760663866996765,
+        "boxes": 1.4881274700164795,
+        "cardinality": 0.04296875,
+        "edges": 0.5926614999771118,
+        "degree": 0.0,
+        "spline": 0.7910224795341492,
+        "spline_control_mm": 20.72095489501953,
+        "spline_curve_mm": 20.605436325073242,
+        "spline_endpoint_mm": 21.922521591186523,
+        "spline_positive_edges": 24.0,
+        "betti_h0": -0.0,
+        "betti_h0_weighted": -0.0,
+        "betti_h1": -0.0,
+        "betti_h1_weighted": -0.0,
+        "total": 12.725079536437988
+      }
+    },
+    {
+      "step": 64,
+      "localization_loss": 0.2489410638809204,
+      "localization_gradient_norms": {
+        "coord_embed.": 0.758499026298523,
+        "encoder.": 6.9837870597839355,
+        "decoder.": 15.605953216552734
+      },
+      "losses": {
+        "class": 0.036524806171655655,
+        "nodes": 0.2489410638809204,
+        "boxes": 0.9921005368232727,
+        "cardinality": 0.0078125,
+        "edges": 0.2602693438529968,
+        "degree": 0.0,
+        "spline": 0.6831692457199097,
+        "spline_control_mm": 6.963070392608643,
+        "spline_curve_mm": 6.818467617034912,
+        "spline_endpoint_mm": 6.993644714355469,
+        "spline_positive_edges": 31.0,
+        "betti_h0": -0.0,
+        "betti_h0_weighted": -0.0,
+        "betti_h1": -0.0,
+        "betti_h1_weighted": -0.0,
+        "total": 6.1951398849487305
+      }
+    },
+    {
+      "step": 256,
+      "localization_loss": 0.07655169814825058,
+      "localization_gradient_norms": {
+        "coord_embed.": 2.1477303504943848,
+        "encoder.": 1.4105600118637085,
+        "decoder.": 10.617192268371582
+      },
+      "losses": {
+        "class": 0.010532069019973278,
+        "nodes": 0.07655169814825058,
+        "boxes": 0.5320136547088623,
+        "cardinality": 0.0029296875,
+        "edges": 0.07908925414085388,
+        "degree": 0.0,
+        "spline": 0.3362654149532318,
+        "spline_control_mm": 2.4772636890411377,
+        "spline_curve_mm": 2.3465957641601562,
+        "spline_endpoint_mm": 2.1161956787109375,
+        "spline_positive_edges": 31.0,
+        "betti_h0": -0.0,
+        "betti_h0_weighted": -0.0,
+        "betti_h1": -0.0,
+        "betti_h1_weighted": -0.0,
+        "total": 2.7638068199157715
+      }
+    },
+    {
+      "step": 512,
+      "localization_loss": 0.02874710038304329,
+      "localization_gradient_norms": {
+        "coord_embed.": 1.0592002868652344,
+        "encoder.": 0.3108607828617096,
+        "decoder.": 2.9042916297912598
+      },
+      "losses": {
+        "class": 0.0019862225744873285,
+        "nodes": 0.02874710038304329,
+        "boxes": 0.22852329909801483,
+        "cardinality": 0.0,
+        "edges": 0.0050192358903586864,
+        "degree": 0.0,
+        "spline": 0.0807829201221466,
+        "spline_control_mm": 1.0136792659759521,
+        "spline_curve_mm": 0.9314216375350952,
+        "spline_endpoint_mm": 0.8301331996917725,
+        "spline_positive_edges": 31.0,
+        "betti_h0": -0.0,
+        "betti_h0_weighted": -0.0,
+        "betti_h1": -0.0,
+        "betti_h1_weighted": -0.0,
+        "total": 0.9001983404159546
+      }
+    }
+  ],
+  "job_id": "1483632",
+  "bn": "train updates; paired eval/train monitors restore buffers",
+  "geometry": "unchanged K8 graph_only gradient route",
+  "annotation_caution": "Scores are relative to incomplete manual traces; unmatched predictions are not confirmed anatomical negatives."
+}

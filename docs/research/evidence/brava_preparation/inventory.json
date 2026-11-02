@@ -1,0 +1,3234 @@
+{
+  "subjects": [
+    {
+      "index": 0,
+      "patient_id": "000000",
+      "subject": "BG0001",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0001.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0001_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG001.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG001_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG001.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG001_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG001.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.0759048461914
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -60.01979064941406
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200000047683716,
+          -42.941261291503906
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200000047683716
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 1,
+      "patient_id": "000001",
+      "subject": "BG0002",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0002.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0002_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0002.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0002_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0002.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0002_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0002.CNG.swc",
+      "shape": [
+        288,
+        320,
+        187
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.0759048461914
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -60.01979064941406
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199970245361328,
+          -33.14897155761719
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199970245361328
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 2,
+      "patient_id": "000002",
+      "subject": "BG0003",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0003.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0003_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0003.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0003_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0003.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0003_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0003.CNG.swc",
+      "shape": [
+        288,
+        320,
+        224
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.75060272216797
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -55.296905517578125
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200000047683716,
+          -56.08884811401367
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200000047683716
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 3,
+      "patient_id": "000003",
+      "subject": "BG0004",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0004.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0004_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG04.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG04_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG04.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG04_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG04.CNG.swc",
+      "shape": [
+        288,
+        320,
+        224
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          85.72650909423828
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -51.92341613769531
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200000047683716,
+          -44.61896896362305
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200000047683716
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 4,
+      "patient_id": "000004",
+      "subject": "BG0005",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0005.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0005_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG05.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG05_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG05.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG05_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG05.CNG.swc",
+      "shape": [
+        288,
+        320,
+        224
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          89.0999984741211
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -60.01979064941406
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200000047683716,
+          -39.221378326416016
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200000047683716
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 5,
+      "patient_id": "000005",
+      "subject": "BG0006",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0006.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0006_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG06.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG06_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG06.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG06_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG06.CNG.swc",
+      "shape": [
+        256,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.5625,
+          0.0,
+          0.0,
+          69.97590637207031
+        ],
+        [
+          0.0,
+          0.5625,
+          0.0,
+          -52.425453186035156
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200000047683716,
+          -49.0135498046875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.5625,
+        0.5625,
+        0.6200000047683716
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 6,
+      "patient_id": "000006",
+      "subject": "BG0007",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0007.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0007_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG07.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG07_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG07.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG07_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG07.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          80.32891845703125
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -49.899322509765625
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200029850006104,
+          -40.24246597290039
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200029850006104
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 7,
+      "patient_id": "000007",
+      "subject": "BG0008",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0008.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0008_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG08.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG08_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG08.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG08_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG08.CNG.swc",
+      "shape": [
+        288,
+        320,
+        224
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          90.44939422607422
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -62.04389953613281
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199949979782104,
+          -70.93222045898438
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199949979782104
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 8,
+      "patient_id": "000008",
+      "subject": "BG0009",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0009.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0009_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG09.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG09_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG09.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG09_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG09.CNG.swc",
+      "shape": [
+        288,
+        320,
+        224
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          91.79879760742188
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -55.97160339355469
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200000047683716,
+          -66.884033203125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200000047683716
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 9,
+      "patient_id": "000009",
+      "subject": "BG0010",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0010.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0010_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG10.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG10_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG10.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG10_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG10.CNG.swc",
+      "shape": [
+        288,
+        320,
+        224
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.0759048461914
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -57.995697021484375
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199989914894104,
+          -47.31776428222656
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199989914894104
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 10,
+      "patient_id": "000010",
+      "subject": "BG0011",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0011.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0011_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG11.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG11_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG11.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG11_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG11.CNG.swc",
+      "shape": [
+        288,
+        320,
+        224
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.0759048461914
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -45.176422119140625
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199970245361328,
+          -49.34186553955078
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199970245361328
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 11,
+      "patient_id": "000011",
+      "subject": "BG0012",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0012.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0012_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG12.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG12_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG12.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG12_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG12.CNG.swc",
+      "shape": [
+        256,
+        320,
+        224
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          80.54940032958984
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -62.718597412109375
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199989914894104,
+          -63.51054000854492
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199989914894104
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 12,
+      "patient_id": "000012",
+      "subject": "BG0014",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0014.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0014_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0014.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0014_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0014.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0014_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0014.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          89.0999984741211
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -43.15232849121094
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200019717216492,
+          -34.84487533569336
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200019717216492
+      ],
+      "reflect_x": true
+    },
+    {
+      "index": 13,
+      "patient_id": "000013",
+      "subject": "BG0015",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0015.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0015_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG15.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG15_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG15.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG15_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG15.CNG.swc",
+      "shape": [
+        288,
+        320,
+        224
+      ],
+      "affine": [
+        [
+          -0.625,
+          0.0,
+          0.0,
+          92.02409362792969
+        ],
+        [
+          0.0,
+          0.625,
+          0.0,
+          -59.664154052734375
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200039982795715,
+          -48.66716384887695
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.625,
+        0.625,
+        0.6200039982795715
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 14,
+      "patient_id": "000014",
+      "subject": "BG0017",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0017.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0017_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG17.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG17_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG17.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG17_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG17.CNG.swc",
+      "shape": [
+        288,
+        320,
+        224
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          90.44939422607422
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -57.32099914550781
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200039982795715,
+          -51.36595916748047
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200039982795715
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 15,
+      "patient_id": "000015",
+      "subject": "BG0018",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0018.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0018_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG18.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG18_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG18.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG18_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG18.CNG.swc",
+      "shape": [
+        288,
+        320,
+        224
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          85.05180358886719
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -60.01979064941406
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199979782104492,
+          -57.43824768066406
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199979782104492
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 16,
+      "patient_id": "000016",
+      "subject": "BG0019",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0019.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0019_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0019.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0019_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0019.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0019_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0019.CNG.swc",
+      "shape": [
+        288,
+        320,
+        224
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.75060272216797
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -54.62220764160156
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200000047683716,
+          -61.4864387512207
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200000047683716
+      ],
+      "reflect_x": true
+    },
+    {
+      "index": 17,
+      "patient_id": "000017",
+      "subject": "BG0020",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0020.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0020_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0020.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0020_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0020.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0020_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0020.CNG.swc",
+      "shape": [
+        288,
+        320,
+        224
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          88.42530059814453
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -53.27281188964844
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199979782104492,
+          -57.43824768066406
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199979782104492
+      ],
+      "reflect_x": true
+    },
+    {
+      "index": 18,
+      "patient_id": "000018",
+      "subject": "BG0021",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0021.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0021_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0021.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0021_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0021.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0021_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0021.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          90.44939422607422
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -57.32099914550781
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200010180473328,
+          -29.447284698486328
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200010180473328
+      ],
+      "reflect_x": true
+    },
+    {
+      "index": 19,
+      "patient_id": "000019",
+      "subject": "BG0022",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0022.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0022_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0022.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0022_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0022.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0022_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0022.CNG.swc",
+      "shape": [
+        288,
+        320,
+        224
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          88.42530059814453
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -55.97160339355469
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200039982795715,
+          -54.064754486083984
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200039982795715
+      ],
+      "reflect_x": true
+    },
+    {
+      "index": 20,
+      "patient_id": "000020",
+      "subject": "BH0003",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0003.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0003_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0003.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0003_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0003.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0003_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0003.CNG.swc",
+      "shape": [
+        288,
+        320,
+        187
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          93.148193359375
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -57.995697021484375
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199979782104492,
+          -43.26945114135742
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199979782104492
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 21,
+      "patient_id": "000021",
+      "subject": "BH0004",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0004.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0004_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0004.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0004_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0004.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0004_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0004.CNG.swc",
+      "shape": [
+        288,
+        320,
+        187
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          93.82289123535156
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -59.3450927734375
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200000047683716,
+          -39.22126007080078
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200000047683716
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 22,
+      "patient_id": "000022",
+      "subject": "BH0005",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0005.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0005_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0005.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0005_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0005.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0005_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0005.CNG.swc",
+      "shape": [
+        288,
+        320,
+        187
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          91.79879760742188
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -59.3450927734375
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199970245361328,
+          -34.49836730957031
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199970245361328
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 23,
+      "patient_id": "000023",
+      "subject": "BH0006",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0006.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0006_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0006.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0006_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0006.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0006_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0006.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          86.40120697021484
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -60.694488525390625
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200000047683716,
+          -38.21836853027344
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200000047683716
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 24,
+      "patient_id": "000024",
+      "subject": "BH0008",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0008.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0008_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0008.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0008_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0008.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0008_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0008.CNG.swc",
+      "shape": [
+        288,
+        320,
+        187
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          92.47349548339844
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -60.01979064941406
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199989914894104,
+          -23.703187942504883
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199989914894104
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 25,
+      "patient_id": "000025",
+      "subject": "BH0009",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0009.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0009_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0009.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0009_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0009.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0009_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0009.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          91.12409973144531
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -62.04389953613281
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199979782104492,
+          -49.68824768066406
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199979782104492
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 26,
+      "patient_id": "000026",
+      "subject": "BH0010",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0010.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0010_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0010.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0010_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0010.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0010_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0010.CNG.swc",
+      "shape": [
+        288,
+        320,
+        224
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.75060272216797
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -57.32099914550781
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199970245361328,
+          -50.691261291503906
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199970245361328
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 27,
+      "patient_id": "000027",
+      "subject": "BH0011",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0011.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0011_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0011.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0011_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0011.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0011_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0011.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          89.0999984741211
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -60.01979064941406
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200000047683716,
+          -32.146080017089844
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200000047683716
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 28,
+      "patient_id": "000028",
+      "subject": "BH0012",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0012.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0012_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0012.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0012_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0012.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0012_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0012.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.0759048461914
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -63.39329528808594
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199989914894104,
+          -35.51957321166992
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199989914894104
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 29,
+      "patient_id": "000029",
+      "subject": "BH0013",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0013.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0013_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0013.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0013_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0013.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0013_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0013.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          93.148193359375
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -62.04389953613281
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200029850006104,
+          -40.24246597290039
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200029850006104
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 30,
+      "patient_id": "000030",
+      "subject": "BH0014",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0014.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0014_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0014.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0014_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0014.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0014_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0014.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.0759048461914
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -56.64630126953125
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199989914894104,
+          -28.772584915161133
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199989914894104
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 31,
+      "patient_id": "000031",
+      "subject": "BH0015",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0015.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0015_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0015.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0015_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0015.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0015_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0015.CNG.swc",
+      "shape": [
+        288,
+        320,
+        187
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.0759048461914
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -57.32099914550781
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200039982795715,
+          -35.17306900024414
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200039982795715
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 32,
+      "patient_id": "000032",
+      "subject": "BH0016",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0016.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0016_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0016.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0016_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0016.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0016_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0016.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          83.70240783691406
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -57.32099914550781
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200000047683716,
+          -36.86896896362305
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200000047683716
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 33,
+      "patient_id": "000033",
+      "subject": "BH0017",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0017.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0017_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0017.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0017_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0017.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0017_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0017.CNG.swc",
+      "shape": [
+        288,
+        320,
+        187
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          84.37710571289062
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -62.718597412109375
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200010180473328,
+          -24.377887725830078
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200010180473328
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 34,
+      "patient_id": "000034",
+      "subject": "BH0018",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0018.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0018_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0018.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0018_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0018.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0018_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0018.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          89.77469635009766
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -55.296905517578125
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200010180473328,
+          -29.447284698486328
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200010180473328
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 35,
+      "patient_id": "000035",
+      "subject": "BH0019",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0019.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0019_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0019.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0019_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0019.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0019_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0019.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          89.77469635009766
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -59.3450927734375
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200019717216492,
+          -48.33885192871094
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200019717216492
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 36,
+      "patient_id": "000036",
+      "subject": "BH0020",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0020.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0020_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0020.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0020_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0020.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0020_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0020.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.0759048461914
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -62.04389953613281
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200000047683716,
+          -42.26655960083008
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200000047683716
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 37,
+      "patient_id": "000037",
+      "subject": "BH0021",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0021.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0021_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0021.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0021_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0021.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0021_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0021.CNG.swc",
+      "shape": [
+        288,
+        320,
+        187
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          94.49758911132812
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -63.39329528808594
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199979782104492,
+          -29.775474548339844
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199979782104492
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 38,
+      "patient_id": "000038",
+      "subject": "BH0022",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0022.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0022_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0022.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0022_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0022.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0022_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0022.CNG.swc",
+      "shape": [
+        288,
+        320,
+        187
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          90.44939422607422
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -58.67039489746094
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199979782104492,
+          -29.775474548339844
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199979782104492
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 39,
+      "patient_id": "000039",
+      "subject": "BH0023",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0023.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0023_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0023.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0023_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0023.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0023_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0023.CNG.swc",
+      "shape": [
+        288,
+        320,
+        187
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          88.42530059814453
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -55.296905517578125
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200029850006104,
+          -40.57065963745117
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200029850006104
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 40,
+      "patient_id": "000040",
+      "subject": "BH0024",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0024.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0024_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0024.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0024_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0024.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0024_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0024.CNG.swc",
+      "shape": [
+        288,
+        320,
+        224
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.75060272216797
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -58.67039489746094
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200000047683716,
+          -68.23342895507812
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200000047683716
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 41,
+      "patient_id": "000041",
+      "subject": "BH0025",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0025.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0025_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0025.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0025_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0025.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0025_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0025.CNG.swc",
+      "shape": [
+        288,
+        320,
+        224
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          89.0999984741211
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -56.64630126953125
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199989914894104,
+          -41.92017364501953
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199989914894104
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 42,
+      "patient_id": "000042",
+      "subject": "BH0026",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0026.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0026_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0026.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0026_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0026.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0026_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0026.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.0759048461914
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -62.718597412109375
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199970245361328,
+          -44.29065704345703
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199970245361328
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 43,
+      "patient_id": "000043",
+      "subject": "BH0027",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0027.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0027_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0027.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0027_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0027_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0027_ColorCoded.CNG.swc",
+      "shape": [
+        288,
+        320,
+        187
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.75060272216797
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -65.41738891601562
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199979782104492,
+          -29.775474548339844
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199979782104492
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 44,
+      "patient_id": "000044",
+      "subject": "BH0029",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0029.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0029_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0029.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0029_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0029.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0029_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0029.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.0759048461914
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -56.64630126953125
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199970245361328,
+          -44.29065704345703
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199970245361328
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 45,
+      "patient_id": "000045",
+      "subject": "BH0030",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0030.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0030_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0030.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0030_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0030.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0030_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0030.CNG.swc",
+      "shape": [
+        288,
+        320,
+        187
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          89.0999984741211
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -63.39329528808594
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199989914894104,
+          -35.8477668762207
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199989914894104
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 46,
+      "patient_id": "000046",
+      "subject": "BH0031",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0031.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0031_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0031.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0031_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0031.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0031_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0031.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          89.0999984741211
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -62.04389953613281
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200000047683716,
+          -42.26655960083008
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200000047683716
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 47,
+      "patient_id": "000047",
+      "subject": "BH0032",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0032.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0032_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0032.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0032_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0032.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0032_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0032.CNG.swc",
+      "shape": [
+        288,
+        320,
+        187
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          91.12409973144531
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -62.718597412109375
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199989914894104,
+          -31.124874114990234
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199989914894104
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 48,
+      "patient_id": "000048",
+      "subject": "BH0033",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0033.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0033_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0033.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0033_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0033.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0033_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0033.CNG.swc",
+      "shape": [
+        288,
+        320,
+        224
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          89.77469635009766
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -57.995697021484375
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200029850006104,
+          -37.19728469848633
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200029850006104
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 49,
+      "patient_id": "000049",
+      "subject": "BH0034",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0034.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0034_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0034.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0034_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0034.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0034_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0034.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          90.44939422607422
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -53.27281188964844
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199989914894104,
+          -61.15812683105469
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199989914894104
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 50,
+      "patient_id": "000050",
+      "subject": "BH0035",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0035.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0035_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0035.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0035_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0035.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0035_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0035.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          88.42530059814453
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -60.01979064941406
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199989914894104,
+          -44.965354919433594
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199989914894104
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 51,
+      "patient_id": "000051",
+      "subject": "BH0036",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0036.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0036_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0036.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0036_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0036.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0036_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0036.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.0759048461914
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -56.64630126953125
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199979782104492,
+          -53.06174087524414
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199979782104492
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 52,
+      "patient_id": "000052",
+      "subject": "BH0037",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0037.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0037_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0037.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0037_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0037.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0037_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0037.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.0759048461914
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -63.39329528808594
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199989914894104,
+          -38.89306640625
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199989914894104
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 53,
+      "patient_id": "000053",
+      "subject": "BH0038",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0038.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0038_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0038.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0038_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0038.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0038_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0038.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.0759048461914
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -62.718597412109375
+        ],
+        [
+          0.0,
+          0.0,
+          0.6199970245361328,
+          -41.59186553955078
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6199970245361328
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 54,
+      "patient_id": "000054",
+      "subject": "BH0039",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0039.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0039_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0039.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0039_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0039.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0039_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0039.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.75060272216797
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -49.899322509765625
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200019717216492,
+          -51.03764724731445
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200019717216492
+      ],
+      "reflect_x": false
+    },
+    {
+      "index": 55,
+      "patient_id": "000055",
+      "subject": "BH0040",
+      "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BH0040.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BH0040_space-MRA_desc-brain_mask.nii.gz",
+      "swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0040.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0040_ColorCoded.CNG.swc"
+      },
+      "valid_swcs": {
+        "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0040.CNG.swc",
+        "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0040_ColorCoded.CNG.swc"
+      },
+      "primary_swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0040.CNG.swc",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          86.40120697021484
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -62.04389953613281
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200029850006104,
+          -40.24246597290039
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200029850006104
+      ],
+      "reflect_x": false
+    }
+  ],
+  "swcs": {
+    "BG0002": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0002.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0002_ColorCoded.CNG.swc"
+    },
+    "BG0003": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0003.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0003_ColorCoded.CNG.swc"
+    },
+    "BG0001": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG001.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG001_ColorCoded.CNG.swc"
+    },
+    "BG0014": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0014.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0014_ColorCoded.CNG.swc"
+    },
+    "BG0019": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0019.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0019_ColorCoded.CNG.swc"
+    },
+    "BG0020": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0020.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0020_ColorCoded.CNG.swc"
+    },
+    "BG0021": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0021.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0021_ColorCoded.CNG.swc"
+    },
+    "BG0022": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0022.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0022_ColorCoded.CNG.swc"
+    },
+    "BG0004": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG04.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG04_ColorCoded.CNG.swc"
+    },
+    "BG0005": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG05.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG05_ColorCoded.CNG.swc"
+    },
+    "BG0006": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG06.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG06_ColorCoded.CNG.swc"
+    },
+    "BG0007": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG07.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG07_ColorCoded.CNG.swc"
+    },
+    "BG0008": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG08.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG08_ColorCoded.CNG.swc"
+    },
+    "BG0009": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG09.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG09_ColorCoded.CNG.swc"
+    },
+    "BG0010": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG10.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG10_ColorCoded.CNG.swc"
+    },
+    "BG0011": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG11.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG11_ColorCoded.CNG.swc"
+    },
+    "BG0012": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG12.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG12_ColorCoded.CNG.swc"
+    },
+    "BG0013": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG13.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG13_ColorCoded.CNG.swc"
+    },
+    "BG0015": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG15.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG15_ColorCoded.CNG.swc"
+    },
+    "BG0017": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG17.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG17_ColorCoded.CNG.swc"
+    },
+    "BG0018": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG18.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG18_ColorCoded.CNG.swc"
+    },
+    "BH0002": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0002.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0002_ColorCoded.CNG.swc"
+    },
+    "BH0003": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0003.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0003_ColorCoded.CNG.swc"
+    },
+    "BH0004": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0004.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0004_ColorCoded.CNG.swc"
+    },
+    "BH0005": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0005.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0005_ColorCoded.CNG.swc"
+    },
+    "BH0006": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0006.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0006_ColorCoded.CNG.swc"
+    },
+    "BH0008": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0008.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0008_ColorCoded.CNG.swc"
+    },
+    "BH0009": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0009.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0009_ColorCoded.CNG.swc"
+    },
+    "BH0010": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0010.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0010_ColorCoded.CNG.swc"
+    },
+    "BH0011": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0011.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0011_ColorCoded.CNG.swc"
+    },
+    "BH0012": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0012.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0012_ColorCoded.CNG.swc"
+    },
+    "BH0013": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0013.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0013_ColorCoded.CNG.swc"
+    },
+    "BH0014": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0014.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0014_ColorCoded.CNG.swc"
+    },
+    "BH0015": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0015.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0015_ColorCoded.CNG.swc"
+    },
+    "BH0016": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0016.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0016_ColorCoded.CNG.swc"
+    },
+    "BH0017": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0017.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0017_ColorCoded.CNG.swc"
+    },
+    "BH0018": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0018.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0018_ColorCoded.CNG.swc"
+    },
+    "BH0019": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0019.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0019_ColorCoded.CNG.swc"
+    },
+    "BH0020": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0020.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0020_ColorCoded.CNG.swc"
+    },
+    "BH0021": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0021.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0021_ColorCoded.CNG.swc"
+    },
+    "BH0022": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0022.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0022_ColorCoded.CNG.swc"
+    },
+    "BH0023": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0023.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0023_ColorCoded.CNG.swc"
+    },
+    "BH0024": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0024.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0024_ColorCoded.CNG.swc"
+    },
+    "BH0025": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0025.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0025_ColorCoded.CNG.swc"
+    },
+    "BH0026": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0026.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0026_ColorCoded.CNG.swc"
+    },
+    "BH0027": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0027.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0027_ColorCoded.CNG.swc"
+    },
+    "BH0029": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0029.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0029_ColorCoded.CNG.swc"
+    },
+    "BH0030": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0030.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0030_ColorCoded.CNG.swc"
+    },
+    "BH0031": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0031.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0031_ColorCoded.CNG.swc"
+    },
+    "BH0032": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0032.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0032_ColorCoded.CNG.swc"
+    },
+    "BH0033": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0033.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0033_ColorCoded.CNG.swc"
+    },
+    "BH0034": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0034.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0034_ColorCoded.CNG.swc"
+    },
+    "BH0035": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0035.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0035_ColorCoded.CNG.swc"
+    },
+    "BH0036": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0036.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0036_ColorCoded.CNG.swc"
+    },
+    "BH0037": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0037.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0037_ColorCoded.CNG.swc"
+    },
+    "BH0038": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0038.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0038_ColorCoded.CNG.swc"
+    },
+    "BH0039": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0039.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0039_ColorCoded.CNG.swc"
+    },
+    "BH0040": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0040.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0040_ColorCoded.CNG.swc"
+    },
+    "BI0001": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BI0001.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BI0001_ColorCoded.CNG.swc"
+    },
+    "Set10": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/Set10.CNG.swc"
+    },
+    "Set8": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/Set8.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/Set8_ColorCoded.CNG.swc"
+    },
+    "Set9": {
+      "original": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/Set9.CNG.swc",
+      "colorcoded": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/Set9_ColorCoded.CNG.swc"
+    }
+  },
+  "orphan_swc_subjects": [
+    "BG0013",
+    "BH0002",
+    "BI0001",
+    "Set10",
+    "Set8",
+    "Set9"
+  ],
+  "image_subjects": 56,
+  "swc_subjects": 62,
+  "swc_files": 123,
+  "invalid_swcs": {
+    "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BH0027.CNG.swc": "the number of columns changed from 7 to 6 at row 3407; use `usecols` to select a subset and avoid this error"
+  }
+}

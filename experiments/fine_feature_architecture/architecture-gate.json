@@ -1,0 +1,1949 @@
+{
+  "completed": true,
+  "source": "experiments/fine_feature_architecture/runs/baseline/best.pt",
+  "job_id": "1516210",
+  "arms": {
+    "B0": {
+      "migration": {
+        "source": "experiments/fine_feature_architecture/runs/baseline/best.pt",
+        "new_tensors": [],
+        "source_objective_verified": true
+      },
+      "initial_max_delta": {
+        "pred_logits": 0.0,
+        "pred_nodes": 0.0
+      },
+      "initial_attention": {
+        "decoder.encoder.layers.0.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.1.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.2.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            5.8201031549742765e-08
+          ]
+        },
+        "decoder.encoder.layers.3.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.4.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.013464855961501598
+          ]
+        },
+        "decoder.encoder.layers.5.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.02112937532365322
+          ]
+        },
+        "decoder.decoder.layers.0.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.2235947549343109
+          ]
+        },
+        "decoder.decoder.layers.1.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.06681160628795624
+          ]
+        },
+        "decoder.decoder.layers.2.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.09838299453258514
+          ]
+        },
+        "decoder.decoder.layers.3.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.10744920372962952
+          ]
+        }
+      },
+      "gradient_0": {
+        "step": 0,
+        "losses": {
+          "class": 0.021519608795642853,
+          "nodes": 0.027005981653928757,
+          "boxes": 0.2292024940252304,
+          "cardinality": 0.01770833507180214,
+          "edges": 0.036691341549158096,
+          "degree": 0.0,
+          "spline": 0.13742849230766296,
+          "spline_control_mm": 1.2809324264526367,
+          "spline_curve_mm": 1.2491240501403809,
+          "spline_endpoint_mm": 1.2256518602371216,
+          "spline_positive_edges": 103.0,
+          "betti_h0": 0.0,
+          "betti_h0_weighted": 0.0,
+          "betti_h1": 0.0,
+          "betti_h1_weighted": 0.0,
+          "total": 1.2645820379257202
+        },
+        "gradients": {
+          "encoder.": 5.266653060913086,
+          "decoder.": 8.0308837890625,
+          "class_embed.": 0.7565818428993225,
+          "coord_embed.": 11.447321891784668,
+          "relation_embed.": 2.6325628757476807,
+          "spline_head.": 1.3054900169372559,
+          "input_proj.": 1.824191689491272,
+          "new_attention_rows": {}
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              1.0000001192092896
+            ],
+            "inside_mass": [
+              7.191606243850401e-08
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.013088519684970379
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              1.0000001192092896
+            ],
+            "inside_mass": [
+              0.02064139023423195
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.2235947549343109
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.06693657487630844
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.09739072620868683
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.10849229246377945
+            ]
+          }
+        }
+      },
+      "gradient_1": {
+        "step": 1,
+        "losses": {
+          "class": 0.01160768698900938,
+          "nodes": 0.032951463013887405,
+          "boxes": 0.27690643072128296,
+          "cardinality": 0.008333333767950535,
+          "edges": 0.01829739473760128,
+          "degree": 0.0,
+          "spline": 0.12536542117595673,
+          "spline_control_mm": 1.5210480690002441,
+          "spline_curve_mm": 1.4896278381347656,
+          "spline_endpoint_mm": 1.4459697008132935,
+          "spline_positive_edges": 103.0,
+          "betti_h0": 0.0,
+          "betti_h0_weighted": 0.0,
+          "betti_h1": 0.0,
+          "betti_h1_weighted": 0.0,
+          "total": 1.2442924976348877
+        },
+        "gradients": {
+          "encoder.": 4.207392692565918,
+          "decoder.": 8.528732299804688,
+          "class_embed.": 0.2870623767375946,
+          "coord_embed.": 34.75322723388672,
+          "relation_embed.": 2.790170907974243,
+          "spline_head.": 1.14924955368042,
+          "input_proj.": 2.1269943714141846,
+          "new_attention_rows": {}
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              6.205968361427949e-08
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.01250294130295515
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.020216338336467743
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.2242654263973236
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.06649462878704071
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.09773717075586319
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              0.9999999403953552
+            ],
+            "inside_mass": [
+              0.10957254469394684
+            ]
+          }
+        }
+      },
+      "tiny_metrics": {
+        "nodes": 140.0,
+        "gt_nodes": 140.0,
+        "node_tp": 140.0,
+        "duplicates": 0.0,
+        "rescued": 0.0,
+        "lost": 0.0,
+        "patches": 8.0,
+        "edges": 103.0,
+        "gt_edges": 103.0,
+        "edge_tp": 103.0,
+        "eligible": 103.0,
+        "beta0_error": 0.0,
+        "beta1_error": 0.0,
+        "raw_tp": 140.0,
+        "hungarian_mm_sum": 20.88517189025879,
+        "hungarian_n": 140.0,
+        "nearest_mm_sum": 20.83892798423767,
+        "localized_mm_sum": 20.88517195172608,
+        "node_precision": 1.0,
+        "node_recall": 1.0,
+        "node_f1": 1.0,
+        "duplicate_rate": 0.0,
+        "edge_precision": 1.0,
+        "edge_recall": 1.0,
+        "edge_f1": 1.0,
+        "conditional_recall": 1.0,
+        "beta0_mae": 0.0,
+        "beta1_mae": 0.0,
+        "raw_recall": 1.0,
+        "hungarian_mm": 0.1491797992161342,
+        "nearest_mm": 0.14884948560169764,
+        "localized_mm": 0.14917979965518627,
+        "mean_patch_conditional_ap": 1.0
+      },
+      "peak_gpu_gib": 3.2983031272888184
+    },
+    "A": {
+      "migration": {
+        "source": "experiments/fine_feature_architecture/runs/baseline/best.pt",
+        "new_tensors": [
+          "node_refinement.network.0.weight",
+          "node_refinement.network.0.bias",
+          "node_refinement.network.2.weight",
+          "node_refinement.network.2.bias"
+        ],
+        "source_objective_verified": true
+      },
+      "initial_max_delta": {
+        "pred_logits": 0.0,
+        "pred_nodes": 0.0
+      },
+      "initial_attention": {
+        "decoder.encoder.layers.0.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.1.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.2.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            5.8201031549742765e-08
+          ]
+        },
+        "decoder.encoder.layers.3.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.4.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.013464855961501598
+          ]
+        },
+        "decoder.encoder.layers.5.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.02112937532365322
+          ]
+        },
+        "decoder.decoder.layers.0.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.2235947549343109
+          ]
+        },
+        "decoder.decoder.layers.1.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.06681160628795624
+          ]
+        },
+        "decoder.decoder.layers.2.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.09838299453258514
+          ]
+        },
+        "decoder.decoder.layers.3.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.10744920372962952
+          ]
+        }
+      },
+      "gradient_0": {
+        "step": 0,
+        "losses": {
+          "class": 0.021519608795642853,
+          "nodes": 0.027005981653928757,
+          "boxes": 0.2292024940252304,
+          "cardinality": 0.01770833507180214,
+          "edges": 0.036691341549158096,
+          "degree": 0.0,
+          "spline": 0.13742849230766296,
+          "spline_control_mm": 1.2809324264526367,
+          "spline_curve_mm": 1.2491240501403809,
+          "spline_endpoint_mm": 1.2256518602371216,
+          "spline_positive_edges": 103.0,
+          "betti_h0": 0.0,
+          "betti_h0_weighted": 0.0,
+          "betti_h1": 0.0,
+          "betti_h1_weighted": 0.0,
+          "total": 1.2645820379257202
+        },
+        "gradients": {
+          "encoder.": 5.266332626342773,
+          "decoder.": 8.0308837890625,
+          "class_embed.": 0.7565818428993225,
+          "coord_embed.": 11.447321891784668,
+          "relation_embed.": 2.6325628757476807,
+          "spline_head.": 1.3054900169372559,
+          "input_proj.": 1.824191689491272,
+          "new_attention_rows": {},
+          "node_refinement.": 1.0476560592651367
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              1.0000001192092896
+            ],
+            "inside_mass": [
+              7.191606243850401e-08
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.013088519684970379
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              1.0000001192092896
+            ],
+            "inside_mass": [
+              0.02064139023423195
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.2235947549343109
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.06693657487630844
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.09739072620868683
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.10849229246377945
+            ]
+          }
+        }
+      },
+      "gradient_1": {
+        "step": 1,
+        "losses": {
+          "class": 0.011604861356317997,
+          "nodes": 0.03302861750125885,
+          "boxes": 0.2774897515773773,
+          "cardinality": 0.008333333767950535,
+          "edges": 0.018292395398020744,
+          "degree": 0.0,
+          "spline": 0.12538400292396545,
+          "spline_control_mm": 1.5236093997955322,
+          "spline_curve_mm": 1.492225170135498,
+          "spline_endpoint_mm": 1.4491649866104126,
+          "spline_positive_edges": 103.0,
+          "betti_h0": 0.0,
+          "betti_h0_weighted": 0.0,
+          "betti_h1": 0.0,
+          "betti_h1_weighted": 0.0,
+          "total": 1.2461827993392944
+        },
+        "gradients": {
+          "encoder.": 4.212884902954102,
+          "decoder.": 8.542757987976074,
+          "class_embed.": 0.28751829266548157,
+          "coord_embed.": 34.863590240478516,
+          "relation_embed.": 2.788583278656006,
+          "spline_head.": 1.1533719301223755,
+          "input_proj.": 2.1335079669952393,
+          "new_attention_rows": {},
+          "node_refinement.": 3.4193966388702393
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              6.205678459991759e-08
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.012503087520599365
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.020216193050146103
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.2242654263973236
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.06649453938007355
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.09773710370063782
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.10957158356904984
+            ]
+          }
+        }
+      },
+      "tiny_metrics": {
+        "nodes": 140.0,
+        "gt_nodes": 140.0,
+        "node_tp": 140.0,
+        "duplicates": 0.0,
+        "rescued": 0.0,
+        "lost": 0.0,
+        "patches": 8.0,
+        "edges": 103.0,
+        "gt_edges": 103.0,
+        "edge_tp": 103.0,
+        "eligible": 103.0,
+        "beta0_error": 0.0,
+        "beta1_error": 0.0,
+        "raw_tp": 140.0,
+        "hungarian_mm_sum": 22.640520691871643,
+        "hungarian_n": 140.0,
+        "nearest_mm_sum": 22.60540807247162,
+        "localized_mm_sum": 22.64052081014961,
+        "node_precision": 1.0,
+        "node_recall": 1.0,
+        "node_f1": 1.0,
+        "duplicate_rate": 0.0,
+        "edge_precision": 1.0,
+        "edge_recall": 1.0,
+        "edge_f1": 1.0,
+        "conditional_recall": 1.0,
+        "beta0_mae": 0.0,
+        "beta1_mae": 0.0,
+        "raw_recall": 1.0,
+        "hungarian_mm": 0.1617180049419403,
+        "nearest_mm": 0.16146720051765442,
+        "localized_mm": 0.16171800578678294,
+        "mean_patch_conditional_ap": 1.0
+      },
+      "isolated_local_feature_gradient": 0.008464339189231396,
+      "batch32_gradient": {
+        "step": 256,
+        "losses": {
+          "class": 7.428930257447064e-05,
+          "nodes": 0.003628621343523264,
+          "boxes": 0.03593594208359718,
+          "cardinality": 0.0,
+          "edges": 9.955107998393942e-06,
+          "degree": -0.0,
+          "spline": 0.0030391132459044456,
+          "spline_control_mm": 0.18789039552211761,
+          "spline_curve_mm": 0.16177301108837128,
+          "spline_endpoint_mm": 0.16593648493289948,
+          "spline_positive_edges": 412.0,
+          "betti_h0": 0.0,
+          "betti_h0_weighted": 0.0,
+          "betti_h1": 0.0,
+          "betti_h1_weighted": 0.0,
+          "total": 0.1199016124010086
+        },
+        "gradients": {
+          "encoder.": 0.8419520258903503,
+          "decoder.": 4.454848766326904,
+          "class_embed.": 0.003419770859181881,
+          "coord_embed.": 16.966293334960938,
+          "relation_embed.": 0.0012429304188117385,
+          "spline_head.": 0.14266625046730042,
+          "input_proj.": 0.7638288736343384,
+          "new_attention_rows": {},
+          "node_refinement.": 1.2680821418762207
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              1.1596084981135846e-08
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.005026990547776222
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.011380316689610481
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.224385604262352
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.06573363393545151
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.09717513620853424
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.09608083963394165
+            ]
+          }
+        }
+      },
+      "peak_gpu_gib": 6.947861194610596
+    },
+    "A-control": {
+      "migration": {
+        "source": "experiments/fine_feature_architecture/runs/baseline/best.pt",
+        "new_tensors": [
+          "node_refinement.network.0.weight",
+          "node_refinement.network.0.bias",
+          "node_refinement.network.2.weight",
+          "node_refinement.network.2.bias"
+        ],
+        "source_objective_verified": true
+      },
+      "initial_max_delta": {
+        "pred_logits": 0.0,
+        "pred_nodes": 0.0
+      },
+      "initial_attention": {
+        "decoder.encoder.layers.0.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.1.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.2.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            5.8201031549742765e-08
+          ]
+        },
+        "decoder.encoder.layers.3.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.4.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.013464855961501598
+          ]
+        },
+        "decoder.encoder.layers.5.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.02112937532365322
+          ]
+        },
+        "decoder.decoder.layers.0.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.2235947549343109
+          ]
+        },
+        "decoder.decoder.layers.1.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.06681160628795624
+          ]
+        },
+        "decoder.decoder.layers.2.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.09838299453258514
+          ]
+        },
+        "decoder.decoder.layers.3.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.10744920372962952
+          ]
+        }
+      },
+      "gradient_0": {
+        "step": 0,
+        "losses": {
+          "class": 0.021519608795642853,
+          "nodes": 0.027005981653928757,
+          "boxes": 0.2292024940252304,
+          "cardinality": 0.01770833507180214,
+          "edges": 0.036691341549158096,
+          "degree": 0.0,
+          "spline": 0.13742849230766296,
+          "spline_control_mm": 1.2809324264526367,
+          "spline_curve_mm": 1.2491240501403809,
+          "spline_endpoint_mm": 1.2256518602371216,
+          "spline_positive_edges": 103.0,
+          "betti_h0": 0.0,
+          "betti_h0_weighted": 0.0,
+          "betti_h1": 0.0,
+          "betti_h1_weighted": 0.0,
+          "total": 1.2645820379257202
+        },
+        "gradients": {
+          "encoder.": 5.266245365142822,
+          "decoder.": 8.0308837890625,
+          "class_embed.": 0.7565818428993225,
+          "coord_embed.": 11.447321891784668,
+          "relation_embed.": 2.6325628757476807,
+          "spline_head.": 1.3054900169372559,
+          "input_proj.": 1.824191689491272,
+          "new_attention_rows": {},
+          "node_refinement.": 0.6737964749336243
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              1.0000001192092896
+            ],
+            "inside_mass": [
+              7.191606243850401e-08
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.013088519684970379
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              1.0000001192092896
+            ],
+            "inside_mass": [
+              0.02064139023423195
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.2235947549343109
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.06693657487630844
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.09739072620868683
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.10849229246377945
+            ]
+          }
+        }
+      },
+      "gradient_1": {
+        "step": 1,
+        "losses": {
+          "class": 0.011599501594901085,
+          "nodes": 0.032999031245708466,
+          "boxes": 0.27725622057914734,
+          "cardinality": 0.008333333767950535,
+          "edges": 0.01829409971833229,
+          "degree": 0.0,
+          "spline": 0.12537743151187897,
+          "spline_control_mm": 1.5226054191589355,
+          "spline_curve_mm": 1.4912121295928955,
+          "spline_endpoint_mm": 1.4478875398635864,
+          "spline_positive_edges": 103.0,
+          "betti_h0": 0.0,
+          "betti_h0_weighted": 0.0,
+          "betti_h1": 0.0,
+          "betti_h1_weighted": 0.0,
+          "total": 1.245402216911316
+        },
+        "gradients": {
+          "encoder.": 4.210987567901611,
+          "decoder.": 8.545642852783203,
+          "class_embed.": 0.2872411608695984,
+          "coord_embed.": 34.87940216064453,
+          "relation_embed.": 2.788538932800293,
+          "spline_head.": 1.151231288909912,
+          "input_proj.": 2.133936882019043,
+          "new_attention_rows": {},
+          "node_refinement.": 2.083136796951294
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              6.205615932231012e-08
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.0
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              1.0000001192092896
+            ],
+            "inside_mass": [
+              0.012503696605563164
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.020216267555952072
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.2242654263973236
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.06649404764175415
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.09773682057857513
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              1.0
+            ],
+            "inside_mass": [
+              0.10957169532775879
+            ]
+          }
+        }
+      },
+      "tiny_metrics": {
+        "nodes": 140.0,
+        "gt_nodes": 140.0,
+        "node_tp": 140.0,
+        "duplicates": 0.0,
+        "rescued": 0.0,
+        "lost": 0.0,
+        "patches": 8.0,
+        "edges": 103.0,
+        "gt_edges": 103.0,
+        "edge_tp": 103.0,
+        "eligible": 103.0,
+        "beta0_error": 0.0,
+        "beta1_error": 0.0,
+        "raw_tp": 140.0,
+        "hungarian_mm_sum": 21.64577841758728,
+        "hungarian_n": 140.0,
+        "nearest_mm_sum": 21.645777940750122,
+        "localized_mm_sum": 21.645778093487024,
+        "node_precision": 1.0,
+        "node_recall": 1.0,
+        "node_f1": 1.0,
+        "duplicate_rate": 0.0,
+        "edge_precision": 1.0,
+        "edge_recall": 1.0,
+        "edge_f1": 1.0,
+        "conditional_recall": 1.0,
+        "beta0_mae": 0.0,
+        "beta1_mae": 0.0,
+        "raw_recall": 1.0,
+        "hungarian_mm": 0.15461270298276628,
+        "nearest_mm": 0.15461269957678658,
+        "localized_mm": 0.15461270066776445,
+        "mean_patch_conditional_ap": 1.0
+      },
+      "peak_gpu_gib": 6.947861194610596
+    },
+    "C": {
+      "migration": {
+        "copied_tensors": 847,
+        "expanded_tensors": [
+          "decoder.decoder.layers.0.cross_attn1.attention_weights.bias",
+          "decoder.decoder.layers.0.cross_attn1.attention_weights.weight",
+          "decoder.decoder.layers.0.cross_attn1.sampling_offsets.bias",
+          "decoder.decoder.layers.0.cross_attn1.sampling_offsets.weight",
+          "decoder.decoder.layers.1.cross_attn1.attention_weights.bias",
+          "decoder.decoder.layers.1.cross_attn1.attention_weights.weight",
+          "decoder.decoder.layers.1.cross_attn1.sampling_offsets.bias",
+          "decoder.decoder.layers.1.cross_attn1.sampling_offsets.weight",
+          "decoder.decoder.layers.2.cross_attn1.attention_weights.bias",
+          "decoder.decoder.layers.2.cross_attn1.attention_weights.weight",
+          "decoder.decoder.layers.2.cross_attn1.sampling_offsets.bias",
+          "decoder.decoder.layers.2.cross_attn1.sampling_offsets.weight",
+          "decoder.decoder.layers.3.cross_attn1.attention_weights.bias",
+          "decoder.decoder.layers.3.cross_attn1.attention_weights.weight",
+          "decoder.decoder.layers.3.cross_attn1.sampling_offsets.bias",
+          "decoder.decoder.layers.3.cross_attn1.sampling_offsets.weight",
+          "decoder.encoder.layers.0.self_attn.attention_weights.bias",
+          "decoder.encoder.layers.0.self_attn.attention_weights.weight",
+          "decoder.encoder.layers.0.self_attn.sampling_offsets.bias",
+          "decoder.encoder.layers.0.self_attn.sampling_offsets.weight",
+          "decoder.encoder.layers.1.self_attn.attention_weights.bias",
+          "decoder.encoder.layers.1.self_attn.attention_weights.weight",
+          "decoder.encoder.layers.1.self_attn.sampling_offsets.bias",
+          "decoder.encoder.layers.1.self_attn.sampling_offsets.weight",
+          "decoder.encoder.layers.2.self_attn.attention_weights.bias",
+          "decoder.encoder.layers.2.self_attn.attention_weights.weight",
+          "decoder.encoder.layers.2.self_attn.sampling_offsets.bias",
+          "decoder.encoder.layers.2.self_attn.sampling_offsets.weight",
+          "decoder.encoder.layers.3.self_attn.attention_weights.bias",
+          "decoder.encoder.layers.3.self_attn.attention_weights.weight",
+          "decoder.encoder.layers.3.self_attn.sampling_offsets.bias",
+          "decoder.encoder.layers.3.self_attn.sampling_offsets.weight",
+          "decoder.encoder.layers.4.self_attn.attention_weights.bias",
+          "decoder.encoder.layers.4.self_attn.attention_weights.weight",
+          "decoder.encoder.layers.4.self_attn.sampling_offsets.bias",
+          "decoder.encoder.layers.4.self_attn.sampling_offsets.weight",
+          "decoder.encoder.layers.5.self_attn.attention_weights.bias",
+          "decoder.encoder.layers.5.self_attn.attention_weights.weight",
+          "decoder.encoder.layers.5.self_attn.sampling_offsets.bias",
+          "decoder.encoder.layers.5.self_attn.sampling_offsets.weight"
+        ],
+        "new_tensors": [
+          "fine_input_proj.bias",
+          "fine_input_proj.weight"
+        ],
+        "fine_prior": 0.1,
+        "fine_offsets": "zero query weights; radial biases at (1..P)/P fine cells",
+        "source_objective_verified": true
+      },
+      "initial_max_delta": {
+        "pred_logits": 0.0022303760051727295,
+        "pred_nodes": 0.0007565617561340332
+      },
+      "initial_attention": {
+        "decoder.encoder.layers.0.self_attn": {
+          "mass": [
+            0.9998999834060669,
+            9.999000030802563e-05
+          ],
+          "inside_mass": [
+            0.0,
+            9.213391604134813e-05
+          ]
+        },
+        "decoder.encoder.layers.1.self_attn": {
+          "mass": [
+            0.9998999834060669,
+            9.998999303206801e-05
+          ],
+          "inside_mass": [
+            4.738903669476713e-08,
+            9.214304736815393e-05
+          ]
+        },
+        "decoder.encoder.layers.2.self_attn": {
+          "mass": [
+            0.9999001026153564,
+            9.998999303206801e-05
+          ],
+          "inside_mass": [
+            1.9387844929497078e-07,
+            9.195903112413362e-05
+          ]
+        },
+        "decoder.encoder.layers.3.self_attn": {
+          "mass": [
+            0.9999001026153564,
+            9.998999303206801e-05
+          ],
+          "inside_mass": [
+            0.0,
+            9.180176130030304e-05
+          ]
+        },
+        "decoder.encoder.layers.4.self_attn": {
+          "mass": [
+            0.9999000430107117,
+            9.998999303206801e-05
+          ],
+          "inside_mass": [
+            0.0042645628564059734,
+            9.205476089846343e-05
+          ]
+        },
+        "decoder.encoder.layers.5.self_attn": {
+          "mass": [
+            0.9998999834060669,
+            9.998997848015279e-05
+          ],
+          "inside_mass": [
+            0.007643221877515316,
+            9.202986257150769e-05
+          ]
+        },
+        "decoder.decoder.layers.0.cross_attn1": {
+          "mass": [
+            0.9998999834060669,
+            9.999000030802563e-05
+          ],
+          "inside_mass": [
+            0.22357240319252014,
+            9.72904745140113e-05
+          ]
+        },
+        "decoder.decoder.layers.1.cross_attn1": {
+          "mass": [
+            0.9998999834060669,
+            9.99899857561104e-05
+          ],
+          "inside_mass": [
+            0.06680504232645035,
+            9.618338663130999e-05
+          ]
+        },
+        "decoder.decoder.layers.2.cross_attn1": {
+          "mass": [
+            0.9998999834060669,
+            9.998999303206801e-05
+          ],
+          "inside_mass": [
+            0.09837044775485992,
+            9.580668847775087e-05
+          ]
+        },
+        "decoder.decoder.layers.3.cross_attn1": {
+          "mass": [
+            0.9998999834060669,
+            9.998999303206801e-05
+          ],
+          "inside_mass": [
+            0.10743547976016998,
+            9.73923088167794e-05
+          ]
+        }
+      },
+      "feature_shape": [
+        8,
+        512,
+        8,
+        8,
+        8
+      ],
+      "spatial_feature_std_over_rms": {
+        "fine": 0.7727663516998291,
+        "coarse_projected": 0.7540462017059326
+      },
+      "gradient_0": {
+        "step": 0,
+        "losses": {
+          "class": 0.021510474383831024,
+          "nodes": 0.02700534276664257,
+          "boxes": 0.2291972041130066,
+          "cardinality": 0.01770833507180214,
+          "edges": 0.03669073432683945,
+          "degree": 0.0,
+          "spline": 0.13742554187774658,
+          "spline_control_mm": 1.2808806896209717,
+          "spline_curve_mm": 1.249069333076477,
+          "spline_endpoint_mm": 1.2255940437316895,
+          "spline_positive_edges": 103.0,
+          "betti_h0": 0.0,
+          "betti_h0_weighted": 0.0,
+          "betti_h1": 0.0,
+          "betti_h1_weighted": 0.0,
+          "total": 1.264520287513733
+        },
+        "gradients": {
+          "encoder.": 5.276695728302002,
+          "decoder.": 8.0398530960083,
+          "class_embed.": 0.7556415796279907,
+          "coord_embed.": 11.449136734008789,
+          "relation_embed.": 2.6327595710754395,
+          "spline_head.": 1.305233359336853,
+          "input_proj.": 1.8239549398422241,
+          "fine_input_proj.": 0.0014350591227412224,
+          "new_attention_rows": {
+            "decoder.encoder.layers.0.self_attn": {
+              "sampling_offsets": 0.00019551129662431777,
+              "attention_weights": 0.0001485129469074309
+            },
+            "decoder.encoder.layers.1.self_attn": {
+              "sampling_offsets": 0.00019659334793686867,
+              "attention_weights": 0.0002223883057013154
+            },
+            "decoder.encoder.layers.2.self_attn": {
+              "sampling_offsets": 0.00013561861123889685,
+              "attention_weights": 0.00042892785859294236
+            },
+            "decoder.encoder.layers.3.self_attn": {
+              "sampling_offsets": 0.00014117371756583452,
+              "attention_weights": 0.0001896251633297652
+            },
+            "decoder.encoder.layers.4.self_attn": {
+              "sampling_offsets": 0.00016964503447525203,
+              "attention_weights": 0.000344319298164919
+            },
+            "decoder.encoder.layers.5.self_attn": {
+              "sampling_offsets": 0.00013385644706431776,
+              "attention_weights": 0.00019286297901999205
+            },
+            "decoder.decoder.layers.0.cross_attn1": {
+              "sampling_offsets": 0.000115687282232102,
+              "attention_weights": 0.00023688464716542512
+            },
+            "decoder.decoder.layers.1.cross_attn1": {
+              "sampling_offsets": 0.00023323806817643344,
+              "attention_weights": 0.0003198719350621104
+            },
+            "decoder.decoder.layers.2.cross_attn1": {
+              "sampling_offsets": 0.0003435947874095291,
+              "attention_weights": 0.00040095311123877764
+            },
+            "decoder.decoder.layers.3.cross_attn1": {
+              "sampling_offsets": 0.0004010814009234309,
+              "attention_weights": 0.0007571668829768896
+            }
+          }
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              0.9998887181282043,
+              0.00011138500849483535
+            ],
+            "inside_mass": [
+              0.0,
+              0.00010263294097967446
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              0.9998886585235596,
+              0.00011138501577079296
+            ],
+            "inside_mass": [
+              4.179132062631652e-08,
+              0.00010264308366458863
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              0.9998887181282043,
+              0.00011138500849483535
+            ],
+            "inside_mass": [
+              1.877540256600696e-07,
+              0.00010243908036500216
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              0.9998885989189148,
+              0.00011138500121887773
+            ],
+            "inside_mass": [
+              0.0,
+              0.00010226365702692419
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              0.9998886585235596,
+              0.00011138500121887773
+            ],
+            "inside_mass": [
+              0.004222129471600056,
+              0.00010254691005684435
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              0.9998886585235596,
+              0.00011138501577079296
+            ],
+            "inside_mass": [
+              0.007561503443866968,
+              0.00010251554340356961
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              0.9998887181282043,
+              0.00011138500121887773
+            ],
+            "inside_mass": [
+              0.2235698699951172,
+              0.00010837784793693572
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              0.9998886585235596,
+              0.00011138500849483535
+            ],
+            "inside_mass": [
+              0.06692929565906525,
+              0.00010713336087064818
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              0.9998886585235596,
+              0.00011138500121887773
+            ],
+            "inside_mass": [
+              0.09737887978553772,
+              0.00010672353528207168
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              0.9998886585235596,
+              0.00011138500121887773
+            ],
+            "inside_mass": [
+              0.10847704112529755,
+              0.0001084672985598445
+            ]
+          }
+        }
+      },
+      "gradient_1": {
+        "step": 1,
+        "losses": {
+          "class": 0.011573144234716892,
+          "nodes": 0.03294612467288971,
+          "boxes": 0.27683204412460327,
+          "cardinality": 0.008333333767950535,
+          "edges": 0.018174953758716583,
+          "degree": 0.0,
+          "spline": 0.1253623068332672,
+          "spline_control_mm": 1.5210249423980713,
+          "spline_curve_mm": 1.4895312786102295,
+          "spline_endpoint_mm": 1.4465537071228027,
+          "spline_positive_edges": 103.0,
+          "betti_h0": 0.0,
+          "betti_h0_weighted": 0.0,
+          "betti_h1": 0.0,
+          "betti_h1_weighted": 0.0,
+          "total": 1.2431812286376953
+        },
+        "gradients": {
+          "encoder.": 4.195769786834717,
+          "decoder.": 8.659393310546875,
+          "class_embed.": 0.2864024341106415,
+          "coord_embed.": 35.071617126464844,
+          "relation_embed.": 2.7678139209747314,
+          "spline_head.": 1.1472654342651367,
+          "input_proj.": 2.122239589691162,
+          "fine_input_proj.": 0.0024872724898159504,
+          "new_attention_rows": {
+            "decoder.encoder.layers.0.self_attn": {
+              "sampling_offsets": 0.00016844813944771886,
+              "attention_weights": 0.00013280715211294591
+            },
+            "decoder.encoder.layers.1.self_attn": {
+              "sampling_offsets": 0.00013913598377257586,
+              "attention_weights": 0.00023546500597149134
+            },
+            "decoder.encoder.layers.2.self_attn": {
+              "sampling_offsets": 0.00019031408010050654,
+              "attention_weights": 0.0005271209520287812
+            },
+            "decoder.encoder.layers.3.self_attn": {
+              "sampling_offsets": 0.00019972040900029242,
+              "attention_weights": 0.0005701584159396589
+            },
+            "decoder.encoder.layers.4.self_attn": {
+              "sampling_offsets": 0.00019083978259004653,
+              "attention_weights": 0.00022938816982787102
+            },
+            "decoder.encoder.layers.5.self_attn": {
+              "sampling_offsets": 0.00020735527505166829,
+              "attention_weights": 0.0003065148775931448
+            },
+            "decoder.decoder.layers.0.cross_attn1": {
+              "sampling_offsets": 0.00012075795530108735,
+              "attention_weights": 0.000311542913550511
+            },
+            "decoder.decoder.layers.1.cross_attn1": {
+              "sampling_offsets": 0.0002622795000206679,
+              "attention_weights": 0.0004325297777540982
+            },
+            "decoder.decoder.layers.2.cross_attn1": {
+              "sampling_offsets": 0.0004224113072268665,
+              "attention_weights": 0.000571036187466234
+            },
+            "decoder.decoder.layers.3.cross_attn1": {
+              "sampling_offsets": 0.0005153329111635685,
+              "attention_weights": 0.0009898070711642504
+            }
+          }
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              0.999877393245697,
+              0.00012263772077858448
+            ],
+            "inside_mass": [
+              0.0,
+              0.0001105363990063779
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              0.9998779296875,
+              0.0001220738049596548
+            ],
+            "inside_mass": [
+              4.5066588683084774e-08,
+              0.00011022012040484697
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              0.9998784065246582,
+              0.0001215896918438375
+            ],
+            "inside_mass": [
+              1.8975224236328359e-07,
+              0.00011102414282504469
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              0.999877393245697,
+              0.0001225984888151288
+            ],
+            "inside_mass": [
+              0.0,
+              0.00010999952064594254
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              0.9998744130134583,
+              0.0001256132818525657
+            ],
+            "inside_mass": [
+              0.004126143176108599,
+              0.00011208487558178604
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              0.999873161315918,
+              0.0001268344058189541
+            ],
+            "inside_mass": [
+              0.007361412979662418,
+              0.00011505172005854547
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              0.9998753666877747,
+              0.0001246962056029588
+            ],
+            "inside_mass": [
+              0.22419336438179016,
+              0.0001212428614962846
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              0.9998757839202881,
+              0.00012414008961059153
+            ],
+            "inside_mass": [
+              0.06644981354475021,
+              0.00011943180288653821
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              0.9998759627342224,
+              0.0001240237324964255
+            ],
+            "inside_mass": [
+              0.09765304625034332,
+              0.00011876143980771303
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              0.9998757839202881,
+              0.0001241902937181294
+            ],
+            "inside_mass": [
+              0.10951737314462662,
+              0.00012087723735021427
+            ]
+          }
+        }
+      },
+      "tiny_metrics": {
+        "nodes": 140.0,
+        "gt_nodes": 140.0,
+        "node_tp": 140.0,
+        "duplicates": 0.0,
+        "rescued": 0.0,
+        "lost": 0.0,
+        "patches": 8.0,
+        "edges": 103.0,
+        "gt_edges": 103.0,
+        "edge_tp": 103.0,
+        "eligible": 103.0,
+        "beta0_error": 0.0,
+        "beta1_error": 0.0,
+        "raw_tp": 140.0,
+        "hungarian_mm_sum": 23.502323985099792,
+        "hungarian_n": 140.0,
+        "nearest_mm_sum": 23.49392580986023,
+        "localized_mm_sum": 23.50232420116663,
+        "node_precision": 1.0,
+        "node_recall": 1.0,
+        "node_f1": 1.0,
+        "duplicate_rate": 0.0,
+        "edge_precision": 1.0,
+        "edge_recall": 1.0,
+        "edge_f1": 1.0,
+        "conditional_recall": 1.0,
+        "beta0_mae": 0.0,
+        "beta1_mae": 0.0,
+        "raw_recall": 1.0,
+        "hungarian_mm": 0.1678737427507128,
+        "nearest_mm": 0.1678137557847159,
+        "localized_mm": 0.16787374429404736,
+        "mean_patch_conditional_ap": 1.0
+      },
+      "post_fit_fine_interventions": {
+        "roll": {
+          "pred_logits": 0.025062208995223045,
+          "pred_nodes": 0.0012165916850790381
+        },
+        "blocked": {
+          "pred_logits": 0.446457177400589,
+          "pred_nodes": 0.005842817015945911
+        }
+      },
+      "batch32_gradient": {
+        "step": 256,
+        "losses": {
+          "class": 6.989960093051195e-05,
+          "nodes": 0.003735546488314867,
+          "boxes": 0.03719194978475571,
+          "cardinality": 0.0,
+          "edges": 9.317546755482908e-06,
+          "degree": -0.0,
+          "spline": 0.0033022621646523476,
+          "spline_control_mm": 0.18948712944984436,
+          "spline_curve_mm": 0.15994788706302643,
+          "spline_endpoint_mm": 0.16831785440444946,
+          "spline_positive_edges": 412.0,
+          "betti_h0": 0.0,
+          "betti_h0_weighted": 0.0,
+          "betti_h1": 0.0,
+          "betti_h1_weighted": 0.0,
+          "total": 0.12424997240304947
+        },
+        "gradients": {
+          "encoder.": 0.8959532380104065,
+          "decoder.": 4.552079200744629,
+          "class_embed.": 0.003185456618666649,
+          "coord_embed.": 21.589841842651367,
+          "relation_embed.": 0.000943085877224803,
+          "spline_head.": 0.14325585961341858,
+          "input_proj.": 0.7602032423019409,
+          "fine_input_proj.": 0.21799536049365997,
+          "new_attention_rows": {
+            "decoder.encoder.layers.0.self_attn": {
+              "sampling_offsets": 0.005682805087417364,
+              "attention_weights": 0.00563041353598237
+            },
+            "decoder.encoder.layers.1.self_attn": {
+              "sampling_offsets": 0.010175465606153011,
+              "attention_weights": 0.018473682925105095
+            },
+            "decoder.encoder.layers.2.self_attn": {
+              "sampling_offsets": 0.010592340491712093,
+              "attention_weights": 0.029765022918581963
+            },
+            "decoder.encoder.layers.3.self_attn": {
+              "sampling_offsets": 0.013700994662940502,
+              "attention_weights": 0.03150225430727005
+            },
+            "decoder.encoder.layers.4.self_attn": {
+              "sampling_offsets": 0.013616444543004036,
+              "attention_weights": 0.05578664317727089
+            },
+            "decoder.encoder.layers.5.self_attn": {
+              "sampling_offsets": 0.017615975812077522,
+              "attention_weights": 0.09790458530187607
+            },
+            "decoder.decoder.layers.0.cross_attn1": {
+              "sampling_offsets": 0.01845354028046131,
+              "attention_weights": 0.05421975627541542
+            },
+            "decoder.decoder.layers.1.cross_attn1": {
+              "sampling_offsets": 0.029264157637953758,
+              "attention_weights": 0.06879649311304092
+            },
+            "decoder.decoder.layers.2.cross_attn1": {
+              "sampling_offsets": 0.04986540973186493,
+              "attention_weights": 0.12611085176467896
+            },
+            "decoder.decoder.layers.3.cross_attn1": {
+              "sampling_offsets": 0.08716894686222076,
+              "attention_weights": 0.26325318217277527
+            }
+          }
+        },
+        "attention": {
+          "decoder.encoder.layers.0.self_attn": {
+            "mass": [
+              0.9673973917961121,
+              0.032602716237306595
+            ],
+            "inside_mass": [
+              0.0,
+              0.029210329055786133
+            ]
+          },
+          "decoder.encoder.layers.1.self_attn": {
+            "mass": [
+              0.9757678508758545,
+              0.024232259020209312
+            ],
+            "inside_mass": [
+              3.124989600422623e-09,
+              0.021979857236146927
+            ]
+          },
+          "decoder.encoder.layers.2.self_attn": {
+            "mass": [
+              0.9729182720184326,
+              0.027081802487373352
+            ],
+            "inside_mass": [
+              9.691714808468532e-08,
+              0.02436196431517601
+            ]
+          },
+          "decoder.encoder.layers.3.self_attn": {
+            "mass": [
+              0.9628934264183044,
+              0.03710657358169556
+            ],
+            "inside_mass": [
+              0.0,
+              0.03349180147051811
+            ]
+          },
+          "decoder.encoder.layers.4.self_attn": {
+            "mass": [
+              0.9642370939254761,
+              0.03576299175620079
+            ],
+            "inside_mass": [
+              0.001874531852081418,
+              0.032147862017154694
+            ]
+          },
+          "decoder.encoder.layers.5.self_attn": {
+            "mass": [
+              0.952997624874115,
+              0.04700236767530441
+            ],
+            "inside_mass": [
+              0.004164215177297592,
+              0.0423036590218544
+            ]
+          },
+          "decoder.decoder.layers.0.cross_attn1": {
+            "mass": [
+              0.925590455532074,
+              0.07440950721502304
+            ],
+            "inside_mass": [
+              0.20817069709300995,
+              0.07123420387506485
+            ]
+          },
+          "decoder.decoder.layers.1.cross_attn1": {
+            "mass": [
+              0.9292761087417603,
+              0.07072389125823975
+            ],
+            "inside_mass": [
+              0.06086545065045357,
+              0.0674365907907486
+            ]
+          },
+          "decoder.decoder.layers.2.cross_attn1": {
+            "mass": [
+              0.9310061931610107,
+              0.06899384409189224
+            ],
+            "inside_mass": [
+              0.09309141337871552,
+              0.06514041125774384
+            ]
+          },
+          "decoder.decoder.layers.3.cross_attn1": {
+            "mass": [
+              0.9203277230262756,
+              0.07967227697372437
+            ],
+            "inside_mass": [
+              0.09138137102127075,
+              0.07646632939577103
+            ]
+          }
+        }
+      },
+      "peak_gpu_gib": 9.121011734008789
+    }
+  },
+  "cuda_max_error": 3.5762786865234375e-07,
+  "cuda_gradient_errors": [
+    9.5367431640625e-07,
+    2.6702880859375e-05,
+    2.86102294921875e-06
+  ]
+}

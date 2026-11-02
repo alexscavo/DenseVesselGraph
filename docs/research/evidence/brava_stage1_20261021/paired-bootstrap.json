@@ -1,0 +1,310 @@
+[
+  {
+    "comparison": "coordinate_refinement minus standard",
+    "tolerance_mm": 1,
+    "metric": "node_precision",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      -0.0019358143286893092,
+      0.002440658763680757
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement minus standard",
+    "tolerance_mm": 1,
+    "metric": "node_recall",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      -0.007704751666248232,
+      -0.00385149337634176
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement minus standard",
+    "tolerance_mm": 1,
+    "metric": "f1",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement minus standard",
+    "tolerance_mm": 1,
+    "metric": "conditional_recall",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement minus standard",
+    "tolerance_mm": 1,
+    "metric": "common_branch_f1",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement minus standard",
+    "tolerance_mm": 1,
+    "metric": "common_curve_f1",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      -0.0003740294286817156,
+      -1.9066261796635192e-05
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement minus standard",
+    "tolerance_mm": 1,
+    "metric": "beta0_mae",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      -6.263948546922417,
+      -2.6173645894921878
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement minus standard",
+    "tolerance_mm": 1,
+    "metric": "beta1_mae",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      -0.0027027392454650433,
+      0.0
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement minus standard",
+    "tolerance_mm": 1,
+    "metric": "duplicates_per_recovered_gt",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      -0.005698005698005698,
+      0.011157767945920334
+    ]
+  },
+  {
+    "comparison": "synthetic_spline: same-graph spline minus chord",
+    "tolerance_mm": 1,
+    "metric": "common_curve_f1",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      0.00026585757070981717,
+      0.0006055525059336505
+    ]
+  },
+  {
+    "comparison": "synthetic_straight: same-graph spline minus chord",
+    "tolerance_mm": 1,
+    "metric": "common_curve_f1",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "comparison": "ixi_spline: same-graph spline minus chord",
+    "tolerance_mm": 1,
+    "metric": "common_curve_f1",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      0.0019925948062309478,
+      0.003248968418658054
+    ]
+  },
+  {
+    "comparison": "standard: same-graph spline minus chord",
+    "tolerance_mm": 1,
+    "metric": "common_curve_f1",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      6.49845506799386e-06,
+      3.134333528566952e-05
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement: same-graph spline minus chord",
+    "tolerance_mm": 1,
+    "metric": "common_curve_f1",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      -2.44593376309289e-05,
+      7.276580421908099e-06
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement minus standard",
+    "tolerance_mm": 2,
+    "metric": "node_precision",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      -0.010483972836015367,
+      0.0018371455675381052
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement minus standard",
+    "tolerance_mm": 2,
+    "metric": "node_recall",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      -0.03063563858252693,
+      -0.02555176642819776
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement minus standard",
+    "tolerance_mm": 2,
+    "metric": "f1",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      -0.0007886309526927228,
+      0.00019583477909975136
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement minus standard",
+    "tolerance_mm": 2,
+    "metric": "conditional_recall",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      -0.042105263157894736,
+      0.017503735094810072
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement minus standard",
+    "tolerance_mm": 2,
+    "metric": "common_branch_f1",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement minus standard",
+    "tolerance_mm": 2,
+    "metric": "common_curve_f1",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      -0.0003740294286817156,
+      -1.9066261796635192e-05
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement minus standard",
+    "tolerance_mm": 2,
+    "metric": "beta0_mae",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      -6.263948546922417,
+      -2.6173645894921878
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement minus standard",
+    "tolerance_mm": 2,
+    "metric": "beta1_mae",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      -0.0027027392454650433,
+      0.0
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement minus standard",
+    "tolerance_mm": 2,
+    "metric": "duplicates_per_recovered_gt",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      0.02006922523745164,
+      0.0335973817415342
+    ]
+  },
+  {
+    "comparison": "synthetic_spline: same-graph spline minus chord",
+    "tolerance_mm": 2,
+    "metric": "common_curve_f1",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      0.00026585757070981717,
+      0.0006055525059336505
+    ]
+  },
+  {
+    "comparison": "synthetic_straight: same-graph spline minus chord",
+    "tolerance_mm": 2,
+    "metric": "common_curve_f1",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "comparison": "ixi_spline: same-graph spline minus chord",
+    "tolerance_mm": 2,
+    "metric": "common_curve_f1",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      0.0019925948062309478,
+      0.003248968418658054
+    ]
+  },
+  {
+    "comparison": "standard: same-graph spline minus chord",
+    "tolerance_mm": 2,
+    "metric": "common_curve_f1",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      6.49845506799386e-06,
+      3.134333528566952e-05
+    ]
+  },
+  {
+    "comparison": "coordinate_refinement: same-graph spline minus chord",
+    "tolerance_mm": 2,
+    "metric": "common_curve_f1",
+    "subjects": 8,
+    "resamples": 1000,
+    "delta_95pct": [
+      -2.44593376309289e-05,
+      7.276580421908099e-06
+    ]
+  }
+]

@@ -1,0 +1,110 @@
+{
+  "experiments/fine_feature_architecture/runs/baseline/best.pt": {
+    "sha256": "d4bc78ad3eb7c1c29c9be8ec3e2927e88f2f45e6f34a3cb8be9ade5fd9d2431c",
+    "bytes": 1382818286
+  },
+  "experiments/fine_feature_architecture/runs/baseline/latest.pt": {
+    "sha256": "e846b7af1b68b0577e628dbd41491ac9ac5d05e9cbfc5bdee45b8e6ac0de1109",
+    "bytes": 1382922398
+  },
+  "experiments/fine_feature_architecture/runs/B0/model-3000.pt": {
+    "sha256": "1858ccdce8174b81b2490f6e2fcf5338eb877d6d036da4fee21c3c666ffd4643",
+    "bytes": 1382185464
+  },
+  "experiments/fine_feature_architecture/runs/A/model-3000.pt": {
+    "sha256": "99f5842d7d8bc0452209368909cda70f9d52ad0c8f74f4ddf2c11753fb9f3af9",
+    "bytes": 1385706584
+  },
+  "experiments/fine_feature_architecture/runs/A-control/model-3000.pt": {
+    "sha256": "2b49de7811e8e3c463646a4991650b881887d07092ce83f9ab4090df2c6b82e9",
+    "bytes": 1385706584
+  },
+  "experiments/fine_feature_architecture/runs/C/model-3000.pt": {
+    "sha256": "bf79af3041a04f099810901c0367ad8b860636a041ee3a0f286a3c2161ed5712",
+    "bytes": 1391968136
+  },
+  "experiments/fine_feature_architecture/source-during-baseline-epoch2.zip": {
+    "sha256": "d19a2dff8ecd37d86f5df1f4320f7a163f4b7ee849e3646d66c185d6420e941d",
+    "bytes": 32848
+  },
+  "experiments/fine_feature_architecture/source-1524122.zip": {
+    "sha256": "773c6c4a6d453fdf3a79e1205de423aa48c8b3ab10dbca42093d991d756f8b0d",
+    "bytes": 262021
+  },
+  "experiments/fine_feature_architecture/source-1516330.zip": {
+    "sha256": "773c6c4a6d453fdf3a79e1205de423aa48c8b3ab10dbca42093d991d756f8b0d",
+    "bytes": 262021
+  },
+  "experiments/fine_feature_architecture/source-1523744.zip": {
+    "sha256": "773c6c4a6d453fdf3a79e1205de423aa48c8b3ab10dbca42093d991d756f8b0d",
+    "bytes": 262021
+  },
+  "experiments/fine_feature_architecture/source-1523745.zip": {
+    "sha256": "773c6c4a6d453fdf3a79e1205de423aa48c8b3ab10dbca42093d991d756f8b0d",
+    "bytes": 262021
+  },
+  "experiments/fine_feature_architecture/source-1516210.zip": {
+    "sha256": "773c6c4a6d453fdf3a79e1205de423aa48c8b3ab10dbca42093d991d756f8b0d",
+    "bytes": 262021
+  },
+  "experiments/fine_feature_architecture/source-1516050.zip": {
+    "sha256": "99a1faf933a540ba6b20e0c7ba987ea4056bc270a920ba669a0f36b6c0a0b45a",
+    "bytes": 261888
+  },
+  "experiments/fine_feature_architecture/plan.json": {
+    "sha256": "8cfbef57c3d9481fb7a73a5cbf9a48bce3918cc335b84b13616c9c9fb2c52dd3",
+    "bytes": 738722
+  },
+  "experiments/fine_feature_architecture/runs/B0/config.json": {
+    "sha256": "21c7cfbe9ed2e679dca41cb3fad85cae8af3dcf10578b5cd78832170681facc8",
+    "bytes": 8742
+  },
+  "experiments/fine_feature_architecture/runs/C/config.json": {
+    "sha256": "70ecff36032825cb57d91d4a9218151b1766f9d60ad7e0528585c388f185b434",
+    "bytes": 8779
+  },
+  "experiments/fine_feature_architecture/runs/baseline/config.json": {
+    "sha256": "4bb3f283295d7f8491b0a970cc63b58c5ceb40597f70722b5a15f848e0b0c850",
+    "bytes": 8748
+  },
+  "experiments/fine_feature_architecture/runs/A-control/config.json": {
+    "sha256": "2d02c0cb2d63e502d1e3dbd9683538cdbfb8f738299e05af11837bc78d486182",
+    "bytes": 8870
+  },
+  "experiments/fine_feature_architecture/runs/A/config.json": {
+    "sha256": "c7c5c68e71e34ace4e56b2215008afe5e1595638c7bfd50749f0f1a90fcf213a",
+    "bytes": 8862
+  },
+  "scripts/fine_feature_architecture.py": {
+    "sha256": "645d4752033359ae499404a9a980a3d81cf08b5f8d737e59901d1ce2533b2e9f",
+    "bytes": 28058
+  },
+  "scripts/report_fine_feature_architecture.py": {
+    "sha256": "46f7270b00de8885abb51d9687ec93fed25480fc25cab4be58468267380073d8",
+    "bytes": 16379
+  },
+  "docs/research/fine_feature_architecture_study.md": {
+    "sha256": "1733d44b36bae9306f54cc3df3fa51d20158f18027706e64c71ebed9fea59da8",
+    "bytes": 28335
+  },
+  "experiments/fine_feature_architecture/execution_plan.md": {
+    "sha256": "26377fc82380d80b1eab75cf355ee1a3bea9b633a9e5403e003c82aadf148bcc",
+    "bytes": 5526
+  },
+  "experiments/fine_feature_architecture/jobs.json": {
+    "sha256": "ebebc918dafa69a9e8d6ff0a0f5d19cee6a09819a2d646bd949da119a90cc2b6",
+    "bytes": 803
+  },
+  "experiments/fine_feature_architecture/accounting.psv": {
+    "sha256": "e724117a1cc333427180d442068679dfcdf117d130d7b605607624532d52637f",
+    "bytes": 5369
+  },
+  "experiments/fine_feature_architecture/accounting-summary.json": {
+    "sha256": "8f391da1a752ac5eb58a79aacb804ba6039f58ab2c0406d4cbe783cf672e431c",
+    "bytes": 2544
+  },
+  "experiments/fine_feature_architecture/analysis.json": {
+    "sha256": "e6fd46835eea6a9266a78b9629a2d5c8fcd23af9a6d3860d7dd0fe5a1eefca24",
+    "bytes": 1341564
+  }
+}

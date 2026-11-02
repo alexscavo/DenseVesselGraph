@@ -1,0 +1,14 @@
+{
+  "data.datasets.synthetic_mri.root": {
+    "d08": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8",
+    "ixi": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/IXI/transfer_splines_k8_20261015"
+  },
+  "experiment.name": {
+    "d08": "brava_long_synthetic",
+    "ixi": "ixi_long_20261030_synthetic"
+  },
+  "training.epochs": {
+    "d08": 300,
+    "ixi": 100
+  }
+}

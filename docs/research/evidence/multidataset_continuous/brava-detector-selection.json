@@ -1,0 +1,10 @@
+{
+  "dataset": "BRAVA",
+  "arm": "D1_IXI",
+  "step": 30000,
+  "validation_edge_f1": 0.020992285967204823,
+  "validation_node_recall": 0.34093419086597804,
+  "representation_stage_ready": false,
+  "gate": "Predefined feasibility gate: edge F1>0.04 and node recall2mm>0.25; review paired comparisons and annotation limitations before further submission.",
+  "automatic_followup_training": false
+}

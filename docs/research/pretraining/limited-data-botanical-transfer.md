@@ -273,3 +273,128 @@ The initial local check exceeded session memory. CPU attempt1342759 failed while
 | collect | 1344488 | afterok:1344487 |
 
 H100 jobs already in queue at submission: 1332029, 1339159, 1339161, 1339163, 1339164. The shared smoke waits for all of them; the paired stage arrays use at most two H100s. Full training cannot execute if smoke fails.
+
+## 21 October — retry of failed GPU smoke
+
+Smoke1344474 timed out after a DataLoader multiprocessing resource-sharer error, `AF_UNIX path too long`. A focused standard-library Listener reproduction and a regression using the actual shell runtime setup reproduced the same failure. The regression passes after shortening JOBSCRATCH/TMPDIR to `$SCRATCH/tmp/lt-$SLURM_JOB_ID`. Runtime packages remain on SCRATCH; there is no return to node-local `/tmp` staging. Training, evaluation and CPU-check wrappers share this setup. A real multiprocessing socket is opened and closed at startup, before loading models/data, to fail immediately if the path cannot be used.
+
+The failed chain is terminal, and no equivalent active jobs existed at audit. Retry archives the prior submission as `experiments/limited_botanical_transfer/submission-1344474.json`. Before the new smoke, its existing partial output is moved to `<output_root>/failed-attempts/1344474/`, without deleting it. The common scratch initializer remains unchanged. All original scientific script, plan and population-manifest hashes were verified unchanged; datasets, seed364505, workers4, batch32, losses, optimizer, fixed updates, validation/test protocol and source exposure policy are preserved.
+
+CPU correctness1344027 is reused after verifying its successful accounting state. The new actual batch-32 GPU smoke remains mandatory before the two-arm pretraining/fine-tuning chain. It keeps the original30-minute limit; the fix addresses the data-transfer hang rather than treating a longer timeout as a remedy. Subsequent arrays remain capped at two H100s and retain the original12-hour pretraining /6-hour fine-tuning stage allocations. A successful submission is not evidence of completed training or improved performance.
+
+Retrieve completed results without retraining: `python3 scripts/limited_botanical_transfer.py collect`.
+
+## Accepted jobs
+
+| Stage | Job ID | Dependency |
+|---|---|---|
+| CPU real-data forward/backward check | 1344027 | none |
+| smoke | 1372128 | none |
+| pre25 | 1372129 | afterok:1372128 |
+| pre50 | 1372131 | afterok:1372129 |
+| fine50 | 1372132 | afterok:1372131 |
+| fine100 | 1372133 | afterok:1372132 |
+| test | 1372134 | afterok:1372133 |
+| collect | 1372135 | afterok:1372134 |
+
+H100 jobs already in queue at submission: none. The shared smoke waits for all of them; the paired stage arrays use at most two H100s. Full training cannot execute if smoke fails.
+
+## Completed comparison
+
+### Validation
+
+| Model | Node F1 | Edge F1 | Branch F1 | Curve F1 | Component MAE | Cycle MAE | SMD | Duplicate fraction |
+|---|---|---|---|---|---|---|---|---|
+| vessel_only | 0.3249 | 0.2619 | 0.0003 | 0.0995 | 2.4631 | 3.4728 | 0.0125 | 0.0067 |
+| leaves_vessels | 0.3864 | 0.3007 | 0.0006 | 0.1206 | 2.7039 | 3.3371 | 0.0118 | 0.0112 |
+
+Mixed minus vessel-only: edge F1 +0.0388, Branch F1 +0.0003, Curve F1 +0.0212. Connectivity and geometry must be interpreted together with component/cycle errors and counts.
+
+In this seed, leaf pretraining improved connectivity by edge/Branch F1 and improved geometry by Curve F1/SMD.
+### Test
+
+| Model | Node F1 | Edge F1 | Branch F1 | Curve F1 | Component MAE | Cycle MAE | SMD | Duplicate fraction |
+|---|---|---|---|---|---|---|---|---|
+| vessel_only | 0.3246 | 0.2588 | 0.0004 | 0.1009 | 2.4808 | 3.5468 | 0.0127 | 0.0068 |
+| leaves_vessels | 0.3855 | 0.2979 | 0.0005 | 0.1206 | 2.6998 | 3.3283 | 0.0118 | 0.0110 |
+
+Mixed minus vessel-only: edge F1 +0.0390, Branch F1 +0.0001, Curve F1 +0.0197. Connectivity and geometry must be interpreted together with component/cycle errors and counts.
+
+In this seed, leaf pretraining improved connectivity by edge/Branch F1 and improved geometry by Curve F1/SMD.
+
+This single seed measures the two recipes under equal optimization and example-processing budgets, with unequal vascular exposure. Differences do not establish statistical superiority or distinguish generalization from optimization by themselves; compare the saved train/validation trajectories. The earlier full-data MRI-only advantage concerns a different annotation budget.
+
+### Actual presentations and unique coverage
+
+```json
+{
+  "vessel_only": {
+    "pretraining": {
+      "optimizer_updates": 78150,
+      "samples_processed": 2500800,
+      "presentations": {
+        "synthetic_mri": 2500800,
+        "leaves": 0
+      },
+      "unique_samples_encountered": {
+        "synthetic_mri": 200,
+        "leaves": 0
+      }
+    },
+    "finetuning": {
+      "optimizer_updates": 31300,
+      "samples_processed": 1001600,
+      "presentations": {
+        "synthetic_mri": 1001600,
+        "leaves": 0
+      },
+      "unique_samples_encountered": {
+        "synthetic_mri": 200,
+        "leaves": 0
+      }
+    },
+    "transferred_pretraining_best_epoch": 35,
+    "transferred_pretraining_best_update": 54705,
+    "total_synthetic_mri_presentations": 3502400
+  },
+  "leaves_vessels": {
+    "pretraining": {
+      "optimizer_updates": 78150,
+      "samples_processed": 2500800,
+      "presentations": {
+        "synthetic_mri": 1249796,
+        "leaves": 1251004
+      },
+      "unique_samples_encountered": {
+        "synthetic_mri": 200,
+        "leaves": 25000
+      }
+    },
+    "finetuning": {
+      "optimizer_updates": 31300,
+      "samples_processed": 1001600,
+      "presentations": {
+        "synthetic_mri": 1001600,
+        "leaves": 0
+      },
+      "unique_samples_encountered": {
+        "synthetic_mri": 200,
+        "leaves": 0
+      }
+    },
+    "transferred_pretraining_best_epoch": 40,
+    "transferred_pretraining_best_update": 62520,
+    "total_synthetic_mri_presentations": 2251396
+  }
+}
+```
+
+### Validation-selected checkpoints
+
+- vessel_only: epoch/scheduler unit 45, fine-tuning update 14085.
+- leaves_vessels: epoch/scheduler unit 35, fine-tuning update 10955.
+
+### Final training versus validation monitor
+
+- vessel_only, final update 31300: train/validation edge F1 0.9997/0.2568, Branch F1 0.9935/0.0000. These use 200 training and 128 monitored validation patches, rather than the full-validation/test populations above.
+- leaves_vessels, final update 31300: train/validation edge F1 0.9997/0.2983, Branch F1 0.9896/0.0011. These use 200 training and 128 monitored validation patches, rather than the full-validation/test populations above.

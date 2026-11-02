@@ -1,0 +1,5915 @@
+[
+  {
+    "step": 1,
+    "elapsed_seconds": 0.9110556760570034,
+    "training_seconds": 0.9110206490149722,
+    "scoring_seconds": 0.0,
+    "loss": 0.20121272467076778,
+    "candidates": 2166,
+    "positives": 109
+  },
+  {
+    "step": 100,
+    "elapsed_seconds": 3.1288578370586038,
+    "training_seconds": 3.126543710473925,
+    "scoring_seconds": 0.0,
+    "loss": 0.20468797720968723,
+    "candidates": 3270,
+    "positives": 169
+  },
+  {
+    "step": 200,
+    "elapsed_seconds": 5.622403138084337,
+    "training_seconds": 5.618435162468813,
+    "scoring_seconds": 0.0,
+    "loss": 0.19244681810960174,
+    "candidates": 3206,
+    "positives": 153
+  },
+  {
+    "step": 300,
+    "elapsed_seconds": 7.824864899041131,
+    "training_seconds": 7.819480077363551,
+    "scoring_seconds": 0.0,
+    "loss": 0.1828754572197795,
+    "candidates": 3942,
+    "positives": 175
+  },
+  {
+    "step": 400,
+    "elapsed_seconds": 10.187562011997215,
+    "training_seconds": 10.180623819236644,
+    "scoring_seconds": 0.0,
+    "loss": 0.2003807646688074,
+    "candidates": 2933,
+    "positives": 140
+  },
+  {
+    "step": 500,
+    "elapsed_seconds": 12.255281293997541,
+    "training_seconds": 12.246726102079265,
+    "scoring_seconds": 0.0,
+    "loss": 0.22495166398584843,
+    "candidates": 1894,
+    "positives": 117
+  },
+  {
+    "step": 600,
+    "elapsed_seconds": 14.584007294033654,
+    "training_seconds": 14.555425952421501,
+    "scoring_seconds": 0.0,
+    "loss": 0.17015208509837976,
+    "candidates": 4663,
+    "positives": 172
+  },
+  {
+    "step": 700,
+    "elapsed_seconds": 16.865947938058525,
+    "training_seconds": 16.835865668253973,
+    "scoring_seconds": 0.0,
+    "loss": 0.19920793664641678,
+    "candidates": 4401,
+    "positives": 193
+  },
+  {
+    "step": 800,
+    "elapsed_seconds": 19.187507750000805,
+    "training_seconds": 19.155988268437795,
+    "scoring_seconds": 0.0,
+    "loss": 0.22698966204188764,
+    "candidates": 1830,
+    "positives": 107
+  },
+  {
+    "step": 900,
+    "elapsed_seconds": 21.544829610036686,
+    "training_seconds": 21.511715754517354,
+    "scoring_seconds": 0.0,
+    "loss": 0.21142524818424135,
+    "candidates": 2144,
+    "positives": 121
+  },
+  {
+    "step": 1000,
+    "elapsed_seconds": 23.803745854995213,
+    "training_seconds": 23.76912173256278,
+    "scoring_seconds": 0.0,
+    "loss": 0.14293380983417592,
+    "candidates": 11774,
+    "positives": 365
+  },
+  {
+    "step": 1100,
+    "elapsed_seconds": 31.16416849801317,
+    "training_seconds": 26.025108982925303,
+    "scoring_seconds": 5.082973529002629,
+    "loss": 0.16993047180585563,
+    "candidates": 4326,
+    "positives": 178
+  },
+  {
+    "step": 1200,
+    "elapsed_seconds": 33.3367888990324,
+    "training_seconds": 28.19611674337648,
+    "scoring_seconds": 5.082973529002629,
+    "loss": 0.13895455817691982,
+    "candidates": 5671,
+    "positives": 183
+  },
+  {
+    "step": 1300,
+    "elapsed_seconds": 35.56099194206763,
+    "training_seconds": 30.41880308953114,
+    "scoring_seconds": 5.082973529002629,
+    "loss": 0.2503341003903188,
+    "candidates": 954,
+    "positives": 74
+  },
+  {
+    "step": 1400,
+    "elapsed_seconds": 37.70296033099294,
+    "training_seconds": 32.559189143474214,
+    "scoring_seconds": 5.082973529002629,
+    "loss": 0.2704255145508796,
+    "candidates": 1033,
+    "positives": 78
+  },
+  {
+    "step": 1500,
+    "elapsed_seconds": 40.02759586204775,
+    "training_seconds": 34.8823244079249,
+    "scoring_seconds": 5.082973529002629,
+    "loss": 0.15750446297897724,
+    "candidates": 3214,
+    "positives": 132
+  },
+  {
+    "step": 1600,
+    "elapsed_seconds": 42.319733857992105,
+    "training_seconds": 37.16175086284056,
+    "scoring_seconds": 5.082973529002629,
+    "loss": 0.1946851952234283,
+    "candidates": 3249,
+    "positives": 144
+  },
+  {
+    "step": 1700,
+    "elapsed_seconds": 44.50778667302802,
+    "training_seconds": 39.34816666704137,
+    "scoring_seconds": 5.082973529002629,
+    "loss": 0.2421957845799625,
+    "candidates": 1941,
+    "positives": 127
+  },
+  {
+    "step": 1800,
+    "elapsed_seconds": 46.69613197608851,
+    "training_seconds": 41.535005055135116,
+    "scoring_seconds": 5.082973529002629,
+    "loss": 0.24129148479551077,
+    "candidates": 2010,
+    "positives": 128
+  },
+  {
+    "step": 1900,
+    "elapsed_seconds": 48.94289439404383,
+    "training_seconds": 43.78021355194505,
+    "scoring_seconds": 5.082973529002629,
+    "loss": 0.1144586436166719,
+    "candidates": 9830,
+    "positives": 254
+  },
+  {
+    "step": 2000,
+    "elapsed_seconds": 51.1990464910632,
+    "training_seconds": 46.03199627099093,
+    "scoring_seconds": 5.082973529002629,
+    "loss": 0.2817173365619965,
+    "candidates": 895,
+    "positives": 70
+  },
+  {
+    "step": 2100,
+    "elapsed_seconds": 58.463055707048625,
+    "training_seconds": 48.18727025401313,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.22803557221777737,
+    "candidates": 1989,
+    "positives": 117
+  },
+  {
+    "step": 2200,
+    "elapsed_seconds": 60.69181854603812,
+    "training_seconds": 50.41433819162194,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.21701923885848373,
+    "candidates": 1358,
+    "positives": 80
+  },
+  {
+    "step": 2300,
+    "elapsed_seconds": 63.007288697059266,
+    "training_seconds": 52.72828002728056,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16571056203974877,
+    "candidates": 5669,
+    "positives": 237
+  },
+  {
+    "step": 2400,
+    "elapsed_seconds": 65.31186180305667,
+    "training_seconds": 55.031306654564105,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.24472907808376476,
+    "candidates": 1551,
+    "positives": 103
+  },
+  {
+    "step": 2500,
+    "elapsed_seconds": 67.49306075705681,
+    "training_seconds": 57.21083455416374,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1864569917670451,
+    "candidates": 3225,
+    "positives": 156
+  },
+  {
+    "step": 2600,
+    "elapsed_seconds": 69.80555081006605,
+    "training_seconds": 59.51073236449156,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1692106859627529,
+    "candidates": 6283,
+    "positives": 242
+  },
+  {
+    "step": 2700,
+    "elapsed_seconds": 72.23297874699347,
+    "training_seconds": 61.936584011185914,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17200387973571196,
+    "candidates": 4164,
+    "positives": 172
+  },
+  {
+    "step": 2800,
+    "elapsed_seconds": 74.37738240498584,
+    "training_seconds": 64.07940227806102,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1689802540349774,
+    "candidates": 3785,
+    "positives": 152
+  },
+  {
+    "step": 2900,
+    "elapsed_seconds": 76.71335453609936,
+    "training_seconds": 66.4138404688565,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.20092785748420283,
+    "candidates": 2353,
+    "positives": 131
+  },
+  {
+    "step": 3000,
+    "elapsed_seconds": 78.9742597200675,
+    "training_seconds": 68.67310780263506,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.337372163310647,
+    "candidates": 639,
+    "positives": 63
+  },
+  {
+    "step": 3100,
+    "elapsed_seconds": 81.15228347701486,
+    "training_seconds": 70.83961624256335,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.3480468579218723,
+    "candidates": 771,
+    "positives": 65
+  },
+  {
+    "step": 3200,
+    "elapsed_seconds": 83.37786876608152,
+    "training_seconds": 73.0635927595431,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.2118158040830167,
+    "candidates": 3502,
+    "positives": 168
+  },
+  {
+    "step": 3300,
+    "elapsed_seconds": 85.61423609999474,
+    "training_seconds": 75.29822655336466,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15396032176977315,
+    "candidates": 6410,
+    "positives": 213
+  },
+  {
+    "step": 3400,
+    "elapsed_seconds": 87.8161172810942,
+    "training_seconds": 77.4984377779765,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.21339187328703701,
+    "candidates": 2205,
+    "positives": 119
+  },
+  {
+    "step": 3500,
+    "elapsed_seconds": 90.1293308410095,
+    "training_seconds": 79.80992578726728,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19512852173647843,
+    "candidates": 2578,
+    "positives": 118
+  },
+  {
+    "step": 3600,
+    "elapsed_seconds": 92.35311146208551,
+    "training_seconds": 82.02239559870213,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.25713629834353924,
+    "candidates": 939,
+    "positives": 78
+  },
+  {
+    "step": 3700,
+    "elapsed_seconds": 94.55964155099355,
+    "training_seconds": 84.22724924283102,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19750269531141385,
+    "candidates": 2090,
+    "positives": 119
+  },
+  {
+    "step": 3800,
+    "elapsed_seconds": 96.80402709706686,
+    "training_seconds": 86.47000081208535,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19966507120989263,
+    "candidates": 2179,
+    "positives": 121
+  },
+  {
+    "step": 3900,
+    "elapsed_seconds": 99.00747450103518,
+    "training_seconds": 88.67173634667415,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.20037319045513868,
+    "candidates": 2486,
+    "positives": 135
+  },
+  {
+    "step": 4000,
+    "elapsed_seconds": 101.31661568209529,
+    "training_seconds": 90.97910935955588,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.20363870660366956,
+    "candidates": 3051,
+    "positives": 153
+  },
+  {
+    "step": 4100,
+    "elapsed_seconds": 103.46216459409334,
+    "training_seconds": 93.1128606586717,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1975013852934353,
+    "candidates": 3611,
+    "positives": 167
+  },
+  {
+    "step": 4200,
+    "elapsed_seconds": 105.71827234409284,
+    "training_seconds": 95.36736314650625,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19599675806239247,
+    "candidates": 2233,
+    "positives": 107
+  },
+  {
+    "step": 4300,
+    "elapsed_seconds": 107.91980013402645,
+    "training_seconds": 97.56672272307333,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1990061101387255,
+    "candidates": 2350,
+    "positives": 120
+  },
+  {
+    "step": 4400,
+    "elapsed_seconds": 110.48079377703834,
+    "training_seconds": 100.1258771806024,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.23224632046185434,
+    "candidates": 1730,
+    "positives": 110
+  },
+  {
+    "step": 4500,
+    "elapsed_seconds": 112.73307484807447,
+    "training_seconds": 102.37625118810683,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1717687780619599,
+    "candidates": 4184,
+    "positives": 159
+  },
+  {
+    "step": 4600,
+    "elapsed_seconds": 114.92657670006156,
+    "training_seconds": 104.5571745877387,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1993181899888441,
+    "candidates": 3730,
+    "positives": 179
+  },
+  {
+    "step": 4700,
+    "elapsed_seconds": 117.08342457504477,
+    "training_seconds": 106.71220862481277,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18309222237439826,
+    "candidates": 2679,
+    "positives": 125
+  },
+  {
+    "step": 4800,
+    "elapsed_seconds": 119.3488595430972,
+    "training_seconds": 108.97561750689056,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1847547228971962,
+    "candidates": 3575,
+    "positives": 171
+  },
+  {
+    "step": 4900,
+    "elapsed_seconds": 121.5882661479991,
+    "training_seconds": 111.2132048526546,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.20450383389834315,
+    "candidates": 2451,
+    "positives": 113
+  },
+  {
+    "step": 5000,
+    "elapsed_seconds": 123.76187208108604,
+    "training_seconds": 113.38489867257886,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.22511467858385004,
+    "candidates": 2877,
+    "positives": 151
+  },
+  {
+    "step": 5100,
+    "elapsed_seconds": 126.0045904640574,
+    "training_seconds": 115.61583257652819,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.2700042794458568,
+    "candidates": 1232,
+    "positives": 93
+  },
+  {
+    "step": 5200,
+    "elapsed_seconds": 128.22010847809725,
+    "training_seconds": 117.82956654694863,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.24002476886380464,
+    "candidates": 818,
+    "positives": 62
+  },
+  {
+    "step": 5300,
+    "elapsed_seconds": 130.35593819303904,
+    "training_seconds": 119.96357383939903,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15534619567915797,
+    "candidates": 4907,
+    "positives": 197
+  },
+  {
+    "step": 5400,
+    "elapsed_seconds": 132.58738608309068,
+    "training_seconds": 122.1929715560982,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18625515780877322,
+    "candidates": 3005,
+    "positives": 125
+  },
+  {
+    "step": 5500,
+    "elapsed_seconds": 134.7840510790702,
+    "training_seconds": 124.38757111586165,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.24612474821333308,
+    "candidates": 1746,
+    "positives": 119
+  },
+  {
+    "step": 5600,
+    "elapsed_seconds": 137.06030095706228,
+    "training_seconds": 126.65270367451012,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17715771892108023,
+    "candidates": 2021,
+    "positives": 95
+  },
+  {
+    "step": 5700,
+    "elapsed_seconds": 139.2832284080796,
+    "training_seconds": 128.8737811652245,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.24055244319606572,
+    "candidates": 2300,
+    "positives": 136
+  },
+  {
+    "step": 5800,
+    "elapsed_seconds": 141.54836096800864,
+    "training_seconds": 131.13719542592298,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14792473730631173,
+    "candidates": 4325,
+    "positives": 155
+  },
+  {
+    "step": 5900,
+    "elapsed_seconds": 143.6898914790945,
+    "training_seconds": 133.27687002310995,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14334530028281733,
+    "candidates": 5289,
+    "positives": 177
+  },
+  {
+    "step": 6000,
+    "elapsed_seconds": 145.95013132307213,
+    "training_seconds": 135.5353757207049,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.21683190466137603,
+    "candidates": 764,
+    "positives": 69
+  },
+  {
+    "step": 6100,
+    "elapsed_seconds": 148.30596414208412,
+    "training_seconds": 137.87951633438934,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13389354791797814,
+    "candidates": 4804,
+    "positives": 158
+  },
+  {
+    "step": 6200,
+    "elapsed_seconds": 150.5903690319974,
+    "training_seconds": 140.16204398369882,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18697057850658894,
+    "candidates": 4269,
+    "positives": 190
+  },
+  {
+    "step": 6300,
+    "elapsed_seconds": 152.7844875510782,
+    "training_seconds": 142.3541635379661,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.24825917603448033,
+    "candidates": 1942,
+    "positives": 127
+  },
+  {
+    "step": 6400,
+    "elapsed_seconds": 155.02991023100913,
+    "training_seconds": 144.59777163900435,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1709481012512697,
+    "candidates": 3202,
+    "positives": 134
+  },
+  {
+    "step": 6500,
+    "elapsed_seconds": 157.36199653707445,
+    "training_seconds": 146.92789291788358,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19327971073471417,
+    "candidates": 2079,
+    "positives": 106
+  },
+  {
+    "step": 6600,
+    "elapsed_seconds": 159.750272946083,
+    "training_seconds": 149.3040791793028,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.21204420732101426,
+    "candidates": 2026,
+    "positives": 122
+  },
+  {
+    "step": 6700,
+    "elapsed_seconds": 161.99392922001425,
+    "training_seconds": 151.54550398618449,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17292638309299946,
+    "candidates": 2058,
+    "positives": 112
+  },
+  {
+    "step": 6800,
+    "elapsed_seconds": 164.21171783399768,
+    "training_seconds": 153.76142908772454,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.2395468926988542,
+    "candidates": 2115,
+    "positives": 126
+  },
+  {
+    "step": 6900,
+    "elapsed_seconds": 166.54961328906938,
+    "training_seconds": 156.09747037221678,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13743881582922768,
+    "candidates": 6201,
+    "positives": 214
+  },
+  {
+    "step": 7000,
+    "elapsed_seconds": 168.82258887402713,
+    "training_seconds": 158.36844125238713,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17656612442806363,
+    "candidates": 4713,
+    "positives": 201
+  },
+  {
+    "step": 7100,
+    "elapsed_seconds": 170.9675040760776,
+    "training_seconds": 160.50120963866357,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.2606199646834284,
+    "candidates": 1213,
+    "positives": 83
+  },
+  {
+    "step": 7200,
+    "elapsed_seconds": 173.2187273070449,
+    "training_seconds": 162.7502424805425,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.22691761585883796,
+    "candidates": 1878,
+    "positives": 117
+  },
+  {
+    "step": 7300,
+    "elapsed_seconds": 175.3878721910296,
+    "training_seconds": 164.91742490325123,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19039702694135485,
+    "candidates": 3326,
+    "positives": 167
+  },
+  {
+    "step": 7400,
+    "elapsed_seconds": 177.61266453599092,
+    "training_seconds": 167.1402251565596,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17727399745490402,
+    "candidates": 2913,
+    "positives": 150
+  },
+  {
+    "step": 7500,
+    "elapsed_seconds": 179.80609866208397,
+    "training_seconds": 169.33155753964093,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1404668031627807,
+    "candidates": 6321,
+    "positives": 198
+  },
+  {
+    "step": 7600,
+    "elapsed_seconds": 182.0710613860283,
+    "training_seconds": 171.58478707424365,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19416854862356558,
+    "candidates": 1761,
+    "positives": 88
+  },
+  {
+    "step": 7700,
+    "elapsed_seconds": 184.2842080789851,
+    "training_seconds": 173.79599389154464,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19081360814743675,
+    "candidates": 2582,
+    "positives": 125
+  },
+  {
+    "step": 7800,
+    "elapsed_seconds": 186.42252599808853,
+    "training_seconds": 175.93240086606238,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15961593638803606,
+    "candidates": 4947,
+    "positives": 173
+  },
+  {
+    "step": 7900,
+    "elapsed_seconds": 188.7019787390018,
+    "training_seconds": 178.20995884318836,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10897894648951478,
+    "candidates": 9113,
+    "positives": 236
+  },
+  {
+    "step": 8000,
+    "elapsed_seconds": 190.82102285302244,
+    "training_seconds": 180.32713724090718,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19944097520783544,
+    "candidates": 848,
+    "positives": 71
+  },
+  {
+    "step": 8100,
+    "elapsed_seconds": 192.97595121199265,
+    "training_seconds": 182.47058862273116,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.129048867522215,
+    "candidates": 5171,
+    "positives": 184
+  },
+  {
+    "step": 8200,
+    "elapsed_seconds": 195.09134554106276,
+    "training_seconds": 184.58402537775692,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.21018052160798106,
+    "candidates": 2115,
+    "positives": 116
+  },
+  {
+    "step": 8300,
+    "elapsed_seconds": 197.40775789599866,
+    "training_seconds": 186.89850193727762,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.30760391312651336,
+    "candidates": 832,
+    "positives": 70
+  },
+  {
+    "step": 8400,
+    "elapsed_seconds": 199.5859263530001,
+    "training_seconds": 189.07461330434307,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1442401089516352,
+    "candidates": 5546,
+    "positives": 181
+  },
+  {
+    "step": 8500,
+    "elapsed_seconds": 201.92636173102073,
+    "training_seconds": 191.4130039488664,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13924400639371015,
+    "candidates": 5804,
+    "positives": 198
+  },
+  {
+    "step": 8600,
+    "elapsed_seconds": 204.21724868600722,
+    "training_seconds": 193.69235673861112,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1434287396259606,
+    "candidates": 3609,
+    "positives": 139
+  },
+  {
+    "step": 8700,
+    "elapsed_seconds": 206.39687371905893,
+    "training_seconds": 195.8699920970248,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.22213116101920605,
+    "candidates": 1061,
+    "positives": 84
+  },
+  {
+    "step": 8800,
+    "elapsed_seconds": 208.55783583200537,
+    "training_seconds": 198.02905084891245,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13915694878414797,
+    "candidates": 3831,
+    "positives": 134
+  },
+  {
+    "step": 8900,
+    "elapsed_seconds": 210.7895616000751,
+    "training_seconds": 200.2587665359024,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1497623605609988,
+    "candidates": 2118,
+    "positives": 93
+  },
+  {
+    "step": 9000,
+    "elapsed_seconds": 213.00348206108902,
+    "training_seconds": 202.47069742321037,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.2743177101947367,
+    "candidates": 670,
+    "positives": 70
+  },
+  {
+    "step": 9100,
+    "elapsed_seconds": 215.18338898709044,
+    "training_seconds": 204.63843370659743,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14459969635936432,
+    "candidates": 2626,
+    "positives": 106
+  },
+  {
+    "step": 9200,
+    "elapsed_seconds": 217.46748283400666,
+    "training_seconds": 206.92055834748317,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1976028572244104,
+    "candidates": 3274,
+    "positives": 150
+  },
+  {
+    "step": 9300,
+    "elapsed_seconds": 219.77031252509914,
+    "training_seconds": 209.22126250260044,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18965643388219178,
+    "candidates": 2999,
+    "positives": 158
+  },
+  {
+    "step": 9400,
+    "elapsed_seconds": 222.05431848904118,
+    "training_seconds": 211.50322726927698,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12807317278748087,
+    "candidates": 6559,
+    "positives": 208
+  },
+  {
+    "step": 9500,
+    "elapsed_seconds": 224.22179158509243,
+    "training_seconds": 213.66862799716182,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17454691385501064,
+    "candidates": 2752,
+    "positives": 131
+  },
+  {
+    "step": 9600,
+    "elapsed_seconds": 226.51324505906086,
+    "training_seconds": 215.9482036033878,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14016202641141717,
+    "candidates": 5466,
+    "positives": 193
+  },
+  {
+    "step": 9700,
+    "elapsed_seconds": 228.68213539209682,
+    "training_seconds": 218.11478054278996,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17847358956896642,
+    "candidates": 2591,
+    "positives": 116
+  },
+  {
+    "step": 9800,
+    "elapsed_seconds": 230.8873510910198,
+    "training_seconds": 220.31792977638543,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15533547173254192,
+    "candidates": 4804,
+    "positives": 183
+  },
+  {
+    "step": 9900,
+    "elapsed_seconds": 233.08988900808617,
+    "training_seconds": 222.51844213635195,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18034397944575176,
+    "candidates": 4838,
+    "positives": 217
+  },
+  {
+    "step": 10000,
+    "elapsed_seconds": 235.32645671803039,
+    "training_seconds": 224.75300227163825,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17198831761197653,
+    "candidates": 2880,
+    "positives": 142
+  },
+  {
+    "step": 10100,
+    "elapsed_seconds": 237.65952553902753,
+    "training_seconds": 227.07385965401772,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.28595726774074137,
+    "candidates": 695,
+    "positives": 71
+  },
+  {
+    "step": 10200,
+    "elapsed_seconds": 239.8679409120232,
+    "training_seconds": 229.28009575919714,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18433023258694448,
+    "candidates": 2960,
+    "positives": 142
+  },
+  {
+    "step": 10300,
+    "elapsed_seconds": 242.09333780803718,
+    "training_seconds": 231.50321857747622,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18806491792201996,
+    "candidates": 2875,
+    "positives": 137
+  },
+  {
+    "step": 10400,
+    "elapsed_seconds": 244.23088147002272,
+    "training_seconds": 233.6384817948565,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17854963225545362,
+    "candidates": 5131,
+    "positives": 233
+  },
+  {
+    "step": 10500,
+    "elapsed_seconds": 246.56319532205816,
+    "training_seconds": 235.96868091623764,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.2291525063192239,
+    "candidates": 973,
+    "positives": 69
+  },
+  {
+    "step": 10600,
+    "elapsed_seconds": 248.78140233503655,
+    "training_seconds": 238.1755506307818,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16494907264132053,
+    "candidates": 4476,
+    "positives": 182
+  },
+  {
+    "step": 10700,
+    "elapsed_seconds": 250.82819338107947,
+    "training_seconds": 240.2202539104037,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1876017993199639,
+    "candidates": 3602,
+    "positives": 167
+  },
+  {
+    "step": 10800,
+    "elapsed_seconds": 252.86118048604112,
+    "training_seconds": 242.25100652931724,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.26368607534095645,
+    "candidates": 831,
+    "positives": 80
+  },
+  {
+    "step": 10900,
+    "elapsed_seconds": 254.97168326703832,
+    "training_seconds": 244.35885526414495,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17350004876061575,
+    "candidates": 2882,
+    "positives": 138
+  },
+  {
+    "step": 11000,
+    "elapsed_seconds": 257.0090876449831,
+    "training_seconds": 246.39368028147146,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.21700788985253894,
+    "candidates": 2326,
+    "positives": 134
+  },
+  {
+    "step": 11100,
+    "elapsed_seconds": 259.1004101630533,
+    "training_seconds": 248.4720708541572,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1918084821663797,
+    "candidates": 1773,
+    "positives": 100
+  },
+  {
+    "step": 11200,
+    "elapsed_seconds": 260.9730680300854,
+    "training_seconds": 250.3425786519656,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19072643376421183,
+    "candidates": 1914,
+    "positives": 107
+  },
+  {
+    "step": 11300,
+    "elapsed_seconds": 263.05255736608524,
+    "training_seconds": 252.4199077944504,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1607058054796653,
+    "candidates": 4681,
+    "positives": 170
+  },
+  {
+    "step": 11400,
+    "elapsed_seconds": 265.01412764401175,
+    "training_seconds": 254.379260429414,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10196714358585268,
+    "candidates": 6972,
+    "positives": 162
+  },
+  {
+    "step": 11500,
+    "elapsed_seconds": 267.2786577360239,
+    "training_seconds": 256.6415283761453,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1251328112120973,
+    "candidates": 9509,
+    "positives": 270
+  },
+  {
+    "step": 11600,
+    "elapsed_seconds": 269.2359675030457,
+    "training_seconds": 258.5862201814307,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.164385994069562,
+    "candidates": 3205,
+    "positives": 156
+  },
+  {
+    "step": 11700,
+    "elapsed_seconds": 271.2344151249854,
+    "training_seconds": 260.5824063217733,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.2048630597491865,
+    "candidates": 2330,
+    "positives": 131
+  },
+  {
+    "step": 11800,
+    "elapsed_seconds": 273.28377931402065,
+    "training_seconds": 262.62964537460357,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18443335685878992,
+    "candidates": 977,
+    "positives": 69
+  },
+  {
+    "step": 11900,
+    "elapsed_seconds": 275.31436683109496,
+    "training_seconds": 264.657734797569,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.22602789596567163,
+    "candidates": 1838,
+    "positives": 126
+  },
+  {
+    "step": 12000,
+    "elapsed_seconds": 277.4290366770001,
+    "training_seconds": 266.77003816585056,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.2262409996619681,
+    "candidates": 1243,
+    "positives": 85
+  },
+  {
+    "step": 12100,
+    "elapsed_seconds": 279.37365899409633,
+    "training_seconds": 268.7020242323633,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15404853794370865,
+    "candidates": 1988,
+    "positives": 86
+  },
+  {
+    "step": 12200,
+    "elapsed_seconds": 281.3353485270636,
+    "training_seconds": 270.66155294375494,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.25098622488440014,
+    "candidates": 1138,
+    "positives": 88
+  },
+  {
+    "step": 12300,
+    "elapsed_seconds": 283.3429459760664,
+    "training_seconds": 272.6668990746839,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13403254375771212,
+    "candidates": 7176,
+    "positives": 221
+  },
+  {
+    "step": 12400,
+    "elapsed_seconds": 285.3016964830458,
+    "training_seconds": 274.6234404181596,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17091954592615366,
+    "candidates": 4056,
+    "positives": 169
+  },
+  {
+    "step": 12500,
+    "elapsed_seconds": 287.3625368940411,
+    "training_seconds": 276.68196675542276,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17857810016721487,
+    "candidates": 2194,
+    "positives": 120
+  },
+  {
+    "step": 12600,
+    "elapsed_seconds": 289.550890248036,
+    "training_seconds": 278.850512444973,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.21745957795064896,
+    "candidates": 2348,
+    "positives": 142
+  },
+  {
+    "step": 12700,
+    "elapsed_seconds": 291.604720676085,
+    "training_seconds": 280.90165989636444,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.2053895089775324,
+    "candidates": 1622,
+    "positives": 109
+  },
+  {
+    "step": 12800,
+    "elapsed_seconds": 293.89036443200894,
+    "training_seconds": 283.1850566448411,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13607773991952854,
+    "candidates": 3317,
+    "positives": 108
+  },
+  {
+    "step": 12900,
+    "elapsed_seconds": 296.1824791150866,
+    "training_seconds": 285.46915086510126,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19377647154033184,
+    "candidates": 1269,
+    "positives": 91
+  },
+  {
+    "step": 13000,
+    "elapsed_seconds": 298.36309111106675,
+    "training_seconds": 287.64562291873153,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.24266511807218194,
+    "candidates": 980,
+    "positives": 83
+  },
+  {
+    "step": 13100,
+    "elapsed_seconds": 300.5413011650089,
+    "training_seconds": 289.8088396291714,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.27574709848340717,
+    "candidates": 386,
+    "positives": 52
+  },
+  {
+    "step": 13200,
+    "elapsed_seconds": 302.52911132609006,
+    "training_seconds": 291.79440916189924,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16963513323571533,
+    "candidates": 2461,
+    "positives": 102
+  },
+  {
+    "step": 13300,
+    "elapsed_seconds": 304.65047287603375,
+    "training_seconds": 293.9132634862326,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15577522257808596,
+    "candidates": 6855,
+    "positives": 262
+  },
+  {
+    "step": 13400,
+    "elapsed_seconds": 307.1238859380828,
+    "training_seconds": 296.3841223999625,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.23707037279382348,
+    "candidates": 1564,
+    "positives": 114
+  },
+  {
+    "step": 13500,
+    "elapsed_seconds": 309.38208812708035,
+    "training_seconds": 298.63984236028045,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14220418703780524,
+    "candidates": 4567,
+    "positives": 185
+  },
+  {
+    "step": 13600,
+    "elapsed_seconds": 311.47833351709414,
+    "training_seconds": 300.7232917045476,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1429219834626565,
+    "candidates": 6017,
+    "positives": 211
+  },
+  {
+    "step": 13700,
+    "elapsed_seconds": 313.4334806880215,
+    "training_seconds": 302.6759876443539,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19797613087575883,
+    "candidates": 1660,
+    "positives": 107
+  },
+  {
+    "step": 13800,
+    "elapsed_seconds": 315.60993068199605,
+    "training_seconds": 304.8499732448254,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1498509113152977,
+    "candidates": 2768,
+    "positives": 125
+  },
+  {
+    "step": 13900,
+    "elapsed_seconds": 317.7327787540853,
+    "training_seconds": 306.9703113058349,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16292480478296056,
+    "candidates": 3339,
+    "positives": 157
+  },
+  {
+    "step": 14000,
+    "elapsed_seconds": 319.811314658029,
+    "training_seconds": 309.04650474723894,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1591934300813591,
+    "candidates": 2596,
+    "positives": 127
+  },
+  {
+    "step": 14100,
+    "elapsed_seconds": 321.91292579402216,
+    "training_seconds": 311.13538893987425,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15952492854557931,
+    "candidates": 4082,
+    "positives": 164
+  },
+  {
+    "step": 14200,
+    "elapsed_seconds": 324.1330922150519,
+    "training_seconds": 313.35285938635934,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16817489475943148,
+    "candidates": 3577,
+    "positives": 162
+  },
+  {
+    "step": 14300,
+    "elapsed_seconds": 326.21492151299026,
+    "training_seconds": 315.43218096811324,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19125062779494328,
+    "candidates": 1054,
+    "positives": 68
+  },
+  {
+    "step": 14400,
+    "elapsed_seconds": 328.42156365304254,
+    "training_seconds": 317.6360471730586,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1430849552853033,
+    "candidates": 7902,
+    "positives": 268
+  },
+  {
+    "step": 14500,
+    "elapsed_seconds": 330.43956618208904,
+    "training_seconds": 319.6516791519243,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16137131996219978,
+    "candidates": 2994,
+    "positives": 133
+  },
+  {
+    "step": 14600,
+    "elapsed_seconds": 332.53644100402016,
+    "training_seconds": 321.73662449233234,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19988708605524153,
+    "candidates": 1180,
+    "positives": 83
+  },
+  {
+    "step": 14700,
+    "elapsed_seconds": 334.55196598905604,
+    "training_seconds": 323.74963325902354,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.20049048343935283,
+    "candidates": 1662,
+    "positives": 111
+  },
+  {
+    "step": 14800,
+    "elapsed_seconds": 336.7808923519915,
+    "training_seconds": 325.9761816423852,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15340485079150312,
+    "candidates": 4698,
+    "positives": 183
+  },
+  {
+    "step": 14900,
+    "elapsed_seconds": 338.757407926023,
+    "training_seconds": 327.95017007307615,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18960889189474983,
+    "candidates": 2053,
+    "positives": 102
+  },
+  {
+    "step": 15000,
+    "elapsed_seconds": 340.68855543003883,
+    "training_seconds": 329.87855015683454,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.2382256961427629,
+    "candidates": 1251,
+    "positives": 103
+  },
+  {
+    "step": 15100,
+    "elapsed_seconds": 342.83535237202886,
+    "training_seconds": 332.0131913893856,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.22457990190014243,
+    "candidates": 1522,
+    "positives": 110
+  },
+  {
+    "step": 15200,
+    "elapsed_seconds": 344.78102351003326,
+    "training_seconds": 333.95635089464486,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17124063638038933,
+    "candidates": 2548,
+    "positives": 125
+  },
+  {
+    "step": 15300,
+    "elapsed_seconds": 346.8992570360424,
+    "training_seconds": 336.07187123643234,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16958526963935583,
+    "candidates": 4126,
+    "positives": 154
+  },
+  {
+    "step": 15400,
+    "elapsed_seconds": 348.9640324730426,
+    "training_seconds": 338.1340668282937,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1657372268000472,
+    "candidates": 1364,
+    "positives": 81
+  },
+  {
+    "step": 15500,
+    "elapsed_seconds": 351.03003406501375,
+    "training_seconds": 340.1975436171051,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.22844114364124835,
+    "candidates": 624,
+    "positives": 57
+  },
+  {
+    "step": 15600,
+    "elapsed_seconds": 353.04715560004115,
+    "training_seconds": 342.2021249954123,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17922057677060366,
+    "candidates": 2340,
+    "positives": 127
+  },
+  {
+    "step": 15700,
+    "elapsed_seconds": 355.2028204050148,
+    "training_seconds": 344.355456170626,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17594856501091272,
+    "candidates": 4901,
+    "positives": 203
+  },
+  {
+    "step": 15800,
+    "elapsed_seconds": 357.31820061209146,
+    "training_seconds": 346.46830831223633,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.202720794826746,
+    "candidates": 3509,
+    "positives": 192
+  },
+  {
+    "step": 15900,
+    "elapsed_seconds": 359.5699241780676,
+    "training_seconds": 348.71720416645985,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17627539101522416,
+    "candidates": 1980,
+    "positives": 108
+  },
+  {
+    "step": 16000,
+    "elapsed_seconds": 362.2542246480007,
+    "training_seconds": 351.3988018648233,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16577023826539516,
+    "candidates": 2630,
+    "positives": 128
+  },
+  {
+    "step": 16100,
+    "elapsed_seconds": 364.3331079010386,
+    "training_seconds": 353.44961701426655,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.21383534026244888,
+    "candidates": 1035,
+    "positives": 69
+  },
+  {
+    "step": 16200,
+    "elapsed_seconds": 366.66373776306864,
+    "training_seconds": 355.77771584130824,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17209343402646482,
+    "candidates": 3159,
+    "positives": 159
+  },
+  {
+    "step": 16300,
+    "elapsed_seconds": 368.7475971110398,
+    "training_seconds": 357.85910897690337,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17014979453688284,
+    "candidates": 2061,
+    "positives": 107
+  },
+  {
+    "step": 16400,
+    "elapsed_seconds": 370.76864940999076,
+    "training_seconds": 359.8721372145228,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16256492872901163,
+    "candidates": 3745,
+    "positives": 167
+  },
+  {
+    "step": 16500,
+    "elapsed_seconds": 372.8326204000041,
+    "training_seconds": 361.9335326446453,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1965146861039102,
+    "candidates": 2017,
+    "positives": 130
+  },
+  {
+    "step": 16600,
+    "elapsed_seconds": 374.92376512801275,
+    "training_seconds": 364.01177595742047,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14190690335817635,
+    "candidates": 4127,
+    "positives": 167
+  },
+  {
+    "step": 16700,
+    "elapsed_seconds": 377.0107758489903,
+    "training_seconds": 366.0961080902489,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18057684460654855,
+    "candidates": 1687,
+    "positives": 112
+  },
+  {
+    "step": 16800,
+    "elapsed_seconds": 379.10140719800256,
+    "training_seconds": 368.1843565426534,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1380693682585843,
+    "candidates": 6551,
+    "positives": 230
+  },
+  {
+    "step": 16900,
+    "elapsed_seconds": 381.2339013090823,
+    "training_seconds": 370.314289640286,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15039100067173194,
+    "candidates": 5379,
+    "positives": 205
+  },
+  {
+    "step": 17000,
+    "elapsed_seconds": 383.19940071506426,
+    "training_seconds": 372.277262773714,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19034286429996428,
+    "candidates": 2802,
+    "positives": 142
+  },
+  {
+    "step": 17100,
+    "elapsed_seconds": 385.3098264490254,
+    "training_seconds": 374.3751298658317,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.2632962353527546,
+    "candidates": 541,
+    "positives": 63
+  },
+  {
+    "step": 17200,
+    "elapsed_seconds": 387.5458745569922,
+    "training_seconds": 376.60853015095927,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15500471874838695,
+    "candidates": 3749,
+    "positives": 172
+  },
+  {
+    "step": 17300,
+    "elapsed_seconds": 389.5359778139973,
+    "training_seconds": 378.596241700463,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18731193483108655,
+    "candidates": 1493,
+    "positives": 79
+  },
+  {
+    "step": 17400,
+    "elapsed_seconds": 391.5190995869925,
+    "training_seconds": 380.57671857462265,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1788973408079073,
+    "candidates": 2384,
+    "positives": 131
+  },
+  {
+    "step": 17500,
+    "elapsed_seconds": 393.36798493005335,
+    "training_seconds": 382.4229262054432,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.22883565643383008,
+    "candidates": 1835,
+    "positives": 113
+  },
+  {
+    "step": 17600,
+    "elapsed_seconds": 395.4831329440931,
+    "training_seconds": 384.52586649986915,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12045929881008988,
+    "candidates": 5969,
+    "positives": 193
+  },
+  {
+    "step": 17700,
+    "elapsed_seconds": 397.55980538006406,
+    "training_seconds": 386.5998755854089,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17089519589035262,
+    "candidates": 3714,
+    "positives": 182
+  },
+  {
+    "step": 17800,
+    "elapsed_seconds": 399.5612373300828,
+    "training_seconds": 388.59882435249165,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15620428108377382,
+    "candidates": 4249,
+    "positives": 187
+  },
+  {
+    "step": 17900,
+    "elapsed_seconds": 401.5783515269868,
+    "training_seconds": 390.6134159473004,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.21350245014764369,
+    "candidates": 1739,
+    "positives": 124
+  },
+  {
+    "step": 18000,
+    "elapsed_seconds": 403.58867527206894,
+    "training_seconds": 392.6210726721911,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16299932125548366,
+    "candidates": 3948,
+    "positives": 163
+  },
+  {
+    "step": 18100,
+    "elapsed_seconds": 405.6613751880359,
+    "training_seconds": 394.68140246276744,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1556440059794113,
+    "candidates": 1594,
+    "positives": 90
+  },
+  {
+    "step": 18200,
+    "elapsed_seconds": 407.7602312869858,
+    "training_seconds": 396.7776320511475,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1897007660008967,
+    "candidates": 891,
+    "positives": 67
+  },
+  {
+    "step": 18300,
+    "elapsed_seconds": 409.89952711807564,
+    "training_seconds": 398.9144175196998,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11204612030996941,
+    "candidates": 5960,
+    "positives": 179
+  },
+  {
+    "step": 18400,
+    "elapsed_seconds": 411.8958282850217,
+    "training_seconds": 400.9079184543807,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.20959345139272045,
+    "candidates": 875,
+    "positives": 77
+  },
+  {
+    "step": 18500,
+    "elapsed_seconds": 413.78874330909457,
+    "training_seconds": 402.7981092996197,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19684955367847579,
+    "candidates": 2734,
+    "positives": 149
+  },
+  {
+    "step": 18600,
+    "elapsed_seconds": 415.8829615820432,
+    "training_seconds": 404.8799558854662,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14503298007912235,
+    "candidates": 2042,
+    "positives": 108
+  },
+  {
+    "step": 18700,
+    "elapsed_seconds": 417.90101705898996,
+    "training_seconds": 406.89539923053235,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1664022859185934,
+    "candidates": 2862,
+    "positives": 154
+  },
+  {
+    "step": 18800,
+    "elapsed_seconds": 420.09436178405304,
+    "training_seconds": 409.08607840840705,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17951686988817528,
+    "candidates": 3051,
+    "positives": 149
+  },
+  {
+    "step": 18900,
+    "elapsed_seconds": 422.2239244520897,
+    "training_seconds": 411.2129964082269,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16629616799764335,
+    "candidates": 1579,
+    "positives": 95
+  },
+  {
+    "step": 19000,
+    "elapsed_seconds": 424.1985836230451,
+    "training_seconds": 413.18505485833157,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19797096797265112,
+    "candidates": 2261,
+    "positives": 130
+  },
+  {
+    "step": 19100,
+    "elapsed_seconds": 426.34446545201354,
+    "training_seconds": 415.3190205881838,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15483709599357098,
+    "candidates": 6913,
+    "positives": 266
+  },
+  {
+    "step": 19200,
+    "elapsed_seconds": 428.3255376300076,
+    "training_seconds": 417.2971995041007,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1551492850849172,
+    "candidates": 4837,
+    "positives": 193
+  },
+  {
+    "step": 19300,
+    "elapsed_seconds": 430.3096186920302,
+    "training_seconds": 419.27849438460544,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1787759514991194,
+    "candidates": 2213,
+    "positives": 136
+  },
+  {
+    "step": 19400,
+    "elapsed_seconds": 432.31650349509437,
+    "training_seconds": 421.2825296355877,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18713964836206287,
+    "candidates": 2160,
+    "positives": 116
+  },
+  {
+    "step": 19500,
+    "elapsed_seconds": 434.29967221908737,
+    "training_seconds": 423.26301222573966,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13639793891343288,
+    "candidates": 5649,
+    "positives": 202
+  },
+  {
+    "step": 19600,
+    "elapsed_seconds": 436.471800438012,
+    "training_seconds": 425.42280897835735,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11841387944150483,
+    "candidates": 8536,
+    "positives": 252
+  },
+  {
+    "step": 19700,
+    "elapsed_seconds": 438.5031872690888,
+    "training_seconds": 427.45143496466335,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1913852938450873,
+    "candidates": 2276,
+    "positives": 135
+  },
+  {
+    "step": 19800,
+    "elapsed_seconds": 440.62785935704596,
+    "training_seconds": 429.57327621779405,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13468408284825273,
+    "candidates": 5342,
+    "positives": 207
+  },
+  {
+    "step": 19900,
+    "elapsed_seconds": 442.81656692607794,
+    "training_seconds": 431.7592003151076,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10130092554027215,
+    "candidates": 8405,
+    "positives": 216
+  },
+  {
+    "step": 20000,
+    "elapsed_seconds": 444.85610323399305,
+    "training_seconds": 433.79568992578425,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18027895512932446,
+    "candidates": 2440,
+    "positives": 125
+  },
+  {
+    "step": 20100,
+    "elapsed_seconds": 447.07426705409307,
+    "training_seconds": 436.0018467636546,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14019462022406515,
+    "candidates": 3682,
+    "positives": 147
+  },
+  {
+    "step": 20200,
+    "elapsed_seconds": 449.17129435704555,
+    "training_seconds": 438.09590124024544,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18973339442163706,
+    "candidates": 2307,
+    "positives": 143
+  },
+  {
+    "step": 20300,
+    "elapsed_seconds": 451.16498482599854,
+    "training_seconds": 440.086883802549,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18427090377008426,
+    "candidates": 1349,
+    "positives": 89
+  },
+  {
+    "step": 20400,
+    "elapsed_seconds": 453.2047093739966,
+    "training_seconds": 442.1238770162454,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1351022060680407,
+    "candidates": 6056,
+    "positives": 196
+  },
+  {
+    "step": 20500,
+    "elapsed_seconds": 455.21776471904013,
+    "training_seconds": 444.1342585890088,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1607106335941353,
+    "candidates": 1864,
+    "positives": 71
+  },
+  {
+    "step": 20600,
+    "elapsed_seconds": 457.32891416805796,
+    "training_seconds": 446.23333422560245,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14119554215255903,
+    "candidates": 3069,
+    "positives": 118
+  },
+  {
+    "step": 20700,
+    "elapsed_seconds": 459.3178521130467,
+    "training_seconds": 448.2195283860201,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17724796527181752,
+    "candidates": 3251,
+    "positives": 180
+  },
+  {
+    "step": 20800,
+    "elapsed_seconds": 461.2871872520773,
+    "training_seconds": 450.18596301123034,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1229589844297152,
+    "candidates": 5955,
+    "positives": 201
+  },
+  {
+    "step": 20900,
+    "elapsed_seconds": 463.3846400930779,
+    "training_seconds": 452.28061605256516,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13942365306138527,
+    "candidates": 6548,
+    "positives": 245
+  },
+  {
+    "step": 21000,
+    "elapsed_seconds": 465.3865801880602,
+    "training_seconds": 454.2797983743949,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1997595703433035,
+    "candidates": 1247,
+    "positives": 86
+  },
+  {
+    "step": 21100,
+    "elapsed_seconds": 467.5191235450329,
+    "training_seconds": 456.3994474434294,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14310186004149728,
+    "candidates": 7202,
+    "positives": 248
+  },
+  {
+    "step": 21200,
+    "elapsed_seconds": 469.455174289993,
+    "training_seconds": 458.33252071461175,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14265645244769587,
+    "candidates": 4399,
+    "positives": 179
+  },
+  {
+    "step": 21300,
+    "elapsed_seconds": 471.4379767969949,
+    "training_seconds": 460.31185090518557,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1407792464888189,
+    "candidates": 3858,
+    "positives": 152
+  },
+  {
+    "step": 21400,
+    "elapsed_seconds": 473.3354209290119,
+    "training_seconds": 462.2063708687201,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.22451161476783454,
+    "candidates": 1617,
+    "positives": 116
+  },
+  {
+    "step": 21500,
+    "elapsed_seconds": 475.3389296210371,
+    "training_seconds": 464.20674005441833,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11478469465509988,
+    "candidates": 4163,
+    "positives": 151
+  },
+  {
+    "step": 21600,
+    "elapsed_seconds": 477.4990771750454,
+    "training_seconds": 466.35419856989756,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19836732528506218,
+    "candidates": 792,
+    "positives": 61
+  },
+  {
+    "step": 21700,
+    "elapsed_seconds": 479.4248782140203,
+    "training_seconds": 468.27709710481577,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15708231832832098,
+    "candidates": 3450,
+    "positives": 156
+  },
+  {
+    "step": 21800,
+    "elapsed_seconds": 481.3854929410154,
+    "training_seconds": 470.23502690787427,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1547354047085321,
+    "candidates": 1667,
+    "positives": 95
+  },
+  {
+    "step": 21900,
+    "elapsed_seconds": 483.4305804820033,
+    "training_seconds": 472.27718778385315,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1061876267704065,
+    "candidates": 6925,
+    "positives": 207
+  },
+  {
+    "step": 22000,
+    "elapsed_seconds": 485.4479562040651,
+    "training_seconds": 474.29149833798874,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12978750488400692,
+    "candidates": 3664,
+    "positives": 139
+  },
+  {
+    "step": 22100,
+    "elapsed_seconds": 487.7814808700932,
+    "training_seconds": 476.61246605741326,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13560692549032183,
+    "candidates": 4068,
+    "positives": 158
+  },
+  {
+    "step": 22200,
+    "elapsed_seconds": 490.04536278604064,
+    "training_seconds": 478.8734482964501,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16443520871689543,
+    "candidates": 2079,
+    "positives": 120
+  },
+  {
+    "step": 22300,
+    "elapsed_seconds": 492.3234728710959,
+    "training_seconds": 481.1486962370109,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15076420897094067,
+    "candidates": 5330,
+    "positives": 212
+  },
+  {
+    "step": 22400,
+    "elapsed_seconds": 494.5354182070587,
+    "training_seconds": 483.3576823825715,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15884890482993796,
+    "candidates": 1948,
+    "positives": 105
+  },
+  {
+    "step": 22500,
+    "elapsed_seconds": 496.82362963305786,
+    "training_seconds": 485.6425395052647,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16111696365987882,
+    "candidates": 3610,
+    "positives": 171
+  },
+  {
+    "step": 22600,
+    "elapsed_seconds": 499.0526107220212,
+    "training_seconds": 487.85883396991994,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1611502712348738,
+    "candidates": 1124,
+    "positives": 73
+  },
+  {
+    "step": 22700,
+    "elapsed_seconds": 501.24203392502386,
+    "training_seconds": 490.0454095955938,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19221082035801373,
+    "candidates": 645,
+    "positives": 52
+  },
+  {
+    "step": 22800,
+    "elapsed_seconds": 503.440209979075,
+    "training_seconds": 492.24065150204115,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.21061039609776344,
+    "candidates": 1343,
+    "positives": 96
+  },
+  {
+    "step": 22900,
+    "elapsed_seconds": 505.6567762680352,
+    "training_seconds": 494.4543668566039,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.2015477832464967,
+    "candidates": 1762,
+    "positives": 124
+  },
+  {
+    "step": 23000,
+    "elapsed_seconds": 507.95737537299283,
+    "training_seconds": 496.75167475361377,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17902210637112148,
+    "candidates": 1438,
+    "positives": 96
+  },
+  {
+    "step": 23100,
+    "elapsed_seconds": 510.0863722600043,
+    "training_seconds": 498.86721503327135,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17276075710833538,
+    "candidates": 1277,
+    "positives": 84
+  },
+  {
+    "step": 23200,
+    "elapsed_seconds": 512.3402850900311,
+    "training_seconds": 501.11839246714953,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15163820702582598,
+    "candidates": 1267,
+    "positives": 73
+  },
+  {
+    "step": 23300,
+    "elapsed_seconds": 514.432086473098,
+    "training_seconds": 503.207224200014,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.176332123019165,
+    "candidates": 670,
+    "positives": 59
+  },
+  {
+    "step": 23400,
+    "elapsed_seconds": 516.6834778510965,
+    "training_seconds": 505.45565522951074,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17012361677188892,
+    "candidates": 1989,
+    "positives": 113
+  },
+  {
+    "step": 23500,
+    "elapsed_seconds": 518.8274568429915,
+    "training_seconds": 507.59668181219604,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1492591898640967,
+    "candidates": 931,
+    "positives": 70
+  },
+  {
+    "step": 23600,
+    "elapsed_seconds": 521.111440553097,
+    "training_seconds": 509.8677625294076,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1401922411751002,
+    "candidates": 2784,
+    "positives": 144
+  },
+  {
+    "step": 23700,
+    "elapsed_seconds": 523.3340354820248,
+    "training_seconds": 512.0873485936318,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.3655146755190799,
+    "candidates": 90,
+    "positives": 22
+  },
+  {
+    "step": 23800,
+    "elapsed_seconds": 525.5391963060247,
+    "training_seconds": 514.2895547926892,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14702344108809484,
+    "candidates": 2840,
+    "positives": 126
+  },
+  {
+    "step": 23900,
+    "elapsed_seconds": 527.7074455230031,
+    "training_seconds": 516.4547414579429,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.170723911607638,
+    "candidates": 2580,
+    "positives": 141
+  },
+  {
+    "step": 24000,
+    "elapsed_seconds": 529.9802121589892,
+    "training_seconds": 518.7244483160321,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1132424402385368,
+    "candidates": 8235,
+    "positives": 242
+  },
+  {
+    "step": 24100,
+    "elapsed_seconds": 532.2395504410379,
+    "training_seconds": 520.9703540875344,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18921995214520893,
+    "candidates": 1786,
+    "positives": 114
+  },
+  {
+    "step": 24200,
+    "elapsed_seconds": 534.5371896750294,
+    "training_seconds": 523.2650085197529,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18937899832053517,
+    "candidates": 2491,
+    "positives": 148
+  },
+  {
+    "step": 24300,
+    "elapsed_seconds": 536.7655420840019,
+    "training_seconds": 525.4904276982415,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15132282889680937,
+    "candidates": 2846,
+    "positives": 134
+  },
+  {
+    "step": 24400,
+    "elapsed_seconds": 538.8606994519942,
+    "training_seconds": 527.5826167989289,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15292627602377706,
+    "candidates": 1228,
+    "positives": 68
+  },
+  {
+    "step": 24500,
+    "elapsed_seconds": 541.1020459770225,
+    "training_seconds": 529.8205881328322,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16310786762141305,
+    "candidates": 1227,
+    "positives": 81
+  },
+  {
+    "step": 24600,
+    "elapsed_seconds": 543.3524864590727,
+    "training_seconds": 532.0578404341359,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14071803218485002,
+    "candidates": 2810,
+    "positives": 126
+  },
+  {
+    "step": 24700,
+    "elapsed_seconds": 545.5684135070769,
+    "training_seconds": 534.2707437369972,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17918005865067244,
+    "candidates": 1221,
+    "positives": 103
+  },
+  {
+    "step": 24800,
+    "elapsed_seconds": 547.7581917940406,
+    "training_seconds": 536.4575841861079,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14411666687146862,
+    "candidates": 4455,
+    "positives": 175
+  },
+  {
+    "step": 24900,
+    "elapsed_seconds": 549.9781074069906,
+    "training_seconds": 538.6743969058152,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12465710227797899,
+    "candidates": 3081,
+    "positives": 131
+  },
+  {
+    "step": 25000,
+    "elapsed_seconds": 552.2031207410619,
+    "training_seconds": 540.8962794730905,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1561298433225602,
+    "candidates": 862,
+    "positives": 70
+  },
+  {
+    "step": 25100,
+    "elapsed_seconds": 554.4116567600286,
+    "training_seconds": 543.0918160285801,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13902613415848464,
+    "candidates": 5570,
+    "positives": 236
+  },
+  {
+    "step": 25200,
+    "elapsed_seconds": 556.7578548780875,
+    "training_seconds": 545.4350085259648,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15519947395659983,
+    "candidates": 3957,
+    "positives": 179
+  },
+  {
+    "step": 25300,
+    "elapsed_seconds": 558.9327270890353,
+    "training_seconds": 547.6069157314487,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18456810132192913,
+    "candidates": 2119,
+    "positives": 109
+  },
+  {
+    "step": 25400,
+    "elapsed_seconds": 561.2769067640183,
+    "training_seconds": 549.9478428888833,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.166811837146696,
+    "candidates": 3392,
+    "positives": 162
+  },
+  {
+    "step": 25500,
+    "elapsed_seconds": 563.4755965790246,
+    "training_seconds": 552.1432796657318,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11819874304621525,
+    "candidates": 5876,
+    "positives": 191
+  },
+  {
+    "step": 25600,
+    "elapsed_seconds": 565.6880418150686,
+    "training_seconds": 554.3422090538079,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1518352409475483,
+    "candidates": 3751,
+    "positives": 181
+  },
+  {
+    "step": 25700,
+    "elapsed_seconds": 567.804660325055,
+    "training_seconds": 556.4557410394773,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17795688151007738,
+    "candidates": 2452,
+    "positives": 133
+  },
+  {
+    "step": 25800,
+    "elapsed_seconds": 569.9558172069956,
+    "training_seconds": 558.6035290270811,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12996454157109838,
+    "candidates": 4509,
+    "positives": 185
+  },
+  {
+    "step": 25900,
+    "elapsed_seconds": 572.1737613190198,
+    "training_seconds": 560.8183535478311,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1382902655750513,
+    "candidates": 2550,
+    "positives": 141
+  },
+  {
+    "step": 26000,
+    "elapsed_seconds": 574.3831967300503,
+    "training_seconds": 563.0245003512828,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14234677449530864,
+    "candidates": 3166,
+    "positives": 131
+  },
+  {
+    "step": 26100,
+    "elapsed_seconds": 576.5633827860001,
+    "training_seconds": 565.1920260463376,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18551450230006594,
+    "candidates": 343,
+    "positives": 44
+  },
+  {
+    "step": 26200,
+    "elapsed_seconds": 578.8775327500189,
+    "training_seconds": 567.5031029860256,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14642221212443474,
+    "candidates": 3448,
+    "positives": 147
+  },
+  {
+    "step": 26300,
+    "elapsed_seconds": 581.1873702290468,
+    "training_seconds": 569.8098371569067,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12068599448457462,
+    "candidates": 6904,
+    "positives": 198
+  },
+  {
+    "step": 26400,
+    "elapsed_seconds": 583.3417876440799,
+    "training_seconds": 571.9605391466757,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09423179694567807,
+    "candidates": 13169,
+    "positives": 303
+  },
+  {
+    "step": 26500,
+    "elapsed_seconds": 585.5641002380289,
+    "training_seconds": 574.1796640501125,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1446392935467884,
+    "candidates": 2918,
+    "positives": 150
+  },
+  {
+    "step": 26600,
+    "elapsed_seconds": 587.7506920320448,
+    "training_seconds": 576.3525459779194,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1302102591143921,
+    "candidates": 1790,
+    "positives": 96
+  },
+  {
+    "step": 26700,
+    "elapsed_seconds": 589.9687840649858,
+    "training_seconds": 578.5675239259144,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11408592926492567,
+    "candidates": 7508,
+    "positives": 208
+  },
+  {
+    "step": 26800,
+    "elapsed_seconds": 592.1387276850874,
+    "training_seconds": 580.7343111332739,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13816214399412274,
+    "candidates": 5381,
+    "positives": 203
+  },
+  {
+    "step": 26900,
+    "elapsed_seconds": 594.3161572070094,
+    "training_seconds": 582.9086159053259,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.24107736127916723,
+    "candidates": 457,
+    "positives": 54
+  },
+  {
+    "step": 27000,
+    "elapsed_seconds": 596.4540416899836,
+    "training_seconds": 585.0431192556862,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12142032495466992,
+    "candidates": 3519,
+    "positives": 121
+  },
+  {
+    "step": 27100,
+    "elapsed_seconds": 598.5806004740298,
+    "training_seconds": 587.1564699368319,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19859063753392547,
+    "candidates": 981,
+    "positives": 82
+  },
+  {
+    "step": 27200,
+    "elapsed_seconds": 600.8580322490307,
+    "training_seconds": 589.4306162198773,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13508707371693163,
+    "candidates": 4847,
+    "positives": 175
+  },
+  {
+    "step": 27300,
+    "elapsed_seconds": 603.1662982930429,
+    "training_seconds": 591.7350448863581,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1335957667324692,
+    "candidates": 728,
+    "positives": 67
+  },
+  {
+    "step": 27400,
+    "elapsed_seconds": 605.2411969800014,
+    "training_seconds": 593.8062626279425,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.23275609640404582,
+    "candidates": 729,
+    "positives": 71
+  },
+  {
+    "step": 27500,
+    "elapsed_seconds": 607.4115366210463,
+    "training_seconds": 595.9732584170997,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17479445622302592,
+    "candidates": 2131,
+    "positives": 120
+  },
+  {
+    "step": 27600,
+    "elapsed_seconds": 609.5764704690082,
+    "training_seconds": 598.1244954376016,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15072111057452275,
+    "candidates": 2924,
+    "positives": 143
+  },
+  {
+    "step": 27700,
+    "elapsed_seconds": 611.8020370430313,
+    "training_seconds": 600.3463259794516,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14643044234253466,
+    "candidates": 2599,
+    "positives": 145
+  },
+  {
+    "step": 27800,
+    "elapsed_seconds": 614.0123597220518,
+    "training_seconds": 602.5487754329806,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13600076477632683,
+    "candidates": 3062,
+    "positives": 122
+  },
+  {
+    "step": 27900,
+    "elapsed_seconds": 616.2674449370243,
+    "training_seconds": 604.7996975032147,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17347699322272092,
+    "candidates": 1624,
+    "positives": 93
+  },
+  {
+    "step": 28000,
+    "elapsed_seconds": 618.4656383980764,
+    "training_seconds": 606.9945767641766,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13639863132266328,
+    "candidates": 3076,
+    "positives": 143
+  },
+  {
+    "step": 28100,
+    "elapsed_seconds": 620.7769247080432,
+    "training_seconds": 609.2924107196741,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13870016592773027,
+    "candidates": 2321,
+    "positives": 116
+  },
+  {
+    "step": 28200,
+    "elapsed_seconds": 623.0774066110607,
+    "training_seconds": 611.589613790391,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16654215194284916,
+    "candidates": 1864,
+    "positives": 131
+  },
+  {
+    "step": 28300,
+    "elapsed_seconds": 625.2252934760181,
+    "training_seconds": 613.7341489157407,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11855590608320199,
+    "candidates": 4792,
+    "positives": 178
+  },
+  {
+    "step": 28400,
+    "elapsed_seconds": 627.4527719060425,
+    "training_seconds": 615.9583013150841,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14699719968484715,
+    "candidates": 4902,
+    "positives": 197
+  },
+  {
+    "step": 28500,
+    "elapsed_seconds": 629.5907185660908,
+    "training_seconds": 618.092976171989,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1650028207625951,
+    "candidates": 2738,
+    "positives": 128
+  },
+  {
+    "step": 28600,
+    "elapsed_seconds": 631.845807993086,
+    "training_seconds": 620.3348419637186,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12588579719522386,
+    "candidates": 1349,
+    "positives": 80
+  },
+  {
+    "step": 28700,
+    "elapsed_seconds": 634.0161943570711,
+    "training_seconds": 622.5020009531872,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11869441474846099,
+    "candidates": 4579,
+    "positives": 144
+  },
+  {
+    "step": 28800,
+    "elapsed_seconds": 636.2376389050623,
+    "training_seconds": 624.719993854058,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11085471797234447,
+    "candidates": 5979,
+    "positives": 150
+  },
+  {
+    "step": 28900,
+    "elapsed_seconds": 638.4369848540518,
+    "training_seconds": 626.9161254350329,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1399069761057241,
+    "candidates": 1690,
+    "positives": 100
+  },
+  {
+    "step": 29000,
+    "elapsed_seconds": 640.6200851059984,
+    "training_seconds": 629.0926407728111,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1568371127359569,
+    "candidates": 1977,
+    "positives": 111
+  },
+  {
+    "step": 29100,
+    "elapsed_seconds": 642.8609772350173,
+    "training_seconds": 631.3205135830212,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1352416593399539,
+    "candidates": 4389,
+    "positives": 184
+  },
+  {
+    "step": 29200,
+    "elapsed_seconds": 645.1046136930818,
+    "training_seconds": 633.5608681807062,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12338346184697002,
+    "candidates": 5771,
+    "positives": 196
+  },
+  {
+    "step": 29300,
+    "elapsed_seconds": 647.3271779490169,
+    "training_seconds": 635.7801298832055,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1879121000338273,
+    "candidates": 1193,
+    "positives": 87
+  },
+  {
+    "step": 29400,
+    "elapsed_seconds": 649.5435426570475,
+    "training_seconds": 637.9931313887937,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.2134575402342307,
+    "candidates": 783,
+    "positives": 59
+  },
+  {
+    "step": 29500,
+    "elapsed_seconds": 651.7382684630575,
+    "training_seconds": 640.1844679770293,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1365456313942559,
+    "candidates": 2672,
+    "positives": 124
+  },
+  {
+    "step": 29600,
+    "elapsed_seconds": 654.0796571699902,
+    "training_seconds": 642.5124561304692,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18707086448557675,
+    "candidates": 330,
+    "positives": 44
+  },
+  {
+    "step": 29700,
+    "elapsed_seconds": 656.4283292900072,
+    "training_seconds": 644.8575747010764,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1018247622932904,
+    "candidates": 9664,
+    "positives": 240
+  },
+  {
+    "step": 29800,
+    "elapsed_seconds": 658.7359627120895,
+    "training_seconds": 647.1614184225909,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1310479612818347,
+    "candidates": 7776,
+    "positives": 291
+  },
+  {
+    "step": 29900,
+    "elapsed_seconds": 660.965350142098,
+    "training_seconds": 649.3744282684056,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15616872875398258,
+    "candidates": 2099,
+    "positives": 120
+  },
+  {
+    "step": 30000,
+    "elapsed_seconds": 663.1162758000428,
+    "training_seconds": 651.521946452558,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16958290190450498,
+    "candidates": 2493,
+    "positives": 138
+  },
+  {
+    "step": 30100,
+    "elapsed_seconds": 665.4140640289988,
+    "training_seconds": 653.7964958351804,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15969572415633593,
+    "candidates": 2477,
+    "positives": 135
+  },
+  {
+    "step": 30200,
+    "elapsed_seconds": 667.6308685810072,
+    "training_seconds": 656.0099146110006,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13292206590995193,
+    "candidates": 841,
+    "positives": 77
+  },
+  {
+    "step": 30300,
+    "elapsed_seconds": 669.8705669949995,
+    "training_seconds": 658.246191410115,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13347609643824399,
+    "candidates": 4344,
+    "positives": 165
+  },
+  {
+    "step": 30400,
+    "elapsed_seconds": 672.1133258590708,
+    "training_seconds": 660.4850908668013,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11781861072422117,
+    "candidates": 2155,
+    "positives": 110
+  },
+  {
+    "step": 30500,
+    "elapsed_seconds": 674.3506567290751,
+    "training_seconds": 662.7187763624825,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12439154216554016,
+    "candidates": 5630,
+    "positives": 186
+  },
+  {
+    "step": 30600,
+    "elapsed_seconds": 676.6224772960413,
+    "training_seconds": 664.9767213487066,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1530134262284264,
+    "candidates": 2100,
+    "positives": 115
+  },
+  {
+    "step": 30700,
+    "elapsed_seconds": 678.9254932240583,
+    "training_seconds": 667.2763503956376,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12047664510828326,
+    "candidates": 7312,
+    "positives": 232
+  },
+  {
+    "step": 30800,
+    "elapsed_seconds": 681.143452947028,
+    "training_seconds": 669.490920608514,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11500622005470262,
+    "candidates": 2060,
+    "positives": 102
+  },
+  {
+    "step": 30900,
+    "elapsed_seconds": 683.3773849550635,
+    "training_seconds": 671.7214258951135,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12047238927880244,
+    "candidates": 4537,
+    "positives": 169
+  },
+  {
+    "step": 31000,
+    "elapsed_seconds": 685.5723523860797,
+    "training_seconds": 673.9128662504954,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14585580345638505,
+    "candidates": 1362,
+    "positives": 78
+  },
+  {
+    "step": 31100,
+    "elapsed_seconds": 687.9207373780664,
+    "training_seconds": 676.248269280768,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1357588406826835,
+    "candidates": 8709,
+    "positives": 291
+  },
+  {
+    "step": 31200,
+    "elapsed_seconds": 690.1761137950234,
+    "training_seconds": 678.500080630416,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13597890442082528,
+    "candidates": 3725,
+    "positives": 155
+  },
+  {
+    "step": 31300,
+    "elapsed_seconds": 692.466079813079,
+    "training_seconds": 680.7864789554151,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1592036676593125,
+    "candidates": 2050,
+    "positives": 140
+  },
+  {
+    "step": 31400,
+    "elapsed_seconds": 694.6665449300781,
+    "training_seconds": 682.9835013044067,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13057583203772083,
+    "candidates": 3645,
+    "positives": 159
+  },
+  {
+    "step": 31500,
+    "elapsed_seconds": 696.9685178570217,
+    "training_seconds": 685.2821467955364,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15176672700908966,
+    "candidates": 1277,
+    "positives": 87
+  },
+  {
+    "step": 31600,
+    "elapsed_seconds": 699.0464903160464,
+    "training_seconds": 687.3466362028848,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18735942490093294,
+    "candidates": 2827,
+    "positives": 151
+  },
+  {
+    "step": 31700,
+    "elapsed_seconds": 701.2979823590722,
+    "training_seconds": 689.5947456174763,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1374825509810762,
+    "candidates": 1452,
+    "positives": 94
+  },
+  {
+    "step": 31800,
+    "elapsed_seconds": 703.3963348150719,
+    "training_seconds": 691.6897360206349,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1337566525908187,
+    "candidates": 1783,
+    "positives": 124
+  },
+  {
+    "step": 31900,
+    "elapsed_seconds": 705.6353801609948,
+    "training_seconds": 693.925443566055,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16573056706693023,
+    "candidates": 3375,
+    "positives": 178
+  },
+  {
+    "step": 32000,
+    "elapsed_seconds": 707.8700449180324,
+    "training_seconds": 696.1565478069242,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1494839619845152,
+    "candidates": 4095,
+    "positives": 178
+  },
+  {
+    "step": 32100,
+    "elapsed_seconds": 710.1238490180112,
+    "training_seconds": 698.3965249813627,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17271574489495833,
+    "candidates": 2304,
+    "positives": 130
+  },
+  {
+    "step": 32200,
+    "elapsed_seconds": 712.253407389042,
+    "training_seconds": 700.5226528833155,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13604826316350227,
+    "candidates": 2656,
+    "positives": 133
+  },
+  {
+    "step": 32300,
+    "elapsed_seconds": 714.47477118799,
+    "training_seconds": 702.7405690782471,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11865273010562305,
+    "candidates": 2488,
+    "positives": 119
+  },
+  {
+    "step": 32400,
+    "elapsed_seconds": 716.7469721779926,
+    "training_seconds": 705.0088201842736,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1647872144021676,
+    "candidates": 1320,
+    "positives": 95
+  },
+  {
+    "step": 32500,
+    "elapsed_seconds": 718.9558134790277,
+    "training_seconds": 707.2141812515911,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17148703976272373,
+    "candidates": 609,
+    "positives": 57
+  },
+  {
+    "step": 32600,
+    "elapsed_seconds": 721.4318166400772,
+    "training_seconds": 709.676629044814,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13176762696821243,
+    "candidates": 2721,
+    "positives": 142
+  },
+  {
+    "step": 32700,
+    "elapsed_seconds": 723.7477812620346,
+    "training_seconds": 711.9882883338723,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10888582607731223,
+    "candidates": 3581,
+    "positives": 139
+  },
+  {
+    "step": 32800,
+    "elapsed_seconds": 725.9508817370515,
+    "training_seconds": 714.1878678498324,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14636804978363216,
+    "candidates": 5770,
+    "positives": 229
+  },
+  {
+    "step": 32900,
+    "elapsed_seconds": 728.1626349150902,
+    "training_seconds": 716.3960036307108,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.157162674996016,
+    "candidates": 654,
+    "positives": 57
+  },
+  {
+    "step": 33000,
+    "elapsed_seconds": 730.3877228040947,
+    "training_seconds": 718.6175802821526,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12987731338944286,
+    "candidates": 3251,
+    "positives": 151
+  },
+  {
+    "step": 33100,
+    "elapsed_seconds": 732.5715502420207,
+    "training_seconds": 720.7812535578851,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14024379012698773,
+    "candidates": 4004,
+    "positives": 188
+  },
+  {
+    "step": 33200,
+    "elapsed_seconds": 734.8666226470377,
+    "training_seconds": 723.0728353036102,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1408662845769868,
+    "candidates": 2989,
+    "positives": 142
+  },
+  {
+    "step": 33300,
+    "elapsed_seconds": 737.095222291071,
+    "training_seconds": 725.298014148022,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.20077793148811907,
+    "candidates": 225,
+    "positives": 36
+  },
+  {
+    "step": 33400,
+    "elapsed_seconds": 739.3565035940846,
+    "training_seconds": 727.5553336533485,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09890663169517211,
+    "candidates": 4212,
+    "positives": 136
+  },
+  {
+    "step": 33500,
+    "elapsed_seconds": 741.6238877490396,
+    "training_seconds": 729.8192497849232,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1336240300879581,
+    "candidates": 3966,
+    "positives": 175
+  },
+  {
+    "step": 33600,
+    "elapsed_seconds": 743.9080896510277,
+    "training_seconds": 732.090014793328,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14236568665364757,
+    "candidates": 4230,
+    "positives": 206
+  },
+  {
+    "step": 33700,
+    "elapsed_seconds": 746.0793067350751,
+    "training_seconds": 734.2576125451596,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11496513098427386,
+    "candidates": 4113,
+    "positives": 164
+  },
+  {
+    "step": 33800,
+    "elapsed_seconds": 748.3696439740015,
+    "training_seconds": 736.5444927257486,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10530614538583905,
+    "candidates": 7168,
+    "positives": 225
+  },
+  {
+    "step": 33900,
+    "elapsed_seconds": 750.6393105470343,
+    "training_seconds": 738.8106374862837,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15642666327767074,
+    "candidates": 525,
+    "positives": 54
+  },
+  {
+    "step": 34000,
+    "elapsed_seconds": 753.0847938529914,
+    "training_seconds": 741.2525205243146,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1658058569446439,
+    "candidates": 1202,
+    "positives": 91
+  },
+  {
+    "step": 34100,
+    "elapsed_seconds": 755.5239929670934,
+    "training_seconds": 743.6773944396991,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12742978458004472,
+    "candidates": 2234,
+    "positives": 118
+  },
+  {
+    "step": 34200,
+    "elapsed_seconds": 757.9846713159932,
+    "training_seconds": 746.1342956811422,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1453451316920109,
+    "candidates": 3714,
+    "positives": 184
+  },
+  {
+    "step": 34300,
+    "elapsed_seconds": 760.2138059000717,
+    "training_seconds": 748.3596833434422,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14404641912551597,
+    "candidates": 3683,
+    "positives": 173
+  },
+  {
+    "step": 34400,
+    "elapsed_seconds": 762.3855120440712,
+    "training_seconds": 750.5271904334659,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11426956201830762,
+    "candidates": 8710,
+    "positives": 260
+  },
+  {
+    "step": 34500,
+    "elapsed_seconds": 764.6134829700459,
+    "training_seconds": 752.7515647404362,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12079519720282406,
+    "candidates": 6192,
+    "positives": 232
+  },
+  {
+    "step": 34600,
+    "elapsed_seconds": 766.8833156680921,
+    "training_seconds": 755.0082893805811,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13590358142391779,
+    "candidates": 3489,
+    "positives": 154
+  },
+  {
+    "step": 34700,
+    "elapsed_seconds": 769.0734786780085,
+    "training_seconds": 757.1948145425413,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14021782507916214,
+    "candidates": 2057,
+    "positives": 107
+  },
+  {
+    "step": 34800,
+    "elapsed_seconds": 771.1761653460562,
+    "training_seconds": 759.2938607073156,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13866665287059732,
+    "candidates": 4165,
+    "positives": 186
+  },
+  {
+    "step": 34900,
+    "elapsed_seconds": 773.3643355360255,
+    "training_seconds": 761.4785553653492,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.118630123655636,
+    "candidates": 5574,
+    "positives": 164
+  },
+  {
+    "step": 35000,
+    "elapsed_seconds": 775.5467545080464,
+    "training_seconds": 763.6572874172125,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12221389752812684,
+    "candidates": 4827,
+    "positives": 205
+  },
+  {
+    "step": 35100,
+    "elapsed_seconds": 777.8647308890941,
+    "training_seconds": 765.9612959064543,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13967265286191832,
+    "candidates": 5254,
+    "positives": 220
+  },
+  {
+    "step": 35200,
+    "elapsed_seconds": 780.0559968450107,
+    "training_seconds": 768.1489146609092,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16115821554558352,
+    "candidates": 2787,
+    "positives": 160
+  },
+  {
+    "step": 35300,
+    "elapsed_seconds": 782.1679432550445,
+    "training_seconds": 770.257154440158,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14941559808872729,
+    "candidates": 1259,
+    "positives": 85
+  },
+  {
+    "step": 35400,
+    "elapsed_seconds": 784.5507060600212,
+    "training_seconds": 772.6358843186172,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11749170419034272,
+    "candidates": 5201,
+    "positives": 183
+  },
+  {
+    "step": 35500,
+    "elapsed_seconds": 786.7454595590243,
+    "training_seconds": 774.8268127194606,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13519885102232365,
+    "candidates": 2284,
+    "positives": 125
+  },
+  {
+    "step": 35600,
+    "elapsed_seconds": 789.0206029870315,
+    "training_seconds": 777.0879315424245,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11563016019499628,
+    "candidates": 4520,
+    "positives": 155
+  },
+  {
+    "step": 35700,
+    "elapsed_seconds": 791.2348376960726,
+    "training_seconds": 779.2984128610697,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1451411481453988,
+    "candidates": 2457,
+    "positives": 136
+  },
+  {
+    "step": 35800,
+    "elapsed_seconds": 793.4167689949973,
+    "training_seconds": 781.4766385714756,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10792986608316824,
+    "candidates": 986,
+    "positives": 65
+  },
+  {
+    "step": 35900,
+    "elapsed_seconds": 795.6543886620784,
+    "training_seconds": 783.710541643668,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16038170518920933,
+    "candidates": 2324,
+    "positives": 127
+  },
+  {
+    "step": 36000,
+    "elapsed_seconds": 797.8573262140853,
+    "training_seconds": 785.9098329630215,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12504930258728564,
+    "candidates": 1603,
+    "positives": 95
+  },
+  {
+    "step": 36100,
+    "elapsed_seconds": 800.1446522580227,
+    "training_seconds": 788.1836984079564,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.21570657394102,
+    "candidates": 294,
+    "positives": 37
+  },
+  {
+    "step": 36200,
+    "elapsed_seconds": 802.4151454020757,
+    "training_seconds": 790.4504323240835,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16046067385468632,
+    "candidates": 2600,
+    "positives": 127
+  },
+  {
+    "step": 36300,
+    "elapsed_seconds": 804.6623844280839,
+    "training_seconds": 792.6939928040374,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14005663339048624,
+    "candidates": 3233,
+    "positives": 170
+  },
+  {
+    "step": 36400,
+    "elapsed_seconds": 806.9964946990367,
+    "training_seconds": 795.0240405990044,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12962073530070484,
+    "candidates": 2631,
+    "positives": 157
+  },
+  {
+    "step": 36500,
+    "elapsed_seconds": 809.1978369019926,
+    "training_seconds": 797.2216553608887,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13212879505499586,
+    "candidates": 3321,
+    "positives": 130
+  },
+  {
+    "step": 36600,
+    "elapsed_seconds": 811.4422890590504,
+    "training_seconds": 799.4528243594104,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1294820855546277,
+    "candidates": 1676,
+    "positives": 98
+  },
+  {
+    "step": 36700,
+    "elapsed_seconds": 813.7146905900445,
+    "training_seconds": 801.7215007756604,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13634680910035968,
+    "candidates": 2119,
+    "positives": 121
+  },
+  {
+    "step": 36800,
+    "elapsed_seconds": 815.9973506340757,
+    "training_seconds": 804.0003993978025,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12376949616650051,
+    "candidates": 3893,
+    "positives": 154
+  },
+  {
+    "step": 36900,
+    "elapsed_seconds": 818.3761352089932,
+    "training_seconds": 806.3754559813533,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12824480905601376,
+    "candidates": 3975,
+    "positives": 153
+  },
+  {
+    "step": 37000,
+    "elapsed_seconds": 820.6452539360616,
+    "training_seconds": 808.6406944775954,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11353526986550833,
+    "candidates": 3321,
+    "positives": 132
+  },
+  {
+    "step": 37100,
+    "elapsed_seconds": 822.8920763180358,
+    "training_seconds": 810.8734748841962,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19269442185759544,
+    "candidates": 2044,
+    "positives": 149
+  },
+  {
+    "step": 37200,
+    "elapsed_seconds": 825.0897860550322,
+    "training_seconds": 813.0673696978483,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11404095066245645,
+    "candidates": 3038,
+    "positives": 149
+  },
+  {
+    "step": 37300,
+    "elapsed_seconds": 827.3671805750346,
+    "training_seconds": 815.3409587342758,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16102300484455156,
+    "candidates": 1592,
+    "positives": 95
+  },
+  {
+    "step": 37400,
+    "elapsed_seconds": 829.6139124050969,
+    "training_seconds": 817.5834596570348,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13147000411481713,
+    "candidates": 5549,
+    "positives": 193
+  },
+  {
+    "step": 37500,
+    "elapsed_seconds": 831.7885158880381,
+    "training_seconds": 819.7541717533022,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12245105701716208,
+    "candidates": 4813,
+    "positives": 190
+  },
+  {
+    "step": 37600,
+    "elapsed_seconds": 833.8609479060397,
+    "training_seconds": 821.8132215291262,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11678505758754909,
+    "candidates": 3720,
+    "positives": 147
+  },
+  {
+    "step": 37700,
+    "elapsed_seconds": 836.0100618210854,
+    "training_seconds": 823.9586597239831,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12412344008043874,
+    "candidates": 2433,
+    "positives": 122
+  },
+  {
+    "step": 37800,
+    "elapsed_seconds": 838.2535511550959,
+    "training_seconds": 826.1983739206335,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11011280525900702,
+    "candidates": 5715,
+    "positives": 162
+  },
+  {
+    "step": 37900,
+    "elapsed_seconds": 840.4307872729842,
+    "training_seconds": 828.3716130665271,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14461683004628867,
+    "candidates": 3164,
+    "positives": 151
+  },
+  {
+    "step": 38000,
+    "elapsed_seconds": 842.6277762710815,
+    "training_seconds": 830.5648459576769,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.17175274612236535,
+    "candidates": 2568,
+    "positives": 140
+  },
+  {
+    "step": 38100,
+    "elapsed_seconds": 844.9007435790263,
+    "training_seconds": 832.8238653880544,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.18023761719700637,
+    "candidates": 1184,
+    "positives": 82
+  },
+  {
+    "step": 38200,
+    "elapsed_seconds": 847.1514261160046,
+    "training_seconds": 835.0707807271974,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09219723023852566,
+    "candidates": 9609,
+    "positives": 232
+  },
+  {
+    "step": 38300,
+    "elapsed_seconds": 849.4202634200919,
+    "training_seconds": 837.335836241371,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11877813051421526,
+    "candidates": 2802,
+    "positives": 146
+  },
+  {
+    "step": 38400,
+    "elapsed_seconds": 851.6716394760879,
+    "training_seconds": 839.582852318068,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11567705113133542,
+    "candidates": 5388,
+    "positives": 182
+  },
+  {
+    "step": 38500,
+    "elapsed_seconds": 853.9201586800627,
+    "training_seconds": 841.8273414706346,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15618600248126313,
+    "candidates": 4233,
+    "positives": 207
+  },
+  {
+    "step": 38600,
+    "elapsed_seconds": 856.1904297510628,
+    "training_seconds": 844.0831055912422,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14333612035443366,
+    "candidates": 969,
+    "positives": 72
+  },
+  {
+    "step": 38700,
+    "elapsed_seconds": 858.4028020080877,
+    "training_seconds": 846.291564360843,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.23073714994473812,
+    "candidates": 1292,
+    "positives": 96
+  },
+  {
+    "step": 38800,
+    "elapsed_seconds": 860.588832027046,
+    "training_seconds": 848.4736907583429,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13854351034387946,
+    "candidates": 447,
+    "positives": 48
+  },
+  {
+    "step": 38900,
+    "elapsed_seconds": 862.8553155750269,
+    "training_seconds": 850.7362648162525,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14553732215426862,
+    "candidates": 3833,
+    "positives": 166
+  },
+  {
+    "step": 39000,
+    "elapsed_seconds": 865.1262931210222,
+    "training_seconds": 853.003345784382,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1498580209740794,
+    "candidates": 990,
+    "positives": 73
+  },
+  {
+    "step": 39100,
+    "elapsed_seconds": 867.2933055430185,
+    "training_seconds": 855.1561121611157,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11778234228404472,
+    "candidates": 7115,
+    "positives": 231
+  },
+  {
+    "step": 39200,
+    "elapsed_seconds": 869.5420588670531,
+    "training_seconds": 857.4008799577132,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11812071972235572,
+    "candidates": 2735,
+    "positives": 142
+  },
+  {
+    "step": 39300,
+    "elapsed_seconds": 871.7871499980101,
+    "training_seconds": 859.6415837572422,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12539987172277023,
+    "candidates": 4121,
+    "positives": 162
+  },
+  {
+    "step": 39400,
+    "elapsed_seconds": 874.0247055060463,
+    "training_seconds": 861.8752175071277,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12523053123641148,
+    "candidates": 2859,
+    "positives": 123
+  },
+  {
+    "step": 39500,
+    "elapsed_seconds": 876.281301440089,
+    "training_seconds": 864.1278670801548,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12950856154228063,
+    "candidates": 2836,
+    "positives": 120
+  },
+  {
+    "step": 39600,
+    "elapsed_seconds": 878.3464823539834,
+    "training_seconds": 866.1786440230208,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1352051878502607,
+    "candidates": 490,
+    "positives": 54
+  },
+  {
+    "step": 39700,
+    "elapsed_seconds": 880.508972059004,
+    "training_seconds": 868.3372598430142,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13275461627907248,
+    "candidates": 2031,
+    "positives": 114
+  },
+  {
+    "step": 39800,
+    "elapsed_seconds": 882.7836797820637,
+    "training_seconds": 870.6080639249412,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09366127889370546,
+    "candidates": 679,
+    "positives": 62
+  },
+  {
+    "step": 39900,
+    "elapsed_seconds": 885.0122027070029,
+    "training_seconds": 872.832547806087,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11888712114705413,
+    "candidates": 1687,
+    "positives": 98
+  },
+  {
+    "step": 40000,
+    "elapsed_seconds": 887.2507180480752,
+    "training_seconds": 875.0666233096272,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13675715267163469,
+    "candidates": 1195,
+    "positives": 75
+  },
+  {
+    "step": 40100,
+    "elapsed_seconds": 889.4812132770894,
+    "training_seconds": 877.2834549772087,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12011836772512652,
+    "candidates": 1855,
+    "positives": 98
+  },
+  {
+    "step": 40200,
+    "elapsed_seconds": 891.6510214119917,
+    "training_seconds": 879.4493720328901,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14292423559939493,
+    "candidates": 2664,
+    "positives": 143
+  },
+  {
+    "step": 40300,
+    "elapsed_seconds": 893.9203381320694,
+    "training_seconds": 881.7141688016709,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11991380623658188,
+    "candidates": 2702,
+    "positives": 141
+  },
+  {
+    "step": 40400,
+    "elapsed_seconds": 896.1276534940116,
+    "training_seconds": 883.9175627350342,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12834316032240167,
+    "candidates": 5516,
+    "positives": 217
+  },
+  {
+    "step": 40500,
+    "elapsed_seconds": 898.3288043440552,
+    "training_seconds": 886.114565519616,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.15026784698056872,
+    "candidates": 2906,
+    "positives": 174
+  },
+  {
+    "step": 40600,
+    "elapsed_seconds": 900.7858253140002,
+    "training_seconds": 888.5574951182352,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13875924702733755,
+    "candidates": 6430,
+    "positives": 206
+  },
+  {
+    "step": 40700,
+    "elapsed_seconds": 902.9620748820016,
+    "training_seconds": 890.7297127784695,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09469420175264531,
+    "candidates": 8842,
+    "positives": 233
+  },
+  {
+    "step": 40800,
+    "elapsed_seconds": 905.1366780940443,
+    "training_seconds": 892.9001562506892,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1072124758208588,
+    "candidates": 2767,
+    "positives": 109
+  },
+  {
+    "step": 40900,
+    "elapsed_seconds": 907.2370672350517,
+    "training_seconds": 894.9965785830282,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12950306293350877,
+    "candidates": 2914,
+    "positives": 144
+  },
+  {
+    "step": 41000,
+    "elapsed_seconds": 909.4566188200843,
+    "training_seconds": 897.2121529310243,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13631893228102854,
+    "candidates": 2557,
+    "positives": 136
+  },
+  {
+    "step": 41100,
+    "elapsed_seconds": 911.6877695630537,
+    "training_seconds": 899.4291723024799,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1214995549635205,
+    "candidates": 3435,
+    "positives": 141
+  },
+  {
+    "step": 41200,
+    "elapsed_seconds": 913.9053524590563,
+    "training_seconds": 901.6427389220335,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10519829206032227,
+    "candidates": 5795,
+    "positives": 184
+  },
+  {
+    "step": 41300,
+    "elapsed_seconds": 916.0325434970437,
+    "training_seconds": 903.7655451945029,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12419513054487652,
+    "candidates": 2788,
+    "positives": 134
+  },
+  {
+    "step": 41400,
+    "elapsed_seconds": 918.1668630680069,
+    "training_seconds": 905.8957224233309,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13844383831600737,
+    "candidates": 1923,
+    "positives": 106
+  },
+  {
+    "step": 41500,
+    "elapsed_seconds": 920.1821714109974,
+    "training_seconds": 907.9069993707817,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1269065151709583,
+    "candidates": 4247,
+    "positives": 166
+  },
+  {
+    "step": 41600,
+    "elapsed_seconds": 922.3595700130099,
+    "training_seconds": 910.0706818280742,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1283625653513809,
+    "candidates": 5862,
+    "positives": 234
+  },
+  {
+    "step": 41700,
+    "elapsed_seconds": 924.693638960016,
+    "training_seconds": 912.400523169199,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12916939528531657,
+    "candidates": 1948,
+    "positives": 101
+  },
+  {
+    "step": 41800,
+    "elapsed_seconds": 926.7690100059845,
+    "training_seconds": 914.4715408002958,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09187930302869063,
+    "candidates": 6697,
+    "positives": 194
+  },
+  {
+    "step": 41900,
+    "elapsed_seconds": 929.0195562340086,
+    "training_seconds": 916.7178071393864,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12681505700129492,
+    "candidates": 4379,
+    "positives": 196
+  },
+  {
+    "step": 42000,
+    "elapsed_seconds": 931.1992240439868,
+    "training_seconds": 918.8933527771151,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13224184908904135,
+    "candidates": 3706,
+    "positives": 170
+  },
+  {
+    "step": 42100,
+    "elapsed_seconds": 933.4860427390086,
+    "training_seconds": 921.1661132951267,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11703609857067931,
+    "candidates": 2707,
+    "positives": 131
+  },
+  {
+    "step": 42200,
+    "elapsed_seconds": 935.7604536860017,
+    "training_seconds": 923.4364619040862,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10058824761447083,
+    "candidates": 5122,
+    "positives": 180
+  },
+  {
+    "step": 42300,
+    "elapsed_seconds": 937.8701752220513,
+    "training_seconds": 925.5416704282397,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.2477160116104642,
+    "candidates": 462,
+    "positives": 51
+  },
+  {
+    "step": 42400,
+    "elapsed_seconds": 940.0701464370359,
+    "training_seconds": 927.7375257383101,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1189946514514304,
+    "candidates": 4580,
+    "positives": 174
+  },
+  {
+    "step": 42500,
+    "elapsed_seconds": 942.2793008619919,
+    "training_seconds": 929.9426173031097,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13629277628206182,
+    "candidates": 2197,
+    "positives": 124
+  },
+  {
+    "step": 42600,
+    "elapsed_seconds": 944.5834892489947,
+    "training_seconds": 932.2328313158359,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13220992748392746,
+    "candidates": 1783,
+    "positives": 111
+  },
+  {
+    "step": 42700,
+    "elapsed_seconds": 946.8098077730974,
+    "training_seconds": 934.4550237257499,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10227768652839586,
+    "candidates": 9436,
+    "positives": 256
+  },
+  {
+    "step": 42800,
+    "elapsed_seconds": 949.0653868099907,
+    "training_seconds": 936.7064642402111,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11855825261443442,
+    "candidates": 2979,
+    "positives": 134
+  },
+  {
+    "step": 42900,
+    "elapsed_seconds": 951.2898081149906,
+    "training_seconds": 938.9266261596931,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14584525051225405,
+    "candidates": 3039,
+    "positives": 158
+  },
+  {
+    "step": 43000,
+    "elapsed_seconds": 953.4773499350995,
+    "training_seconds": 941.1098590666661,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1763033311581239,
+    "candidates": 1347,
+    "positives": 96
+  },
+  {
+    "step": 43100,
+    "elapsed_seconds": 955.7276309840381,
+    "training_seconds": 943.3461029747268,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12307593045989051,
+    "candidates": 3134,
+    "positives": 174
+  },
+  {
+    "step": 43200,
+    "elapsed_seconds": 957.9834251160501,
+    "training_seconds": 945.5977764930576,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12139968233532272,
+    "candidates": 3256,
+    "positives": 154
+  },
+  {
+    "step": 43300,
+    "elapsed_seconds": 960.237145622028,
+    "training_seconds": 947.8467762276996,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11509623997676588,
+    "candidates": 3778,
+    "positives": 161
+  },
+  {
+    "step": 43400,
+    "elapsed_seconds": 962.3427732510027,
+    "training_seconds": 949.9448035381502,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.2523113464412745,
+    "candidates": 2098,
+    "positives": 131
+  },
+  {
+    "step": 43500,
+    "elapsed_seconds": 964.5249835960567,
+    "training_seconds": 952.1230258698342,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13160427490947768,
+    "candidates": 2573,
+    "positives": 135
+  },
+  {
+    "step": 43600,
+    "elapsed_seconds": 966.7010423410684,
+    "training_seconds": 954.2840663099196,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12199509916354145,
+    "candidates": 1921,
+    "positives": 110
+  },
+  {
+    "step": 43700,
+    "elapsed_seconds": 968.9628543300787,
+    "training_seconds": 956.537967197015,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11238770600175485,
+    "candidates": 5334,
+    "positives": 199
+  },
+  {
+    "step": 43800,
+    "elapsed_seconds": 971.208659011987,
+    "training_seconds": 958.779600972659,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.08611280679935301,
+    "candidates": 7188,
+    "positives": 182
+  },
+  {
+    "step": 43900,
+    "elapsed_seconds": 973.619111350039,
+    "training_seconds": 961.1858524137642,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13169964304749726,
+    "candidates": 1853,
+    "positives": 89
+  },
+  {
+    "step": 44000,
+    "elapsed_seconds": 975.8247207690729,
+    "training_seconds": 963.3872562306933,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10766979574691504,
+    "candidates": 2596,
+    "positives": 137
+  },
+  {
+    "step": 44100,
+    "elapsed_seconds": 977.9399775650818,
+    "training_seconds": 965.4828542805044,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1380097009241581,
+    "candidates": 1400,
+    "positives": 95
+  },
+  {
+    "step": 44200,
+    "elapsed_seconds": 980.1015042000217,
+    "training_seconds": 967.6393187728245,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.08417819325404707,
+    "candidates": 8563,
+    "positives": 203
+  },
+  {
+    "step": 44300,
+    "elapsed_seconds": 982.3275005280739,
+    "training_seconds": 969.8607862311183,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1232074473143907,
+    "candidates": 3255,
+    "positives": 127
+  },
+  {
+    "step": 44400,
+    "elapsed_seconds": 984.5006787120365,
+    "training_seconds": 972.0297337122029,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12030729778536975,
+    "candidates": 5084,
+    "positives": 172
+  },
+  {
+    "step": 44500,
+    "elapsed_seconds": 986.7120094409911,
+    "training_seconds": 974.2370653748512,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12308103923568936,
+    "candidates": 2680,
+    "positives": 145
+  },
+  {
+    "step": 44600,
+    "elapsed_seconds": 988.9483141230885,
+    "training_seconds": 976.4588301170152,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13383478159357765,
+    "candidates": 2986,
+    "positives": 152
+  },
+  {
+    "step": 44700,
+    "elapsed_seconds": 991.2726546310587,
+    "training_seconds": 978.7789613065543,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12180484885902843,
+    "candidates": 2236,
+    "positives": 106
+  },
+  {
+    "step": 44800,
+    "elapsed_seconds": 993.5566776540363,
+    "training_seconds": 981.0588231646689,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11424577346042497,
+    "candidates": 7690,
+    "positives": 250
+  },
+  {
+    "step": 44900,
+    "elapsed_seconds": 995.6697487320052,
+    "training_seconds": 983.1676523962524,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10962928020308027,
+    "candidates": 7596,
+    "positives": 231
+  },
+  {
+    "step": 45000,
+    "elapsed_seconds": 997.9152434380958,
+    "training_seconds": 985.4089449761668,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10629347433001612,
+    "candidates": 7731,
+    "positives": 223
+  },
+  {
+    "step": 45100,
+    "elapsed_seconds": 1000.1225641450146,
+    "training_seconds": 987.6016036344226,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1289379666923196,
+    "candidates": 3255,
+    "positives": 127
+  },
+  {
+    "step": 45200,
+    "elapsed_seconds": 1002.3321294829948,
+    "training_seconds": 989.8069073704537,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1126334136330236,
+    "candidates": 2788,
+    "positives": 139
+  },
+  {
+    "step": 45300,
+    "elapsed_seconds": 1004.5809269240126,
+    "training_seconds": 992.0498741116608,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.08448263184800453,
+    "candidates": 345,
+    "positives": 41
+  },
+  {
+    "step": 45400,
+    "elapsed_seconds": 1006.8816872059833,
+    "training_seconds": 994.3463985465933,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09434184720066696,
+    "candidates": 4196,
+    "positives": 135
+  },
+  {
+    "step": 45500,
+    "elapsed_seconds": 1009.0182553409832,
+    "training_seconds": 996.478613826097,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11454266951750469,
+    "candidates": 8036,
+    "positives": 224
+  },
+  {
+    "step": 45600,
+    "elapsed_seconds": 1011.2670800210908,
+    "training_seconds": 998.7129091497045,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10407744867279689,
+    "candidates": 7365,
+    "positives": 214
+  },
+  {
+    "step": 45700,
+    "elapsed_seconds": 1013.5929262880236,
+    "training_seconds": 1001.0345062192064,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.08621638451950275,
+    "candidates": 614,
+    "positives": 56
+  },
+  {
+    "step": 45800,
+    "elapsed_seconds": 1015.7815544730984,
+    "training_seconds": 1003.21842133475,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1155486119860143,
+    "candidates": 3718,
+    "positives": 168
+  },
+  {
+    "step": 45900,
+    "elapsed_seconds": 1018.3117751410464,
+    "training_seconds": 1005.7444338171044,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10922720771009153,
+    "candidates": 3570,
+    "positives": 146
+  },
+  {
+    "step": 46000,
+    "elapsed_seconds": 1020.5744597320445,
+    "training_seconds": 1008.0021334117046,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09389865622073401,
+    "candidates": 3109,
+    "positives": 110
+  },
+  {
+    "step": 46100,
+    "elapsed_seconds": 1022.7514580900315,
+    "training_seconds": 1010.1555323789362,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11823635702603497,
+    "candidates": 6826,
+    "positives": 214
+  },
+  {
+    "step": 46200,
+    "elapsed_seconds": 1025.0683091330575,
+    "training_seconds": 1012.4679911026033,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10784278716096196,
+    "candidates": 2313,
+    "positives": 130
+  },
+  {
+    "step": 46300,
+    "elapsed_seconds": 1027.2300298620248,
+    "training_seconds": 1014.6247976918239,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1591425458464073,
+    "candidates": 1660,
+    "positives": 98
+  },
+  {
+    "step": 46400,
+    "elapsed_seconds": 1029.5760262520052,
+    "training_seconds": 1016.9665055947844,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1497303866490256,
+    "candidates": 3331,
+    "positives": 152
+  },
+  {
+    "step": 46500,
+    "elapsed_seconds": 1031.8148795040324,
+    "training_seconds": 1019.2010025944328,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14382237696554512,
+    "candidates": 7113,
+    "positives": 276
+  },
+  {
+    "step": 46600,
+    "elapsed_seconds": 1034.0637963190675,
+    "training_seconds": 1021.4343892425532,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12259074577013962,
+    "candidates": 1126,
+    "positives": 70
+  },
+  {
+    "step": 46700,
+    "elapsed_seconds": 1036.2793684400385,
+    "training_seconds": 1023.6456297104014,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1314156020525843,
+    "candidates": 951,
+    "positives": 71
+  },
+  {
+    "step": 46800,
+    "elapsed_seconds": 1038.467775191064,
+    "training_seconds": 1025.829549431568,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12600971541874273,
+    "candidates": 1758,
+    "positives": 111
+  },
+  {
+    "step": 46900,
+    "elapsed_seconds": 1040.714693068061,
+    "training_seconds": 1028.0719925116282,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10960231989156455,
+    "candidates": 3742,
+    "positives": 164
+  },
+  {
+    "step": 47000,
+    "elapsed_seconds": 1042.878580120043,
+    "training_seconds": 1030.2315517195966,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13775612479912525,
+    "candidates": 2317,
+    "positives": 122
+  },
+  {
+    "step": 47100,
+    "elapsed_seconds": 1045.1396728580585,
+    "training_seconds": 1032.4784265722847,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12513103632727507,
+    "candidates": 908,
+    "positives": 65
+  },
+  {
+    "step": 47200,
+    "elapsed_seconds": 1047.3318133360008,
+    "training_seconds": 1034.666139884037,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16772144918650156,
+    "candidates": 2068,
+    "positives": 137
+  },
+  {
+    "step": 47300,
+    "elapsed_seconds": 1049.5301546140108,
+    "training_seconds": 1036.859586118022,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13673480601573829,
+    "candidates": 4019,
+    "positives": 161
+  },
+  {
+    "step": 47400,
+    "elapsed_seconds": 1051.756348290015,
+    "training_seconds": 1039.0814052124042,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10530424061221311,
+    "candidates": 5458,
+    "positives": 190
+  },
+  {
+    "step": 47500,
+    "elapsed_seconds": 1053.9626234869938,
+    "training_seconds": 1041.2832307079807,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11321845095517347,
+    "candidates": 2611,
+    "positives": 138
+  },
+  {
+    "step": 47600,
+    "elapsed_seconds": 1056.161464577075,
+    "training_seconds": 1043.4674279923784,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13630545946034545,
+    "candidates": 2114,
+    "positives": 116
+  },
+  {
+    "step": 47700,
+    "elapsed_seconds": 1058.3650800980395,
+    "training_seconds": 1045.6663721492514,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11438302796159405,
+    "candidates": 4540,
+    "positives": 201
+  },
+  {
+    "step": 47800,
+    "elapsed_seconds": 1060.5650584100513,
+    "training_seconds": 1047.8617678857408,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12846216250998688,
+    "candidates": 1224,
+    "positives": 72
+  },
+  {
+    "step": 47900,
+    "elapsed_seconds": 1062.7359910050873,
+    "training_seconds": 1050.028318245546,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13912711232389086,
+    "candidates": 2289,
+    "positives": 124
+  },
+  {
+    "step": 48000,
+    "elapsed_seconds": 1064.9524588400964,
+    "training_seconds": 1052.2402066020295,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11893558274670113,
+    "candidates": 2161,
+    "positives": 118
+  },
+  {
+    "step": 48100,
+    "elapsed_seconds": 1067.1422819150612,
+    "training_seconds": 1054.4148590118857,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10432022558234166,
+    "candidates": 6723,
+    "positives": 209
+  },
+  {
+    "step": 48200,
+    "elapsed_seconds": 1069.3187362900935,
+    "training_seconds": 1056.5868269805796,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12523115887961467,
+    "candidates": 3548,
+    "positives": 152
+  },
+  {
+    "step": 48300,
+    "elapsed_seconds": 1071.5553223500028,
+    "training_seconds": 1058.8183823145228,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13290258143024403,
+    "candidates": 2491,
+    "positives": 134
+  },
+  {
+    "step": 48400,
+    "elapsed_seconds": 1073.755506257061,
+    "training_seconds": 1061.0142321389867,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10971413904754443,
+    "candidates": 3198,
+    "positives": 144
+  },
+  {
+    "step": 48500,
+    "elapsed_seconds": 1076.0791798459832,
+    "training_seconds": 1063.3334318444831,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1159958830562573,
+    "candidates": 3726,
+    "positives": 145
+  },
+  {
+    "step": 48600,
+    "elapsed_seconds": 1078.3096992489882,
+    "training_seconds": 1065.5489543109434,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1397087686927989,
+    "candidates": 2187,
+    "positives": 113
+  },
+  {
+    "step": 48700,
+    "elapsed_seconds": 1080.7024085050216,
+    "training_seconds": 1067.9369784025475,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09646269706718158,
+    "candidates": 10800,
+    "positives": 306
+  },
+  {
+    "step": 48800,
+    "elapsed_seconds": 1082.9579512880882,
+    "training_seconds": 1070.187668386614,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11574902049778757,
+    "candidates": 3771,
+    "positives": 180
+  },
+  {
+    "step": 48900,
+    "elapsed_seconds": 1085.1643018220784,
+    "training_seconds": 1072.3885744118597,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11952980328518568,
+    "candidates": 2304,
+    "positives": 107
+  },
+  {
+    "step": 49000,
+    "elapsed_seconds": 1087.3482885910198,
+    "training_seconds": 1074.568055826705,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11952374079010042,
+    "candidates": 4023,
+    "positives": 174
+  },
+  {
+    "step": 49100,
+    "elapsed_seconds": 1089.5726973660057,
+    "training_seconds": 1076.7718527165707,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.0992731651504073,
+    "candidates": 5478,
+    "positives": 180
+  },
+  {
+    "step": 49200,
+    "elapsed_seconds": 1091.854085209081,
+    "training_seconds": 1079.0487693350296,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14946555251663085,
+    "candidates": 909,
+    "positives": 69
+  },
+  {
+    "step": 49300,
+    "elapsed_seconds": 1093.9631025930867,
+    "training_seconds": 1081.1527778645977,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1441093693347284,
+    "candidates": 1121,
+    "positives": 74
+  },
+  {
+    "step": 49400,
+    "elapsed_seconds": 1096.2696908280486,
+    "training_seconds": 1083.4548521045363,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12954534697928466,
+    "candidates": 2026,
+    "positives": 134
+  },
+  {
+    "step": 49500,
+    "elapsed_seconds": 1098.4204222760163,
+    "training_seconds": 1085.6010205738712,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11483684935956262,
+    "candidates": 2818,
+    "positives": 127
+  },
+  {
+    "step": 49600,
+    "elapsed_seconds": 1100.6021077880869,
+    "training_seconds": 1087.7680067748297,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1127861590939574,
+    "candidates": 2335,
+    "positives": 117
+  },
+  {
+    "step": 49700,
+    "elapsed_seconds": 1102.7787982930895,
+    "training_seconds": 1089.9398648823844,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12574884003265652,
+    "candidates": 3278,
+    "positives": 156
+  },
+  {
+    "step": 49800,
+    "elapsed_seconds": 1104.9375768020982,
+    "training_seconds": 1092.0941741224378,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1457846348057501,
+    "candidates": 964,
+    "positives": 67
+  },
+  {
+    "step": 49900,
+    "elapsed_seconds": 1107.1569468870293,
+    "training_seconds": 1094.309015695122,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11824997329313192,
+    "candidates": 2688,
+    "positives": 144
+  },
+  {
+    "step": 50000,
+    "elapsed_seconds": 1109.3125661549857,
+    "training_seconds": 1096.4603564799763,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.08688357507344335,
+    "candidates": 10372,
+    "positives": 272
+  },
+  {
+    "step": 50100,
+    "elapsed_seconds": 1111.5275336880004,
+    "training_seconds": 1098.6603910303675,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.08625009600655176,
+    "candidates": 1202,
+    "positives": 91
+  },
+  {
+    "step": 50200,
+    "elapsed_seconds": 1113.7465779390186,
+    "training_seconds": 1100.8748181265546,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1066559785977006,
+    "candidates": 3210,
+    "positives": 133
+  },
+  {
+    "step": 50300,
+    "elapsed_seconds": 1115.8247136980062,
+    "training_seconds": 1102.9479334590724,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1464660307392478,
+    "candidates": 1678,
+    "positives": 125
+  },
+  {
+    "step": 50400,
+    "elapsed_seconds": 1118.0903461020207,
+    "training_seconds": 1105.2089939720463,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09835669534913904,
+    "candidates": 1683,
+    "positives": 100
+  },
+  {
+    "step": 50500,
+    "elapsed_seconds": 1120.2214175179834,
+    "training_seconds": 1107.3353196503595,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11294356933581184,
+    "candidates": 2112,
+    "positives": 118
+  },
+  {
+    "step": 50600,
+    "elapsed_seconds": 1122.5094036880182,
+    "training_seconds": 1109.608647142537,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11352214272341143,
+    "candidates": 3646,
+    "positives": 150
+  },
+  {
+    "step": 50700,
+    "elapsed_seconds": 1124.8142520640977,
+    "training_seconds": 1111.908643801813,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11180036191944964,
+    "candidates": 4162,
+    "positives": 189
+  },
+  {
+    "step": 50800,
+    "elapsed_seconds": 1127.1207788420143,
+    "training_seconds": 1114.2107099057175,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.2139484836079646,
+    "candidates": 2397,
+    "positives": 145
+  },
+  {
+    "step": 50900,
+    "elapsed_seconds": 1129.3736941330135,
+    "training_seconds": 1116.4589356298093,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12950864138016305,
+    "candidates": 4243,
+    "positives": 201
+  },
+  {
+    "step": 51000,
+    "elapsed_seconds": 1131.5553240050795,
+    "training_seconds": 1118.6358363885665,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1049958162184339,
+    "candidates": 3085,
+    "positives": 141
+  },
+  {
+    "step": 51100,
+    "elapsed_seconds": 1133.8646916790167,
+    "training_seconds": 1120.93048474635,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11760100827917341,
+    "candidates": 5142,
+    "positives": 189
+  },
+  {
+    "step": 51200,
+    "elapsed_seconds": 1136.1839376820717,
+    "training_seconds": 1123.2450145734474,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14132319448981434,
+    "candidates": 1542,
+    "positives": 115
+  },
+  {
+    "step": 51300,
+    "elapsed_seconds": 1138.4505906890845,
+    "training_seconds": 1125.5066527160816,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1054972550274158,
+    "candidates": 2243,
+    "positives": 96
+  },
+  {
+    "step": 51400,
+    "elapsed_seconds": 1140.7302085950505,
+    "training_seconds": 1127.7812212352874,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12925618084591406,
+    "candidates": 5912,
+    "positives": 217
+  },
+  {
+    "step": 51500,
+    "elapsed_seconds": 1142.9625052630436,
+    "training_seconds": 1130.0087709316285,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.07658728218302713,
+    "candidates": 649,
+    "positives": 56
+  },
+  {
+    "step": 51600,
+    "elapsed_seconds": 1145.1387983880704,
+    "training_seconds": 1132.1701896357117,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11011573419826348,
+    "candidates": 2784,
+    "positives": 144
+  },
+  {
+    "step": 51700,
+    "elapsed_seconds": 1147.4396062830929,
+    "training_seconds": 1134.466551479767,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.08854698209324852,
+    "candidates": 2066,
+    "positives": 115
+  },
+  {
+    "step": 51800,
+    "elapsed_seconds": 1149.5618034490617,
+    "training_seconds": 1136.5839951442322,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11144320608582348,
+    "candidates": 1264,
+    "positives": 95
+  },
+  {
+    "step": 51900,
+    "elapsed_seconds": 1151.8387112700148,
+    "training_seconds": 1138.8564205592265,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12636083798861364,
+    "candidates": 2810,
+    "positives": 159
+  },
+  {
+    "step": 52000,
+    "elapsed_seconds": 1154.0080361190485,
+    "training_seconds": 1141.020918248454,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11956476705388204,
+    "candidates": 1222,
+    "positives": 88
+  },
+  {
+    "step": 52100,
+    "elapsed_seconds": 1156.42368017009,
+    "training_seconds": 1143.4217014585156,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10214394444483332,
+    "candidates": 4711,
+    "positives": 183
+  },
+  {
+    "step": 52200,
+    "elapsed_seconds": 1158.6089052060852,
+    "training_seconds": 1145.6023600924527,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09190800439454572,
+    "candidates": 2178,
+    "positives": 117
+  },
+  {
+    "step": 52300,
+    "elapsed_seconds": 1160.69015735609,
+    "training_seconds": 1147.6786221227376,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10121241332672071,
+    "candidates": 4392,
+    "positives": 170
+  },
+  {
+    "step": 52400,
+    "elapsed_seconds": 1162.9609459519852,
+    "training_seconds": 1149.9447537366068,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.0710212059528498,
+    "candidates": 952,
+    "positives": 71
+  },
+  {
+    "step": 52500,
+    "elapsed_seconds": 1165.1346079350915,
+    "training_seconds": 1152.113578239805,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12183799323247513,
+    "candidates": 4763,
+    "positives": 176
+  },
+  {
+    "step": 52600,
+    "elapsed_seconds": 1167.3516102710273,
+    "training_seconds": 1154.3154597147368,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11857493939900463,
+    "candidates": 3296,
+    "positives": 146
+  },
+  {
+    "step": 52700,
+    "elapsed_seconds": 1169.5995651830453,
+    "training_seconds": 1156.5586990560405,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12263931800998762,
+    "candidates": 5550,
+    "positives": 209
+  },
+  {
+    "step": 52800,
+    "elapsed_seconds": 1171.7659563290654,
+    "training_seconds": 1158.720268287696,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13779326447696594,
+    "candidates": 3307,
+    "positives": 146
+  },
+  {
+    "step": 52900,
+    "elapsed_seconds": 1174.156381722074,
+    "training_seconds": 1161.1060538202291,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1344075798393174,
+    "candidates": 639,
+    "positives": 56
+  },
+  {
+    "step": 53000,
+    "elapsed_seconds": 1176.457968665054,
+    "training_seconds": 1163.4025848484598,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10355851124586479,
+    "candidates": 6528,
+    "positives": 198
+  },
+  {
+    "step": 53100,
+    "elapsed_seconds": 1178.7220116250683,
+    "training_seconds": 1165.6513985247584,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11263180178684706,
+    "candidates": 4171,
+    "positives": 177
+  },
+  {
+    "step": 53200,
+    "elapsed_seconds": 1180.9163201290648,
+    "training_seconds": 1167.840784956701,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1010993220257177,
+    "candidates": 2512,
+    "positives": 119
+  },
+  {
+    "step": 53300,
+    "elapsed_seconds": 1183.1160135370446,
+    "training_seconds": 1170.0351788914995,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11170069209762284,
+    "candidates": 5564,
+    "positives": 183
+  },
+  {
+    "step": 53400,
+    "elapsed_seconds": 1185.3736457000487,
+    "training_seconds": 1172.2879695075098,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.08900501420297319,
+    "candidates": 788,
+    "positives": 68
+  },
+  {
+    "step": 53500,
+    "elapsed_seconds": 1187.693009531009,
+    "training_seconds": 1174.6022939434042,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.0877133711759519,
+    "candidates": 6960,
+    "positives": 173
+  },
+  {
+    "step": 53600,
+    "elapsed_seconds": 1189.903299458092,
+    "training_seconds": 1176.7971028148895,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09670231038762722,
+    "candidates": 3332,
+    "positives": 133
+  },
+  {
+    "step": 53700,
+    "elapsed_seconds": 1192.168383727083,
+    "training_seconds": 1179.057315077749,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.090335546480228,
+    "candidates": 7150,
+    "positives": 177
+  },
+  {
+    "step": 53800,
+    "elapsed_seconds": 1194.3857853380032,
+    "training_seconds": 1181.2697846641531,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11412414584235293,
+    "candidates": 4740,
+    "positives": 165
+  },
+  {
+    "step": 53900,
+    "elapsed_seconds": 1196.687932435074,
+    "training_seconds": 1183.567077891319,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1581745398283374,
+    "candidates": 1070,
+    "positives": 68
+  },
+  {
+    "step": 54000,
+    "elapsed_seconds": 1198.8259338240605,
+    "training_seconds": 1185.700255277101,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09609313635155559,
+    "candidates": 782,
+    "positives": 60
+  },
+  {
+    "step": 54100,
+    "elapsed_seconds": 1201.1514848140068,
+    "training_seconds": 1188.0110264203977,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09977019538592913,
+    "candidates": 756,
+    "positives": 67
+  },
+  {
+    "step": 54200,
+    "elapsed_seconds": 1203.3582777020056,
+    "training_seconds": 1190.2129566860385,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10000283149165501,
+    "candidates": 1330,
+    "positives": 86
+  },
+  {
+    "step": 54300,
+    "elapsed_seconds": 1205.593702368089,
+    "training_seconds": 1192.4435850647278,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12163000612895303,
+    "candidates": 1943,
+    "positives": 124
+  },
+  {
+    "step": 54400,
+    "elapsed_seconds": 1207.8617526739836,
+    "training_seconds": 1194.7065455110278,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1129469943625736,
+    "candidates": 1948,
+    "positives": 111
+  },
+  {
+    "step": 54500,
+    "elapsed_seconds": 1210.142313755001,
+    "training_seconds": 1196.9821800839854,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09500877745449543,
+    "candidates": 1723,
+    "positives": 99
+  },
+  {
+    "step": 54600,
+    "elapsed_seconds": 1212.4528164380463,
+    "training_seconds": 1199.27764092281,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10456322366371751,
+    "candidates": 1893,
+    "positives": 107
+  },
+  {
+    "step": 54700,
+    "elapsed_seconds": 1214.8487149110297,
+    "training_seconds": 1201.6687249309616,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14931181742576882,
+    "candidates": 1490,
+    "positives": 98
+  },
+  {
+    "step": 54800,
+    "elapsed_seconds": 1217.2755135110347,
+    "training_seconds": 1204.0906006181613,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11352279223501682,
+    "candidates": 3132,
+    "positives": 159
+  },
+  {
+    "step": 54900,
+    "elapsed_seconds": 1219.4172317050397,
+    "training_seconds": 1206.227351408219,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11390917377156029,
+    "candidates": 2325,
+    "positives": 126
+  },
+  {
+    "step": 55000,
+    "elapsed_seconds": 1221.6614053230733,
+    "training_seconds": 1208.466427254607,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11085834330970101,
+    "candidates": 3412,
+    "positives": 147
+  },
+  {
+    "step": 55100,
+    "elapsed_seconds": 1223.780282173073,
+    "training_seconds": 1210.5699717846,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1134735121158883,
+    "candidates": 4239,
+    "positives": 172
+  },
+  {
+    "step": 55200,
+    "elapsed_seconds": 1225.9438289690297,
+    "training_seconds": 1212.7286418792792,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11667322919856815,
+    "candidates": 3401,
+    "positives": 154
+  },
+  {
+    "step": 55300,
+    "elapsed_seconds": 1228.1557503190124,
+    "training_seconds": 1214.9351001071045,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10309439183401992,
+    "candidates": 2080,
+    "positives": 116
+  },
+  {
+    "step": 55400,
+    "elapsed_seconds": 1230.3876688349992,
+    "training_seconds": 1217.162122332491,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09737428452353925,
+    "candidates": 2931,
+    "positives": 145
+  },
+  {
+    "step": 55500,
+    "elapsed_seconds": 1232.6205909060081,
+    "training_seconds": 1219.390230513527,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10937891388061871,
+    "candidates": 1031,
+    "positives": 79
+  },
+  {
+    "step": 55600,
+    "elapsed_seconds": 1234.9974496270297,
+    "training_seconds": 1221.751895639347,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.19605569215491414,
+    "candidates": 1167,
+    "positives": 96
+  },
+  {
+    "step": 55700,
+    "elapsed_seconds": 1237.1667863690527,
+    "training_seconds": 1223.9163624255452,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1328893220052123,
+    "candidates": 7460,
+    "positives": 279
+  },
+  {
+    "step": 55800,
+    "elapsed_seconds": 1239.4147474280326,
+    "training_seconds": 1226.1591512578307,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10002317780163139,
+    "candidates": 3636,
+    "positives": 173
+  },
+  {
+    "step": 55900,
+    "elapsed_seconds": 1241.5356307290494,
+    "training_seconds": 1228.274938162067,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.05027829430218844,
+    "candidates": 472,
+    "positives": 53
+  },
+  {
+    "step": 56000,
+    "elapsed_seconds": 1243.8329832040472,
+    "training_seconds": 1230.567438591388,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11124214803567156,
+    "candidates": 5629,
+    "positives": 218
+  },
+  {
+    "step": 56100,
+    "elapsed_seconds": 1246.006690473063,
+    "training_seconds": 1232.7258206983097,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11953049110888969,
+    "candidates": 3305,
+    "positives": 173
+  },
+  {
+    "step": 56200,
+    "elapsed_seconds": 1248.244017415098,
+    "training_seconds": 1234.9583684947575,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11034217991982587,
+    "candidates": 4338,
+    "positives": 162
+  },
+  {
+    "step": 56300,
+    "elapsed_seconds": 1250.5308952000923,
+    "training_seconds": 1237.239996525459,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09101647527404566,
+    "candidates": 560,
+    "positives": 56
+  },
+  {
+    "step": 56400,
+    "elapsed_seconds": 1252.8076975160511,
+    "training_seconds": 1239.5117277158424,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1200293689801605,
+    "candidates": 2276,
+    "positives": 114
+  },
+  {
+    "step": 56500,
+    "elapsed_seconds": 1255.0833800210385,
+    "training_seconds": 1241.782203230774,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11832892550981838,
+    "candidates": 2183,
+    "positives": 111
+  },
+  {
+    "step": 56600,
+    "elapsed_seconds": 1257.385862571071,
+    "training_seconds": 1244.0691193204839,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09132090307921459,
+    "candidates": 5720,
+    "positives": 167
+  },
+  {
+    "step": 56700,
+    "elapsed_seconds": 1259.5746812520083,
+    "training_seconds": 1246.252879402833,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.0805259701810428,
+    "candidates": 7933,
+    "positives": 189
+  },
+  {
+    "step": 56800,
+    "elapsed_seconds": 1261.8356402940117,
+    "training_seconds": 1248.508762168698,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09126640294562094,
+    "candidates": 2071,
+    "positives": 114
+  },
+  {
+    "step": 56900,
+    "elapsed_seconds": 1264.033397981082,
+    "training_seconds": 1250.7014047165867,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10362806561897742,
+    "candidates": 3461,
+    "positives": 163
+  },
+  {
+    "step": 57000,
+    "elapsed_seconds": 1266.251554374001,
+    "training_seconds": 1252.9147794578457,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10141263428414993,
+    "candidates": 3728,
+    "positives": 159
+  },
+  {
+    "step": 57100,
+    "elapsed_seconds": 1268.4194671930745,
+    "training_seconds": 1255.0674168879632,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11536882567452267,
+    "candidates": 7956,
+    "positives": 302
+  },
+  {
+    "step": 57200,
+    "elapsed_seconds": 1270.7030031849863,
+    "training_seconds": 1257.3456513801357,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10563134485009683,
+    "candidates": 3574,
+    "positives": 125
+  },
+  {
+    "step": 57300,
+    "elapsed_seconds": 1272.9019113340182,
+    "training_seconds": 1259.5391674219863,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.16065628811735522,
+    "candidates": 2311,
+    "positives": 141
+  },
+  {
+    "step": 57400,
+    "elapsed_seconds": 1275.0681749860523,
+    "training_seconds": 1261.7001960161142,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09539708219481469,
+    "candidates": 3323,
+    "positives": 133
+  },
+  {
+    "step": 57500,
+    "elapsed_seconds": 1277.387981944019,
+    "training_seconds": 1264.0148279365385,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11951281628535071,
+    "candidates": 4384,
+    "positives": 196
+  },
+  {
+    "step": 57600,
+    "elapsed_seconds": 1279.579007965047,
+    "training_seconds": 1266.190354960272,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.0776281674625352,
+    "candidates": 874,
+    "positives": 71
+  },
+  {
+    "step": 57700,
+    "elapsed_seconds": 1281.9187478220556,
+    "training_seconds": 1268.5250287726521,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11757714825216681,
+    "candidates": 2396,
+    "positives": 148
+  },
+  {
+    "step": 57800,
+    "elapsed_seconds": 1284.0790669090347,
+    "training_seconds": 1270.6803128485335,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.08450838620774448,
+    "candidates": 1172,
+    "positives": 82
+  },
+  {
+    "step": 57900,
+    "elapsed_seconds": 1286.2598937040893,
+    "training_seconds": 1272.8551256230567,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10359917345340364,
+    "candidates": 3085,
+    "positives": 135
+  },
+  {
+    "step": 58000,
+    "elapsed_seconds": 1288.5878588710912,
+    "training_seconds": 1275.1780890915543,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.0990445411298424,
+    "candidates": 3100,
+    "positives": 155
+  },
+  {
+    "step": 58100,
+    "elapsed_seconds": 1290.8312829610659,
+    "training_seconds": 1277.406347663491,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10826152882805218,
+    "candidates": 2265,
+    "positives": 117
+  },
+  {
+    "step": 58200,
+    "elapsed_seconds": 1293.124025272089,
+    "training_seconds": 1279.6940152483294,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10852934026209127,
+    "candidates": 2639,
+    "positives": 130
+  },
+  {
+    "step": 58300,
+    "elapsed_seconds": 1295.4079944570549,
+    "training_seconds": 1281.9721635044552,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1672794557119346,
+    "candidates": 787,
+    "positives": 73
+  },
+  {
+    "step": 58400,
+    "elapsed_seconds": 1297.4561161310412,
+    "training_seconds": 1284.0148892818252,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12765236148317172,
+    "candidates": 3693,
+    "positives": 155
+  },
+  {
+    "step": 58500,
+    "elapsed_seconds": 1299.623611496063,
+    "training_seconds": 1286.1773241399787,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11639608239056543,
+    "candidates": 2858,
+    "positives": 133
+  },
+  {
+    "step": 58600,
+    "elapsed_seconds": 1301.8416994330473,
+    "training_seconds": 1288.380826682318,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11952921422198415,
+    "candidates": 2760,
+    "positives": 131
+  },
+  {
+    "step": 58700,
+    "elapsed_seconds": 1304.2374660280766,
+    "training_seconds": 1290.7709479692858,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09899797585964448,
+    "candidates": 7049,
+    "positives": 218
+  },
+  {
+    "step": 58800,
+    "elapsed_seconds": 1306.5569650570396,
+    "training_seconds": 1293.085562130087,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10015380157710752,
+    "candidates": 5829,
+    "positives": 214
+  },
+  {
+    "step": 58900,
+    "elapsed_seconds": 1308.8054361790419,
+    "training_seconds": 1295.3288666403387,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09536870504143735,
+    "candidates": 976,
+    "positives": 80
+  },
+  {
+    "step": 59000,
+    "elapsed_seconds": 1311.0749594260706,
+    "training_seconds": 1297.5932991391746,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13806299306634173,
+    "candidates": 1195,
+    "positives": 84
+  },
+  {
+    "step": 59100,
+    "elapsed_seconds": 1313.2470535570756,
+    "training_seconds": 1299.7497487735236,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13723032685982248,
+    "candidates": 1948,
+    "positives": 107
+  },
+  {
+    "step": 59200,
+    "elapsed_seconds": 1315.403011040995,
+    "training_seconds": 1301.9003905401332,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10905712537351064,
+    "candidates": 5393,
+    "positives": 182
+  },
+  {
+    "step": 59300,
+    "elapsed_seconds": 1317.6563006360084,
+    "training_seconds": 1304.1483939710306,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11387174542427658,
+    "candidates": 3586,
+    "positives": 152
+  },
+  {
+    "step": 59400,
+    "elapsed_seconds": 1319.8446144810878,
+    "training_seconds": 1306.331026576343,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12615663906534585,
+    "candidates": 2616,
+    "positives": 124
+  },
+  {
+    "step": 59500,
+    "elapsed_seconds": 1322.1836259190459,
+    "training_seconds": 1308.664897528477,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11206653839642539,
+    "candidates": 4726,
+    "positives": 195
+  },
+  {
+    "step": 59600,
+    "elapsed_seconds": 1324.426454170025,
+    "training_seconds": 1310.8922915002331,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.08431635826127604,
+    "candidates": 3238,
+    "positives": 146
+  },
+  {
+    "step": 59700,
+    "elapsed_seconds": 1326.6054527560482,
+    "training_seconds": 1313.0660090789897,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11129716532492397,
+    "candidates": 3770,
+    "positives": 133
+  },
+  {
+    "step": 59800,
+    "elapsed_seconds": 1328.8589499240043,
+    "training_seconds": 1315.314316195785,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.07884742122405441,
+    "candidates": 11467,
+    "positives": 251
+  },
+  {
+    "step": 59900,
+    "elapsed_seconds": 1331.0325216300553,
+    "training_seconds": 1317.4819006167818,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11579809068826108,
+    "candidates": 1932,
+    "positives": 115
+  },
+  {
+    "step": 60000,
+    "elapsed_seconds": 1333.2134010560112,
+    "training_seconds": 1319.6576284667244,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11927632056176662,
+    "candidates": 2053,
+    "positives": 102
+  },
+  {
+    "step": 60100,
+    "elapsed_seconds": 1335.388247249066,
+    "training_seconds": 1321.8169792447006,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11174357584732952,
+    "candidates": 5543,
+    "positives": 194
+  },
+  {
+    "step": 60200,
+    "elapsed_seconds": 1337.6838804400759,
+    "training_seconds": 1324.1072856230894,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09528950729873031,
+    "candidates": 2976,
+    "positives": 146
+  },
+  {
+    "step": 60300,
+    "elapsed_seconds": 1339.8866623670328,
+    "training_seconds": 1326.304188361275,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10389016878042412,
+    "candidates": 1847,
+    "positives": 91
+  },
+  {
+    "step": 60400,
+    "elapsed_seconds": 1342.110241351067,
+    "training_seconds": 1328.5175438133301,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1324344579948331,
+    "candidates": 2252,
+    "positives": 108
+  },
+  {
+    "step": 60500,
+    "elapsed_seconds": 1344.2738802570384,
+    "training_seconds": 1330.6748620435828,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11702456782691684,
+    "candidates": 3677,
+    "positives": 157
+  },
+  {
+    "step": 60600,
+    "elapsed_seconds": 1346.5361932649976,
+    "training_seconds": 1332.9215343463002,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10746246887430289,
+    "candidates": 5169,
+    "positives": 204
+  },
+  {
+    "step": 60700,
+    "elapsed_seconds": 1348.7519502560608,
+    "training_seconds": 1335.1319919835078,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1095402825230849,
+    "candidates": 5950,
+    "positives": 237
+  },
+  {
+    "step": 60800,
+    "elapsed_seconds": 1351.039724008995,
+    "training_seconds": 1337.414483756991,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1151813122414751,
+    "candidates": 3056,
+    "positives": 172
+  },
+  {
+    "step": 60900,
+    "elapsed_seconds": 1353.372676209081,
+    "training_seconds": 1339.7420715555781,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11350217394146966,
+    "candidates": 3879,
+    "positives": 156
+  },
+  {
+    "step": 61000,
+    "elapsed_seconds": 1355.462981592049,
+    "training_seconds": 1341.8269659058424,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.08994788722111555,
+    "candidates": 5083,
+    "positives": 154
+  },
+  {
+    "step": 61100,
+    "elapsed_seconds": 1357.6875257750507,
+    "training_seconds": 1344.0364636061713,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10665723550482653,
+    "candidates": 4562,
+    "positives": 200
+  },
+  {
+    "step": 61200,
+    "elapsed_seconds": 1359.9783738870174,
+    "training_seconds": 1346.3219475789228,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09122142309024639,
+    "candidates": 8735,
+    "positives": 225
+  },
+  {
+    "step": 61300,
+    "elapsed_seconds": 1362.1482445170404,
+    "training_seconds": 1348.4866398358718,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10595386262866668,
+    "candidates": 2200,
+    "positives": 142
+  },
+  {
+    "step": 61400,
+    "elapsed_seconds": 1364.4014718120452,
+    "training_seconds": 1350.7345593690407,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.0983677329510494,
+    "candidates": 861,
+    "positives": 76
+  },
+  {
+    "step": 61500,
+    "elapsed_seconds": 1366.5821832310176,
+    "training_seconds": 1352.9098440585658,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11474472258123569,
+    "candidates": 3441,
+    "positives": 159
+  },
+  {
+    "step": 61600,
+    "elapsed_seconds": 1368.7218134290306,
+    "training_seconds": 1355.0337798369583,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1340258625568822,
+    "candidates": 1810,
+    "positives": 127
+  },
+  {
+    "step": 61700,
+    "elapsed_seconds": 1371.007786528091,
+    "training_seconds": 1357.3144154127222,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13309560052584857,
+    "candidates": 5439,
+    "positives": 220
+  },
+  {
+    "step": 61800,
+    "elapsed_seconds": 1373.187448968063,
+    "training_seconds": 1359.4887889514212,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09485498726293429,
+    "candidates": 6260,
+    "positives": 161
+  },
+  {
+    "step": 61900,
+    "elapsed_seconds": 1375.486140652094,
+    "training_seconds": 1361.7817912822356,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09847854601127422,
+    "candidates": 1406,
+    "positives": 86
+  },
+  {
+    "step": 62000,
+    "elapsed_seconds": 1377.74383592105,
+    "training_seconds": 1364.0341397019802,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10276197247731034,
+    "candidates": 2006,
+    "positives": 127
+  },
+  {
+    "step": 62100,
+    "elapsed_seconds": 1380.292602119036,
+    "training_seconds": 1366.567696118378,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11649054900044575,
+    "candidates": 3131,
+    "positives": 146
+  },
+  {
+    "step": 62200,
+    "elapsed_seconds": 1382.551202045055,
+    "training_seconds": 1368.8206495249178,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10793455952079967,
+    "candidates": 4193,
+    "positives": 173
+  },
+  {
+    "step": 62300,
+    "elapsed_seconds": 1384.725421375013,
+    "training_seconds": 1370.9892452768981,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.08884678885806352,
+    "candidates": 1783,
+    "positives": 110
+  },
+  {
+    "step": 62400,
+    "elapsed_seconds": 1387.0323091379832,
+    "training_seconds": 1373.290861303918,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1896731880151492,
+    "candidates": 1221,
+    "positives": 79
+  },
+  {
+    "step": 62500,
+    "elapsed_seconds": 1389.2772185680224,
+    "training_seconds": 1375.5302180290455,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11685170623242458,
+    "candidates": 4200,
+    "positives": 161
+  },
+  {
+    "step": 62600,
+    "elapsed_seconds": 1391.5857880930416,
+    "training_seconds": 1377.8152760390658,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11218295317434013,
+    "candidates": 3604,
+    "positives": 138
+  },
+  {
+    "step": 62700,
+    "elapsed_seconds": 1393.8515308980132,
+    "training_seconds": 1380.0756050689379,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13448218976894666,
+    "candidates": 2234,
+    "positives": 95
+  },
+  {
+    "step": 62800,
+    "elapsed_seconds": 1396.0705097219907,
+    "training_seconds": 1382.289197649341,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10979726544349022,
+    "candidates": 5503,
+    "positives": 229
+  },
+  {
+    "step": 62900,
+    "elapsed_seconds": 1398.4419702209998,
+    "training_seconds": 1384.655351361027,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09488267714368703,
+    "candidates": 1464,
+    "positives": 106
+  },
+  {
+    "step": 63000,
+    "elapsed_seconds": 1400.641398764099,
+    "training_seconds": 1386.8492676930036,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10253850161098008,
+    "candidates": 2739,
+    "positives": 135
+  },
+  {
+    "step": 63100,
+    "elapsed_seconds": 1403.038287317031,
+    "training_seconds": 1389.229629102163,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1043317185414594,
+    "candidates": 938,
+    "positives": 83
+  },
+  {
+    "step": 63200,
+    "elapsed_seconds": 1405.1165027280804,
+    "training_seconds": 1391.3020805190317,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.11173799968673848,
+    "candidates": 2100,
+    "positives": 126
+  },
+  {
+    "step": 63300,
+    "elapsed_seconds": 1407.3405677470146,
+    "training_seconds": 1393.5201467222068,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10215747450388335,
+    "candidates": 4796,
+    "positives": 187
+  },
+  {
+    "step": 63400,
+    "elapsed_seconds": 1409.501819547033,
+    "training_seconds": 1395.6758085717447,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09045902413294016,
+    "candidates": 1753,
+    "positives": 99
+  },
+  {
+    "step": 63500,
+    "elapsed_seconds": 1411.8409552080557,
+    "training_seconds": 1398.009651599219,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09661895051291586,
+    "candidates": 2886,
+    "positives": 146
+  },
+  {
+    "step": 63600,
+    "elapsed_seconds": 1414.0743261280004,
+    "training_seconds": 1400.227779382025,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1069617721194206,
+    "candidates": 2906,
+    "positives": 130
+  },
+  {
+    "step": 63700,
+    "elapsed_seconds": 1416.248871046002,
+    "training_seconds": 1402.3966271386016,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.0977552438944258,
+    "candidates": 5320,
+    "positives": 176
+  },
+  {
+    "step": 63800,
+    "elapsed_seconds": 1418.5264063260984,
+    "training_seconds": 1404.6685427944176,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10949132762254976,
+    "candidates": 1631,
+    "positives": 86
+  },
+  {
+    "step": 63900,
+    "elapsed_seconds": 1420.7350607760018,
+    "training_seconds": 1406.8716912618838,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.13563597229222069,
+    "candidates": 1773,
+    "positives": 107
+  },
+  {
+    "step": 64000,
+    "elapsed_seconds": 1422.872583905002,
+    "training_seconds": 1409.0040323940339,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.1288011936146578,
+    "candidates": 2128,
+    "positives": 115
+  },
+  {
+    "step": 64100,
+    "elapsed_seconds": 1425.1440254570916,
+    "training_seconds": 1411.2600956908427,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09711894970723733,
+    "candidates": 3673,
+    "positives": 155
+  },
+  {
+    "step": 64200,
+    "elapsed_seconds": 1427.4190794100286,
+    "training_seconds": 1413.529657078907,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10858946373627987,
+    "candidates": 2475,
+    "positives": 143
+  },
+  {
+    "step": 64300,
+    "elapsed_seconds": 1429.6077796060126,
+    "training_seconds": 1415.7122922523413,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.08591292420169339,
+    "candidates": 2791,
+    "positives": 140
+  },
+  {
+    "step": 64400,
+    "elapsed_seconds": 1431.8624766269932,
+    "training_seconds": 1417.9614655153127,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.14298180071637034,
+    "candidates": 1447,
+    "positives": 108
+  },
+  {
+    "step": 64500,
+    "elapsed_seconds": 1434.1910452980082,
+    "training_seconds": 1420.284548623138,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12257424738408372,
+    "candidates": 4272,
+    "positives": 157
+  },
+  {
+    "step": 64600,
+    "elapsed_seconds": 1436.405271107098,
+    "training_seconds": 1422.4826763508609,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10211970602570375,
+    "candidates": 3047,
+    "positives": 120
+  },
+  {
+    "step": 64700,
+    "elapsed_seconds": 1438.5811430370668,
+    "training_seconds": 1424.6531019905815,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10725178186112316,
+    "candidates": 3639,
+    "positives": 143
+  },
+  {
+    "step": 64800,
+    "elapsed_seconds": 1441.0189497550018,
+    "training_seconds": 1427.0853522180114,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10440998343983665,
+    "candidates": 5785,
+    "positives": 222
+  },
+  {
+    "step": 64900,
+    "elapsed_seconds": 1443.4167890540557,
+    "training_seconds": 1429.4773095276905,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.07440221203432884,
+    "candidates": 13686,
+    "positives": 288
+  },
+  {
+    "step": 65000,
+    "elapsed_seconds": 1445.7032502150396,
+    "training_seconds": 1431.757694071508,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.10087786481017247,
+    "candidates": 1892,
+    "positives": 110
+  },
+  {
+    "step": 65100,
+    "elapsed_seconds": 1447.9034376720665,
+    "training_seconds": 1433.9365996933775,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.12072835849469898,
+    "candidates": 2556,
+    "positives": 118
+  },
+  {
+    "step": 65200,
+    "elapsed_seconds": 1450.1155706550926,
+    "training_seconds": 1436.1432035551406,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09010240502209399,
+    "candidates": 2577,
+    "positives": 129
+  },
+  {
+    "step": 65300,
+    "elapsed_seconds": 1452.3917515430367,
+    "training_seconds": 1438.413735416485,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09436615261074621,
+    "candidates": 3546,
+    "positives": 189
+  },
+  {
+    "step": 65400,
+    "elapsed_seconds": 1454.6317299170187,
+    "training_seconds": 1440.6481335033895,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09436888070922578,
+    "candidates": 2307,
+    "positives": 118
+  },
+  {
+    "step": 65500,
+    "elapsed_seconds": 1456.813857738045,
+    "training_seconds": 1442.8244256140897,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.09812130372340892,
+    "candidates": 3002,
+    "positives": 131
+  },
+  {
+    "step": 65600,
+    "elapsed_seconds": 1458.9646864850074,
+    "training_seconds": 1444.958945031627,
+    "scoring_seconds": 10.170364519930445,
+    "loss": 0.08511823474330527,
+    "candidates": 4465,
+    "positives": 145
+  }
+]

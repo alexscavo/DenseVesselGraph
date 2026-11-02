@@ -1,0 +1,25 @@
+[
+  {
+    "batch_start": 0,
+    "batch_size": 8,
+    "losses": {
+      "class": 0.09949793666601181,
+      "nodes": 0.2259228378534317,
+      "boxes": 1.0923773050308228,
+      "cardinality": 0.0781250074505806,
+      "edges": 0.40907707810401917,
+      "degree": 0.0,
+      "spline": 0.5672126412391663,
+      "spline_control_mm": 5.356288433074951,
+      "spline_curve_mm": 5.1643242835998535,
+      "spline_endpoint_mm": 5.723900318145752,
+      "spline_positive_edges": 72.0,
+      "betti_h0": 0.0,
+      "betti_h0_weighted": 0.0,
+      "betti_h1": 0.0,
+      "betti_h1_weighted": 0.0,
+      "total": 7.4800028800964355
+    },
+    "image_sha256": "ddff2eb1921d4258a1de1bbf35b532815dd4a6a870f7d7e98091be62aaf355ca"
+  }
+]

@@ -1,0 +1,99 @@
+{
+  "completed": true,
+  "finite": true,
+  "batch_sizes": [
+    1,
+    8
+  ],
+  "scope": "First eight fixed patches per population; measured drift, no change to primary batch-eight evaluation.",
+  "rows": [
+    {
+      "sample": "sample_000024_0092",
+      "max_errors": {
+        "physical": 0.010030746459960938,
+        "scores": 0.0002359151840209961,
+        "relations": 0.000598907470703125
+      },
+      "node_threshold_crossings": 0,
+      "relation_threshold_crossings": 0,
+      "within_original_strict_tolerance": false
+    },
+    {
+      "sample": "sample_000052_0103",
+      "max_errors": {
+        "physical": 0.011749267578125,
+        "scores": 9.670853614807129e-05,
+        "relations": 0.0004613250494003296
+      },
+      "node_threshold_crossings": 0,
+      "relation_threshold_crossings": 0,
+      "within_original_strict_tolerance": false
+    },
+    {
+      "sample": "sample_000049_0248",
+      "max_errors": {
+        "physical": 0.03276538848876953,
+        "scores": 5.0395727157592773e-05,
+        "relations": 0.0005156099796295166
+      },
+      "node_threshold_crossings": 0,
+      "relation_threshold_crossings": 0,
+      "within_original_strict_tolerance": false
+    },
+    {
+      "sample": "sample_000048_0263",
+      "max_errors": {
+        "physical": 0.007823944091796875,
+        "scores": 0.00010257959365844727,
+        "relations": 0.0003844797611236572
+      },
+      "node_threshold_crossings": 0,
+      "relation_threshold_crossings": 0,
+      "within_original_strict_tolerance": false
+    },
+    {
+      "sample": "sample_000052_0011",
+      "max_errors": {
+        "physical": 0.011524200439453125,
+        "scores": 7.429718971252441e-05,
+        "relations": 0.0005713999271392822
+      },
+      "node_threshold_crossings": 0,
+      "relation_threshold_crossings": 0,
+      "within_original_strict_tolerance": false
+    },
+    {
+      "sample": "sample_000022_0011",
+      "max_errors": {
+        "physical": 0.012164115905761719,
+        "scores": 6.321072578430176e-05,
+        "relations": 0.0004813671112060547
+      },
+      "node_threshold_crossings": 0,
+      "relation_threshold_crossings": 0,
+      "within_original_strict_tolerance": false
+    },
+    {
+      "sample": "sample_000052_0164",
+      "max_errors": {
+        "physical": 0.03778648376464844,
+        "scores": 0.0001246631145477295,
+        "relations": 0.0008898377418518066
+      },
+      "node_threshold_crossings": 0,
+      "relation_threshold_crossings": 2,
+      "within_original_strict_tolerance": false
+    },
+    {
+      "sample": "sample_000004_0118",
+      "max_errors": {
+        "physical": 0.07004952430725098,
+        "scores": 0.00028033554553985596,
+        "relations": 0.005021780729293823
+      },
+      "node_threshold_crossings": 0,
+      "relation_threshold_crossings": 0,
+      "within_original_strict_tolerance": false
+    }
+  ]
+}

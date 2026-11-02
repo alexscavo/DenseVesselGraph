@@ -1,0 +1,49 @@
+{
+  "jobs": {
+    "smoke-1731830": "1731830",
+    "smoke-1731895": "1731895",
+    "train-100-1732163": "1732163"
+  },
+  "history": [
+    {
+      "job": "1731830",
+      "mode": "smoke",
+      "args": [],
+      "options": [
+        "--time=00:15:00",
+        "--qos=qos_gpu_h100-dev",
+        "--job-name=ixi-long-smoke"
+      ],
+      "code": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_long_20261030/code/v1",
+      "code_tag": "v1",
+      "submitted": "2026-10-30T11:11:22"
+    },
+    {
+      "job": "1731895",
+      "mode": "smoke",
+      "args": [],
+      "options": [
+        "--time=00:15:00",
+        "--qos=qos_gpu_h100-dev",
+        "--job-name=ixi-long-smoke"
+      ],
+      "code": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_long_20261030/code/v2",
+      "code_tag": "v2",
+      "submitted": "2026-10-30T11:13:14"
+    },
+    {
+      "job": "1732163",
+      "mode": "train",
+      "args": [
+        "100"
+      ],
+      "options": [
+        "--time=04:30:00",
+        "--job-name=ixi-long-train"
+      ],
+      "code": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_long_20261030/code/v2",
+      "code_tag": "v2",
+      "submitted": "2026-10-30T11:18:18"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "scripts/brava_augmentation_comparison.py": "28c461cb5d019653e461a6dbeb8065a9ad7a91777403dac370f5e59b51a5f3e9",
+  "scripts/collect_brava_augmentation.py": "57eec1263ee60c82d89bb5a7e87960ffed8ede395712536e4ea0b3753bdbd5a0",
+  "cluster/jean_zay/brava_augmentation_gpu.slurm": "2325d27668cf0ecad0c5fc9803d9d5c8832084be9fddd3be1d86ae13f50afd4d",
+  "cluster/jean_zay/brava_augmentation_cpu.slurm": "b9bd6a4ae9cc9430c455c6bf4beb03cdb077260420992eda3f3dedb8666b87f2"
+}

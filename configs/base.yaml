@@ -23,6 +23,7 @@ tracking:
 
 data:
   spatial_dims: 3
+  input_modality: raw_mra
   image_size: [64, 64, 64]
   batch_size: 48
   train_augmentation: true

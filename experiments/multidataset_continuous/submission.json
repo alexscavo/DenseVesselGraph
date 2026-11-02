@@ -1,0 +1,201 @@
+{
+  "output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/multidataset_continuous_20261022",
+  "jobs": {
+    "Data and checkpoint audit": {
+      "id": "1451641",
+      "dependency": null,
+      "array": null,
+      "walltime": "01:00:00"
+    },
+    "GPU forward backward and collector smoke": {
+      "id": "1460518",
+      "dependency": null,
+      "array": null,
+      "walltime": "01:00:00"
+    },
+    "Detector recovery and geometry training plus predictions": {
+      "id": "1460519",
+      "dependency": "afterok:1460518",
+      "array": "0-14%2",
+      "walltime": "05:00:00"
+    },
+    "Per-arm CPU evaluation": {
+      "id": "1460520",
+      "dependency": "aftercorr:1460519",
+      "array": "0-14%4",
+      "walltime": "08:00:00"
+    },
+    "Aggregate report": {
+      "id": "1460521",
+      "dependency": "afterok:1460520",
+      "array": null,
+      "walltime": "01:00:00"
+    }
+  },
+  "arms": [
+    {
+      "name": "D1_IXI",
+      "initializer": "ixi_spline",
+      "dataset": "BRAVA",
+      "kind": "detector",
+      "representation": "K8"
+    },
+    {
+      "name": "D2_SyntheticMRI",
+      "initializer": "synthetic_spline",
+      "dataset": "BRAVA",
+      "kind": "detector",
+      "representation": "K8"
+    },
+    {
+      "name": "D3_scratch",
+      "initializer": "scratch",
+      "dataset": "BRAVA",
+      "kind": "detector",
+      "representation": "K8"
+    },
+    {
+      "name": "IXI_K8",
+      "initializer": "ixi_spline",
+      "dataset": "IXI",
+      "kind": "geometry",
+      "representation": "K8"
+    },
+    {
+      "name": "IXI_K16",
+      "initializer": "ixi_spline",
+      "dataset": "IXI",
+      "kind": "geometry",
+      "representation": "K16"
+    },
+    {
+      "name": "IXI_K24",
+      "initializer": "ixi_spline",
+      "dataset": "IXI",
+      "kind": "geometry",
+      "representation": "K24"
+    },
+    {
+      "name": "IXI_adaptive",
+      "initializer": "ixi_spline",
+      "dataset": "IXI",
+      "kind": "geometry",
+      "representation": "adaptive"
+    },
+    {
+      "name": "IXI_piece_C0",
+      "initializer": "ixi_spline",
+      "dataset": "IXI",
+      "kind": "geometry",
+      "representation": "piece_C0"
+    },
+    {
+      "name": "IXI_piece_C1",
+      "initializer": "ixi_spline",
+      "dataset": "IXI",
+      "kind": "geometry",
+      "representation": "piece_C1"
+    },
+    {
+      "name": "SyntheticMRI_K8",
+      "initializer": "synthetic_spline",
+      "dataset": "SyntheticMRI",
+      "kind": "geometry",
+      "representation": "K8"
+    },
+    {
+      "name": "SyntheticMRI_K16",
+      "initializer": "synthetic_spline",
+      "dataset": "SyntheticMRI",
+      "kind": "geometry",
+      "representation": "K16"
+    },
+    {
+      "name": "SyntheticMRI_K24",
+      "initializer": "synthetic_spline",
+      "dataset": "SyntheticMRI",
+      "kind": "geometry",
+      "representation": "K24"
+    },
+    {
+      "name": "SyntheticMRI_adaptive",
+      "initializer": "synthetic_spline",
+      "dataset": "SyntheticMRI",
+      "kind": "geometry",
+      "representation": "adaptive"
+    },
+    {
+      "name": "SyntheticMRI_piece_C0",
+      "initializer": "synthetic_spline",
+      "dataset": "SyntheticMRI",
+      "kind": "geometry",
+      "representation": "piece_C0"
+    },
+    {
+      "name": "SyntheticMRI_piece_C1",
+      "initializer": "synthetic_spline",
+      "dataset": "SyntheticMRI",
+      "kind": "geometry",
+      "representation": "piece_C1"
+    }
+  ],
+  "maximum_H100_concurrency": 2,
+  "end_to_end_representation_submitted": false,
+  "source_sha256": {
+    "models/adaptive_geometry.py": "eebe17a0a946f40c53bc5215ec6b543f358a748c3dcc8ea465a2fe5b36c88180",
+    "data/adaptive_split_targets.py": "42f411aa13477fd662f19cb24348c2439ab819acd0f9ff022978cf55221309bb",
+    "metrics/common_vessel_metrics.py": "cd325787bf93b27ad62f016027524091a3e0cbb9a51338787b62ac80fe2607d2",
+    "scripts/multidataset_graph_training.py": "66d027eaa9d7430a371225d04c1d51ae1e7744392850d6a9e014b27be8281d66",
+    "scripts/multidataset_graph_evaluation.py": "c05fb90460df859c02d3c3d449e58945de1b33b7a803179ff2e20d009ab07ad3",
+    "scripts/audit_multidataset_graph.py": "186acd1547d026cf40f52e6558aa933348410d59c366e6063adcf40a063029fd",
+    "scripts/collect_multidataset_graph.py": "1a018c09576fc46b6d3d2ab1967fb0f409eaef586732850da7059aff96d3cc4a",
+    "tests/test_adaptive_geometry.py": "e6f78ccea6313259d1f632b851dc9b074856c0a3dd32c2564b294af5d09f3f96",
+    "tests/test_multidataset_graph.py": "f8058d327e5f7e41939ba02915a44990c9b73e745bb8228e5729f90b305f83ac",
+    "cluster/jean_zay/multidataset_continuous_gpu.slurm": "05dd5e521e801af54b8fb562768f0e21ba187f522f73b1aaad5dc27239521837",
+    "cluster/jean_zay/multidataset_continuous_cpu.slurm": "2091232022a46321fa8c989fa3364ce4d2c3b1fc85ea6966b55c481f77ab51fe"
+  },
+  "previous_jobs": {
+    "Data and checkpoint audit": {
+      "id": "1451641",
+      "dependency": null,
+      "array": null,
+      "walltime": "01:00:00"
+    },
+    "GPU forward backward and collector smoke": {
+      "id": "1451642",
+      "dependency": "afterok:1451641",
+      "array": null,
+      "walltime": "01:00:00"
+    },
+    "Detector recovery and geometry training plus predictions": {
+      "id": "1451643",
+      "dependency": "afterok:1451642",
+      "array": "0-14%2",
+      "walltime": "05:00:00"
+    },
+    "Per-arm CPU evaluation": {
+      "id": "1451644",
+      "dependency": "aftercorr:1451643",
+      "array": "0-14%4",
+      "walltime": "08:00:00"
+    },
+    "Aggregate report": {
+      "id": "1451645",
+      "dependency": "afterok:1451644",
+      "array": null,
+      "walltime": "01:00:00"
+    }
+  },
+  "reporting_recovery": {
+    "completed": true,
+    "failed_collector_job": "1460521",
+    "cause": "Archived Plotly lacked template/validator assets",
+    "method": "CPU collector replay using complete protected plotting packages; no inference or retraining",
+    "completion_marker": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/multidataset_continuous_20261022/results/collection-complete.json",
+    "source_sha256": {
+      "scripts/collect_multidataset_graph.py": "73c42d20d282bae7bec641e3a5bae0b7b291df3cef9e84d313e50025cc2fde7a",
+      "cluster/jean_zay/multidataset_continuous_cpu.slurm": "28d57f5990d3bba12c50dc896214a13791c030a2d6dd74a76e8f0db936aec8c1",
+      "scripts/report_multidataset_results.py": "d895e772d7f1bd191a2f8aba432941c6f292a558b15495934ac670e36b5935eb"
+    }
+  }
+}

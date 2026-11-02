@@ -1,5 +1,7 @@
 # Vessel evaluation metrics
 
+> **Research consolidation, 23 October 2026:** [Metrics-system overview and current architecture](../../../research/architecture.md#metrics-system). This document retains its detailed and dated historical context.
+
 - [Ideas and literature shortlist](metrics_ideas.md): the original proposal.
 - [Implemented protocol and centerline interface](vessel-core-v1.md): definitions,
   adaptations, data conventions, assumptions and limitations.
@@ -28,5 +30,11 @@ version and output directory. No training or model inference is needed.
 4. [Relation isolation and image inspection](4-ixi-relation-isolation.md).
 
 5. [Training-calibrated relation thresholds](5-ixi-threshold-calibration.md).
+6. [Full-query duplicate attribution and oracle/NMS controls](6-ixi-query-attribution.md).
+7. [Bounded raw-query oracle, confidence, refinement and relation-loss batch](7-ixi-mechanism-batch.md).
 
 Each report describes its quantitative methods, image inspection method, observed examples and interpretation.
+
+8. [Hungarian matching, generalization and calibration](8-ixi-relation-matching-calibration.md).
+9. [Larger image-aware relation residual experiment](9-ixi-image-aware-relation-learning.md).
+10. [Controlled IXI node class-weight and focal-loss continuation](10-ixi-node-focal-ablation.md).

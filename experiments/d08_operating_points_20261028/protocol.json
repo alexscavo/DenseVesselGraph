@@ -1,0 +1,138 @@
+{
+  "protocol": "D08 CPU operating-point audit v1",
+  "epoch": 300,
+  "selection_split": "train160",
+  "threshold_selection_uses_validation": false,
+  "node_grid": [
+    0.0,
+    0.025,
+    0.05,
+    0.075,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    1.0
+  ],
+  "primary_tolerance_mm": 2.0,
+  "secondary_tolerance_mm": 1.0,
+  "baseline_node_cut": 0.5,
+  "strict_comparison": ">",
+  "original_coordinate_and_score_caches_unchanged": true,
+  "limits": "No raw-query embeddings/pair scores or new-edge spline controls in original D08 caches; joint lower-node graph replay is not fabricated",
+  "checkpoint_identities": {
+    "scratch": {
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-brava-long-20261027/experiments/brava_long_20261027/large/runs/scratch/model-epoch-300.pt",
+      "sha256": "7d19b56e91666ce6aabec1e56396cf23abb096011e3af7d64aa6d8ae7c9854c6",
+      "epoch": 300,
+      "step": 82200
+    },
+    "synthetic": {
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-brava-long-20261027/experiments/brava_long_20261027/large/runs/synthetic/model-epoch-300.pt",
+      "sha256": "aeab859b5c8bc435ae1205baf598b9aca24b91ddde2a4d181364e0fab611fe59",
+      "epoch": 300,
+      "step": 82200
+    }
+  },
+  "source_paths": {
+    "scratch": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-brava-long-20261027/experiments/brava_long_20261027/large/predictions/scratch/epoch-300",
+    "synthetic": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-brava-long-20261027/experiments/brava_long_20261027/large/predictions/synthetic/epoch-300"
+  },
+  "source_plan_sha256": "2ca94f19d89a6c4f0abbfd23231286e8074b658cacaf369b44b1d1b3fe13105f",
+  "training_settings": {
+    "scratch": {
+      "node_train_max_f1": 0.35,
+      "node_selection_tolerance_mm": 2.0,
+      "node_grid": [
+        0.0,
+        0.025,
+        0.05,
+        0.075,
+        0.1,
+        0.15,
+        0.2,
+        0.25,
+        0.3,
+        0.35,
+        0.4,
+        0.45,
+        0.5,
+        0.55,
+        0.6,
+        0.65,
+        0.7,
+        0.75,
+        0.8,
+        0.85,
+        0.9,
+        0.95,
+        1.0
+      ],
+      "baseline_training_precision": 0.0,
+      "edge_selection_tolerance_mm": 2.0,
+      "edge": {
+        "fixed_0p5": 0.5,
+        "train_max_f1": 0.15670204162597656,
+        "train_preserve_precision": 0.15670204162597656,
+        "precision_target_attainable": true
+      },
+      "node_graph_needs_uncached_queries": true,
+      "training_patches": 160,
+      "training_subjects": 39
+    },
+    "synthetic": {
+      "node_train_max_f1": 0.45,
+      "node_selection_tolerance_mm": 2.0,
+      "node_grid": [
+        0.0,
+        0.025,
+        0.05,
+        0.075,
+        0.1,
+        0.15,
+        0.2,
+        0.25,
+        0.3,
+        0.35,
+        0.4,
+        0.45,
+        0.5,
+        0.55,
+        0.6,
+        0.65,
+        0.7,
+        0.75,
+        0.8,
+        0.85,
+        0.9,
+        0.95,
+        1.0
+      ],
+      "baseline_training_precision": 0.1339712918660287,
+      "edge_selection_tolerance_mm": 2.0,
+      "edge": {
+        "fixed_0p5": 0.5,
+        "train_max_f1": 0.42537447810173035,
+        "train_preserve_precision": 0.49719586968421936,
+        "precision_target_attainable": true
+      },
+      "node_graph_needs_uncached_queries": true,
+      "training_patches": 160,
+      "training_subjects": 39
+    }
+  }
+}

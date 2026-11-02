@@ -1,0 +1,26 @@
+{
+  "verifier_SyntheticMRI": {
+    "state": "FAILED",
+    "exit_code": "2:0"
+  },
+  "verifier_IXI": {
+    "state": "FAILED",
+    "exit_code": "2:0"
+  },
+  "verifier_SyntheticMRI_retry": {
+    "state": "COMPLETED",
+    "exit_code": "0:0"
+  },
+  "verifier_IXI_retry": {
+    "state": "COMPLETED",
+    "exit_code": "0:0"
+  },
+  "brava_scratch": {
+    "state": "COMPLETED",
+    "exit_code": "0:0"
+  },
+  "brava_ixi_spline": {
+    "state": "COMPLETED",
+    "exit_code": "0:0"
+  }
+}

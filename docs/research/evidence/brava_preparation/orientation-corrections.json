@@ -1,0 +1,165 @@
+{
+  "default_reflect_x": false,
+  "corrections": {
+    "BG0014": {
+      "reflect_x": true,
+      "reason": "Subject-specific SWC-to-image x reflection; primary trace MRI median improves >10%, brain support >99%; all 56 subjects screened without stopping at first failure.",
+      "input_sha256": {
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0014.nii.gz": "7e17a26890a4f1ab8bd8f6d05f5c007b99065548135fc0ba100cf373e24d9f6b",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0014_space-MRA_desc-brain_mask.nii.gz": "49612cf45b0a730d81b5df272b929e45c445475381059ae4d0805459f5943a13",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0014.CNG.swc": "ff3469527920967c5e041a13c15ebbba7d7eaa68ab2c0abf7d42fff7c9e80b82",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0014_ColorCoded.CNG.swc": "8aafe27b06093a344ebcee7cf9b8ce8352cacef6bf13c2f4c9f7f670ec619882"
+      },
+      "before": {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 140.0,
+        "mean": 139.39434814453125,
+        "brain_fraction": 0.9758454106280193,
+        "inside_fraction": 1.0
+      },
+      "after": {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 167.5,
+        "mean": 192.39161682128906,
+        "brain_fraction": 0.9977116704805492,
+        "inside_fraction": 1.0
+      }
+    },
+    "BG0019": {
+      "reflect_x": true,
+      "reason": "Subject-specific SWC-to-image x reflection; primary trace MRI median improves >10%, brain support >99%; all 56 subjects screened without stopping at first failure.",
+      "input_sha256": {
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0019.nii.gz": "b3c68f446d923873d9ca7541604dab7f6cd118eb36e228175cfa80d3d852da9c",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0019_space-MRA_desc-brain_mask.nii.gz": "520ba7aff842bff4eecc9a2dc3288fe29f361d0e6a7cf233bb93895a82da2dc1",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0019.CNG.swc": "b29d57c9e6b7c5e28b6176de14a6fe8802b3b5a4997b1a9117568ad7b208ef72",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0019_ColorCoded.CNG.swc": "e2f9ced8c4ff2d8561ac6e2f6e291e4f9718daa3ef844b819df5922f57e24abb"
+      },
+      "before": {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 148.0,
+        "mean": 145.564453125,
+        "brain_fraction": 0.9708593517692536,
+        "inside_fraction": 1.0
+      },
+      "after": {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 178.0,
+        "mean": 199.62942504882812,
+        "brain_fraction": 0.9970264644662503,
+        "inside_fraction": 1.0
+      }
+    },
+    "BG0020": {
+      "reflect_x": true,
+      "reason": "Subject-specific SWC-to-image x reflection; primary trace MRI median improves >10%, brain support >99%; all 56 subjects screened without stopping at first failure.",
+      "input_sha256": {
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0020.nii.gz": "8a3173f6d6094bfee9abef493fc18dca25d97057a64db1db242fdf744f0f8010",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0020_space-MRA_desc-brain_mask.nii.gz": "02b587b92dd8eddb318fff0c32fd2810c236ab111283ed420e35240907b603f3",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0020.CNG.swc": "26a7dfa054fa72d349efbe6b4562bbc798e9b38dcaa79b86e5ba6737ab27a508",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0020_ColorCoded.CNG.swc": "7c0f6613f5cf5ac3062ebd386eb191cdd27e80e606d4a062b7c6bead969fab9b"
+      },
+      "before": {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 137.0,
+        "mean": 132.3620147705078,
+        "brain_fraction": 0.9553542542866387,
+        "inside_fraction": 1.0
+      },
+      "after": {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 172.5,
+        "mean": 190.5051727294922,
+        "brain_fraction": 0.9954707214493691,
+        "inside_fraction": 1.0
+      }
+    },
+    "BG0021": {
+      "reflect_x": true,
+      "reason": "Subject-specific SWC-to-image x reflection; primary trace MRI median improves >10%, brain support >99%; all 56 subjects screened without stopping at first failure.",
+      "input_sha256": {
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0021.nii.gz": "c7b7c9d78bc492eb861e384e8ed7787ac1129f0b5ab857ffb687285db20ae464",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0021_space-MRA_desc-brain_mask.nii.gz": "111b49479042dd83ae2e072f6a5c858f118d76415d8e436d17af562922721a9b",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0021.CNG.swc": "9224ebc050b608c90fac63fe0e14d2dc1fec74e1896a57ef73b1ab80f474a0c8",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0021_ColorCoded.CNG.swc": "933dc7240406f221b69d78527a5752ad151522e9d857f8e0445cfeaf33f86015"
+      },
+      "before": {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 155.0,
+        "mean": 154.41729736328125,
+        "brain_fraction": 0.987827968623208,
+        "inside_fraction": 1.0
+      },
+      "after": {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 190.0,
+        "mean": 213.90634155273438,
+        "brain_fraction": 0.9978360833107925,
+        "inside_fraction": 1.0
+      }
+    },
+    "BG0022": {
+      "reflect_x": true,
+      "reason": "Subject-specific SWC-to-image x reflection; primary trace MRI median improves >10%, brain support >99%; all 56 subjects screened without stopping at first failure.",
+      "input_sha256": {
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0022.nii.gz": "f487b7e3a8c650ae33eccf1da37304da838fcc1c0e1b5e4b420f7db269e7af57",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0022_space-MRA_desc-brain_mask.nii.gz": "17fa8cab096d0ebe737e68d1e396d603d75f240f7268ed20aa79d7a1ade35be7",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0022.CNG.swc": "dc3b775844a8f9967658802d837cb9a44ca188464aa7640d73a39c2a4327d5ae",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0022_ColorCoded.CNG.swc": "15c2b1b9abaa908500d4d1e2e12f06070981eee15ddcbeadf9d8d9edb2475eda"
+      },
+      "before": {
+        "relative_flip": [
+          false,
+          false,
+          false
+        ],
+        "median": 148.5,
+        "mean": 148.844970703125,
+        "brain_fraction": 0.9762262262262262,
+        "inside_fraction": 1.0
+      },
+      "after": {
+        "relative_flip": [
+          true,
+          false,
+          false
+        ],
+        "median": 176.0,
+        "mean": 194.66265869140625,
+        "brain_fraction": 0.9982482482482482,
+        "inside_fraction": 1.0
+      }
+    }
+  }
+}

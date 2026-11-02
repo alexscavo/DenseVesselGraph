@@ -1,0 +1,25 @@
+{
+  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-cheap-diagnostics-20261026",
+  "branch": "research/cheap-diagnostics-20261026",
+  "jobs": {
+    "bn": {
+      "id": "1584593",
+      "dependencies": [
+        "1583591",
+        "1583592",
+        "1583593"
+      ]
+    },
+    "collector": {
+      "id": "1584594",
+      "dependency": "1584593"
+    }
+  },
+  "relation_results": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-cheap-diagnostics-20261026/experiments/cheap_diagnostics_20261026/relation-analysis.json",
+  "bn_results": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/cheap_diagnostics_20261026",
+  "reports": [
+    "docs/research/spline_learning/spline-collapse-diagnosis.md",
+    "docs/research/metrics/9-ixi-image-aware-relation-learning.md"
+  ],
+  "roadmap_integration": "completed after unchanged-content check"
+}

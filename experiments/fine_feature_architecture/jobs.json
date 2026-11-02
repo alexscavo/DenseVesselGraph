@@ -1,0 +1,30 @@
+{
+  "smoke": "1516044",
+  "baseline_segments": [
+    "1516046",
+    "1516050"
+  ],
+  "dependency_chain": "1516044 -> 1516046 (epochs1\u201350) -> 1516050 (epochs51\u2013100, quality gate)",
+  "pilot_array": "1516330",
+  "architecture_preflight": "1516326",
+  "historical": "1516151",
+  "architecture_instant_preflight": "1516150",
+  "architecture_gate": "1516210",
+  "pilot_array_mapping": {
+    "0": "B0",
+    "1": "A",
+    "2": "A-control",
+    "3": "C"
+  },
+  "pilot_concurrency": 2,
+  "status": "completed: baseline 100 epochs, both gates passed, four 3000-update pilots and collector completed",
+  "collector": "1522540",
+  "pilot_job_ids": {
+    "B0": "1523744",
+    "A": "1523745",
+    "A-control": "1524122",
+    "C": "1516330"
+  },
+  "selected_epoch": 95,
+  "max_observed_concurrent_h100": 2
+}

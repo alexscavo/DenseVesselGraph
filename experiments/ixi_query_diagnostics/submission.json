@@ -1,0 +1,65 @@
+{
+  "smoke_job": 1291009,
+  "smoke": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_query_diagnostics_20261019/smoke-1291009-local_image",
+  "mode": "pilot",
+  "train_patches": 256,
+  "validation_patches": 128,
+  "model_updates": 0,
+  "jobs": {
+    "parent": {
+      "id": "1291324",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--dependency=afterok:1291009",
+        "--time=02:00:00",
+        "cluster/jean_zay/ixi_query_diagnostics.slurm",
+        "pilot",
+        "parent"
+      ],
+      "output": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_query_diagnostics_20261019/pilot-1291324-parent",
+      "slurm_status": "FAILED",
+      "model_evaluation": "completed",
+      "cpu_collection": "completed_exit_0_after_fix",
+      "recovery_collector_sha256": "db6b9c8bcf9ecedc8fb1d642390255bd5af35b6703b8ace700fcf675fdd42b6a"
+    },
+    "baseline": {
+      "id": "1291328",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--dependency=afterok:1291009",
+        "--time=02:00:00",
+        "cluster/jean_zay/ixi_query_diagnostics.slurm",
+        "pilot",
+        "baseline"
+      ],
+      "output": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_query_diagnostics_20261019/pilot-1291328-baseline",
+      "slurm_status": "FAILED",
+      "model_evaluation": "completed",
+      "cpu_collection": "completed_exit_0_after_fix",
+      "recovery_collector_sha256": "db6b9c8bcf9ecedc8fb1d642390255bd5af35b6703b8ace700fcf675fdd42b6a"
+    },
+    "local_image": {
+      "id": "1291329",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--dependency=afterok:1291009",
+        "--time=02:00:00",
+        "cluster/jean_zay/ixi_query_diagnostics.slurm",
+        "pilot",
+        "local_image"
+      ],
+      "output": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_query_diagnostics_20261019/pilot-1291329-local_image",
+      "slurm_status": "FAILED",
+      "model_evaluation": "completed",
+      "cpu_collection": "completed_exit_0_after_fix",
+      "recovery_collector_sha256": "db6b9c8bcf9ecedc8fb1d642390255bd5af35b6703b8ace700fcf675fdd42b6a"
+    }
+  },
+  "round_status": "completed_pilot_only_no_further_jobs"
+}

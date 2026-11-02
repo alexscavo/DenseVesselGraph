@@ -1,0 +1,141 @@
+{
+  "output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057",
+  "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava",
+  "jobs": {
+    "alignment_and_native_exports": {
+      "id": "1335951",
+      "dependency": null,
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=01:00:00",
+        "cluster/jean_zay/prepare_brava.slurm",
+        "audit",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057"
+      ]
+    },
+    "real_graph_and_patch_smoke": {
+      "id": "1335952",
+      "dependency": "1335951",
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=01:00:00",
+        "--dependency=afterok:1335951",
+        "cluster/jean_zay/prepare_brava.slurm",
+        "smoke",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057"
+      ]
+    },
+    "full_volume_graphs_and_skull_stripping": {
+      "id": "1335953",
+      "dependency": "1335952",
+      "array": "0-55%4",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=00:30:00",
+        "--dependency=afterok:1335952",
+        "--array=0-55%4",
+        "cluster/jean_zay/prepare_brava.slurm",
+        "subject",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057"
+      ]
+    },
+    "subject_split_and_staging": {
+      "id": "1335954",
+      "dependency": "1335953",
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=00:15:00",
+        "--dependency=afterok:1335953",
+        "cluster/jean_zay/prepare_brava.slurm",
+        "stage",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057"
+      ]
+    },
+    "ixi_grid_patches": {
+      "id": "1335955",
+      "dependency": "1335954",
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=04:00:00",
+        "--dependency=afterok:1335954",
+        "cluster/jean_zay/prepare_brava.slurm",
+        "patches",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057"
+      ]
+    },
+    "model_compatible_spline_targets": {
+      "id": "1335956",
+      "dependency": "1335955",
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=04:00:00",
+        "--dependency=afterok:1335955",
+        "cluster/jean_zay/prepare_brava.slurm",
+        "targets",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057"
+      ]
+    },
+    "collection": {
+      "id": "1335957",
+      "dependency": "1335956",
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=00:30:00",
+        "--dependency=afterok:1335956",
+        "cluster/jean_zay/prepare_brava.slurm",
+        "collect",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057"
+      ]
+    }
+  },
+  "image_subjects": 56,
+  "policy": {
+    "skull_strip": "image * (supplied brain mask > 0)",
+    "vessel_segmentations": false,
+    "graphs": "provided SWC parent links; dense, junction-only and radius-adaptive; preserve original guides",
+    "primary": "original except malformed BH0027 original: use complete colorcoded counterpart",
+    "patch_size": [
+      64,
+      64,
+      64
+    ],
+    "maximum_stride": [
+      40,
+      40,
+      40
+    ],
+    "pad": [
+      0,
+      0,
+      0
+    ],
+    "split": "subject-disjoint 70/15/15 seed42; all trace variants share the same subject",
+    "targets": "shared junction/end/boundary anchors, 8 B-spline controls, 256-query capacity; all compatible patches",
+    "seg_slot": "supplied brain mask only, for legacy loader compatibility; not vessel GT"
+  },
+  "source_sha256": {
+    "scripts/prepare_brava.py": "7a558b947e56bc5e3c5f29f9a7d88a493f6c12d9dd6cdaf77b2c9e1065ff1633",
+    "cluster/jean_zay/prepare_brava.slurm": "d2c98af733f30737b258027b8d80527d5fa103a2a7699f0cbbe1723fa59b5fb2"
+  },
+  "submitted": true
+}

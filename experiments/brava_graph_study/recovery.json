@@ -1,0 +1,22 @@
+{
+  "output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_graph_study_20261021-102438",
+  "reason": "Coincident SWC endpoints deduplicated to a one-point reference path",
+  "training_or_inference_rerun": false,
+  "jobs": {
+    "representations": {
+      "id": "1421288",
+      "dependency": null,
+      "walltime": "04:00:00"
+    },
+    "collection": {
+      "id": "1421289",
+      "dependency": "afterok:1421288",
+      "walltime": "02:00:00"
+    }
+  },
+  "source_sha256": {
+    "scripts/audit_brava_study.py": "05f9a770d02a5757d133e2b9697aeaa520ae699e1b37012ea1bd22d008b327fb",
+    "scripts/collect_brava_study.py": "48acecfe9921684097581e2235d33460e31d87d4cefad84e86eb80f7917e59e7",
+    "tests/test_brava_reference_geometry.py": "dc5de51f5ac333b5e9c06cb3f3359c33da2aa3c4b62281db546e50f515f7fd5c"
+  }
+}

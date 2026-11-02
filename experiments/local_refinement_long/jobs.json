@@ -1,0 +1,46 @@
+{
+  "smoke": "1534537",
+  "status": "complete: all eight 12000-update runs and final analysis passed",
+  "array_mapping": {
+    "0": {
+      "seed": 364505,
+      "arm": "B0"
+    },
+    "1": {
+      "seed": 364505,
+      "arm": "A"
+    },
+    "2": {
+      "seed": 364505,
+      "arm": "A-xyz"
+    },
+    "3": {
+      "seed": 364505,
+      "arm": "A-control"
+    },
+    "4": {
+      "seed": 92741,
+      "arm": "B0"
+    },
+    "5": {
+      "seed": 92741,
+      "arm": "A"
+    },
+    "6": {
+      "seed": 92741,
+      "arm": "A-xyz"
+    },
+    "7": {
+      "seed": 92741,
+      "arm": "A-control"
+    }
+  },
+  "max_concurrent_h100": 2,
+  "array": "1534540",
+  "collector": "1540969",
+  "failed_array": "1534540",
+  "failed_collector": "1534655",
+  "recovery_array": "1540960",
+  "second_seed_array": "1540961",
+  "first_seed_operating": "1541391"
+}

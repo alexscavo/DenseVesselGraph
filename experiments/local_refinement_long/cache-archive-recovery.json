@@ -1,0 +1,135 @@
+[
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/A/final-no-confidence/caches.zip",
+    "files": 128,
+    "sha256": "af219d53bd2314af7976f48da66b3c3c6096f91c20b6a6ca45a53aeae451c703",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/A/final-no-coordinate/caches.zip",
+    "files": 128,
+    "sha256": "55697335749891c1ba1b19263f7873de8daac3cd1180903e299fbf6f2a1a1456",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/A/final-roll/caches.zip",
+    "files": 128,
+    "sha256": "bdb8035bd88e52820e762a9d7c6f4e4c45bb851b067c41b87c47b67e0466ebe1",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/A/final-zero/caches.zip",
+    "files": 128,
+    "sha256": "6de64244fc3c15b9c431256381e0aeb8a2d30300fdb7582f94a447d31d6d7c53",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/A/initial/caches.zip",
+    "files": 96,
+    "sha256": "367843f6e7f171559462aa4ae0d83624061cb47222a4b87d82c1ecba741ae5c6",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/A/step-12000/caches.zip",
+    "files": 608,
+    "sha256": "f7dc03eff635c4eda006d2173aeb4d4a86ce3794479fcfcebb3663dd38b2fe0a",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/A/step-3000/caches.zip",
+    "files": 608,
+    "sha256": "68f0233839ff2b3be37bbb1f60d7d1193813f31514079114d7e93eb78a29553b",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/A/step-6000/caches.zip",
+    "files": 608,
+    "sha256": "5315bd5d300bc747afe2f07629bcbd53db92b5ba3e43bbf3d9d5ad63a4df50b8",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/A/step-9000/caches.zip",
+    "files": 608,
+    "sha256": "261865dea3b370dcc6f803c361c888a56f00370302406a9c1caa16ef06244c3a",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/A-control/initial/caches.zip",
+    "files": 96,
+    "sha256": "a5950890ec01856c5c80a34346c51b846b55e4da51c8f30b1e7710a7fe826b88",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/A-control/step-3000/caches.zip",
+    "files": 608,
+    "sha256": "978e17ea523b87bfbedaf851c8bcfd0e1be3491d79158d8d833add651bf7ab05",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/A-control/step-6000/caches.zip",
+    "files": 608,
+    "sha256": "b83f2518bb536825b80346f7e7f03fdcbe6d66db5fe8b37097e2580571a456e3",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/A-control/step-9000/interrupted-caches.zip",
+    "files": 134,
+    "sha256": "dc8781742dc31b75c50207b5e9a653e12d88e244c988c107d3dea319d67ff00f",
+    "verified_original_entry_bytes": true,
+    "original_archive_path": "experiments/local_refinement_long/364505/runs/A-control/step-9000/caches.zip"
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/A-xyz/initial/caches.zip",
+    "files": 96,
+    "sha256": "ed40dd13968b78d5157906fb0277948cd60d1f118d46741f4533d652e1476c63",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/A-xyz/step-3000/caches.zip",
+    "files": 608,
+    "sha256": "d3bc6edb4e59e27900d7238a4d890a71262ebfe159c61569e860be9a444f3de2",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/A-xyz/step-6000/caches.zip",
+    "files": 608,
+    "sha256": "2a2474552ebdf7b74dd889e063c82320e1aee0090ed6926624859cdca1725075",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/A-xyz/step-9000/caches.zip",
+    "files": 608,
+    "sha256": "78286aa8cb45776b1eb4aea430e88397dfc1f1f5b3cb678329ea8b1b3ec0bd16",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/B0/initial/caches.zip",
+    "files": 96,
+    "sha256": "0079e0e0bbcea1681f26abbd75b40ba85dc918d4a9f0209f04126f56ef3f17f0",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/B0/step-12000/caches.zip",
+    "files": 608,
+    "sha256": "60917e16c062b6bbcbd996f0e8b428eb40f4afd73bc5b4f4909a51b6f5735bdb",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/B0/step-3000/caches.zip",
+    "files": 608,
+    "sha256": "3e03fded26dd1a663892a5694baf3a463110add5746c0d612eabc5f8159975c2",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/B0/step-6000/caches.zip",
+    "files": 608,
+    "sha256": "ab9268f258284bc009bf3709b330c5a3b924fe4614abe741b5248dccd700eadd",
+    "verified_original_entry_bytes": true
+  },
+  {
+    "archive": "experiments/local_refinement_long/364505/runs/B0/step-9000/caches.zip",
+    "files": 608,
+    "sha256": "d907f907acf8991dc470924b85ddaf57c30208cc1ee0f2378681d49a4708fbee",
+    "verified_original_entry_bytes": true
+  }
+]

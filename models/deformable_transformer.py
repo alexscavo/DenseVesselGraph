@@ -78,6 +78,10 @@ class DeformableTransformer(nn.Module):
 
     def forward(self, srcs, masks, query_embed, pos_embeds):
         assert query_embed is not None
+        if torch.is_tensor(srcs):
+            srcs, masks, pos_embeds = [srcs], [masks], [pos_embeds]
+        if not len(srcs) == len(masks) == len(pos_embeds) == len(self.level_embed):
+            raise ValueError('Feature sources, masks, positions and configured levels must agree')
 
         # prepare input for encoder
         src_flatten = []
@@ -85,7 +89,7 @@ class DeformableTransformer(nn.Module):
         lvl_pos_embed_flatten = []
         pos_embeds_flatten = []
         spatial_shapes = []
-        for lvl, (src, mask, pos_embed) in enumerate(zip([srcs], [masks], [pos_embeds])):
+        for lvl, (src, mask, pos_embed) in enumerate(zip(srcs, masks, pos_embeds)):
             bs, c, d, h, w = src.shape
             spatial_shape = (d, h, w)
             spatial_shapes.append(spatial_shape)
@@ -109,7 +113,7 @@ class DeformableTransformer(nn.Module):
         level_start_index = torch.cat((spatial_shapes.new_zeros((1, )), spatial_shapes.prod(1).cumsum(0)[:-1]))
 
         # Determine the ratios of valid regions based on the mask for in format WHD/XYZ
-        valid_ratios = torch.stack([self.get_valid_ratio(m) for m in [masks]], 1)
+        valid_ratios = torch.stack([self.get_valid_ratio(m) for m in masks], 1)
 
         # encoder
         memory = self.encoder(

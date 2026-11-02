@@ -1,0 +1,702 @@
+[
+  {
+    "experiment": "B",
+    "arm": "original",
+    "tolerance_mm": 1,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.05184897849229534,
+      0.0839241505913683
+    ],
+    "delta_vs_original_95pct": [
+      0.0,
+      0.0
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "focal_control",
+    "tolerance_mm": 1,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.04322620799490711,
+      0.0652738236374991
+    ],
+    "delta_vs_original_95pct": [
+      -0.02298718195535166,
+      -0.004790602042201184
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "regularized",
+    "tolerance_mm": 1,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.041463216790862546,
+      0.06190864370274134
+    ],
+    "delta_vs_original_95pct": [
+      -0.025300300836376268,
+      -0.007774339723082686
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_unmatched",
+    "tolerance_mm": 1,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.05045157424997534,
+      0.07934582442053541
+    ],
+    "delta_vs_original_95pct": [
+      -0.011922236833054262,
+      0.00591234976945273
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_matched",
+    "tolerance_mm": 1,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.04031017824382511,
+      0.061087617488186245
+    ],
+    "delta_vs_original_95pct": [
+      -0.02699261725833103,
+      -0.009003308202687396
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "normal",
+    "tolerance_mm": 1,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.05184897849229534,
+      0.0839241505913683
+    ],
+    "delta_vs_normal_95pct": [
+      0.0,
+      0.0
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "spatial",
+    "tolerance_mm": 1,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.41842194627536533,
+      0.47901401895126783
+    ],
+    "delta_vs_normal_95pct": [
+      0.34306957641686286,
+      0.41665255256623335
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "hungarian",
+    "tolerance_mm": 1,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.06840499261574001,
+      0.12075717328242659
+    ],
+    "delta_vs_normal_95pct": [
+      0.008904640580901452,
+      0.04585084586570383
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "hungarian_rematched",
+    "tolerance_mm": 1,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.08557016438645872,
+      0.13832143221354032
+    ],
+    "delta_vs_normal_95pct": [
+      0.025828937952025354,
+      0.062866755792307
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "parent_hungarian",
+    "tolerance_mm": 1,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.038087131432548785,
+      0.1014231595500763
+    ],
+    "delta_vs_normal_95pct": [
+      -0.022598345544895544,
+      0.028216650690669857
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "original",
+    "tolerance_mm": 1,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.45689283423816096,
+      0.5419073772236621
+    ],
+    "delta_vs_original_95pct": [
+      0.0,
+      0.0
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "focal_control",
+    "tolerance_mm": 1,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.3800319956733399,
+      0.47936880581243907
+    ],
+    "delta_vs_original_95pct": [
+      -0.09584328124250492,
+      -0.04084570692761232
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "regularized",
+    "tolerance_mm": 1,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.38535337470328235,
+      0.48073186552604447
+    ],
+    "delta_vs_original_95pct": [
+      -0.09539406013651626,
+      -0.036769064437804026
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_unmatched",
+    "tolerance_mm": 1,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.3567168840166089,
+      0.4636016013803951
+    ],
+    "delta_vs_original_95pct": [
+      -0.1231213747963099,
+      -0.05579933158959571
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_matched",
+    "tolerance_mm": 1,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.36616705807064803,
+      0.4633872649361757
+    ],
+    "delta_vs_original_95pct": [
+      -0.11661160521607107,
+      -0.051630979070442694
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "normal",
+    "tolerance_mm": 1,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.45689283423816096,
+      0.5419073772236621
+    ],
+    "delta_vs_normal_95pct": [
+      0.0,
+      0.0
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "spatial",
+    "tolerance_mm": 1,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.41842194627536533,
+      0.47901401895126783
+    ],
+    "delta_vs_normal_95pct": [
+      -0.09108225200560538,
+      -0.005760074903307499
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "hungarian",
+    "tolerance_mm": 1,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.4538718338687398,
+      0.5296960182822679
+    ],
+    "delta_vs_normal_95pct": [
+      -0.04231191663149659,
+      0.021467971558204808
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "hungarian_rematched",
+    "tolerance_mm": 1,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.4371342866890961,
+      0.5246996893844399
+    ],
+    "delta_vs_normal_95pct": [
+      -0.048459069426649785,
+      0.012807384845869591
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "parent_hungarian",
+    "tolerance_mm": 1,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.43658052037596695,
+      0.5912963708919444
+    ],
+    "delta_vs_normal_95pct": [
+      -0.07114268679142896,
+      0.09369231031676735
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "original",
+    "tolerance_mm": 2,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.1208374676025805,
+      0.15254036118873102
+    ],
+    "delta_vs_original_95pct": [
+      0.0,
+      0.0
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "focal_control",
+    "tolerance_mm": 2,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.10314426197027315,
+      0.1326734270264829
+    ],
+    "delta_vs_original_95pct": [
+      -0.026840464299980674,
+      -0.01242950729055655
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "regularized",
+    "tolerance_mm": 2,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.10083340247040155,
+      0.1294943874656311
+    ],
+    "delta_vs_original_95pct": [
+      -0.028311605279191573,
+      -0.01678044139984555
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_unmatched",
+    "tolerance_mm": 2,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.10350522025765281,
+      0.13689064000899748
+    ],
+    "delta_vs_original_95pct": [
+      -0.027570462666467434,
+      -0.0077889478339268695
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_matched",
+    "tolerance_mm": 2,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.09849987691613661,
+      0.12685015166316918
+    ],
+    "delta_vs_original_95pct": [
+      -0.030880347839521156,
+      -0.01852875664169949
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "normal",
+    "tolerance_mm": 2,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.1208374676025805,
+      0.15254036118873102
+    ],
+    "delta_vs_normal_95pct": [
+      0.0,
+      0.0
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "spatial",
+    "tolerance_mm": 2,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.3437200487467456,
+      0.39850052860718993
+    ],
+    "delta_vs_normal_95pct": [
+      0.20143381136862434,
+      0.2721873321191068
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "hungarian",
+    "tolerance_mm": 2,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.19177792215391112,
+      0.24102549795848038
+    ],
+    "delta_vs_normal_95pct": [
+      0.053315052624815853,
+      0.10456667904972167
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "hungarian_rematched",
+    "tolerance_mm": 2,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.2065954280139514,
+      0.25598044941303516
+    ],
+    "delta_vs_normal_95pct": [
+      0.06761892664531609,
+      0.11941270082246544
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "parent_hungarian",
+    "tolerance_mm": 2,
+    "population": "all_selected",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.1710442963113907,
+      0.22458123438014185
+    ],
+    "delta_vs_normal_95pct": [
+      0.030672301272773535,
+      0.08902793925223111
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "original",
+    "tolerance_mm": 2,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.44381264073356835,
+      0.5011718648650256
+    ],
+    "delta_vs_original_95pct": [
+      0.0,
+      0.0
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "focal_control",
+    "tolerance_mm": 2,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.38053378434081553,
+      0.4480269350191747
+    ],
+    "delta_vs_original_95pct": [
+      -0.07772375904541104,
+      -0.03981385659439307
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "regularized",
+    "tolerance_mm": 2,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.3827955601824748,
+      0.4602414810081025
+    ],
+    "delta_vs_original_95pct": [
+      -0.07353633544719848,
+      -0.0300515422962983
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_unmatched",
+    "tolerance_mm": 2,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.3319990212625147,
+      0.40850939222404337
+    ],
+    "delta_vs_original_95pct": [
+      -0.12916322824334348,
+      -0.0779884329672799
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_matched",
+    "tolerance_mm": 2,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.36857344689164834,
+      0.44354522336235996
+    ],
+    "delta_vs_original_95pct": [
+      -0.09155203340266391,
+      -0.04345971362546333
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "normal",
+    "tolerance_mm": 2,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.44381264073356835,
+      0.5011718648650256
+    ],
+    "delta_vs_normal_95pct": [
+      0.0,
+      0.0
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "spatial",
+    "tolerance_mm": 2,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.3437200487467456,
+      0.39850052860718993
+    ],
+    "delta_vs_normal_95pct": [
+      -0.1393573469543413,
+      -0.06370760431390177
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "hungarian",
+    "tolerance_mm": 2,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.43331983581713557,
+      0.5024081932705601
+    ],
+    "delta_vs_normal_95pct": [
+      -0.03310441396380175,
+      0.026844180783197953
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "hungarian_rematched",
+    "tolerance_mm": 2,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.4168249916497296,
+      0.4747649935284325
+    ],
+    "delta_vs_normal_95pct": [
+      -0.057378280030484945,
+      0.004943070810485037
+    ],
+    "usable_resamples": 1000
+  },
+  {
+    "experiment": "A",
+    "arm": "original",
+    "condition": "parent_hungarian",
+    "tolerance_mm": 2,
+    "population": "conditional",
+    "subjects": 26,
+    "resamples": 1000,
+    "ap_95pct": [
+      0.44843517031876623,
+      0.5163059974912606
+    ],
+    "delta_vs_normal_95pct": [
+      -0.03134090750815929,
+      0.042752122935059124
+    ],
+    "usable_resamples": 1000
+  }
+]

@@ -1,0 +1,242 @@
+[
+  {
+    "step": 1000,
+    "split": "train",
+    "tolerance_mm": 1,
+    "population": "all_retained",
+    "candidates": 1153744,
+    "positives": 9010,
+    "prevalence": 0.007809358055166484,
+    "ap": 0.07845422934030293
+  },
+  {
+    "step": 1000,
+    "split": "val",
+    "tolerance_mm": 1,
+    "population": "all_retained",
+    "candidates": 275915,
+    "positives": 1622,
+    "prevalence": 0.005878622039396191,
+    "ap": 0.054457208081954867
+  },
+  {
+    "step": 1000,
+    "split": "train",
+    "tolerance_mm": 1,
+    "population": "conditional",
+    "candidates": 182540,
+    "positives": 9010,
+    "prevalence": 0.049359044592965924,
+    "ap": 0.5528836673942492
+  },
+  {
+    "step": 1000,
+    "split": "val",
+    "tolerance_mm": 1,
+    "population": "conditional",
+    "candidates": 30749,
+    "positives": 1622,
+    "prevalence": 0.05274968291651761,
+    "ap": 0.5115414389874053
+  },
+  {
+    "step": 1000,
+    "split": "train",
+    "tolerance_mm": 2,
+    "population": "all_retained",
+    "candidates": 1153744,
+    "positives": 19443,
+    "prevalence": 0.01685209197187591,
+    "ap": 0.15772138671128616
+  },
+  {
+    "step": 1000,
+    "split": "val",
+    "tolerance_mm": 2,
+    "population": "all_retained",
+    "candidates": 275915,
+    "positives": 3774,
+    "prevalence": 0.013678125509667833,
+    "ap": 0.12413669096694832
+  },
+  {
+    "step": 1000,
+    "split": "train",
+    "tolerance_mm": 2,
+    "population": "conditional",
+    "candidates": 432105,
+    "positives": 19443,
+    "prevalence": 0.044996007914742946,
+    "ap": 0.4913615512407135
+  },
+  {
+    "step": 1000,
+    "split": "val",
+    "tolerance_mm": 2,
+    "population": "conditional",
+    "candidates": 75573,
+    "positives": 3774,
+    "prevalence": 0.04993847008852368,
+    "ap": 0.47526053968207915
+  },
+  {
+    "step": 2000,
+    "split": "train",
+    "tolerance_mm": 1,
+    "population": "all_retained",
+    "candidates": 1153744,
+    "positives": 9010,
+    "prevalence": 0.007809358055166484,
+    "ap": 0.07860861590073735
+  },
+  {
+    "step": 2000,
+    "split": "val",
+    "tolerance_mm": 1,
+    "population": "all_retained",
+    "candidates": 275915,
+    "positives": 1622,
+    "prevalence": 0.005878622039396191,
+    "ap": 0.05436068452329698
+  },
+  {
+    "step": 2000,
+    "split": "train",
+    "tolerance_mm": 1,
+    "population": "conditional",
+    "candidates": 182540,
+    "positives": 9010,
+    "prevalence": 0.049359044592965924,
+    "ap": 0.5553504286396598
+  },
+  {
+    "step": 2000,
+    "split": "val",
+    "tolerance_mm": 1,
+    "population": "conditional",
+    "candidates": 30749,
+    "positives": 1622,
+    "prevalence": 0.05274968291651761,
+    "ap": 0.5139424704185025
+  },
+  {
+    "step": 2000,
+    "split": "train",
+    "tolerance_mm": 2,
+    "population": "all_retained",
+    "candidates": 1153744,
+    "positives": 19443,
+    "prevalence": 0.01685209197187591,
+    "ap": 0.15755504305217907
+  },
+  {
+    "step": 2000,
+    "split": "val",
+    "tolerance_mm": 2,
+    "population": "all_retained",
+    "candidates": 275915,
+    "positives": 3774,
+    "prevalence": 0.013678125509667833,
+    "ap": 0.12384109067006269
+  },
+  {
+    "step": 2000,
+    "split": "train",
+    "tolerance_mm": 2,
+    "population": "conditional",
+    "candidates": 432105,
+    "positives": 19443,
+    "prevalence": 0.044996007914742946,
+    "ap": 0.49436538448737744
+  },
+  {
+    "step": 2000,
+    "split": "val",
+    "tolerance_mm": 2,
+    "population": "conditional",
+    "candidates": 75573,
+    "positives": 3774,
+    "prevalence": 0.04993847008852368,
+    "ap": 0.4765976486019735
+  },
+  {
+    "step": 65600,
+    "split": "train",
+    "tolerance_mm": 1,
+    "population": "all_retained",
+    "candidates": 1153744,
+    "positives": 9010,
+    "prevalence": 0.007809358055166484,
+    "ap": 0.07864423291523102
+  },
+  {
+    "step": 65600,
+    "split": "val",
+    "tolerance_mm": 1,
+    "population": "all_retained",
+    "candidates": 275915,
+    "positives": 1622,
+    "prevalence": 0.005878622039396191,
+    "ap": 0.03498132441037977
+  },
+  {
+    "step": 65600,
+    "split": "train",
+    "tolerance_mm": 1,
+    "population": "conditional",
+    "candidates": 182540,
+    "positives": 9010,
+    "prevalence": 0.049359044592965924,
+    "ap": 0.6546746284387497
+  },
+  {
+    "step": 65600,
+    "split": "val",
+    "tolerance_mm": 1,
+    "population": "conditional",
+    "candidates": 30749,
+    "positives": 1622,
+    "prevalence": 0.05274968291651761,
+    "ap": 0.3374363191802285
+  },
+  {
+    "step": 65600,
+    "split": "train",
+    "tolerance_mm": 2,
+    "population": "all_retained",
+    "candidates": 1153744,
+    "positives": 19443,
+    "prevalence": 0.01685209197187591,
+    "ap": 0.16101391962927653
+  },
+  {
+    "step": 65600,
+    "split": "val",
+    "tolerance_mm": 2,
+    "population": "all_retained",
+    "candidates": 275915,
+    "positives": 3774,
+    "prevalence": 0.013678125509667833,
+    "ap": 0.07766261068018444
+  },
+  {
+    "step": 65600,
+    "split": "train",
+    "tolerance_mm": 2,
+    "population": "conditional",
+    "candidates": 432105,
+    "positives": 19443,
+    "prevalence": 0.044996007914742946,
+    "ap": 0.604401434210274
+  },
+  {
+    "step": 65600,
+    "split": "val",
+    "tolerance_mm": 2,
+    "population": "conditional",
+    "candidates": 75573,
+    "positives": 3774,
+    "prevalence": 0.04993847008852368,
+    "ap": 0.3058423459649414
+  }
+]

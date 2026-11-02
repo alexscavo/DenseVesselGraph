@@ -1,0 +1,30 @@
+{
+  "jobs": {
+    "GPU forward backward and collector smoke": {
+      "id": "1460518",
+      "dependency": null,
+      "array": null,
+      "walltime": "01:00:00"
+    },
+    "Detector recovery and geometry training plus predictions": {
+      "id": "1460519",
+      "dependency": "afterok:1460518",
+      "array": "0-14%2",
+      "walltime": "05:00:00"
+    },
+    "Per-arm CPU evaluation": {
+      "id": "1460520",
+      "dependency": "aftercorr:1460519",
+      "array": "0-14%4",
+      "walltime": "08:00:00"
+    },
+    "Aggregate report": {
+      "id": "1460521",
+      "dependency": "afterok:1460520",
+      "array": null,
+      "walltime": "01:00:00"
+    }
+  },
+  "reason": "Missing snapshot canonical_reverse import; completed audit reused",
+  "output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/multidataset_continuous_20261022"
+}

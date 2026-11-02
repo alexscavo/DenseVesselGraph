@@ -1,0 +1,29 @@
+{
+  "jobs": {
+    "GPU correctness and benchmark": {
+      "id": "1446429",
+      "dependency": null,
+      "array": null,
+      "walltime": "01:00:00"
+    },
+    "Frozen geometry heads K8 K16 K24": {
+      "id": "1446432",
+      "dependency": "afterok:1446429",
+      "array": "0-2%2",
+      "walltime": "02:00:00"
+    },
+    "Frozen predictions": {
+      "id": "1446433",
+      "dependency": "afterok:1446432",
+      "array": "0-2%2",
+      "walltime": "02:00:00"
+    },
+    "Learned metrics and adaptive selectors": {
+      "id": "1446434",
+      "dependency": "afterok:1446433",
+      "array": null,
+      "walltime": "06:00:00"
+    }
+  },
+  "output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/continuous_representation_20261022"
+}

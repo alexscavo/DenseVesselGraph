@@ -1,0 +1,5 @@
+{
+  "completed": true,
+  "scope": "Publication only from saved collected metrics; no numerical recomputation or model updates.",
+  "finding": "Large representative-training gain, modest node operating-point gain on validation, uncertain edge F1, worse raw localization/loss/cycles; memorization plausible."
+}

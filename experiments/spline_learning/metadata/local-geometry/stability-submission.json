@@ -14,5 +14,7 @@
   "cancelled_blocked_evaluation": 876622,
   "failure": "JOBSCRATCH permission denied during runtime staging, before selection/training",
   "replacement_training_job": 877101,
-  "temporary_storage_fix": "unset JOBSCRATCH before env/runtime staging; use existing /tmp fallback"
+  "temporary_storage_fix": "unset JOBSCRATCH before env/runtime staging; use existing /tmp fallback",
+  "replacement_final_evaluation": 877103,
+  "replacement_dependency": "877101 -> 877103_1"
 }

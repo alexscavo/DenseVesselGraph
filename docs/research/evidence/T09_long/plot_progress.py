@@ -1,4 +1,4 @@
-"""Plot the live IXI 100-epoch run from its own logs and JSONL records."""
+"""Plot the IXI 300-epoch continuation from its logs and JSONL records."""
 
 from __future__ import annotations
 
@@ -10,9 +10,13 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-ROOT = Path(__file__).resolve().parents[4]
-RUN = ROOT / "runs" / "ixi_q256_100ep_20260923"
-LOG = Path("/lustre/fswork/projects/rech/vnc/upz25mj/logs/graph-native-betti-matching/gnbm-train-93539.out")
+RESUME_RUN = Path("/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_q256_100ep_20260923_resume")
+EXTEND_RUN = Path("/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_q256_extend200_20260923")
+LOGS = (
+    Path("/lustre/fswork/projects/rech/vnc/upz25mj/logs/graph-native-betti-matching/gnbm-train-93539.out"),
+    Path("/lustre/fswork/projects/rech/vnc/upz25mj/logs/graph-native-betti-matching/gnbm-train-101450.out"),
+    Path("/lustre/fswork/projects/rech/vnc/upz25mj/logs/graph-native-betti-matching/gnbm-train-113928.out"),
+)
 OUT = Path(__file__).resolve().parent
 
 
@@ -23,13 +27,22 @@ def rows(path):
 
 
 def main():
-    performance = rows(RUN / "performance.jsonl")
-    validation = rows(RUN / "validation-metrics.jsonl")
-    log = LOG.read_text() if LOG.is_file() else ""
-    training_loss = [(int(epoch), float(value)) for epoch, value in
-                     re.findall(r"^epoch=(\d+)/\d+ total=([0-9.eE+-]+)", log, re.M)]
-    validation_loss = [(int(epoch), float(value)) for epoch, value in
-                       re.findall(r"^validation epoch=(\d+) total=([0-9.eE+-]+)", log, re.M)]
+    run_dirs = (RESUME_RUN, EXTEND_RUN)
+    performance = sorted(
+        {int(row["epoch"]): row for run in run_dirs
+         for row in rows(run / "performance.jsonl")}.values(),
+        key=lambda row: row["epoch"],
+    )
+    validation = sorted(
+        {int(row["epoch"]): row for run in run_dirs
+         for row in rows(run / "validation-metrics.jsonl")}.values(),
+        key=lambda row: row["epoch"],
+    )
+    log = "\n".join(path.read_text() for path in LOGS if path.is_file())
+    training_loss = sorted({int(epoch): float(value) for epoch, value in
+                            re.findall(r"^epoch=(\d+)/\d+ total=([0-9.eE+-]+)", log, re.M)}.items())
+    validation_loss = sorted({int(epoch): float(value) for epoch, value in
+                              re.findall(r"^validation epoch=(\d+) total=([0-9.eE+-]+)", log, re.M)}.items())
     fig, axes = plt.subplots(2, 2, figsize=(11, 7), layout="constrained")
     for points, label in ((training_loss, "train loss"), (validation_loss, "validation loss")):
         if points:
@@ -37,16 +50,25 @@ def main():
     axes[0, 0].set_title("Optimization")
     if training_loss or validation_loss:
         axes[0, 0].legend()
-    for key, label in (("branch_f1", "Branch F1"), ("node_f1", "Node F1"),
-                       ("edge_f1", "Edge F1")):
+    branch_axis = axes[0, 1].twinx()
+    for key, label in (("node_f1", "Node F1"), ("edge_f1", "Edge F1")):
         points = [(row["epoch"], row[key]) for row in validation
                   if row.get(key) is not None]
         if points:
             axes[0, 1].plot(*zip(*points), marker="o", label=label)
+    branch_points = [(row["epoch"], 100.0 * row["branch_f1"]) for row in validation
+                     if row.get("branch_f1") is not None]
+    if branch_points:
+        branch_axis.plot(*zip(*branch_points), marker="o", color="tab:red",
+                         label="Branch F1 (%)")
+        branch_axis.set_ylim(0, max(0.1, max(value for _, value in branch_points) * 1.25))
+        branch_axis.set_ylabel("Branch F1 (%)")
     axes[0, 1].set_title("Held-out IXI graph metrics")
     axes[0, 1].set_ylim(0, 1)
     if validation:
-        axes[0, 1].legend()
+        handles, labels = axes[0, 1].get_legend_handles_labels()
+        branch_handles, branch_labels = branch_axis.get_legend_handles_labels()
+        axes[0, 1].legend(handles + branch_handles, labels + branch_labels)
     if performance:
         axes[1, 0].plot([row["epoch"] for row in performance],
                         [row["samples_per_second"] for row in performance], marker=".")
@@ -57,7 +79,7 @@ def main():
     for axis in axes.flat:
         axis.set_xlabel("Epoch")
         axis.grid(alpha=.25)
-    fig.suptitle("IXI-only adaptive-GT training, 256 queries, two H100s")
+    fig.suptitle("IXI-only adaptive-GT training, epochs 1–300 target, 256 queries, two H100s")
     fig.savefig(OUT / "progress.png", dpi=160)
     plt.close(fig)
     (OUT / "progress_summary.json").write_text(json.dumps({

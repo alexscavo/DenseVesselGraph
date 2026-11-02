@@ -1,5 +1,19 @@
 # Graph-Native Betti Matching
 
+## Research overview
+
+The consolidated research documentation is in [`research/`](research/roadmap.md):
+
+- [Roadmap](research/roadmap.md): goals, milestones and current priorities.
+- [Architecture](research/architecture.md): components, code and dependencies.
+- [Decisions](research/decisions.md): reasoning, alternatives and scope.
+- [Experiments](research/experiments.md): configurations, results and the complete source catalog.
+
+Detailed protocols and evidence remain under `docs/research/`; code, datasets,
+checkpoints and existing collectors keep their stable paths. The reconstruction
+notes below retain their original historical context.
+
+
 Clean research implementation of a 3D graph-extraction pipeline with graph-native topology objectives.
 
 This repository is being reconstructed from an experimental codebase. It
@@ -30,6 +44,7 @@ Road, OCTA, MoCo, 2D pretraining, and general-transformer adapter paths will not
 
 ```text
 .
+├── research/                Consolidated roadmap, architecture, decisions and experiments
 ├── configs/                 Reproducible training and evaluation configurations
 ├── data/
 │   ├── loaders/             Dataset loading and batching

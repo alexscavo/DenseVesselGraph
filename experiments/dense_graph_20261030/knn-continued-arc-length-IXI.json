@@ -1,0 +1,62 @@
+{
+ "0-5": {
+  "edges": 6801,
+  "recovered": 1505,
+  "endpoints_missing": 4989,
+  "not_candidate": 0,
+  "rejected": 307,
+  "traced_candidate": 0,
+  "recovered_fraction": 0.22129098661961477,
+  "endpoints_missing_fraction": 0.733568592853992,
+  "not_candidate_fraction": 0.0,
+  "rejected_fraction": 0.04514042052639318
+ },
+ "5-10": {
+  "edges": 2063,
+  "recovered": 865,
+  "endpoints_missing": 975,
+  "not_candidate": 0,
+  "rejected": 223,
+  "traced_candidate": 0,
+  "recovered_fraction": 0.41929229277750846,
+  "endpoints_missing_fraction": 0.4726126999515269,
+  "not_candidate_fraction": 0.0,
+  "rejected_fraction": 0.10809500727096462
+ },
+ "10-20": {
+  "edges": 1456,
+  "recovered": 527,
+  "endpoints_missing": 688,
+  "not_candidate": 13,
+  "rejected": 228,
+  "traced_candidate": 0,
+  "recovered_fraction": 0.36195054945054944,
+  "endpoints_missing_fraction": 0.4725274725274725,
+  "not_candidate_fraction": 0.008928571428571428,
+  "rejected_fraction": 0.1565934065934066
+ },
+ "20-40": {
+  "edges": 565,
+  "recovered": 96,
+  "endpoints_missing": 272,
+  "not_candidate": 25,
+  "rejected": 172,
+  "traced_candidate": 0,
+  "recovered_fraction": 0.16991150442477876,
+  "endpoints_missing_fraction": 0.4814159292035398,
+  "not_candidate_fraction": 0.04424778761061947,
+  "rejected_fraction": 0.30442477876106194
+ },
+ "40-inf": {
+  "edges": 83,
+  "recovered": 1,
+  "endpoints_missing": 36,
+  "not_candidate": 12,
+  "rejected": 34,
+  "traced_candidate": 0,
+  "recovered_fraction": 0.012048192771084338,
+  "endpoints_missing_fraction": 0.43373493975903615,
+  "not_candidate_fraction": 0.14457831325301204,
+  "rejected_fraction": 0.40963855421686746
+ }
+}

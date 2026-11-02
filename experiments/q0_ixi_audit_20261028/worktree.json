@@ -1,0 +1,7 @@
+{
+  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-q0-ixi-audit-20261028",
+  "branch": "research/q0-ixi-audit-20261028",
+  "output": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-q0-ixi-audit-20261028/experiments/q0_ixi_audit_20261028",
+  "cpu_job": "1653086",
+  "scope": "Q0/J00/J02; no GPU or training"
+}

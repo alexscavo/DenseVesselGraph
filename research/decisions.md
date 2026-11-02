@@ -1,0 +1,112 @@
+# Research decisions and alternatives
+
+Consolidated 23 October 2026. Decisions below distinguish established implementation contracts from provisional method choices and negative experimental findings. Source protocols and rejected arms are retained in [experiments](experiments.md); the original D01–D08 log remains in the [implementation tracker](../docs/research/IMPLEMENTATION_TRACKER.md).
+
+## Data, topology and evaluation contracts
+
+| Decision / status | Reason and consequence | Alternatives and scope | Evidence |
+|---|---|---|---|
+| Preserve original ordered dense paths — accepted | Evaluate simplification and learned curves against the original guide, exposing smoothing/fitting distortion | A fitted K8 target is not the anatomical reference; extracted centerlines still carry anatomical uncertainty | [D04 and source tracker](../docs/research/IMPLEMENTATION_TRACKER.md), [representation protocol](../docs/research/vascular_graph_representation.md) |
+| Separate junction-only, adaptive and dense graph products — accepted | Make graph-size/geometry/topology changes explicit | Do not compare different anchor sampling as if only curved geometry changed | [D02/D05](../docs/research/IMPLEMENTATION_TRACKER.md), [representation study](../docs/research/evidence/T05/README.md) |
+| Preserve pure degree-2 rings in source graphs — accepted | Three deterministic nodes/arcs encode a simple cycle without a self-loop or parallel edges | One-node self-loops and two-node parallel arcs do not fit simple adjacency semantics. Continuous target exporters may separately exclude unsupported closed/parallel cases; preserve their exclusion manifests | [D01](../docs/research/IMPLEMENTATION_TRACKER.md), [target preparation](../scripts/prepare_transfer_splines.py) |
+| Use physical, inspectable extraction rules — accepted within tested scopes | IXI full-volume adaptive policy uses physical radius/deviation and vessel-mask containment, then crops a fixed graph | Historical voxel-only defaults and192-query assumptions were superseded. BRAVA has no equivalent vessel-mask containment test; its brain mask cannot substitute | [D03/D05/D06](../docs/research/IMPLEMENTATION_TRACKER.md), [production extraction](../docs/research/VEDO_PRODUCTION_RUN.md), [BRAVA preparation](../docs/research/BRAVA_preparation.md) |
+| Keep source alignment corrections explicit — accepted | BRAVA SWC tracer scale/orientation differs from NIfTI coordinates; five source reflections were verified | No automatic per-model reflection fitting, brain-mask skeletonization or dataset regeneration without a demonstrated error | [BRAVA provenance and failed preparations](../docs/research/BRAVA_preparation.md) |
+| Separate anatomical graph nodes from edge geometry — accepted | Internal controls/joins can model tortuosity without extra transformer queries | Explicit graph subdivision remains a separate experiment because it changes matching, candidate pairs and node/relation supervision | [continuous comparison](../docs/research/continuous_representation_comparison.md) |
+| Use dense-reference, physical multi-metric evaluation — accepted | Branch correctness, spatial shape, node recovery and complexity are distinct | SMD, Curve F1, components or cycle counts alone can reward incorrect reconstructions. Keep native metrics and common-v2 names/protocols distinct | [metric protocol](../docs/research/metrics/vessel-core-v1.md), [controlled metric failures](../docs/research/evidence/T08/README.md) |
+| Subject-disjoint development and locked tests — accepted | Variants/crops from the same scan are correlated; source pretraining populations also matter | No patch-random leakage, test-selected thresholds or reuse of historical test outcomes for new tuning. Historical authorized tests remain labelled as such | [latest multi-dataset protocol](../docs/research/multidataset_continuous_graph_experiments.md) |
+
+The original “crop a fixed full-volume adaptive graph” policy concerns upstream graph extraction. Fitting curves after cropping, or testing explicit split targets, is a separately versioned downstream representation experiment; neither silently replaces that policy.
+
+## Geometry and optimization
+
+| Decision / status | Reason | Alternatives and rejected conclusions | Evidence |
+|---|---|---|---|
+| Cubic endpoint-constrained B-splines are the stable continuous baseline — accepted | Existing fitter/head, physical residuals and local CNN conditioning are reproducible; endpoints remain graph nodes | Single cubic/Bézier, Catmull–Rom and degree-2 graph baselines were investigated, not erased. Different K needs a different basis; truncation is invalid | [approach selection](../docs/research/spline_learning/spline-approach-selection.md), [Catmull–Rom](../docs/research/spline_learning/catmull-rom-learning.md) |
+| Use residual geometry and separate gradient routes — accepted for controlled studies | Residual/local-image diagnostics improve shape; detaching geometry allowed detector learning after coupled scratch collapse | Early joint geometry training is not the unchanged control. Collapse does not establish that B-splines are impossible to learn | [failure audit](../docs/research/spline_learning/frozen-spline-investigation.md), [residual probes](../docs/research/spline_learning/residual-token-diagnostics.md), [detached scratch](../docs/research/spline_learning/scratch-extension-300.md) |
+| K8 is insufficient for some BRAVA branches — measured | Full validation K8 coverage within0.5 mm is77.19%; fixed K24 reaches98.34% | This is GT capacity, not evidence that larger learned heads fix missing nodes/relations. IXI/SyntheticMRI common branches are already well approximated byK8 | [capacity](../docs/research/spline_learning/ixi-brava-control-capacity.md), [paired comparison](../docs/research/continuous_representation_comparison.md) |
+| Internal piecewise geometry is a promising candidate — provisional | GT piecewise K8 reaches the chosen0.5-mm bound with~10.61 controls/branch without more graph queries | No selected final architecture yet. Explicit degree-2 splitting produces identical fitted geometry but extra graph burden; its possible learning advantage remains untested | [completed comparison](../docs/research/continuous_representation_comparison.md) |
+| Test genuine adaptive K separately from output compression — tested in completed frozen-head batch | K-specific projections can change learned capacity; a detached selector avoids another joint detector loss | K24 simplification and the earlier learned compression classifier are useful efficiency diagnostics, not genuine adaptive neural projections | [new heads](../models/adaptive_geometry.py), [multi-dataset protocol](../docs/research/multidataset_continuous_graph_experiments.md) |
+| Enforce C1 by parameterization — tested in completed frozen-head batch | Knot multiplicity ties tangents without adding a continuity penalty | C0 is retained as a controlled alternative. Four sections do not guarantee all GT branches meet arbitrary error bounds; potential oversmoothing and parameter-count differences must be measured | [piecewise implementation](../models/adaptive_geometry.py), [new-basis checks](../experiments/multidataset_continuous/local-audit/audit.json) |
+| Recover a BRAVA detector before interpreting end-to-end geometry — active gate | Scratch recovered almost no connections; frozen IXI transfer has poor endpoints. More geometry cannot fix a frozen missing graph | Do not reject adaptive representations from the weak frozen BRAVA pilot, or assume “train longer” alone fixes scratch. New transfer/scratch recipe has a nonzero LR floor and monitored checkpoints | [BRAVA study](../docs/research/BRAVA_experiment_plan.md), [recovery protocol](../docs/research/multidataset_continuous_graph_experiments.md) |
+| Avoid additional joint losses by default — accepted | Keep attribution and optimization manageable | Adaptive selector trains separately; geometry changes reuse/replace the existing geometry objective. Splitting must not multiply loss weight per original branch | [loss contract](../docs/research/multidataset_continuous_graph_experiments.md) |
+
+## Node selection, relations and input diagnostics
+
+| Finding / decision | What the evidence supports | What it does not establish | Evidence |
+|---|---|---|---|
+| Coordinate refinement is useful on the measured IXI pilot | Coordinate-only refinement explains most observed localization/Curve F1 benefit | Confidence correction is not the demonstrated driver; an untested verifier/heatmap should not be silently included across all arms | [node refinement](../docs/research/metrics/3-ixi-node-refinement-pilot.md), [component ablation](../docs/research/metrics/7-ixi-mechanism-batch.md) |
+| Naive NMS is not the selected remedy | Both tested spatial NMS radii degraded that pilot; deleting unmatched nodes reduces false edges but can sharply reduce Curve F1 | No universal rejection of all duplicate-aware methods; confidence distributions and spatial labels overlap | [query attribution](../docs/research/metrics/6-ixi-query-attribution.md), [mechanism batch](../docs/research/metrics/7-ixi-mechanism-batch.md) |
+| Raw-query/spatial and Hungarian oracles are diagnostics | Better query selection recovers many more endpoints but only modestly improves relations; correctly localized assignment must be checked | GT assignment does not make an oracle deployable, and training/inference matching mismatch is not the sole demonstrated bottleneck | [matching and calibration](../docs/research/metrics/8-ixi-relation-matching-calibration.md) |
+| Rank relations and calibrate on training data | Fixed-threshold recall gains can be calibration shifts; the original scorer retained better validation AP in several pilots | Higher Curve F1 or fewer components with many extra cycles is not sufficient improvement. A train-selected precision target need not transfer to the same validation precision | [threshold study](../docs/research/metrics/5-ixi-threshold-calibration.md), [fair comparison](../docs/research/metrics/8-ixi-relation-matching-calibration.md) |
+| Hard-negative and image-aware relation continuations were not adopted as a new default | Tested continuations improved training fit but degraded validation ranking; image arms slightly help the residual control without beating the original scorer | Not a universal impossibility claim. Spatially unmatched and Hungarian-unmatched queries are different; incomplete labels/duplicates can make negatives ambiguous | [relation isolation](../docs/research/metrics/4-ixi-relation-isolation.md), [larger image study](../docs/research/metrics/9-ixi-image-aware-relation-learning.md) |
+| Do not infer an IXI node-focal benefit from synthetic evidence | Controlled CE weights and focal modulation produce different precision/recall/fragmentation trade-offs; equal-weight focal degraded that continuation | The colleague's synthetic result is not a real-IXI result; fewer loops alone is not improved reconstruction | [node-loss study](../docs/research/metrics/10-ixi-node-focal-ablation.md) |
+| Use segmentation input only with honest provenance | IXI supplied vessel masks generated the graph GT; the paired study improved nodes/edges and tests mask-to-graph learnability | It is not independent-label or raw-MRA performance, and does not justify rasterizing graphs back into primary inputs. BRAVA brain masks are unsuitable | [mask-input study](../docs/research/metrics/11-ixi-segmentation-input-oracle.md) |
+
+## Node-verifier and BRAVA learnability decisions —23 October2026
+
+Evidence: [completed feasibility report](../docs/research/node_verifier_feasibility.md).
+
+- **Do not adopt V2/V3 or proceed to end-to-end verifier training.** At matched node counts, V3 versus V1 node-F1 differences have paired subject 95% intervals [−0.0810, −0.0563] (IXI) and [−0.0819, −0.0629] (SyntheticMRI); edge F1 also degrades. Smaller duplicate counts or good reliable-label accuracy do not establish useful node selection.
+- **Keep training-calibrated original scores (V1) as the control.** Training selected no NMS for the original IXI/SyntheticMRI scorers. Calibration shifts precision/recall, not ranking; the validation matched-precision envelope is descriptive and is not a deployable threshold policy. V1's slight IXI node-F1 change has an interval spanning zero and its edge F1 decreases.
+- **Revise supervision/generalization before increasing capacity or duration.** Both verifiers fit a tiny clean patch, but training AUC approaches one while validation canonical AP falls below V0. Ignored ambiguity, coverage-compatible representatives and feature generalization remain competing explanations. Early validation AP gains contradict a blanket claim that frozen decoder embeddings contain no useful information. Context occasionally helps V2 but fails against V1 on both datasets.
+- **BRAVA is learnable on the selected clean subset, not yet recovered at dataset scale.** Eight training patches reach eval-mode edge F1 0.8393 from scratch and 0.9818 from IXI after 512 updates. These are memorization checks with edge CE and no augmentation; they neither isolate the earlier focal recipe nor prove generalization. Finite localization gradients rule out disconnected training paths on this subset. BN mode affects scratch inference, but was not causally isolated as the historical failure source.
+- **Retain proposal and relation limits separately.** Full-population raw-query 2-mm recalls are 0.78179 IXI, 0.87411 SyntheticMRI and 0.56318 BRAVA. A fixed-coordinate scorer cannot exceed those coverage bounds. GT representative selection is a node-selection diagnostic, not a relation-optimal oracle. Incomplete BRAVA annotations preclude treating every unmatched query as anatomically false; no BRAVA verifier was fitted or transferred after the failed gate.
+
+## Pretraining and paper claims
+
+Full-data matched SyntheticMRI source comparisons favor MRI-only over plants/leaves/mixed sources; the later limited-data study shows a botanical benefit under its own scarce-annotation recipe. Both findings must remain visible. GrEVe's original roads/plants-versus-no-pretraining comparison is not the same control as additional vascular-domain training.
+
+Reusing target training samples in both stages is additional in-domain optimization, not independent data. Report pretraining history, target exposure and update counts; source/query-count or initialization differences limit causal claims. No general botanical-pretraining superiority follows from the current evidence.
+
+Sources: [full-data transfer](../docs/research/pretraining/combined-transfer-results/test-comparison.md), [rendering ablations](../docs/research/pretraining/augmented-transfer-results/test-comparison.md), [IXI transfer](../docs/research/pretraining/ixi-transfer.md), [low-label result](../docs/research/pretraining/limited-data-botanical-transfer.md).
+
+
+## Evidence update —23 October2026
+
+The [completed multi-dataset review](../docs/research/EXPERIMENT_REVIEW_20261023.md) refines the provisional decisions without changing historical outcomes:
+
+- All15 training and evaluation tasks succeeded; the final collector's plotting-only failure was recovered from saved results.
+- BRAVA IXI initialization is best among the recovery arms, but default edge F10.02099 and training-calibrated0.03696 fail the predefined connectivity gate. Better nodes did not establish better full graphs; defer BRAVA end-to-end representation expansion.
+- Actual adaptive K and four-section C0/C1 heads were trained on IXI/SyntheticMRI. K24/C1 give very small positive IXI Curve F1 differences; adaptive/C1 give small negative SyntheticMRI differences. No final representation is selected from GT fidelity alone.
+- Adaptive native output averages4.31/4.54 controls, but the bank has more parameters and longer training. IXI selector accuracy91.02% is below the always-K4 baseline91.58%; complex-class recall needs scrutiny.
+- Raw D1 candidates include3,862 physically GT-positive relations involving a Hungarian-unassigned query. Do not assume that Hungarian-unmatched implies a safe negative. This finding is annotation-relative and includes confidence-rejected queries.
+
+Keep K8 as a controlled learned baseline and prioritize the detector/selector diagnostics above before additional large runs. Full end-to-end representations, recovered-BRAVA geometry and explicit split-graph training remain unlaunched.
+
+## Preservation, status and method lock
+
+Detailed experiment records, failed-run explanations, ablations, original metric versions, configs and predictions remain scientific evidence. New results may supersede a provisional priority, but must document the new evidence and its scope rather than rewrite earlier outcomes.
+
+The four files in `research/` are the consolidated overview. Detailed sources remain at stable locations because code, automated collectors and cross-references use those paths. This consolidation does not rerun jobs, delete artifacts or reclassify submitted work as completed. Once the current batch is reviewed, select the narrowest supported journal direction using the [roadmap gate](roadmap.md#method-selection-gate).
+
+## Companion-project provenance —23 October2026
+
+Preserve [Image-to-Graph-Vessel history](image-to-graph-vessel.md) independently of newer continuous-graph results. Do not infer active SupCL from a filename (the legacy pretrain/fine-tune pair has its switch false), no-pretraining status from a “baseline” label, or performance gains from available code paths. Legacy BN calibration must be labeled as evaluation-time adaptation. Match checkpoints, splits, preprocessing and metric definitions before journal comparisons; do not automatically restore adversarial/contrastive/negative-mining losses.
+
+
+<!-- NATIVE2D IMPLEMENTATION 20261027 -->
+## Native 2D scope and annotation decisions — 27 October 2026
+
+Reuse the original2D RelationFormer rather than emulate2D with a3D volume. Port the modern node-focal/matched-edge-CE/A-xyz/K8 contracts without adopting negative N08/R06/R07 variants. Keep missing physical spacing as pixels; microscopy calibration is not interchangeable with MRI tolerances. Manual mask/skeleton-derived graph labels remain derived labels, while provided AV graph crossings keep supplied connectivity. No automatic artery/vein crossing repair or subject-disjoint claim from image IDs. Legacy Python3.10 CUDA binaries are incompatible with the active interpreter, so use the original reference attention for correctness; optimized-kernel work awaits throughput evidence. Full training is gated on tiny learnability and annotation/split QC. See the [existing report](image-to-graph-vessel.md#native-2d-journal-extension--27-october-2026).
+
+
+<!-- COMPLETED RESULTS REVIEW 20261028 -->
+## Decisions from completed BRAVA and native 2D checks — 28 October 2026
+
+- **BRAVA initialization:** use the SyntheticMRI-initialized K8 arm as the stronger measured reference for this controlled recipe; validation edge F1 is0.06794 versus 0.00110 from scratch. Full graphs remain weak (Branch F1 0.00647). Preserve the scratch negative result; do not conclude that all scratch training or focal loss is impossible. Both arms share the target-data schedule, but pretraining adds source compute and history.
+- **BRAVA next bottleneck:** review cached node confidence/coverage and assignment-consistent connectivity before more geometry capacity or duration. Raw/filtered2 mm node recall is65.53%/28.64%;96.69% of edge misses lack a recovered endpoint pair. A lower threshold is a hypothesis, not an established cure. The D08 AP populations differ between arms; do not claim a relation-head-only ranking gain. Only fixed 0.5 operating points were measured.
+- **Topology:** reduced component error coexists with greater cycle error and many annotation-unmatched edges. Near-empty scratch outputs have small cycle error while missing almost everything; small Betti error alone is not success. BRAVA SWC coverage is incomplete.
+- **Native2D-01:** correctness and two-crop learnability passed; full training remains a separate, unlaunched experiment. The ResNet18 tiny result does not establish generalization, an A-xyz contribution, spline superiority or original-width architecture convergence. Distances remain pixels where physical calibration is unavailable. Preserve dataset provenance and establish source-disjoint manifests before proceeding.
+
+See the [BRAVA final review](../docs/research/BRAVA_experiment_plan.md#reviewed-final-d08-results--28-october-2026) and [2D completion review](image-to-graph-vessel.md#native-2d-completion-review--28-october-2026). No new architectural/loss decision or training campaign was adopted.
+
+
+<!-- D08 CALIBRATION DECISION 20261028 -->
+## D08 operating-point decision — 28 October 2026
+
+The inexpensive audit is **DONE — measured**, entirely from cached predictions. Training-only node cut0.45 gives transferred validation node F1 **0.35572→0.36761** (difference+0.01190, paired subject95% interval[+0.01009,+0.01359]); recall28.64%→33.43%, precision46.92%→40.83%, duplicate count621→1,201. This is a node-only operating point, not proof of better connectivity. Scratch cut0.35 yields node F10.15427 but only12.10% precision and about30.17 nodes/patch.
+
+On unchanged>0.5-node candidates, transferred edge cut0.425374478 gives edge F1 **0.06794→0.06892**, but adds**118 TP /2,890 FP**, reduces Branch F1 **0.00647→0.00576** and increases cycle MAE **1.05902→1.82461**. The precision-target cut0.497195870 gives only0.06809 edge F1 with an interval including no gain. AP/ranking remains unchanged. Retain the original0.5/0.5 graph decoder as the reference; no new architecture or training follows from these operating-point trades.
+
+D08 cached no relation scores for originally rejected queries and no spline controls for newly accepted edges. Consequently, combined lower-node graph Edge/Curve F1 remains **NOT RUN**. Do not present the separate node and edge gains as one model. A future combined evaluation would require a small frozen checkpoint replay, with original batch8/cache parity and train-only threshold choice; no such inference/GPU job was launched by this audit. The full protocol, caveats and CPU results are in the [existing BRAVA report](../docs/research/BRAVA_experiment_plan.md#d08-training-only-operating-point-audit--28-october-2026); evidence: `experiments/d08_operating_points_20261028/`.
+

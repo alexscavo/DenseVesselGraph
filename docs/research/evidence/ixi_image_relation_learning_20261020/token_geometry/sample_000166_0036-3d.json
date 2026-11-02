@@ -1,0 +1,10 @@
+{
+  "sample_id": "sample_000166_0036",
+  "arm": "token_geometry",
+  "displayed_tp": 0,
+  "displayed_fp": 5,
+  "displayed_fn": 0,
+  "sampling_reference_pair": null,
+  "sampling_points_mm": [],
+  "caveat": "Displayed edges are straight pair links; metric curves use the frozen spline head. Colors are positional diagnostic labels."
+}

@@ -1,0 +1,314 @@
+[
+  {
+    "split": "train",
+    "population": "retained",
+    "tolerance_mm": 1.0,
+    "count": 6851,
+    "matched": 2555,
+    "ap": 0.49575314313430763,
+    "auc": 0.6403634018082628
+  },
+  {
+    "split": "train",
+    "population": "retained",
+    "tolerance_mm": 1.0,
+    "negative_category": "duplicate_candidate",
+    "count": 3075,
+    "matched": 2555,
+    "ap": 0.8291828288399846,
+    "auc": 0.5235541171157609
+  },
+  {
+    "split": "train",
+    "population": "retained",
+    "tolerance_mm": 1.0,
+    "negative_category": "foreground_supported_extra",
+    "count": 5188,
+    "matched": 2555,
+    "ap": 0.5903772250774494,
+    "auc": 0.6032585065512763
+  },
+  {
+    "split": "train",
+    "population": "retained",
+    "tolerance_mm": 1.0,
+    "negative_category": "off_vessel_or_outside",
+    "count": 3698,
+    "matched": 2555,
+    "ap": 0.8914697595098711,
+    "auc": 0.7789793399112783
+  },
+  {
+    "split": "train",
+    "population": "raw",
+    "tolerance_mm": 1.0,
+    "count": 65536,
+    "matched": 3870,
+    "ap": 0.24740841181492904,
+    "auc": 0.8176895920349778
+  },
+  {
+    "split": "train",
+    "population": "raw",
+    "tolerance_mm": 1.0,
+    "negative_category": "duplicate_candidate",
+    "count": 8773,
+    "matched": 3870,
+    "ap": 0.5410770353158009,
+    "auc": 0.612027915198257
+  },
+  {
+    "split": "train",
+    "population": "raw",
+    "tolerance_mm": 1.0,
+    "negative_category": "foreground_supported_extra",
+    "count": 18201,
+    "matched": 3870,
+    "ap": 0.3953580801255339,
+    "auc": 0.6914151068760608
+  },
+  {
+    "split": "train",
+    "population": "raw",
+    "tolerance_mm": 1.0,
+    "negative_category": "off_vessel_or_outside",
+    "count": 46302,
+    "matched": 3870,
+    "ap": 0.5624932450971842,
+    "auc": 0.884101706673526
+  },
+  {
+    "split": "train",
+    "population": "retained",
+    "tolerance_mm": 2.0,
+    "count": 6851,
+    "matched": 3922,
+    "ap": 0.7236512293399393,
+    "auc": 0.6723925962203563
+  },
+  {
+    "split": "train",
+    "population": "retained",
+    "tolerance_mm": 2.0,
+    "negative_category": "duplicate_candidate",
+    "count": 4826,
+    "matched": 3922,
+    "ap": 0.8459577899857436,
+    "auc": 0.5770507473160253
+  },
+  {
+    "split": "train",
+    "population": "retained",
+    "tolerance_mm": 2.0,
+    "negative_category": "foreground_supported_extra",
+    "count": 4946,
+    "matched": 3922,
+    "ap": 0.8792612301661483,
+    "auc": 0.6545835939491969
+  },
+  {
+    "split": "train",
+    "population": "retained",
+    "tolerance_mm": 2.0,
+    "negative_category": "off_vessel_or_outside",
+    "count": 4923,
+    "matched": 3922,
+    "ap": 0.9338540141013187,
+    "auc": 0.7767137248269322
+  },
+  {
+    "split": "train",
+    "population": "raw",
+    "tolerance_mm": 2.0,
+    "count": 65536,
+    "matched": 5206,
+    "ap": 0.3237185461661782,
+    "auc": 0.8208641847480043
+  },
+  {
+    "split": "train",
+    "population": "raw",
+    "tolerance_mm": 2.0,
+    "negative_category": "duplicate_candidate",
+    "count": 16612,
+    "matched": 5206,
+    "ap": 0.45949731219599355,
+    "auc": 0.6534485829451699
+  },
+  {
+    "split": "train",
+    "population": "raw",
+    "tolerance_mm": 2.0,
+    "negative_category": "foreground_supported_extra",
+    "count": 12882,
+    "matched": 5206,
+    "ap": 0.6691371154332614,
+    "auc": 0.724437590249916
+  },
+  {
+    "split": "train",
+    "population": "raw",
+    "tolerance_mm": 2.0,
+    "negative_category": "off_vessel_or_outside",
+    "count": 46454,
+    "matched": 5206,
+    "ap": 0.6192126379261846,
+    "auc": 0.8851027634313455
+  },
+  {
+    "split": "val",
+    "population": "retained",
+    "tolerance_mm": 1.0,
+    "count": 3827,
+    "matched": 1292,
+    "ap": 0.457147946690003,
+    "auc": 0.6460631652224889
+  },
+  {
+    "split": "val",
+    "population": "retained",
+    "tolerance_mm": 1.0,
+    "negative_category": "duplicate_candidate",
+    "count": 1567,
+    "matched": 1292,
+    "ap": 0.829654409684052,
+    "auc": 0.5333112862369829
+  },
+  {
+    "split": "val",
+    "population": "retained",
+    "tolerance_mm": 1.0,
+    "negative_category": "foreground_supported_extra",
+    "count": 2881,
+    "matched": 1292,
+    "ap": 0.5429137997502098,
+    "auc": 0.6101311844004933
+  },
+  {
+    "split": "val",
+    "population": "retained",
+    "tolerance_mm": 1.0,
+    "negative_category": "off_vessel_or_outside",
+    "count": 1963,
+    "matched": 1292,
+    "ap": 0.8727911761925377,
+    "auc": 0.777363737871021
+  },
+  {
+    "split": "val",
+    "population": "raw",
+    "tolerance_mm": 1.0,
+    "count": 32768,
+    "matched": 2106,
+    "ap": 0.2208895721618712,
+    "auc": 0.7874963925205267
+  },
+  {
+    "split": "val",
+    "population": "raw",
+    "tolerance_mm": 1.0,
+    "negative_category": "duplicate_candidate",
+    "count": 4671,
+    "matched": 2106,
+    "ap": 0.5318057838120491,
+    "auc": 0.5875880478869433
+  },
+  {
+    "split": "val",
+    "population": "raw",
+    "tolerance_mm": 1.0,
+    "negative_category": "foreground_supported_extra",
+    "count": 9942,
+    "matched": 2106,
+    "ap": 0.35209824843222925,
+    "auc": 0.6564566490549134
+  },
+  {
+    "split": "val",
+    "population": "raw",
+    "tolerance_mm": 1.0,
+    "negative_category": "off_vessel_or_outside",
+    "count": 22367,
+    "matched": 2106,
+    "ap": 0.5269333551179163,
+    "auc": 0.8634843661536981
+  },
+  {
+    "split": "val",
+    "population": "retained",
+    "tolerance_mm": 2.0,
+    "count": 3827,
+    "matched": 1979,
+    "ap": 0.6379710332018462,
+    "auc": 0.6492299283165882
+  },
+  {
+    "split": "val",
+    "population": "retained",
+    "tolerance_mm": 2.0,
+    "negative_category": "duplicate_candidate",
+    "count": 2563,
+    "matched": 1979,
+    "ap": 0.7907017802629976,
+    "auc": 0.5495346688171001
+  },
+  {
+    "split": "val",
+    "population": "retained",
+    "tolerance_mm": 2.0,
+    "negative_category": "foreground_supported_extra",
+    "count": 2651,
+    "matched": 1979,
+    "ap": 0.8204796532382241,
+    "auc": 0.6271968015351669
+  },
+  {
+    "split": "val",
+    "population": "retained",
+    "tolerance_mm": 2.0,
+    "negative_category": "off_vessel_or_outside",
+    "count": 2571,
+    "matched": 1979,
+    "ap": 0.9194989964751089,
+    "auc": 0.7725885309260752
+  },
+  {
+    "split": "val",
+    "population": "raw",
+    "tolerance_mm": 2.0,
+    "count": 32768,
+    "matched": 2941,
+    "ap": 0.2856974265725271,
+    "auc": 0.7884938644312087
+  },
+  {
+    "split": "val",
+    "population": "raw",
+    "tolerance_mm": 2.0,
+    "negative_category": "duplicate_candidate",
+    "count": 8826,
+    "matched": 2941,
+    "ap": 0.4402049405151234,
+    "auc": 0.6205968008038001
+  },
+  {
+    "split": "val",
+    "population": "raw",
+    "tolerance_mm": 2.0,
+    "negative_category": "foreground_supported_extra",
+    "count": 7211,
+    "matched": 2941,
+    "ap": 0.6060349420686493,
+    "auc": 0.6769372602637189
+  },
+  {
+    "split": "val",
+    "population": "raw",
+    "tolerance_mm": 2.0,
+    "negative_category": "off_vessel_or_outside",
+    "count": 22613,
+    "matched": 2941,
+    "ap": 0.5894968479401419,
+    "auc": 0.8629357574386549
+  }
+]

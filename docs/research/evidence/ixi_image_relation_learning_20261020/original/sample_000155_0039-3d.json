@@ -1,0 +1,13 @@
+{
+  "sample_id": "sample_000155_0039",
+  "arm": "original",
+  "displayed_tp": 0,
+  "displayed_fp": 8,
+  "displayed_fn": 2,
+  "sampling_reference_pair": [
+    79,
+    185
+  ],
+  "sampling_points_mm": [],
+  "caveat": "Displayed edges are straight pair links; metric curves use the frozen spline head. Colors are positional diagnostic labels."
+}

@@ -1,0 +1,12 @@
+{
+  "scripts/fine_feature_architecture.py": "735025c5eda4cc6e14edb496914bcc2f6abd26ec5e331954e7be1f074c91abcb",
+  "models/relationformer.py": "54e9f3562f819ea21322258b1318a4d25c4b30340a377138faa77e49aa4f893c",
+  "models/node_refinement.py": "107c8857bd4b5a74a99053486211075faa8c17b79e085d6001654f2b1e1d7ba5",
+  "models/ops/modules/ms_deform_attn.py": "a26cca02b249b54582e1773857fb66e689075d315e04c70394fcafdd8064950e",
+  "models/multiscale_migration.py": "73ba4246160fc2614f588e5b154575fdc06b8ce67c402ba84158f4b0ace535e8",
+  "training/losses/focal.py": "dfd6781dc22ed9489de54bbaa0a457cea00a5d66e7b201f27ba2e965f9d53d1e",
+  "training/losses/criterion.py": "6f389dfc1ec96bd15c5af0efd4d22912ad8921726373f6b045e745f98a1a72b0",
+  "models/matcher.py": "e3e235b87f74c486eb08e274ab5844fc90b99e0ec6affb2dbf4c13d2e2af28a1",
+  "tests/test_fine_feature_architecture.py": "a21a53000a4ae3f728fac82364a1ce8aab698bbed62f03c3573b3a5982c04f2c",
+  "cluster/jean_zay/fine_feature_architecture.slurm": "da56ce7db0a17f84aa332da6dff2fbce9f6c971b37bfe10439849b4b15296ff0"
+}

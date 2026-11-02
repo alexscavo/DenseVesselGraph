@@ -1,0 +1,15 @@
+{
+  "completed": true,
+  "transfer": {
+    "source_object_queries": 120,
+    "target_object_queries": 256,
+    "new_object_queries": 136,
+    "missing_fresh_parameters": [
+      "node_refinement.network.0.weight",
+      "node_refinement.network.0.bias",
+      "node_refinement.network.2.weight",
+      "node_refinement.network.2.bias"
+    ],
+    "relation_tokens_preserved": true
+  }
+}

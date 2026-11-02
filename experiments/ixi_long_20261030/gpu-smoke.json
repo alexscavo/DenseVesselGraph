@@ -1,0 +1,102 @@
+{
+  "passed": true,
+  "job_id": "1731895",
+  "code": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_long_20261030/code/v2",
+  "batch_size": 32,
+  "workers": 4,
+  "benchmark_updates": 200,
+  "seconds_per_update": 0.3203651438087323,
+  "patches_per_second": 99.88602261644596,
+  "peak_allocated_bytes": 7830134272,
+  "peak_reserved_bytes": 8512339968,
+  "total_memory_bytes": 85019590656,
+  "first_update": {
+    "geometry_to_detector_zero": true,
+    "encoder.gradient_norm": 3.579451560974121,
+    "decoder.gradient_norm": 18.1837100982666,
+    "class_embed.gradient_norm": 2.7390661239624023,
+    "coord_embed.gradient_norm": 6.55171537399292,
+    "relation_embed.gradient_norm": 6.705359935760498,
+    "spline_head.gradient_norm": 0.3346301317214966,
+    "class": 0.08600284904241562,
+    "nodes": 0.16477568447589874,
+    "boxes": 0.8772190809249878,
+    "cardinality": 0.048583984375,
+    "edges": 0.32280439138412476,
+    "degree": 0.0,
+    "spline": 0.23493692278862,
+    "spline_control_mm": 3.788938045501709,
+    "spline_curve_mm": 3.742908477783203,
+    "spline_endpoint_mm": 3.931260824203491,
+    "spline_positive_edges": 592.0,
+    "betti_h0": 0.0,
+    "betti_h0_weighted": 0.0,
+    "betti_h1": 0.0,
+    "betti_h1_weighted": 0.0,
+    "total": 5.6272101402282715,
+    "step": 1,
+    "lr": 7.444230769230769e-07
+  },
+  "last_update": {
+    "class": 0.06861896067857742,
+    "nodes": 0.12828581035137177,
+    "boxes": 0.7513394355773926,
+    "cardinality": 0.0728759765625,
+    "edges": 0.2399357408285141,
+    "degree": 0.0,
+    "spline": 0.15332132577896118,
+    "spline_control_mm": 3.025351047515869,
+    "spline_curve_mm": 2.980236291885376,
+    "spline_endpoint_mm": 3.2697627544403076,
+    "spline_positive_edges": 729.0,
+    "betti_h0": 0.0,
+    "betti_h0_weighted": 0.0,
+    "betti_h1": 0.0,
+    "betti_h1_weighted": 0.0,
+    "total": 4.508976459503174,
+    "step": 200,
+    "lr": 9.584615384615383e-06
+  },
+  "resume": {
+    "passed": true,
+    "epochs": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "steps": 40,
+    "first_chunk_history_preserved": true,
+    "optimizer_step_restored": true
+  },
+  "evaluation": {
+    "passed": true,
+    "seconds": 14.517550688935444,
+    "thresholds": [
+      0.55,
+      0.75
+    ],
+    "val_fixed_2mm": {
+      "node_f1": 0.17744916820702403,
+      "f1": 0.043912175648702596
+    },
+    "val_common_fixed": {
+      "common_branch_f1": 0.007027406886858749,
+      "common_curve_f1": 0.2644213964882207
+    },
+    "node_ap_2mm": 0.06253424403624118,
+    "parity_mismatches": {
+      "fixed_0p5": 0,
+      "train_selected": 0
+    }
+  },
+  "estimate": {
+    "training_gpu_hours": 2.9153228086594645,
+    "evaluation_gpu_hours": 0.3441197200340253,
+    "total_gpu_hours": 3.4094425286934897,
+    "d08_rate_projection_gpu_hours": 3.0439821573398214,
+    "walltime_minutes": 270,
+    "single_job": true
+  },
+  "smoke_seconds": 144.96229738509282
+}

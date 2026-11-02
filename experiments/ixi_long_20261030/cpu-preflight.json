@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "protocol": {
+    "updates_per_epoch": 312,
+    "total_updates": 31200,
+    "warmup_updates": 1560,
+    "dropped_per_epoch": 16
+  },
+  "audited_train": 10000,
+  "audited_val": 512,
+  "max_train_nodes": 153,
+  "max_val_nodes": 124,
+  "query_expansion": {
+    "source_queries": 120,
+    "target_queries": 256,
+    "source_relation_rows": [
+      120,
+      121
+    ],
+    "target_relation_rows": [
+      256,
+      257
+    ],
+    "policy": "Copy all source object rows, move shared relation rows, keep extra object rows from the identical seeded scratch model; strict load of every other tensor."
+  },
+  "every_other_source_tensor_exact": true,
+  "extra_rows_match_scratch": true,
+  "extra_query_sha256": "afa098e88538d9afc593164ff4bf086df64821dc8543f42107e203160bee3444",
+  "identical_to_d08_synthetic_extra_rows": true,
+  "source_sha256": "8b90d07292761244991f7f1e2fbe07d52c1a0fb93175c1fa863176a2c6337afe",
+  "test_data_accessed": false,
+  "target_audit_sha256": "7745351657bdfaf9edcd391480c89a6d600e5b12086e3bb8fa9797739182a0da"
+}

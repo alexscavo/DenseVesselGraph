@@ -1,0 +1,9 @@
+{
+  "h100_allocated_hours_including_smoke_failures_and_recovery": 10.763333333333334,
+  "peak_concurrent_h100": 2,
+  "cpu_report_elapsed_hours": 0.2461111111111111,
+  "cpu_report_allocated_core_hours": 0.9844444444444445,
+  "failed_h100_hours": 1.9183333333333332,
+  "recovery_h100_hours": 2.0341666666666667,
+  "note": "Allocation time includes evaluation, startup and data-only replay; this is not GPU busy time."
+}

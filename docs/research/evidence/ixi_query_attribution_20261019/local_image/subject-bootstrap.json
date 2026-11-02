@@ -1,0 +1,29 @@
+[
+  {
+    "policy": "oracle",
+    "subjects": 26,
+    "resamples": 1000,
+    "paired_edge_f1_delta_95pct": [
+      0.01229451081054775,
+      0.019460322400507712
+    ]
+  },
+  {
+    "policy": "nms_0p5mm",
+    "subjects": 26,
+    "resamples": 1000,
+    "paired_edge_f1_delta_95pct": [
+      -0.016990700406997926,
+      -0.004062387121176521
+    ]
+  },
+  {
+    "policy": "nms_1mm",
+    "subjects": 26,
+    "resamples": 1000,
+    "paired_edge_f1_delta_95pct": [
+      -0.030148838056636023,
+      -0.015194380169121518
+    ]
+  }
+]

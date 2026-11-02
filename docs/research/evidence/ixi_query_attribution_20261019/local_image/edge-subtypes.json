@@ -1,0 +1,398 @@
+[
+  {
+    "split": "train",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "MM",
+    "tp": false,
+    "category_a": "matched",
+    "category_b": "matched",
+    "edges": 44
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "MM",
+    "tp": true,
+    "category_a": "matched",
+    "category_b": "matched",
+    "edges": 165
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "MU",
+    "tp": false,
+    "category_a": "duplicate_candidate",
+    "category_b": "matched",
+    "edges": 184
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "MU",
+    "tp": false,
+    "category_a": "foreground_supported_extra",
+    "category_b": "matched",
+    "edges": 450
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "MU",
+    "tp": false,
+    "category_a": "matched",
+    "category_b": "off_vessel_or_outside",
+    "edges": 132
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "duplicate_candidate",
+    "category_b": "duplicate_candidate",
+    "edges": 9
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "duplicate_candidate",
+    "category_b": "foreground_supported_extra",
+    "edges": 34
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "duplicate_candidate",
+    "category_b": "off_vessel_or_outside",
+    "edges": 4
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "foreground_supported_extra",
+    "category_b": "foreground_supported_extra",
+    "edges": 340
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "foreground_supported_extra",
+    "category_b": "off_vessel_or_outside",
+    "edges": 161
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "off_vessel_or_outside",
+    "category_b": "off_vessel_or_outside",
+    "edges": 137
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "MM",
+    "tp": false,
+    "category_a": "matched",
+    "category_b": "matched",
+    "edges": 117
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "MM",
+    "tp": true,
+    "category_a": "matched",
+    "category_b": "matched",
+    "edges": 337
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "MU",
+    "tp": false,
+    "category_a": "duplicate_candidate",
+    "category_b": "matched",
+    "edges": 399
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "MU",
+    "tp": false,
+    "category_a": "foreground_supported_extra",
+    "category_b": "matched",
+    "edges": 251
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "MU",
+    "tp": false,
+    "category_a": "matched",
+    "category_b": "off_vessel_or_outside",
+    "edges": 168
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "duplicate_candidate",
+    "category_b": "duplicate_candidate",
+    "edges": 33
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "duplicate_candidate",
+    "category_b": "foreground_supported_extra",
+    "edges": 24
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "duplicate_candidate",
+    "category_b": "off_vessel_or_outside",
+    "edges": 10
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "foreground_supported_extra",
+    "category_b": "foreground_supported_extra",
+    "edges": 131
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "foreground_supported_extra",
+    "category_b": "off_vessel_or_outside",
+    "edges": 71
+  },
+  {
+    "split": "train",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "off_vessel_or_outside",
+    "category_b": "off_vessel_or_outside",
+    "edges": 119
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "MM",
+    "tp": false,
+    "category_a": "matched",
+    "category_b": "matched",
+    "edges": 28
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "MM",
+    "tp": true,
+    "category_a": "matched",
+    "category_b": "matched",
+    "edges": 57
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "MU",
+    "tp": false,
+    "category_a": "duplicate_candidate",
+    "category_b": "matched",
+    "edges": 88
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "MU",
+    "tp": false,
+    "category_a": "foreground_supported_extra",
+    "category_b": "matched",
+    "edges": 231
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "MU",
+    "tp": false,
+    "category_a": "matched",
+    "category_b": "off_vessel_or_outside",
+    "edges": 59
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "duplicate_candidate",
+    "category_b": "duplicate_candidate",
+    "edges": 12
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "duplicate_candidate",
+    "category_b": "foreground_supported_extra",
+    "edges": 32
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "duplicate_candidate",
+    "category_b": "off_vessel_or_outside",
+    "edges": 2
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "foreground_supported_extra",
+    "category_b": "foreground_supported_extra",
+    "edges": 218
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "foreground_supported_extra",
+    "category_b": "off_vessel_or_outside",
+    "edges": 68
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 1.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "off_vessel_or_outside",
+    "category_b": "off_vessel_or_outside",
+    "edges": 80
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "MM",
+    "tp": false,
+    "category_a": "matched",
+    "category_b": "matched",
+    "edges": 65
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "MM",
+    "tp": true,
+    "category_a": "matched",
+    "category_b": "matched",
+    "edges": 142
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "MU",
+    "tp": false,
+    "category_a": "duplicate_candidate",
+    "category_b": "matched",
+    "edges": 200
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "MU",
+    "tp": false,
+    "category_a": "foreground_supported_extra",
+    "category_b": "matched",
+    "edges": 141
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "MU",
+    "tp": false,
+    "category_a": "matched",
+    "category_b": "off_vessel_or_outside",
+    "edges": 84
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "duplicate_candidate",
+    "category_b": "duplicate_candidate",
+    "edges": 37
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "duplicate_candidate",
+    "category_b": "foreground_supported_extra",
+    "edges": 21
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "duplicate_candidate",
+    "category_b": "off_vessel_or_outside",
+    "edges": 4
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "foreground_supported_extra",
+    "category_b": "foreground_supported_extra",
+    "edges": 82
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "foreground_supported_extra",
+    "category_b": "off_vessel_or_outside",
+    "edges": 29
+  },
+  {
+    "split": "val",
+    "tolerance_mm": 2.0,
+    "endpoint_type": "UU",
+    "tp": false,
+    "category_a": "off_vessel_or_outside",
+    "category_b": "off_vessel_or_outside",
+    "edges": 70
+  }
+]

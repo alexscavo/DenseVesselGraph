@@ -1,0 +1,80 @@
+{
+  "subject": "BH0003",
+  "inside_fraction": 1.0,
+  "brain_mask_fraction": 0.9989976612094889,
+  "centerline_median": 138.03579711914062,
+  "reflections": [
+    {
+      "flips": [
+        false,
+        false,
+        false
+      ],
+      "median": 114.90258026123047,
+      "mean": 105.82891082763672
+    },
+    {
+      "flips": [
+        false,
+        false,
+        true
+      ],
+      "median": 117.91062927246094,
+      "mean": 109.74901580810547
+    },
+    {
+      "flips": [
+        false,
+        true,
+        false
+      ],
+      "median": 120.14640808105469,
+      "mean": 112.10652160644531
+    },
+    {
+      "flips": [
+        false,
+        true,
+        true
+      ],
+      "median": 138.03579711914062,
+      "mean": 156.23204040527344
+    },
+    {
+      "flips": [
+        true,
+        false,
+        false
+      ],
+      "median": 115.10767364501953,
+      "mean": 104.61653900146484
+    },
+    {
+      "flips": [
+        true,
+        false,
+        true
+      ],
+      "median": 118.73323822021484,
+      "mean": 108.65137481689453
+    },
+    {
+      "flips": [
+        true,
+        true,
+        false
+      ],
+      "median": 121.5588607788086,
+      "mean": 112.13795471191406
+    },
+    {
+      "flips": [
+        true,
+        true,
+        true
+      ],
+      "median": 119.3719711303711,
+      "mean": 115.93110656738281
+    }
+  ]
+}

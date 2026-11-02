@@ -1,7 +1,20 @@
 # Vascular graph research documents
 
-This directory is the canonical home for the representation and evaluation
-work that follows the ordered research roadmap.
+The consolidated research overview has moved to the repository's [`research/`](../../research/roadmap.md) folder:
+
+- [Roadmap and priorities](../../research/roadmap.md)
+- [Architecture and dependencies](../../research/architecture.md)
+- [Decisions and alternatives](../../research/decisions.md)
+- [Experiment register, results and complete source catalog](../../research/experiments.md)
+
+This directory retains the detailed protocols, historical logs, metric definitions
+and evidence at their stable paths. The dated navigation below is historical;
+consult the consolidated overview for current priorities. Automated collectors
+continue to write their study-specific reports here.
+
+## Latest completed batch —23 October2026
+
+[Detector recovery and actual adaptive/piecewise geometry results](EXPERIMENT_REVIEW_20261023.md), [detailed protocol and complete tables](multidataset_continuous_graph_experiments.md). All training/evaluations completed; the plotting-only collector failure was recovered without model reruns.
 
 ## Current experiments and storage (2026-10-16)
 

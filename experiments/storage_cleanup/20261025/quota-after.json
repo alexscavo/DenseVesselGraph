@@ -1,0 +1,20 @@
+{
+  "project_id": 20305265,
+  "work": {
+    "project_kbytes": 2707341448,
+    "limit_kbytes": 5368709120,
+    "project_entries": 480466,
+    "entry_limit": 500000,
+    "user_kbytes": 67741144,
+    "user_entries": 73794
+  },
+  "scratch": {
+    "project_kbytes": 1469558060,
+    "limit_kbytes": 429496729600,
+    "project_entries": 4370679,
+    "entry_limit": 150000000,
+    "user_kbytes": 736915440,
+    "user_entries": 3164619
+  },
+  "note": "Shared quotas sampled after cleanup; filesystem-wide user totals are not project-filtered."
+}

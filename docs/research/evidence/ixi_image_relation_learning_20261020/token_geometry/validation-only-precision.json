@@ -1,0 +1,22 @@
+[
+  {
+    "tolerance_mm": 1,
+    "validation_only": true,
+    "target_original_validation_precision": 0.06287425149700598,
+    "precision": 0.06291390728476821,
+    "full_gt_recall": 0.005719446116797111,
+    "tp": 57,
+    "fp": 849,
+    "caveat": "Post-hoc validation PR diagnostic; not a train-calibrated policy."
+  },
+  {
+    "tolerance_mm": 2,
+    "validation_only": true,
+    "target_original_validation_precision": 0.15538922155688623,
+    "precision": 0.16149068322981366,
+    "full_gt_recall": 0.0026088701585390327,
+    "tp": 26,
+    "fp": 135,
+    "caveat": "Post-hoc validation PR diagnostic; not a train-calibrated policy."
+  }
+]

@@ -1,0 +1,94 @@
+{
+  "output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/continuous_representation_20261022",
+  "jobs": {
+    "GT representations": {
+      "id": "1434268",
+      "dependency": null,
+      "array": "0-17%4",
+      "walltime": "06:00:00"
+    },
+    "GT collection": {
+      "id": "1434269",
+      "dependency": "afterok:1434268",
+      "array": null,
+      "walltime": "02:00:00"
+    },
+    "GPU correctness and benchmark": {
+      "id": "1446429",
+      "dependency": null,
+      "array": null,
+      "walltime": "01:00:00"
+    },
+    "Frozen geometry heads K8 K16 K24": {
+      "id": "1446432",
+      "dependency": "afterok:1446429",
+      "array": "0-2%2",
+      "walltime": "02:00:00"
+    },
+    "Frozen predictions": {
+      "id": "1446433",
+      "dependency": "afterok:1446432",
+      "array": "0-2%2",
+      "walltime": "02:00:00"
+    },
+    "Learned metrics and adaptive selectors": {
+      "id": "1446434",
+      "dependency": "afterok:1446433",
+      "array": null,
+      "walltime": "06:00:00"
+    }
+  },
+  "end_to_end_submitted": false,
+  "source_sha256": {
+    "scripts/evaluate_continuous_geometry.py": "6089d56e5b0176389ae12bff1a152430791427a0e17ac6e4167d2eeb476f1100",
+    "scripts/study_continuous_targets.py": "98a13deccfb5df7c355d25465d1800f28562379ec9cc92cfcb225e55b9b154df",
+    "scripts/train_continuous_geometry.py": "616e53a7bbae29fa79fe5c2774f5751403f1e277875e1f5fe27fc056a834817d",
+    "scripts/show_continuous_representation.py": "2e2209944f1f8047d2bf375f08305ed29c9ec35f898f88408e113f001162019b",
+    "scripts/continuous_representation.py": "c508adb74e0ac218a78f5557cded29caacc1e4fe414225f071ca1ba44a0bb9fa",
+    "cluster/jean_zay/continuous_representation_cpu.slurm": "c0117f5d8d3c846ea3be3d90c9e2adde38b8fd030c97141ffd569a482e27fc0d",
+    "cluster/jean_zay/submit_continuous_representation.py": "3456def1574c411c42fa3e5d3cf198baf4aef37c76cb79a48e2b16baaab23a51",
+    "cluster/jean_zay/continuous_representation_gpu.slurm": "8f648fd307fa8d513131ce33219c55f940a4a211151ac789506f30ec9156dc56",
+    "tests/test_continuous_representation.py": "4d8472fd9beb7899d50386266a7684a6a3cb83ef1301cf43ddbd90494764f3a3",
+    "metrics/common_vessel_metrics.py": "482ceac69188e01239d836e688775398d0415138e6103e236c767956ce020679",
+    "tests/test_adaptive_curve_metrics.py": "91156dcf8abcde5c51e6d47c2c5afeadc201b38040831795e28429aff3f2ac05"
+  },
+  "previous_jobs": {
+    "GT representations": {
+      "id": "1434268",
+      "dependency": null,
+      "array": "0-17%4",
+      "walltime": "06:00:00"
+    },
+    "GT collection": {
+      "id": "1434269",
+      "dependency": "afterok:1434268",
+      "array": null,
+      "walltime": "02:00:00"
+    },
+    "GPU correctness and benchmark": {
+      "id": "1434270",
+      "dependency": "afterok:1434269",
+      "array": null,
+      "walltime": "01:00:00"
+    },
+    "Frozen geometry heads K8 K16 K24": {
+      "id": "1434271",
+      "dependency": "afterok:1434270",
+      "array": "0-2%2",
+      "walltime": "02:00:00"
+    },
+    "Frozen predictions": {
+      "id": "1434272",
+      "dependency": "afterok:1434271",
+      "array": "0-2%2",
+      "walltime": "02:00:00"
+    },
+    "Learned metrics and adaptive selectors": {
+      "id": "1434273",
+      "dependency": "afterok:1434272",
+      "array": null,
+      "walltime": "06:00:00"
+    }
+  },
+  "recovery_reason": "Original smoke1434270 passed training/prediction; collector failed counting variable-K controls via rectangular np.asarray. Count is now summed per edge; common-v2 geometry definitions unchanged."
+}

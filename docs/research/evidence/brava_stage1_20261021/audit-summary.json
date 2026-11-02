@@ -1,0 +1,21 @@
+{
+  "completed": true,
+  "counts": {
+    "train": 8768,
+    "val": 1796,
+    "test": 2043
+  },
+  "subject_counts": {
+    "train": 39,
+    "val": 8,
+    "test": 9
+  },
+  "audited_development_patches": 10564,
+  "volume_representation_rows": 141,
+  "test_images_or_targets_opened": false,
+  "mask_role": "brain_only_never_vessel_support",
+  "source_topology_and_SWC_segment_identity": true,
+  "max_nodes": 69,
+  "mean_nodes": 16.842483907610752,
+  "mean_edges": 10.667739492616434
+}

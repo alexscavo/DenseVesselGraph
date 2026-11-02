@@ -1,0 +1,36 @@
+{
+  "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_transfer_20261015/runs/ixi_delayed_spline/best-full-validation/validation-028170/predictions.json",
+  "checked": 128,
+  "exact_query_ids_and_edge_sets": false,
+  "max_normalized_coordinate_error": 0.0008563995361328125,
+  "max_physical_coordinate_error_mm": 0.0282153759340012,
+  "max_edge_probability_error": 0.0002905726432800293,
+  "historical_decision_changes": [
+    {
+      "sample_id": "sample_000071_0060",
+      "queries": [
+        {
+          "query": 134,
+          "current_score": 0.5009800791740417,
+          "old_score": null
+        }
+      ],
+      "added_edges": [],
+      "removed_edges": []
+    },
+    {
+      "sample_id": "sample_000076_0108",
+      "queries": [
+        {
+          "query": 236,
+          "current_score": 0.5001546740531921,
+          "old_score": null
+        }
+      ],
+      "added_edges": [],
+      "removed_edges": []
+    }
+  ],
+  "same_batch_reference_cases": null,
+  "historical_batch_note": "Batch 1 here versus 4/32 in historical evaluator. Report all differences; no claim of exact historical reproduction. Batch size is a plausible cause, not isolated here. Same-forward cache/decoder parity is checked separately; local_image also requires exact per-patch counts against the previous batch-1 threshold diagnostic."
+}

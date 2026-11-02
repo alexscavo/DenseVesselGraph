@@ -1,0 +1,24 @@
+{
+  "completed": true,
+  "output": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057",
+  "images": 56,
+  "native_swc_subjects": 62,
+  "native_swc_files": 123,
+  "orphan_swc_subjects": [
+    "BG0013",
+    "BH0002",
+    "BI0001",
+    "Set10",
+    "Set8",
+    "Set9"
+  ],
+  "patch_counts": {
+    "train": 8768,
+    "val": 1796,
+    "test": 2043
+  },
+  "exclusion_counts": {},
+  "no_vessel_segmentations": true,
+  "segmentation_role": "brain_mask_only_not_vessel_GT",
+  "limitation": "SWC parent-link forests do not establish absence of anatomical vascular cycles; trace coverage may be incomplete."
+}

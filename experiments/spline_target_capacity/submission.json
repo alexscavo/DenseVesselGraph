@@ -1,0 +1,25 @@
+{
+  "output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_target_capacity_20261022-102555",
+  "jobs": {
+    "analysis": {
+      "id": "1425071",
+      "dependency": null,
+      "array": "0-7%4",
+      "walltime": "02:00:00"
+    },
+    "collection": {
+      "id": "1425072",
+      "dependency": "afterok:1425071",
+      "array": null,
+      "walltime": "02:00:00"
+    }
+  },
+  "GPU_jobs_submitted": false,
+  "source_sha256": {
+    "scripts/analyze_spline_target_capacity.py": "a38feb53db00299195c730e8105cd1d177fb843bf2152505b7a8cc6a9d803087",
+    "tests/test_spline_target_capacity.py": "6294eb65d4569f6fe2b44ede7444fdba3d1ecf672cd24e5fdc62cef213d961e9",
+    "data/spline_targets.py": "116eafb301ebb41c24d2a2f3299ed2d91cd4dbba11c4ea504bf4a60862cd878f",
+    "metrics/representation_geometry.py": "077d623fcc057dbac519fde9264101934dca56052d5ca48f66648fe53265f5a4",
+    "cluster/jean_zay/spline_target_capacity.slurm": "724e8c2b642b92b2457e424688dce470ca84bbcaff24a9ef670041fc5294933e"
+  }
+}

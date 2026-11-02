@@ -1,0 +1,401 @@
+{
+  "preparation": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057",
+  "subjects": [
+    {
+      "subject": "BG0001",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200000047683716
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          87.0759048461914
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -60.01979064941406
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200000047683716,
+          -42.941261291503906
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0001.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0001_space-MRA_desc-brain_mask.nii.gz",
+      "swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG001.CNG.swc",
+      "initial_patch": [
+        112,
+        37,
+        68
+      ],
+      "alignment_passed": true,
+      "inside_fraction": 1.0,
+      "alignment_diagnostics": [
+        {
+          "relative_flip": [
+            false,
+            false,
+            false
+          ],
+          "median": 169.5,
+          "mean": 189.8426971435547,
+          "brain_fraction": 0.9971530249110321
+        },
+        {
+          "relative_flip": [
+            false,
+            false,
+            true
+          ],
+          "median": 133.0,
+          "mean": 127.240478515625,
+          "brain_fraction": 0.9633451957295374
+        },
+        {
+          "relative_flip": [
+            false,
+            true,
+            false
+          ],
+          "median": 126.0,
+          "mean": 120.05097961425781,
+          "brain_fraction": 0.88932384341637
+        },
+        {
+          "relative_flip": [
+            false,
+            true,
+            true
+          ],
+          "median": 132.0,
+          "mean": 123.15880584716797,
+          "brain_fraction": 0.907829181494662
+        },
+        {
+          "relative_flip": [
+            true,
+            false,
+            false
+          ],
+          "median": 127.0,
+          "mean": 125.71379089355469,
+          "brain_fraction": 0.9501779359430605
+        },
+        {
+          "relative_flip": [
+            true,
+            false,
+            true
+          ],
+          "median": 131.125,
+          "mean": 124.35596466064453,
+          "brain_fraction": 0.9483985765124555
+        },
+        {
+          "relative_flip": [
+            true,
+            true,
+            false
+          ],
+          "median": 126.5,
+          "mean": 118.42713165283203,
+          "brain_fraction": 0.8943060498220641
+        },
+        {
+          "relative_flip": [
+            true,
+            true,
+            true
+          ],
+          "median": 130.0,
+          "mean": 122.10649108886719,
+          "brain_fraction": 0.8985765124555161
+        }
+      ],
+      "note": "Source-data preview; skull stripping computed in memory. No completed patch dataset or model predictions are implied. Reflection control changes the display only."
+    },
+    {
+      "subject": "BG0006",
+      "shape": [
+        256,
+        320,
+        199
+      ],
+      "spacing": [
+        0.5625,
+        0.5625,
+        0.6200000047683716
+      ],
+      "affine": [
+        [
+          -0.5625,
+          0.0,
+          0.0,
+          69.97590637207031
+        ],
+        [
+          0.0,
+          0.5625,
+          0.0,
+          -52.425453186035156
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200000047683716,
+          -49.0135498046875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0006.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0006_space-MRA_desc-brain_mask.nii.gz",
+      "swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG06.CNG.swc",
+      "initial_patch": [
+        192,
+        146,
+        68
+      ],
+      "alignment_passed": true,
+      "inside_fraction": 1.0,
+      "alignment_diagnostics": [
+        {
+          "relative_flip": [
+            false,
+            false,
+            false
+          ],
+          "median": 196.5,
+          "mean": 218.80592346191406,
+          "brain_fraction": 0.9989626556016598
+        },
+        {
+          "relative_flip": [
+            false,
+            false,
+            true
+          ],
+          "median": 139.0,
+          "mean": 137.3091278076172,
+          "brain_fraction": 0.9844398340248963
+        },
+        {
+          "relative_flip": [
+            false,
+            true,
+            false
+          ],
+          "median": 132.75,
+          "mean": 130.65499877929688,
+          "brain_fraction": 0.896957123098202
+        },
+        {
+          "relative_flip": [
+            false,
+            true,
+            true
+          ],
+          "median": 136.5,
+          "mean": 130.7993621826172,
+          "brain_fraction": 0.919432918395574
+        },
+        {
+          "relative_flip": [
+            true,
+            false,
+            false
+          ],
+          "median": 136.0,
+          "mean": 141.63209533691406,
+          "brain_fraction": 0.9923928077455049
+        },
+        {
+          "relative_flip": [
+            true,
+            false,
+            true
+          ],
+          "median": 139.5,
+          "mean": 135.64834594726562,
+          "brain_fraction": 0.9806362378976486
+        },
+        {
+          "relative_flip": [
+            true,
+            true,
+            false
+          ],
+          "median": 132.0,
+          "mean": 129.13226318359375,
+          "brain_fraction": 0.9024896265560166
+        },
+        {
+          "relative_flip": [
+            true,
+            true,
+            true
+          ],
+          "median": 135.0,
+          "mean": 129.94190979003906,
+          "brain_fraction": 0.9197786998616874
+        }
+      ],
+      "note": "Source-data preview; skull stripping computed in memory. No completed patch dataset or model predictions are implied. Reflection control changes the display only."
+    },
+    {
+      "subject": "BG0014",
+      "shape": [
+        288,
+        320,
+        199
+      ],
+      "spacing": [
+        0.6187499761581421,
+        0.6187499761581421,
+        0.6200019717216492
+      ],
+      "affine": [
+        [
+          -0.6187499761581421,
+          0.0,
+          0.0,
+          89.0999984741211
+        ],
+        [
+          0.0,
+          0.6187499761581421,
+          0.0,
+          -43.15232849121094
+        ],
+        [
+          0.0,
+          0.0,
+          0.6200019717216492,
+          -34.84487533569336
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/brains/BG0014.nii.gz",
+      "brain_mask": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/mask_hull/sub-BG0014_space-MRA_desc-brain_mask.nii.gz",
+      "swc": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/swc_files/BG0014.CNG.swc",
+      "initial_patch": [
+        112,
+        73,
+        34
+      ],
+      "alignment_passed": false,
+      "inside_fraction": 1.0,
+      "alignment_diagnostics": [
+        {
+          "relative_flip": [
+            false,
+            false,
+            false
+          ],
+          "median": 140.0,
+          "mean": 139.39434814453125,
+          "brain_fraction": 0.9758454106280193
+        },
+        {
+          "relative_flip": [
+            false,
+            false,
+            true
+          ],
+          "median": 141.5,
+          "mean": 131.9295654296875,
+          "brain_fraction": 0.9021103483346046
+        },
+        {
+          "relative_flip": [
+            false,
+            true,
+            false
+          ],
+          "median": 140.0,
+          "mean": 133.0141143798828,
+          "brain_fraction": 0.927027714213069
+        },
+        {
+          "relative_flip": [
+            false,
+            true,
+            true
+          ],
+          "median": 143.0,
+          "mean": 133.6470947265625,
+          "brain_fraction": 0.9183829138062548
+        },
+        {
+          "relative_flip": [
+            true,
+            false,
+            false
+          ],
+          "median": 167.5,
+          "mean": 192.39161682128906,
+          "brain_fraction": 0.9977116704805492
+        },
+        {
+          "relative_flip": [
+            true,
+            false,
+            true
+          ],
+          "median": 141.5,
+          "mean": 133.85983276367188,
+          "brain_fraction": 0.9105008899059243
+        },
+        {
+          "relative_flip": [
+            true,
+            true,
+            false
+          ],
+          "median": 140.0,
+          "mean": 134.4138641357422,
+          "brain_fraction": 0.9333841851004322
+        },
+        {
+          "relative_flip": [
+            true,
+            true,
+            true
+          ],
+          "median": 142.5,
+          "mean": 133.58523559570312,
+          "brain_fraction": 0.9171116196287821
+        }
+      ],
+      "note": "Source-data preview; skull stripping computed in memory. No completed patch dataset or model predictions are implied. Reflection control changes the display only."
+    }
+  ]
+}

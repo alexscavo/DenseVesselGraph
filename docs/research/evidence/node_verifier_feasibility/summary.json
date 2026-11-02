@@ -1,0 +1,4032 @@
+{
+  "datasets": {
+    "SyntheticMRI": {
+      "dataset": "SyntheticMRI",
+      "transfer": null,
+      "policies": {
+        "V0": {
+          "threshold": 0.5,
+          "radius": 0
+        },
+        "V1": {
+          "radius": 0.0,
+          "threshold": 0.8500000000000001,
+          "training_node_f1": 0.7804606240713224
+        },
+        "V2": {
+          "radius": 2.0,
+          "threshold": 0.6500000000000001,
+          "training_node_f1": 0.7974963890226288
+        },
+        "V3": {
+          "radius": 2.0,
+          "threshold": 0.6000000000000001,
+          "training_node_f1": 0.8110714630147555
+        }
+      },
+      "results": {
+        "V0": {
+          "train": {
+            "discrimination": {
+              "auc_correct_duplicate": 0.761375462838804,
+              "auc_correct_false": 0.9140569998886925,
+              "canonical_ap": 0.5954619031412633,
+              "reliable_auc": 0.9162656342078743,
+              "brier": 0.0840270146727562,
+              "ignored_fraction": 0.23271484374999996,
+              "ece": 0.07630478187047057,
+              "correct_mean_confidence": 0.6909312605857849,
+              "duplicate_mean_confidence": 0.244235098361969,
+              "false_mean_confidence": 0.06838667392730713
+            },
+            "calibrated_1.0": {
+              "nodes": 5778.0,
+              "gt_nodes": 5493.0,
+              "node_tp": 2468.0,
+              "duplicates": 84.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 256.0,
+              "edges": 4212.0,
+              "gt_edges": 4227.0,
+              "edge_tp": 622.0,
+              "eligible": 742.0,
+              "beta0_error": 701.0,
+              "beta1_error": 381.0,
+              "node_precision": 0.4271374177916234,
+              "node_recall": 0.4492991079555798,
+              "node_f1": 0.43793807115606426,
+              "duplicate_rate": 0.014537902388369679,
+              "edge_precision": 0.14767331433998102,
+              "edge_recall": 0.1471492784480719,
+              "edge_f1": 0.14741083066714067,
+              "conditional_recall": 0.8382749326145552,
+              "beta0_mae": 2.73828125,
+              "beta1_mae": 1.48828125
+            },
+            "calibrated_2.0": {
+              "nodes": 5778.0,
+              "gt_nodes": 5493.0,
+              "node_tp": 4337.0,
+              "duplicates": 227.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 256.0,
+              "edges": 4212.0,
+              "gt_edges": 4227.0,
+              "edge_tp": 2031.0,
+              "eligible": 2573.0,
+              "beta0_error": 701.0,
+              "beta1_error": 381.0,
+              "node_precision": 0.7506057459328488,
+              "node_recall": 0.789550336792281,
+              "node_f1": 0.7695856623192263,
+              "duplicate_rate": 0.03928695050190377,
+              "edge_precision": 0.4821937321937322,
+              "edge_recall": 0.4804826117814053,
+              "edge_f1": 0.48133665126199787,
+              "conditional_recall": 0.7893509521958803,
+              "beta0_mae": 2.73828125,
+              "beta1_mae": 1.48828125
+            },
+            "matched_count_1.0": {
+              "nodes": 5778.0,
+              "gt_nodes": 5493.0,
+              "node_tp": 2468.0,
+              "duplicates": 84.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 256.0,
+              "edges": 4212.0,
+              "gt_edges": 4227.0,
+              "edge_tp": 622.0,
+              "eligible": 742.0,
+              "beta0_error": 701.0,
+              "beta1_error": 381.0,
+              "node_precision": 0.4271374177916234,
+              "node_recall": 0.4492991079555798,
+              "node_f1": 0.43793807115606426,
+              "duplicate_rate": 0.014537902388369679,
+              "edge_precision": 0.14767331433998102,
+              "edge_recall": 0.1471492784480719,
+              "edge_f1": 0.14741083066714067,
+              "conditional_recall": 0.8382749326145552,
+              "beta0_mae": 2.73828125,
+              "beta1_mae": 1.48828125
+            },
+            "matched_count_2.0": {
+              "nodes": 5778.0,
+              "gt_nodes": 5493.0,
+              "node_tp": 4337.0,
+              "duplicates": 227.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 256.0,
+              "edges": 4212.0,
+              "gt_edges": 4227.0,
+              "edge_tp": 2031.0,
+              "eligible": 2573.0,
+              "beta0_error": 701.0,
+              "beta1_error": 381.0,
+              "node_precision": 0.7506057459328488,
+              "node_recall": 0.789550336792281,
+              "node_f1": 0.7695856623192263,
+              "duplicate_rate": 0.03928695050190377,
+              "edge_precision": 0.4821937321937322,
+              "edge_recall": 0.4804826117814053,
+              "edge_f1": 0.48133665126199787,
+              "conditional_recall": 0.7893509521958803,
+              "beta0_mae": 2.73828125,
+              "beta1_mae": 1.48828125
+            }
+          },
+          "val": {
+            "discrimination": {
+              "auc_correct_duplicate": 0.7385777830406017,
+              "auc_correct_false": 0.9019012962233688,
+              "canonical_ap": 0.5606354044981494,
+              "reliable_auc": 0.901452363759276,
+              "brier": 0.095690056681633,
+              "ignored_fraction": 0.23743489583333333,
+              "ece": 0.08753896425892019,
+              "correct_mean_confidence": 0.662151575088501,
+              "duplicate_mean_confidence": 0.2539922595024109,
+              "false_mean_confidence": 0.07512738555669785
+            },
+            "calibrated_1.0": {
+              "nodes": 2919.0,
+              "gt_nodes": 2718.0,
+              "node_tp": 1195.0,
+              "duplicates": 50.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 128.0,
+              "edges": 2166.0,
+              "gt_edges": 2063.0,
+              "edge_tp": 282.0,
+              "eligible": 341.0,
+              "beta0_error": 339.0,
+              "beta1_error": 217.0,
+              "node_precision": 0.4093867762932511,
+              "node_recall": 0.4396615158204562,
+              "node_f1": 0.4239843888593223,
+              "duplicate_rate": 0.0171291538198013,
+              "edge_precision": 0.13019390581717452,
+              "edge_recall": 0.13669413475521086,
+              "edge_f1": 0.1333648616694254,
+              "conditional_recall": 0.8269794721407625,
+              "beta0_mae": 2.6484375,
+              "beta1_mae": 1.6953125
+            },
+            "calibrated_2.0": {
+              "nodes": 2919.0,
+              "gt_nodes": 2718.0,
+              "node_tp": 2121.0,
+              "duplicates": 121.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 128.0,
+              "edges": 2166.0,
+              "gt_edges": 2063.0,
+              "edge_tp": 942.0,
+              "eligible": 1236.0,
+              "beta0_error": 339.0,
+              "beta1_error": 217.0,
+              "node_precision": 0.7266187050359713,
+              "node_recall": 0.7803532008830022,
+              "node_f1": 0.7525279403938265,
+              "duplicate_rate": 0.04145255224391915,
+              "edge_precision": 0.43490304709141275,
+              "edge_recall": 0.45661657779932135,
+              "edge_f1": 0.44549538898084656,
+              "conditional_recall": 0.7621359223300971,
+              "beta0_mae": 2.6484375,
+              "beta1_mae": 1.6953125
+            },
+            "matched_count_1.0": {
+              "nodes": 2919.0,
+              "gt_nodes": 2718.0,
+              "node_tp": 1195.0,
+              "duplicates": 50.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 128.0,
+              "edges": 2166.0,
+              "gt_edges": 2063.0,
+              "edge_tp": 282.0,
+              "eligible": 341.0,
+              "beta0_error": 339.0,
+              "beta1_error": 217.0,
+              "node_precision": 0.4093867762932511,
+              "node_recall": 0.4396615158204562,
+              "node_f1": 0.4239843888593223,
+              "duplicate_rate": 0.0171291538198013,
+              "edge_precision": 0.13019390581717452,
+              "edge_recall": 0.13669413475521086,
+              "edge_f1": 0.1333648616694254,
+              "conditional_recall": 0.8269794721407625,
+              "beta0_mae": 2.6484375,
+              "beta1_mae": 1.6953125
+            },
+            "matched_count_2.0": {
+              "nodes": 2919.0,
+              "gt_nodes": 2718.0,
+              "node_tp": 2121.0,
+              "duplicates": 121.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 128.0,
+              "edges": 2166.0,
+              "gt_edges": 2063.0,
+              "edge_tp": 942.0,
+              "eligible": 1236.0,
+              "beta0_error": 339.0,
+              "beta1_error": 217.0,
+              "node_precision": 0.7266187050359713,
+              "node_recall": 0.7803532008830022,
+              "node_f1": 0.7525279403938265,
+              "duplicate_rate": 0.04145255224391915,
+              "edge_precision": 0.43490304709141275,
+              "edge_recall": 0.45661657779932135,
+              "edge_f1": 0.44549538898084656,
+              "conditional_recall": 0.7621359223300971,
+              "beta0_mae": 2.6484375,
+              "beta1_mae": 1.6953125
+            },
+            "precision_envelope": {
+              "target": 0.7266187050359713,
+              "selected": {
+                "threshold": 0.5,
+                "nodes": 2919.0,
+                "gt_nodes": 2718.0,
+                "node_tp": 2121.0,
+                "duplicates": 121.0,
+                "rescued": 0.0,
+                "lost": 0.0,
+                "patches": 128.0,
+                "node_precision": 0.7266187050359713,
+                "node_recall": 0.7803532008830022,
+                "node_f1": 0.7525279403938265,
+                "duplicate_rate": 0.04145255224391915
+              },
+              "descriptive_only": true,
+              "graph_metrics": {
+                "nodes": 2919.0,
+                "gt_nodes": 2718.0,
+                "node_tp": 2121.0,
+                "duplicates": 121.0,
+                "rescued": 0.0,
+                "lost": 0.0,
+                "patches": 128.0,
+                "edges": 2166.0,
+                "gt_edges": 2063.0,
+                "edge_tp": 942.0,
+                "eligible": 1236.0,
+                "beta0_error": 339.0,
+                "beta1_error": 217.0,
+                "node_precision": 0.7266187050359713,
+                "node_recall": 0.7803532008830022,
+                "node_f1": 0.7525279403938265,
+                "duplicate_rate": 0.04145255224391915,
+                "edge_precision": 0.43490304709141275,
+                "edge_recall": 0.45661657779932135,
+                "edge_f1": 0.44549538898084656,
+                "conditional_recall": 0.7621359223300971,
+                "beta0_mae": 2.6484375,
+                "beta1_mae": 1.6953125
+              }
+            }
+          }
+        },
+        "V1": {
+          "train": {
+            "discrimination": {
+              "auc_correct_duplicate": 0.761375462838804,
+              "auc_correct_false": 0.9140569998886925,
+              "canonical_ap": 0.5954619031412633,
+              "reliable_auc": 0.9162656342078743,
+              "brier": 0.0840270146727562,
+              "ignored_fraction": 0.23271484374999996,
+              "ece": 0.07630478187047057,
+              "correct_mean_confidence": 0.6909312605857849,
+              "duplicate_mean_confidence": 0.244235098361969,
+              "false_mean_confidence": 0.06838667392730713
+            },
+            "calibrated_1.0": {
+              "nodes": 5275.0,
+              "gt_nodes": 5493.0,
+              "node_tp": 2398.0,
+              "duplicates": 41.0,
+              "rescued": 0.0,
+              "lost": 70.0,
+              "patches": 256.0,
+              "edges": 3463.0,
+              "gt_edges": 4227.0,
+              "edge_tp": 589.0,
+              "eligible": 700.0,
+              "beta0_error": 713.0,
+              "beta1_error": 161.0,
+              "node_precision": 0.4545971563981043,
+              "node_recall": 0.4365556162388494,
+              "node_f1": 0.44539375928677566,
+              "duplicate_rate": 0.0077725118483412325,
+              "edge_precision": 0.17008374241986718,
+              "edge_recall": 0.13934232316063402,
+              "edge_f1": 0.15318595578673602,
+              "conditional_recall": 0.8414285714285714,
+              "beta0_mae": 2.78515625,
+              "beta1_mae": 0.62890625
+            },
+            "calibrated_2.0": {
+              "nodes": 5275.0,
+              "gt_nodes": 5493.0,
+              "node_tp": 4202.0,
+              "duplicates": 98.0,
+              "rescued": 0.0,
+              "lost": 135.0,
+              "patches": 256.0,
+              "edges": 3463.0,
+              "gt_edges": 4227.0,
+              "edge_tp": 1909.0,
+              "eligible": 2409.0,
+              "beta0_error": 713.0,
+              "beta1_error": 161.0,
+              "node_precision": 0.7965876777251185,
+              "node_recall": 0.7649736027671582,
+              "node_f1": 0.7804606240713224,
+              "duplicate_rate": 0.0185781990521327,
+              "edge_precision": 0.5512561362980075,
+              "edge_recall": 0.45162053465815,
+              "edge_f1": 0.49648894668400523,
+              "conditional_recall": 0.79244499792445,
+              "beta0_mae": 2.78515625,
+              "beta1_mae": 0.62890625
+            },
+            "matched_count_1.0": {
+              "nodes": 5778.0,
+              "gt_nodes": 5493.0,
+              "node_tp": 2468.0,
+              "duplicates": 84.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 256.0,
+              "edges": 4212.0,
+              "gt_edges": 4227.0,
+              "edge_tp": 622.0,
+              "eligible": 742.0,
+              "beta0_error": 701.0,
+              "beta1_error": 381.0,
+              "node_precision": 0.4271374177916234,
+              "node_recall": 0.4492991079555798,
+              "node_f1": 0.43793807115606426,
+              "duplicate_rate": 0.014537902388369679,
+              "edge_precision": 0.14767331433998102,
+              "edge_recall": 0.1471492784480719,
+              "edge_f1": 0.14741083066714067,
+              "conditional_recall": 0.8382749326145552,
+              "beta0_mae": 2.73828125,
+              "beta1_mae": 1.48828125
+            },
+            "matched_count_2.0": {
+              "nodes": 5778.0,
+              "gt_nodes": 5493.0,
+              "node_tp": 4337.0,
+              "duplicates": 227.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 256.0,
+              "edges": 4212.0,
+              "gt_edges": 4227.0,
+              "edge_tp": 2031.0,
+              "eligible": 2573.0,
+              "beta0_error": 701.0,
+              "beta1_error": 381.0,
+              "node_precision": 0.7506057459328488,
+              "node_recall": 0.789550336792281,
+              "node_f1": 0.7695856623192263,
+              "duplicate_rate": 0.03928695050190377,
+              "edge_precision": 0.4821937321937322,
+              "edge_recall": 0.4804826117814053,
+              "edge_f1": 0.48133665126199787,
+              "conditional_recall": 0.7893509521958803,
+              "beta0_mae": 2.73828125,
+              "beta1_mae": 1.48828125
+            }
+          },
+          "val": {
+            "discrimination": {
+              "auc_correct_duplicate": 0.7385777830406017,
+              "auc_correct_false": 0.9019012962233688,
+              "canonical_ap": 0.5606354044981494,
+              "reliable_auc": 0.901452363759276,
+              "brier": 0.095690056681633,
+              "ignored_fraction": 0.23743489583333333,
+              "ece": 0.08753896425892019,
+              "correct_mean_confidence": 0.662151575088501,
+              "duplicate_mean_confidence": 0.2539922595024109,
+              "false_mean_confidence": 0.07512738555669785
+            },
+            "calibrated_1.0": {
+              "nodes": 2671.0,
+              "gt_nodes": 2718.0,
+              "node_tp": 1152.0,
+              "duplicates": 28.0,
+              "rescued": 0.0,
+              "lost": 43.0,
+              "patches": 128.0,
+              "edges": 1790.0,
+              "gt_edges": 2063.0,
+              "edge_tp": 261.0,
+              "eligible": 309.0,
+              "beta0_error": 367.0,
+              "beta1_error": 115.0,
+              "node_precision": 0.43129913889928867,
+              "node_recall": 0.423841059602649,
+              "node_f1": 0.4275375765448135,
+              "duplicate_rate": 0.010482965181579932,
+              "edge_precision": 0.1458100558659218,
+              "edge_recall": 0.12651478429471644,
+              "edge_f1": 0.1354788476511809,
+              "conditional_recall": 0.8446601941747572,
+              "beta0_mae": 2.8671875,
+              "beta1_mae": 0.8984375
+            },
+            "calibrated_2.0": {
+              "nodes": 2671.0,
+              "gt_nodes": 2718.0,
+              "node_tp": 2057.0,
+              "duplicates": 60.0,
+              "rescued": 0.0,
+              "lost": 64.0,
+              "patches": 128.0,
+              "edges": 1790.0,
+              "gt_edges": 2063.0,
+              "edge_tp": 886.0,
+              "eligible": 1147.0,
+              "beta0_error": 367.0,
+              "beta1_error": 115.0,
+              "node_precision": 0.7701235492324972,
+              "node_recall": 0.7568064753495217,
+              "node_f1": 0.7634069400630915,
+              "duplicate_rate": 0.022463496817671284,
+              "edge_precision": 0.4949720670391061,
+              "edge_recall": 0.4294716432380029,
+              "edge_f1": 0.4599013755515183,
+              "conditional_recall": 0.7724498692240628,
+              "beta0_mae": 2.8671875,
+              "beta1_mae": 0.8984375
+            },
+            "matched_count_1.0": {
+              "nodes": 2919.0,
+              "gt_nodes": 2718.0,
+              "node_tp": 1195.0,
+              "duplicates": 50.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 128.0,
+              "edges": 2166.0,
+              "gt_edges": 2063.0,
+              "edge_tp": 282.0,
+              "eligible": 341.0,
+              "beta0_error": 339.0,
+              "beta1_error": 217.0,
+              "node_precision": 0.4093867762932511,
+              "node_recall": 0.4396615158204562,
+              "node_f1": 0.4239843888593223,
+              "duplicate_rate": 0.0171291538198013,
+              "edge_precision": 0.13019390581717452,
+              "edge_recall": 0.13669413475521086,
+              "edge_f1": 0.1333648616694254,
+              "conditional_recall": 0.8269794721407625,
+              "beta0_mae": 2.6484375,
+              "beta1_mae": 1.6953125
+            },
+            "matched_count_2.0": {
+              "nodes": 2919.0,
+              "gt_nodes": 2718.0,
+              "node_tp": 2121.0,
+              "duplicates": 121.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 128.0,
+              "edges": 2166.0,
+              "gt_edges": 2063.0,
+              "edge_tp": 942.0,
+              "eligible": 1236.0,
+              "beta0_error": 339.0,
+              "beta1_error": 217.0,
+              "node_precision": 0.7266187050359713,
+              "node_recall": 0.7803532008830022,
+              "node_f1": 0.7525279403938265,
+              "duplicate_rate": 0.04145255224391915,
+              "edge_precision": 0.43490304709141275,
+              "edge_recall": 0.45661657779932135,
+              "edge_f1": 0.44549538898084656,
+              "conditional_recall": 0.7621359223300971,
+              "beta0_mae": 2.6484375,
+              "beta1_mae": 1.6953125
+            },
+            "precision_envelope": {
+              "target": 0.7266187050359713,
+              "selected": {
+                "threshold": 0.5,
+                "nodes": 2919.0,
+                "gt_nodes": 2718.0,
+                "node_tp": 2121.0,
+                "duplicates": 121.0,
+                "rescued": 0.0,
+                "lost": 0.0,
+                "patches": 128.0,
+                "node_precision": 0.7266187050359713,
+                "node_recall": 0.7803532008830022,
+                "node_f1": 0.7525279403938265,
+                "duplicate_rate": 0.04145255224391915
+              },
+              "descriptive_only": true,
+              "graph_metrics": {
+                "nodes": 2919.0,
+                "gt_nodes": 2718.0,
+                "node_tp": 2121.0,
+                "duplicates": 121.0,
+                "rescued": 0.0,
+                "lost": 0.0,
+                "patches": 128.0,
+                "edges": 2166.0,
+                "gt_edges": 2063.0,
+                "edge_tp": 942.0,
+                "eligible": 1236.0,
+                "beta0_error": 339.0,
+                "beta1_error": 217.0,
+                "node_precision": 0.7266187050359713,
+                "node_recall": 0.7803532008830022,
+                "node_f1": 0.7525279403938265,
+                "duplicate_rate": 0.04145255224391915,
+                "edge_precision": 0.43490304709141275,
+                "edge_recall": 0.45661657779932135,
+                "edge_f1": 0.44549538898084656,
+                "conditional_recall": 0.7621359223300971,
+                "beta0_mae": 2.6484375,
+                "beta1_mae": 1.6953125
+              }
+            }
+          }
+        },
+        "V2": {
+          "train": {
+            "discrimination": {
+              "auc_correct_duplicate": 0.8564211614568439,
+              "auc_correct_false": 0.9670120574115821,
+              "canonical_ap": 0.6918683292737374,
+              "reliable_auc": 0.9962837226352083,
+              "brier": 0.016870956867933273,
+              "ignored_fraction": 0.23271484374999996,
+              "ece": 0.01336530918030095,
+              "correct_mean_confidence": 0.8812899589538574,
+              "duplicate_mean_confidence": 0.3051457107067108,
+              "false_mean_confidence": 0.04962417483329773
+            },
+            "calibrated_1.0": {
+              "nodes": 4892.0,
+              "gt_nodes": 5493.0,
+              "node_tp": 2454.0,
+              "duplicates": 0.0,
+              "rescued": 286.0,
+              "lost": 300.0,
+              "patches": 256.0,
+              "edges": 2405.0,
+              "gt_edges": 4227.0,
+              "edge_tp": 464.0,
+              "eligible": 754.0,
+              "beta0_error": 1395.0,
+              "beta1_error": 178.0,
+              "node_precision": 0.5016353229762878,
+              "node_recall": 0.4467504096122338,
+              "node_f1": 0.47260471834376505,
+              "duplicate_rate": 0.0,
+              "edge_precision": 0.19293139293139294,
+              "edge_recall": 0.10977052282942985,
+              "edge_f1": 0.1399276236429433,
+              "conditional_recall": 0.6153846153846154,
+              "beta0_mae": 5.44921875,
+              "beta1_mae": 0.6953125
+            },
+            "calibrated_2.0": {
+              "nodes": 4892.0,
+              "gt_nodes": 5493.0,
+              "node_tp": 4141.0,
+              "duplicates": 90.0,
+              "rescued": 260.0,
+              "lost": 456.0,
+              "patches": 256.0,
+              "edges": 2405.0,
+              "gt_edges": 4227.0,
+              "edge_tp": 1376.0,
+              "eligible": 2409.0,
+              "beta0_error": 1395.0,
+              "beta1_error": 178.0,
+              "node_precision": 0.8464840556009812,
+              "node_recall": 0.753868559985436,
+              "node_f1": 0.7974963890226288,
+              "duplicate_rate": 0.01839738348323794,
+              "edge_precision": 0.5721413721413722,
+              "edge_recall": 0.32552637804589546,
+              "edge_f1": 0.4149577804583836,
+              "conditional_recall": 0.5711913657119136,
+              "beta0_mae": 5.44921875,
+              "beta1_mae": 0.6953125
+            },
+            "matched_count_1.0": {
+              "nodes": 5778.0,
+              "gt_nodes": 5493.0,
+              "node_tp": 2509.0,
+              "duplicates": 0.0,
+              "rescued": 298.0,
+              "lost": 257.0,
+              "patches": 256.0,
+              "edges": 3256.0,
+              "gt_edges": 4227.0,
+              "edge_tp": 482.0,
+              "eligible": 777.0,
+              "beta0_error": 1633.0,
+              "beta1_error": 377.0,
+              "node_precision": 0.43423329871928,
+              "node_recall": 0.4567631531039505,
+              "node_f1": 0.44521337946943484,
+              "duplicate_rate": 0.0,
+              "edge_precision": 0.14803439803439802,
+              "edge_recall": 0.11402886207712326,
+              "edge_f1": 0.12882533743151142,
+              "conditional_recall": 0.6203346203346203,
+              "beta0_mae": 6.37890625,
+              "beta1_mae": 1.47265625
+            },
+            "matched_count_2.0": {
+              "nodes": 5778.0,
+              "gt_nodes": 5493.0,
+              "node_tp": 4256.0,
+              "duplicates": 172.0,
+              "rescued": 279.0,
+              "lost": 360.0,
+              "patches": 256.0,
+              "edges": 3256.0,
+              "gt_edges": 4227.0,
+              "edge_tp": 1423.0,
+              "eligible": 2506.0,
+              "beta0_error": 1633.0,
+              "beta1_error": 377.0,
+              "node_precision": 0.7365870543440637,
+              "node_recall": 0.7748042963772074,
+              "node_f1": 0.7552124922367137,
+              "duplicate_rate": 0.029768085842852197,
+              "edge_precision": 0.43703931203931207,
+              "edge_recall": 0.3366453749704282,
+              "edge_f1": 0.3803287451556862,
+              "conditional_recall": 0.5678371907422187,
+              "beta0_mae": 6.37890625,
+              "beta1_mae": 1.47265625
+            }
+          },
+          "val": {
+            "discrimination": {
+              "auc_correct_duplicate": 0.6707652211226307,
+              "auc_correct_false": 0.883688555224734,
+              "canonical_ap": 0.43762621820493497,
+              "reliable_auc": 0.890981609230722,
+              "brier": 0.11603668332099915,
+              "ignored_fraction": 0.23743489583333333,
+              "ece": 0.10784509006248717,
+              "correct_mean_confidence": 0.6232680082321167,
+              "duplicate_mean_confidence": 0.36523666977882385,
+              "false_mean_confidence": 0.09262599796056747
+            },
+            "calibrated_1.0": {
+              "nodes": 2484.0,
+              "gt_nodes": 2718.0,
+              "node_tp": 976.0,
+              "duplicates": 0.0,
+              "rescued": 28.0,
+              "lost": 247.0,
+              "patches": 128.0,
+              "edges": 1337.0,
+              "gt_edges": 2063.0,
+              "edge_tp": 164.0,
+              "eligible": 228.0,
+              "beta0_error": 634.0,
+              "beta1_error": 142.0,
+              "node_precision": 0.392914653784219,
+              "node_recall": 0.35908756438557765,
+              "node_f1": 0.3752402921953095,
+              "duplicate_rate": 0.0,
+              "edge_precision": 0.12266267763649963,
+              "edge_recall": 0.07949587978671838,
+              "edge_f1": 0.09647058823529411,
+              "conditional_recall": 0.7192982456140351,
+              "beta0_mae": 4.953125,
+              "beta1_mae": 1.109375
+            },
+            "calibrated_2.0": {
+              "nodes": 2484.0,
+              "gt_nodes": 2718.0,
+              "node_tp": 1760.0,
+              "duplicates": 38.0,
+              "rescued": 42.0,
+              "lost": 403.0,
+              "patches": 128.0,
+              "edges": 1337.0,
+              "gt_edges": 2063.0,
+              "edge_tp": 526.0,
+              "eligible": 818.0,
+              "beta0_error": 634.0,
+              "beta1_error": 142.0,
+              "node_precision": 0.7085346215780999,
+              "node_recall": 0.6475349521707138,
+              "node_f1": 0.6766628219915417,
+              "duplicate_rate": 0.015297906602254429,
+              "edge_precision": 0.39341810022438295,
+              "edge_recall": 0.2549684924866699,
+              "edge_f1": 0.30941176470588233,
+              "conditional_recall": 0.6430317848410758,
+              "beta0_mae": 4.953125,
+              "beta1_mae": 1.109375
+            },
+            "matched_count_1.0": {
+              "nodes": 2919.0,
+              "gt_nodes": 2718.0,
+              "node_tp": 1032.0,
+              "duplicates": 0.0,
+              "rescued": 32.0,
+              "lost": 195.0,
+              "patches": 128.0,
+              "edges": 1759.0,
+              "gt_edges": 2063.0,
+              "edge_tp": 177.0,
+              "eligible": 244.0,
+              "beta0_error": 745.0,
+              "beta1_error": 234.0,
+              "node_precision": 0.35354573484069884,
+              "node_recall": 0.37969094922737306,
+              "node_f1": 0.36615220862160724,
+              "duplicate_rate": 0.0,
+              "edge_precision": 0.10062535531552018,
+              "edge_recall": 0.08579738245273873,
+              "edge_f1": 0.09262166405023547,
+              "conditional_recall": 0.7254098360655737,
+              "beta0_mae": 5.8203125,
+              "beta1_mae": 1.828125
+            },
+            "matched_count_2.0": {
+              "nodes": 2919.0,
+              "gt_nodes": 2718.0,
+              "node_tp": 1892.0,
+              "duplicates": 66.0,
+              "rescued": 52.0,
+              "lost": 281.0,
+              "patches": 128.0,
+              "edges": 1759.0,
+              "gt_edges": 2063.0,
+              "edge_tp": 591.0,
+              "eligible": 936.0,
+              "beta0_error": 745.0,
+              "beta1_error": 234.0,
+              "node_precision": 0.6481671805412813,
+              "node_recall": 0.6961000735835173,
+              "node_f1": 0.6712790491396132,
+              "duplicate_rate": 0.022610483042137718,
+              "edge_precision": 0.33598635588402503,
+              "edge_recall": 0.2864760058167717,
+              "edge_f1": 0.3092621664050236,
+              "conditional_recall": 0.6314102564102564,
+              "beta0_mae": 5.8203125,
+              "beta1_mae": 1.828125
+            },
+            "precision_envelope": {
+              "target": 0.7266187050359713,
+              "selected": {
+                "threshold": 0.8150000000000001,
+                "nodes": 2311.0,
+                "gt_nodes": 2718.0,
+                "node_tp": 1682.0,
+                "duplicates": 27.0,
+                "rescued": 39.0,
+                "lost": 478.0,
+                "patches": 128.0,
+                "node_precision": 0.7278234530506275,
+                "node_recall": 0.6188373804267844,
+                "node_f1": 0.6689202624776297,
+                "duplicate_rate": 0.011683254002596278
+              },
+              "descriptive_only": true,
+              "graph_metrics": {
+                "nodes": 2311.0,
+                "gt_nodes": 2718.0,
+                "node_tp": 1682.0,
+                "duplicates": 27.0,
+                "rescued": 39.0,
+                "lost": 478.0,
+                "patches": 128.0,
+                "edges": 1170.0,
+                "gt_edges": 2063.0,
+                "edge_tp": 492.0,
+                "eligible": 751.0,
+                "beta0_error": 603.0,
+                "beta1_error": 109.0,
+                "node_precision": 0.7278234530506275,
+                "node_recall": 0.6188373804267844,
+                "node_f1": 0.6689202624776297,
+                "duplicate_rate": 0.011683254002596278,
+                "edge_precision": 0.4205128205128205,
+                "edge_recall": 0.2384876393601551,
+                "edge_f1": 0.3043612743581813,
+                "conditional_recall": 0.6551264980026631,
+                "beta0_mae": 4.7109375,
+                "beta1_mae": 0.8515625
+              }
+            }
+          }
+        },
+        "V3": {
+          "train": {
+            "discrimination": {
+              "auc_correct_duplicate": 0.883602912087668,
+              "auc_correct_false": 0.9751449516738598,
+              "canonical_ap": 0.7362039285849056,
+              "reliable_auc": 0.9981612689491054,
+              "brier": 0.009975111111998558,
+              "ignored_fraction": 0.23271484374999996,
+              "ece": 0.005086194660853522,
+              "correct_mean_confidence": 0.895047664642334,
+              "duplicate_mean_confidence": 0.25940918922424316,
+              "false_mean_confidence": 0.04148739576339722
+            },
+            "calibrated_1.0": {
+              "nodes": 4876.0,
+              "gt_nodes": 5493.0,
+              "node_tp": 2512.0,
+              "duplicates": 0.0,
+              "rescued": 280.0,
+              "lost": 236.0,
+              "patches": 256.0,
+              "edges": 2358.0,
+              "gt_edges": 4227.0,
+              "edge_tp": 497.0,
+              "eligible": 806.0,
+              "beta0_error": 1383.0,
+              "beta1_error": 143.0,
+              "node_precision": 0.5151763740771124,
+              "node_recall": 0.4573093027489532,
+              "node_f1": 0.48452116886874336,
+              "duplicate_rate": 0.0,
+              "edge_precision": 0.2107718405428329,
+              "edge_recall": 0.11757747811686775,
+              "edge_f1": 0.15094912680334094,
+              "conditional_recall": 0.6166253101736973,
+              "beta0_mae": 5.40234375,
+              "beta1_mae": 0.55859375
+            },
+            "calibrated_2.0": {
+              "nodes": 4876.0,
+              "gt_nodes": 5493.0,
+              "node_tp": 4205.0,
+              "duplicates": 87.0,
+              "rescued": 263.0,
+              "lost": 395.0,
+              "patches": 256.0,
+              "edges": 2358.0,
+              "gt_edges": 4227.0,
+              "edge_tp": 1433.0,
+              "eligible": 2475.0,
+              "beta0_error": 1383.0,
+              "beta1_error": 143.0,
+              "node_precision": 0.8623872026251025,
+              "node_recall": 0.765519752412161,
+              "node_f1": 0.8110714630147555,
+              "duplicate_rate": 0.017842493847415916,
+              "edge_precision": 0.6077184054283291,
+              "edge_recall": 0.33901111899692454,
+              "edge_f1": 0.4352315869400152,
+              "conditional_recall": 0.5789898989898989,
+              "beta0_mae": 5.40234375,
+              "beta1_mae": 0.55859375
+            },
+            "matched_count_1.0": {
+              "nodes": 5778.0,
+              "gt_nodes": 5493.0,
+              "node_tp": 2561.0,
+              "duplicates": 0.0,
+              "rescued": 296.0,
+              "lost": 203.0,
+              "patches": 256.0,
+              "edges": 3354.0,
+              "gt_edges": 4227.0,
+              "edge_tp": 507.0,
+              "eligible": 828.0,
+              "beta0_error": 1512.0,
+              "beta1_error": 358.0,
+              "node_precision": 0.44323295257874695,
+              "node_recall": 0.4662297469506645,
+              "node_f1": 0.4544405997693195,
+              "duplicate_rate": 0.0,
+              "edge_precision": 0.1511627906976744,
+              "edge_recall": 0.11994322214336409,
+              "edge_f1": 0.13375544123466562,
+              "conditional_recall": 0.6123188405797102,
+              "beta0_mae": 5.90625,
+              "beta1_mae": 1.3984375
+            },
+            "matched_count_2.0": {
+              "nodes": 5778.0,
+              "gt_nodes": 5493.0,
+              "node_tp": 4289.0,
+              "duplicates": 167.0,
+              "rescued": 277.0,
+              "lost": 325.0,
+              "patches": 256.0,
+              "edges": 3354.0,
+              "gt_edges": 4227.0,
+              "edge_tp": 1461.0,
+              "eligible": 2550.0,
+              "beta0_error": 1512.0,
+              "beta1_error": 358.0,
+              "node_precision": 0.7422983731394946,
+              "node_recall": 0.7808119424722374,
+              "node_f1": 0.7610682281962559,
+              "duplicate_rate": 0.028902734510211147,
+              "edge_precision": 0.43559928443649376,
+              "edge_recall": 0.3456352022711143,
+              "edge_f1": 0.3854372774040364,
+              "conditional_recall": 0.5729411764705883,
+              "beta0_mae": 5.90625,
+              "beta1_mae": 1.3984375
+            }
+          },
+          "val": {
+            "discrimination": {
+              "auc_correct_duplicate": 0.6778032793516097,
+              "auc_correct_false": 0.9026622829350519,
+              "canonical_ap": 0.4613951577869614,
+              "reliable_auc": 0.905451242183539,
+              "brier": 0.11220088601112366,
+              "ignored_fraction": 0.23743489583333333,
+              "ece": 0.10456273945720009,
+              "correct_mean_confidence": 0.6014460921287537,
+              "duplicate_mean_confidence": 0.336961567401886,
+              "false_mean_confidence": 0.07525896281003952
+            },
+            "calibrated_1.0": {
+              "nodes": 2353.0,
+              "gt_nodes": 2718.0,
+              "node_tp": 944.0,
+              "duplicates": 0.0,
+              "rescued": 24.0,
+              "lost": 275.0,
+              "patches": 128.0,
+              "edges": 1160.0,
+              "gt_edges": 2063.0,
+              "edge_tp": 150.0,
+              "eligible": 194.0,
+              "beta0_error": 625.0,
+              "beta1_error": 89.0,
+              "node_precision": 0.4011899702507437,
+              "node_recall": 0.34731420161883736,
+              "node_f1": 0.37231315322421615,
+              "duplicate_rate": 0.0,
+              "edge_precision": 0.12931034482758622,
+              "edge_recall": 0.07270964614638875,
+              "edge_f1": 0.09308098045299411,
+              "conditional_recall": 0.7731958762886598,
+              "beta0_mae": 4.8828125,
+              "beta1_mae": 0.6953125
+            },
+            "calibrated_2.0": {
+              "nodes": 2353.0,
+              "gt_nodes": 2718.0,
+              "node_tp": 1727.0,
+              "duplicates": 24.0,
+              "rescued": 28.0,
+              "lost": 422.0,
+              "patches": 128.0,
+              "edges": 1160.0,
+              "gt_edges": 2063.0,
+              "edge_tp": 518.0,
+              "eligible": 791.0,
+              "beta0_error": 625.0,
+              "beta1_error": 89.0,
+              "node_precision": 0.7339566510837229,
+              "node_recall": 0.6353936718175128,
+              "node_f1": 0.6811279826464208,
+              "duplicate_rate": 0.010199745006374841,
+              "edge_precision": 0.44655172413793104,
+              "edge_recall": 0.25109064469219583,
+              "edge_f1": 0.321439652497673,
+              "conditional_recall": 0.6548672566371682,
+              "beta0_mae": 4.8828125,
+              "beta1_mae": 0.6953125
+            },
+            "matched_count_1.0": {
+              "nodes": 2919.0,
+              "gt_nodes": 2718.0,
+              "node_tp": 1033.0,
+              "duplicates": 0.0,
+              "rescued": 29.0,
+              "lost": 191.0,
+              "patches": 128.0,
+              "edges": 1787.0,
+              "gt_edges": 2063.0,
+              "edge_tp": 176.0,
+              "eligible": 235.0,
+              "beta0_error": 713.0,
+              "beta1_error": 236.0,
+              "node_precision": 0.3538883179170949,
+              "node_recall": 0.3800588668138337,
+              "node_f1": 0.3665070072733724,
+              "duplicate_rate": 0.0,
+              "edge_precision": 0.09848908785674315,
+              "edge_recall": 0.08531265147842947,
+              "edge_f1": 0.09142857142857143,
+              "conditional_recall": 0.7489361702127659,
+              "beta0_mae": 5.5703125,
+              "beta1_mae": 1.84375
+            },
+            "matched_count_2.0": {
+              "nodes": 2919.0,
+              "gt_nodes": 2718.0,
+              "node_tp": 1918.0,
+              "duplicates": 59.0,
+              "rescued": 48.0,
+              "lost": 251.0,
+              "patches": 128.0,
+              "edges": 1787.0,
+              "gt_edges": 2063.0,
+              "edge_tp": 630.0,
+              "eligible": 993.0,
+              "beta0_error": 713.0,
+              "beta1_error": 236.0,
+              "node_precision": 0.657074340527578,
+              "node_recall": 0.7056659308314938,
+              "node_f1": 0.6805038140855064,
+              "duplicate_rate": 0.020212401507365536,
+              "edge_precision": 0.35254616675993283,
+              "edge_recall": 0.3053805138148328,
+              "edge_f1": 0.32727272727272727,
+              "conditional_recall": 0.6344410876132931,
+              "beta0_mae": 5.5703125,
+              "beta1_mae": 1.84375
+            },
+            "precision_envelope": {
+              "target": 0.7266187050359713,
+              "selected": {
+                "threshold": 0.49,
+                "nodes": 2411.0,
+                "gt_nodes": 2718.0,
+                "node_tp": 1752.0,
+                "duplicates": 25.0,
+                "rescued": 28.0,
+                "lost": 397.0,
+                "patches": 128.0,
+                "node_precision": 0.7266694317710494,
+                "node_recall": 0.6445916114790287,
+                "node_f1": 0.683174108013258,
+                "duplicate_rate": 0.010369141435089175
+              },
+              "descriptive_only": true,
+              "graph_metrics": {
+                "nodes": 2411.0,
+                "gt_nodes": 2718.0,
+                "node_tp": 1752.0,
+                "duplicates": 25.0,
+                "rescued": 28.0,
+                "lost": 397.0,
+                "patches": 128.0,
+                "edges": 1226.0,
+                "gt_edges": 2063.0,
+                "edge_tp": 537.0,
+                "eligible": 815.0,
+                "beta0_error": 629.0,
+                "beta1_error": 101.0,
+                "node_precision": 0.7266694317710494,
+                "node_recall": 0.6445916114790287,
+                "node_f1": 0.683174108013258,
+                "duplicate_rate": 0.010369141435089175,
+                "edge_precision": 0.43800978792822187,
+                "edge_recall": 0.26030053320407176,
+                "edge_f1": 0.3265430221951961,
+                "conditional_recall": 0.6588957055214724,
+                "beta0_mae": 4.9140625,
+                "beta1_mae": 0.7890625
+              }
+            }
+          }
+        }
+      },
+      "paired": {
+        "V3-V0": {
+          "calibrated_1.0": {
+            "node_recall": [
+              -0.102281902081746,
+              -0.08244011548159108
+            ],
+            "node_f1": [
+              -0.06111012027714004,
+              -0.04203109624109846
+            ],
+            "duplicate_rate": [
+              -0.02118828069888226,
+              -0.013726703887156955
+            ],
+            "edge_f1": [
+              -0.0524556837559941,
+              -0.027540649809519566
+            ],
+            "beta0_mae": [
+              1.9615310077519377,
+              2.488004724409449
+            ],
+            "beta1_mae": [
+              -1.3125721153846153,
+              -0.7131222747093023
+            ]
+          },
+          "calibrated_2.0": {
+            "node_recall": [
+              -0.1565810799851233,
+              -0.13265340288412134
+            ],
+            "node_f1": [
+              -0.0831479638297249,
+              -0.05941933405651907
+            ],
+            "duplicate_rate": [
+              -0.03842650434564533,
+              -0.02315251899361937
+            ],
+            "edge_f1": [
+              -0.14263160863877308,
+              -0.10594643869919049
+            ],
+            "beta0_mae": [
+              1.9615310077519377,
+              2.488004724409449
+            ],
+            "beta1_mae": [
+              -1.3125721153846153,
+              -0.7131222747093023
+            ]
+          },
+          "matched_count_1.0": {
+            "node_recall": [
+              -0.07021781995042796,
+              -0.05005191693290735
+            ],
+            "node_f1": [
+              -0.0675513744386925,
+              -0.048268068869007565
+            ],
+            "duplicate_rate": [
+              -0.02118828069888226,
+              -0.013726703887156955
+            ],
+            "edge_f1": [
+              -0.050752883837518865,
+              -0.03242701365572019
+            ],
+            "beta0_mae": [
+              2.571316085489314,
+              3.271317829457364
+            ],
+            "beta1_mae": [
+              -0.10939653051181103,
+              0.4496124031007751
+            ]
+          },
+          "matched_count_2.0": {
+            "node_recall": [
+              -0.08441878439387095,
+              -0.06551686509607832
+            ],
+            "node_f1": [
+              -0.08187704120232331,
+              -0.06289412071109521
+            ],
+            "duplicate_rate": [
+              -0.030487100871478903,
+              -0.011086069419431644
+            ],
+            "edge_f1": [
+              -0.13176002514305343,
+              -0.10619160135548421
+            ],
+            "beta0_mae": [
+              2.571316085489314,
+              3.271317829457364
+            ],
+            "beta1_mae": [
+              -0.10939653051181103,
+              0.4496124031007751
+            ]
+          },
+          "precision_envelope_2.0": {
+            "node_recall": [
+              -0.1477990156841819,
+              -0.12307967426776902
+            ],
+            "node_f1": [
+              -0.08094528248942955,
+              -0.05775266885674003
+            ],
+            "duplicate_rate": [
+              -0.038651291445325066,
+              -0.02252991103179747
+            ],
+            "edge_f1": [
+              -0.13901123975784924,
+              -0.09920363743962293
+            ],
+            "beta0_mae": [
+              1.9919981971153846,
+              2.5354472440944886
+            ],
+            "beta1_mae": [
+              -1.184651162790698,
+              -0.6383914728682171
+            ]
+          }
+        },
+        "V3-V1": {
+          "calibrated_1.0": {
+            "node_recall": [
+              -0.08756299682733738,
+              -0.0669669004701671
+            ],
+            "node_f1": [
+              -0.06600848447641534,
+              -0.04549521877936094
+            ],
+            "duplicate_rate": [
+              -0.013574250089413351,
+              -0.00734002943144605
+            ],
+            "edge_f1": [
+              -0.05215080628094255,
+              -0.03203428335244479
+            ],
+            "beta0_mae": [
+              1.7615384615384615,
+              2.2419417842741933
+            ],
+            "beta1_mae": [
+              -0.4031007751937984,
+              0.008000000000000007
+            ]
+          },
+          "calibrated_2.0": {
+            "node_recall": [
+              -0.1335583500599853,
+              -0.10824419614223368
+            ],
+            "node_f1": [
+              -0.09334958316732543,
+              -0.0700532470488711
+            ],
+            "duplicate_rate": [
+              -0.018242658468329776,
+              -0.005672137685476838
+            ],
+            "edge_f1": [
+              -0.15350972093777024,
+              -0.12331593573403209
+            ],
+            "beta0_mae": [
+              1.7615384615384615,
+              2.2419417842741933
+            ],
+            "beta1_mae": [
+              -0.4031007751937984,
+              0.008000000000000007
+            ]
+          },
+          "matched_count_1.0": {
+            "node_recall": [
+              -0.07021781995042796,
+              -0.05005191693290735
+            ],
+            "node_f1": [
+              -0.0675513744386925,
+              -0.048268068869007565
+            ],
+            "duplicate_rate": [
+              -0.02118828069888226,
+              -0.013726703887156955
+            ],
+            "edge_f1": [
+              -0.050752883837518865,
+              -0.03242701365572019
+            ],
+            "beta0_mae": [
+              2.571316085489314,
+              3.271317829457364
+            ],
+            "beta1_mae": [
+              -0.10939653051181103,
+              0.4496124031007751
+            ]
+          },
+          "matched_count_2.0": {
+            "node_recall": [
+              -0.08441878439387095,
+              -0.06551686509607832
+            ],
+            "node_f1": [
+              -0.08187704120232331,
+              -0.06289412071109521
+            ],
+            "duplicate_rate": [
+              -0.030487100871478903,
+              -0.011086069419431644
+            ],
+            "edge_f1": [
+              -0.13176002514305343,
+              -0.10619160135548421
+            ],
+            "beta0_mae": [
+              2.571316085489314,
+              3.271317829457364
+            ],
+            "beta1_mae": [
+              -0.10939653051181103,
+              0.4496124031007751
+            ]
+          },
+          "precision_envelope_2.0": {
+            "node_recall": [
+              -0.1477990156841819,
+              -0.12307967426776902
+            ],
+            "node_f1": [
+              -0.08094528248942955,
+              -0.05775266885674003
+            ],
+            "duplicate_rate": [
+              -0.038651291445325066,
+              -0.02252991103179747
+            ],
+            "edge_f1": [
+              -0.13901123975784924,
+              -0.09920363743962293
+            ],
+            "beta0_mae": [
+              1.9919981971153846,
+              2.5354472440944886
+            ],
+            "beta1_mae": [
+              -1.184651162790698,
+              -0.6383914728682171
+            ]
+          }
+        },
+        "V3-V2": {
+          "calibrated_1.0": {
+            "node_recall": [
+              -0.022541404854038036,
+              -0.0010637848459392018
+            ],
+            "node_f1": [
+              -0.014539443430577328,
+              0.008379444391870845
+            ],
+            "duplicate_rate": [
+              0.0,
+              0.0
+            ],
+            "edge_f1": [
+              -0.015266069602810533,
+              0.008401287225416785
+            ],
+            "beta0_mae": [
+              -0.46051587301587227,
+              0.23819754464285708
+            ],
+            "beta1_mae": [
+              -0.6173347355769231,
+              -0.20464505890252094
+            ]
+          },
+          "calibrated_2.0": {
+            "node_recall": [
+              -0.026086108896821822,
+              0.0018904320561837617
+            ],
+            "node_f1": [
+              -0.0093562633829868,
+              0.01764317002942545
+            ],
+            "duplicate_rate": [
+              -0.009207506045103672,
+              -0.0014484543218766062
+            ],
+            "edge_f1": [
+              -0.007185025802440382,
+              0.030992002128949567
+            ],
+            "beta0_mae": [
+              -0.46051587301587227,
+              0.23819754464285708
+            ],
+            "beta1_mae": [
+              -0.6173347355769231,
+              -0.20464505890252094
+            ]
+          },
+          "matched_count_1.0": {
+            "node_recall": [
+              -0.006273818661434638,
+              0.007483062948110311
+            ],
+            "node_f1": [
+              -0.006025469659794211,
+              0.007204289081717821
+            ],
+            "duplicate_rate": [
+              0.0,
+              0.0
+            ],
+            "edge_f1": [
+              -0.007332526818881733,
+              0.004578926229280258
+            ],
+            "beta0_mae": [
+              -0.614218897637795,
+              0.07753452034883733
+            ],
+            "beta1_mae": [
+              -0.2500492125984252,
+              0.2656772883858267
+            ]
+          },
+          "matched_count_2.0": {
+            "node_recall": [
+              -0.0011208365047846113,
+              0.021068841783779747
+            ],
+            "node_f1": [
+              -0.0010879183927495206,
+              0.02030493689817515
+            ],
+            "duplicate_rate": [
+              -0.007988544961227865,
+              0.0028904091077650218
+            ],
+            "edge_f1": [
+              0.0032641437338857236,
+              0.03353213092079854
+            ],
+            "beta0_mae": [
+              -0.614218897637795,
+              0.07753452034883733
+            ],
+            "beta1_mae": [
+              -0.2500492125984252,
+              0.2656772883858267
+            ]
+          },
+          "precision_envelope_2.0": {
+            "node_recall": [
+              0.010238717232443151,
+              0.041096795037477325
+            ],
+            "node_f1": [
+              3.3775899195401487e-06,
+              0.028358901231119088
+            ],
+            "duplicate_rate": [
+              -0.0053740026710438005,
+              0.002489232973702263
+            ],
+            "edge_f1": [
+              0.0005455034663643196,
+              0.04374262831337471
+            ],
+            "beta0_mae": [
+              -0.1769573643410855,
+              0.4961614173228346
+            ],
+            "beta1_mae": [
+              -0.23850775193798454,
+              0.10238251468566431
+            ]
+          }
+        }
+      },
+      "oracle": {
+        "1.0": {
+          "nodes": 1459.0,
+          "gt_nodes": 2718.0,
+          "node_tp": 1459.0,
+          "duplicates": 0.0,
+          "rescued": 264.0,
+          "lost": 0.0,
+          "patches": 128.0,
+          "edges": 306.0,
+          "gt_edges": 2063.0,
+          "edge_tp": 268.0,
+          "eligible": 509.0,
+          "beta0_error": 499.0,
+          "beta1_error": 9.0,
+          "node_precision": 1.0,
+          "node_recall": 0.5367917586460633,
+          "node_f1": 0.6985875029925784,
+          "duplicate_rate": 0.0,
+          "edge_precision": 0.8758169934640523,
+          "edge_recall": 0.12990790111488124,
+          "edge_f1": 0.22625580413676658,
+          "conditional_recall": 0.5265225933202358,
+          "beta0_mae": 3.8984375,
+          "beta1_mae": 0.0703125
+        },
+        "2.0": {
+          "nodes": 2366.0,
+          "gt_nodes": 2718.0,
+          "node_tp": 2366.0,
+          "duplicates": 0.0,
+          "rescued": 245.0,
+          "lost": 0.0,
+          "patches": 128.0,
+          "edges": 863.0,
+          "gt_edges": 2063.0,
+          "edge_tp": 750.0,
+          "eligible": 1556.0,
+          "beta0_error": 872.0,
+          "beta1_error": 30.0,
+          "node_precision": 1.0,
+          "node_recall": 0.8704930095658573,
+          "node_f1": 0.930763178599528,
+          "duplicate_rate": 0.0,
+          "edge_precision": 0.8690614136732329,
+          "edge_recall": 0.36354823073194376,
+          "edge_f1": 0.5126452494873548,
+          "conditional_recall": 0.4820051413881748,
+          "beta0_mae": 6.8125,
+          "beta1_mae": 0.234375
+        }
+      },
+      "learning_curve": [
+        {
+          "arm": "V2",
+          "step": 100,
+          "split": "train",
+          "nodes": 5778.0,
+          "gt_nodes": 5493.0,
+          "node_tp": 4191.0,
+          "duplicates": 525.0,
+          "rescued": 62.0,
+          "lost": 208.0,
+          "patches": 256.0,
+          "node_precision": 0.72533748701973,
+          "node_recall": 0.7629710540688148,
+          "node_f1": 0.7436784668618579,
+          "duplicate_rate": 0.0908618899273105,
+          "auc_correct_duplicate": 0.7479786223665046,
+          "auc_correct_false": 0.9372397674847796,
+          "canonical_ap": 0.6046404106513912,
+          "reliable_auc": 0.9406311543818672,
+          "brier": 0.06688105314970016,
+          "ignored_fraction": 0.23271484374999996,
+          "ece": 0.00776147670627581,
+          "correct_mean_confidence": 0.6042210459709167,
+          "duplicate_mean_confidence": 0.31032663583755493,
+          "false_mean_confidence": 0.08172387629747391
+        },
+        {
+          "arm": "V2",
+          "step": 100,
+          "split": "val",
+          "nodes": 2919.0,
+          "gt_nodes": 2718.0,
+          "node_tp": 2048.0,
+          "duplicates": 259.0,
+          "rescued": 31.0,
+          "lost": 104.0,
+          "patches": 128.0,
+          "node_precision": 0.7016101404590613,
+          "node_recall": 0.753495217071376,
+          "node_f1": 0.7266276388149725,
+          "duplicate_rate": 0.08872901678657075,
+          "auc_correct_duplicate": 0.729154234221982,
+          "auc_correct_false": 0.9267973675871415,
+          "canonical_ap": 0.5687728419099456,
+          "reliable_auc": 0.9282425061840305,
+          "brier": 0.07485342770814896,
+          "ignored_fraction": 0.23743489583333333,
+          "ece": 0.018456304174091186,
+          "correct_mean_confidence": 0.5813743472099304,
+          "duplicate_mean_confidence": 0.30996158719062805,
+          "false_mean_confidence": 0.08749470114707947
+        },
+        {
+          "arm": "V2",
+          "step": 500,
+          "split": "train",
+          "nodes": 5778.0,
+          "gt_nodes": 5493.0,
+          "node_tp": 4102.0,
+          "duplicates": 729.0,
+          "rescued": 94.0,
+          "lost": 329.0,
+          "patches": 256.0,
+          "node_precision": 0.7099342332987193,
+          "node_recall": 0.7467686146004006,
+          "node_f1": 0.7278857244255168,
+          "duplicate_rate": 0.1261682242990654,
+          "auc_correct_duplicate": 0.7587489313405769,
+          "auc_correct_false": 0.9482162729792715,
+          "canonical_ap": 0.6226271407889987,
+          "reliable_auc": 0.9569973278425379,
+          "brier": 0.06161268800497055,
+          "ignored_fraction": 0.23271484374999996,
+          "ece": 0.02508655342507598,
+          "correct_mean_confidence": 0.7060896754264832,
+          "duplicate_mean_confidence": 0.3937443196773529,
+          "false_mean_confidence": 0.08741404861211777
+        },
+        {
+          "arm": "V2",
+          "step": 500,
+          "split": "val",
+          "nodes": 2919.0,
+          "gt_nodes": 2718.0,
+          "node_tp": 1981.0,
+          "duplicates": 349.0,
+          "rescued": 31.0,
+          "lost": 171.0,
+          "patches": 128.0,
+          "node_precision": 0.6786570743405276,
+          "node_recall": 0.7288447387785136,
+          "node_f1": 0.7028561291467093,
+          "duplicate_rate": 0.11956149366221308,
+          "auc_correct_duplicate": 0.7136171467495483,
+          "auc_correct_false": 0.9218682614653855,
+          "canonical_ap": 0.5614451338492048,
+          "reliable_auc": 0.9261292321559349,
+          "brier": 0.08141542971134186,
+          "ignored_fraction": 0.23743489583333333,
+          "ece": 0.046115746314445025,
+          "correct_mean_confidence": 0.6537917852401733,
+          "duplicate_mean_confidence": 0.39068812131881714,
+          "false_mean_confidence": 0.09915856271982193
+        },
+        {
+          "arm": "V2",
+          "step": 1000,
+          "split": "train",
+          "nodes": 5778.0,
+          "gt_nodes": 5493.0,
+          "node_tp": 3986.0,
+          "duplicates": 1011.0,
+          "rescued": 192.0,
+          "lost": 543.0,
+          "patches": 256.0,
+          "node_precision": 0.6898580823814469,
+          "node_recall": 0.7256508283269616,
+          "node_f1": 0.7073019252950049,
+          "duplicate_rate": 0.17497403946002077,
+          "auc_correct_duplicate": 0.793639383563166,
+          "auc_correct_false": 0.9643517124985057,
+          "canonical_ap": 0.6441479231672759,
+          "reliable_auc": 0.9800575553196912,
+          "brier": 0.042566608637571335,
+          "ignored_fraction": 0.23271484374999996,
+          "ece": 0.019404385062230533,
+          "correct_mean_confidence": 0.7761458158493042,
+          "duplicate_mean_confidence": 0.3819066882133484,
+          "false_mean_confidence": 0.06691209226846695
+        },
+        {
+          "arm": "V2",
+          "step": 1000,
+          "split": "val",
+          "nodes": 2919.0,
+          "gt_nodes": 2718.0,
+          "node_tp": 1827.0,
+          "duplicates": 438.0,
+          "rescued": 47.0,
+          "lost": 341.0,
+          "patches": 128.0,
+          "node_precision": 0.6258992805755396,
+          "node_recall": 0.6721854304635762,
+          "node_f1": 0.6482171367748802,
+          "duplicate_rate": 0.1500513874614594,
+          "auc_correct_duplicate": 0.6775396333635425,
+          "auc_correct_false": 0.9070279336428617,
+          "canonical_ap": 0.5085976451627644,
+          "reliable_auc": 0.9094172927517529,
+          "brier": 0.09754221141338348,
+          "ignored_fraction": 0.23743489583333333,
+          "ece": 0.0753258917164886,
+          "correct_mean_confidence": 0.6351151466369629,
+          "duplicate_mean_confidence": 0.40340831875801086,
+          "false_mean_confidence": 0.09484986215829849
+        },
+        {
+          "arm": "V2",
+          "step": 2000,
+          "split": "train",
+          "nodes": 5778.0,
+          "gt_nodes": 5493.0,
+          "node_tp": 4148.0,
+          "duplicates": 928.0,
+          "rescued": 296.0,
+          "lost": 485.0,
+          "patches": 256.0,
+          "node_precision": 0.717895465559017,
+          "node_recall": 0.755142909157109,
+          "node_f1": 0.7360482654600302,
+          "duplicate_rate": 0.1606092073381793,
+          "auc_correct_duplicate": 0.8564211614568439,
+          "auc_correct_false": 0.9670120574115821,
+          "canonical_ap": 0.6918683292737374,
+          "reliable_auc": 0.9962837226352083,
+          "brier": 0.016870956867933273,
+          "ignored_fraction": 0.23271484374999996,
+          "ece": 0.01336530918030095,
+          "correct_mean_confidence": 0.8812899589538574,
+          "duplicate_mean_confidence": 0.3051457107067108,
+          "false_mean_confidence": 0.04962417483329773
+        },
+        {
+          "arm": "V2",
+          "step": 2000,
+          "split": "val",
+          "nodes": 2919.0,
+          "gt_nodes": 2718.0,
+          "node_tp": 1790.0,
+          "duplicates": 381.0,
+          "rescued": 47.0,
+          "lost": 378.0,
+          "patches": 128.0,
+          "node_precision": 0.6132237067488866,
+          "node_recall": 0.6585724797645327,
+          "node_f1": 0.6350895866595707,
+          "duplicate_rate": 0.13052415210688592,
+          "auc_correct_duplicate": 0.6707652211226307,
+          "auc_correct_false": 0.883688555224734,
+          "canonical_ap": 0.43762621820493497,
+          "reliable_auc": 0.890981609230722,
+          "brier": 0.11603668332099915,
+          "ignored_fraction": 0.23743489583333333,
+          "ece": 0.10784509006248717,
+          "correct_mean_confidence": 0.6232680082321167,
+          "duplicate_mean_confidence": 0.36523666977882385,
+          "false_mean_confidence": 0.09262599796056747
+        },
+        {
+          "arm": "V3",
+          "step": 100,
+          "split": "train",
+          "nodes": 5778.0,
+          "gt_nodes": 5493.0,
+          "node_tp": 4180.0,
+          "duplicates": 524.0,
+          "rescued": 62.0,
+          "lost": 219.0,
+          "patches": 256.0,
+          "node_precision": 0.7234337140879197,
+          "node_recall": 0.7609685053704716,
+          "node_f1": 0.7417265548753438,
+          "duplicate_rate": 0.09068881966078228,
+          "auc_correct_duplicate": 0.7472817527051714,
+          "auc_correct_false": 0.9375432704998526,
+          "canonical_ap": 0.6045719771173955,
+          "reliable_auc": 0.9407898681905736,
+          "brier": 0.06713531166315079,
+          "ignored_fraction": 0.23271484374999996,
+          "ece": 0.01019519105949373,
+          "correct_mean_confidence": 0.613750696182251,
+          "duplicate_mean_confidence": 0.3224547207355499,
+          "false_mean_confidence": 0.08454453945159912
+        },
+        {
+          "arm": "V3",
+          "step": 100,
+          "split": "val",
+          "nodes": 2919.0,
+          "gt_nodes": 2718.0,
+          "node_tp": 2039.0,
+          "duplicates": 268.0,
+          "rescued": 32.0,
+          "lost": 114.0,
+          "patches": 128.0,
+          "node_precision": 0.698526892771497,
+          "node_recall": 0.7501839587932303,
+          "node_f1": 0.7234344509490864,
+          "duplicate_rate": 0.09181226447413497,
+          "auc_correct_duplicate": 0.7289448122559188,
+          "auc_correct_false": 0.9275042578968623,
+          "canonical_ap": 0.5691599892996168,
+          "reliable_auc": 0.9285704262499936,
+          "brier": 0.07492547482252121,
+          "ignored_fraction": 0.23743489583333333,
+          "ece": 0.01862097240623138,
+          "correct_mean_confidence": 0.5918596982955933,
+          "duplicate_mean_confidence": 0.3211077153682709,
+          "false_mean_confidence": 0.0901472419500351
+        },
+        {
+          "arm": "V3",
+          "step": 500,
+          "split": "train",
+          "nodes": 5778.0,
+          "gt_nodes": 5493.0,
+          "node_tp": 4128.0,
+          "duplicates": 735.0,
+          "rescued": 86.0,
+          "lost": 295.0,
+          "patches": 256.0,
+          "node_precision": 0.7144340602284528,
+          "node_recall": 0.7515019115237576,
+          "node_f1": 0.7324993345754591,
+          "duplicate_rate": 0.1272066458982347,
+          "auc_correct_duplicate": 0.7626501864690307,
+          "auc_correct_false": 0.9542684695724417,
+          "canonical_ap": 0.6257704044094654,
+          "reliable_auc": 0.9603217047668534,
+          "brier": 0.06033583730459213,
+          "ignored_fraction": 0.23271484374999996,
+          "ece": 0.022401166776951656,
+          "correct_mean_confidence": 0.7117050886154175,
+          "duplicate_mean_confidence": 0.39418601989746094,
+          "false_mean_confidence": 0.08090251684188843
+        },
+        {
+          "arm": "V3",
+          "step": 500,
+          "split": "val",
+          "nodes": 2919.0,
+          "gt_nodes": 2718.0,
+          "node_tp": 1990.0,
+          "duplicates": 352.0,
+          "rescued": 29.0,
+          "lost": 160.0,
+          "patches": 128.0,
+          "node_precision": 0.6817403220280918,
+          "node_recall": 0.7321559970566593,
+          "node_f1": 0.7060493170125953,
+          "duplicate_rate": 0.12058924289140116,
+          "auc_correct_duplicate": 0.7120336587556261,
+          "auc_correct_false": 0.9267261100004767,
+          "canonical_ap": 0.5624360146034758,
+          "reliable_auc": 0.927222998960366,
+          "brier": 0.08184820413589478,
+          "ignored_fraction": 0.23743489583333333,
+          "ece": 0.04711549464906757,
+          "correct_mean_confidence": 0.6557217836380005,
+          "duplicate_mean_confidence": 0.39301374554634094,
+          "false_mean_confidence": 0.09330100566148758
+        },
+        {
+          "arm": "V3",
+          "step": 1000,
+          "split": "train",
+          "nodes": 5778.0,
+          "gt_nodes": 5493.0,
+          "node_tp": 4104.0,
+          "duplicates": 947.0,
+          "rescued": 212.0,
+          "lost": 445.0,
+          "patches": 256.0,
+          "node_precision": 0.7102803738317757,
+          "node_recall": 0.7471327143637356,
+          "node_f1": 0.728240617513974,
+          "duplicate_rate": 0.1638975424022153,
+          "auc_correct_duplicate": 0.8184026301245646,
+          "auc_correct_false": 0.9718193803695282,
+          "canonical_ap": 0.671002729460221,
+          "reliable_auc": 0.9856085836485678,
+          "brier": 0.03683823347091675,
+          "ignored_fraction": 0.23271484374999996,
+          "ece": 0.022179368018822997,
+          "correct_mean_confidence": 0.8286470770835876,
+          "duplicate_mean_confidence": 0.3926358222961426,
+          "false_mean_confidence": 0.06306054443120956
+        },
+        {
+          "arm": "V3",
+          "step": 1000,
+          "split": "val",
+          "nodes": 2919.0,
+          "gt_nodes": 2718.0,
+          "node_tp": 1848.0,
+          "duplicates": 434.0,
+          "rescued": 53.0,
+          "lost": 326.0,
+          "patches": 128.0,
+          "node_precision": 0.6330935251798561,
+          "node_recall": 0.6799116997792495,
+          "node_f1": 0.6556679084619479,
+          "duplicate_rate": 0.1486810551558753,
+          "auc_correct_duplicate": 0.6781174123007048,
+          "auc_correct_false": 0.9149443609726651,
+          "canonical_ap": 0.5147851394104839,
+          "reliable_auc": 0.9151256779387589,
+          "brier": 0.10225825756788254,
+          "ignored_fraction": 0.23743489583333333,
+          "ece": 0.08827310271830215,
+          "correct_mean_confidence": 0.6610513925552368,
+          "duplicate_mean_confidence": 0.4303314685821533,
+          "false_mean_confidence": 0.0931367501616478
+        },
+        {
+          "arm": "V3",
+          "step": 2000,
+          "split": "train",
+          "nodes": 5778.0,
+          "gt_nodes": 5493.0,
+          "node_tp": 4287.0,
+          "duplicates": 815.0,
+          "rescued": 293.0,
+          "lost": 343.0,
+          "patches": 256.0,
+          "node_precision": 0.7419522326064382,
+          "node_recall": 0.7804478427089022,
+          "node_f1": 0.7607133351077988,
+          "duplicate_rate": 0.14105226722049152,
+          "auc_correct_duplicate": 0.883602912087668,
+          "auc_correct_false": 0.9751449516738598,
+          "canonical_ap": 0.7362039285849056,
+          "reliable_auc": 0.9981612689491054,
+          "brier": 0.009975111111998558,
+          "ignored_fraction": 0.23271484374999996,
+          "ece": 0.005086194660853522,
+          "correct_mean_confidence": 0.895047664642334,
+          "duplicate_mean_confidence": 0.25940918922424316,
+          "false_mean_confidence": 0.04148739576339722
+        },
+        {
+          "arm": "V3",
+          "step": 2000,
+          "split": "val",
+          "nodes": 2919.0,
+          "gt_nodes": 2718.0,
+          "node_tp": 1820.0,
+          "duplicates": 399.0,
+          "rescued": 46.0,
+          "lost": 347.0,
+          "patches": 128.0,
+          "node_precision": 0.6235011990407674,
+          "node_recall": 0.6696100073583517,
+          "node_f1": 0.6457335462125244,
+          "duplicate_rate": 0.1366906474820144,
+          "auc_correct_duplicate": 0.6778032793516097,
+          "auc_correct_false": 0.9026622829350519,
+          "canonical_ap": 0.4613951577869614,
+          "reliable_auc": 0.905451242183539,
+          "brier": 0.11220088601112366,
+          "ignored_fraction": 0.23743489583333333,
+          "ece": 0.10456273945720009,
+          "correct_mean_confidence": 0.6014460921287537,
+          "duplicate_mean_confidence": 0.336961567401886,
+          "false_mean_confidence": 0.07525896281003952
+        }
+      ]
+    },
+    "IXI": {
+      "dataset": "IXI",
+      "transfer": null,
+      "policies": {
+        "V0": {
+          "threshold": 0.5,
+          "radius": 0
+        },
+        "V1": {
+          "radius": 0.0,
+          "threshold": 0.7000000000000001,
+          "training_node_f1": 0.5900137425561154
+        },
+        "V2": {
+          "radius": 1.0,
+          "threshold": 0.45,
+          "training_node_f1": 0.6201868775028238
+        },
+        "V3": {
+          "radius": 1.0,
+          "threshold": 0.35000000000000003,
+          "training_node_f1": 0.6444159178433889
+        }
+      },
+      "results": {
+        "V0": {
+          "train": {
+            "discrimination": {
+              "auc_correct_duplicate": 0.6560109160794874,
+              "auc_correct_false": 0.8329812550629807,
+              "canonical_ap": 0.3080301272083976,
+              "reliable_auc": 0.8045189939738636,
+              "brier": 0.05806852504611015,
+              "ignored_fraction": 0.214141845703125,
+              "ece": 0.0516289722013176,
+              "correct_mean_confidence": 0.4246751368045807,
+              "duplicate_mean_confidence": 0.21966762840747833,
+              "false_mean_confidence": 0.05101712793111801
+            },
+            "calibrated_1.0": {
+              "nodes": 6202.0,
+              "gt_nodes": 5300.0,
+              "node_tp": 1767.0,
+              "duplicates": 241.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 256.0,
+              "edges": 1629.0,
+              "gt_edges": 4244.0,
+              "edge_tp": 99.0,
+              "eligible": 588.0,
+              "beta0_error": 3634.0,
+              "beta1_error": 213.0,
+              "node_precision": 0.28490809416317314,
+              "node_recall": 0.33339622641509437,
+              "node_f1": 0.3072509128847157,
+              "duplicate_rate": 0.038858432763624634,
+              "edge_precision": 0.06077348066298342,
+              "edge_recall": 0.023327049952874646,
+              "edge_f1": 0.033713604631363865,
+              "conditional_recall": 0.1683673469387755,
+              "beta0_mae": 14.1953125,
+              "beta1_mae": 0.83203125
+            },
+            "calibrated_2.0": {
+              "nodes": 6202.0,
+              "gt_nodes": 5300.0,
+              "node_tp": 3356.0,
+              "duplicates": 623.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 256.0,
+              "edges": 1629.0,
+              "gt_edges": 4244.0,
+              "edge_tp": 300.0,
+              "eligible": 1929.0,
+              "beta0_error": 3634.0,
+              "beta1_error": 213.0,
+              "node_precision": 0.5411157691067398,
+              "node_recall": 0.6332075471698113,
+              "node_f1": 0.5835506868370718,
+              "duplicate_rate": 0.10045146726862303,
+              "edge_precision": 0.1841620626151013,
+              "edge_recall": 0.0706880301602262,
+              "edge_f1": 0.10216243827686021,
+              "conditional_recall": 0.15552099533437014,
+              "beta0_mae": 14.1953125,
+              "beta1_mae": 0.83203125
+            },
+            "matched_count_1.0": {
+              "nodes": 6202.0,
+              "gt_nodes": 5300.0,
+              "node_tp": 1767.0,
+              "duplicates": 241.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 256.0,
+              "edges": 1629.0,
+              "gt_edges": 4244.0,
+              "edge_tp": 99.0,
+              "eligible": 588.0,
+              "beta0_error": 3634.0,
+              "beta1_error": 213.0,
+              "node_precision": 0.28490809416317314,
+              "node_recall": 0.33339622641509437,
+              "node_f1": 0.3072509128847157,
+              "duplicate_rate": 0.038858432763624634,
+              "edge_precision": 0.06077348066298342,
+              "edge_recall": 0.023327049952874646,
+              "edge_f1": 0.033713604631363865,
+              "conditional_recall": 0.1683673469387755,
+              "beta0_mae": 14.1953125,
+              "beta1_mae": 0.83203125
+            },
+            "matched_count_2.0": {
+              "nodes": 6202.0,
+              "gt_nodes": 5300.0,
+              "node_tp": 3356.0,
+              "duplicates": 623.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 256.0,
+              "edges": 1629.0,
+              "gt_edges": 4244.0,
+              "edge_tp": 300.0,
+              "eligible": 1929.0,
+              "beta0_error": 3634.0,
+              "beta1_error": 213.0,
+              "node_precision": 0.5411157691067398,
+              "node_recall": 0.6332075471698113,
+              "node_f1": 0.5835506868370718,
+              "duplicate_rate": 0.10045146726862303,
+              "edge_precision": 0.1841620626151013,
+              "edge_recall": 0.0706880301602262,
+              "edge_f1": 0.10216243827686021,
+              "conditional_recall": 0.15552099533437014,
+              "beta0_mae": 14.1953125,
+              "beta1_mae": 0.83203125
+            }
+          },
+          "val": {
+            "discrimination": {
+              "auc_correct_duplicate": 0.6294271424491619,
+              "auc_correct_false": 0.809092549797297,
+              "canonical_ap": 0.3103472798344491,
+              "reliable_auc": 0.7758914806509473,
+              "brier": 0.07601916044950485,
+              "ignored_fraction": 0.223602294921875,
+              "ece": 0.07034957930600885,
+              "correct_mean_confidence": 0.4129202961921692,
+              "duplicate_mean_confidence": 0.25494855642318726,
+              "false_mean_confidence": 0.07360720634460449
+            },
+            "calibrated_1.0": {
+              "nodes": 3853.0,
+              "gt_nodes": 3643.0,
+              "node_tp": 825.0,
+              "duplicates": 117.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 128.0,
+              "edges": 823.0,
+              "gt_edges": 3073.0,
+              "edge_tp": 22.0,
+              "eligible": 192.0,
+              "beta0_error": 2448.0,
+              "beta1_error": 122.0,
+              "node_precision": 0.21411886841422267,
+              "node_recall": 0.22646170738402416,
+              "node_f1": 0.22011739594450375,
+              "duplicate_rate": 0.030365948611471582,
+              "edge_precision": 0.026731470230862697,
+              "edge_recall": 0.007159127888057273,
+              "edge_f1": 0.011293634496919919,
+              "conditional_recall": 0.11458333333333333,
+              "beta0_mae": 19.125,
+              "beta1_mae": 0.953125
+            },
+            "calibrated_2.0": {
+              "nodes": 3853.0,
+              "gt_nodes": 3643.0,
+              "node_tp": 1753.0,
+              "duplicates": 390.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 128.0,
+              "edges": 823.0,
+              "gt_edges": 3073.0,
+              "edge_tp": 100.0,
+              "eligible": 887.0,
+              "beta0_error": 2448.0,
+              "beta1_error": 122.0,
+              "node_precision": 0.45497015312743316,
+              "node_recall": 0.48119681581114465,
+              "node_f1": 0.4677161152614728,
+              "duplicate_rate": 0.10121982870490527,
+              "edge_precision": 0.12150668286755771,
+              "edge_recall": 0.03254149040026033,
+              "edge_f1": 0.0513347022587269,
+              "conditional_recall": 0.11273957158962795,
+              "beta0_mae": 19.125,
+              "beta1_mae": 0.953125
+            },
+            "matched_count_1.0": {
+              "nodes": 3853.0,
+              "gt_nodes": 3643.0,
+              "node_tp": 825.0,
+              "duplicates": 117.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 128.0,
+              "edges": 823.0,
+              "gt_edges": 3073.0,
+              "edge_tp": 22.0,
+              "eligible": 192.0,
+              "beta0_error": 2448.0,
+              "beta1_error": 122.0,
+              "node_precision": 0.21411886841422267,
+              "node_recall": 0.22646170738402416,
+              "node_f1": 0.22011739594450375,
+              "duplicate_rate": 0.030365948611471582,
+              "edge_precision": 0.026731470230862697,
+              "edge_recall": 0.007159127888057273,
+              "edge_f1": 0.011293634496919919,
+              "conditional_recall": 0.11458333333333333,
+              "beta0_mae": 19.125,
+              "beta1_mae": 0.953125
+            },
+            "matched_count_2.0": {
+              "nodes": 3853.0,
+              "gt_nodes": 3643.0,
+              "node_tp": 1753.0,
+              "duplicates": 390.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 128.0,
+              "edges": 823.0,
+              "gt_edges": 3073.0,
+              "edge_tp": 100.0,
+              "eligible": 887.0,
+              "beta0_error": 2448.0,
+              "beta1_error": 122.0,
+              "node_precision": 0.45497015312743316,
+              "node_recall": 0.48119681581114465,
+              "node_f1": 0.4677161152614728,
+              "duplicate_rate": 0.10121982870490527,
+              "edge_precision": 0.12150668286755771,
+              "edge_recall": 0.03254149040026033,
+              "edge_f1": 0.0513347022587269,
+              "conditional_recall": 0.11273957158962795,
+              "beta0_mae": 19.125,
+              "beta1_mae": 0.953125
+            },
+            "precision_envelope": {
+              "target": 0.45497015312743316,
+              "selected": {
+                "threshold": 0.5,
+                "nodes": 3853.0,
+                "gt_nodes": 3643.0,
+                "node_tp": 1753.0,
+                "duplicates": 390.0,
+                "rescued": 0.0,
+                "lost": 0.0,
+                "patches": 128.0,
+                "node_precision": 0.45497015312743316,
+                "node_recall": 0.48119681581114465,
+                "node_f1": 0.4677161152614728,
+                "duplicate_rate": 0.10121982870490527
+              },
+              "descriptive_only": true,
+              "graph_metrics": {
+                "nodes": 3853.0,
+                "gt_nodes": 3643.0,
+                "node_tp": 1753.0,
+                "duplicates": 390.0,
+                "rescued": 0.0,
+                "lost": 0.0,
+                "patches": 128.0,
+                "edges": 823.0,
+                "gt_edges": 3073.0,
+                "edge_tp": 100.0,
+                "eligible": 887.0,
+                "beta0_error": 2448.0,
+                "beta1_error": 122.0,
+                "node_precision": 0.45497015312743316,
+                "node_recall": 0.48119681581114465,
+                "node_f1": 0.4677161152614728,
+                "duplicate_rate": 0.10121982870490527,
+                "edge_precision": 0.12150668286755771,
+                "edge_recall": 0.03254149040026033,
+                "edge_f1": 0.0513347022587269,
+                "conditional_recall": 0.11273957158962795,
+                "beta0_mae": 19.125,
+                "beta1_mae": 0.953125
+              }
+            }
+          }
+        },
+        "V1": {
+          "train": {
+            "discrimination": {
+              "auc_correct_duplicate": 0.6560109160794874,
+              "auc_correct_false": 0.8329812550629807,
+              "canonical_ap": 0.3080301272083976,
+              "reliable_auc": 0.8045189939738636,
+              "brier": 0.05806852504611015,
+              "ignored_fraction": 0.214141845703125,
+              "ece": 0.0516289722013176,
+              "correct_mean_confidence": 0.4246751368045807,
+              "duplicate_mean_confidence": 0.21966762840747833,
+              "false_mean_confidence": 0.05101712793111801
+            },
+            "calibrated_1.0": {
+              "nodes": 5615.0,
+              "gt_nodes": 5300.0,
+              "node_tp": 1688.0,
+              "duplicates": 203.0,
+              "rescued": 0.0,
+              "lost": 79.0,
+              "patches": 256.0,
+              "edges": 1247.0,
+              "gt_edges": 4244.0,
+              "edge_tp": 87.0,
+              "eligible": 545.0,
+              "beta0_error": 3367.0,
+              "beta1_error": 161.0,
+              "node_precision": 0.3006233303650935,
+              "node_recall": 0.31849056603773584,
+              "node_f1": 0.3092991296381127,
+              "duplicate_rate": 0.03615316117542297,
+              "edge_precision": 0.06976744186046512,
+              "edge_recall": 0.020499528746465597,
+              "edge_f1": 0.03168821708249864,
+              "conditional_recall": 0.1596330275229358,
+              "beta0_mae": 13.15234375,
+              "beta1_mae": 0.62890625
+            },
+            "calibrated_2.0": {
+              "nodes": 5615.0,
+              "gt_nodes": 5300.0,
+              "node_tp": 3220.0,
+              "duplicates": 499.0,
+              "rescued": 0.0,
+              "lost": 136.0,
+              "patches": 256.0,
+              "edges": 1247.0,
+              "gt_edges": 4244.0,
+              "edge_tp": 261.0,
+              "eligible": 1799.0,
+              "beta0_error": 3367.0,
+              "beta1_error": 161.0,
+              "node_precision": 0.5734639358860196,
+              "node_recall": 0.6075471698113207,
+              "node_f1": 0.5900137425561154,
+              "duplicate_rate": 0.08886910062333037,
+              "edge_precision": 0.20930232558139536,
+              "edge_recall": 0.061498586239396795,
+              "edge_f1": 0.0950646512474959,
+              "conditional_recall": 0.14508060033351863,
+              "beta0_mae": 13.15234375,
+              "beta1_mae": 0.62890625
+            },
+            "matched_count_1.0": {
+              "nodes": 6202.0,
+              "gt_nodes": 5300.0,
+              "node_tp": 1767.0,
+              "duplicates": 241.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 256.0,
+              "edges": 1629.0,
+              "gt_edges": 4244.0,
+              "edge_tp": 99.0,
+              "eligible": 588.0,
+              "beta0_error": 3634.0,
+              "beta1_error": 213.0,
+              "node_precision": 0.28490809416317314,
+              "node_recall": 0.33339622641509437,
+              "node_f1": 0.3072509128847157,
+              "duplicate_rate": 0.038858432763624634,
+              "edge_precision": 0.06077348066298342,
+              "edge_recall": 0.023327049952874646,
+              "edge_f1": 0.033713604631363865,
+              "conditional_recall": 0.1683673469387755,
+              "beta0_mae": 14.1953125,
+              "beta1_mae": 0.83203125
+            },
+            "matched_count_2.0": {
+              "nodes": 6202.0,
+              "gt_nodes": 5300.0,
+              "node_tp": 3356.0,
+              "duplicates": 623.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 256.0,
+              "edges": 1629.0,
+              "gt_edges": 4244.0,
+              "edge_tp": 300.0,
+              "eligible": 1929.0,
+              "beta0_error": 3634.0,
+              "beta1_error": 213.0,
+              "node_precision": 0.5411157691067398,
+              "node_recall": 0.6332075471698113,
+              "node_f1": 0.5835506868370718,
+              "duplicate_rate": 0.10045146726862303,
+              "edge_precision": 0.1841620626151013,
+              "edge_recall": 0.0706880301602262,
+              "edge_f1": 0.10216243827686021,
+              "conditional_recall": 0.15552099533437014,
+              "beta0_mae": 14.1953125,
+              "beta1_mae": 0.83203125
+            }
+          },
+          "val": {
+            "discrimination": {
+              "auc_correct_duplicate": 0.6294271424491619,
+              "auc_correct_false": 0.809092549797297,
+              "canonical_ap": 0.3103472798344491,
+              "reliable_auc": 0.7758914806509473,
+              "brier": 0.07601916044950485,
+              "ignored_fraction": 0.223602294921875,
+              "ece": 0.07034957930600885,
+              "correct_mean_confidence": 0.4129202961921692,
+              "duplicate_mean_confidence": 0.25494855642318726,
+              "false_mean_confidence": 0.07360720634460449
+            },
+            "calibrated_1.0": {
+              "nodes": 3529.0,
+              "gt_nodes": 3643.0,
+              "node_tp": 796.0,
+              "duplicates": 101.0,
+              "rescued": 0.0,
+              "lost": 29.0,
+              "patches": 128.0,
+              "edges": 661.0,
+              "gt_edges": 3073.0,
+              "edge_tp": 20.0,
+              "eligible": 180.0,
+              "beta0_error": 2273.0,
+              "beta1_error": 105.0,
+              "node_precision": 0.225559648625673,
+              "node_recall": 0.21850123524567663,
+              "node_f1": 0.22197434467373117,
+              "duplicate_rate": 0.028620005667327857,
+              "edge_precision": 0.030257186081694403,
+              "edge_recall": 0.006508298080052067,
+              "edge_f1": 0.010712372790573112,
+              "conditional_recall": 0.1111111111111111,
+              "beta0_mae": 17.7578125,
+              "beta1_mae": 0.8203125
+            },
+            "calibrated_2.0": {
+              "nodes": 3529.0,
+              "gt_nodes": 3643.0,
+              "node_tp": 1683.0,
+              "duplicates": 336.0,
+              "rescued": 0.0,
+              "lost": 70.0,
+              "patches": 128.0,
+              "edges": 661.0,
+              "gt_edges": 3073.0,
+              "edge_tp": 86.0,
+              "eligible": 829.0,
+              "beta0_error": 2273.0,
+              "beta1_error": 105.0,
+              "node_precision": 0.47690563899121563,
+              "node_recall": 0.46198188306340926,
+              "node_f1": 0.46932515337423314,
+              "duplicate_rate": 0.09521110796259563,
+              "edge_precision": 0.13010590015128592,
+              "edge_recall": 0.027985681744223886,
+              "edge_f1": 0.046063202999464384,
+              "conditional_recall": 0.1037394451145959,
+              "beta0_mae": 17.7578125,
+              "beta1_mae": 0.8203125
+            },
+            "matched_count_1.0": {
+              "nodes": 3853.0,
+              "gt_nodes": 3643.0,
+              "node_tp": 825.0,
+              "duplicates": 117.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 128.0,
+              "edges": 823.0,
+              "gt_edges": 3073.0,
+              "edge_tp": 22.0,
+              "eligible": 192.0,
+              "beta0_error": 2448.0,
+              "beta1_error": 122.0,
+              "node_precision": 0.21411886841422267,
+              "node_recall": 0.22646170738402416,
+              "node_f1": 0.22011739594450375,
+              "duplicate_rate": 0.030365948611471582,
+              "edge_precision": 0.026731470230862697,
+              "edge_recall": 0.007159127888057273,
+              "edge_f1": 0.011293634496919919,
+              "conditional_recall": 0.11458333333333333,
+              "beta0_mae": 19.125,
+              "beta1_mae": 0.953125
+            },
+            "matched_count_2.0": {
+              "nodes": 3853.0,
+              "gt_nodes": 3643.0,
+              "node_tp": 1753.0,
+              "duplicates": 390.0,
+              "rescued": 0.0,
+              "lost": 0.0,
+              "patches": 128.0,
+              "edges": 823.0,
+              "gt_edges": 3073.0,
+              "edge_tp": 100.0,
+              "eligible": 887.0,
+              "beta0_error": 2448.0,
+              "beta1_error": 122.0,
+              "node_precision": 0.45497015312743316,
+              "node_recall": 0.48119681581114465,
+              "node_f1": 0.4677161152614728,
+              "duplicate_rate": 0.10121982870490527,
+              "edge_precision": 0.12150668286755771,
+              "edge_recall": 0.03254149040026033,
+              "edge_f1": 0.0513347022587269,
+              "conditional_recall": 0.11273957158962795,
+              "beta0_mae": 19.125,
+              "beta1_mae": 0.953125
+            },
+            "precision_envelope": {
+              "target": 0.45497015312743316,
+              "selected": {
+                "threshold": 0.5,
+                "nodes": 3853.0,
+                "gt_nodes": 3643.0,
+                "node_tp": 1753.0,
+                "duplicates": 390.0,
+                "rescued": 0.0,
+                "lost": 0.0,
+                "patches": 128.0,
+                "node_precision": 0.45497015312743316,
+                "node_recall": 0.48119681581114465,
+                "node_f1": 0.4677161152614728,
+                "duplicate_rate": 0.10121982870490527
+              },
+              "descriptive_only": true,
+              "graph_metrics": {
+                "nodes": 3853.0,
+                "gt_nodes": 3643.0,
+                "node_tp": 1753.0,
+                "duplicates": 390.0,
+                "rescued": 0.0,
+                "lost": 0.0,
+                "patches": 128.0,
+                "edges": 823.0,
+                "gt_edges": 3073.0,
+                "edge_tp": 100.0,
+                "eligible": 887.0,
+                "beta0_error": 2448.0,
+                "beta1_error": 122.0,
+                "node_precision": 0.45497015312743316,
+                "node_recall": 0.48119681581114465,
+                "node_f1": 0.4677161152614728,
+                "duplicate_rate": 0.10121982870490527,
+                "edge_precision": 0.12150668286755771,
+                "edge_recall": 0.03254149040026033,
+                "edge_f1": 0.0513347022587269,
+                "conditional_recall": 0.11273957158962795,
+                "beta0_mae": 19.125,
+                "beta1_mae": 0.953125
+              }
+            }
+          }
+        },
+        "V2": {
+          "train": {
+            "discrimination": {
+              "auc_correct_duplicate": 0.753381889759667,
+              "auc_correct_false": 0.9323331756523988,
+              "canonical_ap": 0.48720233050232786,
+              "reliable_auc": 0.994084170729024,
+              "brier": 0.012350703589618206,
+              "ignored_fraction": 0.214141845703125,
+              "ece": 0.0065179618240110695,
+              "correct_mean_confidence": 0.5516316890716553,
+              "duplicate_mean_confidence": 0.181331068277359,
+              "false_mean_confidence": 0.023190448060631752
+            },
+            "calibrated_1.0": {
+              "nodes": 4439.0,
+              "gt_nodes": 5300.0,
+              "node_tp": 1690.0,
+              "duplicates": 72.0,
+              "rescued": 526.0,
+              "lost": 603.0,
+              "patches": 256.0,
+              "edges": 864.0,
+              "gt_edges": 4244.0,
+              "edge_tp": 57.0,
+              "eligible": 417.0,
+              "beta0_error": 2530.0,
+              "beta1_error": 179.0,
+              "node_precision": 0.3807163775625141,
+              "node_recall": 0.31886792452830187,
+              "node_f1": 0.3470582195297258,
+              "duplicate_rate": 0.016219869339941427,
+              "edge_precision": 0.06597222222222222,
+              "edge_recall": 0.013430725730442978,
+              "edge_f1": 0.022317932654659357,
+              "conditional_recall": 0.1366906474820144,
+              "beta0_mae": 9.8828125,
+              "beta1_mae": 0.69921875
+            },
+            "calibrated_2.0": {
+              "nodes": 4439.0,
+              "gt_nodes": 5300.0,
+              "node_tp": 3020.0,
+              "duplicates": 490.0,
+              "rescued": 671.0,
+              "lost": 1007.0,
+              "patches": 256.0,
+              "edges": 864.0,
+              "gt_edges": 4244.0,
+              "edge_tp": 157.0,
+              "eligible": 1408.0,
+              "beta0_error": 2530.0,
+              "beta1_error": 179.0,
+              "node_precision": 0.680333408425321,
+              "node_recall": 0.569811320754717,
+              "node_f1": 0.6201868775028238,
+              "duplicate_rate": 0.11038522189682361,
+              "edge_precision": 0.18171296296296297,
+              "edge_recall": 0.03699340245051838,
+              "edge_f1": 0.06147220046985121,
+              "conditional_recall": 0.11150568181818182,
+              "beta0_mae": 9.8828125,
+              "beta1_mae": 0.69921875
+            },
+            "matched_count_1.0": {
+              "nodes": 6202.0,
+              "gt_nodes": 5300.0,
+              "node_tp": 1904.0,
+              "duplicates": 97.0,
+              "rescued": 589.0,
+              "lost": 452.0,
+              "patches": 256.0,
+              "edges": 1452.0,
+              "gt_edges": 4244.0,
+              "edge_tp": 59.0,
+              "eligible": 530.0,
+              "beta0_error": 3821.0,
+              "beta1_error": 253.0,
+              "node_precision": 0.30699774266365687,
+              "node_recall": 0.35924528301886793,
+              "node_f1": 0.33107285689445315,
+              "duplicate_rate": 0.01564011609158336,
+              "edge_precision": 0.040633608815427,
+              "edge_recall": 0.013901979264844487,
+              "edge_f1": 0.02071629213483146,
+              "conditional_recall": 0.11132075471698114,
+              "beta0_mae": 14.92578125,
+              "beta1_mae": 0.98828125
+            },
+            "matched_count_2.0": {
+              "nodes": 6202.0,
+              "gt_nodes": 5300.0,
+              "node_tp": 3463.0,
+              "duplicates": 816.0,
+              "rescued": 767.0,
+              "lost": 660.0,
+              "patches": 256.0,
+              "edges": 1452.0,
+              "gt_edges": 4244.0,
+              "edge_tp": 162.0,
+              "eligible": 1847.0,
+              "beta0_error": 3821.0,
+              "beta1_error": 253.0,
+              "node_precision": 0.5583682683005482,
+              "node_recall": 0.6533962264150943,
+              "node_f1": 0.6021561467570857,
+              "duplicate_rate": 0.13157046114156723,
+              "edge_precision": 0.1115702479338843,
+              "edge_recall": 0.03817153628652215,
+              "edge_f1": 0.05688202247191011,
+              "conditional_recall": 0.08770979967514889,
+              "beta0_mae": 14.92578125,
+              "beta1_mae": 0.98828125
+            }
+          },
+          "val": {
+            "discrimination": {
+              "auc_correct_duplicate": 0.5560381898931612,
+              "auc_correct_false": 0.8052937193205225,
+              "canonical_ap": 0.21868588645784975,
+              "reliable_auc": 0.7817778753303742,
+              "brier": 0.06893666088581085,
+              "ignored_fraction": 0.223602294921875,
+              "ece": 0.06833158813624593,
+              "correct_mean_confidence": 0.26325252652168274,
+              "duplicate_mean_confidence": 0.20433898270130157,
+              "false_mean_confidence": 0.053304921835660934
+            },
+            "calibrated_1.0": {
+              "nodes": 2407.0,
+              "gt_nodes": 3643.0,
+              "node_tp": 477.0,
+              "duplicates": 12.0,
+              "rescued": 73.0,
+              "lost": 421.0,
+              "patches": 128.0,
+              "edges": 383.0,
+              "gt_edges": 3073.0,
+              "edge_tp": 2.0,
+              "eligible": 57.0,
+              "beta0_error": 1436.0,
+              "beta1_error": 100.0,
+              "node_precision": 0.1981719983381803,
+              "node_recall": 0.13093604172385398,
+              "node_f1": 0.15768595041322314,
+              "duplicate_rate": 0.004985459077690071,
+              "edge_precision": 0.005221932114882507,
+              "edge_recall": 0.0006508298080052066,
+              "edge_f1": 0.0011574074074074073,
+              "conditional_recall": 0.03508771929824561,
+              "beta0_mae": 11.21875,
+              "beta1_mae": 0.78125
+            },
+            "calibrated_2.0": {
+              "nodes": 2407.0,
+              "gt_nodes": 3643.0,
+              "node_tp": 1054.0,
+              "duplicates": 148.0,
+              "rescued": 112.0,
+              "lost": 811.0,
+              "patches": 128.0,
+              "edges": 383.0,
+              "gt_edges": 3073.0,
+              "edge_tp": 24.0,
+              "eligible": 351.0,
+              "beta0_error": 1436.0,
+              "beta1_error": 100.0,
+              "node_precision": 0.43788948899044455,
+              "node_recall": 0.2893219873730442,
+              "node_f1": 0.3484297520661157,
+              "duplicate_rate": 0.061487328624844205,
+              "edge_precision": 0.06266318537859007,
+              "edge_recall": 0.0078099576960624795,
+              "edge_f1": 0.013888888888888888,
+              "conditional_recall": 0.06837606837606838,
+              "beta0_mae": 11.21875,
+              "beta1_mae": 0.78125
+            },
+            "matched_count_1.0": {
+              "nodes": 3853.0,
+              "gt_nodes": 3643.0,
+              "node_tp": 663.0,
+              "duplicates": 28.0,
+              "rescued": 141.0,
+              "lost": 303.0,
+              "patches": 128.0,
+              "edges": 842.0,
+              "gt_edges": 3073.0,
+              "edge_tp": 7.0,
+              "eligible": 109.0,
+              "beta0_error": 2478.0,
+              "beta1_error": 157.0,
+              "node_precision": 0.17207370879833897,
+              "node_recall": 0.1819928630249794,
+              "node_f1": 0.17689434364994663,
+              "duplicate_rate": 0.007267064624967558,
+              "edge_precision": 0.00831353919239905,
+              "edge_recall": 0.002277904328018223,
+              "edge_f1": 0.0035759897828863347,
+              "conditional_recall": 0.06422018348623854,
+              "beta0_mae": 19.359375,
+              "beta1_mae": 1.2265625
+            },
+            "matched_count_2.0": {
+              "nodes": 3853.0,
+              "gt_nodes": 3643.0,
+              "node_tp": 1435.0,
+              "duplicates": 323.0,
+              "rescued": 197.0,
+              "lost": 515.0,
+              "patches": 128.0,
+              "edges": 842.0,
+              "gt_edges": 3073.0,
+              "edge_tp": 42.0,
+              "eligible": 618.0,
+              "beta0_error": 2478.0,
+              "beta1_error": 157.0,
+              "node_precision": 0.3724370620295873,
+              "node_recall": 0.39390612132857533,
+              "node_f1": 0.3828708644610459,
+              "duplicate_rate": 0.08383078120944719,
+              "edge_precision": 0.0498812351543943,
+              "edge_recall": 0.01366742596810934,
+              "edge_f1": 0.021455938697318006,
+              "conditional_recall": 0.06796116504854369,
+              "beta0_mae": 19.359375,
+              "beta1_mae": 1.2265625
+            },
+            "precision_envelope": {
+              "target": 0.45497015312743316,
+              "selected": {
+                "threshold": 0.56,
+                "nodes": 2152.0,
+                "gt_nodes": 3643.0,
+                "node_tp": 980.0,
+                "duplicates": 113.0,
+                "rescued": 94.0,
+                "lost": 867.0,
+                "patches": 128.0,
+                "node_precision": 0.45539033457249073,
+                "node_recall": 0.26900905846829537,
+                "node_f1": 0.3382226056945643,
+                "duplicate_rate": 0.0525092936802974
+              },
+              "descriptive_only": true,
+              "graph_metrics": {
+                "nodes": 2152.0,
+                "gt_nodes": 3643.0,
+                "node_tp": 980.0,
+                "duplicates": 113.0,
+                "rescued": 94.0,
+                "lost": 867.0,
+                "patches": 128.0,
+                "edges": 304.0,
+                "gt_edges": 3073.0,
+                "edge_tp": 24.0,
+                "eligible": 317.0,
+                "beta0_error": 1264.0,
+                "beta1_error": 102.0,
+                "node_precision": 0.45539033457249073,
+                "node_recall": 0.26900905846829537,
+                "node_f1": 0.3382226056945643,
+                "duplicate_rate": 0.0525092936802974,
+                "edge_precision": 0.07894736842105263,
+                "edge_recall": 0.0078099576960624795,
+                "edge_f1": 0.014213799230085875,
+                "conditional_recall": 0.07570977917981073,
+                "beta0_mae": 9.875,
+                "beta1_mae": 0.796875
+              }
+            }
+          }
+        },
+        "V3": {
+          "train": {
+            "discrimination": {
+              "auc_correct_duplicate": 0.7827071195295082,
+              "auc_correct_false": 0.9426923797737138,
+              "canonical_ap": 0.5304109802448551,
+              "reliable_auc": 0.9969869790897525,
+              "brier": 0.008989117108285427,
+              "ignored_fraction": 0.214141845703125,
+              "ece": 0.005635371963409584,
+              "correct_mean_confidence": 0.5988384485244751,
+              "duplicate_mean_confidence": 0.176125630736351,
+              "false_mean_confidence": 0.020941253751516342
+            },
+            "calibrated_1.0": {
+              "nodes": 4827.0,
+              "gt_nodes": 5300.0,
+              "node_tp": 1843.0,
+              "duplicates": 88.0,
+              "rescued": 628.0,
+              "lost": 552.0,
+              "patches": 256.0,
+              "edges": 883.0,
+              "gt_edges": 4244.0,
+              "edge_tp": 44.0,
+              "eligible": 496.0,
+              "beta0_error": 2893.0,
+              "beta1_error": 173.0,
+              "node_precision": 0.3818106484358815,
+              "node_recall": 0.34773584905660376,
+              "node_f1": 0.36397748592870544,
+              "duplicate_rate": 0.01823078516677025,
+              "edge_precision": 0.04983012457531144,
+              "edge_recall": 0.010367577756833177,
+              "edge_f1": 0.017164033547883754,
+              "conditional_recall": 0.08870967741935484,
+              "beta0_mae": 11.30078125,
+              "beta1_mae": 0.67578125
+            },
+            "calibrated_2.0": {
+              "nodes": 4827.0,
+              "gt_nodes": 5300.0,
+              "node_tp": 3263.0,
+              "duplicates": 567.0,
+              "rescued": 751.0,
+              "lost": 844.0,
+              "patches": 256.0,
+              "edges": 883.0,
+              "gt_edges": 4244.0,
+              "edge_tp": 131.0,
+              "eligible": 1655.0,
+              "beta0_error": 2893.0,
+              "beta1_error": 173.0,
+              "node_precision": 0.6759892272633106,
+              "node_recall": 0.6156603773584906,
+              "node_f1": 0.6444159178433889,
+              "duplicate_rate": 0.11746426351771287,
+              "edge_precision": 0.14835787089467722,
+              "edge_recall": 0.030867106503298776,
+              "edge_f1": 0.05110200897210845,
+              "conditional_recall": 0.07915407854984895,
+              "beta0_mae": 11.30078125,
+              "beta1_mae": 0.67578125
+            },
+            "matched_count_1.0": {
+              "nodes": 6202.0,
+              "gt_nodes": 5300.0,
+              "node_tp": 2012.0,
+              "duplicates": 119.0,
+              "rescued": 684.0,
+              "lost": 439.0,
+              "patches": 256.0,
+              "edges": 1246.0,
+              "gt_edges": 4244.0,
+              "edge_tp": 44.0,
+              "eligible": 589.0,
+              "beta0_error": 3951.0,
+              "beta1_error": 205.0,
+              "node_precision": 0.32441148016768784,
+              "node_recall": 0.379622641509434,
+              "node_f1": 0.34985219961745784,
+              "duplicate_rate": 0.019187358916478554,
+              "edge_precision": 0.03531300160513644,
+              "edge_recall": 0.010367577756833177,
+              "edge_f1": 0.016029143897996357,
+              "conditional_recall": 0.07470288624787776,
+              "beta0_mae": 15.43359375,
+              "beta1_mae": 0.80078125
+            },
+            "matched_count_2.0": {
+              "nodes": 6202.0,
+              "gt_nodes": 5300.0,
+              "node_tp": 3632.0,
+              "duplicates": 828.0,
+              "rescued": 824.0,
+              "lost": 548.0,
+              "patches": 256.0,
+              "edges": 1246.0,
+              "gt_edges": 4244.0,
+              "edge_tp": 144.0,
+              "eligible": 2059.0,
+              "beta0_error": 3951.0,
+              "beta1_error": 205.0,
+              "node_precision": 0.5856175427281523,
+              "node_recall": 0.6852830188679245,
+              "node_f1": 0.6315423404625282,
+              "duplicate_rate": 0.13350532086423733,
+              "edge_precision": 0.11556982343499198,
+              "edge_recall": 0.033930254476908575,
+              "edge_f1": 0.05245901639344262,
+              "conditional_recall": 0.06993686255463817,
+              "beta0_mae": 15.43359375,
+              "beta1_mae": 0.80078125
+            }
+          },
+          "val": {
+            "discrimination": {
+              "auc_correct_duplicate": 0.5430636766719634,
+              "auc_correct_false": 0.8111235301632628,
+              "canonical_ap": 0.21905831593183686,
+              "reliable_auc": 0.7746361589177168,
+              "brier": 0.07051094621419907,
+              "ignored_fraction": 0.223602294921875,
+              "ece": 0.06999982900817667,
+              "correct_mean_confidence": 0.2739143371582031,
+              "duplicate_mean_confidence": 0.2214050590991974,
+              "false_mean_confidence": 0.05173422396183014
+            },
+            "calibrated_1.0": {
+              "nodes": 2694.0,
+              "gt_nodes": 3643.0,
+              "node_tp": 530.0,
+              "duplicates": 18.0,
+              "rescued": 95.0,
+              "lost": 390.0,
+              "patches": 128.0,
+              "edges": 428.0,
+              "gt_edges": 3073.0,
+              "edge_tp": 6.0,
+              "eligible": 68.0,
+              "beta0_error": 1674.0,
+              "beta1_error": 120.0,
+              "node_precision": 0.19673348181143283,
+              "node_recall": 0.1454844908042822,
+              "node_f1": 0.1672715796118037,
+              "duplicate_rate": 0.0066815144766146995,
+              "edge_precision": 0.014018691588785047,
+              "edge_recall": 0.0019524894240156199,
+              "edge_f1": 0.003427592116538132,
+              "conditional_recall": 0.08823529411764706,
+              "beta0_mae": 13.078125,
+              "beta1_mae": 0.9375
+            },
+            "calibrated_2.0": {
+              "nodes": 2694.0,
+              "gt_nodes": 3643.0,
+              "node_tp": 1158.0,
+              "duplicates": 207.0,
+              "rescued": 147.0,
+              "lost": 742.0,
+              "patches": 128.0,
+              "edges": 428.0,
+              "gt_edges": 3073.0,
+              "edge_tp": 23.0,
+              "eligible": 430.0,
+              "beta0_error": 1674.0,
+              "beta1_error": 120.0,
+              "node_precision": 0.4298440979955457,
+              "node_recall": 0.3178698874553939,
+              "node_f1": 0.36547262111409184,
+              "duplicate_rate": 0.07683741648106904,
+              "edge_precision": 0.053738317757009345,
+              "edge_recall": 0.007484542792059876,
+              "edge_f1": 0.013139103113396172,
+              "conditional_recall": 0.053488372093023255,
+              "beta0_mae": 13.078125,
+              "beta1_mae": 0.9375
+            },
+            "matched_count_1.0": {
+              "nodes": 3853.0,
+              "gt_nodes": 3643.0,
+              "node_tp": 679.0,
+              "duplicates": 35.0,
+              "rescued": 149.0,
+              "lost": 295.0,
+              "patches": 128.0,
+              "edges": 721.0,
+              "gt_edges": 3073.0,
+              "edge_tp": 10.0,
+              "eligible": 124.0,
+              "beta0_error": 2573.0,
+              "beta1_error": 145.0,
+              "node_precision": 0.17622631715546327,
+              "node_recall": 0.1863848476530332,
+              "node_f1": 0.1811632870864461,
+              "duplicate_rate": 0.009083830781209447,
+              "edge_precision": 0.013869625520110958,
+              "edge_recall": 0.0032541490400260333,
+              "edge_f1": 0.005271481286241434,
+              "conditional_recall": 0.08064516129032258,
+              "beta0_mae": 20.1015625,
+              "beta1_mae": 1.1328125
+            },
+            "matched_count_2.0": {
+              "nodes": 3853.0,
+              "gt_nodes": 3643.0,
+              "node_tp": 1495.0,
+              "duplicates": 346.0,
+              "rescued": 222.0,
+              "lost": 480.0,
+              "patches": 128.0,
+              "edges": 721.0,
+              "gt_edges": 3073.0,
+              "edge_tp": 37.0,
+              "eligible": 675.0,
+              "beta0_error": 2573.0,
+              "beta1_error": 145.0,
+              "node_precision": 0.38800934336880355,
+              "node_recall": 0.4103760636837771,
+              "node_f1": 0.3988794023479189,
+              "duplicate_rate": 0.0898001557228134,
+              "edge_precision": 0.05131761442441054,
+              "edge_recall": 0.012040351448096323,
+              "edge_f1": 0.019504480759093307,
+              "conditional_recall": 0.054814814814814816,
+              "beta0_mae": 20.1015625,
+              "beta1_mae": 1.1328125
+            },
+            "precision_envelope": {
+              "target": 0.45497015312743316,
+              "selected": {
+                "threshold": 0.66,
+                "nodes": 2017.0,
+                "gt_nodes": 3643.0,
+                "node_tp": 919.0,
+                "duplicates": 129.0,
+                "rescued": 95.0,
+                "lost": 929.0,
+                "patches": 128.0,
+                "node_precision": 0.4556271690629648,
+                "node_recall": 0.25226461707384024,
+                "node_f1": 0.3247349823321555,
+                "duplicate_rate": 0.06395637084779375
+              },
+              "descriptive_only": true,
+              "graph_metrics": {
+                "nodes": 2017.0,
+                "gt_nodes": 3643.0,
+                "node_tp": 919.0,
+                "duplicates": 129.0,
+                "rescued": 95.0,
+                "lost": 929.0,
+                "patches": 128.0,
+                "edges": 258.0,
+                "gt_edges": 3073.0,
+                "edge_tp": 15.0,
+                "eligible": 278.0,
+                "beta0_error": 1185.0,
+                "beta1_error": 106.0,
+                "node_precision": 0.4556271690629648,
+                "node_recall": 0.25226461707384024,
+                "node_f1": 0.3247349823321555,
+                "duplicate_rate": 0.06395637084779375,
+                "edge_precision": 0.05813953488372093,
+                "edge_recall": 0.0048812235600390495,
+                "edge_f1": 0.009006304413089163,
+                "conditional_recall": 0.0539568345323741,
+                "beta0_mae": 9.2578125,
+                "beta1_mae": 0.828125
+              }
+            }
+          }
+        }
+      },
+      "paired": {
+        "V3-V0": {
+          "calibrated_1.0": {
+            "node_recall": [
+              -0.09274854431204338,
+              -0.0683594160164746
+            ],
+            "node_f1": [
+              -0.065184400219527,
+              -0.04031400071675692
+            ],
+            "duplicate_rate": [
+              -0.030319668467082565,
+              -0.016594057393169048
+            ],
+            "edge_f1": [
+              -0.013144712962712633,
+              -0.0021713436608188793
+            ],
+            "beta0_mae": [
+              -7.9605343300110745,
+              -4.177774217176342
+            ],
+            "beta1_mae": [
+              -0.20777343750000005,
+              0.18405116279069758
+            ]
+          },
+          "calibrated_2.0": {
+            "node_recall": [
+              -0.1795132703569831,
+              -0.14809605660326022
+            ],
+            "node_f1": [
+              -0.11732291227958053,
+              -0.08779036430853467
+            ],
+            "duplicate_rate": [
+              -0.03818616731976048,
+              -0.008027095968924805
+            ],
+            "edge_f1": [
+              -0.04714413388177087,
+              -0.029108280554518
+            ],
+            "beta0_mae": [
+              -7.9605343300110745,
+              -4.177774217176342
+            ],
+            "beta1_mae": [
+              -0.20777343750000005,
+              0.18405116279069758
+            ]
+          },
+          "matched_count_1.0": {
+            "node_recall": [
+              -0.05003852545327582,
+              -0.028739270284256862
+            ],
+            "node_f1": [
+              -0.04884174517224857,
+              -0.02775257782387233
+            ],
+            "duplicate_rate": [
+              -0.027171951927781744,
+              -0.014970966142026278
+            ],
+            "edge_f1": [
+              -0.01110979143267119,
+              -0.0007441915459255128
+            ],
+            "beta0_mae": [
+              0.4880874265716777,
+              1.4729695885509828
+            ],
+            "beta1_mae": [
+              -0.039070189468503935,
+              0.4128460686600221
+            ]
+          },
+          "matched_count_2.0": {
+            "node_recall": [
+              -0.08309417636594851,
+              -0.058772577694604484
+            ],
+            "node_f1": [
+              -0.0810462606197447,
+              -0.05634030185401503
+            ],
+            "duplicate_rate": [
+              -0.02507208622412934,
+              0.001997024281376144
+            ],
+            "edge_f1": [
+              -0.041806427465455105,
+              -0.022171341490502646
+            ],
+            "beta0_mae": [
+              0.4880874265716777,
+              1.4729695885509828
+            ],
+            "beta1_mae": [
+              -0.039070189468503935,
+              0.4128460686600221
+            ]
+          },
+          "precision_envelope_2.0": {
+            "node_recall": [
+              -0.24574827597131718,
+              -0.21428409336503135
+            ],
+            "node_f1": [
+              -0.15725292199026306,
+              -0.12858218574733127
+            ],
+            "duplicate_rate": [
+              -0.05089450602839629,
+              -0.021344690956848884
+            ],
+            "edge_f1": [
+              -0.05336948628197772,
+              -0.03245391034203163
+            ],
+            "beta0_mae": [
+              -12.101356589147288,
+              -7.687109375
+            ],
+            "beta1_mae": [
+              -0.3047626201923077,
+              0.03938582677165368
+            ]
+          }
+        },
+        "V3-V1": {
+          "calibrated_1.0": {
+            "node_recall": [
+              -0.08446915758278328,
+              -0.0608715063780215
+            ],
+            "node_f1": [
+              -0.06655519321078132,
+              -0.04263433021845631
+            ],
+            "duplicate_rate": [
+              -0.02824428506062211,
+              -0.015297810398270623
+            ],
+            "edge_f1": [
+              -0.012277877696472372,
+              -0.0019498553984725444
+            ],
+            "beta0_mae": [
+              -6.531824473975639,
+              -2.833300000000001
+            ],
+            "beta1_mae": [
+              -0.03077519379844961,
+              0.27912427325581385
+            ]
+          },
+          "calibrated_2.0": {
+            "node_recall": [
+              -0.1623131225043625,
+              -0.12709772568173713
+            ],
+            "node_f1": [
+              -0.1182645972243104,
+              -0.09013805824183693
+            ],
+            "duplicate_rate": [
+              -0.032018672836231915,
+              -0.002356922103949732
+            ],
+            "edge_f1": [
+              -0.04199206540511826,
+              -0.02434331370039811
+            ],
+            "beta0_mae": [
+              -6.531824473975639,
+              -2.833300000000001
+            ],
+            "beta1_mae": [
+              -0.03077519379844961,
+              0.27912427325581385
+            ]
+          },
+          "matched_count_1.0": {
+            "node_recall": [
+              -0.05003852545327582,
+              -0.028739270284256862
+            ],
+            "node_f1": [
+              -0.04884174517224857,
+              -0.02775257782387233
+            ],
+            "duplicate_rate": [
+              -0.027171951927781744,
+              -0.014970966142026278
+            ],
+            "edge_f1": [
+              -0.01110979143267119,
+              -0.0007441915459255128
+            ],
+            "beta0_mae": [
+              0.4880874265716777,
+              1.4729695885509828
+            ],
+            "beta1_mae": [
+              -0.039070189468503935,
+              0.4128460686600221
+            ]
+          },
+          "matched_count_2.0": {
+            "node_recall": [
+              -0.08309417636594851,
+              -0.058772577694604484
+            ],
+            "node_f1": [
+              -0.0810462606197447,
+              -0.05634030185401503
+            ],
+            "duplicate_rate": [
+              -0.02507208622412934,
+              0.001997024281376144
+            ],
+            "edge_f1": [
+              -0.041806427465455105,
+              -0.022171341490502646
+            ],
+            "beta0_mae": [
+              0.4880874265716777,
+              1.4729695885509828
+            ],
+            "beta1_mae": [
+              -0.039070189468503935,
+              0.4128460686600221
+            ]
+          },
+          "precision_envelope_2.0": {
+            "node_recall": [
+              -0.24574827597131718,
+              -0.21428409336503135
+            ],
+            "node_f1": [
+              -0.15725292199026306,
+              -0.12858218574733127
+            ],
+            "duplicate_rate": [
+              -0.05089450602839629,
+              -0.021344690956848884
+            ],
+            "edge_f1": [
+              -0.05336948628197772,
+              -0.03245391034203163
+            ],
+            "beta0_mae": [
+              -12.101356589147288,
+              -7.687109375
+            ],
+            "beta1_mae": [
+              -0.3047626201923077,
+              0.03938582677165368
+            ]
+          }
+        },
+        "V3-V2": {
+          "calibrated_1.0": {
+            "node_recall": [
+              0.00398376701733285,
+              0.027027027027027015
+            ],
+            "node_f1": [
+              -0.002076966456950541,
+              0.023696156592616226
+            ],
+            "duplicate_rate": [
+              -0.0008747402326636669,
+              0.004437085644076206
+            ],
+            "edge_f1": [
+              0.00053686452267177,
+              0.004825265072084258
+            ],
+            "beta0_mae": [
+              1.0075,
+              2.7407592343639973
+            ],
+            "beta1_mae": [
+              0.03125,
+              0.3125
+            ]
+          },
+          "calibrated_2.0": {
+            "node_recall": [
+              0.01423762665454889,
+              0.043456668511518824
+            ],
+            "node_f1": [
+              0.0023122337353906133,
+              0.031001336703387786
+            ],
+            "duplicate_rate": [
+              0.005698481655542328,
+              0.027132136474809766
+            ],
+            "edge_f1": [
+              -0.005649534563307151,
+              0.005011730654172419
+            ],
+            "beta0_mae": [
+              1.0075,
+              2.7407592343639973
+            ],
+            "beta1_mae": [
+              0.03125,
+              0.3125
+            ]
+          },
+          "matched_count_1.0": {
+            "node_recall": [
+              -0.0051012343819330595,
+              0.015303607283805302
+            ],
+            "node_f1": [
+              -0.004918337336251375,
+              0.014874367507968632
+            ],
+            "duplicate_rate": [
+              -0.00030124695603422175,
+              0.0039645327558725015
+            ],
+            "edge_f1": [
+              -0.0008880388667390738,
+              0.0045564399717940894
+            ],
+            "beta0_mae": [
+              0.27559055118110354,
+              1.2033203124999998
+            ],
+            "beta1_mae": [
+              -0.4174366387795277,
+              0.22226666666666672
+            ]
+          },
+          "matched_count_2.0": {
+            "node_recall": [
+              0.006487802734061106,
+              0.026672730987679253
+            ],
+            "node_f1": [
+              0.006434696503220576,
+              0.025589856819920005
+            ],
+            "duplicate_rate": [
+              -0.00491088639943601,
+              0.016714148133216866
+            ],
+            "edge_f1": [
+              -0.00829243432643699,
+              0.005497896617773943
+            ],
+            "beta0_mae": [
+              0.27559055118110354,
+              1.2033203124999998
+            ],
+            "beta1_mae": [
+              -0.4174366387795277,
+              0.22226666666666672
+            ]
+          },
+          "precision_envelope_2.0": {
+            "node_recall": [
+              -0.033201119151384594,
+              -0.001954722093683723
+            ],
+            "node_f1": [
+              -0.029103921424369565,
+              0.0009088096378298076
+            ],
+            "duplicate_rate": [
+              0.0005254764550450237,
+              0.023471541733402965
+            ],
+            "edge_f1": [
+              -0.009755836861681105,
+              -0.0005663017388449383
+            ],
+            "beta0_mae": [
+              -1.4960031007751942,
+              0.18905196850393663
+            ],
+            "beta1_mae": [
+              -0.04852357320099251,
+              0.1181336707911511
+            ]
+          }
+        }
+      },
+      "oracle": {
+        "1.0": {
+          "nodes": 1481.0,
+          "gt_nodes": 3643.0,
+          "node_tp": 1481.0,
+          "duplicates": 0.0,
+          "rescued": 656.0,
+          "lost": 0.0,
+          "patches": 128.0,
+          "edges": 97.0,
+          "gt_edges": 3073.0,
+          "edge_tp": 69.0,
+          "eligible": 598.0,
+          "beta0_error": 782.0,
+          "beta1_error": 96.0,
+          "node_precision": 1.0,
+          "node_recall": 0.40653307713423004,
+          "node_f1": 0.578064012490242,
+          "duplicate_rate": 0.0,
+          "edge_precision": 0.711340206185567,
+          "edge_recall": 0.02245362837617963,
+          "edge_f1": 0.043533123028391164,
+          "conditional_recall": 0.11538461538461539,
+          "beta0_mae": 6.109375,
+          "beta1_mae": 0.75
+        },
+        "2.0": {
+          "nodes": 2770.0,
+          "gt_nodes": 3643.0,
+          "node_tp": 2770.0,
+          "duplicates": 0.0,
+          "rescued": 1017.0,
+          "lost": 0.0,
+          "patches": 128.0,
+          "edges": 272.0,
+          "gt_edges": 3073.0,
+          "edge_tp": 161.0,
+          "eligible": 1941.0,
+          "beta0_error": 1868.0,
+          "beta1_error": 112.0,
+          "node_precision": 1.0,
+          "node_recall": 0.7603623387318145,
+          "node_f1": 0.8638702635272103,
+          "duplicate_rate": 0.0,
+          "edge_precision": 0.5919117647058824,
+          "edge_recall": 0.05239179954441914,
+          "edge_f1": 0.09626307922272048,
+          "conditional_recall": 0.08294693456980938,
+          "beta0_mae": 14.59375,
+          "beta1_mae": 0.875
+        }
+      },
+      "learning_curve": [
+        {
+          "arm": "V2",
+          "step": 100,
+          "split": "train",
+          "nodes": 6202.0,
+          "gt_nodes": 5300.0,
+          "node_tp": 3237.0,
+          "duplicates": 1235.0,
+          "rescued": 240.0,
+          "lost": 359.0,
+          "patches": 256.0,
+          "node_precision": 0.5219284101902613,
+          "node_recall": 0.610754716981132,
+          "node_f1": 0.5628586332811685,
+          "duplicate_rate": 0.19912931312479845,
+          "auc_correct_duplicate": 0.638070692561528,
+          "auc_correct_false": 0.8953783797504531,
+          "canonical_ap": 0.34297328158881246,
+          "reliable_auc": 0.8672514561052814,
+          "brier": 0.039074335247278214,
+          "ignored_fraction": 0.214141845703125,
+          "ece": 0.017598446141036568,
+          "correct_mean_confidence": 0.3462662100791931,
+          "duplicate_mean_confidence": 0.2246043086051941,
+          "false_mean_confidence": 0.0564938448369503
+        },
+        {
+          "arm": "V2",
+          "step": 100,
+          "split": "val",
+          "nodes": 3853.0,
+          "gt_nodes": 3643.0,
+          "node_tp": 1754.0,
+          "duplicates": 645.0,
+          "rescued": 174.0,
+          "lost": 173.0,
+          "patches": 128.0,
+          "node_precision": 0.4552296911497534,
+          "node_recall": 0.481471314850398,
+          "node_f1": 0.467982924226254,
+          "duplicate_rate": 0.1674020243965741,
+          "auc_correct_duplicate": 0.6101354889023953,
+          "auc_correct_false": 0.8640035801787954,
+          "canonical_ap": 0.3417406092201724,
+          "reliable_auc": 0.8290480820371678,
+          "brier": 0.04787992313504219,
+          "ignored_fraction": 0.223602294921875,
+          "ece": 0.025218883545778673,
+          "correct_mean_confidence": 0.34740886092185974,
+          "duplicate_mean_confidence": 0.2446095049381256,
+          "false_mean_confidence": 0.07239299267530441
+        },
+        {
+          "arm": "V2",
+          "step": 500,
+          "split": "train",
+          "nodes": 6202.0,
+          "gt_nodes": 5300.0,
+          "node_tp": 3091.0,
+          "duplicates": 1416.0,
+          "rescued": 286.0,
+          "lost": 551.0,
+          "patches": 256.0,
+          "node_precision": 0.4983876168977749,
+          "node_recall": 0.5832075471698113,
+          "node_f1": 0.537471744044514,
+          "duplicate_rate": 0.22831344727507255,
+          "auc_correct_duplicate": 0.6330009679567661,
+          "auc_correct_false": 0.9075816037922829,
+          "canonical_ap": 0.3236657068766679,
+          "reliable_auc": 0.8937739711542856,
+          "brier": 0.03710125386714935,
+          "ignored_fraction": 0.214141845703125,
+          "ece": 0.01563571210035457,
+          "correct_mean_confidence": 0.34797587990760803,
+          "duplicate_mean_confidence": 0.2361575812101364,
+          "false_mean_confidence": 0.051353417336940765
+        },
+        {
+          "arm": "V2",
+          "step": 500,
+          "split": "val",
+          "nodes": 3853.0,
+          "gt_nodes": 3643.0,
+          "node_tp": 1665.0,
+          "duplicates": 736.0,
+          "rescued": 222.0,
+          "lost": 310.0,
+          "patches": 128.0,
+          "node_precision": 0.4321308071632494,
+          "node_recall": 0.45704090035684874,
+          "node_f1": 0.4442369263607257,
+          "duplicate_rate": 0.19101998442771867,
+          "auc_correct_duplicate": 0.586915279618632,
+          "auc_correct_false": 0.8636241959562463,
+          "canonical_ap": 0.29964044233691095,
+          "reliable_auc": 0.8301870946599955,
+          "brier": 0.049244921654462814,
+          "ignored_fraction": 0.223602294921875,
+          "ece": 0.02625623388249359,
+          "correct_mean_confidence": 0.33050456643104553,
+          "duplicate_mean_confidence": 0.2532452642917633,
+          "false_mean_confidence": 0.06886079162359238
+        },
+        {
+          "arm": "V2",
+          "step": 1000,
+          "split": "train",
+          "nodes": 6202.0,
+          "gt_nodes": 5300.0,
+          "node_tp": 3156.0,
+          "duplicates": 1403.0,
+          "rescued": 403.0,
+          "lost": 603.0,
+          "patches": 256.0,
+          "node_precision": 0.508868107062238,
+          "node_recall": 0.5954716981132075,
+          "node_f1": 0.548774126238915,
+          "duplicate_rate": 0.22621734924217995,
+          "auc_correct_duplicate": 0.6821837101793289,
+          "auc_correct_false": 0.9246145481633713,
+          "canonical_ap": 0.359673105339999,
+          "reliable_auc": 0.9446904106870577,
+          "brier": 0.031534343957901,
+          "ignored_fraction": 0.214141845703125,
+          "ece": 0.016310686016048275,
+          "correct_mean_confidence": 0.4202476739883423,
+          "duplicate_mean_confidence": 0.24460922181606293,
+          "false_mean_confidence": 0.046120211482048035
+        },
+        {
+          "arm": "V2",
+          "step": 1000,
+          "split": "val",
+          "nodes": 3853.0,
+          "gt_nodes": 3643.0,
+          "node_tp": 1585.0,
+          "duplicates": 648.0,
+          "rescued": 216.0,
+          "lost": 384.0,
+          "patches": 128.0,
+          "node_precision": 0.4113677653776278,
+          "node_recall": 0.43508097721657973,
+          "node_f1": 0.4228922091782284,
+          "duplicate_rate": 0.1681806384635349,
+          "auc_correct_duplicate": 0.5727648724745718,
+          "auc_correct_false": 0.838683091962015,
+          "canonical_ap": 0.2585082340786652,
+          "reliable_auc": 0.8063587477219424,
+          "brier": 0.05589427426457405,
+          "ignored_fraction": 0.223602294921875,
+          "ece": 0.04470691947575204,
+          "correct_mean_confidence": 0.3276211619377136,
+          "duplicate_mean_confidence": 0.25569334626197815,
+          "false_mean_confidence": 0.06772777438163757
+        },
+        {
+          "arm": "V2",
+          "step": 2000,
+          "split": "train",
+          "nodes": 6202.0,
+          "gt_nodes": 5300.0,
+          "node_tp": 3492.0,
+          "duplicates": 1281.0,
+          "rescued": 748.0,
+          "lost": 612.0,
+          "patches": 256.0,
+          "node_precision": 0.563044179297001,
+          "node_recall": 0.6588679245283019,
+          "node_f1": 0.6071987480438185,
+          "duplicate_rate": 0.20654627539503387,
+          "auc_correct_duplicate": 0.753381889759667,
+          "auc_correct_false": 0.9323331756523988,
+          "canonical_ap": 0.48720233050232786,
+          "reliable_auc": 0.994084170729024,
+          "brier": 0.012350703589618206,
+          "ignored_fraction": 0.214141845703125,
+          "ece": 0.0065179618240110695,
+          "correct_mean_confidence": 0.5516316890716553,
+          "duplicate_mean_confidence": 0.181331068277359,
+          "false_mean_confidence": 0.023190448060631752
+        },
+        {
+          "arm": "V2",
+          "step": 2000,
+          "split": "val",
+          "nodes": 3853.0,
+          "gt_nodes": 3643.0,
+          "node_tp": 1443.0,
+          "duplicates": 535.0,
+          "rescued": 205.0,
+          "lost": 515.0,
+          "patches": 128.0,
+          "node_precision": 0.3745133662081495,
+          "node_recall": 0.3961021136426022,
+          "node_f1": 0.3850053361792956,
+          "duplicate_rate": 0.1388528419413444,
+          "auc_correct_duplicate": 0.5560381898931612,
+          "auc_correct_false": 0.8052937193205225,
+          "canonical_ap": 0.21868588645784975,
+          "reliable_auc": 0.7817778753303742,
+          "brier": 0.06893666088581085,
+          "ignored_fraction": 0.223602294921875,
+          "ece": 0.06833158813624593,
+          "correct_mean_confidence": 0.26325252652168274,
+          "duplicate_mean_confidence": 0.20433898270130157,
+          "false_mean_confidence": 0.053304921835660934
+        },
+        {
+          "arm": "V3",
+          "step": 100,
+          "split": "train",
+          "nodes": 6202.0,
+          "gt_nodes": 5300.0,
+          "node_tp": 3135.0,
+          "duplicates": 1419.0,
+          "rescued": 237.0,
+          "lost": 458.0,
+          "patches": 256.0,
+          "node_precision": 0.5054821025475653,
+          "node_recall": 0.5915094339622642,
+          "node_f1": 0.5451225873761085,
+          "duplicate_rate": 0.2287971622057401,
+          "auc_correct_duplicate": 0.6438840715796099,
+          "auc_correct_false": 0.9068258301454618,
+          "canonical_ap": 0.35992858811641326,
+          "reliable_auc": 0.8784140665193526,
+          "brier": 0.03834236413240433,
+          "ignored_fraction": 0.214141845703125,
+          "ece": 0.01121832473950522,
+          "correct_mean_confidence": 0.3469853699207306,
+          "duplicate_mean_confidence": 0.22018057107925415,
+          "false_mean_confidence": 0.05066467076539993
+        },
+        {
+          "arm": "V3",
+          "step": 100,
+          "split": "val",
+          "nodes": 3853.0,
+          "gt_nodes": 3643.0,
+          "node_tp": 1739.0,
+          "duplicates": 729.0,
+          "rescued": 216.0,
+          "lost": 230.0,
+          "patches": 128.0,
+          "node_precision": 0.4513366208149494,
+          "node_recall": 0.4773538292615976,
+          "node_f1": 0.46398078975453577,
+          "duplicate_rate": 0.18920321827147676,
+          "auc_correct_duplicate": 0.6163124446218173,
+          "auc_correct_false": 0.8757224858451442,
+          "canonical_ap": 0.3614405504705254,
+          "reliable_auc": 0.8372009812353771,
+          "brier": 0.04710732772946358,
+          "ignored_fraction": 0.223602294921875,
+          "ece": 0.019835831612749183,
+          "correct_mean_confidence": 0.35409942269325256,
+          "duplicate_mean_confidence": 0.24364854395389557,
+          "false_mean_confidence": 0.06733696162700653
+        },
+        {
+          "arm": "V3",
+          "step": 500,
+          "split": "train",
+          "nodes": 6202.0,
+          "gt_nodes": 5300.0,
+          "node_tp": 3044.0,
+          "duplicates": 1613.0,
+          "rescued": 261.0,
+          "lost": 573.0,
+          "patches": 256.0,
+          "node_precision": 0.490809416317317,
+          "node_recall": 0.5743396226415094,
+          "node_f1": 0.5292992523039471,
+          "duplicate_rate": 0.2600773943889068,
+          "auc_correct_duplicate": 0.628853855336758,
+          "auc_correct_false": 0.9248372167123295,
+          "canonical_ap": 0.33634677142594077,
+          "reliable_auc": 0.9123280793210502,
+          "brier": 0.036720581352710724,
+          "ignored_fraction": 0.214141845703125,
+          "ece": 0.01925476808553743,
+          "correct_mean_confidence": 0.3791394829750061,
+          "duplicate_mean_confidence": 0.27252018451690674,
+          "false_mean_confidence": 0.05283231660723686
+        },
+        {
+          "arm": "V3",
+          "step": 500,
+          "split": "val",
+          "nodes": 3853.0,
+          "gt_nodes": 3643.0,
+          "node_tp": 1643.0,
+          "duplicates": 816.0,
+          "rescued": 211.0,
+          "lost": 321.0,
+          "patches": 128.0,
+          "node_precision": 0.42642097067220347,
+          "node_recall": 0.4510019214932748,
+          "node_f1": 0.43836712913553894,
+          "duplicate_rate": 0.21178302621334025,
+          "auc_correct_duplicate": 0.5705624226536127,
+          "auc_correct_false": 0.8735124134018794,
+          "canonical_ap": 0.3005404118777089,
+          "reliable_auc": 0.8373726740932523,
+          "brier": 0.0504981130361557,
+          "ignored_fraction": 0.223602294921875,
+          "ece": 0.0332222786776642,
+          "correct_mean_confidence": 0.35041093826293945,
+          "duplicate_mean_confidence": 0.28604745864868164,
+          "false_mean_confidence": 0.07291242480278015
+        },
+        {
+          "arm": "V3",
+          "step": 1000,
+          "split": "train",
+          "nodes": 6202.0,
+          "gt_nodes": 5300.0,
+          "node_tp": 3183.0,
+          "duplicates": 1540.0,
+          "rescued": 468.0,
+          "lost": 641.0,
+          "patches": 256.0,
+          "node_precision": 0.5132215414382457,
+          "node_recall": 0.600566037735849,
+          "node_f1": 0.5534689619196661,
+          "duplicate_rate": 0.24830699774266365,
+          "auc_correct_duplicate": 0.693466750025094,
+          "auc_correct_false": 0.940912840174183,
+          "canonical_ap": 0.3865966004266469,
+          "reliable_auc": 0.9604923133883271,
+          "brier": 0.02781575545668602,
+          "ignored_fraction": 0.214141845703125,
+          "ece": 0.005956741252345607,
+          "correct_mean_confidence": 0.4187476336956024,
+          "duplicate_mean_confidence": 0.23080161213874817,
+          "false_mean_confidence": 0.03265834227204323
+        },
+        {
+          "arm": "V3",
+          "step": 1000,
+          "split": "val",
+          "nodes": 3853.0,
+          "gt_nodes": 3643.0,
+          "node_tp": 1562.0,
+          "duplicates": 732.0,
+          "rescued": 219.0,
+          "lost": 410.0,
+          "patches": 128.0,
+          "node_precision": 0.4053983908642616,
+          "node_recall": 0.4287674993137524,
+          "node_f1": 0.4167556029882604,
+          "duplicate_rate": 0.18998183233843757,
+          "auc_correct_duplicate": 0.5604736161861732,
+          "auc_correct_false": 0.8531381504506468,
+          "canonical_ap": 0.2636367564711183,
+          "reliable_auc": 0.8166283333789193,
+          "brier": 0.05545351281762123,
+          "ignored_fraction": 0.223602294921875,
+          "ece": 0.045418070585823006,
+          "correct_mean_confidence": 0.3102431893348694,
+          "duplicate_mean_confidence": 0.2485228329896927,
+          "false_mean_confidence": 0.0541299469769001
+        },
+        {
+          "arm": "V3",
+          "step": 2000,
+          "split": "train",
+          "nodes": 6202.0,
+          "gt_nodes": 5300.0,
+          "node_tp": 3592.0,
+          "duplicates": 1325.0,
+          "rescued": 797.0,
+          "lost": 561.0,
+          "patches": 256.0,
+          "node_precision": 0.5791680103192518,
+          "node_recall": 0.6777358490566038,
+          "node_f1": 0.6245870283428969,
+          "duplicate_rate": 0.21364076104482424,
+          "auc_correct_duplicate": 0.7827071195295082,
+          "auc_correct_false": 0.9426923797737138,
+          "canonical_ap": 0.5304109802448551,
+          "reliable_auc": 0.9969869790897525,
+          "brier": 0.008989117108285427,
+          "ignored_fraction": 0.214141845703125,
+          "ece": 0.005635371963409584,
+          "correct_mean_confidence": 0.5988384485244751,
+          "duplicate_mean_confidence": 0.176125630736351,
+          "false_mean_confidence": 0.020941253751516342
+        },
+        {
+          "arm": "V3",
+          "step": 2000,
+          "split": "val",
+          "nodes": 3853.0,
+          "gt_nodes": 3643.0,
+          "node_tp": 1471.0,
+          "duplicates": 610.0,
+          "rescued": 217.0,
+          "lost": 499.0,
+          "patches": 128.0,
+          "node_precision": 0.3817804308331171,
+          "node_recall": 0.4037880867416964,
+          "node_f1": 0.3924759871931697,
+          "duplicate_rate": 0.15831819361536464,
+          "auc_correct_duplicate": 0.5430636766719634,
+          "auc_correct_false": 0.8111235301632628,
+          "canonical_ap": 0.21905831593183686,
+          "reliable_auc": 0.7746361589177168,
+          "brier": 0.07051094621419907,
+          "ignored_fraction": 0.223602294921875,
+          "ece": 0.06999982900817667,
+          "correct_mean_confidence": 0.2739143371582031,
+          "duplicate_mean_confidence": 0.2214050590991974,
+          "false_mean_confidence": 0.05173422396183014
+        }
+      ]
+    }
+  },
+  "calibration_paired": {
+    "SyntheticMRI": {
+      "node_recall": [
+        -0.028153417452375384,
+        -0.018839522926075172
+      ],
+      "node_f1": [
+        0.006884454469468365,
+        0.014561020689823114
+      ],
+      "duplicate_rate": [
+        -0.02424968191165085,
+        -0.014317926240391257
+      ],
+      "edge_f1": [
+        0.005943043917452882,
+        0.022762762081990944
+      ],
+      "beta0_mae": [
+        0.08445312500000014,
+        0.36293917229307354
+      ],
+      "beta1_mae": [
+        -1.0078125,
+        -0.5983455193100864
+      ]
+    },
+    "IXI": {
+      "node_recall": [
+        -0.02335301280647986,
+        -0.015689644754298234
+      ],
+      "node_f1": [
+        -0.0016005912604742224,
+        0.005201468516438231
+      ],
+      "duplicate_rate": [
+        -0.009245273609238222,
+        -0.002786985679717797
+      ],
+      "edge_f1": [
+        -0.00840481425367734,
+        -0.0024073464003636484
+      ],
+      "beta0_mae": [
+        -1.612403100775193,
+        -1.1548737281976749
+      ],
+      "beta1_mae": [
+        -0.21879306102362203,
+        -0.054263565891472854
+      ]
+    }
+  }
+}

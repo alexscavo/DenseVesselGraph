@@ -1,0 +1,6 @@
+{
+  "stage": "s3",
+  "code": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_long_20261030/code/v2",
+  "plan_sha256": "e147ff640ef23a66e508e61c02f02c3a3616b215d88852761583065f062d53f0",
+  "change": "loss.weights.spline 0 (B0 value replaced); everything else unchanged"
+}

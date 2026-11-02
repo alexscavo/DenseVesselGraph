@@ -1,0 +1,986 @@
+[
+  {
+    "experiment": "A",
+    "policy": "spatial",
+    "tolerance_mm": 1,
+    "baseline": "normal",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.020349941555522957,
+        0.04987868187290253
+      ],
+      "node_recall": [
+        0.21869510910748918,
+        0.24646350659098532
+      ],
+      "common_curve_f1": [
+        -0.12815840918065427,
+        -0.10230074717786851
+      ],
+      "beta0_mae": [
+        -10.193798449612402,
+        -7.015116279069766
+      ],
+      "beta1_mae": [
+        -0.6769230769230768,
+        -0.15500894454382835
+      ]
+    }
+  },
+  {
+    "experiment": "A",
+    "policy": "hungarian",
+    "tolerance_mm": 1,
+    "baseline": "normal",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.005758494348300824,
+        0.01976017775618828
+      ],
+      "node_recall": [
+        -0.009960660642863198,
+        0.021240698697937935
+      ],
+      "common_curve_f1": [
+        -0.01808068500147741,
+        0.006247358580718528
+      ],
+      "beta0_mae": [
+        -2.976953125,
+        -0.17067890019379955
+      ],
+      "beta1_mae": [
+        -0.24830577761627917,
+        0.27788978494623656
+      ]
+    }
+  },
+  {
+    "experiment": "A",
+    "policy": "hungarian_rematched",
+    "tolerance_mm": 1,
+    "baseline": "normal",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.01484663900918906,
+        0.029656194085712746
+      ],
+      "node_recall": [
+        0.050543660612821284,
+        0.07628971604392192
+      ],
+      "common_curve_f1": [
+        -0.01808068500147741,
+        0.006247358580718528
+      ],
+      "beta0_mae": [
+        -2.976953125,
+        -0.17067890019379955
+      ],
+      "beta1_mae": [
+        -0.24830577761627917,
+        0.27788978494623656
+      ]
+    }
+  },
+  {
+    "experiment": "A",
+    "policy": "parent_hungarian",
+    "tolerance_mm": 1,
+    "baseline": "normal",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.01235176726801528,
+        0.0021354249559179346
+      ],
+      "node_recall": [
+        -0.1452176519140174,
+        -0.10492301763158728
+      ],
+      "common_curve_f1": [
+        -0.05910257745203795,
+        -0.04045477903299526
+      ],
+      "beta0_mae": [
+        -3.039267039862205,
+        -0.22307692307692398
+      ],
+      "beta1_mae": [
+        -0.2677543912780133,
+        0.26205005624296945
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "focal_control",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 1,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.014861753274676185,
+        0.031807699740302516
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        0.11400884592124907,
+        0.15422254986848616
+      ],
+      "beta0_mae": [
+        -9.2328125,
+        -6.5689763779527555
+      ],
+      "beta1_mae": [
+        3.4839719742063493,
+        6.109525240384615
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "regularized",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 1,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.02493088947378091,
+        0.04395935457662282
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        0.19834930010246582,
+        0.2384145327705555
+      ],
+      "beta0_mae": [
+        -16.986574803149605,
+        -11.922074854651163
+      ],
+      "beta1_mae": [
+        12.372548743907013,
+        18.992710431544893
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_unmatched",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 1,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.02466466256687646,
+        0.049220959540911886
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        0.1465231783186521,
+        0.18924233428839163
+      ],
+      "beta0_mae": [
+        -11.94653846153846,
+        -8.267664247047245
+      ],
+      "beta1_mae": [
+        7.354193371177439,
+        12.211523437499999
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_matched",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 1,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.019988210245003534,
+        0.03557793740086617
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        0.1532935800606209,
+        0.1870005778882053
+      ],
+      "beta0_mae": [
+        -13.023828125,
+        -9.2888671875
+      ],
+      "beta1_mae": [
+        6.551055420956995,
+        11.262751937984493
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "focal_control",
+    "policy": "train_max_f1",
+    "tolerance_mm": 1,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.019292529069842235,
+        -0.005492532990548996
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        -0.05159751208528857,
+        -0.025714959232644823
+      ],
+      "beta0_mae": [
+        2.0076171875,
+        3.9454985851377953
+      ],
+      "beta1_mae": [
+        -4.4609375,
+        -1.4416666666666693
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "regularized",
+    "policy": "train_max_f1",
+    "tolerance_mm": 1,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.014528054023102564,
+        -0.005437514410040685
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        -0.024832221574549757,
+        -0.0018651761029471958
+      ],
+      "beta0_mae": [
+        0.8457661290322582,
+        2.0001968503937007
+      ],
+      "beta1_mae": [
+        0.6872416338582678,
+        4.186821705426357
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_unmatched",
+    "policy": "train_max_f1",
+    "tolerance_mm": 1,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.0184984600097504,
+        -0.00571185245170924
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        -0.11754750271659048,
+        -0.08555617392294121
+      ],
+      "beta0_mae": [
+        6.794729638287402,
+        10.420719047619048
+      ],
+      "beta1_mae": [
+        -11.79257874015748,
+        -7.4921875
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_matched",
+    "policy": "train_max_f1",
+    "tolerance_mm": 1,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.01768412431740754,
+        -0.005645573957557987
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        -0.04576242690862719,
+        -0.02043304731313923
+      ],
+      "beta0_mae": [
+        1.483264119601329,
+        3.1171875
+      ],
+      "beta1_mae": [
+        -3.0946453640969294,
+        1.5550781249999996
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "focal_control",
+    "policy": "train_preserve_precision",
+    "tolerance_mm": 1,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.019376359256070765,
+        0.03797220479765301
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        0.13343147000715083,
+        0.17389596918684525
+      ],
+      "beta0_mae": [
+        -12.054870700096899,
+        -8.495427279438907
+      ],
+      "beta1_mae": [
+        6.341005811773528,
+        9.969146634615385
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "regularized",
+    "policy": "train_preserve_precision",
+    "tolerance_mm": 1,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.010171760940776289,
+        0.00688930064757159
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        -0.01637940894827074,
+        0.014896647117531156
+      ],
+      "beta0_mae": [
+        -1.016123561477892,
+        0.11644901610018066
+      ],
+      "beta1_mae": [
+        0.12370801033591733,
+        1.0307751937984495
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_unmatched",
+    "policy": "train_preserve_precision",
+    "tolerance_mm": 1,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.021623015286371196,
+        0.04487259988797185
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        0.14659103218439626,
+        0.1918215790483949
+      ],
+      "beta0_mae": [
+        -12.807884615384616,
+        -8.811872539370079
+      ],
+      "beta1_mae": [
+        9.782681036112686,
+        15.54330053667263
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_matched",
+    "policy": "train_preserve_precision",
+    "tolerance_mm": 1,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.006809772178742544,
+        0.024461032935965337
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        0.07075463204732424,
+        0.10444530764152776
+      ],
+      "beta0_mae": [
+        -6.78187378875969,
+        -4.4765625
+      ],
+      "beta1_mae": [
+        2.6354651162790694,
+        5.294689617286211
+      ]
+    }
+  },
+  {
+    "experiment": "A",
+    "policy": "spatial",
+    "tolerance_mm": 2,
+    "baseline": "normal",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.006161190542497852,
+        0.04451066114813388
+      ],
+      "node_recall": [
+        0.25595882358142913,
+        0.28868566077420743
+      ],
+      "common_curve_f1": [
+        -0.10084486915689127,
+        -0.07053074548971737
+      ],
+      "beta0_mae": [
+        -4.282288227076453,
+        -1.9599609375000009
+      ],
+      "beta1_mae": [
+        -0.6124031007751938,
+        -0.12403100775193798
+      ]
+    }
+  },
+  {
+    "experiment": "A",
+    "policy": "hungarian",
+    "tolerance_mm": 2,
+    "baseline": "normal",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.027078918715048788,
+        0.05109550794594968
+      ],
+      "node_recall": [
+        0.045191217900363366,
+        0.08277933951599487
+      ],
+      "common_curve_f1": [
+        -0.01808068500147741,
+        0.006247358580718528
+      ],
+      "beta0_mae": [
+        -2.976953125,
+        -0.17067890019379955
+      ],
+      "beta1_mae": [
+        -0.24830577761627917,
+        0.27788978494623656
+      ]
+    }
+  },
+  {
+    "experiment": "A",
+    "policy": "hungarian_rematched",
+    "tolerance_mm": 2,
+    "baseline": "normal",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.036279435357410954,
+        0.0596020952867651
+      ],
+      "node_recall": [
+        0.09559558183234787,
+        0.13376862414230412
+      ],
+      "common_curve_f1": [
+        -0.01808068500147741,
+        0.006247358580718528
+      ],
+      "beta0_mae": [
+        -2.976953125,
+        -0.17067890019379955
+      ],
+      "beta1_mae": [
+        -0.24830577761627917,
+        0.27788978494623656
+      ]
+    }
+  },
+  {
+    "experiment": "A",
+    "policy": "parent_hungarian",
+    "tolerance_mm": 2,
+    "baseline": "normal",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.009696330511984473,
+        0.03866471556610687
+      ],
+      "node_recall": [
+        -0.03801473501140168,
+        0.009218981046870512
+      ],
+      "common_curve_f1": [
+        -0.05910257745203795,
+        -0.04045477903299526
+      ],
+      "beta0_mae": [
+        -3.039267039862205,
+        -0.22307692307692398
+      ],
+      "beta1_mae": [
+        -0.2677543912780133,
+        0.26205005624296945
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "focal_control",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 2,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.027789619225683997,
+        0.05974413605822768
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        0.11400884592124907,
+        0.15422254986848616
+      ],
+      "beta0_mae": [
+        -9.2328125,
+        -6.5689763779527555
+      ],
+      "beta1_mae": [
+        3.4839719742063493,
+        6.109525240384615
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "regularized",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 2,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.054193020839349064,
+        0.08102554507337495
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        0.19834930010246582,
+        0.2384145327705555
+      ],
+      "beta0_mae": [
+        -16.986574803149605,
+        -11.922074854651163
+      ],
+      "beta1_mae": [
+        12.372548743907013,
+        18.992710431544893
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_unmatched",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 2,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.04971989975740724,
+        0.07984057131034891
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        0.1465231783186521,
+        0.18924233428839163
+      ],
+      "beta0_mae": [
+        -11.94653846153846,
+        -8.267664247047245
+      ],
+      "beta1_mae": [
+        7.354193371177439,
+        12.211523437499999
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_matched",
+    "policy": "fixed_0p5",
+    "tolerance_mm": 2,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.04329504298447453,
+        0.06760538967756363
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        0.1532935800606209,
+        0.1870005778882053
+      ],
+      "beta0_mae": [
+        -13.023828125,
+        -9.2888671875
+      ],
+      "beta1_mae": [
+        6.551055420956995,
+        11.262751937984493
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "focal_control",
+    "policy": "train_max_f1",
+    "tolerance_mm": 2,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.031526973588014685,
+        -0.015504667667727038
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        -0.04480857197303479,
+        -0.021605920613126706
+      ],
+      "beta0_mae": [
+        1.5347808586762075,
+        3.2117187499999993
+      ],
+      "beta1_mae": [
+        -4.224246031746029,
+        -0.9379844961240309
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "regularized",
+    "policy": "train_max_f1",
+    "tolerance_mm": 2,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.02274798613612632,
+        -0.009390184449546533
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        -0.02817754580445854,
+        -0.008015371192894439
+      ],
+      "beta0_mae": [
+        1.0546875,
+        2.19234496124031
+      ],
+      "beta1_mae": [
+        -1.1121314777513307,
+        2.240357013081394
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_unmatched",
+    "policy": "train_max_f1",
+    "tolerance_mm": 2,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.03452382580240848,
+        -0.016659126371632773
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        -0.11603667891683492,
+        -0.08792840487513905
+      ],
+      "beta0_mae": [
+        6.757174274114173,
+        10.23892580287929
+      ],
+      "beta1_mae": [
+        -13.736066829207303,
+        -9.03827824519231
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_matched",
+    "policy": "train_max_f1",
+    "tolerance_mm": 2,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        -0.03302512912356998,
+        -0.01646530996919455
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        -0.05595213396872859,
+        -0.03056896898715116
+      ],
+      "beta0_mae": [
+        1.9532945736434109,
+        3.85287972383721
+      ],
+      "beta1_mae": [
+        -6.565891472868216,
+        -1.8368559928443666
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "focal_control",
+    "policy": "train_preserve_precision",
+    "tolerance_mm": 2,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.041268113171204275,
+        0.07514666178735611
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        0.16225111393719285,
+        0.20088948786673477
+      ],
+      "beta0_mae": [
+        -14.265961119186047,
+        -10.0840503875969
+      ],
+      "beta1_mae": [
+        8.6400390625,
+        13.212304687499998
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "regularized",
+    "policy": "train_preserve_precision",
+    "tolerance_mm": 2,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.0010695871793901565,
+        0.03207102880968755
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        0.03217403763509626,
+        0.05907983989758092
+      ],
+      "beta0_mae": [
+        -3.357466254218223,
+        -2.007677165354329
+      ],
+      "beta1_mae": [
+        0.6433412063953489,
+        1.8992441860465117
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_unmatched",
+    "policy": "train_preserve_precision",
+    "tolerance_mm": 2,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.04546679318469856,
+        0.08014894652146629
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        0.17778534163997367,
+        0.2248511345394622
+      ],
+      "beta0_mae": [
+        -14.7389453125,
+        -10.298701550387596
+      ],
+      "beta1_mae": [
+        12.26302015503876,
+        19.132170542635656
+      ]
+    }
+  },
+  {
+    "experiment": "B",
+    "arm": "hard_matched",
+    "policy": "train_preserve_precision",
+    "tolerance_mm": 2,
+    "baseline": "original same policy",
+    "subjects": 26,
+    "resamples": 1000,
+    "delta_95pct": {
+      "f1": [
+        0.03091209257150521,
+        0.05983896576206674
+      ],
+      "node_recall": [
+        0.0,
+        0.0
+      ],
+      "common_curve_f1": [
+        0.12352546127525195,
+        0.15363730817297488
+      ],
+      "beta0_mae": [
+        -10.484470349409449,
+        -7.452426796259843
+      ],
+      "beta1_mae": [
+        4.674273528308961,
+        8.48071402616279
+      ]
+    }
+  }
+]

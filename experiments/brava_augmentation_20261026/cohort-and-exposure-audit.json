@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "train_patches": 1248,
+  "validation_patches": 256,
+  "train_subjects": 39,
+  "validation_subjects": 8,
+  "monitor_train_patches": 160,
+  "tiny_reference_patches": 16,
+  "total_training_draws": 32000,
+  "draws_per_patch_min": 25,
+  "draws_per_patch_max": 26,
+  "mean_training_draws_per_patch": 25.641025641025642,
+  "patch_order_sha256": "e8f8ff2008b7ea8cf87ccce9d6c5f51a0836adc316d0b261d1110b3c0ad4c3c8"
+}

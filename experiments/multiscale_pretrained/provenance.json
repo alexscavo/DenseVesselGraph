@@ -1,0 +1,18 @@
+{
+  "checkpoint_sha256_verified": "06513f58b7b032c9eb4f7be7820312941e7bac08fb97915f263d48f1b894facb",
+  "source_files": {
+    "models/multiscale_migration.py": "73ba4246160fc2614f588e5b154575fdc06b8ce67c402ba84158f4b0ace535e8",
+    "models/relationformer.py": "7daf09974de22f9bb661ee5dbc0d07fc823d93475546429ca0577518fa833417",
+    "models/deformable_transformer.py": "798b9d63c2c94c2edaee3fb192f1dc725be41af609c48ceb53f882679b59d515",
+    "models/ops/modules/ms_deform_attn.py": "8b277be7f781154af57286ca5dd8464355994aae30b97a0db050e3547c66a440",
+    "configs/loader.py": "d47e7d317f768cec81f35a2788e8ed82a841a75c4322f5aa051097a4a22ad574",
+    "scripts/multiscale_pretrained.py": "865141bcc19152d2bfaf84e79d9057ad77f402832ee175cb91891c38a3dbf2f9",
+    "tests/test_multiscale_relationformer.py": "a421aed9f236627c43a7a060a0a38f8ad888f65274098ded7bb6d6bbafd614cd",
+    "cluster/jean_zay/multiscale_pretrained.slurm": "15a52d27d8053aaa343bd1ba5c6040b4df3dd84a340411cd58e17da65f5130e8",
+    "scripts/report_multiscale_pretrained.py": "99ad4320722a1ef96014e95513e0dd2f1de404bee8babaec833803487bb6acee"
+  },
+  "pilot_checkpoint_sha256": {
+    "B0": "d1d6816070266ab4ba03a877a7372231c91cf6d30dfbebc72eefe41f86abf82a",
+    "B1": "32548c92807ad9d990cde431a07b2d253e0a459a9e0f68506a1051b9822d6ce0"
+  }
+}

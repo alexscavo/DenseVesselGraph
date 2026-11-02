@@ -1,0 +1,11 @@
+{
+  "project_id": 20305265,
+  "filesystem": "/lustre/fswork",
+  "project_kbytes": 2708166108,
+  "project_byte_limit_kbytes": 5368709120,
+  "project_entries": 489714,
+  "project_entry_limit": 500000,
+  "user_kbytes": 68565804,
+  "user_entries": 83042,
+  "note": "Observed at start of resumed cleanup; shared project usage may change independently. Per-user totals are filesystem-wide, not filtered to project ID."
+}

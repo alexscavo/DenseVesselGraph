@@ -1,5 +1,7 @@
 # Continuous vessel graph experiments
 
+> **Research consolidation, 23 October 2026:** [Consolidated experiment history and current batch](../../../research/experiments.md). This document retains its detailed and dated historical context.
+
 ## Current status (2026-10-16)
 
 The scratch 300-epoch and source-transfer comparisons are complete. Start with

@@ -1,0 +1,82 @@
+{
+ "batch_size": 32,
+ "rows": [
+  {
+   "batch_size": 16,
+   "seconds_per_update": 0.1833825745852664,
+   "mean_seconds_per_update": 0.19309130251349416,
+   "patches_per_second": 87.24929310314904,
+   "peak_reserved_bytes": 7159676928,
+   "total_memory_bytes": 85019590656,
+   "last": {
+    "class": 0.0940764769911766,
+    "nodes": 0.032384924590587616,
+    "boxes": 0.3595806360244751,
+    "cardinality": 0.060791015625,
+    "edges": 0.5978333950042725,
+    "degree": 0.0,
+    "spline": 0.8944888710975647,
+    "spline_control_mm": 2.729512929916382,
+    "spline_curve_mm": 2.3997623920440674,
+    "spline_endpoint_mm": 1.0068378448486328,
+    "spline_positive_edges": 157.0,
+    "betti_h0": 0.0,
+    "betti_h0_weighted": 0.0,
+    "betti_h1": 0.0,
+    "betti_h1_weighted": 0.0,
+    "total": 6.473926544189453,
+    "step": 20,
+    "lr": 7e-07,
+    "matched_fraction": 0.8597014925373134,
+    "real_peaks": 256.0
+   }
+  },
+  {
+   "batch_size": 32,
+   "seconds_per_update": 0.2955949844326824,
+   "mean_seconds_per_update": 0.2958074906200636,
+   "patches_per_second": 108.25623466316814,
+   "peak_reserved_bytes": 12773752832,
+   "total_memory_bytes": 85019590656,
+   "last": {
+    "class": 0.1088843047618866,
+    "nodes": 0.029457643628120422,
+    "boxes": 0.340926855802536,
+    "cardinality": 0.07421875,
+    "edges": 0.5588691830635071,
+    "degree": 0.0,
+    "spline": 0.724429726600647,
+    "spline_control_mm": 2.348576307296753,
+    "spline_curve_mm": 2.175610303878784,
+    "spline_endpoint_mm": 0.9045131802558899,
+    "spline_positive_edges": 287.0,
+    "betti_h0": 0.0,
+    "betti_h0_weighted": 0.0,
+    "betti_h1": 0.0,
+    "betti_h1_weighted": 0.0,
+    "total": 5.997632026672363,
+    "step": 20,
+    "lr": 7e-07,
+    "matched_fraction": 0.860248447204969,
+    "real_peaks": 256.0
+   }
+  }
+ ],
+ "estimates": {
+  "IXI": {
+   "updates_per_epoch": 128,
+   "epochs": 117,
+   "updates": 14976,
+   "estimated_hours": 1.4990613243651265,
+   "walltime_hours": 1.9487797216746645
+  },
+  "BRAVA": {
+   "updates_per_epoch": 274,
+   "epochs": 55,
+   "updates": 15070,
+   "estimated_hours": 1.7005405067343478,
+   "walltime_hours": 2.210702658754652
+  }
+ },
+ "job_id": "1732385"
+}

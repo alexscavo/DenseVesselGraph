@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "unit_tests": 7,
+  "baseline_parity_conditions": 8,
+  "original_counts_and_branch_f1_reproduced": true,
+  "raw_recall_parity": true,
+  "source_cache_hashes_unchanged": true,
+  "matched_sample_ids_and_pair_populations": true,
+  "training_subjects": 39,
+  "validation_subjects": 8,
+  "disjoint_subjects": true,
+  "threshold_selection_split": "training only",
+  "new_inference": false,
+  "new_training": false,
+  "combined_lower_node_graph_not_evaluated": true,
+  "source_code_hashes": {
+    "scripts/d08_operating_points.py": "78e334978f68d4e8fbdff60ebc241435193ecca13881c85782aaec889e89387e",
+    "scripts/report_d08_operating_points.py": "731cf0c19fffc736811d54cf263013218d592fe2808ba780c0d1f466b70dfa3a",
+    "tests/test_d08_operating_points.py": "78dbc4cccdebb28fb5ab152ff57a9a33675804db8b72b896a4801e13167dc8fe"
+  }
+}

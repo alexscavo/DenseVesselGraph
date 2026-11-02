@@ -1,0 +1,16 @@
+{
+  "experiment": "D08 training-only operating-point audit",
+  "date": "2026-10-28",
+  "source_checkpoint_and_prediction_cache_reused": true,
+  "new_detector_inference": false,
+  "new_training": false,
+  "gpu_jobs": [],
+  "code": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/scripts/d08_operating_points.py",
+  "calibration_population": "train160,39 training subjects",
+  "validation_population": "1796 patches,8 disjoint validation subjects",
+  "primary_tolerance_mm": 2,
+  "secondary_tolerance_mm": 1,
+  "seed": 281028,
+  "new_graph_scores_fabricated": false,
+  "tests_passed": 7
+}

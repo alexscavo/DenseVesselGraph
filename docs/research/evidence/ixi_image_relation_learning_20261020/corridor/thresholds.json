@@ -1,0 +1,16 @@
+{
+  "1": {
+    "fixed_0p5": 0.5,
+    "precision_target": 0.09976744186046511,
+    "train_max_f1": 0.3748721491205926,
+    "train_preserve_precision": 0.4237707122810015,
+    "precision_target_attainable": true
+  },
+  "2": {
+    "fixed_0p5": 0.5,
+    "precision_target": 0.20434108527131783,
+    "train_max_f1": 0.39634005698076424,
+    "train_preserve_precision": 0.3805568366420337,
+    "precision_target_attainable": true
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "tolerance_mm": 2,
+  "validation_patches": 128,
+  "old_true_edges": 142,
+  "new_true_edges": 162,
+  "shared_true_gt_edges": 42,
+  "lost_true_gt_edges": 100,
+  "gained_true_gt_edges": 120,
+  "old_correct_query_reassigned_or_removed": 1065,
+  "retained_matched_queries": 1979,
+  "shared_matched_query_ids": 1136
+}

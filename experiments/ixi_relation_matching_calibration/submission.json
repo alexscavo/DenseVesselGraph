@@ -1,0 +1,82 @@
+{
+  "output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_relation_matching_calibration_20261019-234456",
+  "cpu_only": true,
+  "training": false,
+  "train_patches": 256,
+  "validation_patches": 128,
+  "jobs": {
+    "smoke": {
+      "id": "1316105",
+      "dependency": null,
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=00:30:00",
+        "cluster/jean_zay/ixi_relation_matching_calibration.slurm",
+        "smoke",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_relation_matching_calibration_20261019-234456"
+      ]
+    },
+    "preparation": {
+      "id": "1316106",
+      "dependency": "afterok:1316105",
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=02:00:00",
+        "--dependency=afterok:1316105",
+        "cluster/jean_zay/ixi_relation_matching_calibration.slurm",
+        "prepare",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_relation_matching_calibration_20261019-234456"
+      ]
+    },
+    "analyses": {
+      "id": "1316107",
+      "dependency": "afterok:1316106",
+      "array": "0-5%3",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=02:00:00",
+        "--dependency=afterok:1316106",
+        "--array=0-5%3",
+        "cluster/jean_zay/ixi_relation_matching_calibration.slurm",
+        "analyse",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_relation_matching_calibration_20261019-234456"
+      ]
+    },
+    "collection": {
+      "id": "1316108",
+      "dependency": "afterok:1316107",
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=02:00:00",
+        "--dependency=afterok:1316107",
+        "cluster/jean_zay/ixi_relation_matching_calibration.slurm",
+        "collect",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_relation_matching_calibration_20261019-234456"
+      ]
+    }
+  },
+  "source_sha256": {
+    "scripts/ixi_relation_matching_calibration.py": "fc2f85eaad56b2001774ebd94ffd0de54cea4b96dbcbeb9605c75ee7ec923088",
+    "scripts/collect_ixi_relation_matching_calibration.py": "f117f174b395221f3c08d537103688f02c09030a8119476fbadefe00729108b6",
+    "scripts/ixi_cached_mechanisms.py": "4913bc1295618d92371315e60660f96b7ad4b475dbaf7bf21535d9645fe04901",
+    "scripts/ixi_query_diagnostics.py": "6fb3f23ac3de686144d82e212ad9b23a1db95a1bc74d7b3d2ead103e77887b2d",
+    "models/matcher.py": "e3e235b87f74c486eb08e274ab5844fc90b99e0ec6affb2dbf4c13d2e2af28a1",
+    "models/spline.py": "f7be323dae0fcd592f8f892dd51fe112a2d1a0a6ab44b0f2482949ab7989a530",
+    "models/local_spline_geometry.py": "f88473b610653b970ba1c7f925e263c2102a4885bc30d361f404d5090f370bd7",
+    "metrics/common_vessel_metrics.py": "0bb7c0c78e578f108b0660faca84f6782e9d748933cfbf97097d9a6f36fc72ef",
+    "tests/test_ixi_relation_matching_calibration.py": "b066b0887f0ebef760a96a220da558faf67a980924a3d679f141685f2b3719f8",
+    "cluster/jean_zay/ixi_relation_matching_calibration.slurm": "856a7cd132d4677030f4ba6d213b2191c86c4217851a2fc96923c16a969eba14"
+  },
+  "submitted": true
+}

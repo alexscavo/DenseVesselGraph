@@ -1,0 +1,137 @@
+{
+ "dense/SyntheticMRI": {
+  "node_ap_2mm": {
+   "node_ap": 0.8596105665259913,
+   "max_recall": 0.8794642857142857,
+   "proposals": 72785,
+   "gt_nodes": 10080
+  },
+  "edge_ap_all_retained": {
+   "ap": 0.9379620927245551,
+   "candidates": 77864,
+   "positives": 5814
+  },
+  "edge_ap_conditional": {
+   "ap": 0.990857327170081,
+   "candidates": 67026,
+   "positives": 5814
+  },
+  "box_node_mAP": 0.6381373663323131,
+  "box_node_mAR": 0.7013988095238096,
+  "box_edge_mAP": 0.6215077782092513,
+  "box_edge_mAR": 0.6810261752832399,
+  "thresholds": {
+   "node": 0.45,
+   "edge": 0.85,
+   "policy": "train monitor only; candidates = 16-NN over retained nodes"
+  }
+ },
+ "dense/IXI": {
+  "node_ap_2mm": {
+   "node_ap": 0.6133721625521055,
+   "max_recall": 0.7430163333842161,
+   "proposals": 297248,
+   "gt_nodes": 13102
+  },
+  "edge_ap_all_retained": {
+   "ap": 0.53672607998245,
+   "candidates": 95018,
+   "positives": 3948
+  },
+  "edge_ap_conditional": {
+   "ap": 0.6914565396854745,
+   "candidates": 51564,
+   "positives": 3948
+  },
+  "box_node_mAP": 0.3372004275295379,
+  "box_node_mAR": 0.40901389100900626,
+  "box_edge_mAP": 0.21547061336774145,
+  "box_edge_mAR": 0.2975929978118162,
+  "thresholds": {
+   "node": 0.3,
+   "edge": 0.8,
+   "policy": "train monitor only; candidates = 16-NN over retained nodes"
+  }
+ },
+ "dense/BRAVA": {
+  "node_ap_2mm": {
+   "node_ap": 0.5022688070859439,
+   "max_recall": 0.8955369323718574,
+   "proposals": 3276728,
+   "gt_nodes": 30786
+  },
+  "edge_ap_all_retained": {
+   "ap": 0.2881335165595214,
+   "candidates": 317575,
+   "positives": 6156
+  },
+  "edge_ap_conditional": {
+   "ap": 0.6895571389104566,
+   "candidates": 80835,
+   "positives": 6156
+  },
+  "box_node_mAP": 0.2204222235192271,
+  "box_node_mAR": 0.36709218475930616,
+  "box_edge_mAP": 0.08866847546583151,
+  "box_edge_mAR": 0.18782783091638383,
+  "thresholds": {
+   "node": 0.25,
+   "edge": 0.75,
+   "policy": "train monitor only; candidates = 16-NN over retained nodes"
+  }
+ },
+ "anchored/IXI": {
+  "node_ap_2mm": {
+   "node_ap": 0.6055017471163874,
+   "max_recall": 0.7425583880323615,
+   "proposals": 131072,
+   "gt_nodes": 13102
+  },
+  "edge_ap_all_retained": {
+   "ap": 0.3825503766082653,
+   "candidates": 132741,
+   "positives": 3651
+  },
+  "edge_ap_conditional": {
+   "ap": 0.6141627258267605,
+   "candidates": 79642,
+   "positives": 3651
+  },
+  "box_node_mAP": 0.31168773410669187,
+  "box_node_mAR": 0.3766371546328805,
+  "box_edge_mAP": 0.14643661678124076,
+  "box_edge_mAR": 0.26294675419401903,
+  "thresholds": {
+   "node": 0.45,
+   "edge": 0.5,
+   "policy": "monitor_train only; node by node F1 at edge 0.5, then edge"
+  }
+ },
+ "anchored/BRAVA": {
+  "node_ap_2mm": {
+   "node_ap": 0.502644799245534,
+   "max_recall": 0.8526603001364257,
+   "proposals": 459776,
+   "gt_nodes": 30786
+  },
+  "edge_ap_all_retained": {
+   "ap": 0.15914633677450704,
+   "candidates": 469921,
+   "positives": 6350
+  },
+  "edge_ap_conditional": {
+   "ap": 0.5965462697315935,
+   "candidates": 127148,
+   "positives": 6350
+  },
+  "box_node_mAP": 0.2125659097717914,
+  "box_node_mAR": 0.34888910543753654,
+  "box_edge_mAP": 0.04834716297213272,
+  "box_edge_mAR": 0.1670369227604649,
+  "thresholds": {
+   "node": 0.4,
+   "edge": 0.55,
+   "policy": "monitor_train only; node by node F1 at edge 0.5, then edge"
+  }
+ }
+}

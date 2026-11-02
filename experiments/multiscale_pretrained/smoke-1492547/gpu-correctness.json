@@ -1,0 +1,186 @@
+{
+  "cuda_reference_max_error": 3.5762786865234375e-07,
+  "cuda_gradient_max_errors": [
+    9.5367431640625e-07,
+    1.52587890625e-05,
+    1.9073486328125e-06
+  ],
+  "parity": {
+    "pred_nodes": {
+      "blocked_max_error": 7.748603820800781e-07,
+      "active_max_error": 0.00022453069686889648
+    },
+    "pred_logits": {
+      "blocked_max_error": 7.033348083496094e-06,
+      "active_max_error": 0.0017406344413757324
+    }
+  },
+  "coarse_shape": [
+    4,
+    552,
+    2,
+    2,
+    2
+  ],
+  "fine_shape": [
+    4,
+    1024,
+    4,
+    4,
+    4
+  ],
+  "migration": {
+    "copied_tensors": 847,
+    "expanded_tensors": [
+      "decoder.decoder.layers.0.cross_attn1.attention_weights.bias",
+      "decoder.decoder.layers.0.cross_attn1.attention_weights.weight",
+      "decoder.decoder.layers.0.cross_attn1.sampling_offsets.bias",
+      "decoder.decoder.layers.0.cross_attn1.sampling_offsets.weight",
+      "decoder.decoder.layers.1.cross_attn1.attention_weights.bias",
+      "decoder.decoder.layers.1.cross_attn1.attention_weights.weight",
+      "decoder.decoder.layers.1.cross_attn1.sampling_offsets.bias",
+      "decoder.decoder.layers.1.cross_attn1.sampling_offsets.weight",
+      "decoder.decoder.layers.2.cross_attn1.attention_weights.bias",
+      "decoder.decoder.layers.2.cross_attn1.attention_weights.weight",
+      "decoder.decoder.layers.2.cross_attn1.sampling_offsets.bias",
+      "decoder.decoder.layers.2.cross_attn1.sampling_offsets.weight",
+      "decoder.decoder.layers.3.cross_attn1.attention_weights.bias",
+      "decoder.decoder.layers.3.cross_attn1.attention_weights.weight",
+      "decoder.decoder.layers.3.cross_attn1.sampling_offsets.bias",
+      "decoder.decoder.layers.3.cross_attn1.sampling_offsets.weight",
+      "decoder.encoder.layers.0.self_attn.attention_weights.bias",
+      "decoder.encoder.layers.0.self_attn.attention_weights.weight",
+      "decoder.encoder.layers.0.self_attn.sampling_offsets.bias",
+      "decoder.encoder.layers.0.self_attn.sampling_offsets.weight",
+      "decoder.encoder.layers.1.self_attn.attention_weights.bias",
+      "decoder.encoder.layers.1.self_attn.attention_weights.weight",
+      "decoder.encoder.layers.1.self_attn.sampling_offsets.bias",
+      "decoder.encoder.layers.1.self_attn.sampling_offsets.weight",
+      "decoder.encoder.layers.2.self_attn.attention_weights.bias",
+      "decoder.encoder.layers.2.self_attn.attention_weights.weight",
+      "decoder.encoder.layers.2.self_attn.sampling_offsets.bias",
+      "decoder.encoder.layers.2.self_attn.sampling_offsets.weight",
+      "decoder.encoder.layers.3.self_attn.attention_weights.bias",
+      "decoder.encoder.layers.3.self_attn.attention_weights.weight",
+      "decoder.encoder.layers.3.self_attn.sampling_offsets.bias",
+      "decoder.encoder.layers.3.self_attn.sampling_offsets.weight",
+      "decoder.encoder.layers.4.self_attn.attention_weights.bias",
+      "decoder.encoder.layers.4.self_attn.attention_weights.weight",
+      "decoder.encoder.layers.4.self_attn.sampling_offsets.bias",
+      "decoder.encoder.layers.4.self_attn.sampling_offsets.weight",
+      "decoder.encoder.layers.5.self_attn.attention_weights.bias",
+      "decoder.encoder.layers.5.self_attn.attention_weights.weight",
+      "decoder.encoder.layers.5.self_attn.sampling_offsets.bias",
+      "decoder.encoder.layers.5.self_attn.sampling_offsets.weight"
+    ],
+    "new_tensors": [
+      "fine_input_proj.bias",
+      "fine_input_proj.weight"
+    ],
+    "fine_prior": 0.0001,
+    "resolution_ratio": 2.0
+  },
+  "initial_attention": {
+    "decoder.encoder.layers.0.self_attn": {
+      "mass": [
+        0.9999001026153564,
+        9.998999303206801e-05
+      ],
+      "inside_mass": [
+        0.0,
+        0.0
+      ]
+    },
+    "decoder.encoder.layers.1.self_attn": {
+      "mass": [
+        0.9998999834060669,
+        9.998997120419517e-05
+      ],
+      "inside_mass": [
+        0.0,
+        0.0
+      ]
+    },
+    "decoder.encoder.layers.2.self_attn": {
+      "mass": [
+        0.9998999834060669,
+        9.99899857561104e-05
+      ],
+      "inside_mass": [
+        0.0,
+        0.0
+      ]
+    },
+    "decoder.encoder.layers.3.self_attn": {
+      "mass": [
+        0.9999000430107117,
+        9.99899857561104e-05
+      ],
+      "inside_mass": [
+        0.0,
+        0.0
+      ]
+    },
+    "decoder.encoder.layers.4.self_attn": {
+      "mass": [
+        0.9998999834060669,
+        9.998999303206801e-05
+      ],
+      "inside_mass": [
+        0.001893967273645103,
+        1.893967436217281e-07
+      ]
+    },
+    "decoder.encoder.layers.5.self_attn": {
+      "mass": [
+        0.9998999834060669,
+        9.998997848015279e-05
+      ],
+      "inside_mass": [
+        0.014798874035477638,
+        1.4798873735344387e-06
+      ]
+    },
+    "decoder.decoder.layers.0.cross_attn1": {
+      "mass": [
+        0.9998999834060669,
+        9.998999303206801e-05
+      ],
+      "inside_mass": [
+        0.2556045651435852,
+        2.5560453650541604e-05
+      ]
+    },
+    "decoder.decoder.layers.1.cross_attn1": {
+      "mass": [
+        0.9999000430107117,
+        9.999000030802563e-05
+      ],
+      "inside_mass": [
+        0.07113402336835861,
+        7.113401352398796e-06
+      ]
+    },
+    "decoder.decoder.layers.2.cross_attn1": {
+      "mass": [
+        0.9998999834060669,
+        9.998999303206801e-05
+      ],
+      "inside_mass": [
+        0.0857166200876236,
+        8.571661965106614e-06
+      ]
+    },
+    "decoder.decoder.layers.3.cross_attn1": {
+      "mass": [
+        0.9998999834060669,
+        9.998999303206801e-05
+      ],
+      "inside_mass": [
+        0.12484647333621979,
+        1.2484644685173407e-05
+      ]
+    }
+  },
+  "job_id": "1492547"
+}

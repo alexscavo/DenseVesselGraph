@@ -1,0 +1,444 @@
+[
+  {
+    "tolerance_mm": 1,
+    "metric": "node_precision",
+    "raw": 0.2441860465116279,
+    "mask": 0.3778206650831354,
+    "delta_mask_minus_raw": 0.1336346185715075,
+    "delta_95pct": [
+      0.11937776228928723,
+      0.14917440941700372
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 1,
+    "metric": "node_recall",
+    "raw": 0.3057404326123128,
+    "mask": 0.42346089850249585,
+    "delta_mask_minus_raw": 0.11772046589018303,
+    "delta_95pct": [
+      0.09788789696081313,
+      0.1414000516356504
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 1,
+    "metric": "node_f1",
+    "raw": 0.27151828592537863,
+    "mask": 0.3993409697159893,
+    "delta_mask_minus_raw": 0.12782268379061068,
+    "delta_95pct": [
+      0.11370430939712926,
+      0.14353008623017177
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 1,
+    "metric": "precision",
+    "raw": 0.05864386072083079,
+    "mask": 0.12086917157084653,
+    "delta_mask_minus_raw": 0.062225310850015744,
+    "delta_95pct": [
+      0.043160976944687436,
+      0.0806905053357585
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 1,
+    "metric": "recall",
+    "raw": 0.009666700231598026,
+    "mask": 0.02688551001913201,
+    "delta_mask_minus_raw": 0.017218809787533984,
+    "delta_95pct": [
+      0.012885477026293382,
+      0.022242447563776354
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 1,
+    "metric": "f1",
+    "raw": 0.016597510373443983,
+    "mask": 0.04398682042833608,
+    "delta_mask_minus_raw": 0.027389310054892094,
+    "delta_95pct": [
+      0.020346336684550735,
+      0.03503436238370327
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 1,
+    "metric": "conditional_recall",
+    "raw": 0.07494145199063232,
+    "mask": 0.13928012519561817,
+    "delta_mask_minus_raw": 0.06433867320498585,
+    "delta_95pct": [
+      0.04148536004330909,
+      0.08492312818578215
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 1,
+    "metric": "beta0_mae",
+    "raw": 21.904109589041095,
+    "mask": 17.904109589041095,
+    "delta_mask_minus_raw": -4.0,
+    "delta_95pct": [
+      -5.577610796588431,
+      -2.202272692181498
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 1,
+    "metric": "beta1_mae",
+    "raw": 0.7064579256360078,
+    "mask": 0.863013698630137,
+    "delta_mask_minus_raw": 0.15655577299412915,
+    "delta_95pct": [
+      0.08593331201267057,
+      0.233488862244744
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 1,
+    "metric": "branch_f1",
+    "raw": 0.00606871932173137,
+    "mask": 0.024322446143154968,
+    "delta_mask_minus_raw": 0.018253726821423597,
+    "delta_95pct": [
+      0.013260136378388418,
+      0.024510447221234858
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 1,
+    "metric": "curve_f1",
+    "raw": 0.09310996597955726,
+    "mask": 0.15861344892689377,
+    "delta_mask_minus_raw": 0.06550348294733652,
+    "delta_95pct": [
+      0.05861408498749718,
+      0.073319264711838
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 1,
+    "metric": "duplicates_per_recovered_gt",
+    "raw": 0.2682993197278912,
+    "mask": 0.20353634577603144,
+    "delta_mask_minus_raw": -0.06476297395185973,
+    "delta_95pct": [
+      -0.0833702096913638,
+      -0.04373546524183366
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 1,
+    "metric": "high_confidence_duplicates_per_patch",
+    "raw": 0.812133072407045,
+    "mask": 0.9393346379647749,
+    "delta_mask_minus_raw": 0.12720156555772988,
+    "delta_95pct": [
+      0.019524021815908014,
+      0.2352969787136644
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 1,
+    "metric": "raw_query_recall",
+    "raw": 0.4666389351081531,
+    "mask": 0.5801996672212978,
+    "delta_mask_minus_raw": 0.11356073211314471,
+    "delta_95pct": [
+      0.09677072178540651,
+      0.13282288763831906
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 1,
+    "metric": "node_count_bias",
+    "raw": 5.929549902152642,
+    "mask": 2.8414872798434443,
+    "delta_mask_minus_raw": -3.088062622309198,
+    "delta_95pct": [
+      -4.786951891395199,
+      -1.17032173933025
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 1,
+    "metric": "node_count_mae",
+    "raw": 8.829745596868884,
+    "mask": 5.4559686888454015,
+    "delta_mask_minus_raw": -3.3737769080234825,
+    "delta_95pct": [
+      -4.2627333868892165,
+      -2.448376630764564
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 1,
+    "metric": "unmatched_false_edges_per_patch",
+    "raw": 2.949119373776908,
+    "mask": 3.5753424657534247,
+    "delta_mask_minus_raw": 0.6262230919765166,
+    "delta_95pct": [
+      0.30960409453560095,
+      0.9589491885781954
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 2,
+    "metric": "node_precision",
+    "raw": 0.43827242524916943,
+    "mask": 0.5870694774346793,
+    "delta_mask_minus_raw": 0.14879705218550987,
+    "delta_95pct": [
+      0.13108245368408322,
+      0.1675607591342731
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 2,
+    "metric": "node_recall",
+    "raw": 0.5487520798668886,
+    "mask": 0.6579866888519135,
+    "delta_mask_minus_raw": 0.1092346089850249,
+    "delta_95pct": [
+      0.08222263212401873,
+      0.13776044267788629
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 2,
+    "metric": "node_f1",
+    "raw": 0.48732914665681565,
+    "mask": 0.6205083947905226,
+    "delta_mask_minus_raw": 0.1331792481337069,
+    "delta_95pct": [
+      0.11711995224455654,
+      0.14881415513133606
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 2,
+    "metric": "precision",
+    "raw": 0.14660965180207697,
+    "mask": 0.24852874603893163,
+    "delta_mask_minus_raw": 0.10191909423685466,
+    "delta_95pct": [
+      0.082105381429402,
+      0.12006971725299853
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 2,
+    "metric": "recall",
+    "raw": 0.024166750578995064,
+    "mask": 0.05528144194945121,
+    "delta_mask_minus_raw": 0.03111469137045615,
+    "delta_95pct": [
+      0.02571689818479663,
+      0.036834991610714796
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 2,
+    "metric": "f1",
+    "raw": 0.04149377593360996,
+    "mask": 0.09044481054365733,
+    "delta_mask_minus_raw": 0.04895103461004737,
+    "delta_95pct": [
+      0.04094145674727196,
+      0.05700004834380417
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 2,
+    "metric": "conditional_recall",
+    "raw": 0.06349206349206349,
+    "mask": 0.11801375752364575,
+    "delta_mask_minus_raw": 0.05452169403158226,
+    "delta_95pct": [
+      0.04206248696144587,
+      0.06715425578802593
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 2,
+    "metric": "beta0_mae",
+    "raw": 21.904109589041095,
+    "mask": 17.904109589041095,
+    "delta_mask_minus_raw": -4.0,
+    "delta_95pct": [
+      -5.577610796588431,
+      -2.202272692181498
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 2,
+    "metric": "beta1_mae",
+    "raw": 0.7064579256360078,
+    "mask": 0.863013698630137,
+    "delta_mask_minus_raw": 0.15655577299412915,
+    "delta_95pct": [
+      0.08593331201267057,
+      0.233488862244744
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 2,
+    "metric": "branch_f1",
+    "raw": 0.00606871932173137,
+    "mask": 0.024322446143154968,
+    "delta_mask_minus_raw": 0.018253726821423597,
+    "delta_95pct": [
+      0.013260136378388418,
+      0.024510447221234858
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 2,
+    "metric": "curve_f1",
+    "raw": 0.09310996597955726,
+    "mask": 0.15861344892689377,
+    "delta_mask_minus_raw": 0.06550348294733652,
+    "delta_95pct": [
+      0.05861408498749718,
+      0.073319264711838
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 2,
+    "metric": "duplicates_per_recovered_gt",
+    "raw": 0.3902365069739236,
+    "mask": 0.29687697559742066,
+    "delta_mask_minus_raw": -0.09335953137650294,
+    "delta_95pct": [
+      -0.12623919222191454,
+      -0.0592899729234131
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 2,
+    "metric": "high_confidence_duplicates_per_patch",
+    "raw": 2.0078277886497067,
+    "mask": 1.8630136986301369,
+    "delta_mask_minus_raw": -0.1448140900195698,
+    "delta_95pct": [
+      -0.4210238654917262,
+      0.11306042884990264
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 2,
+    "metric": "raw_query_recall",
+    "raw": 0.7707986688851913,
+    "mask": 0.8352745424292846,
+    "delta_mask_minus_raw": 0.06447587354409323,
+    "delta_95pct": [
+      0.045221349715302006,
+      0.08431811809807671
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 2,
+    "metric": "node_count_bias",
+    "raw": 5.929549902152642,
+    "mask": 2.8414872798434443,
+    "delta_mask_minus_raw": -3.088062622309198,
+    "delta_95pct": [
+      -4.786951891395199,
+      -1.17032173933025
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 2,
+    "metric": "node_count_mae",
+    "raw": 8.829745596868884,
+    "mask": 5.4559686888454015,
+    "delta_mask_minus_raw": -3.3737769080234825,
+    "delta_95pct": [
+      -4.2627333868892165,
+      -2.448376630764564
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  },
+  {
+    "tolerance_mm": 2,
+    "metric": "unmatched_false_edges_per_patch",
+    "raw": 2.5342465753424657,
+    "mask": 2.786692759295499,
+    "delta_mask_minus_raw": 0.2524461839530332,
+    "delta_95pct": [
+      0.005846822084223824,
+      0.5440985204234476
+    ],
+    "subjects": 26,
+    "resamples": 1000
+  }
+]

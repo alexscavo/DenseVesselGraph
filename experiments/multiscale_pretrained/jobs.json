@@ -1,0 +1,18 @@
+{
+  "smoke": "1492967",
+  "B0": "1492968",
+  "B1": "1492969",
+  "dependency": "afterok:1492967",
+  "previous": {
+    "smoke": "1492547",
+    "state": "FAILED: fine offset gradient gate",
+    "B0": "1492788",
+    "B1": "1492789",
+    "pilot_state": "CANCELLED before startup"
+  },
+  "final_states": {
+    "1492967": "COMPLETED",
+    "1492968": "COMPLETED",
+    "1492969": "COMPLETED"
+  }
+}

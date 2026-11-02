@@ -1,0 +1,364 @@
+{
+  "B0": [
+    {
+      "step": 0,
+      "metrics": {
+        "nodes": 145.0,
+        "gt_nodes": 140.0,
+        "node_tp": 114.0,
+        "duplicates": 6.0,
+        "rescued": 0.0,
+        "lost": 0.0,
+        "patches": 8.0,
+        "edges": 106.0,
+        "gt_edges": 103.0,
+        "edge_tp": 59.0,
+        "eligible": 67.0,
+        "beta0_error": 9.0,
+        "beta1_error": 7.0,
+        "raw_tp": 125.0,
+        "hungarian_mm_sum": 177.29738998413086,
+        "hungarian_n": 140.0,
+        "nearest_mm_sum": 141.67730331420898,
+        "localized_mm_sum": 98.42817522585392,
+        "node_precision": 0.7862068965517242,
+        "node_recall": 0.8142857142857143,
+        "node_f1": 0.8,
+        "duplicate_rate": 0.041379310344827586,
+        "edge_precision": 0.5566037735849056,
+        "edge_recall": 0.5728155339805825,
+        "edge_f1": 0.5645933014354066,
+        "conditional_recall": 0.8805970149253731,
+        "beta0_mae": 1.125,
+        "beta1_mae": 0.875,
+        "raw_recall": 0.8928571428571429,
+        "hungarian_mm": 1.2664099284580776,
+        "nearest_mm": 1.0119807379586356,
+        "localized_mm": 0.8634050458408239,
+        "mean_patch_conditional_ap": 0.9572798122288718
+      },
+      "attention": {
+        "decoder.encoder.layers.0.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.1.self_attn": {
+          "mass": [
+            1.0000001192092896
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.2.self_attn": {
+          "mass": [
+            1.0000001192092896
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.3.self_attn": {
+          "mass": [
+            0.9999998807907104
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.4.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0012173542054370046
+          ]
+        },
+        "decoder.encoder.layers.5.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.01996886357665062
+          ]
+        },
+        "decoder.decoder.layers.0.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.25563013553619385
+          ]
+        },
+        "decoder.decoder.layers.1.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.07215303182601929
+          ]
+        },
+        "decoder.decoder.layers.2.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.08413780480623245
+          ]
+        },
+        "decoder.decoder.layers.3.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.11991953104734421
+          ]
+        }
+      }
+    },
+    {
+      "step": 128,
+      "metrics": {
+        "nodes": 140.0,
+        "gt_nodes": 140.0,
+        "node_tp": 140.0,
+        "duplicates": 0.0,
+        "rescued": 0.0,
+        "lost": 0.0,
+        "patches": 8.0,
+        "edges": 103.0,
+        "gt_edges": 103.0,
+        "edge_tp": 103.0,
+        "eligible": 103.0,
+        "beta0_error": 0.0,
+        "beta1_error": 0.0,
+        "raw_tp": 140.0,
+        "hungarian_mm_sum": 48.43516492843628,
+        "hungarian_n": 140.0,
+        "nearest_mm_sum": 47.089256286621094,
+        "localized_mm_sum": 48.435164047405124,
+        "node_precision": 1.0,
+        "node_recall": 1.0,
+        "node_f1": 1.0,
+        "duplicate_rate": 0.0,
+        "edge_precision": 1.0,
+        "edge_recall": 1.0,
+        "edge_f1": 1.0,
+        "conditional_recall": 1.0,
+        "beta0_mae": 0.0,
+        "beta1_mae": 0.0,
+        "raw_recall": 1.0,
+        "hungarian_mm": 0.34596546377454485,
+        "nearest_mm": 0.3363518306187221,
+        "localized_mm": 0.3459654574814652,
+        "mean_patch_conditional_ap": 1.0
+      },
+      "attention": {
+        "decoder.encoder.layers.0.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.1.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.2.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.3.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.4.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0010203782003372908
+          ]
+        },
+        "decoder.encoder.layers.5.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.011471536010503769
+          ]
+        },
+        "decoder.decoder.layers.0.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.2510378956794739
+          ]
+        },
+        "decoder.decoder.layers.1.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0710509717464447
+          ]
+        },
+        "decoder.decoder.layers.2.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.08384126424789429
+          ]
+        },
+        "decoder.decoder.layers.3.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.11689122766256332
+          ]
+        }
+      }
+    },
+    {
+      "step": 512,
+      "metrics": {
+        "nodes": 140.0,
+        "gt_nodes": 140.0,
+        "node_tp": 140.0,
+        "duplicates": 0.0,
+        "rescued": 0.0,
+        "lost": 0.0,
+        "patches": 8.0,
+        "edges": 103.0,
+        "gt_edges": 103.0,
+        "edge_tp": 103.0,
+        "eligible": 103.0,
+        "beta0_error": 0.0,
+        "beta1_error": 0.0,
+        "raw_tp": 140.0,
+        "hungarian_mm_sum": 40.731374740600586,
+        "hungarian_n": 140.0,
+        "nearest_mm_sum": 39.885674476623535,
+        "localized_mm_sum": 40.73137482255697,
+        "node_precision": 1.0,
+        "node_recall": 1.0,
+        "node_f1": 1.0,
+        "duplicate_rate": 0.0,
+        "edge_precision": 1.0,
+        "edge_recall": 1.0,
+        "edge_f1": 1.0,
+        "conditional_recall": 1.0,
+        "beta0_mae": 0.0,
+        "beta1_mae": 0.0,
+        "raw_recall": 1.0,
+        "hungarian_mm": 0.2909383910042899,
+        "nearest_mm": 0.28489767483302525,
+        "localized_mm": 0.29093839158969265,
+        "mean_patch_conditional_ap": 1.0
+      },
+      "attention": {
+        "decoder.encoder.layers.0.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.1.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.2.self_attn": {
+          "mass": [
+            1.0000001192092896
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.3.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.0
+          ]
+        },
+        "decoder.encoder.layers.4.self_attn": {
+          "mass": [
+            1.0000001192092896
+          ],
+          "inside_mass": [
+            0.0009001560974866152
+          ]
+        },
+        "decoder.encoder.layers.5.self_attn": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.006018546875566244
+          ]
+        },
+        "decoder.decoder.layers.0.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.25191545486450195
+          ]
+        },
+        "decoder.decoder.layers.1.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.07055307179689407
+          ]
+        },
+        "decoder.decoder.layers.2.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.08140740543603897
+          ]
+        },
+        "decoder.decoder.layers.3.cross_attn1": {
+          "mass": [
+            1.0
+          ],
+          "inside_mass": [
+            0.11235013604164124
+          ]
+        }
+      }
+    }
+  ]
+}

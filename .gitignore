@@ -91,3 +91,10 @@ temp/
 *.bak
 *.orig
 * copy.*
+
+# Local experiment archives and scheduler noise (27 October 2026)
+/experiments/**/*.zip
+/experiments/**/*.log
+/experiments/**/*.out
+/experiments/**/*.err
+*.md.*.lock

@@ -1,0 +1,10 @@
+{
+  "standard": {
+    "checkpoint": "023500",
+    "rule": "full BRAVA validation Branch F1, Curve F1, positional edge F1; earlier on ties"
+  },
+  "coordinate_refinement": {
+    "checkpoint": "023500",
+    "rule": "full BRAVA validation Branch F1, Curve F1, positional edge F1; earlier on ties"
+  }
+}

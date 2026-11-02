@@ -1,5 +1,22 @@
 # repo-graph.md — Graph-Native-Betti-Matching (fork)
 
+> **Native 2D continuation, 28 October 2026:** [Held-out B0/A-xyz protocol and dataset readiness](research/native2d_heldout_20261028.md). Current registry: [vascular experiment registry](../research/VASCULAR_GRAPH_EXPERIMENT_REGISTRY_2026-10-26_UPDATED.md). Native2D-01 was implementation/tiny-fit only; follow the dated continuation instead of the historical “3D only” scope below.
+
+> **Longer native 2D follow-up:** [Fixed 100-epoch vessel comparisons and 50-epoch mixed plant/vessel pretraining](research/native2d_long_20261028.md), including restored OCTA-Synth and unchanged 0.5 thresholds. The user clarified mixed pretraining before any long training started; the superseded pure-plant jobs were cancelled while pending. Its live report distinguishes submitted jobs from completed results.
+
+> **Native2D-04 completed, 29 October:** [Final results and validation visualizations](research/native2d_results_20261029.md). All15 runs finished; mixed-pretrained OCTA reconstructs graphs, while scratch models remain empty at0.5. A-xyz helps tighter OCTA localization/Branch/Curve metrics, regresses on REAVER and does not fix AV-WIDE. False cycles/duplicates and mixed-pretraining exposure confounds remain explicit.
+
+> **Requested straight-edge control, 29 October:** [Original-recipe OCTA B0 straight-only training](research/native2d_straight_20261029.md): same50 mixed +100 vessel-only epochs, spline head/loss disabled. Gate1699959 passed; jobs1699960→1699962 submitted. The earlier displayed OCTA edges were quantified as mostly straight, with the two-crop scope explicit.
+
+> **Research consolidation, 23 October 2026:** [Current architecture and dependencies](../research/architecture.md). This document retains its detailed and dated historical context.
+
+> October 19 orientation: this checkout is now
+> `Graph-Native-Betti-Matching-Representation`, branch `representation`.
+> Much of the September map below is historical. Start with the
+> [current research review](research/PROJECT_REVIEW_20261019.md) and
+> [IXI diagnostic execution record](research/metrics/6-ixi-query-attribution.md)
+> for current checkpoints, data, hypotheses and job status.
+
 Orientation file for a fresh Claude Code session dropped into this repo.
 Read this before re-deriving structure from scratch. It's a map, not a
 tutorial — the authoritative docs it points to are the source of truth;

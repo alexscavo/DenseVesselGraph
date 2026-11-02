@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "maximum_loss_error": 0,
+  "loss_errors": {
+    "class": 0.0,
+    "nodes": 0.0,
+    "boxes": 0.0,
+    "cardinality": 0.0,
+    "edges": 0.0,
+    "degree": 0.0,
+    "spline": 0.0,
+    "spline_control_mm": 0.0,
+    "spline_curve_mm": 0.0,
+    "spline_endpoint_mm": 0.0,
+    "spline_positive_edges": 0.0,
+    "betti_h0": 0.0,
+    "betti_h0_weighted": 0.0,
+    "betti_h1": 0.0,
+    "betti_h1_weighted": 0.0,
+    "total": 0.0
+  },
+  "scope": "First on-augmentation forward/loss only; no claim of whole-trajectory exact parity or historical-control reuse."
+}

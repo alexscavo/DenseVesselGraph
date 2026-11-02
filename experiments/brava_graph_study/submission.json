@@ -1,0 +1,209 @@
+{
+  "output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_graph_study_20261021-102438",
+  "jobs": {
+    "dataset_audit": {
+      "id": "1374050",
+      "dependency": null,
+      "walltime": "02:00:00",
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=02:00:00",
+        "cluster/jean_zay/brava_study_cpu.slurm",
+        "audit",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_graph_study_20261021-102438"
+      ]
+    },
+    "GT_representation_analysis": {
+      "id": "1374051",
+      "dependency": "afterok:1374050",
+      "walltime": "04:00:00",
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=04:00:00",
+        "--dependency=afterok:1374050",
+        "cluster/jean_zay/brava_study_cpu.slurm",
+        "representations",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_graph_study_20261021-102438"
+      ]
+    },
+    "gpu_smoke": {
+      "id": "1374052",
+      "dependency": "afterok:1374050,afterany:1372129:1372131:1372132:1372133:1372134:1373095",
+      "walltime": "00:45:00",
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=00:45:00",
+        "--dependency=afterok:1374050,afterany:1372129:1372131:1372132:1372133:1372134:1373095",
+        "cluster/jean_zay/brava_study_gpu.slurm",
+        "smoke",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_graph_study_20261021-102438"
+      ]
+    },
+    "cpu_smoke": {
+      "id": "1374053",
+      "dependency": "afterok:1374052",
+      "walltime": "00:45:00",
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=00:45:00",
+        "--dependency=afterok:1374052",
+        "cluster/jean_zay/brava_study_cpu.slurm",
+        "smoke",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_graph_study_20261021-102438"
+      ]
+    },
+    "throughput_benchmark": {
+      "id": "1374054",
+      "dependency": "afterok:1374053",
+      "walltime": "00:30:00",
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=00:30:00",
+        "--dependency=afterok:1374053",
+        "cluster/jean_zay/brava_study_gpu.slurm",
+        "benchmark",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_graph_study_20261021-102438"
+      ]
+    },
+    "zero_shot_prediction": {
+      "id": "1374055",
+      "dependency": "afterok:1374054",
+      "walltime": "01:30:00",
+      "array": "0-2%2",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=01:30:00",
+        "--dependency=afterok:1374054",
+        "--array=0-2%2",
+        "cluster/jean_zay/brava_study_gpu.slurm",
+        "zero",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_graph_study_20261021-102438"
+      ]
+    },
+    "zero_shot_evaluation": {
+      "id": "1374056",
+      "dependency": "aftercorr:1374055",
+      "walltime": "04:00:00",
+      "array": "0-2%3",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=04:00:00",
+        "--dependency=aftercorr:1374055",
+        "--array=0-2%3",
+        "cluster/jean_zay/brava_study_cpu.slurm",
+        "zero",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_graph_study_20261021-102438"
+      ]
+    },
+    "training": {
+      "id": "1374057",
+      "dependency": "afterok:1374055",
+      "walltime": "06:00:00",
+      "array": "0-1%2",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=06:00:00",
+        "--dependency=afterok:1374055",
+        "--array=0-1%2",
+        "cluster/jean_zay/brava_study_gpu.slurm",
+        "train",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_graph_study_20261021-102438"
+      ]
+    },
+    "trained_prediction": {
+      "id": "1374058",
+      "dependency": "afterok:1374057",
+      "walltime": "03:00:00",
+      "array": "0-1%2",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=03:00:00",
+        "--dependency=afterok:1374057",
+        "--array=0-1%2",
+        "cluster/jean_zay/brava_study_gpu.slurm",
+        "predict",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_graph_study_20261021-102438"
+      ]
+    },
+    "trained_evaluation": {
+      "id": "1374059",
+      "dependency": "aftercorr:1374058",
+      "walltime": "08:00:00",
+      "array": "0-1%2",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=08:00:00",
+        "--dependency=aftercorr:1374058",
+        "--array=0-1%2",
+        "cluster/jean_zay/brava_study_cpu.slurm",
+        "evaluate",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_graph_study_20261021-102438"
+      ]
+    },
+    "collection": {
+      "id": "1374060",
+      "dependency": "afterok:1374056:1374059:1374051",
+      "walltime": "02:00:00",
+      "array": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--kill-on-invalid-dep=yes",
+        "--time=02:00:00",
+        "--dependency=afterok:1374056:1374059:1374051",
+        "cluster/jean_zay/brava_study_cpu.slurm",
+        "collect",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_graph_study_20261021-102438"
+      ]
+    }
+  },
+  "existing_gpu_jobs": [
+    "1372129",
+    "1372131",
+    "1372132",
+    "1372133",
+    "1372134",
+    "1373095"
+  ],
+  "plan": "experiments/brava_graph_study/plan.json",
+  "stage2_submitted": false,
+  "source_sha256": {
+    "scripts/brava_graph_study.py": "5a9196889bda06cda101512c562dc43737f5ef9ffdcb172cb7bef2c4e80bc153",
+    "scripts/audit_brava_study.py": "50f7b431aeb79138527e232d3febc30994231eb48fb2a333830281abd29f46e7",
+    "scripts/evaluate_brava_study.py": "318d609aac56f34568172d11ab5f7850380566d309e440d18646da7b3d53af3e",
+    "scripts/collect_brava_study.py": "b1646cf5cccdc0019dd76927c7960e39f7064e4ea8b1201b9a554a686a98214d",
+    "models/node_refinement.py": "f4d8d1759a5fe440b02f1ed6efc3268f99af2da989f57d276431fca2c996f8ef",
+    "models/relationformer.py": "7ab78868c8cd8bbb8f4a67310b8b75721f07dcb2cf340362d94b22894fcf7862",
+    "cluster/jean_zay/brava_study_gpu.slurm": "748d529d70b0cd57d88dfd34cf59ad74e6cf89d90c9f0225a29f2a69ff2261a8",
+    "cluster/jean_zay/brava_study_cpu.slurm": "8aec905361b1b58dfa746d560a069157e13ee2a85991eccf2794efb19f34b4a6",
+    "tests/test_brava_graph_study.py": "4aca26325829f3b03843ec8c37933db23ad4bf331525a06d7ebc6822858ed56c",
+    "experiments/brava_graph_study/checkpoint-inventory.json": "96b77003f3da24c06758715d1f149b0b33a4bc36a71c1053a2b00a2050cf5586",
+    "experiments/brava_graph_study/stage2-plan.json": "b2a59cf4c578c7e93a312b78bacbd5869798ebb8067fbafa29623ce3618cc726"
+  },
+  "submitted": true
+}

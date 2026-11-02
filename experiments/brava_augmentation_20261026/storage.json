@@ -1,0 +1,5 @@
+{
+  "large_output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_augmentation_20261026",
+  "checkpoint_directory": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_augmentation_20261026/runs",
+  "repository_pointer": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/brava_augmentation_20261026/runs"
+}
