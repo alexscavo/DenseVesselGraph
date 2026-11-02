@@ -12,6 +12,13 @@ The script reads existing prediction exports only. A checkpoint or training
 directory is not enough; run `evaluate.py` first if `predictions.json` has not
 been exported.
 
+Add `--paired --hide-mri` for two aligned 3D views: segmentation plus GT on
+the left, segmentation plus prediction on the right. Dragging, rotating, or
+zooming either view updates the other camera in the self-contained HTML; the
+"Link 3D cameras" checkbox can turn this behavior off and on. Add
+`--png` to save a matching static view alongside it; paired PNG output uses
+Matplotlib and does not need Kaleido.
+
 ## Coordinates and identifiers
 
 Both VTP ground-truth points and exported `nodes_dhw` are interpreted in the
