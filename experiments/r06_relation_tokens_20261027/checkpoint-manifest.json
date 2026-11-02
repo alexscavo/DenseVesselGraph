@@ -1,0 +1,122 @@
+[
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/364505/runs/R1/module-0100.pt",
+    "sha256": "e6ba1bbea25505ab6e487ea66018dc30718b37c92ed2e09e2b57e2af58326aea",
+    "bytes": 891376
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/364505/runs/R1/module-0300.pt",
+    "sha256": "c75d527a678ee53d47b3ed4d6a826c95dfe7b121863ea61bf60f7842818a9317",
+    "bytes": 891376
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/364505/runs/R1/module-1000.pt",
+    "sha256": "2e31a7304c387c7c349ed4156134837144298f07bb63609fec770a9298d27797",
+    "bytes": 891376
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/364505/runs/R1/module-2000.pt",
+    "sha256": "c20fb8338d96bede5cac4268d2cce28bc5cbe426a02c1ac0fe70d380825aa3f2",
+    "bytes": 891376
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/364505/runs/R2/module-0100.pt",
+    "sha256": "38990f0ca9eafa331449842bbde0f5f9c6fdd32499711c4e616e6ab9a9a58f37",
+    "bytes": 891376
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/364505/runs/R2/module-0300.pt",
+    "sha256": "88495304e713d8d789a1e84490fa84ebb6f6f34b2d3adf6643a7ecd05ee83f27",
+    "bytes": 891376
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/364505/runs/R2/module-1000.pt",
+    "sha256": "3be205988908578520a6f111ae44f85a52fc81ce5f4d7bce2c65f1f5bd4bec98",
+    "bytes": 891376
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/364505/runs/R2/module-2000.pt",
+    "sha256": "382dfcf0bfa8b0c117d46cec29e8f8f71a609254d701763a67ac9c5c22b29d8d",
+    "bytes": 891376
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/364505/runs/R3_head/module-0100.pt",
+    "sha256": "3b5c68d9bcdd94c8a6cfe81f8af7ca261e8f8024e4c260b26b63ce34d2ce8d63",
+    "bytes": 6105712
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/364505/runs/R3_head/module-0300.pt",
+    "sha256": "783c7b763a9aa3dee77e8c44cdd981db047c759b103592f293643c81c07e7c3b",
+    "bytes": 6105712
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/364505/runs/R3_head/module-1000.pt",
+    "sha256": "8025603e7cfe0d8e548ea405e34f46944053d4b755e2d04a6c0009d911ee6ca7",
+    "bytes": 6105712
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/364505/runs/R3_head/module-2000.pt",
+    "sha256": "48a82e9611b3f62687cd929b87f8e3ce552051aaee0712d9afdb41c348a6bc98",
+    "bytes": 6105712
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/92741/runs/R1/module-0100.pt",
+    "sha256": "928d923998a011cf205d6397c0236bed0ef4f86bda472805c065db6c2dae9d5e",
+    "bytes": 891376
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/92741/runs/R1/module-0300.pt",
+    "sha256": "cf64f851178effd6c1f02efb2bbe1a52fa9c42f6c1d1da91718e6f9d8a6b54d2",
+    "bytes": 891376
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/92741/runs/R1/module-1000.pt",
+    "sha256": "9cafe20ca5799690604808b0328b5e653e984f8149e68caeab4d034a8a40cdb1",
+    "bytes": 891376
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/92741/runs/R1/module-2000.pt",
+    "sha256": "032baf812179a0c5656f709974c709661d2efd387647c6129d70ec22a7e060db",
+    "bytes": 891376
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/92741/runs/R2/module-0100.pt",
+    "sha256": "14d47d898fab027e226716b6948406d368f1d094fd9b3c980fc9a4cc77906e00",
+    "bytes": 891376
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/92741/runs/R2/module-0300.pt",
+    "sha256": "533511387b5b7f92a52d7116a06f744360744ecca541dd62247e342568fe8b81",
+    "bytes": 891376
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/92741/runs/R2/module-1000.pt",
+    "sha256": "9680988a6b8bb317032f7db23198a68fb3facb34c73056cf1f1460a5729a6120",
+    "bytes": 891376
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/92741/runs/R2/module-2000.pt",
+    "sha256": "a43f4c8f713662db676f34100288fc0917e874b92f5a37eba8a96424bb95cd39",
+    "bytes": 891376
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/92741/runs/R3_head/module-0100.pt",
+    "sha256": "963a3d88685ac53dbd91c8680ac124604f88e86a68a79a7f4cdd5913fa471b34",
+    "bytes": 6105712
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/92741/runs/R3_head/module-0300.pt",
+    "sha256": "03664150697a2032aae9ef31e7ef9daa40e3b3f6417bc184dc75dc1553f5e3a6",
+    "bytes": 6105712
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/92741/runs/R3_head/module-1000.pt",
+    "sha256": "1de79b4687b1d8fb8e9c42e11aec8e5d618c6fc543a9685fb7e0ef2d9d8fa83f",
+    "bytes": 6105712
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/92741/runs/R3_head/module-2000.pt",
+    "sha256": "88fdbd93015b407a4135f9a737f6e4c5fd2ff18c6f81373c3fa57dd16011d7e1",
+    "bytes": 6105712
+  }
+]
