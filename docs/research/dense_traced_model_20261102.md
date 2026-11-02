@@ -26,65 +26,222 @@ patches (`monitor_train`) only. No test data has been used.
 - **Main remaining limit: node recall on real data.** About 80% of missed BRAVA long edges
   lack a detected endpoint.
 
-## 2. The network
+## 2. The new approach: two-stage dense model with traced connectivity
+
+### 2.1 The idea
+
+RelationFormer predicts a graph with a fixed set of learned "object queries". It reads the
+image through a 2×2×2 feature grid and pairs queries with ground truth by Hungarian matching,
+which exists only during training. Our diagnostics showed this is what fails on real data:
+- nodes are not localised;
+- the training-time matching does not match what happens at inference;
+- edges are scored without ever looking at the image between the two nodes.
+
+The new model replaces this with two simple, image-grounded stages:
+
+1. **Stage 1, where are the nodes?** A full-resolution 3D U-Net predicts, for every voxel, how
+   likely it is to be a graph node (a heatmap), plus where the vessels' centrelines run. Nodes
+   are the peaks of the heatmap.
+2. **Stage 2, which nodes are connected, and how does the vessel run between them?**
+   - Starting from every node, we *follow the predicted centreline* to find which other nodes
+     are reachable along a vessel. Each reachable pair becomes a candidate edge, at any distance.
+   - For each candidate, a small network looks at the image features *along the traced path*.
+     It decides whether the edge exists, and draws its curved shape as a B-spline whose
+     number of control points depends on how long and tortuous the path is.
+
+No Hungarian matching is involved. Training builds its edge candidates from the model's *own*
+predicted nodes, exactly as inference does.
+
+### 2.2 Overview
 
 ```
-64³ MRA patch
-  │
-  ▼  MONAI BasicUNet (3D, full resolution, 37 output channels)
-  ├─ ch0      node heatmap ──► 3×3×3 peak NMS + threshold ──► nodes (+ ch1–3 sub-voxel offsets)
-  ├─ ch4      centreline probability
-  └─ ch5–36   32 feature channels F
-        │
-  nodes + centreline ──► geodesic Voronoi tracing ──► candidate pairs (∪ 16-NN fallback) + paths
-        │
-  per pair: features of F sampled in a 24×11×11 tube that follows the path ──► small 3D CNN
-        ├─► edge head ──► P(edge)
-        └─► geometry head (K8 / K16 / K24 by path length and tortuosity) ──► curved edge
+ 64³ MRA patch (intensity − foreground mean)
+   │
+   ▼  Stage 1: MONAI BasicUNet, full resolution, 37 output channels at 64³
+   ├─ ch0      node heatmap (logit) ─► 3×3×3 peak NMS + threshold ─► nodes
+   ├─ ch1–3    sub-voxel offsets ───────────────────────────────────┘ (refine peak position)
+   ├─ ch4      centreline probability ─► mask (p ≥ 0.5)
+   └─ ch5–36   32 feature channels F
+   │
+   ▼  Stage 2
+   nodes + centreline mask ─► geodesic Voronoi tracing ─► candidate pairs + traced paths
+                                   (∪ 16 nearest neighbours, straight paths, as fallback)
+   per candidate pair (a, b):
+     features F sampled in a 24×11×11 tube that follows the path ─► corridor CNN ─► 6,912-d
+     + chord length/direction + F at a and b + heat at a and b + path arc length ─► 6,983-d
+       ├─► edge head ─────────────────────────────► P(a–b is an edge)
+       └─► geometry head K8 / K16 / K24 (fixed rule on the path) ─► B-spline from a to b
 ```
 
-**Stage 1: nodes.** A standard 3D U-Net (MONAI `BasicUNet`, used as-is) predicts:
-- a CenterNet-style node heatmap: a Gaussian blob per node, penalty-reduced focal loss;
-- sub-voxel offsets;
-- a vessel-centreline map (an auxiliary loss);
-- 32 feature channels.
+### 2.3 Stage 1: dense node and centreline maps
 
-Nodes are the local maxima of the heatmap.
+**Network.** MONAI `BasicUNet` (3D) with feature widths (32, 32, 64, 128, 256, 32), used as-is:
+- four 2× down-sampling levels and back up to the full 64³ resolution, with skip connections;
+- instance normalisation, which behaves identically in training and evaluation;
+- LeakyReLU, about 9.6M parameters.
 
-**Stage 2: edges.**
-1. **Tracing.** From all nodes at once, geodesic distance is propagated through the predicted
-   centreline map (on GPU; cheap where the vessel is confident). Every vessel voxel is owned by
-   its nearest node along the vessel.
-   - Two nodes are a candidate pair when their regions touch, at any distance.
-   - A node lying in between blocks "skip" pairs.
-   - The connecting path is read back from the distance field.
-   - Pairs from the 16 nearest neighbours are added as a fallback, with straight paths.
-2. **Evidence.** For each pair, the U-Net features are sampled in a tube around the traced path
-   and encoded by a small 3D CNN. The endpoint features and heat are added.
-3. **Edge head.** It outputs the probability that the two nodes are directly connected.
-4. **Geometry head.** It outputs residual control points around the traced path, decoded as a
-   clamped cubic B-spline that always ends exactly on the two nodes. The number of controls is
-   set by a fixed rule on the traced path: K8 by default, K16 when the arc is ≥ 15 mm or
-   arc/chord ≥ 1.15, K24 when the arc is ≥ 35 mm or arc/chord ≥ 1.5.
+Its 37 output channels are read as follows:
 
-**Training labels (no Hungarian matching).**
-- Candidate pairs are built from the model's *own* predicted peaks. Each peak is matched
-  one-to-one to a GT node within 2 mm, by the same rule the evaluation uses.
-- A pair is positive iff its matched GT nodes share an edge, so training sees the same
-  candidates as inference.
-- Pairs built from slightly jittered GT nodes are also used, to bootstrap the edge head.
+| Channel(s) | Meaning | Training target and loss |
+|---|---|---|
+| 0 | node heatmap logit | One Gaussian blob per GT node (σ = 1.5 voxels, peak 1 at the node's rounded voxel). **CenterNet penalty-reduced focal loss** (α = 2, β = 4), normalised by the number of nodes. The output bias starts at −4.6 (probability ≈ 0.01) |
+| 1–3 | sub-voxel offset of a node from its voxel centre | L1, only at GT node voxels |
+| 4 | centreline logit | The GT dense centreline of every edge, rasterised (each edge's 64-point path upsampled to 256 points, then dilated by one voxel). Binary cross-entropy with positive weight 5. Auxiliary: it makes the features vessel-aware and is used for tracing |
+| 5–36 | 32 general feature channels F | no direct target; shaped by the edge and geometry losses of stage 2 |
 
-**Losses.** All weights are 1:
-- heatmap focal;
-- offset L1;
-- centreline BCE;
-- edge BCE;
-- geometry chamfer (mm) to the dense GT centreline.
+**Node extraction.**
+1. Take σ(heatmap).
+2. Keep voxels that are the maximum of their 3×3×3 neighbourhood and above a threshold.
+3. Position = voxel index + predicted offset, clamped to the patch.
+
+Peaks are sorted by score. During training, peaks ≥ 0.2 are used (at most 200 per patch). At
+inference the threshold is the one selected on training patches (§2.6).
+
+### 2.4 Stage 2: from nodes to edges
+
+**(a) Tracing the centreline: geodesic Voronoi regions.**
+- **Domain.** Voxels with centreline probability ≥ 0.5, plus a 2-voxel ball around every node,
+  so each node connects to its nearby centreline.
+- **Propagation.**
+  - Starting from all nodes simultaneously, a geodesic distance is propagated over the
+    26-neighbour voxel grid on the GPU, by Bellman–Ford relaxation (up to 320 sweeps, stopping
+    early once stable).
+  - Entering a voxel costs (step length) × 1/(p + 0.05): cheap where the vessel is confident,
+    expensive where it is uncertain.
+  - Each voxel ends up *owned* by the node that reaches it most cheaply: its geodesic Voronoi
+    region.
+- **Candidates.**
+  - Two nodes form a candidate pair when their regions *touch* somewhere inside the domain;
+    the cheapest touching point is kept.
+  - Properties: there is no distance limit. A node lying between two others on the same
+    vessel separates their regions, so **"skip" pairs (a–c when the vessel runs a–b–c) are
+    never proposed**.
+  - The pairs among each node's **16 nearest neighbours** (in mm) are added as a fallback
+    with straight paths, so tracing can only add candidates, never remove the old ones.
+- **Path.**
+  - From the touching point, the path is read back by steepest descent of the distance field
+    to each of the two nodes, then the two halves are joined.
+  - It is resampled to 64 points by arc length, smoothed (moving average of 5) and pinned to
+    the exact sub-voxel node positions.
+
+**(b) Corridor features.**
+- The path is resampled to 24 points. At each point a local frame is built: the tangent t,
+  plus two perpendicular directions u and w.
+- The 32 feature channels F are sampled by trilinear interpolation on an 11×11 cross-section
+  spanning ±12 voxels in the (u, w) plane, at each of the 24 points.
+- The result is a "tube" of features that **follows the vessel**, of shape 32×24×11×11. The
+  first, 16-NN-only version of the model sampled a straight tube around the chord instead.
+- A small 3D CNN encodes it to a 6,912-d vector: three 3×3×3 convolutions, 32→64→64→64
+  channels, with strides 1, 2 and (1, 2, 2), and GELU activations.
+- It is concatenated with:
+  - chord length and direction (4);
+  - F at both nodes (64);
+  - heatmap value at both nodes (2);
+  - path arc length (1).
+
+  That gives a 6,983-d pair vector.
+
+**(c) Edge head.** A two-layer MLP (6,983 → 256 → 1, GELU) outputs P(a and b are directly
+connected).
+
+**(d) Geometry head with adaptive K.**
+- The curve is a clamped cubic B-spline that starts at node a and ends exactly at node b.
+- Its interior control points start *on the traced path*, at the B-spline's standard
+  parameter positions (Greville abscissae). A head predicts small 3D residuals for them in the
+  local path frame, scaled by 4 voxels. For fallback chord pairs the scale is 12 voxels.
+- The last layer is zero-initialised, so the initial curve follows the traced path.
+- There are three heads, chosen per edge by a fixed rule on the traced path (no learned
+  selector):
+
+  | Edge | Controls | Interior points |
+  |---|---|---|
+  | default, and all fallback pairs | **K8** | 6 |
+  | traced, arc ≥ 15 mm or arc/chord ≥ 1.15 | **K16** | 14 |
+  | traced, arc ≥ 35 mm or arc/chord ≥ 1.5 | **K24** | 22 |
+
+  Each head is 6,983 → 256 → 3 × (interior points).
+- The curve is sampled at 64 points.
+
+### 2.5 Training
+
+**Labels without Hungarian matching.** Each training patch contributes two sets of candidate
+pairs:
+
+| Source | Nodes | Node → GT mapping | Pair label |
+|---|---|---|---|
+| Predicted | the model's own peaks (≥ 0.2, at most 200) | one-to-one matching to GT nodes within 2 mm, the *same* rule the evaluation uses | positive iff both peaks are matched and their GT nodes share an edge; every pair touching an unmatched (false or duplicate) peak is a negative |
+| Jittered GT | GT nodes + 0.5 mm Gaussian jitter | identity | positive iff a GT edge |
+
+The jittered-GT source bootstraps the edge and geometry heads before the heatmap is good. In
+the from-scratch dense model it is used alone for the first 2,000 updates. All positives are
+kept; negatives are randomly subsampled to at most 256 per patch and source.
+
+**Losses** (all weights 1):
+- **L_node:** heatmap focal;
+- **L_offset:** L1;
+- **L_centreline:** BCE;
+- **L_edge:** BCE with positive weight min(#neg/#pos, 20);
+- **L_geometry:** symmetric chamfer distance in mm between the predicted curve and the GT dense
+  centreline (the original traced path, not a fitted spline), on positive pairs.
+
+**Gradient flow.**
+- The edge and geometry losses train the corridor CNN, the heads and, through the sampling,
+  the U-Net's shared feature channels.
+- Peak positions, offsets, endpoint heat values and tracing are computed without gradient.
+  So node placement stays a pure detection problem, trained only by L_node and L_offset.
+
+**Recipe.**
+- **Optimizer:** AdamW, LR 1e-3, OneCycle schedule (5% warm-up), weight decay 1e-4, gradient
+  clipping at norm 5, batch 8, bf16 for the U-Net.
+- **Augmentation:** random 90° rotations in all three planes, and Gaussian noise (p 0.35,
+  std ≤ 0.015). No zoom.
+- **Dense 16-NN model:** 15,000 updates from scratch.
+- **Traced model:** continued from that checkpoint for 7,500 updates at LR 3e-4. The U-Net and
+  corridor CNN are inherited; the edge and geometry heads are new, because their input grew by
+  the arc-length feature.
+- **Speed:** about 0.2 s/update (16-NN) and 0.76 s/update (traced, because of the tracing) on
+  one H100.
+
+### 2.6 Inference and threshold selection
+
+1. **Nodes:** run the U-Net, then keep peaks ≥ the node threshold.
+2. **Candidates:** trace on the predicted centreline; candidates = touching regions ∪ 16-NN
+   pairs among the kept nodes.
+3. **Edges:** keep pairs with P(edge) ≥ the edge threshold; draw each kept edge with its
+   adaptive-K curve.
+4. **Thresholds**, chosen on 256 *training* patches only:
+   - first the node threshold maximising node F1 (grid 0.10–0.70);
+   - then the edge threshold maximising edge F1 (grid 0.10–0.90).
+
+   Validation is never used for any choice.
+
+### 2.7 Building blocks and their origin
+
+| Block | Origin |
+|---|---|
+| 3D U-Net (`monai.networks.nets.BasicUNet`) | third-party, used as-is (U-Net: Ronneberger et al., 2015) |
+| Heatmap target, penalty-reduced focal loss, offset head, peak NMS | formulation of CenterNet (Zhou et al., 2019), re-implemented here |
+| Trilinear feature sampling (`torch.nn.functional.grid_sample`) | PyTorch, as-is |
+| One-to-one node matching (`scipy.optimize.linear_sum_assignment`) | SciPy, as-is |
+| Cubic B-spline basis (`models/spline.py`) | earlier in this project (used by the RelationFormer K8 head) |
+| Geodesic-Voronoi tracing, path read-back, path-following corridor, corridor CNN, edge head, adaptive-K geometry heads, label construction from predicted peaks | new in this project. Tracing follows the classic minimal-path idea for vessel tracking (Cohen & Kimmel, 1997) |
+
+### 2.8 How it differs from RelationFormer
+
+| | RelationFormer (B0) | Dense + traced |
+|---|---|---|
+| Resolution the decisions see | 2×2×2 feature grid (stride 32) | full 64³ |
+| Nodes | fixed set of learned queries; coordinates regressed | heatmap peaks + sub-voxel offsets |
+| Training assignment | Hungarian on moving predictions; training only | same one-to-one 2 mm matching as the evaluation; train = inference |
+| Edge candidates | all pairs of kept queries | nodes connected along the predicted centreline (+ 16-NN) |
+| Edge evidence | two node tokens + global relation tokens; never the image between the nodes | image features sampled along the path between the nodes |
+| Edge shape | K8 spline from tokens; the loss never reaches the detector | adaptive K8/K16/K24 spline around the traced path; the loss shapes the shared features |
+| Pretraining | SyntheticMRI, then fine-tuning | none (from scratch on the target) |
 
 Code:
-- [`scripts/dense_graph_20261030.py`](../../scripts/dense_graph_20261030.py) (16-NN model);
-- [`scripts/dense_graph_traced_20261030.py`](../../scripts/dense_graph_traced_20261030.py)
-  (traced + adaptive K).
+- [`scripts/dense_graph_20261030.py`](../../scripts/dense_graph_20261030.py): stage 1, 16-NN stage 2, training, evaluation;
+- [`scripts/dense_graph_traced_20261030.py`](../../scripts/dense_graph_traced_20261030.py): tracing, path corridor, adaptive K;
+- [`scripts/dense_graph_2d_20261030.py`](../../scripts/dense_graph_2d_20261030.py): the 2D port (16-NN version).
 
 ## 3. How the models were trained
 
