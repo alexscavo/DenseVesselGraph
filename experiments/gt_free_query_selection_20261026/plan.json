@@ -1,0 +1,31 @@
+{
+  "id": "N08",
+  "source": "N06 exact two-seed A-xyz step12000 caches",
+  "datasets": "SyntheticMRI only; no test data",
+  "training_patches_per_seed": 128,
+  "training_subjects": 32,
+  "validation_patches_per_seed": 480,
+  "validation_subjects": 13,
+  "cpu_only": true,
+  "families": [
+    "uncapped relation support control",
+    "bounded reciprocal support with fixed confidence anchors",
+    "local fixed-cell relation-profile representatives",
+    "short-connection/profile-protected NMS"
+  ],
+  "fixed_radius_mm": 1.0,
+  "local_move_max_mm": 1.0,
+  "raw_candidate_min_confidence": 0.1,
+  "reference_confidence": 0.75,
+  "reference_max_count": 12,
+  "local_reference_exclusion_mm": 2.0,
+  "weights": [
+    0.25,
+    1.0
+  ],
+  "selection": "one common weight per family and one guarded primary selected by training only before validation; compare stronger count-matched confidence/spatial control, <=1pp training node-recall loss guard",
+  "success_gate": "primary paired EdgeF1 CI positive versus both count controls in both seeds; no >1pp node-recall loss, no true-edge loss versus controls, positive same-GT-anchor AP difference; count/cycle/shortcut diagnostics remain necessary",
+  "stop_rule": "no additional tuning/architectures/training if predeclared rules lack consistent count-controlled validation benefit",
+  "edge_decision": "original symmetric relation probabilities, cutoff .5, unchanged; do not reapply node confidence threshold after alternative query selection",
+  "registry_note": "Requested N06/N08 registry file not found; existing research/experiments.md is available, clarification requested asynchronously"
+}
