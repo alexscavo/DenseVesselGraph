@@ -1,0 +1,8 @@
+replay 364505 sample_000001_0050 2.964356638956815 {'coordinates_mm': 0.0, 'confidence': 0.0, 'relation': 0.0}
+replay 364505 sample_000001_0199 0.01523359096609056 {'coordinates_mm': 0.0, 'confidence': 0.0, 'relation': 0.0}
+replay 364505 sample_000013_0003 0.015070043969899416 {'coordinates_mm': 0.0, 'confidence': 0.0, 'relation': 0.0}
+replay 364505 sample_000013_0023 0.014946867013350129 {'coordinates_mm': 0.0, 'confidence': 0.0, 'relation': 0.0}
+replay 92741 sample_000001_0050 0.015426089987158775 {'coordinates_mm': 0.0, 'confidence': 0.0, 'relation': 0.0}
+replay 92741 sample_000001_0199 0.015233268961310387 {'coordinates_mm': 0.0, 'confidence': 0.0, 'relation': 0.0}
+replay 92741 sample_000013_0003 0.014795530121773481 {'coordinates_mm': 0.0, 'confidence': 0.0, 'relation': 0.0}
+replay 92741 sample_000013_0023 0.014647139003500342 {'coordinates_mm': 0.0, 'confidence': 0.0, 'relation': 0.0}

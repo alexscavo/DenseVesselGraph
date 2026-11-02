@@ -1,0 +1,14 @@
+MultiScaleDeformableAttention3D-1.0.1.dist-info/INSTALLER,sha256=5hhM4Q4mYTT9z6QB6PGpUAW81PGNFrYrdXMj4oM_6ak,2
+MultiScaleDeformableAttention3D-1.0.1.dist-info/METADATA,sha256=RMyu7JZJMZMoY3OQl-ZcqTgJpexV461nwA4W0k4oA1g,156
+MultiScaleDeformableAttention3D-1.0.1.dist-info/RECORD,,
+MultiScaleDeformableAttention3D-1.0.1.dist-info/REQUESTED,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+MultiScaleDeformableAttention3D-1.0.1.dist-info/WHEEL,sha256=NFKMHb-uF90hzjuhdH2a97IvD9JRcUTN2feKBOKhADg,105
+MultiScaleDeformableAttention3D-1.0.1.dist-info/direct_url.json,sha256=eRXu2AJu0j1wTltZ6b2z1egJoJSZXlWlUsJ7XO-45Uk,119
+MultiScaleDeformableAttention3D-1.0.1.dist-info/top_level.txt,sha256=S59AED4zWHiZKYplihbLw4ibethmgeypQuibqWs0XIU,50
+MultiScaleDeformableAttention3D-1.0.1.dist-info/uv_build.json,sha256=RBNvo1WzZ4oRRq0W9-hknpT7T8If536DEMBg9hyq_4o,2
+MultiScaleDeformableAttention3D-1.0.1.dist-info/uv_cache.json,sha256=4j4KsGM-1B3fUBS3sjSWRT23o8RHCHO_KhwP8kk8lXo,178
+MultiScaleDeformableAttention3D.cpython-311-x86_64-linux-gnu.so,sha256=T1pUPe2TW6anYNSN3of7r37OdroFuj6bV87Ts-iLUyI,695768
+functions/__init__.py,sha256=FF4uyO3MKJ7Pr8H0q7NGelMzfo-vjtbGi23yDGhKLYA,779
+functions/ms_deform_attn_func.py,sha256=te_hNG5MGh-7CWXjTEqig3WGqNQIr9rYOO8xzXzjauY,4139
+modules/__init__.py,sha256=PJhn1E2ljSbYf_vBDvPCKQn7serjEIqM3sc9C5qsIfY,612
+modules/ms_deform_attn.py,sha256=t5zUTDxo4PYfmrOveaczUxjTtrglyYc0WCQAO4mUgSo,8137

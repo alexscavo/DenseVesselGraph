@@ -1,0 +1,146 @@
+[
+  {
+    "case": "IXI-legacy/baseline",
+    "split": "train",
+    "tolerance": 1.0,
+    "condition": "normal",
+    "candidates": 378,
+    "positives": 9,
+    "conditional_ap": 0.6777149997608456
+  },
+  {
+    "case": "IXI-legacy/baseline",
+    "split": "train",
+    "tolerance": 1.0,
+    "condition": "delete_unmatched",
+    "candidates": 378,
+    "positives": 9,
+    "conditional_ap": 0.6777149997608456
+  },
+  {
+    "case": "IXI-legacy/baseline",
+    "split": "train",
+    "tolerance": 1.0,
+    "condition": "raw_spatial_oracle",
+    "candidates": 795,
+    "positives": 22,
+    "conditional_ap": 0.5512754512152005
+  },
+  {
+    "case": "IXI-legacy/baseline",
+    "split": "train",
+    "tolerance": 1.0,
+    "condition": "hungarian_selected",
+    "candidates": 354,
+    "positives": 9,
+    "conditional_ap": 0.6850447280859653
+  },
+  {
+    "case": "IXI-legacy/baseline",
+    "split": "train",
+    "tolerance": 2.0,
+    "condition": "normal",
+    "candidates": 1388,
+    "positives": 42,
+    "conditional_ap": 0.5209786224956826
+  },
+  {
+    "case": "IXI-legacy/baseline",
+    "split": "train",
+    "tolerance": 2.0,
+    "condition": "delete_unmatched",
+    "candidates": 1388,
+    "positives": 42,
+    "conditional_ap": 0.5209786224956826
+  },
+  {
+    "case": "IXI-legacy/baseline",
+    "split": "train",
+    "tolerance": 2.0,
+    "condition": "raw_spatial_oracle",
+    "candidates": 2289,
+    "positives": 68,
+    "conditional_ap": 0.408861311368782
+  },
+  {
+    "case": "IXI-legacy/baseline",
+    "split": "train",
+    "tolerance": 2.0,
+    "condition": "hungarian_selected",
+    "candidates": 1261,
+    "positives": 37,
+    "conditional_ap": 0.5325168165563072
+  },
+  {
+    "case": "IXI-legacy/baseline",
+    "split": "val",
+    "tolerance": 1.0,
+    "condition": "normal",
+    "candidates": 1,
+    "positives": 0,
+    "conditional_ap": null
+  },
+  {
+    "case": "IXI-legacy/baseline",
+    "split": "val",
+    "tolerance": 1.0,
+    "condition": "delete_unmatched",
+    "candidates": 1,
+    "positives": 0,
+    "conditional_ap": null
+  },
+  {
+    "case": "IXI-legacy/baseline",
+    "split": "val",
+    "tolerance": 1.0,
+    "condition": "raw_spatial_oracle",
+    "candidates": 1,
+    "positives": 0,
+    "conditional_ap": null
+  },
+  {
+    "case": "IXI-legacy/baseline",
+    "split": "val",
+    "tolerance": 1.0,
+    "condition": "hungarian_selected",
+    "candidates": 1,
+    "positives": 0,
+    "conditional_ap": null
+  },
+  {
+    "case": "IXI-legacy/baseline",
+    "split": "val",
+    "tolerance": 2.0,
+    "condition": "normal",
+    "candidates": 3,
+    "positives": 0,
+    "conditional_ap": null
+  },
+  {
+    "case": "IXI-legacy/baseline",
+    "split": "val",
+    "tolerance": 2.0,
+    "condition": "delete_unmatched",
+    "candidates": 3,
+    "positives": 0,
+    "conditional_ap": null
+  },
+  {
+    "case": "IXI-legacy/baseline",
+    "split": "val",
+    "tolerance": 2.0,
+    "condition": "raw_spatial_oracle",
+    "candidates": 13,
+    "positives": 4,
+    "conditional_ap": 0.6428571428571428
+  },
+  {
+    "case": "IXI-legacy/baseline",
+    "split": "val",
+    "tolerance": 2.0,
+    "condition": "hungarian_selected",
+    "candidates": 3,
+    "positives": 0,
+    "conditional_ap": null
+  }
+]

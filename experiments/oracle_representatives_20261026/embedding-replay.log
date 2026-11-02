@@ -1,0 +1,31 @@
+IDRIS WARNING: can't determine process local rank for CUDA initialisation. No GPU available and/or no Slurm context defined.
+--------------------------------------------------------------------------
+The library attempted to open the following supporting CUDA libraries,
+but each of them failed.  CUDA-aware support is disabled.
+libcuda.so.1: cannot open shared object file: No such file or directory
+libcuda.dylib: cannot open shared object file: No such file or directory
+/usr/lib64/libcuda.so.1: cannot open shared object file: No such file or directory
+/usr/lib64/libcuda.dylib: cannot open shared object file: No such file or directory
+If you are not interested in CUDA-aware support, then run with
+--mca opal_warn_on_missing_libcuda 0 to suppress this message.  If you are interested
+in CUDA-aware support, then try setting LD_LIBRARY_PATH to the location
+of libcuda.so.1 to get passed this issue.
+--------------------------------------------------------------------------
+/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/site-packages/paramiko/pkey.py:82: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from this module in 48.0.0.
+  "cipher": algorithms.TripleDES,
+/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/site-packages/paramiko/transport.py:219: CryptographyDeprecationWarning: Blowfish has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.Blowfish and will be removed from this module in 45.0.0.
+  "class": algorithms.Blowfish,
+/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/site-packages/paramiko/transport.py:243: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from this module in 48.0.0.
+  "class": algorithms.TripleDES,
+/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/site-packages/torchvision-0.18.1a0+126fc22-py3.11-linux-x86_64.egg/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: ''If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-graph-errors-20261026/experiments/oracle_representatives_20261026/replay-source/models/ops/modules/ms_deform_attn.py:56: UserWarning: You'd better set d_model in MSDeformAttn to make the dimension of each attention head a power of 2 which is more efficient in our CUDA implementation.
+  warnings.warn("You'd better set d_model in MSDeformAttn to make the dimension of each attention head a power of 2 "
+replay 364505 sample_000001_0050 2.657876552082598 {'coordinates_mm': 0.06670761108398438, 'confidence': 0.0014787912368774414, 'relation': 0.0036194324493408203}
+replay 364505 sample_000001_0199 1.9012877750210464 {'coordinates_mm': 0.07807540893554688, 'confidence': 0.0005521029233932495, 'relation': 0.002147197723388672}
+replay 364505 sample_000013_0003 1.7196204029023647 {'coordinates_mm': 0.11426162719726562, 'confidence': 0.0012199878692626953, 'relation': 0.008805990219116211}
+replay 364505 sample_000013_0023 1.9196449141018093 {'coordinates_mm': 0.075164794921875, 'confidence': 0.0018619298934936523, 'relation': 0.003518521785736084}
+replay 92741 sample_000001_0050 2.0187179720960557 {'coordinates_mm': 0.04575920104980469, 'confidence': 0.0005816221237182617, 'relation': 0.002925187349319458}
+replay 92741 sample_000001_0199 1.796325767179951 {'coordinates_mm': 0.10277557373046875, 'confidence': 0.0008589848875999451, 'relation': 0.003673732280731201}
+replay 92741 sample_000013_0003 1.7872342769987881 {'coordinates_mm': 0.22042083740234375, 'confidence': 0.0009384006261825562, 'relation': 0.014309465885162354}
+replay 92741 sample_000013_0023 1.8211448900401592 {'coordinates_mm': 0.15687942504882812, 'confidence': 0.0011892318725585938, 'relation': 0.006104171276092529}

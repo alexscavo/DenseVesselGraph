@@ -1,0 +1,4 @@
+{
+  "source": "exact replay tokens through unchanged frozen coordinate MLP; CPU only; no image inference",
+  "rows": 55
+}

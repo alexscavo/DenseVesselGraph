@@ -1,0 +1,25 @@
+{
+  "training_patches": 128,
+  "validation_patches": 480,
+  "training_monitor_subjects": 32,
+  "validation_subjects": 13,
+  "step": 12000,
+  "node_threshold": 0.5,
+  "edge_threshold": 0.5,
+  "graph_bootstrap_draws": 2000,
+  "ap_bootstrap_draws": 500,
+  "bootstrap_seed": 261026,
+  "primary": "same raw-query coordinates and relation scores; nearest versus confidence-preferred representative selection",
+  "matching": "unchanged physical 1/2 mm; actual Hungarian cost replay",
+  "embedding_replay": "eight seed-patch forwards, four unique patches, one train and one val subject, identical batch 1 H100 replay",
+  "training": false,
+  "large_inference": false,
+  "job_id": "1597409",
+  "foreground_use": "offline only",
+  "reproduction": [
+    "scripts/oracle_representatives.py",
+    "scripts/oracle_representative_supplements.py",
+    "scripts/summarize_oracle_representatives.py",
+    "scripts/show_oracle_representatives.py"
+  ]
+}

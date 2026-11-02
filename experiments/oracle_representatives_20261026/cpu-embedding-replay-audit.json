@@ -1,0 +1,170 @@
+[
+  {
+    "seed": 364505,
+    "sample": "sample_000001_0050",
+    "subject": "SyntheticMRI_000001",
+    "split": "train",
+    "cache": "experiments/local_refinement_long/364505/runs/A-xyz/step-12000/sample_000001_0050.npz",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/syntheticMRI/transfer_source_k8_25k_20261015/train/spline/sample_000001_0050.npz",
+    "seconds": 2.657876552082598,
+    "parity": {
+      "coordinates_mm": 0.06670761108398438,
+      "confidence": 0.0014787912368774414,
+      "relation": 0.0036194324493408203
+    },
+    "passed": false,
+    "token_shape": [
+      1,
+      122,
+      552
+    ],
+    "inference_batch": 1
+  },
+  {
+    "seed": 364505,
+    "sample": "sample_000001_0199",
+    "subject": "SyntheticMRI_000001",
+    "split": "train",
+    "cache": "experiments/local_refinement_long/364505/runs/A-xyz/step-12000/sample_000001_0199.npz",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/syntheticMRI/transfer_source_k8_25k_20261015/train/spline/sample_000001_0199.npz",
+    "seconds": 1.9012877750210464,
+    "parity": {
+      "coordinates_mm": 0.07807540893554688,
+      "confidence": 0.0005521029233932495,
+      "relation": 0.002147197723388672
+    },
+    "passed": false,
+    "token_shape": [
+      1,
+      122,
+      552
+    ],
+    "inference_batch": 1
+  },
+  {
+    "seed": 364505,
+    "sample": "sample_000013_0003",
+    "subject": "SyntheticMRI_000013",
+    "split": "val",
+    "cache": "experiments/local_refinement_long/364505/runs/A-xyz/step-12000/sample_000013_0003.npz",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/syntheticMRI/transfer_source_k8_25k_20261015/val/spline/sample_000013_0003.npz",
+    "seconds": 1.7196204029023647,
+    "parity": {
+      "coordinates_mm": 0.11426162719726562,
+      "confidence": 0.0012199878692626953,
+      "relation": 0.008805990219116211
+    },
+    "passed": false,
+    "token_shape": [
+      1,
+      122,
+      552
+    ],
+    "inference_batch": 1
+  },
+  {
+    "seed": 364505,
+    "sample": "sample_000013_0023",
+    "subject": "SyntheticMRI_000013",
+    "split": "val",
+    "cache": "experiments/local_refinement_long/364505/runs/A-xyz/step-12000/sample_000013_0023.npz",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/syntheticMRI/transfer_source_k8_25k_20261015/val/spline/sample_000013_0023.npz",
+    "seconds": 1.9196449141018093,
+    "parity": {
+      "coordinates_mm": 0.075164794921875,
+      "confidence": 0.0018619298934936523,
+      "relation": 0.003518521785736084
+    },
+    "passed": false,
+    "token_shape": [
+      1,
+      122,
+      552
+    ],
+    "inference_batch": 1
+  },
+  {
+    "seed": 92741,
+    "sample": "sample_000001_0050",
+    "subject": "SyntheticMRI_000001",
+    "split": "train",
+    "cache": "experiments/local_refinement_long/92741/runs/A-xyz/step-12000/sample_000001_0050.npz",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/syntheticMRI/transfer_source_k8_25k_20261015/train/spline/sample_000001_0050.npz",
+    "seconds": 2.0187179720960557,
+    "parity": {
+      "coordinates_mm": 0.04575920104980469,
+      "confidence": 0.0005816221237182617,
+      "relation": 0.002925187349319458
+    },
+    "passed": false,
+    "token_shape": [
+      1,
+      122,
+      552
+    ],
+    "inference_batch": 1
+  },
+  {
+    "seed": 92741,
+    "sample": "sample_000001_0199",
+    "subject": "SyntheticMRI_000001",
+    "split": "train",
+    "cache": "experiments/local_refinement_long/92741/runs/A-xyz/step-12000/sample_000001_0199.npz",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/syntheticMRI/transfer_source_k8_25k_20261015/train/spline/sample_000001_0199.npz",
+    "seconds": 1.796325767179951,
+    "parity": {
+      "coordinates_mm": 0.10277557373046875,
+      "confidence": 0.0008589848875999451,
+      "relation": 0.003673732280731201
+    },
+    "passed": false,
+    "token_shape": [
+      1,
+      122,
+      552
+    ],
+    "inference_batch": 1
+  },
+  {
+    "seed": 92741,
+    "sample": "sample_000013_0003",
+    "subject": "SyntheticMRI_000013",
+    "split": "val",
+    "cache": "experiments/local_refinement_long/92741/runs/A-xyz/step-12000/sample_000013_0003.npz",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/syntheticMRI/transfer_source_k8_25k_20261015/val/spline/sample_000013_0003.npz",
+    "seconds": 1.7872342769987881,
+    "parity": {
+      "coordinates_mm": 0.22042083740234375,
+      "confidence": 0.0009384006261825562,
+      "relation": 0.014309465885162354
+    },
+    "passed": false,
+    "token_shape": [
+      1,
+      122,
+      552
+    ],
+    "inference_batch": 1
+  },
+  {
+    "seed": 92741,
+    "sample": "sample_000013_0023",
+    "subject": "SyntheticMRI_000013",
+    "split": "val",
+    "cache": "experiments/local_refinement_long/92741/runs/A-xyz/step-12000/sample_000013_0023.npz",
+    "gt": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/syntheticMRI/transfer_source_k8_25k_20261015/val/spline/sample_000013_0023.npz",
+    "seconds": 1.8211448900401592,
+    "parity": {
+      "coordinates_mm": 0.15687942504882812,
+      "confidence": 0.0011892318725585938,
+      "relation": 0.006104171276092529
+    },
+    "passed": false,
+    "token_shape": [
+      1,
+      122,
+      552
+    ],
+    "inference_batch": 1
+  }
+]
