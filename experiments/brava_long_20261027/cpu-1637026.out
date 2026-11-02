@@ -1,0 +1,14 @@
+common metrics scratch 25 256 / 1956
+common metrics scratch 25 512 / 1956
+common metrics scratch 25 768 / 1956
+common metrics scratch 25 1024 / 1956
+common metrics scratch 25 1280 / 1956
+common metrics scratch 25 1536 / 1956
+common metrics scratch 25 1792 / 1956
+common metrics synthetic 25 256 / 1956
+common metrics synthetic 25 512 / 1956
+common metrics synthetic 25 768 / 1956
+common metrics synthetic 25 1024 / 1956
+common metrics synthetic 25 1280 / 1956
+common metrics synthetic 25 1536 / 1956
+common metrics synthetic 25 1792 / 1956

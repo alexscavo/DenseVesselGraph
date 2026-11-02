@@ -1,0 +1,191 @@
+Error importing huggingface_hub.file_download: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.utils: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.hf_api: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.utils: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.hf_api: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.utils: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.hf_api: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.utils: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.hf_api: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.utils: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.hf_api: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+scratch epoch 26 batch 1 / 274 step 6851 loss 5.36779 lr 6.922013348028828e-05
+scratch epoch 26 batch 50 / 274 step 6900 loss 5.09696 lr 6.920618113638835e-05
+scratch epoch 26 batch 100 / 274 step 6950 loss 4.94582 lr 6.91918180312103e-05
+scratch epoch 26 batch 150 / 274 step 7000 loss 5.19371 lr 6.917732768742516e-05
+scratch epoch 26 batch 200 / 274 step 7050 loss 5.33582 lr 6.916271015975633e-05
+scratch epoch 26 batch 250 / 274 step 7100 loss 5.21528 lr 6.914796550340751e-05
+scratch epoch 27 batch 1 / 274 step 7125 loss 5.09864 lr 6.914054551936057e-05
+scratch epoch 27 batch 26 / 274 step 7150 loss 5.2791 lr 6.913309377406256e-05
+scratch epoch 27 batch 76 / 274 step 7200 loss 5.21258 lr 6.91180950278852e-05
+scratch epoch 27 batch 126 / 274 step 7250 loss 5.02973 lr 6.910296932151885e-05
+scratch epoch 27 batch 176 / 274 step 7300 loss 5.33325 lr 6.908771671208636e-05
+scratch epoch 27 batch 226 / 274 step 7350 loss 5.21213 lr 6.907233725718991e-05
+scratch epoch 28 batch 1 / 274 step 7399 loss 5.37136 lr 6.905714238189463e-05
+scratch epoch 28 batch 2 / 274 step 7400 loss 5.31711 lr 6.905683101491066e-05
+scratch epoch 28 batch 52 / 274 step 7450 loss 5.16228 lr 6.904119804380861e-05
+scratch epoch 28 batch 102 / 274 step 7500 loss 5.35615 lr 6.902543840292235e-05
+scratch epoch 28 batch 152 / 274 step 7550 loss 4.90732 lr 6.900955215176884e-05
+scratch epoch 28 batch 202 / 274 step 7600 loss 4.93002 lr 6.899353935034319e-05
+scratch epoch 28 batch 252 / 274 step 7650 loss 5.23287 lr 6.897740005911844e-05
+scratch epoch 29 batch 1 / 274 step 7673 loss 5.08566 lr 6.896993352664593e-05
+scratch epoch 29 batch 28 / 274 step 7700 loss 5.18071 lr 6.896113433904533e-05
+scratch epoch 29 batch 78 / 274 step 7750 loss 5.26382 lr 6.894474225155205e-05
+scratch epoch 29 batch 128 / 274 step 7800 loss 5.21349 lr 6.892822385854402e-05
+scratch epoch 29 batch 178 / 274 step 7850 loss 4.87625 lr 6.891157922240367e-05
+scratch epoch 29 batch 228 / 274 step 7900 loss 5.04121 lr 6.88948084059902e-05
+scratch epoch 30 batch 1 / 274 step 7947 loss 4.9737 lr 6.887892884397661e-05
+scratch epoch 30 batch 4 / 274 step 7950 loss 5.55477 lr 6.88779114726393e-05
+scratch epoch 30 batch 54 / 274 step 8000 loss 5.11349 lr 6.886088848616298e-05
+scratch epoch 30 batch 104 / 274 step 8050 loss 5.07696 lr 6.884373951084929e-05
+scratch epoch 30 batch 154 / 274 step 8100 loss 5.42742 lr 6.882646461146208e-05
+scratch epoch 30 batch 204 / 274 step 8150 loss 5.0063 lr 6.880906385324073e-05
+scratch epoch 30 batch 254 / 274 step 8200 loss 5.08608 lr 6.879153730189998e-05
+evaluate scratch 30 train 0 / 160
+evaluate scratch 30 val 0 / 256
+scratch epoch 31 batch 1 / 274 step 8221 loss 4.98464 lr 6.87841386547339e-05
+scratch epoch 31 batch 30 / 274 step 8250 loss 4.8298 lr 6.877388502362959e-05
+scratch epoch 31 batch 80 / 274 step 8300 loss 5.1996 lr 6.875610708509417e-05
+scratch epoch 31 batch 130 / 274 step 8350 loss 5.27874 lr 6.873820355343286e-05
+scratch epoch 31 batch 180 / 274 step 8400 loss 5.08598 lr 6.872017449625914e-05
+scratch epoch 31 batch 230 / 274 step 8450 loss 5.34758 lr 6.87020199816605e-05
+scratch epoch 32 batch 1 / 274 step 8495 loss 5.27096 lr 6.868557370907956e-05
+scratch epoch 32 batch 6 / 274 step 8500 loss 5.05387 lr 6.868374007819825e-05
+scratch epoch 32 batch 56 / 274 step 8550 loss 5.14278 lr 6.866533485490725e-05
+scratch epoch 32 batch 106 / 274 step 8600 loss 5.02609 lr 6.864680438129563e-05
+scratch epoch 32 batch 156 / 274 step 8650 loss 5.1061 lr 6.862814872734451e-05
+scratch epoch 32 batch 206 / 274 step 8700 loss 5.36617 lr 6.860936796350776e-05
+scratch epoch 32 batch 256 / 274 step 8750 loss 5.24389 lr 6.859046216071177e-05
+scratch epoch 33 batch 1 / 274 step 8769 loss 4.90622 lr 6.858324518527072e-05
+scratch epoch 33 batch 32 / 274 step 8800 loss 5.25405 lr 6.857143139035511e-05
+scratch epoch 33 batch 82 / 274 step 8850 loss 5.15574 lr 6.85522757243083e-05
+scratch epoch 33 batch 132 / 274 step 8900 loss 5.00513 lr 6.853299523491355e-05
+scratch epoch 33 batch 182 / 274 step 8950 loss 4.69607 lr 6.851358999498447e-05
+scratch epoch 33 batch 232 / 274 step 9000 loss 4.95029 lr 6.849406007780578e-05
+scratch epoch 34 batch 1 / 274 step 9043 loss 5.07369 lr 6.847716468839216e-05
+scratch epoch 34 batch 8 / 274 step 9050 loss 5.03933 lr 6.847440555713305e-05
+scratch epoch 34 batch 58 / 274 step 9100 loss 5.2745 lr 6.845462650719243e-05
+scratch epoch 34 batch 108 / 274 step 9150 loss 5.29111 lr 6.843472300268036e-05
+scratch epoch 34 batch 158 / 274 step 9200 loss 5.12949 lr 6.841469511876329e-05
+scratch epoch 34 batch 208 / 274 step 9250 loss 5.19451 lr 6.839454293107737e-05
+scratch epoch 34 batch 258 / 274 step 9300 loss 4.92487 lr 6.837426651572825e-05
+scratch epoch 35 batch 1 / 274 step 9317 loss 5.06109 lr 6.836734424904021e-05
+scratch epoch 35 batch 34 / 274 step 9350 loss 5.16614 lr 6.835386594929063e-05
+scratch epoch 35 batch 84 / 274 step 9400 loss 4.94647 lr 6.833334130880817e-05
+scratch epoch 35 batch 134 / 274 step 9450 loss 4.97573 lr 6.831269267179306e-05
+scratch epoch 35 batch 184 / 274 step 9500 loss 5.36478 lr 6.829192011622575e-05
+scratch epoch 35 batch 234 / 274 step 9550 loss 5.15652 lr 6.827102372055472e-05
+evaluate scratch 35 train 0 / 160
+evaluate scratch 35 val 0 / 256
+scratch epoch 36 batch 1 / 274 step 9591 loss 4.78498 lr 6.825379632195831e-05
+scratch epoch 36 batch 10 / 274 step 9600 loss 4.66115 lr 6.82500035636961e-05
+scratch epoch 36 batch 60 / 274 step 9650 loss 5.12563 lr 6.822885972503342e-05
+scratch epoch 36 batch 110 / 274 step 9700 loss 5.22413 lr 6.820759228441729e-05
+scratch epoch 36 batch 160 / 274 step 9750 loss 5.01379 lr 6.818620132216513e-05
+scratch epoch 36 batch 210 / 274 step 9800 loss 5.01931 lr 6.816468691906084e-05
+scratch epoch 36 batch 260 / 274 step 9850 loss 5.02164 lr 6.814304915635448e-05
+scratch epoch 37 batch 1 / 274 step 9865 loss 5.05399 lr 6.813653378462452e-05
+scratch epoch 37 batch 36 / 274 step 9900 loss 5.16137 lr 6.812128811576201e-05
+scratch epoch 37 batch 86 / 274 step 9950 loss 5.10605 lr 6.809940387946492e-05
+scratch epoch 37 batch 136 / 274 step 10000 loss 5.01136 lr 6.807739653011001e-05
+scratch epoch 37 batch 186 / 274 step 10050 loss 4.80727 lr 6.805526615080894e-05
+scratch epoch 37 batch 236 / 274 step 10100 loss 5.00142 lr 6.803301282513808e-05
+scratch epoch 38 batch 1 / 274 step 10139 loss 4.7806 lr 6.801556993579114e-05
+scratch epoch 38 batch 12 / 274 step 10150 loss 5.18197 lr 6.801063663713805e-05
+scratch epoch 38 batch 62 / 274 step 10200 loss 4.99311 lr 6.798813767131352e-05
+scratch epoch 38 batch 112 / 274 step 10250 loss 5.18377 lr 6.796551601263279e-05
+scratch epoch 38 batch 162 / 274 step 10300 loss 4.78311 lr 6.79427717465275e-05
+scratch epoch 38 batch 212 / 274 step 10350 loss 5.12553 lr 6.791990495889242e-05
+scratch epoch 38 batch 262 / 274 step 10400 loss 5.10609 lr 6.789691573608494e-05
+scratch epoch 39 batch 1 / 274 step 10413 loss 4.79649 lr 6.789091849397642e-05
+scratch epoch 39 batch 38 / 274 step 10450 loss 4.88497 lr 6.787380416492483e-05
+scratch epoch 39 batch 88 / 274 step 10500 loss 5.00623 lr 6.785057033269394e-05
+scratch epoch 39 batch 138 / 274 step 10550 loss 5.1242 lr 6.782721432713586e-05
+scratch epoch 39 batch 188 / 274 step 10600 loss 5.20997 lr 6.780373623645555e-05
+scratch epoch 39 batch 238 / 274 step 10650 loss 5.04752 lr 6.778013614931901e-05
+scratch epoch 40 batch 1 / 274 step 10687 loss 4.82883 lr 6.776259359590876e-05
+scratch epoch 40 batch 14 / 274 step 10700 loss 5.17521 lr 6.775641415485302e-05
+scratch epoch 40 batch 64 / 274 step 10750 loss 5.43565 lr 6.773257034264473e-05
+scratch epoch 40 batch 114 / 274 step 10800 loss 4.82399 lr 6.770860480274128e-05
+scratch epoch 40 batch 164 / 274 step 10850 loss 5.2088 lr 6.76845176256496e-05
+scratch epoch 40 batch 214 / 274 step 10900 loss 4.9691 lr 6.766030890233595e-05
+scratch epoch 40 batch 264 / 274 step 10950 loss 5.176 lr 6.763597872422562e-05
+evaluate scratch 40 train 0 / 160
+evaluate scratch 40 val 0 / 256
+scratch epoch 41 batch 1 / 274 step 10961 loss 5.04366 lr 6.763060979492357e-05
+scratch epoch 41 batch 40 / 274 step 11000 loss 4.94784 lr 6.761152718320258e-05
+scratch epoch 41 batch 90 / 274 step 11050 loss 4.93771 lr 6.758695437160911e-05
+scratch epoch 41 batch 140 / 274 step 11100 loss 4.64159 lr 6.756226038224552e-05
+scratch epoch 41 batch 190 / 274 step 11150 loss 5.09414 lr 6.753744530836973e-05
+scratch epoch 41 batch 240 / 274 step 11200 loss 4.88108 lr 6.751250924369693e-05
+scratch epoch 42 batch 1 / 274 step 11235 loss 5.14968 lr 6.749498205931259e-05
+scratch epoch 42 batch 16 / 274 step 11250 loss 5.10007 lr 6.748745228239925e-05
+scratch epoch 42 batch 66 / 274 step 11300 loss 4.87221 lr 6.746227451910538e-05
+scratch epoch 42 batch 116 / 274 step 11350 loss 4.92573 lr 6.743697604890023e-05
+scratch epoch 42 batch 166 / 274 step 11400 loss 4.77394 lr 6.741155696732458e-05
+scratch epoch 42 batch 216 / 274 step 11450 loss 4.57699 lr 6.738601737037468e-05
+scratch epoch 42 batch 266 / 274 step 11500 loss 4.99121 lr 6.736035735450193e-05
+scratch epoch 43 batch 1 / 274 step 11509 loss 4.89851 lr 6.735572577062647e-05
+scratch epoch 43 batch 42 / 274 step 11550 loss 4.73342 lr 6.733457701661247e-05
+scratch epoch 43 batch 92 / 274 step 11600 loss 4.72066 lr 6.730867645406689e-05
+scratch epoch 43 batch 142 / 274 step 11650 loss 4.91696 lr 6.728265576467975e-05
+scratch epoch 43 batch 192 / 274 step 11700 loss 5.12875 lr 6.725651504671934e-05
+scratch epoch 43 batch 242 / 274 step 11750 loss 4.77867 lr 6.723025439890719e-05
+scratch epoch 44 batch 1 / 274 step 11783 loss 4.74586 lr 6.721285672193033e-05
+scratch epoch 44 batch 18 / 274 step 11800 loss 4.70919 lr 6.720387392041778e-05
+scratch epoch 44 batch 68 / 274 step 11850 loss 5.05414 lr 6.717737371087813e-05
+scratch epoch 44 batch 118 / 274 step 11900 loss 5.08956 lr 6.715075387036741e-05
+scratch epoch 44 batch 168 / 274 step 11950 loss 5.09254 lr 6.712401449941663e-05
+scratch epoch 44 batch 218 / 274 step 12000 loss 4.81194 lr 6.709715569900814e-05
+scratch epoch 44 batch 268 / 274 step 12050 loss 4.9694 lr 6.70701775705754e-05
+scratch epoch 45 batch 1 / 274 step 12057 loss 5.08634 lr 6.706639111601262e-05
+scratch epoch 45 batch 44 / 274 step 12100 loss 4.92991 lr 6.704308021600245e-05
+scratch epoch 45 batch 94 / 274 step 12150 loss 4.7291 lr 6.701586373762364e-05
+scratch epoch 45 batch 144 / 274 step 12200 loss 4.85879 lr 6.698852823822316e-05
+scratch epoch 45 batch 194 / 274 step 12250 loss 4.94577 lr 6.696107382103472e-05
+scratch epoch 45 batch 244 / 274 step 12300 loss 5.09558 lr 6.69335005897411e-05
+evaluate scratch 45 train 0 / 160
+evaluate scratch 45 val 0 / 256
+scratch epoch 46 batch 1 / 274 step 12331 loss 5.27379 lr 6.691634556354759e-05
+scratch epoch 46 batch 20 / 274 step 12350 loss 5.04355 lr 6.690580864847381e-05
+scratch epoch 46 batch 70 / 274 step 12400 loss 4.7309 lr 6.687799810181266e-05
+scratch epoch 46 batch 120 / 274 step 12450 loss 4.87949 lr 6.685006905478538e-05
+scratch epoch 46 batch 170 / 274 step 12500 loss 5.05079 lr 6.682202161286722e-05
+scratch epoch 46 batch 220 / 274 step 12550 loss 4.8721 lr 6.679385588198056e-05
+scratch epoch 46 batch 270 / 274 step 12600 loss 4.71029 lr 6.676557196849451e-05
+scratch epoch 47 batch 1 / 274 step 12605 loss 4.92851 lr 6.676273708121146e-05
+scratch epoch 47 batch 46 / 274 step 12650 loss 4.91396 lr 6.673716997922448e-05
+scratch epoch 47 batch 96 / 274 step 12700 loss 5.02057 lr 6.670865002143182e-05
+scratch epoch 47 batch 146 / 274 step 12750 loss 4.89963 lr 6.668001220282337e-05
+scratch epoch 47 batch 196 / 274 step 12800 loss 4.79834 lr 6.665125663155108e-05
+scratch epoch 47 batch 246 / 274 step 12850 loss 5.31218 lr 6.662238341621164e-05
+scratch epoch 48 batch 1 / 274 step 12879 loss 5.08331 lr 6.660558308975262e-05
+scratch epoch 48 batch 22 / 274 step 12900 loss 4.97743 lr 6.659339266584598e-05
+scratch epoch 48 batch 72 / 274 step 12950 loss 5.00079 lr 6.656428448993891e-05
+scratch epoch 48 batch 122 / 274 step 13000 loss 4.6681 lr 6.653505899841874e-05
+scratch epoch 48 batch 172 / 274 step 13050 loss 4.83255 lr 6.650571630165678e-05
+scratch epoch 48 batch 222 / 274 step 13100 loss 5.08895 lr 6.6476256510467e-05
+scratch epoch 48 batch 272 / 274 step 13150 loss 4.79804 lr 6.644667973610558e-05
+scratch epoch 49 batch 1 / 274 step 13153 loss 4.96535 lr 6.64449014120158e-05
+scratch epoch 49 batch 48 / 274 step 13200 loss 4.75855 lr 6.641698609027048e-05
+scratch epoch 49 batch 98 / 274 step 13250 loss 4.77279 lr 6.638717568510104e-05
+scratch epoch 49 batch 148 / 274 step 13300 loss 4.81257 lr 6.635724863317755e-05
+scratch epoch 49 batch 198 / 274 step 13350 loss 4.79352 lr 6.632720504752081e-05
+scratch epoch 49 batch 248 / 274 step 13400 loss 5.16047 lr 6.62970450415917e-05
+scratch epoch 50 batch 1 / 274 step 13427 loss 5.06289 lr 6.628071027092097e-05
+scratch epoch 50 batch 24 / 274 step 13450 loss 4.83805 lr 6.626676872929081e-05
+scratch epoch 50 batch 74 / 274 step 13500 loss 5.18681 lr 6.623637622495795e-05
+scratch epoch 50 batch 124 / 274 step 13550 loss 4.90777 lr 6.620586764337171e-05
+scratch epoch 50 batch 174 / 274 step 13600 loss 4.87084 lr 6.617524309974907e-05
+scratch epoch 50 batch 224 / 274 step 13650 loss 4.84149 lr 6.614450270974492e-05
+scratch epoch 50 batch 274 / 274 step 13700 loss 4.90999 lr 6.611364658945171e-05
+evaluate scratch 50 train 0 / 160
+evaluate scratch 50 val 0 / 1796
+evaluate scratch 50 val 256 / 1796
+evaluate scratch 50 val 512 / 1796
+evaluate scratch 50 val 768 / 1796
+evaluate scratch 50 val 1024 / 1796
+evaluate scratch 50 val 1280 / 1796
+evaluate scratch 50 val 1536 / 1796
+evaluate scratch 50 val 1792 / 1796
+Completed chunk scratch 50 2449.1357297571376

@@ -1,0 +1,14 @@
+common metrics scratch 300 256 / 1956
+common metrics scratch 300 512 / 1956
+common metrics scratch 300 768 / 1956
+common metrics scratch 300 1024 / 1956
+common metrics scratch 300 1280 / 1956
+common metrics scratch 300 1536 / 1956
+common metrics scratch 300 1792 / 1956
+common metrics synthetic 300 256 / 1956
+common metrics synthetic 300 512 / 1956
+common metrics synthetic 300 768 / 1956
+common metrics synthetic 300 1024 / 1956
+common metrics synthetic 300 1280 / 1956
+common metrics synthetic 300 1536 / 1956
+common metrics synthetic 300 1792 / 1956

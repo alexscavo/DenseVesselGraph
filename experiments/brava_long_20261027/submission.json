@@ -1,0 +1,63 @@
+{
+  "preflight": "1636355",
+  "smoke": "1636935",
+  "smoke_prior_gpu_jobs": [],
+  "smoke_queue": "",
+  "frozen_source_manifest_sha256": "477645e496e8ee5a93d71536b8f8825c0df9d46c26ccbb2027f3c3ec9af01031",
+  "previous_smokes": [
+    {
+      "job": "1636588",
+      "status": "CANCELLED by 307254|0:0",
+      "reason": "Shorten multiprocessing temporary socket path; correct aggregation of one-off gradient diagnostics. No long-training updates or scientific settings changed."
+    }
+  ],
+  "training_arrays": [
+    "1637025",
+    "1637027",
+    "1637032",
+    "1637034",
+    "1637036",
+    "1637037",
+    "1637039",
+    "1637040",
+    "1637042",
+    "1637044",
+    "1637045",
+    "1637046"
+  ],
+  "arrays_by_end_epoch": {
+    "25": "1637025",
+    "50": "1637027",
+    "75": "1637032",
+    "100": "1637034",
+    "125": "1637036",
+    "150": "1637037",
+    "175": "1637039",
+    "200": "1637040",
+    "225": "1637042",
+    "250": "1637044",
+    "275": "1637045",
+    "300": "1637046"
+  },
+  "collectors": [
+    "1637026",
+    "1637029",
+    "1637035",
+    "1637038",
+    "1637041",
+    "1637047"
+  ],
+  "collector_epochs": {
+    "25": "1637026",
+    "50": "1637029",
+    "100": "1637035",
+    "150": "1637038",
+    "200": "1637041",
+    "300": "1637047"
+  },
+  "global_h100_limit": 2,
+  "training_prior_gpu_jobs": [],
+  "training_queue": "",
+  "chunk_walltime": "01:20:00",
+  "selected_batch": 32
+}

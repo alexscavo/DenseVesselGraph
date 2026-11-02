@@ -1,0 +1,191 @@
+Error importing huggingface_hub.file_download: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.utils: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.hf_api: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.utils: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.hf_api: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.utils: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.hf_api: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.utils: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.hf_api: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.utils: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.hf_api: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536/huggingface_hub/utils/__init__.py)
+synthetic epoch 126 batch 1 / 274 step 34251 loss 4.28445 lr 4.545858836848857e-05
+synthetic epoch 126 batch 50 / 274 step 34300 loss 4.14278 lr 4.539566305638118e-05
+synthetic epoch 126 batch 100 / 274 step 34350 loss 4.18641 lr 4.533141655814617e-05
+synthetic epoch 126 batch 150 / 274 step 34400 loss 3.99106 lr 4.526713293114157e-05
+synthetic epoch 126 batch 200 / 274 step 34450 loss 4.37392 lr 4.520281241813727e-05
+synthetic epoch 126 batch 250 / 274 step 34500 loss 3.94444 lr 4.513845526204248e-05
+synthetic epoch 127 batch 1 / 274 step 34525 loss 4.13023 lr 4.510626301878314e-05
+synthetic epoch 127 batch 26 / 274 step 34550 loss 3.99484 lr 4.507406170590477e-05
+synthetic epoch 127 batch 76 / 274 step 34600 loss 3.93926 lr 4.500963199290921e-05
+synthetic epoch 127 batch 126 / 274 step 34650 loss 3.98025 lr 4.494516636637737e-05
+synthetic epoch 127 batch 176 / 274 step 34700 loss 4.09011 lr 4.488066506976648e-05
+synthetic epoch 127 batch 226 / 274 step 34750 loss 4.11395 lr 4.481612834666848e-05
+synthetic epoch 128 batch 1 / 274 step 34799 loss 4.4958 lr 4.4752848222140287e-05
+synthetic epoch 128 batch 2 / 274 step 34800 loss 4.06309 lr 4.4751556440809105e-05
+synthetic epoch 128 batch 52 / 274 step 34850 loss 3.93279 lr 4.468694959604693e-05
+synthetic epoch 128 batch 102 / 274 step 34900 loss 4.14664 lr 4.46223080563725e-05
+synthetic epoch 128 batch 152 / 274 step 34950 loss 3.76536 lr 4.45576320659074e-05
+synthetic epoch 128 batch 202 / 274 step 35000 loss 3.99977 lr 4.4492921868903277e-05
+synthetic epoch 128 batch 252 / 274 step 35050 loss 3.76739 lr 4.442817770974101e-05
+synthetic epoch 129 batch 1 / 274 step 35073 loss 3.98714 lr 4.439838405935597e-05
+synthetic epoch 129 batch 28 / 274 step 35100 loss 4.33024 lr 4.4363399832929706e-05
+synthetic epoch 129 batch 78 / 274 step 35150 loss 3.7732 lr 4.4298588483105814e-05
+synthetic epoch 129 batch 128 / 274 step 35200 loss 4.2798 lr 4.42337439050322e-05
+synthetic epoch 129 batch 178 / 274 step 35250 loss 4.32218 lr 4.416886634359723e-05
+synthetic epoch 129 batch 228 / 274 step 35300 loss 4.2796 lr 4.410395604381379e-05
+synthetic epoch 130 batch 1 / 274 step 35347 loss 3.97089 lr 4.40429107302348e-05
+synthetic epoch 130 batch 4 / 274 step 35350 loss 4.27047 lr 4.403901325081846e-05
+synthetic epoch 130 batch 54 / 274 step 35400 loss 4.14912 lr 4.397403820987049e-05
+synthetic epoch 130 batch 104 / 274 step 35450 loss 4.25234 lr 4.390903116635093e-05
+synthetic epoch 130 batch 154 / 274 step 35500 loss 4.14636 lr 4.38439923657617e-05
+synthetic epoch 130 batch 204 / 274 step 35550 loss 4.14146 lr 4.3778922053724646e-05
+synthetic epoch 130 batch 254 / 274 step 35600 loss 4.10831 lr 4.3713820475980586e-05
+evaluate synthetic 130 train 0 / 160
+evaluate synthetic 130 val 0 / 256
+synthetic epoch 131 batch 1 / 274 step 35621 loss 4.22029 lr 4.368646854903104e-05
+synthetic epoch 131 batch 30 / 274 step 35650 loss 3.92306 lr 4.3648687878388466e-05
+synthetic epoch 131 batch 80 / 274 step 35700 loss 4.24316 lr 4.358352450692434e-05
+synthetic epoch 131 batch 130 / 274 step 35750 loss 4.2969 lr 4.351833060768053e-05
+synthetic epoch 131 batch 180 / 274 step 35800 loss 3.86348 lr 4.345310642686458e-05
+synthetic epoch 131 batch 230 / 274 step 35850 loss 3.86717 lr 4.338785221079845e-05
+synthetic epoch 132 batch 1 / 274 step 35895 loss 4.54823 lr 4.33290979398765e-05
+synthetic epoch 132 batch 6 / 274 step 35900 loss 4.04694 lr 4.3322568205917474e-05
+synthetic epoch 132 batch 56 / 274 step 35950 loss 4.0048 lr 4.325725465876956e-05
+synthetic epoch 132 batch 106 / 274 step 36000 loss 4.12413 lr 4.3191911816014125e-05
+synthetic epoch 132 batch 156 / 274 step 36050 loss 3.95881 lr 4.312653992442124e-05
+synthetic epoch 132 batch 206 / 274 step 36100 loss 4.06943 lr 4.306113923087066e-05
+synthetic epoch 132 batch 256 / 274 step 36150 loss 3.93589 lr 4.2995709982350964e-05
+synthetic epoch 133 batch 1 / 274 step 36169 loss 4.30921 lr 4.2970839432196114e-05
+synthetic epoch 133 batch 32 / 274 step 36200 loss 4.03702 lr 4.293025242595851e-05
+synthetic epoch 133 batch 82 / 274 step 36250 loss 4.06351 lr 4.28647668088966e-05
+synthetic epoch 133 batch 132 / 274 step 36300 loss 4.26632 lr 4.279925337847451e-05
+synthetic epoch 133 batch 182 / 274 step 36350 loss 4.0417 lr 4.273371238210653e-05
+synthetic epoch 133 batch 232 / 274 step 36400 loss 4.01841 lr 4.266814406731105e-05
+synthetic epoch 134 batch 1 / 274 step 36443 loss 4.18552 lr 4.261173365611142e-05
+synthetic epoch 134 batch 8 / 274 step 36450 loss 3.99303 lr 4.260254868170967e-05
+synthetic epoch 134 batch 58 / 274 step 36500 loss 4.24871 lr 4.25369264730262e-05
+synthetic epoch 134 batch 108 / 274 step 36550 loss 3.76643 lr 4.247127768908572e-05
+synthetic epoch 134 batch 158 / 274 step 36600 loss 3.7362 lr 4.240560257781373e-05
+synthetic epoch 134 batch 208 / 274 step 36650 loss 4.15668 lr 4.23399013872351e-05
+synthetic epoch 134 batch 258 / 274 step 36700 loss 4.24555 lr 4.227417436547324e-05
+synthetic epoch 135 batch 1 / 274 step 36717 loss 4.00739 lr 4.2251821337832706e-05
+synthetic epoch 135 batch 34 / 274 step 36750 loss 4.0876 lr 4.220842176074908e-05
+synthetic epoch 135 batch 84 / 274 step 36800 loss 4.13373 lr 4.2142643821380164e-05
+synthetic epoch 135 batch 134 / 274 step 36850 loss 4.43868 lr 4.207684079577975e-05
+synthetic epoch 135 batch 184 / 274 step 36900 loss 4.00957 lr 4.2011012932455774e-05
+synthetic epoch 135 batch 234 / 274 step 36950 loss 3.90753 lr 4.194516048001002e-05
+evaluate synthetic 135 train 0 / 160
+evaluate synthetic 135 val 0 / 256
+synthetic epoch 136 batch 1 / 274 step 36991 loss 3.97203 lr 4.189114329504031e-05
+synthetic epoch 136 batch 10 / 274 step 37000 loss 3.93908 lr 4.187928368713713e-05
+synthetic epoch 136 batch 60 / 274 step 37050 loss 3.93114 lr 4.181338280262365e-05
+synthetic epoch 136 batch 110 / 274 step 37100 loss 4.24342 lr 4.174745807534713e-05
+synthetic epoch 136 batch 160 / 274 step 37150 loss 4.16298 lr 4.1681509754275144e-05
+synthetic epoch 136 batch 210 / 274 step 37200 loss 4.28974 lr 4.161553808846438e-05
+synthetic epoch 136 batch 260 / 274 step 37250 loss 3.96163 lr 4.1549543327059686e-05
+synthetic epoch 137 batch 1 / 274 step 37265 loss 4.17573 lr 4.152974043225538e-05
+synthetic epoch 137 batch 36 / 274 step 37300 loss 4.04387 lr 4.148352571929313e-05
+synthetic epoch 137 batch 86 / 274 step 37350 loss 4.11498 lr 4.141748551448305e-05
+synthetic epoch 137 batch 136 / 274 step 37400 loss 4.11751 lr 4.135142296203315e-05
+synthetic epoch 137 batch 186 / 274 step 37450 loss 4.08857 lr 4.12853383114315e-05
+synthetic epoch 137 batch 236 / 274 step 37500 loss 3.90761 lr 4.1219231812249666e-05
+synthetic epoch 138 batch 1 / 274 step 37539 loss 4.26291 lr 4.1167653736201004e-05
+synthetic epoch 138 batch 12 / 274 step 37550 loss 3.97799 lr 4.1153103714141676e-05
+synthetic epoch 138 batch 62 / 274 step 37600 loss 4.16186 lr 4.108695426684315e-05
+synthetic epoch 138 batch 112 / 274 step 37650 loss 3.99472 lr 4.102078372017035e-05
+synthetic epoch 138 batch 162 / 274 step 37700 loss 4.02321 lr 4.095459232401919e-05
+synthetic epoch 138 batch 212 / 274 step 37750 loss 3.96593 lr 4.0888380328364355e-05
+synthetic epoch 138 batch 262 / 274 step 37800 loss 4.01496 lr 4.0822147983258294e-05
+synthetic epoch 139 batch 1 / 274 step 37813 loss 4.26723 lr 4.080492427115383e-05
+synthetic epoch 139 batch 38 / 274 step 37850 loss 4.2282 lr 4.0755895538830326e-05
+synthetic epoch 139 batch 88 / 274 step 37900 loss 3.86407 lr 4.068962324528568e-05
+synthetic epoch 139 batch 138 / 274 step 37950 loss 4.08029 lr 4.062333135290453e-05
+synthetic epoch 139 batch 188 / 274 step 38000 loss 4.08442 lr 4.055702011204106e-05
+synthetic epoch 139 batch 238 / 274 step 38050 loss 3.91762 lr 4.0490689773122565e-05
+synthetic epoch 140 batch 1 / 274 step 38087 loss 3.93356 lr 4.0441593174286946e-05
+synthetic epoch 140 batch 14 / 274 step 38100 loss 4.41539 lr 4.0424340586648414e-05
+synthetic epoch 140 batch 64 / 274 step 38150 loss 4.17998 lr 4.035797280318917e-05
+synthetic epoch 140 batch 114 / 274 step 38200 loss 4.36244 lr 4.029158667338568e-05
+synthetic epoch 140 batch 164 / 274 step 38250 loss 4.02659 lr 4.0225182447947994e-05
+synthetic epoch 140 batch 214 / 274 step 38300 loss 4.42411 lr 4.015876037765454e-05
+synthetic epoch 140 batch 264 / 274 step 38350 loss 4.0718 lr 4.009232071335115e-05
+evaluate synthetic 140 train 0 / 160
+evaluate synthetic 140 val 0 / 256
+synthetic epoch 141 batch 1 / 274 step 38361 loss 3.91336 lr 4.00777016510046e-05
+synthetic epoch 141 batch 40 / 274 step 38400 loss 4.25906 lr 4.0025863705950094e-05
+synthetic epoch 141 batch 90 / 274 step 38450 loss 3.93317 lr 3.9959389606429124e-05
+synthetic epoch 141 batch 140 / 274 step 38500 loss 3.84731 lr 3.989289866583054e-05
+synthetic epoch 141 batch 190 / 274 step 38550 loss 3.97994 lr 3.982639113526028e-05
+synthetic epoch 141 batch 240 / 274 step 38600 loss 4.21452 lr 3.975986726588687e-05
+synthetic epoch 142 batch 1 / 274 step 38635 loss 4.13908 lr 3.9713290970268995e-05
+synthetic epoch 142 batch 16 / 274 step 38650 loss 3.90133 lr 3.9693327308940606e-05
+synthetic epoch 142 batch 66 / 274 step 38700 loss 4.18935 lr 3.962677151571252e-05
+synthetic epoch 142 batch 116 / 274 step 38750 loss 3.99394 lr 3.9560200137553415e-05
+synthetic epoch 142 batch 166 / 274 step 38800 loss 3.95489 lr 3.9493613425872994e-05
+synthetic epoch 142 batch 216 / 274 step 38850 loss 4.15864 lr 3.942701163213885e-05
+synthetic epoch 142 batch 266 / 274 step 38900 loss 4.07994 lr 3.936039500787553e-05
+synthetic epoch 143 batch 1 / 274 step 38909 loss 4.2313 lr 3.934840245992004e-05
+synthetic epoch 143 batch 42 / 274 step 38950 loss 4.02686 lr 3.929376380466361e-05
+synthetic epoch 143 batch 92 / 274 step 39000 loss 4.19345 lr 3.922711827413868e-05
+synthetic epoch 143 batch 142 / 274 step 39050 loss 4.02564 lr 3.916045866799049e-05
+synthetic epoch 143 batch 192 / 274 step 39100 loss 3.84004 lr 3.909378523796194e-05
+synthetic epoch 143 batch 242 / 274 step 39150 loss 3.93859 lr 3.9027098235848076e-05
+synthetic epoch 144 batch 1 / 274 step 39183 loss 4.27684 lr 3.8983077501988316e-05
+synthetic epoch 144 batch 18 / 274 step 39200 loss 4.15562 lr 3.896039791349527e-05
+synthetic epoch 144 batch 68 / 274 step 39250 loss 4.04206 lr 3.889368452280018e-05
+synthetic epoch 144 batch 118 / 274 step 39300 loss 4.18749 lr 3.882695831570879e-05
+synthetic epoch 144 batch 168 / 274 step 39350 loss 3.88084 lr 3.876021954421551e-05
+synthetic epoch 144 batch 218 / 274 step 39400 loss 3.92807 lr 3.869346846036222e-05
+synthetic epoch 144 batch 268 / 274 step 39450 loss 4.16789 lr 3.8626705316237245e-05
+synthetic epoch 145 batch 1 / 274 step 39457 loss 4.21255 lr 3.861735752800198e-05
+synthetic epoch 145 batch 44 / 274 step 39500 loss 4.09656 lr 3.8559930363974474e-05
+synthetic epoch 145 batch 94 / 274 step 39550 loss 4.09969 lr 3.849314385575244e-05
+synthetic epoch 145 batch 144 / 274 step 39600 loss 4.10377 lr 3.842634604379325e-05
+synthetic epoch 145 batch 194 / 274 step 39650 loss 4.25216 lr 3.8359537180361746e-05
+synthetic epoch 145 batch 244 / 274 step 39700 loss 4.27115 lr 3.829271751776446e-05
+evaluate synthetic 145 train 0 / 160
+evaluate synthetic 145 val 0 / 256
+synthetic epoch 146 batch 1 / 274 step 39731 loss 4.1824 lr 3.825128401428796e-05
+synthetic epoch 146 batch 20 / 274 step 39750 loss 4.07499 lr 3.822588730834878e-05
+synthetic epoch 146 batch 70 / 274 step 39800 loss 4.03039 lr 3.8159046804501835e-05
+synthetic epoch 146 batch 120 / 274 step 39850 loss 4.16003 lr 3.809219625864969e-05
+synthetic epoch 146 batch 170 / 274 step 39900 loss 3.87793 lr 3.802533592325635e-05
+synthetic epoch 146 batch 220 / 274 step 39950 loss 3.99697 lr 3.7958466050822735e-05
+synthetic epoch 146 batch 270 / 274 step 40000 loss 3.93283 lr 3.78915868938858e-05
+synthetic epoch 147 batch 1 / 274 step 40005 loss 4.02686 lr 3.7884898477268156e-05
+synthetic epoch 147 batch 46 / 274 step 40050 loss 4.26824 lr 3.7824698705017586e-05
+synthetic epoch 147 batch 96 / 274 step 40100 loss 4.1793 lr 3.7757801736824246e-05
+synthetic epoch 147 batch 146 / 274 step 40150 loss 4.06084 lr 3.7690896241945045e-05
+synthetic epoch 147 batch 196 / 274 step 40200 loss 3.81861 lr 3.7623982473051484e-05
+synthetic epoch 147 batch 246 / 274 step 40250 loss 4.02211 lr 3.75570606828463e-05
+synthetic epoch 148 batch 1 / 274 step 40279 loss 4.15968 lr 3.751824246875105e-05
+synthetic epoch 148 batch 22 / 274 step 40300 loss 4.00638 lr 3.7490131124062544e-05
+synthetic epoch 148 batch 72 / 274 step 40350 loss 4.22974 lr 3.742319404946258e-05
+synthetic epoch 148 batch 122 / 274 step 40400 loss 3.92215 lr 3.735624971183714e-05
+synthetic epoch 148 batch 172 / 274 step 40450 loss 3.92236 lr 3.728929836400444e-05
+synthetic epoch 148 batch 222 / 274 step 40500 loss 4.2388 lr 3.7222340258809115e-05
+synthetic epoch 148 batch 272 / 274 step 40550 loss 4.00024 lr 3.715537564912136e-05
+synthetic epoch 149 batch 1 / 274 step 40553 loss 4.06588 lr 3.715135757121932e-05
+synthetic epoch 149 batch 48 / 274 step 40600 loss 4.19046 lr 3.708840478783592e-05
+synthetic epoch 149 batch 98 / 274 step 40650 loss 4.18822 lr 3.702142792787114e-05
+synthetic epoch 149 batch 148 / 274 step 40700 loss 4.10238 lr 3.695444532216802e-05
+synthetic epoch 149 batch 198 / 274 step 40750 loss 4.09848 lr 3.688745722368928e-05
+synthetic epoch 149 batch 248 / 274 step 40800 loss 4.21692 lr 3.682046388541837e-05
+synthetic epoch 150 batch 1 / 274 step 40827 loss 4.19243 lr 3.678428539311398e-05
+synthetic epoch 150 batch 24 / 274 step 40850 loss 4.15626 lr 3.675346556035851e-05
+synthetic epoch 150 batch 74 / 274 step 40900 loss 4.02511 lr 3.668646250153178e-05
+synthetic epoch 150 batch 124 / 274 step 40950 loss 4.05528 lr 3.6619454961978135e-05
+synthetic epoch 150 batch 174 / 274 step 41000 loss 3.99565 lr 3.655244319475443e-05
+synthetic epoch 150 batch 224 / 274 step 41050 loss 4.20626 lr 3.648542745293351e-05
+synthetic epoch 150 batch 274 / 274 step 41100 loss 3.92507 lr 3.641840798960323e-05
+evaluate synthetic 150 train 0 / 160
+evaluate synthetic 150 val 0 / 1796
+evaluate synthetic 150 val 256 / 1796
+evaluate synthetic 150 val 512 / 1796
+evaluate synthetic 150 val 768 / 1796
+evaluate synthetic 150 val 1024 / 1796
+evaluate synthetic 150 val 1280 / 1796
+evaluate synthetic 150 val 1536 / 1796
+evaluate synthetic 150 val 1792 / 1796
+Completed chunk synthetic 150 2347.0326307209907
