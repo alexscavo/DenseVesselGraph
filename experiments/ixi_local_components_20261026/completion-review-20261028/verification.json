@@ -1,0 +1,97 @@
+{
+  "reviewed_at_utc": "2026-10-28T14:22:26.003283+00:00",
+  "completed": true,
+  "primary_step": 5500,
+  "arms": [
+    "B0",
+    "A-xyz-fresh",
+    "A-xyz-transfer",
+    "A-cls",
+    "A",
+    "A-control"
+  ],
+  "all_six_training_tasks_and_collector_completed": true,
+  "source_sha256": {
+    "B0": "91ac46e091bb3f74c5748758235c26dc7c8814a232adda03dd49def0c1c8a3de",
+    "A": "ebb47360f7799801f1ab364f3ef9e60a1b877038d39962b4861d33d1944b9385",
+    "A-xyz": "a1210fe958dffe0e588d38222cb62bf48b58e9b238fc57c027ec1c7a795277c9"
+  },
+  "source_paths": {
+    "B0": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/B0/model-12000.pt",
+    "A": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A/model-12000.pt",
+    "A-xyz": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt"
+  },
+  "plan_sha256": "b9554511dcbf0596f6615394bff91404c036ac6e6d4f0620531535532830598a",
+  "analysis_sha256": "93a5e8055f7206146c46221610ea502f4c8c1a1f61378d563857ae6716063c53",
+  "same_augmented_input_target_stream_sha256": "e206417d13a7e7aece56211278259da9fdb9724e7a93a50b898895975c9a5816",
+  "checkpoints": [
+    {
+      "arm": "B0",
+      "path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_local_components_20261026/runs/B0/model-5500.pt",
+      "array_job": "1653860_0",
+      "raw_job": "1654596",
+      "sha256": "682c4cb19e3150758a7ac04149931d76aa7da3ecc5916f8eb96e70007390b667",
+      "bytes": 1383086328
+    },
+    {
+      "arm": "A-xyz-fresh",
+      "path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_local_components_20261026/runs/A-xyz-fresh/model-5500.pt",
+      "array_job": "1653860_1",
+      "raw_job": "1655824",
+      "sha256": "f02d205bf738c3f696be275379269acd5ff331c0bc4822fd2cbecaeea3c75f6f",
+      "bytes": 1386604248
+    },
+    {
+      "arm": "A-xyz-transfer",
+      "path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_local_components_20261026/runs/A-xyz-transfer/model-5500.pt",
+      "array_job": "1653860_2",
+      "raw_job": "1656912",
+      "sha256": "096a0d1f61c061cd00570df8fd62f2f401d6f49f62b11309bb67387c67e64e50",
+      "bytes": 1386604248
+    },
+    {
+      "arm": "A-cls",
+      "path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_local_components_20261026/runs/A-cls/model-5500.pt",
+      "array_job": "1653860_3",
+      "raw_job": "1657934",
+      "sha256": "ee2cf41fe67eca90030cb1243f84fa9965dee28f8ecebab5d074bd55acd34fd2",
+      "bytes": 1386607320
+    },
+    {
+      "arm": "A",
+      "path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_local_components_20261026/runs/A/model-5500.pt",
+      "array_job": "1653860_4",
+      "raw_job": "1659185",
+      "sha256": "1f9eb3e51717f7992e504d025658841bafffb7c2e100c7b1a5fc4bdf4c8e4f3a",
+      "bytes": 1386607320
+    },
+    {
+      "arm": "A-control",
+      "path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_local_components_20261026/runs/A-control/model-5500.pt",
+      "array_job": "1653860_5",
+      "raw_job": "1653860",
+      "sha256": "6a433683b4025c58791a96d4a545d897ddde0d47c6e149cd14fe38762ac8c4c4",
+      "bytes": 1386607320
+    }
+  ],
+  "train_patches": 4096,
+  "train_subjects": 123,
+  "val_patches": 512,
+  "val_subjects": 26,
+  "target_seed": 261026,
+  "object_queries": 256,
+  "augmentation_unchanged": true,
+  "budget": {
+    "updates_per_arm": 5500,
+    "patch_exposures_per_arm": 176000
+  },
+  "uncertainty": "2000 paired whole-subject resamples;26 validation subjects; one training seed; no seed uncertainty or held-out-test result",
+  "allocated_gpu_hours": {
+    "six_training_arms": 3.613888888888889,
+    "recovered_smoke_zero_shot_and_training": 3.794166666666667,
+    "prior_failed_smokes": 0.5305555555555556,
+    "total_including_prior_failed_smokes": 4.324722222222222
+  },
+  "collector_wall_seconds": 749,
+  "no_new_training_or_inference": true
+}

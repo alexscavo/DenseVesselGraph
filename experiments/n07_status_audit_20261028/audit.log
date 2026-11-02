@@ -1,0 +1,179 @@
+IXI train 2000
+IXI train 4000
+IXI train 6000
+IXI train 8000
+IXI train 10000
+IXI val 2000
+BRAVA train 2000
+BRAVA train 4000
+BRAVA train 6000
+BRAVA train 8000
+{
+  "created_at": "2026-10-28T10:29:06+0100",
+  "scope": "Serialized train/val K8 nodes, edges and boundary flags only; no test arrays or images",
+  "datasets": {
+    "IXI": {
+      "root": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/IXI/transfer_splines_k8_20261015",
+      "manifest_sha256": "b97e1cc3567942e6ffbda151c4b48ae459b7aa8bfc9c4b9a00f5a46a52b8d525",
+      "manifest_matches_existing_plan": true,
+      "max_anchors": 256,
+      "controls": 8,
+      "exclusions": {
+        "parallel_branches": 1629,
+        "closed_branch": 313
+      },
+      "boundary_policy": "last_inside_sample_voxel_cells_with_sparse_component_exact_fallback",
+      "splits": {
+        "train": {
+          "patches": 10000,
+          "subjects": 123,
+          "min": 2,
+          "p50": 16.0,
+          "p95": 62.0,
+          "p99": 86.0,
+          "max": 153,
+          "mean": 22.4398,
+          "overflow": {
+            "120": 5,
+            "192": 0,
+            "256": 0
+          },
+          "edges": 184726,
+          "isolated_nodes": 76,
+          "degree1_nodes": 152940,
+          "degree2_nodes": 0,
+          "junction_nodes": 71382,
+          "boundary_nodes": 95940,
+          "cache_crc_manifest_sha256": "ef15e88592a4fead267be604273f2494736c9c2fabed89fdfef3a36a2704164d"
+        },
+        "val": {
+          "patches": 2649,
+          "subjects": 26,
+          "min": 2,
+          "p50": 16.0,
+          "p95": 66.0,
+          "p99": 87.51999999999998,
+          "max": 141,
+          "mean": 23.5919214798037,
+          "overflow": {
+            "120": 5,
+            "192": 0,
+            "256": 0
+          },
+          "edges": 51937,
+          "isolated_nodes": 36,
+          "degree1_nodes": 42079,
+          "degree2_nodes": 0,
+          "junction_nodes": 20380,
+          "boundary_nodes": 25691,
+          "cache_crc_manifest_sha256": "74c60686915f4c0b48f5e1451dac2be700fd8ae760a1f9d90e5ecaedb53ff856"
+        }
+      },
+      "n07_subset": {
+        "train": {
+          "patches": 4096,
+          "subjects": 123,
+          "min": 2,
+          "p50": 16.0,
+          "p95": 61.0,
+          "p99": 85.05000000000018,
+          "max": 153,
+          "mean": 22.02978515625,
+          "overflow": {
+            "120": 1,
+            "192": 0,
+            "256": 0
+          },
+          "edges": 74102,
+          "isolated_nodes": 37,
+          "degree1_nodes": 61665,
+          "degree2_nodes": 0,
+          "junction_nodes": 28532,
+          "boundary_nodes": 38984
+        },
+        "val": {
+          "patches": 512,
+          "subjects": 26,
+          "min": 2,
+          "p50": 20.0,
+          "p95": 66.0,
+          "p99": 83.0,
+          "max": 124,
+          "mean": 25.58984375,
+          "overflow": {
+            "120": 1,
+            "192": 0,
+            "256": 0
+          },
+          "edges": 10968,
+          "isolated_nodes": 6,
+          "degree1_nodes": 8746,
+          "degree2_nodes": 0,
+          "junction_nodes": 4350,
+          "boundary_nodes": 5340
+        }
+      },
+      "subject_disjoint": true,
+      "all_retained_development_targets_fit_120": false
+    },
+    "BRAVA": {
+      "root": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8",
+      "manifest_sha256": "1e61d411c12fc72b348fa0c967c978bf9c451284d1ba7b37866f9c5df25b5fb6",
+      "manifest_matches_existing_plan": true,
+      "max_anchors": 256,
+      "controls": 8,
+      "exclusions": {},
+      "boundary_policy": "last_inside_sample_voxel_cells_with_sparse_component_exact_fallback",
+      "splits": {
+        "train": {
+          "patches": 8768,
+          "subjects": 39,
+          "min": 2,
+          "p50": 14.0,
+          "p95": 38.0,
+          "p99": 47.0,
+          "max": 64,
+          "mean": 16.78125,
+          "overflow": {
+            "120": 0,
+            "192": 0,
+            "256": 0
+          },
+          "edges": 93248,
+          "isolated_nodes": 2610,
+          "degree1_nodes": 123544,
+          "degree2_nodes": 0,
+          "junction_nodes": 20984,
+          "boundary_nodes": 102426,
+          "cache_crc_manifest_sha256": "350a9a59717e63cab7575f9c80b693e9a6a8be132ceb1a4b06ea1c477fcbb382"
+        },
+        "val": {
+          "patches": 1796,
+          "subjects": 8,
+          "min": 2,
+          "p50": 15.0,
+          "p95": 38.0,
+          "p99": 51.0,
+          "max": 69,
+          "mean": 17.14142538975501,
+          "overflow": {
+            "120": 0,
+            "192": 0,
+            "256": 0
+          },
+          "edges": 19446,
+          "isolated_nodes": 584,
+          "degree1_nodes": 25857,
+          "degree2_nodes": 0,
+          "junction_nodes": 4345,
+          "boundary_nodes": 21613,
+          "cache_crc_manifest_sha256": "382f2a3c15e709149bd89389c1b8f8552867b26a80b5054b6bdac3a40033e9f4"
+        }
+      },
+      "subject_disjoint": true,
+      "all_retained_development_targets_fit_120": true
+    }
+  },
+  "n07_plan_sha256": "b9554511dcbf0596f6615394bff91404c036ac6e6d4f0620531535532830598a",
+  "seconds": 146.2816687450104
+}

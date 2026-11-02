@@ -69,6 +69,17 @@ class RelationFormer(nn.Module):
         self.position_embedding = PositionEmbeddingSine3D(channels=hidden_dim)
         self.query_embed = nn.Embedding(self.num_queries, hidden_dim)
         self.input_proj = nn.Conv3d(encoder.num_features, hidden_dim, kernel_size=1)
+        self.fine_input_proj = None
+        self._multiscale_features = None
+        self.fine_feature_mode = 'normal'  # Inference-only contribution diagnostics.
+        if int(decoder_config['feature_levels']) == 2:
+            fine_stage=decoder_config.get('fine_feature_stage','layer3')
+            if fine_stage not in ('layer2','layer3'):
+                raise ValueError('fine_feature_stage must be layer2 or layer3')
+            fine_channels=encoder.num_features // (4 if fine_stage=='layer2' else 2)
+            with torch.random.fork_rng(devices=[]):
+                self.fine_input_proj = nn.Conv3d(fine_channels, hidden_dim, kernel_size=1)
+            getattr(self.encoder,fine_stage).register_forward_hook(self._capture_multiscale_features)
         self.class_embed = nn.Linear(hidden_dim, int(model["num_classes"]))
         # Optional patch-graph degree class: isolated, terminal, degree-2, junction.
         # Keep disabled for exact compatibility with existing checkpoints.
@@ -102,7 +113,10 @@ class RelationFormer(nn.Module):
             with torch.random.fork_rng(devices=[]):
                 self.node_refinement = LocalNodeRefinement(hidden_dim,
                     radius_vox=node_refinement.get('radius_vox', 4.),
-                    image_mode=node_refinement.get('image_mode', 'full'))
+                    image_mode=node_refinement.get('image_mode', 'full'),
+                    refine_classification=node_refinement.get('refine_classification', True),
+                    detach_features=node_refinement.get('detach_features', True),
+                    compact_output=node_refinement.get('compact_output', False))
         self._spline_local_features = None
         if self.node_refinement is not None or (self.spline_head is not None and self.spline_head.local_geometry is not None):
             # Capture early features before SENet max pooling; this adds no
@@ -126,6 +140,9 @@ class RelationFormer(nn.Module):
     def _capture_local_features(self, module, inputs, output):
         self._spline_local_features = output
 
+    def _capture_multiscale_features(self, module, inputs, output):
+        self._multiscale_features = output  # Keep backbone gradients connected.
+
     def forward(
         self, samples: torch.Tensor, domain_alpha: float = 1.0
     ) -> tuple[torch.Tensor, dict[str, torch.Tensor], torch.Tensor]:
@@ -148,11 +165,24 @@ class RelationFormer(nn.Module):
         )
         positions = self.position_embedding(mask)
         projected_features = self.input_proj(encoded)
+        sources, masks, embeddings = projected_features, mask, positions
+        if self.fine_input_proj is not None:
+            fine = self._multiscale_features
+            if self.fine_feature_mode == 'roll':
+                fine = torch.roll(fine, shifts=(1, 1, 1), dims=(-3, -2, -1))
+            elif self.fine_feature_mode != 'normal':
+                raise ValueError(self.fine_feature_mode)
+            fine = self.fine_input_proj(fine)
+            fine_mask = torch.zeros(fine.shape[0], *fine.shape[2:], device=fine.device, dtype=torch.bool)
+            # Preserve the original coarse level at index zero and its key names.
+            sources = [projected_features, fine]
+            masks = [mask, fine_mask]
+            embeddings = [positions, self.position_embedding(fine_mask)]
         tokens = self.decoder(
-            projected_features,
-            mask,
+            sources,
+            masks,
             self.query_embed.weight,
-            positions,
+            embeddings,
         )
         object_tokens = tokens[..., : self.obj_token, :]
         predictions = {

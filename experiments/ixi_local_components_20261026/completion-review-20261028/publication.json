@@ -1,0 +1,23 @@
+{
+  "completed": true,
+  "report": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/metrics/3-ixi-node-refinement-pilot.md",
+  "registry": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/research/VASCULAR_GRAPH_EXPERIMENT_REGISTRY_2026-10-26_UPDATED.md",
+  "before_sha256": {
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/metrics/3-ixi-node-refinement-pilot.md": "91a483dfaf3a8c9b2cb147f835e2ea0dffd312980bb4b6362c95ef85a969882b",
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/research/VASCULAR_GRAPH_EXPERIMENT_REGISTRY_2026-10-26_UPDATED.md": "1811a5ae77a7e110f50764e743ac0e1fd93855336b2b931e3a0d190de5c02471"
+  },
+  "after_sha256": {
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/metrics/3-ixi-node-refinement-pilot.md": "c1edc66b1882978b1f2af92cdcd5a88e4f9607798dd9c189d5ff374dc43686ca",
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/research/VASCULAR_GRAPH_EXPERIMENT_REGISTRY_2026-10-26_UPDATED.md": "51dacd459e24db8e8fb5d68c8ff645c556e89fb6ec52e145b297122f612102e0"
+  },
+  "original_negative_rows_preserved": [
+    "R06",
+    "R07",
+    "N08",
+    "D07",
+    "D08",
+    "L06"
+  ],
+  "no_new_jobs": true,
+  "verified": true
+}
