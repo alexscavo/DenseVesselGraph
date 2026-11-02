@@ -15,7 +15,13 @@ def evaluate_common_vessels(prediction, cache_path):
         gt_curves=[paths[a:b] for a,b in zip(offsets[:-1],offsets[1:])]
     nodes=np.asarray(prediction['nodes'],dtype=float).reshape(-1,3)
     edges=np.asarray(prediction['edges'],dtype=int).reshape(-1,2)
-    if 'spline_controls' in prediction:
+    if 'edge_polylines' in prediction:
+        curves=[np.asarray(c,dtype=float)@metric.T for c in prediction['edge_polylines']]
+        if len(curves)!=len(edges):raise ValueError('One polyline is required per graph edge')
+        for c,e in zip(curves,edges):
+            if len(c)<2 or not np.isfinite(c).all() or not np.allclose(c[[0,-1]],nodes[e]@metric.T,atol=1e-4):
+                raise ValueError('Curve endpoints must agree with graph edge ordering')
+    elif 'spline_controls' in prediction:
         curves=[]
         for controls in prediction['spline_controls']:
             controls=np.asarray(controls,dtype=float); k=len(controls)
@@ -68,7 +74,7 @@ def evaluate_common_vessels(prediction, cache_path):
             'common_predicted_endpoints':sum(role=='endpoint' for role in roles.values()),'common_target_endpoints':sum(role=='endpoint' for role in reference.roles.values()),
             'common_predicted_isolates':sum(role=='isolated' for role in roles.values()),
             'native_predicted_nodes':len(nodes),'native_predicted_degree2':int((degrees==2).sum()),
-            'representation_internal_controls':len(edges)*(np.asarray(prediction['spline_controls']).shape[1]-2) if len(edges) and 'spline_controls' in prediction else 0,
+            'representation_internal_controls':sum(len(controls)-2 for controls in prediction['spline_controls']) if len(edges) and 'spline_controls' in prediction else 0,
             'common_betti0_abs_error':abs(predicted.betti_0-reference.betti_0),'common_betti1_abs_error':abs(predicted.betti_1-reference.betti_1),
             'common_anchor_count_abs_error':abs(sum(role!='cycle' for role in roles.values())-len(reference.anchors))}
     for i,key in enumerate(('common_guide_distance_mm','common_tortuosity_error')):

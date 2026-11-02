@@ -213,6 +213,10 @@ def validate_config(config: Mapping[str, Any]) -> None:
         raise ConfigError("data must be a mapping")
     if data.get("spatial_dims") != 3:
         raise ConfigError("The supported model requires data.spatial_dims=3")
+    if data.get('input_modality', 'raw_mra') not in {'raw_mra', 'vessel_mask'}:
+        raise ConfigError('data.input_modality must be raw_mra or vessel_mask')
+    if data.get('input_modality') == 'vessel_mask' and config.get('training', {}).get('input') != 'image':
+        raise ConfigError('vessel_mask modality uses the image tensor slot; set training.input=image')
     image_size = data.get("image_size")
     if not isinstance(image_size, list) or len(image_size) != 3:
         raise ConfigError("data.image_size must contain three spatial dimensions")
@@ -280,8 +284,8 @@ def validate_config(config: Mapping[str, Any]) -> None:
         "object_queries",
     ):
         _positive_int(decoder.get(name), f"model.decoder.{name}")
-    if decoder.get("feature_levels") != 1:
-        raise ConfigError("The supported 3D baseline requires one feature level")
+    if decoder.get("feature_levels") not in (1, 2):
+        raise ConfigError("The supported 3D model requires one or two feature levels")
     for name in ("relation_tokens", "dummy_tokens"):
         _non_negative_int(decoder.get(name), f"model.decoder.{name}")
     if not isinstance(decoder.get("relation_attention"), bool):

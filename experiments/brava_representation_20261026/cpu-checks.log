@@ -1,0 +1,14 @@
+test_residual_migration_and_C1_continuity (tests.test_brava_representation_study.RepresentationChecks.test_residual_migration_and_C1_continuity) ... ok
+test_rotated_extra_head_targets_preserve_correspondence (tests.test_brava_representation_study.RepresentationChecks.test_rotated_extra_head_targets_preserve_correspondence) ... ok
+test_explicit_split_keeps_anchors_and_branch_loss_mass (tests.test_multidataset_graph.TargetAndMetricTests.test_explicit_split_keeps_anchors_and_branch_loss_mass) ... ok
+test_polyline_adapter_preserves_graph_and_validates_order (tests.test_multidataset_graph.TargetAndMetricTests.test_polyline_adapter_preserves_graph_and_validates_order) ... ok
+test_snapshot_orientation_dependency (tests.test_multidataset_graph.TargetAndMetricTests.test_snapshot_orientation_dependency) ... ok
+test_fractional_gamma_has_finite_gradient_for_saturated_logits (tests.test_focal_losses.FocalLossTests.test_fractional_gamma_has_finite_gradient_for_saturated_logits) ... ok
+test_gamma_zero_matches_weighted_cross_entropy (tests.test_focal_losses.FocalLossTests.test_gamma_zero_matches_weighted_cross_entropy) ... ok
+test_hard_selection_retains_gradient_connection (tests.test_focal_losses.FocalLossTests.test_hard_selection_retains_gradient_connection) ... ok
+test_unmatched_candidates_and_curriculum (tests.test_focal_losses.FocalLossTests.test_unmatched_candidates_and_curriculum) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.713s
+
+OK

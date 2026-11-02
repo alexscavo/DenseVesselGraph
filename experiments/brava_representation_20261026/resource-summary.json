@@ -1,0 +1,9 @@
+{
+  "gpu_hours": 0.6213888888888889,
+  "successful_gpu_hours": 0.6030555555555556,
+  "cpu_job_hours": 0.74,
+  "peak_allocated_gpu_gib": 3.1439261436462402,
+  "study_max_concurrent_h100": 1,
+  "global_limit": 2,
+  "all_final_jobs_successful": true
+}

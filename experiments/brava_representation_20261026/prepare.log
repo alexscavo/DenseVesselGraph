@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/scripts/brava_representation_study.py", line 248, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/scripts/brava_representation_study.py", line 245, in main
+    if a.mode=='prepare':prepare()
+                         ^^^^^^^^^
+  File "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/scripts/brava_representation_study.py", line 32, in prepare
+    for s in old['ids'][split]:grouped.setdefault(subjects[s.split('_')[1]],[]).append(s)
+                                                  ~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: '000002'

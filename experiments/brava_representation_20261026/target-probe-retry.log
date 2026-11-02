@@ -1,0 +1,32 @@
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/multiprocessing/pool.py", line 48, in mapstar
+    return list(map(*args))
+           ^^^^^^^^^^^^^^^^
+  File "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/scripts/brava_representation_study.py", line 67, in target_task
+    assert np.isfinite(gt['full_paths']).all() and np.all((gt['nodes']>=-1e-5)&(gt['nodes']<=1+1e-5))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/scripts/brava_representation_study.py", line 248, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/scripts/brava_representation_study.py", line 246, in main
+    elif a.mode=='targets':targets(a.limit)
+                           ^^^^^^^^^^^^^^^^
+  File "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/scripts/brava_representation_study.py", line 103, in targets
+    for i,(s,v,r) in enumerate(pool.imap(target_task,tasks,chunksize=4)):
+  File "/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/multiprocessing/pool.py", line 423, in <genexpr>
+    return (item for chunk in result for item in chunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/multiprocessing/pool.py", line 873, in next
+    raise value
+AssertionError

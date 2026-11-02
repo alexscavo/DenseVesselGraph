@@ -1,0 +1,10 @@
+test_anatomical_reference_and_parent_reconstruction (tests.test_brava_representation_evaluation.ChangedGraphEvaluation.test_anatomical_reference_and_parent_reconstruction) ... evaluate original 512 0 1
+evaluated /tmp/brava-tmp/tmpe0y3gerv/tiny-evaluation/original/000512
+evaluate split 512 0 1
+evaluated /tmp/brava-tmp/tmpe0y3gerv/tiny-evaluation/split/000512
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 4.281s
+
+OK

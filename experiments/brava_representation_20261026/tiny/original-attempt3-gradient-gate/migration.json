@@ -1,0 +1,12 @@
+{
+  "K24": {
+    "controls": 24,
+    "basis_max_error": 0.0006314165615113332,
+    "method": "least-squares residual-function transfer; exact if old knots contained"
+  },
+  "C1": {
+    "controls": 26,
+    "basis_max_error": 2.4424906541753444e-15,
+    "method": "least-squares residual-function transfer; exact if old knots contained"
+  }
+}

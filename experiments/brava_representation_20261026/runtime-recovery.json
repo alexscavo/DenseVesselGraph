@@ -1,0 +1,8 @@
+{
+  "failed_cpu_job": "1569387",
+  "symptom": "tar: Cannot write: No space left on device in node-local /tmp",
+  "phase": "runtime staging, before Python study execution",
+  "gpu_jobs": "all dependency-cancelled; zero GPU allocation",
+  "fix": "same verified runtime archive staged under $SCRATCH/tmp/br-$SLURM_JOB_ID; short TMPDIR preserves multiprocessing socket path limits",
+  "scientific_changes": false
+}

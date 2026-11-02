@@ -1,0 +1,10 @@
+{
+  "completed": true,
+  "gate_passed": true,
+  "steps": 512,
+  "seconds": 96.88877129554749,
+  "image_stream_sha256": "b38f9dd7421b650f9938d78f022a0fd51d43334ebc44ad5c56c1fb7252cef05f",
+  "bn_running_rms_change": 0.624063828745543,
+  "job_id": "1586043",
+  "peak_gpu_gib": 3.1348419189453125
+}

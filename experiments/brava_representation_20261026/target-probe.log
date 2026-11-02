@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/scripts/brava_representation_study.py", line 248, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/scripts/brava_representation_study.py", line 246, in main
+    elif a.mode=='targets':targets(a.limit)
+                           ^^^^^^^^^^^^^^^^
+  File "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/scripts/brava_representation_study.py", line 99, in targets
+    p=read(ROOT/'plan.json');tasks=[(p['dataset'],split,s) for split in ['train','val'] for s in p['ids'][split]]
+      ^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/scripts/brava_representation_study.py", line 18, in read
+    def read(p):return json.loads(Path(p).read_text())
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/pathlib.py", line 1058, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'experiments/brava_representation_20261026/plan.json'
