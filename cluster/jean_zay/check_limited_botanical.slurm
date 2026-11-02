@@ -14,8 +14,8 @@ set -eo pipefail
 export GNBM_REPO_DIR="$SLURM_SUBMIT_DIR" UV_CACHE_DIR="$SLURM_SUBMIT_DIR/.cache/uv"
 export TORCH_EXTENSIONS_DIR="$SLURM_SUBMIT_DIR/.cache/torch-extensions"
 export XDG_CACHE_HOME="$SLURM_SUBMIT_DIR/.cache" MPLCONFIGDIR="$SLURM_SUBMIT_DIR/.cache/matplotlib"
-export JOBSCRATCH="/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/limited_botanical_200_20261020/runtime/$SLURM_JOB_ID"
-export TMPDIR="$JOBSCRATCH" IDR_DEBUG=WARN
+source cluster/jean_zay/limited_runtime.sh
+export IDR_DEBUG=WARN
 unset PYTHONPATH
 source cluster/jean_zay/env.sh
 trap 'if [[ "${spline_runtime_dir:-}" == "$JOBSCRATCH/gnbm-spline-runtime-$SLURM_JOB_ID" ]]; then rm -rf -- "$spline_runtime_dir"; fi' EXIT

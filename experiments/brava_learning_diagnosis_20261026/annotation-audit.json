@@ -1,0 +1,7 @@
+{
+  "segmentation_role": "brain mask only; never vascular supervision or foreground oracle",
+  "incomplete_centerlines": true,
+  "identical_image_groups": 0,
+  "conflicting_identical_input_groups": 0,
+  "note": "No exact duplicate does not rule out partial-annotation conflicts across overlapping crops/trace variants."
+}

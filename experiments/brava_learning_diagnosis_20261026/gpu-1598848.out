@@ -1,0 +1,41 @@
+/lustre/fswork/projects/rech/vnc/upz25mj/experiments/gnbm/spline-runtime-20261006/site-packages.tar: OK
+Fixed job-local Python package copy: /lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_learning_diagnosis_20261026/runtime/1598848/gnbm-spline-runtime-1598848
+Error importing huggingface_hub.file_download: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_learning_diagnosis_20261026/runtime/1598848/gnbm-spline-runtime-1598848/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.utils: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_learning_diagnosis_20261026/runtime/1598848/gnbm-spline-runtime-1598848/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.hf_api: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_learning_diagnosis_20261026/runtime/1598848/gnbm-spline-runtime-1598848/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.utils: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_learning_diagnosis_20261026/runtime/1598848/gnbm-spline-runtime-1598848/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.hf_api: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_learning_diagnosis_20261026/runtime/1598848/gnbm-spline-runtime-1598848/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.utils: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_learning_diagnosis_20261026/runtime/1598848/gnbm-spline-runtime-1598848/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.hf_api: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_learning_diagnosis_20261026/runtime/1598848/gnbm-spline-runtime-1598848/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.utils: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_learning_diagnosis_20261026/runtime/1598848/gnbm-spline-runtime-1598848/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.hf_api: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_learning_diagnosis_20261026/runtime/1598848/gnbm-spline-runtime-1598848/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.utils: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_learning_diagnosis_20261026/runtime/1598848/gnbm-spline-runtime-1598848/huggingface_hub/utils/__init__.py)
+Error importing huggingface_hub.hf_api: cannot import name 'tqdm' from partially initialized module 'huggingface_hub.utils' (most likely due to a circular import) (/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_learning_diagnosis_20261026/runtime/1598848/gnbm-spline-runtime-1598848/huggingface_hub/utils/__init__.py)
+smoke passed
+predicted 4000 saved_b1 representative_train 160
+predicted 4000 saved_b8 representative_train 160
+predicted 4000 batch_bn_b8 representative_train 160
+predicted 4000 saved_b1 validation 256
+predicted 4000 saved_b8 validation 256
+predicted 4000 batch_bn_b8 validation 256
+predicted 4000 saved_b1 tiny_reference 16
+predicted 4000 saved_b8 tiny_reference 16
+predicted 4000 batch_bn_b8 tiny_reference 16
+predicted 4000 aug_saved_b8 augmentation_probe 32
+predicted 4000 aug_batch_bn_b8 augmentation_probe 32
+predicted 4000 saved_b8 augmentation_probe 32
+predicted 4000 batch_bn_b8 augmentation_probe 32
+predicted 4000 recal_train_b8 representative_train 160
+predicted 4000 recal_train_b8 validation 256
+predicted 4000 recal_train_b8 tiny_reference 16
+predicted 4000 recal_reverse_b8 representative_train 160
+predicted 4000 recal_reverse_b8 validation 256
+predicted 4000 recal_reverse_b8 tiny_reference 16
+predicted 1000 saved_b8 representative_train 160
+predicted 1000 saved_b8 validation 256
+predicted 2000 saved_b8 representative_train 160
+predicted 2000 saved_b8 validation 256
+predicted tiny512 saved_b1 tiny_reference 16
+predicted tiny512 saved_b8 tiny_reference 16
+predicted tiny512 batch_bn_b8 tiny_reference 16
+BRAVA K8 diagnosis inference complete

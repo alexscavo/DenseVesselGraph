@@ -583,7 +583,7 @@ class GraphCriterion(nn.Module):
         from models.spline import canonical_reverse
         if self.spline_head is None or 'spline' not in targets:
             raise ValueError('Spline loss requires the spline head and full-path target cache')
-        errors, control_errors, curve_errors, endpoint_errors = [], [], [], []
+        errors, control_errors, curve_errors, endpoint_errors, branch_weights = [], [], [], [], []
         for batch, (source, target) in enumerate(assignments):
             mapping = dict(zip(target.tolist(), source.tolist()))
             target_edges = targets['edges'][batch]
@@ -618,13 +618,15 @@ class GraphCriterion(nn.Module):
                 endpoint_delta = (endpoints-target_controls[:, [0,-1]]) @ metric.T
                 delta = dc - ((1-g)*endpoint_delta[:, :1] + g*endpoint_delta[:, 1:])
             errors.append(F.smooth_l1_loss(delta, torch.zeros_like(delta), beta=float(self.config['loss']['spline'].get('beta_mm',1.)), reduction='none').mean((1,2)))
+            branch_weights.append(geometry.get('branch_weights', torch.ones(len(target_edges), device=tokens.device))[selected].to(tokens))
             control_errors.append(dc.norm(dim=-1).mean(1))
             curve_errors.append(dx.norm(dim=-1).mean(1))
             endpoint_errors.append(((endpoints-target_controls[:, [0,-1]]) @ metric.T).norm(dim=-1).mean(1))
         # Empty graphs still touch every head parameter, compatible with DDP.
         zero = sum(p.sum()*0. for p in self.spline_head.parameters()) + predictions['pred_nodes'].sum()*0.
         mean = lambda parts: torch.cat(parts).mean() if parts else zero
-        return {'spline': mean(errors), 'spline_control_mm': mean(control_errors),
+        weighted = (torch.cat(errors)*torch.cat(branch_weights)).sum()/torch.cat(branch_weights).sum() if errors else zero
+        return {'spline': weighted, 'spline_control_mm': mean(control_errors),
                 'spline_curve_mm': mean(curve_errors), 'spline_endpoint_mm': mean(endpoint_errors),
                 'spline_positive_edges': tokens.new_tensor(sum(len(p) for p in errors))}
 

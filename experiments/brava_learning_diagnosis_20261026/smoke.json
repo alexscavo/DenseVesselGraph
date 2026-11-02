@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "augmentation": {
+    "checks": 256,
+    "passed": true,
+    "noise_test": "geometry-independent Gaussian noise; actual noisy inference measured separately",
+    "brain_mask_role": "legacy unused image-input slot; no vessel support or supervision"
+  },
+  "cache_parity": [
+    {
+      "sample": "sample_000000_0029",
+      "max_errors": {
+        "physical": 0.0,
+        "scores": 0.0,
+        "relations": 0.0
+      }
+    },
+    {
+      "sample": "sample_000000_0046",
+      "max_errors": {
+        "physical": 0.0,
+        "scores": 0.0,
+        "relations": 0.0
+      }
+    },
+    {
+      "sample": "sample_000000_0052",
+      "max_errors": {
+        "physical": 0.0,
+        "scores": 0.0,
+        "relations": 0.0
+      }
+    }
+  ],
+  "weights_unchanged": true,
+  "other_buffers_unchanged": true,
+  "bn_layers": 89,
+  "actual_train_vs_bn_only_max_error": {
+    "pred_nodes": 0.0,
+    "pred_logits": 0.0
+  },
+  "dropouts": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ]
+}

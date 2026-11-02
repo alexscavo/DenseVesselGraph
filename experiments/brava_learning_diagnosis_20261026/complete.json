@@ -1,0 +1,12 @@
+{
+  "completed": true,
+  "seconds": 172.73444628715515,
+  "job_id": "1598848",
+  "training": false,
+  "weights_unchanged": true,
+  "calibration_training_only": true,
+  "calibration_patches": 312,
+  "batch8_comparisons": true,
+  "large_outputs": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_learning_diagnosis_20261026",
+  "peak_gpu_gib": 1.7695832252502441
+}

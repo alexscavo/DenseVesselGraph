@@ -1,0 +1,18 @@
+{
+  "gpu_job": "1598848",
+  "cpu_collector": "1598849",
+  "gpu_dependencies_afterany": [],
+  "collector_dependency": "afterok:1598848",
+  "training": false,
+  "gpu_wall_time": "00:25:00",
+  "replaces_failed": {
+    "gpu_job": "1598674",
+    "cpu_collector": "1598675",
+    "gpu_dependencies_afterany": [],
+    "collector_dependency": "afterok:1598674",
+    "training": false,
+    "gpu_wall_time": "00:25:00",
+    "queue_at_submission": ""
+  },
+  "fix": "Direct float64 pdist replaces unstable float32 cdist self-distances; 256 real-loader rotation checks passed"
+}

@@ -1,0 +1,12 @@
+{
+  "report": {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/BRAVA_experiment_plan.md",
+    "sha256": "a6710bd83d0b58a317039a2b7fe7074c8a558a51d305ecc11f9480b91e405947",
+    "before_preflight_sha256": "ff600ff1b5c3ae461662a7b3b1cfb2953b58d05a93c7fe5af18a72a3efaf54da"
+  },
+  "roadmap": {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/research/roadmap.md",
+    "sha256": "21e2b5410fada4451c7b0fe7e76ae66d447a4d5b85133a00560a2b50d5a7032c",
+    "before_preflight_sha256": "9b7f45de4949aef1690491ec124ed8ba623cb22f72b269f9f7cbe8b3b1f19ea0"
+  }
+}
