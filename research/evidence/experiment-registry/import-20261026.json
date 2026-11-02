@@ -46,6 +46,6 @@
     "D07"
   ],
   "reconciled_result": "N08 completed negative/mixed from collected CPU study",
-  "N08_evidence": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/summary.json",
+  "N08_evidence": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/summary.json",
   "no_experiments_launched": true
 }

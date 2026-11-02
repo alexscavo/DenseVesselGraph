@@ -29,19 +29,19 @@
   "recorded_error": "OSError: AF_UNIX path too long",
   "source_checkpoint_identities": {
     "B0": {
-      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/B0/model-12000.pt",
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/364505/runs/B0/model-12000.pt",
       "bytes": 1382188141,
       "sha256": "91ac46e091bb3f74c5748758235c26dc7c8814a232adda03dd49def0c1c8a3de",
       "matches_recorded_plan": true
     },
     "A": {
-      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A/model-12000.pt",
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/364505/runs/A/model-12000.pt",
       "bytes": 1385709149,
       "sha256": "ebb47360f7799801f1ab364f3ef9e60a1b877038d39962b4861d33d1944b9385",
       "matches_recorded_plan": true
     },
     "A-xyz": {
-      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt",
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt",
       "bytes": 1385706077,
       "sha256": "a1210fe958dffe0e588d38222cb62bf48b58e9b238fc57c027ec1c7a795277c9",
       "matches_recorded_plan": true
@@ -56,5 +56,5 @@
   "submitted_jobs": [],
   "recovery_gpu_smoke_passed": false,
   "next_run": "Repair short SCRATCH multiprocessing TMPDIR; rerun isolated correctness gate before any matched 256-query N07 pilot. No GPU submission in this CPU/status audit.",
-  "capacity_file": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/experiments/n07_status_audit_20261028/target-capacity.json"
+  "capacity_file": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/n07_status_audit_20261028/target-capacity.json"
 }

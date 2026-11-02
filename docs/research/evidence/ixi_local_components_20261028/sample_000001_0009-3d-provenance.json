@@ -3,9 +3,9 @@
   "subject": "IXI_000001",
   "split": "val",
   "checkpoint_step": 5500,
-  "source_preview_provenance": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/evidence/ixi_local_components_20261028/sample_000001_0009-provenance.json",
+  "source_preview_provenance": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/evidence/ixi_local_components_20261028/sample_000001_0009-provenance.json",
   "source_sha256": "fc0444303e66def0ccecb4a6a0dbe21f1d2f2a2c0fdd704b50cf5b09bb55eade",
-  "renderer": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/scripts/render_ixi_component_predictions_3d.py",
+  "renderer": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/scripts/render_ixi_component_predictions_3d.py",
   "renderer_sha256": "4062552ed06b7aa92a39209cff97d79fe6fc9342759e6608589b070f3c370fe6",
   "coordinate_transform": "normalized DHW @ metric.T minus common physical patch center",
   "metric": [
@@ -62,7 +62,7 @@
   "self_contained": true,
   "outputs": [
     {
-      "file": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/evidence/ixi_local_components_20261028/sample_000001_0009-3d-comparison.html",
+      "file": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/evidence/ixi_local_components_20261028/sample_000001_0009-3d-comparison.html",
       "sha256": "b38798f0ebb37b5accef395bd0ddd359835c4681f9c56672f16b791813e8c175",
       "panels": [
         "Ground truth",
@@ -95,7 +95,7 @@
       "interactive_script": "\nconst gd = document.getElementById('ixi3d');\nconst scenes = [\"scene\", \"scene2\", \"scene3\"];\nconst mri = [0, 1, 2, 5, 6, 7, 12, 13, 14];\nconst overlays = [10, 11, 17, 18];\nconst initialCamera = {\"eye\": {\"x\": 1.45, \"y\": 1.45, \"z\": 1.1}, \"up\": {\"x\": 0, \"y\": 0, \"z\": 1}, \"center\": {\"x\": 0, \"y\": 0, \"z\": 0}};\nconst linked = document.getElementById('linked');\nlet busy = false;\nlet lastScene = scenes[0];\nfunction changeCameras(updates) {\n  busy = true;\n  Promise.resolve(Plotly.relayout(gd, updates)).finally(() => { busy = false; });\n}\ngd.on('plotly_relayout', (event) => {\n  if (busy) return;\n  const source = scenes.find(s => event[s + '.camera']);\n  if (!source) return;\n  lastScene = source;\n  if (!linked.checked) return;\n  const updates = {};\n  scenes.forEach(s => { if (s !== source) updates[s + '.camera'] = event[source + '.camera']; });\n  changeCameras(updates);\n});\ndocument.getElementById('mri').addEventListener('change', function() {\n  Plotly.restyle(gd, {visible: this.checked}, mri);\n});\ndocument.getElementById('overlay').addEventListener('change', function() {\n  Plotly.restyle(gd, {visible: this.checked}, overlays);\n});\ndocument.getElementById('reset').addEventListener('click', () => {\n  const updates = {};\n  scenes.forEach(s => { updates[s + '.camera'] = initialCamera; });\n  changeCameras(updates);\n});\nlinked.addEventListener('change', function() {\n  if (!this.checked) return;\n  const updates = {};\n  scenes.forEach(s => { updates[s + '.camera'] = gd.layout[lastScene].camera; });\n  changeCameras(updates);\n});\n"
     },
     {
-      "file": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/evidence/ixi_local_components_20261028/sample_000001_0009-A-xyz-fresh-3d.html",
+      "file": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/evidence/ixi_local_components_20261028/sample_000001_0009-A-xyz-fresh-3d.html",
       "sha256": "d0f82c06840e78d2490c0e7dfa0c05ef0eea7bdc36aa335816bf2c9b741840e5",
       "panels": [
         "Ground truth",
@@ -121,7 +121,7 @@
       "interactive_script": "\nconst gd = document.getElementById('ixi3d');\nconst scenes = [\"scene\", \"scene2\"];\nconst mri = [0, 1, 2, 5, 6, 7];\nconst overlays = [10, 11];\nconst initialCamera = {\"eye\": {\"x\": 1.45, \"y\": 1.45, \"z\": 1.1}, \"up\": {\"x\": 0, \"y\": 0, \"z\": 1}, \"center\": {\"x\": 0, \"y\": 0, \"z\": 0}};\nconst linked = document.getElementById('linked');\nlet busy = false;\nlet lastScene = scenes[0];\nfunction changeCameras(updates) {\n  busy = true;\n  Promise.resolve(Plotly.relayout(gd, updates)).finally(() => { busy = false; });\n}\ngd.on('plotly_relayout', (event) => {\n  if (busy) return;\n  const source = scenes.find(s => event[s + '.camera']);\n  if (!source) return;\n  lastScene = source;\n  if (!linked.checked) return;\n  const updates = {};\n  scenes.forEach(s => { if (s !== source) updates[s + '.camera'] = event[source + '.camera']; });\n  changeCameras(updates);\n});\ndocument.getElementById('mri').addEventListener('change', function() {\n  Plotly.restyle(gd, {visible: this.checked}, mri);\n});\ndocument.getElementById('overlay').addEventListener('change', function() {\n  Plotly.restyle(gd, {visible: this.checked}, overlays);\n});\ndocument.getElementById('reset').addEventListener('click', () => {\n  const updates = {};\n  scenes.forEach(s => { updates[s + '.camera'] = initialCamera; });\n  changeCameras(updates);\n});\nlinked.addEventListener('change', function() {\n  if (!this.checked) return;\n  const updates = {};\n  scenes.forEach(s => { updates[s + '.camera'] = gd.layout[lastScene].camera; });\n  changeCameras(updates);\n});\n"
     },
     {
-      "file": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/evidence/ixi_local_components_20261028/sample_000001_0009-A-cls-3d.html",
+      "file": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/evidence/ixi_local_components_20261028/sample_000001_0009-A-cls-3d.html",
       "sha256": "7820e6b0bc61604c2c9460e4bd2b0ca2f2d5dc62eb9131e1aee7a5e98dc33d67",
       "panels": [
         "Ground truth",

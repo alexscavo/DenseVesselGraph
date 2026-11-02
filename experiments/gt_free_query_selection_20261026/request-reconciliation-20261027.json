@@ -9,12 +9,12 @@
   "decision": "no further selection work on present evidence",
   "publications": [
     {
-      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/metrics/6-ixi-query-attribution.md",
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/metrics/6-ixi-query-attribution.md",
       "before_sha256": "28206b2ec115a073fd10a21b677b80753475d010e68818772a4f42f0b7e47107",
       "after_sha256": "68646116c45434fc33c11d205696701d0841e7be32c6d6d0251ee890719975e7"
     },
     {
-      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/research/VASCULAR_GRAPH_EXPERIMENT_REGISTRY_2026-10-26_UPDATED.md",
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/research/VASCULAR_GRAPH_EXPERIMENT_REGISTRY_2026-10-26_UPDATED.md",
       "before_sha256": "ba4182c167514675bc4d0800a3e3784005f67a5ef31c46f3e5672521d51fc991",
       "after_sha256": "d69c09ecbe9b88c1bbcd4054b9637533e5d98c7bbd103a0322f9938ed70d4ba5"
     }

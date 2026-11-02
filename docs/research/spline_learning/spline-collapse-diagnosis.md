@@ -117,9 +117,9 @@ have not been changed. No new full training or dataset-wide test was launched.
 
 ## Artifacts
 
-Reproducer: `Graph-Native-Betti-Matching-Representation/scripts/diagnose_spline_collapse.py`.
+Reproducer: `DenseVesselGraph/scripts/diagnose_spline_collapse.py`.
 Raw BN/gradient measurements:
-`Graph-Native-Betti-Matching-Representation/experiments/spline_learning/metadata/diagnosis/bn-differential.json`.
+`DenseVesselGraph/experiments/spline_learning/metadata/diagnosis/bn-differential.json`.
 Attention measurements: the adjacent `attention-differential.json`.
 
 [One actual epoch-300 prediction](../experiments/synthetic_mri_scratch_spline_prediction/results/sample_000020_0470.html)
@@ -137,7 +137,7 @@ zero recalibration batches; the diagnostic above is separate.
 <!-- BEGIN CHEAP DIAGNOSTICS bn-protocol 20261026 -->
 ## BN provenance audit and training-only comparison protocol —26 October2026
 
-**Audit completed; new training-only comparison pending the isolated inference jobs.** Worktree `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-cheap-diagnostics-20261026`, branch `research/cheap-diagnostics-20261026`. No shared model/loader/evaluator code or other agents’ checkpoints/reports were modified. This section concerns two compatible stable references, not the active BRAVA or IXI node-refinement arms.
+**Audit completed; new training-only comparison pending the isolated inference jobs.** Worktree `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph`, branch `research/cheap-diagnostics-20261026`. No shared model/loader/evaluator code or other agents’ checkpoints/reports were modified. This section concerns two compatible stable references, not the active BRAVA or IXI node-refinement arms.
 
 The existing `training/evaluation/evaluator.py::calibrate_batch_norm` switches the model to training mode, disables dropout, forwards inputs without gradients, and returns to eval mode. It retains saved running statistics/momenta rather than resetting them. The generic `evaluate.py --bn-calibration-batches` path **chooses the validation loader**; that is evaluation-domain adaptation and is not a training-only protocol. The legacy sibling evaluator similarly calibrated on validation images. Neither path is silently relabeled here.
 
@@ -186,5 +186,5 @@ At2mm, TP edges fall942→916 while predicted edges fall2166→2102; the small n
 
 IXI reference checkpoint remains `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_transfer_20261015/runs/ixi_delayed_spline/best.pt`, SHA256 `1cd9caf35a3683ef643c541ea4c4d06b247c490a4215d4a250f4519992d68eb3` (also rechecked). Reuse the completed SyntheticMRI half if recovering IXI later; do not repeat it. Q0's latest executable scope forbids GPU submission/training, so it records the narrow empty-mask correction needed for a future IXI-only diagnostic recovery without launching it.
 
-Evidence: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-q0-ixi-audit-20261028/experiments/q0_ixi_audit_20261028/bn-partial.json`; original completed artifacts remain under `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/cheap_diagnostics_20261026/SyntheticMRI/`. Earlier historical validation-image BN adaptation and old collapse results remain separate and unchanged.
+Evidence: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/q0_ixi_audit_20261028/bn-partial.json`; original completed artifacts remain under `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/cheap_diagnostics_20261026/SyntheticMRI/`. Earlier historical validation-image BN adaptation and old collapse results remain separate and unchanged.
 <!-- END Q0 BN PARTIAL 20261028 -->

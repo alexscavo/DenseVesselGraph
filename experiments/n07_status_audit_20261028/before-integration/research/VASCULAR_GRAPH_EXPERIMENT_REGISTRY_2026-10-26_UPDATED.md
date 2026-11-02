@@ -339,7 +339,7 @@ N08 remains **DONE — negative/mixed**. The renewed inference-only selection re
 
 4k off−on train node/edge F1 +0.2908/+0.1551; validation +0.0285/+0.0062. Disabling augmentation improves representative training reconstruction on node and edge F1. Validation node F1 improves modestly, but the edge-F1 gain is uncertain across subjects (its paired 95% interval includes zero). Validation raw 2-mm localization recall decreases and Hungarian distance worsens. The much larger train gain, declining clean training loss and worse final validation loss are consistent with increased memorization/overfitting; this is not a broadly improved or recovered detector. The matched comparison supports an optimization cost of this augmentation regime under the fixed budget, while one seed and reused development subjects limit the generalization claim. Connectivity remains weak in both training arms and on validation. Recommended follow-up, not launched: separately isolate exposure/training budget with a predefined schedule, or assignment/optimization with fixed exposure; change one factor at a time and retain the generalization gap as an explicit endpoint.
 
-GPU smoke `1600406` passed; matched training array `1612527` reached 4k in both arms, then failed the final numerical batch-parity assertion. Initial collector `1612529` was cancelled. Inference-only recovery `1612855` used the saved 4k weights with zero optimizer updates; CPU collection `1612856` produced fixed 1k/2k/4k metrics. Failed logs/checker source remain preserved. Source `/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/fine_feature_architecture/runs/baseline/best.pt`, SHA256 `d4bc78ad3eb7c1c29c9be8ec3e2927e88f2f45e6f34a3cb8be9ade5fd9d2431c`. Exact six checkpoint hashes and paths are in `experiments/brava_augmentation_20261026/analysis.json`. Fresh K8-only controls were used because historical auxiliary-head whole-run parity was not established. Seed 261039, batch eight, 1,248 train/256 validation patches, 39/8 subjects, fixed target/matcher/loss/schedule; saved-BN batch1/8 numerical drift is reported. No new architecture, test evaluation or threshold selection.
+GPU smoke `1600406` passed; matched training array `1612527` reached 4k in both arms, then failed the final numerical batch-parity assertion. Initial collector `1612529` was cancelled. Inference-only recovery `1612855` used the saved 4k weights with zero optimizer updates; CPU collection `1612856` produced fixed 1k/2k/4k metrics. Failed logs/checker source remain preserved. Source `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/fine_feature_architecture/runs/baseline/best.pt`, SHA256 `d4bc78ad3eb7c1c29c9be8ec3e2927e88f2f45e6f34a3cb8be9ade5fd9d2431c`. Exact six checkpoint hashes and paths are in `experiments/brava_augmentation_20261026/analysis.json`. Fresh K8-only controls were used because historical auxiliary-head whole-run parity was not established. Seed 261039, batch eight, 1,248 train/256 validation patches, 39/8 subjects, fixed target/matcher/loss/schedule; saved-BN batch1/8 numerical drift is reported. No new architecture, test evaluation or threshold selection.
 
 Decision gate: distinguish improved optimized-on training fit from validation improvement and memorization. Both arms receive approximately 25.64 draws/patch; earlier 16-patch overfit used different exposure/schedules and cannot prove duration alone is the cause. Incomplete SWC errors are annotation-relative; brain masks are not vessel labels. Any exposure/assignment follow-up remains a recommendation only.
 
@@ -411,10 +411,10 @@ R06 remains DONE — negative/mixed. Missing Branch/Curve metrics were completed
 
 Completed before submission: eight unit regressions,13 real-image CPU checks, two training/two validation development crops plus one REAVER alignment overlay. Final main-repository replay passed; existing3D implementation hashes remain unchanged. CUDA and tiny memorization results remain pending, not claimed passed.
 
-Evidence: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261027`; large runtime/checkpoint output: `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/native2d_20261027`. Source/config hashes and archive are frozen in `code-identities.json` / `source.zip`. Read saved results with:
+Evidence: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_20261027`; large runtime/checkpoint output: `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/native2d_20261027`. Source/config hashes and archive are frozen in `code-identities.json` / `source.zip`. Read saved results with:
 
 ```bash
-python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/scripts/show_native2d.py
+python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/scripts/show_native2d.py
 ```
 
 
@@ -422,7 +422,7 @@ python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Mat
 <!-- NATIVE2D REGISTRY COLLECTED 20261027 -->
 ### Native2D-01 smoke outcome — 27 October 2026
 
-Correctness/tiny-fit gate passed; no full training. See the [existing 2D report](image-to-graph-vessel.md#native-2d-smoke-collection--27-october-2026) and `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261027/collection.json`.
+Correctness/tiny-fit gate passed; no full training. See the [existing 2D report](image-to-graph-vessel.md#native-2d-smoke-collection--27-october-2026) and `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_20261027/collection.json`.
 
 ### D08 completion review — 28 October 2026
 

@@ -103,7 +103,7 @@ source paths in provenance describe the original extraction; they were not
 re-read or newly verified during this update. No dataset, training target,
 checkpoint or training configuration was changed.
 
-- Shared Python evaluator: `Graph-Native-Betti-Matching-Representation/scripts/catmull_rom.py`.
+- Shared Python evaluator: `DenseVesselGraph/scripts/catmull_rom.py`.
 - Update command: `python scripts/update_single_patch_curve_viewers.py` from
   that repository, using the usual verified runtime.
 - Existing shared experiment builder and viewer sources are in

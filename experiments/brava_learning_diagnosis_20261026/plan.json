@@ -1,5 +1,5 @@
 {
-  "source_plan": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/experiments/brava_representation_20261026/plan.json",
+  "source_plan": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_representation_20261026/plan.json",
   "source_plan_sha256": "8024dab81b2da176fd373b89120b2caec59fc5654c34730a551e8f72489c8287",
   "dataset": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8",
   "subjects": {
@@ -950,8 +950,8 @@
     1,
     2
   ],
-  "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/experiments/brava_representation_20261026/runs/original/model-004000.pt",
-  "tiny_checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/experiments/brava_representation_20261026/tiny/original/model-000512.pt",
+  "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_representation_20261026/runs/original/model-004000.pt",
+  "tiny_checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_representation_20261026/tiny/original/model-000512.pt",
   "large_outputs": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_learning_diagnosis_20261026",
   "hypotheses": [
     "representative training failure",

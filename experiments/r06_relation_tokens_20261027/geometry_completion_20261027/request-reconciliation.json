@@ -3,8 +3,8 @@
   "no_new_training": true,
   "no_new_inference": true,
   "cpu_only_job": "1625936",
-  "report": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/metrics/9-ixi-image-aware-relation-learning.md",
-  "registry": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/research/VASCULAR_GRAPH_EXPERIMENT_REGISTRY_2026-10-26_UPDATED.md",
+  "report": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/metrics/9-ixi-image-aware-relation-learning.md",
+  "registry": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/research/VASCULAR_GRAPH_EXPERIMENT_REGISTRY_2026-10-26_UPDATED.md",
   "primary_results_unchanged": true,
   "report_sha256": "5a5dc17b314cec5ff89bf1b1144ab072bc198f81f339185aa84f08fd64a89e51",
   "registry_sha256": "eedadbacbc58c989ad43077ce4ceb17974db513b8c2aee4029a785c7106a3e26"

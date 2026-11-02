@@ -6,7 +6,7 @@
       "state": "accepted",
       "concurrent_h100": 1,
       "global_limit": 2,
-      "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026",
+      "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
       "release_after": "1569369",
       "jobs": {
         "smoke": {

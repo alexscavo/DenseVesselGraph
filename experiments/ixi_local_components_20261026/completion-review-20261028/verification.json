@@ -17,9 +17,9 @@
     "A-xyz": "a1210fe958dffe0e588d38222cb62bf48b58e9b238fc57c027ec1c7a795277c9"
   },
   "source_paths": {
-    "B0": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/B0/model-12000.pt",
-    "A": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A/model-12000.pt",
-    "A-xyz": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt"
+    "B0": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/364505/runs/B0/model-12000.pt",
+    "A": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/364505/runs/A/model-12000.pt",
+    "A-xyz": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt"
   },
   "plan_sha256": "b9554511dcbf0596f6615394bff91404c036ac6e6d4f0620531535532830598a",
   "analysis_sha256": "93a5e8055f7206146c46221610ea502f4c8c1a1f61378d563857ae6716063c53",

@@ -5,7 +5,7 @@
   "new_detector_inference": false,
   "new_training": false,
   "gpu_jobs": [],
-  "code": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/scripts/d08_operating_points.py",
+  "code": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/scripts/d08_operating_points.py",
   "calibration_population": "train160,39 training subjects",
   "validation_population": "1796 patches,8 disjoint validation subjects",
   "primary_tolerance_mm": 2,

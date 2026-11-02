@@ -1279,7 +1279,7 @@
       "sha256": "ff1f57e74a69b62d2ad1425d7344ade541e5148354087060272df86f495ddb0e"
     },
     "ixi_overfit_20261016/smoke-spline/wandb/offline-run-20261016_102528-yihuvr4g/logs/debug-core.log": {
-      "symlink": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/.cache/wandb/logs/core-debug-20261016_102528.log"
+      "symlink": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/.cache/wandb/logs/core-debug-20261016_102528.log"
     },
     "ixi_overfit_20261016/smoke-spline/wandb/offline-run-20261016_102528-yihuvr4g/logs/debug-internal.log": {
       "bytes": 1451,
@@ -1515,7 +1515,7 @@
       "sha256": "ff1f57e74a69b62d2ad1425d7344ade541e5148354087060272df86f495ddb0e"
     },
     "ixi_overfit_20261016/smoke-straight/wandb/offline-run-20261016_102525-ddrc134f/logs/debug-core.log": {
-      "symlink": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/.cache/wandb/logs/core-debug-20261016_102525.log"
+      "symlink": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/.cache/wandb/logs/core-debug-20261016_102525.log"
     },
     "ixi_overfit_20261016/smoke-straight/wandb/offline-run-20261016_102525-ddrc134f/logs/debug-internal.log": {
       "bytes": 1451,
@@ -5079,7 +5079,7 @@
       "sha256": "ff1f57e74a69b62d2ad1425d7344ade541e5148354087060272df86f495ddb0e"
     },
     "plant_generalization_20261014/runs/pretrain_mixed/wandb/offline-run-20261014_101534-ieulv0iq/logs/debug-core.log": {
-      "symlink": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/.cache/wandb/logs/core-debug-20261014_101534.log"
+      "symlink": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/.cache/wandb/logs/core-debug-20261014_101534.log"
     },
     "plant_generalization_20261014/runs/pretrain_mixed/wandb/offline-run-20261014_101534-ieulv0iq/logs/debug-internal.log": {
       "bytes": 993,
@@ -5339,7 +5339,7 @@
       "sha256": "ff1f57e74a69b62d2ad1425d7344ade541e5148354087060272df86f495ddb0e"
     },
     "plant_generalization_20261014/runs/pretrain_vessels/wandb/offline-run-20261014_101715-kvjq9un4/logs/debug-core.log": {
-      "symlink": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/.cache/wandb/logs/core-debug-20261014_101715.log"
+      "symlink": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/.cache/wandb/logs/core-debug-20261014_101715.log"
     },
     "plant_generalization_20261014/runs/pretrain_vessels/wandb/offline-run-20261014_101715-kvjq9un4/logs/debug-internal.log": {
       "bytes": 990,
@@ -6791,7 +6791,7 @@
       "sha256": "ef950af80dfe86ba20f17d2f1bcd1fb8862807425d89bb5290594ca35d399667"
     },
     "runs/catmull-rom-smoke-805044/wandb/offline-run-20261009_021420-n7d09ibh/logs/debug-core.log": {
-      "symlink": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/.cache/wandb/logs/core-debug-20261009_021420.log"
+      "symlink": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/.cache/wandb/logs/core-debug-20261009_021420.log"
     },
     "runs/catmull-rom-smoke-805044/wandb/offline-run-20261009_021420-n7d09ibh/logs/debug-internal.log": {
       "bytes": 1573,
@@ -6931,7 +6931,7 @@
       "sha256": "88fa38584af65197f218108f417377437957f21be9303e3368995c5a455cc4f6"
     },
     "runs/controlled_unfreeze_20261009/graph_only/wandb/offline-run-20261009_133955-v0abuhf2/logs/debug-core.log": {
-      "symlink": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/.cache/wandb/logs/core-debug-20261009_133956.log"
+      "symlink": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/.cache/wandb/logs/core-debug-20261009_133956.log"
     },
     "runs/controlled_unfreeze_20261009/graph_only/wandb/offline-run-20261009_133955-v0abuhf2/logs/debug-internal.log": {
       "bytes": 1577,
@@ -7071,7 +7071,7 @@
       "sha256": "ae919446926d3256c18ec865382423b82337d2e4b7ba8fea7adf08475566cb66"
     },
     "runs/controlled_unfreeze_20261009/joint/wandb/offline-run-20261009_133956-mo7hokr5/logs/debug-core.log": {
-      "symlink": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/.cache/wandb/logs/core-debug-20261009_133956.log"
+      "symlink": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/.cache/wandb/logs/core-debug-20261009_133956.log"
     },
     "runs/controlled_unfreeze_20261009/joint/wandb/offline-run-20261009_133956-mo7hokr5/logs/debug-internal.log": {
       "bytes": 1577,
@@ -7739,7 +7739,7 @@
       "sha256": "88fa38584af65197f218108f417377437957f21be9303e3368995c5a455cc4f6"
     },
     "runs/controlled_unfreeze_20261009/tokens_only/wandb/offline-run-20261009_133959-92mkdkwv/logs/debug-core.log": {
-      "symlink": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/.cache/wandb/logs/core-debug-20261009_133959.log"
+      "symlink": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/.cache/wandb/logs/core-debug-20261009_133959.log"
     },
     "runs/controlled_unfreeze_20261009/tokens_only/wandb/offline-run-20261009_133959-92mkdkwv/logs/debug-internal.log": {
       "bytes": 1577,

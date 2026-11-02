@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "reference": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/octasynth_mixedpretrain_50",
+  "reference": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/octasynth_mixedpretrain_50",
   "matched_fields": [
     "exposure_sha256",
     "epochs",

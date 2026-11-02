@@ -22,7 +22,7 @@ LOG = Path(
     "graph-native-betti-matching/gnbm-train-145201.out"
 )
 
-OUT = Path("/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching/docs/research/evidence/prova")
+OUT = Path("/lustre/fswork/projects/rech/vnc/upz25mj/projects/archive/graph-native-betti-matching-legacy/docs/research/evidence/prova")
 
 
 def rows(path: Path):

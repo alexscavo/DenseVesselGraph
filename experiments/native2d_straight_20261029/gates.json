@@ -494,5 +494,5 @@
     "beta1_signed_error_crop_macro": 0.0,
     "target_edge_positive_crops": 2
   },
-  "reference": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028"
+  "reference": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028"
 }

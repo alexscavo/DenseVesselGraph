@@ -210,7 +210,7 @@ No improved model or completed full-validation attribution is claimed here.
 
 IXI adds historical parent, node-head continuation, combined local-image refinement and its **inference-only coordinate component ablation**, on the original256/128 train/validation patches (123/26 subjects). These are not the new fully unfrozen IXI B0/A-xyz models currently owned by another agent. BRAVA is excluded: its ongoing representation study and incomplete SWC labels do not support treating annotation-unmatched structures as confirmed anatomical false positives.
 
-Isolated branch/worktree: `research/graph-error-attribution-20261026` / `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-graph-errors-20261026`. Numerical outputs are under that worktree's `experiments/graph_error_attribution_20261026/`. Original checkpoints/caches and other agents' reports are untouched. Cache archive hashes, checkpoint identities, exact cohort-ID hashes, physical thresholds, train-defined geometry cuts and source-code hashes are retained. No new research report was created.
+Isolated branch/worktree: `research/graph-error-attribution-20261026` / `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph`. Numerical outputs are under that worktree's `experiments/graph_error_attribution_20261026/`. Original checkpoints/caches and other agents' reports are untouched. Cache archive hashes, checkpoint identities, exact cohort-ID hashes, physical thresholds, train-defined geometry cuts and source-code hashes are retained. No new research report was created.
 
 ### Definitions and safeguards
 
@@ -370,7 +370,7 @@ Checkpoint identities, inherited from the prior checksum audit:
 | 364505 | 12,000 | `a1210fe958dffe0e588d38222cb62bf48b58e9b238fc57c027ec1c7a795277c9` |
 | 92741 | 12,000 | `9646b7b266dec3463d94d16cfbcef0332044a9bf0d599c2319a2eff2c93d3e53` |
 
-All numeric outputs and source snapshots are isolated in `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-graph-errors-20261026/experiments/oracle_representatives_20261026`. Cache ZIP hashes were rechecked; Hungarian-distance replay agrees for all primary patches. Native mask axes were checked against SimpleITK. Coordinates are mapped back with `voxel = (physical @ inverse(metric.T)) * native_shape`, including signed metric axes. Foreground tests use the existing synthetic vessel masks **only offline**: nearest-voxel membership, trilinear support, and interpolated physical EDT to foreground voxel centers. The EDT is not an exact distance to a continuous vessel surface.
+All numeric outputs and source snapshots are isolated in `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/oracle_representatives_20261026`. Cache ZIP hashes were rechecked; Hungarian-distance replay agrees for all primary patches. Native mask axes were checked against SimpleITK. Coordinates are mapped back with `voxel = (physical @ inverse(metric.T)) * native_shape`, including signed metric axes. Foreground tests use the existing synthetic vessel masks **only offline**: nearest-voxel membership, trilinear support, and interpolated physical EDT to foreground voxel centers. The EDT is not an exact distance to a continuous vessel surface.
 
 ### Representative choices
 
@@ -602,7 +602,7 @@ The best-supported remaining hypothesis is **deeper coupling between spatial nod
 
 ### Evidence and reproducibility
 
-Isolated worktree/branch: `gnbm-query-selection-20261026`, `research/gt-free-query-selection-20261026`; outputs: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026`. `training-selection.json` records the choice made before validation; `per-patch.csv.gz`, `aggregate.csv`, `per-subject.csv`, `paired-differences.json`, `ranking/`, `selections.jsonl.gz` and `selection-changes.json` retain decisions, all metrics and candidate populations. Node/edge thresholds, physical 1/2-mm matching and graph-count conventions are inherited unchanged. No geometric representation or curve target was modified.
+Isolated worktree/branch: `gnbm-query-selection-20261026`, `research/gt-free-query-selection-20261026`; outputs: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026`. `training-selection.json` records the choice made before validation; `per-patch.csv.gz`, `aggregate.csv`, `per-subject.csv`, `paired-differences.json`, `ranking/`, `selections.jsonl.gz` and `selection-changes.json` retain decisions, all metrics and candidate populations. Node/edge thresholds, physical 1/2-mm matching and graph-count conventions are inherited unchanged. No geometric representation or curve target was modified.
 
 Graph intervals resample whole subjects 2,000 times, AP intervals 500 times with exact tie handling, seed 261026. Validation is reused development evidence and exploratory; two continuations share one pretrained source, and the intervals omit source-training/seed uncertainty and multiplicity correction. Five focused selector tests and a two-patch-per-seed pipeline smoke passed. Source/cache/checkpoint hashes and baseline-parity checks are retained.
 

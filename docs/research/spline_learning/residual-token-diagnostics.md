@@ -101,7 +101,7 @@ would need a justified, matched graph-only continuation from the same checkpoint
 
 ## Locations
 
-Config: `Graph-Native-Betti-Matching-Representation/configs/spline_frozen_factorial_pilot.yaml`.
+Config: `DenseVesselGraph/configs/spline_frozen_factorial_pilot.yaml`.
 Submission: `cluster/jean_zay/spline_frozen_factorial.slurm` in that repository.
 Each array task requests one H100 for at most 30 minutes; tasks may run in
 parallel subject to scheduler availability.

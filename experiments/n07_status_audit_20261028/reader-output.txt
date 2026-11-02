@@ -4,10 +4,10 @@ Scientific comparison: NOT RUN ; PARTIAL / RECOVERY
 Replacement job states: {'1583591': 'TIMEOUT', '1583592': 'CANCELLED', '1583593': 'CANCELLED', '1583594': 'CANCELLED'}
 Smoke blocker: OSError: AF_UNIX path too long
 Next step: Repair short SCRATCH multiprocessing TMPDIR; rerun isolated correctness gate before any matched 256-query N07 pilot. No GPU submission in this CPU/status audit.
-Audit: /lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/experiments/n07_status_audit_20261028/status.json
+Audit: /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/n07_status_audit_20261028/status.json
 {
   "submitted_at": "2026-10-26T15:02:34+0100",
-  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026",
+  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
   "branch": "research/ixi-local-components-20261026",
   "max_h100": 1,
   "shared_global_limit": 2,

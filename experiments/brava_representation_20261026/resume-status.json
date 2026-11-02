@@ -143,5 +143,5 @@
   "estimated_bounded_study_hours": "1\u20132 plus scheduler delay",
   "archive_policy": "Consult existing storage-cleanup manifests and read/extract individual members only when needed",
   "gpu_jobs_pending": false,
-  "report_publication": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/experiments/brava_representation_20261026/report-publication.json"
+  "report_publication": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_representation_20261026/report-publication.json"
 }

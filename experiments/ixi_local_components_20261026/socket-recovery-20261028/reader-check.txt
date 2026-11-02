@@ -1,10 +1,10 @@
 Outputs: /lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_local_components_20261026
 Recovery submitted: 2026-10-28T10:51:09+0100 — correctness gate and results pending.
 Historical failure: OSError: AF_UNIX path too long ; earlier audit: 2026-10-28T10:38:26.134482+01:00
-Audit: /lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/experiments/n07_status_audit_20261028/status.json
+Audit: /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/n07_status_audit_20261028/status.json
 {
   "submitted_at": "2026-10-28T10:51:09+0100",
-  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026",
+  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
   "branch": "research/ixi-local-components-20261026",
   "max_h100": 1,
   "shared_global_limit": 2,

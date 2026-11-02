@@ -399,10 +399,10 @@ Original2D GrEVe ResNet/deformable transformer port with modern focal gamma2/equ
 
 Completed before submission: eight unit regressions,13 real-image CPU checks, two training/two validation development crops plus one REAVER alignment overlay. Final main-repository replay passed; existing3D implementation hashes remain unchanged. CUDA and tiny memorization results remain pending, not claimed passed.
 
-Evidence: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261027`; large runtime/checkpoint output: `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/native2d_20261027`. Source/config hashes and archive are frozen in `code-identities.json` / `source.zip`. Read saved results with:
+Evidence: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_20261027`; large runtime/checkpoint output: `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/native2d_20261027`. Source/config hashes and archive are frozen in `code-identities.json` / `source.zip`. Read saved results with:
 
 ```bash
-python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/scripts/show_native2d.py
+python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/scripts/show_native2d.py
 ```
 
 
@@ -432,7 +432,7 @@ D08 CPU calibration completed: trained node cut0.45 gives validation node F1 0.3
 
 Modern IXI B0/A-xyz/A-cls scientific comparison **NOT RUN**: smoke1569366 FAILED; replacement1583591 TIMEOUT (AF_UNIX path too long), dependents1583592/1583593/1583594 CANCELLED before execution. No scientific checkpoint/results and no fixed final-update budget. No GPU work launched by this audit. L06 remains partial.
 
-Actual contracted K8 train/val capacity: IXI10000/2649 patches, max153/141, five/five >120; N07 subset4096/512 includes one/one overflow. BRAVA8768/1796, max64/69, none >120. Zero degree2 object nodes; index/manifest/subject checks pass. Keep256 for unchanged IXI recovery. [Full existing report](../docs/research/metrics/3-ixi-node-refinement-pilot.md#n07d04-execution-and-current-target-capacity-audit--28-october-2026). Evidence: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/experiments/n07_status_audit_20261028`. No efficacy result should be inferred from the infrastructure failure.
+Actual contracted K8 train/val capacity: IXI10000/2649 patches, max153/141, five/five >120; N07 subset4096/512 includes one/one overflow. BRAVA8768/1796, max64/69, none >120. Zero degree2 object nodes; index/manifest/subject checks pass. Keep256 for unchanged IXI recovery. [Full existing report](../docs/research/metrics/3-ixi-node-refinement-pilot.md#n07d04-execution-and-current-target-capacity-audit--28-october-2026). Evidence: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/n07_status_audit_20261028`. No efficacy result should be inferred from the infrastructure failure.
 
 <!-- NATIVE2D HELDOUT LIVE 20261028 -->
 ## Native2D-02: held-out original-width AV-WIDE study — 28 October 2026
@@ -464,7 +464,7 @@ Intermediate validation uses 24 fixed spatial tiles (4/image); final and selecte
 
 Detection AP/AR uses unthresholded query scores, IoU .50:.05:.95, node limit equal to query capacity and edge top300; reported AP is crop macro. Physical node/edge F1 is micro over crops at 1/2/4 px, including crop-boundary anchors. Branch/Curve F1 is crop macro at 1 px, .25 px sampling. Spline/chord use identical inferred nodes/edges; topology cannot change. Raw/filtered recall, relation AP populations, duplicates and Betti errors are retained per crop. No subject-level uncertainty claim, full-image stitching, independent manual topology or pretraining benefit is established.
 
-Evidence and checkpoints: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261028`. [Protocol and dataset readiness](../docs/research/native2d_heldout_20261028.md). Learning curves: `learning-curves.png`; full metrics: `B0/best-heldout.json`, `Axyz/best-heldout.json`; final metrics: `<arm>/validation-<budget>.json`; weights/optimizer: `<arm>/best.pt`, `<arm>/latest.pt`. Failed gates and jobs are reported without automatic resubmission.
+Evidence and checkpoints: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_20261028`. [Protocol and dataset readiness](../docs/research/native2d_heldout_20261028.md). Learning curves: `learning-curves.png`; full metrics: `B0/best-heldout.json`, `Axyz/best-heldout.json`; final metrics: `<arm>/validation-<budget>.json`; weights/optimizer: `<arm>/best.pt`, `<arm>/latest.pt`. Failed gates and jobs are reported without automatic resubmission.
 <!-- END NATIVE2D HELDOUT LIVE 20261028 -->
 
 <!-- NATIVE2D TARGETFIT LIVE 20261028 -->
@@ -496,7 +496,7 @@ Intermediate validation uses 24 fixed spatial tiles (4/image); final and selecte
 
 Detection AP/AR uses unthresholded query scores, IoU .50:.05:.95, node limit equal to query capacity and edge top300; reported AP is crop macro. Physical node/edge F1 is micro over crops at 1/2/4 px, including crop-boundary anchors. Branch/Curve F1 is crop macro at 1 px, .25 px sampling. Spline/chord use identical inferred nodes/edges; topology cannot change. Raw/filtered recall, relation AP populations, duplicates and Betti errors are retained per crop. No subject-level uncertainty claim, full-image stitching, independent manual topology or pretraining benefit is established.
 
-Evidence and checkpoints: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261028_targetfix`. [Protocol and dataset readiness](../docs/research/native2d_heldout_20261028.md). Learning curves: `learning-curves.png`; full metrics: `B0/best-heldout.json`, `Axyz/best-heldout.json`; final metrics: `<arm>/validation-<budget>.json`; weights/optimizer: `<arm>/best.pt`, `<arm>/latest.pt`. Failed gates and jobs are reported without automatic resubmission.
+Evidence and checkpoints: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_20261028_targetfix`. [Protocol and dataset readiness](../docs/research/native2d_heldout_20261028.md). Learning curves: `learning-curves.png`; full metrics: `B0/best-heldout.json`, `Axyz/best-heldout.json`; final metrics: `<arm>/validation-<budget>.json`; weights/optimizer: `<arm>/best.pt`, `<arm>/latest.pt`. Failed gates and jobs are reported without automatic resubmission.
 <!-- END NATIVE2D TARGETFIT LIVE 20261028 -->
 
 <!-- NATIVE2D LONG LIVE 20261028 -->
@@ -552,7 +552,7 @@ No test arrays or predictions are used. AV-WIDE remains17 training /6 validation
 
 Mixed pretraining adds vessel exposures as well as biological data. Relative to scratch100, a gain cannot isolate a biological-pretraining causal effect; no extra vessel-only-pretraining control or sweep is launched. Realized per-domain draws and source/target memberships are recorded in protocol.json and exposure.npy.
 
-Artifacts: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028`; validated datasets reused read-only from `/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_long_20261028`. Source/config hashes: `source.zip`, `code-identities.json`; epoch losses and full state checkpoints: `runs/<name>/`; final metrics: `final-heldout.json`; plots: `curves-<dataset>.png` and separate pretraining curves. Stop at50 mixed /100 vessel epochs; exceptions stop jobs without automatic retries, new sweeps or budget extensions.
+Artifacts: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028`; validated datasets reused read-only from `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_long_20261028`. Source/config hashes: `source.zip`, `code-identities.json`; epoch losses and full state checkpoints: `runs/<name>/`; final metrics: `final-heldout.json`; plots: `curves-<dataset>.png` and separate pretraining curves. Stop at50 mixed /100 vessel epochs; exceptions stop jobs without automatic retries, new sweeps or budget extensions.
 <!-- END NATIVE2D LONG LIVE 20261028 -->
 
 
@@ -611,7 +611,7 @@ Jobs: `{"global_h100_limit": 2, "concurrent_h100": 1, "queue_at_submission": "",
 
 The straight run retains the existing evaluator schema: its legacy `spline` metric slot also evaluates straight chords because no spline head exists; `chord` is the unambiguous straight geometry result. Dense GT paths and evaluation tolerances remain unchanged. The original global clipping rule is kept, including its interaction with the presence/absence of spline gradients.
 
-Artifacts: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_straight_20261029`. Checkpoints/epoch logs and curves: `runs/`; exact sample exposures: `exposure.npy`; gate: `gates.json`; configuration previews: `*.yaml`; comparison parity: `parity-*.json`. Test sets untouched.
+Artifacts: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_straight_20261029`. Checkpoints/epoch logs and curves: `runs/`; exact sample exposures: `exposure.npy`; gate: `gates.json`; configuration previews: `*.yaml`; comparison parity: `parity-*.json`. Test sets untouched.
 
 Curvature measurement is limited to the two OCTA validation crops shown previously, not the full validation population. Maximum perpendicular deviation from each endpoint chord is measured in pixels using257 spline samples.
 

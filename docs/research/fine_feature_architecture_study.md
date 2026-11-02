@@ -283,7 +283,7 @@ Exact numeric evidence and all 1/2-mm bootstrap differences: `experiments/fine_f
 
 **Question:** does delaying edge supervision improve initial node learning and subsequent graph reconstruction? Unmatched-node false edges, endpoint-limited recall and representative-query differences motivate this comparison; they do not establish that early edge supervision is harmful. No equivalent controlled scratch experiment was found. Historical CE-to-focal curricula, pretrained node refiners and relation-only continuations are different studies.
 
-**Status:** implemented; CPU checks passed; scientific GPU pilot pending submission. The complete immutable protocol is `/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-node-first-curriculum-20261028/experiments/node_first_curriculum_20261028/plan.json`, with reference recipe in `reference-plan.json`. Worktree `/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-node-first-curriculum-20261028` on branch `research/node-first-curriculum-20261028`; shared/source code was copied and hashed before the experimental additions. No original checkpoint or experiment was overwritten.
+**Status:** implemented; CPU checks passed; scientific GPU pilot pending submission. The complete immutable protocol is `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/node_first_curriculum_20261028/plan.json`, with reference recipe in `reference-plan.json`. Worktree `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph` on branch `research/node-first-curriculum-20261028`; shared/source code was copied and hashed before the experimental additions. No original checkpoint or experiment was overwritten.
 
 | Arm | First10% updates |10–20%|20–100%|
 |---|---|---|---|
@@ -328,14 +328,14 @@ Probe weighted node-versus-edge gradient cosine on the last shared decoder layer
 The collector answers whether early localization/stability gains survive joint learning, improve final edge/branch reconstruction and exceed confidence/calibration effects. It appends measured results here and updates L08 in the registry. Retrieve saved status/results without inference:
 
 ```bash
-python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-node-first-curriculum-20261028/scripts/show_node_first_curriculum.py
+python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/scripts/show_node_first_curriculum.py
 ```
 
 
 <!-- L08 SUBMISSION pilot 20261028 -->
 ### L08 pilot accepted —28October2026
 
-Same random initialization, modern B0,120object/2relation tokens, focal-node gamma2/equal weights and matched CE ratio0.15. 15640 matched updates;GPU wall03:00:00 per arm; seeds[364505]. Jobs: `gpu_smoke:1670253 → cpu_smoke:1670254 → training:1670255 → evaluation:1670256 → collector:1670257`. Shared H100 ceiling2; this array%2 waits for preceding GPU jobs[]. No scientific result claimed before evaluation. Full100epoch/two-seed confirmation is automatic only after the predefined positive pilot gate; negative/inconclusive does not expand. Retrieval: `python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-node-first-curriculum-20261028/scripts/show_node_first_curriculum.py`.
+Same random initialization, modern B0,120object/2relation tokens, focal-node gamma2/equal weights and matched CE ratio0.15. 15640 matched updates;GPU wall03:00:00 per arm; seeds[364505]. Jobs: `gpu_smoke:1670253 → cpu_smoke:1670254 → training:1670255 → evaluation:1670256 → collector:1670257`. Shared H100 ceiling2; this array%2 waits for preceding GPU jobs[]. No scientific result claimed before evaluation. Full100epoch/two-seed confirmation is automatic only after the predefined positive pilot gate; negative/inconclusive does not expand. Retrieval: `python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/scripts/show_node_first_curriculum.py`.
 
 
 <!-- L08 RESULTS pilot 20261028 -->
@@ -377,4 +377,4 @@ The pilot uses20epochs (15640updates) and the unchanged100epoch LR horizon. Its 
 
 A negative early result is specific to the compressed pilot schedule. Inconclusive evidence does not automatically trigger a long run. Positive promotion is only a request for two-seed confirmation, not a journal efficacy claim. Cosine gradient measurements are diagnostic associations, not proof of harmful optimization interference.
 
-Numerical evidence: `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/node_first_curriculum_20261028/pilot`. Retrieval: `python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-node-first-curriculum-20261028/scripts/show_node_first_curriculum.py`.
+Numerical evidence: `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/node_first_curriculum_20261028/pilot`. Retrieval: `python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/scripts/show_node_first_curriculum.py`.

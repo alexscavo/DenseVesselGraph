@@ -414,7 +414,7 @@
       "warmup_epochs": 1
     }
   },
-  "source": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/fine_feature_architecture/runs/baseline/best.pt",
+  "source": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/fine_feature_architecture/runs/baseline/best.pt",
   "source_sha256": "d4bc78ad3eb7c1c29c9be8ec3e2927e88f2f45e6f34a3cb8be9ade5fd9d2431c",
   "source_selected_epoch": 95,
   "source_plan": "experiments/brava_graph_study/plan.json",

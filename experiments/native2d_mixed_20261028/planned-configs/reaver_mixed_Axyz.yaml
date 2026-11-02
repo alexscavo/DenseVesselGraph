@@ -55,12 +55,12 @@ data:
   batch_size: 4
   datasets:
     reaver:
-      manifest: /lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_long_20261028/reaver/manifest.json
+      manifest: /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_long_20261028/reaver/manifest.json
   image_size:
   - 128
   - 128
   input_modality: paired_raw_2d_image
-  manifest: /lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_long_20261028/reaver/manifest.json
+  manifest: /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_long_20261028/reaver/manifest.json
   mixed_sampling:
     balance_source_target: true
     epoch_size: twice_source
@@ -113,7 +113,7 @@ evaluation:
     selection_metric: edge_mAP
     selection_mode: max
 experiment:
-  initial_checkpoint: /lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/reaver_mixedpretrain_50/final.pt
+  initial_checkpoint: /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/reaver_mixedpretrain_50/final.pt
   initialization: mixed
   name: native2d-long-reaver-Axyz
   output_dir: ${GNBM_OUTPUT_DIR}

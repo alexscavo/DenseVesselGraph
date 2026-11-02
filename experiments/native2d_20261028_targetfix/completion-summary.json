@@ -8,7 +8,7 @@
       {
         "arm": "B0",
         "passed": true,
-        "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261028_targetfix/B0/latest.pt",
+        "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_20261028_targetfix/B0/latest.pt",
         "step": 6000,
         "parameters": 72316886,
         "strict_state_load": true,
@@ -27,12 +27,12 @@
         "relation_tokens": 5,
         "spline_controls": 8,
         "refinement": false,
-        "manifest": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261028_targetfix/manifest.json"
+        "manifest": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_20261028_targetfix/manifest.json"
       },
       {
         "arm": "Axyz",
         "passed": true,
-        "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261028_targetfix/Axyz/latest.pt",
+        "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_20261028_targetfix/Axyz/latest.pt",
         "step": 6000,
         "parameters": 72456792,
         "strict_state_load": true,
@@ -51,7 +51,7 @@
         "relation_tokens": 5,
         "spline_controls": 8,
         "refinement": true,
-        "manifest": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261028_targetfix/manifest.json"
+        "manifest": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_20261028_targetfix/manifest.json"
       }
     ]
   },

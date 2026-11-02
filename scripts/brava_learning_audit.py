@@ -3,7 +3,7 @@ import collections,csv,hashlib,io,json,sys,zipfile
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import numpy as np
-ORIGIN=Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026')
+ORIGIN=Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph')
 PREVIOUS=ORIGIN/'experiments/brava_representation_20261026'
 OUT=Path(__file__).resolve().parents[1]/'experiments/brava_learning_diagnosis_20261026'
 LARGE=Path('/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_learning_diagnosis_20261026')

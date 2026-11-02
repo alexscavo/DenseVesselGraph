@@ -415,7 +415,7 @@
         "warmup_epochs": 1
       }
     },
-    "source": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/fine_feature_architecture/runs/baseline/best.pt",
+    "source": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/fine_feature_architecture/runs/baseline/best.pt",
     "source_sha256": "d4bc78ad3eb7c1c29c9be8ec3e2927e88f2f45e6f34a3cb8be9ade5fd9d2431c",
     "source_selected_epoch": 95,
     "source_plan": "experiments/brava_graph_study/plan.json",
@@ -2147,15 +2147,15 @@
   },
   "jobs": {
     "other_studies_verified_serial": [
-      "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026",
-      "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-cheap-diagnostics-20261026"
+      "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
+      "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph"
     ],
     "cpu_targets": "1584757",
     "queue_at_submission": "1584594|PENDING|N/A|cpu_p1\n1583594|PENDING|N/A|cpu_p1\n1584593_[0-1%1]|PENDING|gres/gpu:1|gpu_p6\n1583593_[0-5%1]|PENDING|gres/gpu:1|gpu_p6\n1583592|PENDING|gres/gpu:1|gpu_p6\n1583591|RUNNING|gres/gpu:1|gpu_p6",
     "other_claims": [
       {
         "state": "accepted",
-        "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-cheap-diagnostics-20261026",
+        "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
         "concurrent_h100": 1,
         "global_limit": 2,
         "prior_gpu_jobs": [
@@ -2188,7 +2188,7 @@
         "state": "accepted",
         "concurrent_h100": 1,
         "global_limit": 2,
-        "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026",
+        "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
         "release_after": "1583594",
         "jobs": {
           "smoke": {

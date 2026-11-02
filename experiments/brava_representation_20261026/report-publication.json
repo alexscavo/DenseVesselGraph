@@ -2,17 +2,17 @@
   "published_at": "2026-10-26T16:54:11.509347+01:00",
   "reports": [
     {
-      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/BRAVA_experiment_plan.md",
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/BRAVA_experiment_plan.md",
       "prior_sha256": "a18d7c9b6371815e015673ba78eb3a5fab01755b04fd8ae01a0867e9bf7e9566",
       "preserved_prior_prefix": true,
       "new_section_sha256": "a5286c42483f425ef2b2ce0811b4e213141bc29497c45a72123ff65bea3d7d12"
     },
     {
-      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/BRAVA_preparation.md",
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/BRAVA_preparation.md",
       "prior_sha256": "0d6af50e0846462f379dac81a89214eb65df00f80504396eda4527da5441d734",
       "preserved_prior_prefix": true
     }
   ],
-  "source_worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026",
-  "analysis": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/experiments/brava_representation_20261026/analysis.json"
+  "source_worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
+  "analysis": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_representation_20261026/analysis.json"
 }

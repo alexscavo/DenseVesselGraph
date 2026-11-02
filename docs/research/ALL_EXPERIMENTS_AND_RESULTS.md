@@ -4743,7 +4743,7 @@ source paths in provenance describe the original extraction; they were not
 re-read or newly verified during this update. No dataset, training target,
 checkpoint or training configuration was changed.
 
-- Shared Python evaluator: `Graph-Native-Betti-Matching-Representation/scripts/catmull_rom.py`.
+- Shared Python evaluator: `DenseVesselGraph/scripts/catmull_rom.py`.
 - Update command: `python scripts/update_single_patch_curve_viewers.py` from
   that repository, using the usual verified runtime.
 - Existing shared experiment builder and viewer sources are in
@@ -6325,7 +6325,7 @@ Useful prototype documentation and measured comparison evidence are retained. Ex
 
 GT job **676631 completed successfully**. Accepted populations: **9,709 train / 1,952 validation / 13,071 test**. Training **676650** queues after preparation; test **676692** waits for successful training. No repeat model smoke was run.
 
-Stable commits: **24c2605** (spline implementation and eligibility fix), **98eb6a9** (verified restoration). The temporary screenshot is kept for the user's inspection at `Graph-Native-Betti-Matching-Representation/experiments/spline_learning/temporary-debug/duplicate-edge.png`; it is generated and excluded from Git. Delete this temporary directory after inspection. The source patch ID and precise failure diagnosis remain in the training report.
+Stable commits: **24c2605** (spline implementation and eligibility fix), **98eb6a9** (verified restoration). The temporary screenshot is kept for the user's inspection at `DenseVesselGraph/experiments/spline_learning/temporary-debug/duplicate-edge.png`; it is generated and excluded from Git. Delete this temporary directory after inspection. The source patch ID and precise failure diagnosis remain in the training report.
 
 ## Reuse of the recovery archive
 
@@ -7016,7 +7016,7 @@ would need a justified, matched graph-only continuation from the same checkpoint
 
 ## Locations
 
-Config: `Graph-Native-Betti-Matching-Representation/configs/spline_frozen_factorial_pilot.yaml`.
+Config: `DenseVesselGraph/configs/spline_frozen_factorial_pilot.yaml`.
 Submission: `cluster/jean_zay/spline_frozen_factorial.slurm` in that repository.
 Each array task requests one H100 for at most 30 minutes; tasks may run in
 parallel subject to scheduler availability.
@@ -7451,7 +7451,7 @@ The two jobs use the same checksum-verified archive and interpreter selection.
 - Final CPU preflight passed with the protected interpreter and fresh archive;
   full training entrypoint imports also passed.
 - Job IDs, manifest checksum and verification are recorded in
-  `Graph-Native-Betti-Matching-Representation/experiments/spline_learning/metadata/scratch-comparison-jobs.json`.
+  `DenseVesselGraph/experiments/spline_learning/metadata/scratch-comparison-jobs.json`.
 - Both are independent Slurm jobs, with no dependency on the other's completion.
   Compute W&B logs are offline and need login-node syncing for cloud visibility.
 
@@ -7694,7 +7694,7 @@ Diagnose the near-input-independent spline predictions before launching another 
 
 ## Files and reproducibility
 
-Full-precision CSV: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/spline_learning/metadata/comparison/comparison.csv`. Source checksums: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/spline_learning/metadata/comparison/provenance.json`.
+Full-precision CSV: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/spline_learning/metadata/comparison/comparison.csv`. Source checksums: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/spline_learning/metadata/comparison/provenance.json`.
 
 Underlying results: `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/runs/scratch_{old_graph,spline_k8,adaptive_degree2}_10k_300ep/test/{best,final}/`.
 
@@ -8822,9 +8822,9 @@ have not been changed. No new full training or dataset-wide test was launched.
 
 ## Artifacts
 
-Reproducer: `Graph-Native-Betti-Matching-Representation/scripts/diagnose_spline_collapse.py`.
+Reproducer: `DenseVesselGraph/scripts/diagnose_spline_collapse.py`.
 Raw BN/gradient measurements:
-`Graph-Native-Betti-Matching-Representation/experiments/spline_learning/metadata/diagnosis/bn-differential.json`.
+`DenseVesselGraph/experiments/spline_learning/metadata/diagnosis/bn-differential.json`.
 Attention measurements: the adjacent `attention-differential.json`.
 
 [One actual epoch-300 prediction](../experiments/synthetic_mri_scratch_spline_prediction/results/sample_000020_0470.html)
@@ -8989,7 +8989,7 @@ The Slurm script supplies the required data/output environment variables and rec
 
 ## Submitted job
 
-Slurm job **612351**, submitted on 2026-10-05. Log files: `Graph-Native-Betti-Matching-Representation/experiments/spline_learning/logs/612351.out` and `.err`. Source hashes and base commit are recorded in `experiments/spline_learning/submission.json`. Results will be under `experiments/spline_learning/runs/job-612351/`. No training results are claimed at submission.
+Slurm job **612351**, submitted on 2026-10-05. Log files: `DenseVesselGraph/experiments/spline_learning/logs/612351.out` and `.err`. Source hashes and base commit are recorded in `experiments/spline_learning/submission.json`. Results will be under `experiments/spline_learning/runs/job-612351/`. No training results are claimed at submission.
 
 ## GPU calibration and smoke checks
 
@@ -9015,7 +9015,7 @@ Mesh viewer verification: visibility toggle, opacity changes, physical coordinat
 
 ## Saved-model evaluation and training recap (2026-10-05)
 
-At the user's request, Slurm job **613399** ran `evaluate.py` on all three final `model.pt` files. Completed in **1 minute 14 seconds**, exit `0:0`. Submission script: `Graph-Native-Betti-Matching-Representation/cluster/jean_zay/spline_evaluate_four.slurm`. Each call uses the saved resolved config, `--dataset synthetic_mri --split val --max-samples 4 --batch-size 4 --workers 0 --device cuda`. The cache's `val` is the same four training patches; this evaluation is explicitly an overfit test, not held-out testing. No BN recalibration or threshold tuning was performed.
+At the user's request, Slurm job **613399** ran `evaluate.py` on all three final `model.pt` files. Completed in **1 minute 14 seconds**, exit `0:0`. Submission script: `DenseVesselGraph/cluster/jean_zay/spline_evaluate_four.slurm`. Each call uses the saved resolved config, `--dataset synthetic_mri --split val --max-samples 4 --batch-size 4 --workers 0 --device cuda`. The cache's `val` is the same four training patches; this evaluation is explicitly an overfit test, not held-out testing. No BN recalibration or threshold tuning was performed.
 
 All three runs achieved node/edge F1 and node/edge mAP **1.00**, with 98 true positive nodes and 79 true positive edges, zero false positives/negatives, and zero absolute Betti-0/Betti-1 error. Protocol: F1 IoU threshold 0.5; AP IoU thresholds 0.50–0.95, target node size 0.2 and edge half-width 0.1 in normalized coordinates. These box-based detection metrics do not measure spline tortuosity. Standard SMD samples straight graph edges in normalized coordinates, not the spline curves: V0 fine-tuned 0.0001615496, V0 scratch 0.0001617138, V1 fine-tuned 0.0001640488.
 
@@ -9289,7 +9289,7 @@ Source: `docs/research/spline_learning/spline-learning-results.md`
 
 # Spline learning: generated run results
 
-Run directory: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/spline_learning/runs/job-612351`
+Run directory: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/spline_learning/runs/job-612351`
 
 **Four training patches only. These are overfit diagnostics, not held-out validation results.**
 
@@ -9306,9 +9306,9 @@ Gate: at least 50% reduction and final mean curve error ≤0.5 mm. This is an ex
 
 ## Interactive outputs
 
-- [v0_pretrained: targets versus predictions](/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/spline_learning/runs/job-612351/v0_pretrained/predictions.html). Switch matched-pair geometry and decoded-graph modes.
-- [v0_scratch: targets versus predictions](/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/spline_learning/runs/job-612351/v0_scratch/predictions.html). Switch matched-pair geometry and decoded-graph modes.
-- [v1_pretrained: targets versus predictions](/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/spline_learning/runs/job-612351/v1_pretrained/predictions.html). Switch matched-pair geometry and decoded-graph modes.
+- [v0_pretrained: targets versus predictions](/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/spline_learning/runs/job-612351/v0_pretrained/predictions.html). Switch matched-pair geometry and decoded-graph modes.
+- [v0_scratch: targets versus predictions](/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/spline_learning/runs/job-612351/v0_scratch/predictions.html). Switch matched-pair geometry and decoded-graph modes.
+- [v1_pretrained: targets versus predictions](/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/spline_learning/runs/job-612351/v1_pretrained/predictions.html). Switch matched-pair geometry and decoded-graph modes.
 
 ## Next steps
 
@@ -9568,9 +9568,9 @@ spline supervision, tested separately rather than combining changes now.
 
 ## Files
 
-Code: `Graph-Native-Betti-Matching-Representation/scripts/train_spline_weight_pilot.py`.
-Protocol: `Graph-Native-Betti-Matching-Representation/configs/spline_weight_pilot.yaml`.
-Submission: `Graph-Native-Betti-Matching-Representation/cluster/jean_zay/spline_weight_pilot.slurm`.
+Code: `DenseVesselGraph/scripts/train_spline_weight_pilot.py`.
+Protocol: `DenseVesselGraph/configs/spline_weight_pilot.yaml`.
+Submission: `DenseVesselGraph/cluster/jean_zay/spline_weight_pilot.slurm`.
 
 Run root:
 `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/runs/weight_pilot_20261008/`.
@@ -9638,7 +9638,7 @@ disrupts already working node/edge prediction. This is proposed, not launched.
 ### Result locations
 
 Compact verified CSV, JSON, histories and provenance:
-`Graph-Native-Betti-Matching-Representation/experiments/spline_learning/metadata/weight-pilot/`.
+`DenseVesselGraph/experiments/spline_learning/metadata/weight-pilot/`.
 Each run directory retains `model.pt`, `history.jsonl`, offline `wandb/`, and
 `validation-005000/` containing predictions, native/common scores and PNGs.
 No original checkpoint, dataset, or test result was overwritten.
@@ -9667,7 +9667,7 @@ Restore SyntheticMRI from today's dataset archive to `/lustre/fsn1/projects/rech
 
 Archive: `/lustre/fsstor/projects/rech/vnc/upz73jr/Graph-Native-Betti-Matching/2026-10-05/datasets.tar` (44 GB). A read-only archive scan found all 136 full segmentation volumes, the original generation configuration, 91 `graph.vvg` files and prepared SyntheticMRI patch data. This is a recovery archive, not evidence of complete full-graph coverage.
 
-First job 627391 could not access STORE from its compute node and failed before extraction. The archive was copied to WORK as `Graph-Native-Betti-Matching-Representation/experiments/spline_learning/datasets-restoration.tar`; retry job **627540** extracts only SyntheticMRI to a staging folder. Fresh filesystem timestamps are used while preserving file contents.
+First job 627391 could not access STORE from its compute node and failed before extraction. The archive was copied to WORK as `DenseVesselGraph/experiments/spline_learning/datasets-restoration.tar`; retry job **627540** extracts only SyntheticMRI to a staging folder. Fresh filesystem timestamps are used while preserving file contents.
 
 ## Checks before replacement
 
@@ -9719,7 +9719,7 @@ Download each HTML and open it locally in a browser; all data and Plotly are emb
 
 Verified exported metric transforms against target caches, exact predicted endpoint/control agreement, expected curve/edge counts and absence of embedded placeholders. Inspected real-MRI projections for coordinate/mask alignment. JavaScript trace construction, layer toggles, control counts, edge selection, opacity and camera reset were checked with DOM/Plotly stubs. Browser/WebGL rendering cannot be inspected on this cluster.
 
-Builder: `Graph-Native-Betti-Matching-Representation/scripts/build_spline_test_viewers.py`. Pass `--run`, `--targets` and `--output`; it streams the large prediction export and stops after finding the selected samples. No GPU inference or training is repeated.
+Builder: `DenseVesselGraph/scripts/build_spline_test_viewers.py`. Pass `--run`, `--targets` and `--output`; it streams the large prediction export and stops after finding the selected samples. No GPU inference or training is repeated.
 
 
 <!-- END SOURCE: docs/research/spline_learning/synthetic-mri-test-predictions.md -->
@@ -18497,7 +18497,7 @@ All15 training/prediction tasks1460519 and all15 CPU evaluation tasks1460520 com
 
 Collector1460521 failed **after numerical aggregation**, while loading missing Plotly assets from the archived training runtime. Collection was rerun from saved results using the complete protected plotting environment. All tables, figures, three offline3D viewers and the study report are now published. No inference/retraining was required. The Slurm failure remains in accounting; successful reporting recovery is recorded by `results/collection-complete.json`.
 
-The retrieval-command error was a working-directory issue. From the parent `projects/` directory use `python3 Graph-Native-Betti-Matching-Representation/scripts/show_multidataset_graph.py`; from the repository root use `python3 scripts/show_multidataset_graph.py`.
+The retrieval-command error was a working-directory issue. From the parent `projects/` directory use `python3 DenseVesselGraph/scripts/show_multidataset_graph.py`; from the repository root use `python3 scripts/show_multidataset_graph.py`.
 
 ## 1. BRAVA: node recovery improves, graph connectivity remains inadequate
 

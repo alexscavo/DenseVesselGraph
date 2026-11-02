@@ -13846,9 +13846,9 @@
       "sample_000166_0123"
     ]
   },
-  "evaluation_plan": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/multidataset_continuous/plan.json",
+  "evaluation_plan": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/multidataset_continuous/plan.json",
   "evaluation_plan_sha256": "4fc155630e3f49137204d31560ce97e6eb0433346bccba7aba000360f217d252",
-  "d08_record": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-brava-long-20261027/experiments/brava_long_20261027",
+  "d08_record": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_long_20261027",
   "d08_plan_sha256": "2ca94f19d89a6c4f0abbfd23231286e8074b658cacaf369b44b1d1b3fe13105f",
   "d08_effective_config_sha256": "3accc53fae5fe0ba9b6927951194db11f00cf76c8fcbf38359db6d6b64a7c2fa",
   "config_differences_vs_d08_effective": {
@@ -13885,7 +13885,7 @@
     100
   ],
   "source": {
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/92741/runs/B0/model-12000.pt",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/92741/runs/B0/model-12000.pt",
     "seed": 92741,
     "step": 12000,
     "source_validation_edge_f1_2mm": 0.5967149758454107,

@@ -2,7 +2,7 @@
  "job_id": "1732385",
  "dataset": "BRAVA",
  "migration": {
-  "source": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/92741/runs/B0/model-12000.pt",
+  "source": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/92741/runs/B0/model-12000.pt",
   "source_queries": 120,
   "relation_rows_loaded": [
    120,

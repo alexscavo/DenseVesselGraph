@@ -3,7 +3,7 @@
   "subjects": 8,
   "patches": 1796,
   "b0_checkpoint": {
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-brava-long-20261027/experiments/brava_long_20261027/large/runs/synthetic/model-epoch-300.pt",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_long_20261027/large/runs/synthetic/model-epoch-300.pt",
     "sha256": "aeab859b5c8bc435ae1205baf598b9aca24b91ddde2a4d181364e0fab611fe59",
     "step": 82200,
     "object_queries": 256

@@ -1,10 +1,10 @@
 {
-  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-node-first-curriculum-20261028",
+  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
   "branch": "research/node-first-curriculum-20261028",
-  "metadata": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-node-first-curriculum-20261028/experiments/node_first_curriculum_20261028",
+  "metadata": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/node_first_curriculum_20261028",
   "output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/node_first_curriculum_20261028",
   "initialization": "random step0 only; no pretrained graph state",
-  "report": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/fine_feature_architecture_study.md",
+  "report": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/fine_feature_architecture_study.md",
   "registry_id": "L08",
   "jobs": {
     "gpu_smoke": {

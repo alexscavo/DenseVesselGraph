@@ -38,10 +38,10 @@ import numpy as np
 
 CODE = Path(__file__).resolve().parents[1]  # the repository or its frozen copy
 sys.path.insert(0, str(CODE))
-REPO = Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation')
+REPO = Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph')
 OUT = REPO/'experiments/ixi_long_20261030'
 LARGE = Path('/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_long_20261030')
-D08 = Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-brava-long-20261027/experiments/brava_long_20261027')
+D08 = Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_long_20261027')
 IXI = Path('/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/IXI/transfer_splines_k8_20261015')
 EVAL_PLAN = REPO/'experiments/multidataset_continuous/plan.json'
 SLURM = 'cluster/jean_zay/ixi_long_gpu_20261030.slurm'

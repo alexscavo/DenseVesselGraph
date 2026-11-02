@@ -1,11 +1,11 @@
 {
   "publications": [
     {
-      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/metrics/8-ixi-relation-matching-calibration.md",
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/metrics/8-ixi-relation-matching-calibration.md",
       "sha256": "bede634a44e4d73e5b792133f912fc1e87d2bf05224ca616ad66c8dc6ffb8502"
     },
     {
-      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/research/VASCULAR_GRAPH_EXPERIMENT_REGISTRY_2026-10-26_UPDATED.md",
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/research/VASCULAR_GRAPH_EXPERIMENT_REGISTRY_2026-10-26_UPDATED.md",
       "sha256": "533fab6890c6ba3f7b7f607ecec7ae44ca51d97b09af656de29ac1ccdd8c0cd1"
     }
   ],

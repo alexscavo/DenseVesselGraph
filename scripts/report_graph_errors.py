@@ -19,7 +19,7 @@ def main():
 
 IXI adds historical parent, node-head continuation, combined local-image refinement and its **inference-only coordinate component ablation**, on the original256/128 train/validation patches (123/26 subjects). These are not the new fully unfrozen IXI B0/A-xyz models currently owned by another agent. BRAVA is excluded: its ongoing representation study and incomplete SWC labels do not support treating annotation-unmatched structures as confirmed anatomical false positives.
 
-Isolated branch/worktree: `research/graph-error-attribution-20261026` / `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-graph-errors-20261026`. Numerical outputs are under that worktree's `experiments/graph_error_attribution_20261026/`. Original checkpoints/caches and other agents' reports are untouched. Cache archive hashes, checkpoint identities, exact cohort-ID hashes, physical thresholds, train-defined geometry cuts and source-code hashes are retained. No new research report was created.
+Isolated branch/worktree: `research/graph-error-attribution-20261026` / `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph`. Numerical outputs are under that worktree's `experiments/graph_error_attribution_20261026/`. Original checkpoints/caches and other agents' reports are untouched. Cache archive hashes, checkpoint identities, exact cohort-ID hashes, physical thresholds, train-defined geometry cuts and source-code hashes are retained. No new research report was created.
 
 ### Definitions and safeguards
 

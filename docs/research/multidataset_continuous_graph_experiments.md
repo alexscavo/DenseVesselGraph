@@ -164,7 +164,7 @@ All15 training/prediction tasks1460519 and all15 CPU evaluation tasks1460520 com
 
 Collector1460521 failed **after numerical aggregation**, while loading missing Plotly assets from the archived training runtime. Collection was rerun from saved results using the complete protected plotting environment. All tables, figures, three offline3D viewers and the study report are now published. No inference/retraining was required. The Slurm failure remains in accounting; successful reporting recovery is recorded by `results/collection-complete.json`.
 
-The retrieval-command error was a working-directory issue. From the parent `projects/` directory use `python3 Graph-Native-Betti-Matching-Representation/scripts/show_multidataset_graph.py`; from the repository root use `python3 scripts/show_multidataset_graph.py`.
+The retrieval-command error was a working-directory issue. From the parent `projects/` directory use `python3 DenseVesselGraph/scripts/show_multidataset_graph.py`; from the repository root use `python3 scripts/show_multidataset_graph.py`.
 
 ## 1. BRAVA: node recovery improves, graph connectivity remains inadequate
 

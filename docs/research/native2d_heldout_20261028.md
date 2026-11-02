@@ -6,7 +6,7 @@
 
 This continues Native2D-01; the earlier ResNet18 two-crop result is a completed implementation check, not held-out evidence. The user authorized real bounded B0/A-xyz training after source QC and full-model learning/throughput gates. Latest measured status lives in the [registry](../../research/VASCULAR_GRAPH_EXPERIMENT_REGISTRY_2026-10-26_UPDATED.md#native2d-02-held-out-original-width-av-wide-study--28-october-2026) and the isolated experiment's `report.md`.
 
-Worktree: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027` (existing dedicated native 2D branch). New outputs: `experiments/native2d_20261028/`; Native2D-01 outputs remain preserved in `experiments/native2d_20261027/`. Entry points are `scripts/prepare_native2d_study.py`, `scripts/train_native2d_study.py`, `scripts/collect_native2d_study.py`. These use the native BCHW network and dedicated 2D loader, without changing the 3D training path.
+Worktree: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph` (existing dedicated native 2D branch). New outputs: `experiments/native2d_20261028/`; Native2D-01 outputs remain preserved in `experiments/native2d_20261027/`. Entry points are `scripts/prepare_native2d_study.py`, `scripts/train_native2d_study.py`, `scripts/collect_native2d_study.py`. These use the native BCHW network and dedicated 2D loader, without changing the 3D training path.
 
 ## Dataset protocol
 

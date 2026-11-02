@@ -4,7 +4,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "normal",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-normal.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-normal.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -58,7 +58,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "confidence_nms",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-confidence_nms.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-confidence_nms.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -112,7 +112,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "protected_nms",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-protected_nms.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-protected_nms.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -166,7 +166,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "naive_global",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-naive_global.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-naive_global.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -220,7 +220,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "guarded_global",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-guarded_global.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-guarded_global.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -274,7 +274,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "local_profile",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-local_profile.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-local_profile.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -328,7 +328,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "protected_nms_count_confidence",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-protected_nms_count_confidence.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-protected_nms_count_confidence.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -382,7 +382,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "protected_nms_count_spatial",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-protected_nms_count_spatial.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-protected_nms_count_spatial.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -436,7 +436,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "naive_global_count_confidence",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-naive_global_count_confidence.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-naive_global_count_confidence.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -490,7 +490,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "naive_global_count_spatial",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-naive_global_count_spatial.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-naive_global_count_spatial.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -544,7 +544,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "guarded_global_count_confidence",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-guarded_global_count_confidence.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-guarded_global_count_confidence.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -598,7 +598,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "guarded_global_count_spatial",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-guarded_global_count_spatial.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-guarded_global_count_spatial.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -652,7 +652,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "local_profile_count_confidence",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-local_profile_count_confidence.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-local_profile_count_confidence.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -706,7 +706,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "local_profile_count_spatial",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-local_profile_count_spatial.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-1-local_profile_count_spatial.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -760,7 +760,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "normal",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-normal.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-normal.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -814,7 +814,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "confidence_nms",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-confidence_nms.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-confidence_nms.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -868,7 +868,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "protected_nms",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-protected_nms.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-protected_nms.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -922,7 +922,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "naive_global",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-naive_global.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-naive_global.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -976,7 +976,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "guarded_global",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-guarded_global.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-guarded_global.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -1030,7 +1030,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "local_profile",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-local_profile.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-local_profile.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -1084,7 +1084,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "protected_nms_count_confidence",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-protected_nms_count_confidence.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-protected_nms_count_confidence.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -1138,7 +1138,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "protected_nms_count_spatial",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-protected_nms_count_spatial.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-protected_nms_count_spatial.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -1192,7 +1192,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "naive_global_count_confidence",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-naive_global_count_confidence.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-naive_global_count_confidence.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -1246,7 +1246,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "naive_global_count_spatial",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-naive_global_count_spatial.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-naive_global_count_spatial.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -1300,7 +1300,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "guarded_global_count_confidence",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-guarded_global_count_confidence.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-guarded_global_count_confidence.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -1354,7 +1354,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "guarded_global_count_spatial",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-guarded_global_count_spatial.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-guarded_global_count_spatial.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -1408,7 +1408,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "local_profile_count_confidence",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-local_profile_count_confidence.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-local_profile_count_confidence.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -1462,7 +1462,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "local_profile_count_spatial",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-local_profile_count_spatial.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/364505-train-2-local_profile_count_spatial.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -1516,7 +1516,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "normal",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-normal.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-normal.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -1570,7 +1570,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "confidence_nms",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-confidence_nms.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-confidence_nms.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -1624,7 +1624,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "protected_nms",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-protected_nms.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-protected_nms.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -1678,7 +1678,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "naive_global",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-naive_global.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-naive_global.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -1732,7 +1732,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "guarded_global",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-guarded_global.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-guarded_global.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -1786,7 +1786,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "local_profile",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-local_profile.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-local_profile.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -1840,7 +1840,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "protected_nms_count_confidence",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-protected_nms_count_confidence.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-protected_nms_count_confidence.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -1894,7 +1894,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "protected_nms_count_spatial",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-protected_nms_count_spatial.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-protected_nms_count_spatial.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -1948,7 +1948,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "naive_global_count_confidence",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-naive_global_count_confidence.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-naive_global_count_confidence.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2002,7 +2002,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "naive_global_count_spatial",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-naive_global_count_spatial.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-naive_global_count_spatial.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2056,7 +2056,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "guarded_global_count_confidence",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-guarded_global_count_confidence.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-guarded_global_count_confidence.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2110,7 +2110,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "guarded_global_count_spatial",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-guarded_global_count_spatial.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-guarded_global_count_spatial.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2164,7 +2164,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "local_profile_count_confidence",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-local_profile_count_confidence.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-local_profile_count_confidence.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2218,7 +2218,7 @@
     "split": "train",
     "tolerance": 1.0,
     "method": "local_profile_count_spatial",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-local_profile_count_spatial.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-1-local_profile_count_spatial.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2272,7 +2272,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "normal",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-normal.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-normal.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2326,7 +2326,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "confidence_nms",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-confidence_nms.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-confidence_nms.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2380,7 +2380,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "protected_nms",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-protected_nms.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-protected_nms.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2434,7 +2434,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "naive_global",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-naive_global.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-naive_global.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2488,7 +2488,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "guarded_global",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-guarded_global.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-guarded_global.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2542,7 +2542,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "local_profile",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-local_profile.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-local_profile.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2596,7 +2596,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "protected_nms_count_confidence",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-protected_nms_count_confidence.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-protected_nms_count_confidence.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2650,7 +2650,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "protected_nms_count_spatial",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-protected_nms_count_spatial.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-protected_nms_count_spatial.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2704,7 +2704,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "naive_global_count_confidence",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-naive_global_count_confidence.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-naive_global_count_confidence.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2758,7 +2758,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "naive_global_count_spatial",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-naive_global_count_spatial.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-naive_global_count_spatial.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2812,7 +2812,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "guarded_global_count_confidence",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-guarded_global_count_confidence.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-guarded_global_count_confidence.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2866,7 +2866,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "guarded_global_count_spatial",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-guarded_global_count_spatial.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-guarded_global_count_spatial.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2920,7 +2920,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "local_profile_count_confidence",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-local_profile_count_confidence.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-local_profile_count_confidence.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",
@@ -2974,7 +2974,7 @@
     "split": "train",
     "tolerance": 2.0,
     "method": "local_profile_count_spatial",
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-query-selection-20261026/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-local_profile_count_spatial.npz",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026/smoke-ranking/92741-train-2-local_profile_count_spatial.npz",
     "subject_names": [
       "SyntheticMRI_000001",
       "SyntheticMRI_000003",

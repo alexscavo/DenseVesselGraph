@@ -60,9 +60,9 @@ spline supervision, tested separately rather than combining changes now.
 
 ## Files
 
-Code: `Graph-Native-Betti-Matching-Representation/scripts/train_spline_weight_pilot.py`.
-Protocol: `Graph-Native-Betti-Matching-Representation/configs/spline_weight_pilot.yaml`.
-Submission: `Graph-Native-Betti-Matching-Representation/cluster/jean_zay/spline_weight_pilot.slurm`.
+Code: `DenseVesselGraph/scripts/train_spline_weight_pilot.py`.
+Protocol: `DenseVesselGraph/configs/spline_weight_pilot.yaml`.
+Submission: `DenseVesselGraph/cluster/jean_zay/spline_weight_pilot.slurm`.
 
 Run root:
 `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/runs/weight_pilot_20261008/`.
@@ -130,7 +130,7 @@ disrupts already working node/edge prediction. This is proposed, not launched.
 ### Result locations
 
 Compact verified CSV, JSON, histories and provenance:
-`Graph-Native-Betti-Matching-Representation/experiments/spline_learning/metadata/weight-pilot/`.
+`DenseVesselGraph/experiments/spline_learning/metadata/weight-pilot/`.
 Each run directory retains `model.pt`, `history.jsonl`, offline `wandb/`, and
 `validation-005000/` containing predictions, native/common scores and PNGs.
 No original checkpoint, dataset, or test result was overwritten.

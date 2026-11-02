@@ -103,7 +103,7 @@ Diagnose the near-input-independent spline predictions before launching another 
 
 ## Files and reproducibility
 
-Full-precision CSV: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/spline_learning/metadata/comparison/comparison.csv`. Source checksums: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/spline_learning/metadata/comparison/provenance.json`.
+Full-precision CSV: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/spline_learning/metadata/comparison/comparison.csv`. Source checksums: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/spline_learning/metadata/comparison/provenance.json`.
 
 Underlying results: `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/runs/scratch_{old_graph,spline_k8,adaptive_degree2}_10k_300ep/test/{best,final}/`.
 

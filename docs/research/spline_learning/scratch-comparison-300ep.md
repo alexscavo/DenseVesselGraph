@@ -110,7 +110,7 @@ The two jobs use the same checksum-verified archive and interpreter selection.
 - Final CPU preflight passed with the protected interpreter and fresh archive;
   full training entrypoint imports also passed.
 - Job IDs, manifest checksum and verification are recorded in
-  `Graph-Native-Betti-Matching-Representation/experiments/spline_learning/metadata/scratch-comparison-jobs.json`.
+  `DenseVesselGraph/experiments/spline_learning/metadata/scratch-comparison-jobs.json`.
 - Both are independent Slurm jobs, with no dependency on the other's completion.
   Compute W&B logs are offline and need login-node syncing for cloud visibility.
 

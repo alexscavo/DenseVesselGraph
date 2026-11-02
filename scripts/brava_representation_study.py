@@ -10,7 +10,7 @@ from scripts.multiscale_pretrained import graph_cache,rows_for,summarize
 from data.brava_representation_study import RepresentationDataset,migrate_geometry
 
 ROOT=Path('experiments/brava_representation_20261026')
-ORIGIN=Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation')
+ORIGIN=Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph')
 SOURCE=ORIGIN/'experiments/fine_feature_architecture/runs/baseline/best.pt'
 SEED=261039
 ARMS=['K8','K24','C1','split_K8']

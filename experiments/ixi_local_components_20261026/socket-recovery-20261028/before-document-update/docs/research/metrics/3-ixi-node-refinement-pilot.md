@@ -112,7 +112,7 @@ For `sample_000040_0078` at update1000, the local-image variant shifts several n
 
 ### Isolation, data and spatial contracts
 
-Work is isolated on branch `research/ixi-local-components-20261026` in `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026`. The original working tree was already heavily modified; required working sources were copied into this worktree with SHA256 provenance, without modifying shared models, configs or canonical research files. This report is the only intended shared scientific-document update; the collector checks for concurrent changes before replacing its own bounded results section.
+Work is isolated on branch `research/ixi-local-components-20261026` in `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph`. The original working tree was already heavily modified; required working sources were copied into this worktree with SHA256 provenance, without modifying shared models, configs or canonical research files. This report is the only intended shared scientific-document update; the collector checks for concurrent changes before replacing its own bounded results section.
 
 Use the existing IXI `transfer_splines_k8_20261015` population and exact multi-dataset4096/512 manifest: **4,096 training patches/123 subjects, 512 validation patches/26 subjects**. Train/validation subjects remain disjoint, test data untouched. The full prepared population remains10,000/2,649; no new extraction, sampling representation or labels are generated. K8 endpoint-constrained cubic B-splines retain original dense paths and boundary provenance; graph anchors/connectivity are unchanged.
 
@@ -155,7 +155,7 @@ Choose a supported arm using default and count-controlled graph/localization gai
 
 ### Execution and retrieval
 
-All GPU work in this batch is serialized to **one H100** (array `%1`) to leave one shared slot for concurrent agents. The submitter audits all same-user GPU allocations/pending jobs under a coordination lock and chains behind existing GPU work. A shared claim is recorded under `/lustre/fswork/projects/rech/vnc/upz25mj/projects/experiment_gpu_coordination/ixi-local-components-20261026.json`; other agents must check this claim and the actual queue to maintain the global limit of two. No other agent's jobs are cancelled or changed.
+All GPU work in this batch is serialized to **one H100** (array `%1`) to leave one shared slot for concurrent agents. The submitter audits all same-user GPU allocations/pending jobs under a coordination lock and chains behind existing GPU work. A shared claim is recorded under `/lustre/fswork/projects/rech/vnc/upz25mj/projects/archive/coordination/ixi-local-components-20261026.json`; other agents must check this claim and the actual queue to maintain the global limit of two. No other agent's jobs are cancelled or changed.
 
 Dependency chain: correctness/benchmark → native zero-shot → six-arm fine-tuning array → CPU collector. Invalid prerequisites block downstream jobs. GPU wall allocations: smoke30min, zero-shot75min, each training arm3h (including evaluation/buffer); actual update budget is recorded in `smoke.json`. Large checkpoints/caches/runtime staging use SCRATCH; numerical raw caches are ZIP archives to avoid the earlier file-count-quota failure. Only this batch's per-job temporary runtime is removed on exit.
 
@@ -237,16 +237,16 @@ L06 was also checked: IXI1584593_0 FAILED after49s with an empty-pair indexing-d
 
 **Decision:** no modern IXI winner or training-duration recommendation can be made. The next permitted bounded recovery is the existing256-query B0/A-xyz/A-cls component study after its socket-path smoke fix, using the same initialization, splits and losses. Its final update budget is still unset (planned cap6000; minimum1500), because the gate did not finish. Do not launch a full-IXI120/256 comparison with silent overflow exclusions. No new architecture or loss experiment is justified by an infrastructure timeout.
 
-Evidence: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/experiments/n07_status_audit_20261028` (`status.json`, `target-capacity.json`, `per-patch.csv`, `per-subject.json`, `overflow-above120.csv`, `cross-checks.json`, copied smoke/logs, source identities). Target audit took146.3s on CPU. Reproduce counts with:
+Evidence: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/n07_status_audit_20261028` (`status.json`, `target-capacity.json`, `per-patch.csv`, `per-subject.json`, `overflow-above120.csv`, `cross-checks.json`, copied smoke/logs, source identities). Target audit took146.3s on CPU. Reproduce counts with:
 
 ```bash
-/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/bin/python /lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/experiments/n07_status_audit_20261028/audit_targets.py
+/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/bin/python /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/n07_status_audit_20261028/audit_targets.py
 ```
 
 Read the confirmed state without inference or training:
 
 ```bash
-python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/scripts/show_ixi_local_components.py
+python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/scripts/show_ixi_local_components.py
 ```
 
 <!-- BEGIN Q0 IXI AUDIT 20261028 -->
@@ -297,5 +297,5 @@ Source files below are under `experiments/local_refinement_long/364505/runs/` in
 
 **One permitted next GPU run:** recover the original **256-query IXI correctness/benchmark smoke only**, with a short task-specific `TMPDIR` to resolve the socket-path failure. Preserve source/subjects/targets/losses and the batch-one evaluation correction. Submit downstream fine-tuning only after that smoke's parity/gradient/throughput gates pass. No duplicate or altered-capacity study is needed. The next independent queue task is **2D-QC**. Q0 launched neither GPU recovery nor training, as required by the latest executable request.
 
-Isolated branch/worktree: `research/q0-ixi-audit-20261028`, `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-q0-ixi-audit-20261028`. Evidence: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-q0-ixi-audit-20261028/experiments/q0_ixi_audit_20261028`; [main-repository pointer](../../../experiments/q0_ixi_audit_20261028/worktree.json). `status.json`, `slurm-status.psv`, `checkpoint-identities.json`, `representation-provenance.json`, `targets.csv`, `targets.json`, `bn-partial.json`, preserved failure logs and `decision.json` retain exact identities, populations and limitations.
+Isolated branch/worktree: `research/q0-ixi-audit-20261028`, `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph`. Evidence: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/q0_ixi_audit_20261028`; [main-repository pointer](../../../experiments/q0_ixi_audit_20261028/worktree.json). `status.json`, `slurm-status.psv`, `checkpoint-identities.json`, `representation-provenance.json`, `targets.csv`, `targets.json`, `bn-partial.json`, preserved failure logs and `decision.json` retain exact identities, populations and limitations.
 <!-- END Q0 IXI AUDIT 20261028 -->

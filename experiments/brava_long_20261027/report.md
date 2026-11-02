@@ -10,7 +10,7 @@ Node softmax focal gamma 2 / equal weights; matched-edge CE / equal weights / ra
 
 Shared AdamW: LR 7e-5, encoder 3.5e-5, weight decay 1e-4, betas (.9,.999), eps 1e-8. Five full epochs of linear warmup, followed by cosine to 1e-6 over **300 full epochs**. Optimizer/global-step/LR continuity is preserved through 25-epoch Slurm chunks. No early stopping or validation-based LR choice. Float32; no AMP/accumulation.
 
-Source: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/92741/runs/B0/model-12000.pt`; SHA256 `8b90d07292761244991f7f1e2fbe07d52c1a0fb93175c1fa863176a2c6337afe`. Selected by source-only SyntheticMRI validation edge F1 (**0.596715**) among the documented compatible B0 continuations; source parent scored 0.5881. Refined A/A-xyz variants require architecture changes and are excluded. Preserve 120 learned object-query rows; move the two learned relation rows from 120/121 to 256/257; retain the 136 added rows from the identical seeded scratch model. Every other source tensor must transfer exactly. Fresh target AdamW for both arms.
+Source: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/92741/runs/B0/model-12000.pt`; SHA256 `8b90d07292761244991f7f1e2fbe07d52c1a0fb93175c1fa863176a2c6337afe`. Selected by source-only SyntheticMRI validation edge F1 (**0.596715**) among the documented compatible B0 continuations; source parent scored 0.5881. Refined A/A-xyz variants require architecture changes and are excluded. Preserve 120 learned object-query rows; move the two learned relation rows from 120/121 to 256/257; retain the 136 added rows from the identical seeded scratch model. Every other source tensor must transfer exactly. Fresh target AdamW for both arms.
 
 CPU audit and GPU smoke passed. Selected **batch 32**, four data workers, **274 updates/epoch**, **82,200 target updates/arm**. Benchmark estimate: **7.89 training GPU-hours/arm**, excluding evaluation/startup/queue. Measured costs are recorded separately. Benchmark optimizer updates are discarded.
 
@@ -44,7 +44,7 @@ Results are descriptive pending review of the complete trajectory. Paired interv
 
 Interpretation predefined before training: increasing train **and** validation recovery supports a benefit from additional optimization/exposure under this recipe; strong train fit with persistently weak validation supports a generalization bottleneck; weak fit in both retains optimization/assignment/supervision alternatives. Tiny-set overfit does not prove the cohort needs only more epochs. Initialization gains are conditional on this shared schedule; pretraining adds source-data compute. No architecture/loss follow-up launches automatically.
 
-Isolated worktree: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-brava-long-20261027`; artifacts: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-brava-long-20261027/experiments/brava_long_20261027` with large checkpoints/caches at `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_long_20261027`. `plan.json`, `cpu-preflight.json`, `gpu-smoke.json`, `batch-selection.json`, frozen code hashes/archive, per-epoch histories/input hashes, immutable checkpoint identities, prediction ZIPs, per-patch/subject metrics and Slurm accounting preserve provenance.
+Isolated worktree: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph`; artifacts: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_long_20261027` with large checkpoints/caches at `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_long_20261027`. `plan.json`, `cpu-preflight.json`, `gpu-smoke.json`, `batch-selection.json`, frozen code hashes/archive, per-epoch histories/input hashes, immutable checkpoint identities, prediction ZIPs, per-patch/subject metrics and Slurm accounting preserve provenance.
 
 Submission record:
 ```json
@@ -199,6 +199,6 @@ Final checkpoint SHA256: scratch `7d19b56e91666ce6aabec1e56396cf23abb096011e3af7
 Review tables and input hashes: `experiments/completed_result_review_20261028/{review.json,brava-milestones.csv,brava-final-per-subject.csv,provenance.json}`. Original analysis and predictions: sibling `gnbm-brava-long-20261027/experiments/brava_long_20261027/`; learning curves remain linked in the D08 section. To print the saved full report without rerunning a model:
 
 ```bash
-cat /lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-brava-long-20261027/experiments/brava_long_20261027/report.md
+cat /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_long_20261027/report.md
 ```
 

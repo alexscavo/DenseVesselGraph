@@ -58,7 +58,7 @@ data:
   - 128
   - 128
   input_modality: raw_mra
-  manifest: /lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261028/manifest.json
+  manifest: /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_20261028/manifest.json
   mixed_sampling:
     balance_source_target: true
     epoch_size: twice_source

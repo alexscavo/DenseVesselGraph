@@ -1,14 +1,14 @@
 {
   "other_studies_verified_serial": [
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026",
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-cheap-diagnostics-20261026"
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph"
   ],
   "cpu_targets": "1584757",
   "queue_at_submission": "1584594|PENDING|N/A|cpu_p1\n1583594|PENDING|N/A|cpu_p1\n1584593_[0-1%1]|PENDING|gres/gpu:1|gpu_p6\n1583593_[0-5%1]|PENDING|gres/gpu:1|gpu_p6\n1583592|PENDING|gres/gpu:1|gpu_p6\n1583591|RUNNING|gres/gpu:1|gpu_p6",
   "other_claims": [
     {
       "state": "accepted",
-      "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-cheap-diagnostics-20261026",
+      "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
       "concurrent_h100": 1,
       "global_limit": 2,
       "prior_gpu_jobs": [
@@ -41,7 +41,7 @@
       "state": "accepted",
       "concurrent_h100": 1,
       "global_limit": 2,
-      "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026",
+      "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
       "release_after": "1583594",
       "jobs": {
         "smoke": {

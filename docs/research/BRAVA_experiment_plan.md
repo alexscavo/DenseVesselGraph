@@ -492,7 +492,7 @@ python3 gnbm-brava-learning-diagnosis-20261026/scripts/show_brava_learning_diagn
 
 **Scope:** existing original K8 checkpoints only, no representation/geometry change and no optimizer updates. All precision/false-edge statements are relative to incomplete SWC annotations. The `seg/` loader slot contains brain masks and is never vessel supervision or a vascular support oracle.
 
-Isolated code and compact results: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-brava-learning-diagnosis-20261026/experiments/brava_learning_diagnosis_20261026`. Large prediction caches and BN-only states: `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_learning_diagnosis_20261026`. The source checkpoint, 1,248-patch/39-subject training population, 256-patch/eight-subject validation population, graph targets and 0.5 node/edge cutoffs remain unchanged.
+Isolated code and compact results: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_learning_diagnosis_20261026`. Large prediction caches and BN-only states: `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_learning_diagnosis_20261026`. The source checkpoint, 1,248-patch/39-subject training population, 256-patch/eight-subject validation population, graph targets and 0.5 node/edge cutoffs remain unchanged.
 
 ### Representative populations and controls
 
@@ -606,7 +606,7 @@ Final off−on train node/edge F1: +0.2908/+0.1551; validation: +0.0285/+0.0062.
 
 The historical augmentation-on run included auxiliary geometry heads, so whole-run exact parity was not established and it was not reused as the causal control. Both new arms remove those heads. Existing augmentation is three independent quarter-turn draws and Gaussian noise (probability 0.35, maximum standard deviation 0.015). The off loader draws and discards that transform before returning the clean image/target, preserving Python/NumPy/Torch RNG state for stochastic loss sampling. Smoke checks verified exact clean inputs and identical post-loader RNG, finite backward passes, and zero geometry-to-detector gradients. Initial parameter hashes match, and both arms use the identical deterministic patch stream recorded in `training-patch-stream.jsonl.gz` (32,000 draws; 25 or 26 per patch).
 
-Source checkpoint: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/fine_feature_architecture/runs/baseline/best.pt`; SHA256 `d4bc78ad3eb7c1c29c9be8ec3e2927e88f2f45e6f34a3cb8be9ade5fd9d2431c`. Full checkpoint paths/hashes: `experiments/brava_augmentation_20261026/analysis.json` → `checkpoint_provenance`. Source snapshot, target/manifest hashes, plans, Slurm jobs, losses and all prediction caches are isolated under `experiments/brava_augmentation_20261026`.
+Source checkpoint: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/fine_feature_architecture/runs/baseline/best.pt`; SHA256 `d4bc78ad3eb7c1c29c9be8ec3e2927e88f2f45e6f34a3cb8be9ade5fd9d2431c`. Full checkpoint paths/hashes: `experiments/brava_augmentation_20261026/analysis.json` → `checkpoint_provenance`. Source snapshot, target/manifest hashes, plans, Slurm jobs, losses and all prediction caches are isolated under `experiments/brava_augmentation_20261026`.
 
 | Updates | Population | Aug | Raw R1 / R2 | Filtered R1 / R2 | Node / edge F1 (2mm) | Hungarian mm | Relation recall / AP (2mm) |
 |---:|---|---|---|---|---|---:|---|
@@ -682,7 +682,7 @@ Node softmax focal gamma 2 / equal weights; matched-edge CE / equal weights / ra
 
 Shared AdamW: LR 7e-5, encoder 3.5e-5, weight decay 1e-4, betas (.9,.999), eps 1e-8. Five full epochs of linear warmup, followed by cosine to 1e-6 over **300 full epochs**. Optimizer/global-step/LR continuity is preserved through 25-epoch Slurm chunks. No early stopping or validation-based LR choice. Float32; no AMP/accumulation.
 
-Source: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/92741/runs/B0/model-12000.pt`; SHA256 `8b90d07292761244991f7f1e2fbe07d52c1a0fb93175c1fa863176a2c6337afe`. Selected by source-only SyntheticMRI validation edge F1 (**0.596715**) among the documented compatible B0 continuations; source parent scored 0.5881. Refined A/A-xyz variants require architecture changes and are excluded. Preserve 120 learned object-query rows; move the two learned relation rows from 120/121 to 256/257; retain the 136 added rows from the identical seeded scratch model. Every other source tensor must transfer exactly. Fresh target AdamW for both arms.
+Source: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/92741/runs/B0/model-12000.pt`; SHA256 `8b90d07292761244991f7f1e2fbe07d52c1a0fb93175c1fa863176a2c6337afe`. Selected by source-only SyntheticMRI validation edge F1 (**0.596715**) among the documented compatible B0 continuations; source parent scored 0.5881. Refined A/A-xyz variants require architecture changes and are excluded. Preserve 120 learned object-query rows; move the two learned relation rows from 120/121 to 256/257; retain the 136 added rows from the identical seeded scratch model. Every other source tensor must transfer exactly. Fresh target AdamW for both arms.
 
 CPU audit and GPU smoke passed. Selected **batch 32**, four data workers, **274 updates/epoch**, **82,200 target updates/arm**. Benchmark estimate: **7.89 training GPU-hours/arm**, excluding evaluation/startup/queue. Measured costs are recorded separately. Benchmark optimizer updates are discarded.
 
@@ -716,7 +716,7 @@ Results are descriptive pending review of the complete trajectory. Paired interv
 
 Interpretation predefined before training: increasing train **and** validation recovery supports a benefit from additional optimization/exposure under this recipe; strong train fit with persistently weak validation supports a generalization bottleneck; weak fit in both retains optimization/assignment/supervision alternatives. Tiny-set overfit does not prove the cohort needs only more epochs. Initialization gains are conditional on this shared schedule; pretraining adds source-data compute. No architecture/loss follow-up launches automatically.
 
-Isolated worktree: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-brava-long-20261027`; artifacts: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-brava-long-20261027/experiments/brava_long_20261027` with large checkpoints/caches at `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_long_20261027`. `plan.json`, `cpu-preflight.json`, `gpu-smoke.json`, `batch-selection.json`, frozen code hashes/archive, per-epoch histories/input hashes, immutable checkpoint identities, prediction ZIPs, per-patch/subject metrics and Slurm accounting preserve provenance.
+Isolated worktree: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph`; artifacts: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_long_20261027` with large checkpoints/caches at `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_long_20261027`. `plan.json`, `cpu-preflight.json`, `gpu-smoke.json`, `batch-selection.json`, frozen code hashes/archive, per-epoch histories/input hashes, immutable checkpoint identities, prediction ZIPs, per-patch/subject metrics and Slurm accounting preserve provenance.
 
 Submission record:
 ```json
@@ -884,7 +884,7 @@ Final checkpoint SHA256: scratch `7d19b56e91666ce6aabec1e56396cf23abb096011e3af7
 Review tables and input hashes: `experiments/completed_result_review_20261028/{review.json,brava-milestones.csv,brava-final-per-subject.csv,provenance.json}`. Original analysis and predictions: sibling `gnbm-brava-long-20261027/experiments/brava_long_20261027/`; learning curves remain linked in the D08 section. To print the saved full report without rerunning a model:
 
 ```bash
-cat /lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-brava-long-20261027/experiments/brava_long_20261027/report.md
+cat /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_long_20261027/report.md
 ```
 
 
@@ -965,6 +965,6 @@ If combined graph evaluation is subsequently justified, the smallest missing com
 Calibration grid/decisions were saved before validation in `thresholds.json`, `training-node-curves.json` and `protocol.json`. Source/checkpoint identities, eight baseline parity blocks, seven tests, raw summaries,1,000-draw subject intervals and compressed per-patch/per-subject tables are in `experiments/d08_operating_points_20261028/`. Validation subjects are reused development data; uncertainty does not include training-seed variation. The training calibration monitor is 160 patches rather than the full cohort.
 
 ```bash
-python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/scripts/report_d08_operating_points.py --show
+python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/scripts/report_d08_operating_points.py --show
 ```
 

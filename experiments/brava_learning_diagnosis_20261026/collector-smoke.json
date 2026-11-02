@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "source": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/experiments/brava_representation_20261026/predictions/original/004000.zip",
+  "source": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_representation_20261026/predictions/original/004000.zip",
   "member": "K8/sample_000002_0027.npz",
   "metrics": {
     "nodes": 1.0,

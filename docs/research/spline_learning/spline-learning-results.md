@@ -1,6 +1,6 @@
 # Spline learning: generated run results
 
-Run directory: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/spline_learning/runs/job-612351`
+Run directory: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/spline_learning/runs/job-612351`
 
 **Four training patches only. These are overfit diagnostics, not held-out validation results.**
 
@@ -17,9 +17,9 @@ Gate: at least 50% reduction and final mean curve error ≤0.5 mm. This is an ex
 
 ## Interactive outputs
 
-- [v0_pretrained: targets versus predictions](/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/spline_learning/runs/job-612351/v0_pretrained/predictions.html). Switch matched-pair geometry and decoded-graph modes.
-- [v0_scratch: targets versus predictions](/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/spline_learning/runs/job-612351/v0_scratch/predictions.html). Switch matched-pair geometry and decoded-graph modes.
-- [v1_pretrained: targets versus predictions](/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/spline_learning/runs/job-612351/v1_pretrained/predictions.html). Switch matched-pair geometry and decoded-graph modes.
+- [v0_pretrained: targets versus predictions](/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/spline_learning/runs/job-612351/v0_pretrained/predictions.html). Switch matched-pair geometry and decoded-graph modes.
+- [v0_scratch: targets versus predictions](/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/spline_learning/runs/job-612351/v0_scratch/predictions.html). Switch matched-pair geometry and decoded-graph modes.
+- [v1_pretrained: targets versus predictions](/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/spline_learning/runs/job-612351/v1_pretrained/predictions.html). Switch matched-pair geometry and decoded-graph modes.
 
 ## Next steps
 

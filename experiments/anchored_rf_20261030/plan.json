@@ -16389,7 +16389,7 @@
  },
  "seed": 271039,
  "source": {
-  "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/92741/runs/B0/model-12000.pt",
+  "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/92741/runs/B0/model-12000.pt",
   "seed": 92741,
   "step": 12000,
   "source_validation_edge_f1_2mm": 0.5967149758454107,

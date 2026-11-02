@@ -1,6 +1,6 @@
 # Native 2D two-stage dense vessel-graph model — 30 Oct 2026
 
-Port of the 3D WS3 dense model (`Graph-Native-Betti-Matching-Representation/scripts/dense_graph_20261030.py`,
+Port of the 3D WS3 dense model (`DenseVesselGraph/scripts/dense_graph_20261030.py`,
 design doc `docs/research/network_proposals_20261030.md` §3–4) to native 2D, to test whether it
 fixes real 2D data (AV-WIDE, REAVER) the way it fixed IXI/BRAVA in 3D.
 

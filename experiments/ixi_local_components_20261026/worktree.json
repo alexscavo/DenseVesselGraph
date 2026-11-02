@@ -1,5 +1,5 @@
 {
-  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026",
+  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
   "branch": "research/ixi-local-components-20261026",
   "jobs": {
     "smoke": {
@@ -49,5 +49,5 @@
     "1653554"
   ],
   "recovery_submitted_at": "2026-10-28T10:51:09+0100",
-  "recovery_metadata": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/experiments/ixi_local_components_20261026/socket-recovery-20261028"
+  "recovery_metadata": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/ixi_local_components_20261026/socket-recovery-20261028"
 }

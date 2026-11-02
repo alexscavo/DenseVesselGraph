@@ -24,7 +24,7 @@ GPU nondeterminism, and draws each edge as its endpoint chord. Each B0 graph is 
 The user chose this option over training a ~19 GPU-h straight lineage. In 2D the B0 recipe
 does clip gradients globally (0.1), so the spline and detector are coupled there. Even so,
 the separately trained straight OCTA-Synth model scored within 0.011 of B0 on node and edge
-F1 (`GNBM/gnbm-native-2d-20261027/experiments/native2d_straight_20261029/report.md`).
+F1 (`DenseVesselGraph/experiments/native2d_straight_20261029/report.md`).
 
 ## What was evaluated
 

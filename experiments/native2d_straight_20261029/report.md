@@ -18,7 +18,7 @@ Jobs: `{"global_h100_limit": 2, "concurrent_h100": 1, "queue_at_submission": "",
 
 The straight run retains the existing evaluator schema: its legacy `spline` metric slot also evaluates straight chords because no spline head exists; `chord` is the unambiguous straight geometry result. Dense GT paths and evaluation tolerances remain unchanged. The original global clipping rule is kept, including its interaction with the presence/absence of spline gradients.
 
-Artifacts: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_straight_20261029`. Checkpoints/epoch logs and curves: `runs/`; exact sample exposures: `exposure.npy`; gate: `gates.json`; configuration previews: `*.yaml`; comparison parity: `parity-*.json`. Test sets untouched.
+Artifacts: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_straight_20261029`. Checkpoints/epoch logs and curves: `runs/`; exact sample exposures: `exposure.npy`; gate: `gates.json`; configuration previews: `*.yaml`; comparison parity: `parity-*.json`. Test sets untouched.
 
 Curvature measurement is limited to the two OCTA validation crops shown previously, not the full validation population. Maximum perpendicular deviation from each endpoint chord is measured in pixels using257 spline samples.
 

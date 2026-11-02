@@ -1,5 +1,5 @@
 {
-  "main": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation",
+  "main": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
   "new_files": [
     "native2d/__init__.py",
     "native2d/attention.py",

@@ -55,14 +55,14 @@ data:
   batch_size: 32
   datasets:
     avwide:
-      manifest: /lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_long_20261028/avwide/manifest.json
+      manifest: /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_long_20261028/avwide/manifest.json
     plants:
-      manifest: /lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_long_20261028/plants/manifest.json
+      manifest: /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_long_20261028/plants/manifest.json
   image_size:
   - 128
   - 128
   input_modality: paired_raw_2d_image
-  manifest: /lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_long_20261028/avwide/manifest.json
+  manifest: /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_long_20261028/avwide/manifest.json
   mixed_sampling:
     balance_source_target: true
     draws_per_epoch: 51734

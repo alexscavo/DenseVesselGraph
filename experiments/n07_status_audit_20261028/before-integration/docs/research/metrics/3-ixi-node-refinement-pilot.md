@@ -112,7 +112,7 @@ For `sample_000040_0078` at update1000, the local-image variant shifts several n
 
 ### Isolation, data and spatial contracts
 
-Work is isolated on branch `research/ixi-local-components-20261026` in `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026`. The original working tree was already heavily modified; required working sources were copied into this worktree with SHA256 provenance, without modifying shared models, configs or canonical research files. This report is the only intended shared scientific-document update; the collector checks for concurrent changes before replacing its own bounded results section.
+Work is isolated on branch `research/ixi-local-components-20261026` in `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph`. The original working tree was already heavily modified; required working sources were copied into this worktree with SHA256 provenance, without modifying shared models, configs or canonical research files. This report is the only intended shared scientific-document update; the collector checks for concurrent changes before replacing its own bounded results section.
 
 Use the existing IXI `transfer_splines_k8_20261015` population and exact multi-dataset4096/512 manifest: **4,096 training patches/123 subjects, 512 validation patches/26 subjects**. Train/validation subjects remain disjoint, test data untouched. The full prepared population remains10,000/2,649; no new extraction, sampling representation or labels are generated. K8 endpoint-constrained cubic B-splines retain original dense paths and boundary provenance; graph anchors/connectivity are unchanged.
 
@@ -155,7 +155,7 @@ Choose a supported arm using default and count-controlled graph/localization gai
 
 ### Execution and retrieval
 
-All GPU work in this batch is serialized to **one H100** (array `%1`) to leave one shared slot for concurrent agents. The submitter audits all same-user GPU allocations/pending jobs under a coordination lock and chains behind existing GPU work. A shared claim is recorded under `/lustre/fswork/projects/rech/vnc/upz25mj/projects/experiment_gpu_coordination/ixi-local-components-20261026.json`; other agents must check this claim and the actual queue to maintain the global limit of two. No other agent's jobs are cancelled or changed.
+All GPU work in this batch is serialized to **one H100** (array `%1`) to leave one shared slot for concurrent agents. The submitter audits all same-user GPU allocations/pending jobs under a coordination lock and chains behind existing GPU work. A shared claim is recorded under `/lustre/fswork/projects/rech/vnc/upz25mj/projects/archive/coordination/ixi-local-components-20261026.json`; other agents must check this claim and the actual queue to maintain the global limit of two. No other agent's jobs are cancelled or changed.
 
 Dependency chain: correctness/benchmark → native zero-shot → six-arm fine-tuning array → CPU collector. Invalid prerequisites block downstream jobs. GPU wall allocations: smoke30min, zero-shot75min, each training arm3h (including evaluation/buffer); actual update budget is recorded in `smoke.json`. Large checkpoints/caches/runtime staging use SCRATCH; numerical raw caches are ZIP archives to avoid the earlier file-count-quota failure. Only this batch's per-job temporary runtime is removed on exit.
 

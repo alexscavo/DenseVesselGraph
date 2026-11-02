@@ -4,24 +4,24 @@
   "sources": [
     {
       "seed": 364505,
-      "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt",
+      "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt",
       "shape": [
         3,
         128
       ],
       "strict_load": true,
-      "model_source": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r07-matched-supervision-20261027/experiments/r07_matched_supervision_20261027/frozen-source-snapshot/models/relationformer.py",
+      "model_source": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/r07_matched_supervision_20261027/frozen-source-snapshot/models/relationformer.py",
       "coordinate_only": true
     },
     {
       "seed": 92741,
-      "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/92741/runs/A-xyz/model-12000.pt",
+      "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/92741/runs/A-xyz/model-12000.pt",
       "shape": [
         3,
         128
       ],
       "strict_load": true,
-      "model_source": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r07-matched-supervision-20261027/experiments/r07_matched_supervision_20261027/frozen-source-snapshot/models/relationformer.py",
+      "model_source": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/r07_matched_supervision_20261027/frozen-source-snapshot/models/relationformer.py",
       "coordinate_only": true
     }
   ]

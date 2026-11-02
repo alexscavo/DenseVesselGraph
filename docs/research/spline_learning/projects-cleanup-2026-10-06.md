@@ -23,7 +23,7 @@ Useful prototype documentation and measured comparison evidence are retained. Ex
 
 GT job **676631 completed successfully**. Accepted populations: **9,709 train / 1,952 validation / 13,071 test**. Training **676650** queues after preparation; test **676692** waits for successful training. No repeat model smoke was run.
 
-Stable commits: **24c2605** (spline implementation and eligibility fix), **98eb6a9** (verified restoration). The temporary screenshot is kept for the user's inspection at `Graph-Native-Betti-Matching-Representation/experiments/spline_learning/temporary-debug/duplicate-edge.png`; it is generated and excluded from Git. Delete this temporary directory after inspection. The source patch ID and precise failure diagnosis remain in the training report.
+Stable commits: **24c2605** (spline implementation and eligibility fix), **98eb6a9** (verified restoration). The temporary screenshot is kept for the user's inspection at `DenseVesselGraph/experiments/spline_learning/temporary-debug/duplicate-edge.png`; it is generated and excluded from Git. Delete this temporary directory after inspection. The source patch ID and precise failure diagnosis remain in the training report.
 
 ## Reuse of the recovery archive
 

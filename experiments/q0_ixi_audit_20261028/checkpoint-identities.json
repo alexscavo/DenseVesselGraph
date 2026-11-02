@@ -1,18 +1,18 @@
 {
   "modern_B0": {
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/B0/model-12000.pt",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/364505/runs/B0/model-12000.pt",
     "sha256": "91ac46e091bb3f74c5748758235c26dc7c8814a232adda03dd49def0c1c8a3de",
     "hash_reverified": true,
     "role": "SyntheticMRI source only; not an IXI-finetuned result"
   },
   "modern_A": {
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A/model-12000.pt",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/364505/runs/A/model-12000.pt",
     "sha256": "ebb47360f7799801f1ab364f3ef9e60a1b877038d39962b4861d33d1944b9385",
     "hash_reverified": true,
     "role": "SyntheticMRI source only; not an IXI-finetuned result"
   },
   "modern_A-xyz": {
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt",
     "sha256": "a1210fe958dffe0e588d38222cb62bf48b58e9b238fc57c027ec1c7a795277c9",
     "hash_reverified": true,
     "role": "SyntheticMRI source only; not an IXI-finetuned result"

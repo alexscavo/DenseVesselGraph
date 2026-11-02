@@ -1,6 +1,6 @@
 {
   "state": "accepted",
-  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-cheap-diagnostics-20261026",
+  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
   "concurrent_h100": 1,
   "global_limit": 2,
   "prior_gpu_jobs": [

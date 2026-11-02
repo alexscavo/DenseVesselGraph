@@ -55,12 +55,12 @@ data:
   batch_size: 4
   datasets:
     octasynth:
-      manifest: /lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_long_20261028/octasynth/manifest.json
+      manifest: /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_long_20261028/octasynth/manifest.json
   image_size:
   - 128
   - 128
   input_modality: paired_raw_2d_image
-  manifest: /lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_long_20261028/octasynth/manifest.json
+  manifest: /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_long_20261028/octasynth/manifest.json
   mixed_sampling:
     balance_source_target: true
     epoch_size: twice_source

@@ -2,23 +2,23 @@
   "completed": true,
   "published_at_utc": "2026-10-28T09:45:07.613037+00:00",
   "files": {
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/metrics/3-ixi-node-refinement-pilot.md": {
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/metrics/3-ixi-node-refinement-pilot.md": {
       "before_sha256": "c3e367824acd1245beea6dfe95e064f414e8256a7ec43bce45438919c6dbb410",
       "after_sha256": "6f9fb6372408db79c96a2ea3784d7c1aeefcd01f3a1d4ec3937fee5328a7fbee"
     },
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/spline_learning/spline-collapse-diagnosis.md": {
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/spline_learning/spline-collapse-diagnosis.md": {
       "before_sha256": "a59efafe5316fa0a829b77d6ca23f6165f623e6310ab0396af8034473aad986b",
       "after_sha256": "a285a87a84604bee65c3bdcf3fcabd454d58d78fd3f99ed7f6c4b2154d61298d"
     },
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/pretraining/ixi-transfer.md": {
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/pretraining/ixi-transfer.md": {
       "before_sha256": "a34567b5cf2e324c657378fd33715b0a98bdc7af4c6c35a12d2045cd4fbe4476",
       "after_sha256": "2a936d967f091f48ac7aa764bf46af53c524d3e37aab5475432f897f04f85dea"
     },
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/research/VASCULAR_GRAPH_EXPERIMENT_REGISTRY_2026-10-26_UPDATED.md": {
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/research/VASCULAR_GRAPH_EXPERIMENT_REGISTRY_2026-10-26_UPDATED.md": {
       "before_sha256": "aacae83505b668eac1f12ae9f1a7aebc757997ec239b979c96a381b23e8f5708",
       "after_sha256": "ca3a749b6259fdc71e41043f5865c4973edee6c6df83c88deff510c14a1c5a32"
     },
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/research/roadmap.md": {
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/research/roadmap.md": {
       "before_sha256": "8540c13626a3a1ff335a22c1929094dd937b4ed3b2bfc1dd764cf9dae3ace986",
       "after_sha256": "58ea817e8c92c2c132a9654ddba565957b41647e4a9e1008112b6b974e33ed9f"
     }

@@ -42,12 +42,12 @@
     "data/spline_augmentation.py": "58a248670ffe042a7b8de95e318bcb23b9644b134447d2bedce63946fff0b059",
     "data/loaders/synthetic_mri.py": "9389c399b0a91e6c01cdee3da60d999d77ed1f66e3e9ad97afc2ec28e8855d23"
   },
-  "target_cache": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation-BRAVA-20261026/experiments/brava_representation_20261026/targets.pkl",
+  "target_cache": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_representation_20261026/targets.pkl",
   "target_file": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8/train/spline/sample_000024_0092.npz",
   "target_file_sha256": "2b6653ad94eb0583f58ddec65c059626d1e5b25e372ac042f8c70518a4489f97",
   "image": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/Brava/prepared_swc_20261020-132057/transfer_splines_k8/train/raw/sample_000024_0092_data.nii.gz",
   "image_sha256": "1bdc46f4eb635157eee4337799233208f58f6652c5b16b8359de7e025655b89f",
-  "plan": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/brava_augmentation_20261026/plan.json",
+  "plan": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_augmentation_20261026/plan.json",
   "plan_sha256": "5394bc80695f89fb6894ebd1b8e99335651c667762cb4b2971afbbdd69b0a4c6",
   "display": "Identical linear grayscale window in all panels; no registration, smoothing or target refitting.",
   "limitations": "MIPs collapse depth. Native image slices in the interactive view retain depth. SWC coverage is incomplete; brain masks are not vessel labels."

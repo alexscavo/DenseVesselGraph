@@ -2761,8 +2761,8 @@
   "input_manifests": {
     "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/IXI/transfer_splines_k8_20261015/manifest.json": "b97e1cc3567942e6ffbda151c4b48ae459b7aa8bfc9c4b9a00f5a46a52b8d525",
     "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/IXI/transfer_splines_k8_20261015/patch_index.csv": "531a9caf2b2adaee31724a05b24b6f932cd9d50a8714ae44988ed1815d4d877d",
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/experiments/ixi_local_components_20261026/plan.json": "b9554511dcbf0596f6615394bff91404c036ac6e6d4f0620531535532830598a",
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-brava-long-20261027/experiments/brava_long_20261027/plan.json": "2ca94f19d89a6c4f0abbfd23231286e8074b658cacaf369b44b1d1b3fe13105f"
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/ixi_local_components_20261026/plan.json": "b9554511dcbf0596f6615394bff91404c036ac6e6d4f0620531535532830598a",
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_long_20261027/plan.json": "2ca94f19d89a6c4f0abbfd23231286e8074b658cacaf369b44b1d1b3fe13105f"
   },
   "historical_239": {
     "classification": "PRE-CONTRACTION historical population, per archived benchmark/source provenance; original VTP unavailable for independent recount",
@@ -2774,7 +2774,7 @@
     "edges": 261,
     "degree2": null,
     "benchmark_job": "22067",
-    "metric_report": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/evidence/ixi_capacity_192_256/summary.json",
+    "metric_report": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/evidence/ixi_capacity_192_256/summary.json",
     "metric_report_sha256": "db6139c0597facb52b323b96ed7610d6bb5700480825c26162a8b05557b9151b",
     "selection_sha256": "9f748944907a2b263c8d424a805bed5d017f33f9e6a2266c49cd30c8d6601541",
     "limitation": "239 is an archived measurement, not a freshly verified current K8 target count"

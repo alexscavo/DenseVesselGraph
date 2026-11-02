@@ -1,3 +1,23 @@
+# DenseVesselGraph
+
+Vessel-graph extraction from 3D MRA (SyntheticMRI, IXI, BRAVA) and 2D images (AV-WIDE, REAVER,
+OCTA-Synth). The repository holds the chosen **two-stage dense model with traced
+connectivity**, together with every RelationFormer baseline, diagnostic and experiment
+record of this research line.
+
+- Main model and results: [`docs/research/dense_traced_model_20261102.md`](docs/research/dense_traced_model_20261102.md)
+- Full design, glossary and comparisons: [`docs/research/network_proposals_20261030.md`](docs/research/network_proposals_20261030.md)
+- Code: `scripts/dense_graph_20261030.py`, `scripts/dense_graph_traced_20261030.py`, `scripts/dense_graph_2d_20261030.py`
+- Earlier research overview: [`research/`](research/roadmap.md)
+
+This repository was formerly `Graph-Native-Betti-Matching-Representation`, a fork of Alessandro
+Benvenuti's Graph-Native-Betti-Matching. On 2 Nov 2026 all experiment worktrees were
+consolidated here. Branches `research/*`, `brava-representation-20261026` and
+`graph-extraction` keep each worktree's final state; see
+`../archive/refactor-20261102/`.
+
+---
+
 # Graph-Native Betti Matching
 
 ## Research overview

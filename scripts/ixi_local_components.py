@@ -3,7 +3,7 @@ import argparse,copy,hashlib,io,json,math,os,random,sys,time,zipfile
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 META=Path('experiments/ixi_local_components_20261026')
-ORIGINAL=Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation')
+ORIGINAL=Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph')
 SEED=261026
 ARMS=['B0','A-xyz-fresh','A-xyz-transfer','A-cls','A','A-control']
 def read(p):return json.loads(Path(p).read_text())

@@ -18,4 +18,4 @@ Download each HTML and open it locally in a browser; all data and Plotly are emb
 
 Verified exported metric transforms against target caches, exact predicted endpoint/control agreement, expected curve/edge counts and absence of embedded placeholders. Inspected real-MRI projections for coordinate/mask alignment. JavaScript trace construction, layer toggles, control counts, edge selection, opacity and camera reset were checked with DOM/Plotly stubs. Browser/WebGL rendering cannot be inspected on this cluster.
 
-Builder: `Graph-Native-Betti-Matching-Representation/scripts/build_spline_test_viewers.py`. Pass `--run`, `--targets` and `--output`; it streams the large prediction export and stops after finding the selected samples. No GPU inference or training is repeated.
+Builder: `DenseVesselGraph/scripts/build_spline_test_viewers.py`. Pass `--run`, `--targets` and `--output`; it streams the large prediction export and stops after finding the selected samples. No GPU inference or training is repeated.

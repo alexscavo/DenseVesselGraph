@@ -11970,42 +11970,42 @@
   ],
   "checkpoint_provenance": [
     {
-      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/brava_augmentation_20261026/runs/off/model-001000.pt",
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_augmentation_20261026/runs/off/model-001000.pt",
       "sha256": "8fe8c335f40158e3c030b4d6d8f79f7794517db272a56bbcc660ba0299ee1879",
       "step": 1000,
       "canonical_path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_augmentation_20261026/runs/off/model-001000.pt",
       "bytes": 1382191202
     },
     {
-      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/brava_augmentation_20261026/runs/off/model-002000.pt",
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_augmentation_20261026/runs/off/model-002000.pt",
       "sha256": "eeb356dcc2a0af46d5ffcc6d3ec5d189a84bb74ea51a3ee07189cbb40b1b3ba7",
       "step": 2000,
       "canonical_path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_augmentation_20261026/runs/off/model-002000.pt",
       "bytes": 1382191202
     },
     {
-      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/brava_augmentation_20261026/runs/off/model-004000.pt",
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_augmentation_20261026/runs/off/model-004000.pt",
       "sha256": "ad362aa75716c614c1ae11e60e069053e0cf4f193a3df42dfb8611a20ab9e492",
       "step": 4000,
       "canonical_path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_augmentation_20261026/runs/off/model-004000.pt",
       "bytes": 1382191202
     },
     {
-      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/brava_augmentation_20261026/runs/on/model-001000.pt",
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_augmentation_20261026/runs/on/model-001000.pt",
       "sha256": "aae1fb382afe04f77b21ed88e68f8942cce3a09b0c8a7282329b97f088279c52",
       "step": 1000,
       "canonical_path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_augmentation_20261026/runs/on/model-001000.pt",
       "bytes": 1382191202
     },
     {
-      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/brava_augmentation_20261026/runs/on/model-002000.pt",
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_augmentation_20261026/runs/on/model-002000.pt",
       "sha256": "7cbaf2aed56fe4759a8206528393da1247a02e169533ce7066aae5faf35d7796",
       "step": 2000,
       "canonical_path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_augmentation_20261026/runs/on/model-002000.pt",
       "bytes": 1382191202
     },
     {
-      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/brava_augmentation_20261026/runs/on/model-004000.pt",
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_augmentation_20261026/runs/on/model-004000.pt",
       "sha256": "2d37dbc085a6b44015399045d9f970bb522933f1c74b3019555e21f836627329",
       "step": 4000,
       "canonical_path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_augmentation_20261026/runs/on/model-004000.pt",
@@ -12428,7 +12428,7 @@
         "warmup_epochs": 1
       }
     },
-    "source": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/fine_feature_architecture/runs/baseline/best.pt",
+    "source": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/fine_feature_architecture/runs/baseline/best.pt",
     "source_sha256": "d4bc78ad3eb7c1c29c9be8ec3e2927e88f2f45e6f34a3cb8be9ade5fd9d2431c",
     "source_selected_epoch": 95,
     "source_plan": "experiments/brava_graph_study/plan.json",

@@ -165,7 +165,7 @@ N07/D04 status is now **PARTIAL / RECOVERY**, not an active/unknown completed st
 
 J00/J02 CPU audit is complete: current contracted IXI train/val10000/2649 targets max153/141, with five/five above120 and none above192. The fixed4096/512 N07 cohort also contains overflow targets. Zero degree2 objects were found; old239-node history is not the current capacity evidence. BRAVA8768/1796 targets max64/69 fit120. Preserve all targets and keep256 for N07 recovery; do not start the conditional full-IXI120/256 comparison on an invalid120 arm.
 
-Next bounded action is the short SCRATCH TMPDIR repair and full correctness-gate recheck before existing matched component training. **No GPU jobs, architecture changes or new losses in this audit.** [Existing node-refinement report](../docs/research/metrics/3-ixi-node-refinement-pilot.md#n07d04-execution-and-current-target-capacity-audit--28-october-2026); numerical artifacts `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/experiments/n07_status_audit_20261028`.
+Next bounded action is the short SCRATCH TMPDIR repair and full correctness-gate recheck before existing matched component training. **No GPU jobs, architecture changes or new losses in this audit.** [Existing node-refinement report](../docs/research/metrics/3-ixi-node-refinement-pilot.md#n07d04-execution-and-current-target-capacity-audit--28-october-2026); numerical artifacts `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/n07_status_audit_20261028`.
 
 
 <!-- BEGIN Q0 STATUS CORRECTION 20261028 -->

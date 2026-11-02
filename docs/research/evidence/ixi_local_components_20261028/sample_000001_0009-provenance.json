@@ -9078,11 +9078,11 @@
       "final_raw_cache_coordinate_and_score_parity": true
     }
   },
-  "renderer": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/scripts/render_ixi_component_predictions.py",
+  "renderer": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/scripts/render_ixi_component_predictions.py",
   "renderer_sha256": "b0f851c5fbc4e69daf45e22d4908e0aba6e003d9af50756e423cc27360707fdb",
   "rendered_files": {
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/evidence/ixi_local_components_20261028/sample_000001_0009-comparison.png": "d59df099f0b28dafb2487947fc8caf12530ec93d4a9a97ea490da9afa2383a2c",
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/evidence/ixi_local_components_20261028/sample_000001_0009-A-cls.png": "d53c9f5bbc3995a53d92417ca54aaaa2c0b12349a0c5ce00597a357e738e916f",
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/evidence/ixi_local_components_20261028/sample_000001_0009-A-xyz-fresh.png": "50fcda91115ea4ff9d560641b210c1f02c520de362807f126d84aa82dd06990f"
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/evidence/ixi_local_components_20261028/sample_000001_0009-comparison.png": "d59df099f0b28dafb2487947fc8caf12530ec93d4a9a97ea490da9afa2383a2c",
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/evidence/ixi_local_components_20261028/sample_000001_0009-A-cls.png": "d53c9f5bbc3995a53d92417ca54aaaa2c0b12349a0c5ce00597a357e738e916f",
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/evidence/ixi_local_components_20261028/sample_000001_0009-A-xyz-fresh.png": "50fcda91115ea4ff9d560641b210c1f02c520de362807f126d84aa82dd06990f"
   }
 }

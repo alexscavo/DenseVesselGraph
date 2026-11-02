@@ -10,7 +10,7 @@ from sklearn.metrics import average_precision_score
 from scripts.node_verifier_metrics import association
 from metrics.representation_geometry import sample_polyline_by_arclength,point_to_polyline_distance
 
-ORIGINAL=Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation')
+ORIGINAL=Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph')
 OUT=Path('experiments/graph_error_attribution_20261026')
 SEEDS=[364505,92741]
 def read(p):return json.loads(Path(p).read_text())

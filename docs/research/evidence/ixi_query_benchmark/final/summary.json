@@ -104,7 +104,7 @@
     "time_increase_fraction": 0.020225920036325507,
     "trimmed_mean_time_increase_fraction": 0.015333051050093083
   },
-  "config": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching/configs/finetune_synthetic_mri.yaml",
+  "config": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/archive/graph-native-betti-matching-legacy/configs/finetune_synthetic_mri.yaml",
   "dataset": "IXI only",
   "overflow_smoke": {
     "loss_total": 12.732155799865723,

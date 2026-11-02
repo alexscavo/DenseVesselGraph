@@ -275,17 +275,17 @@
   ],
   "current_plans": [
     {
-      "plan": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/plan.json",
+      "plan": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/plan.json",
       "bn_calibration_batches": 0,
       "sha256": "8c1b83531211fdf5e5669720054256570a8c12c32cd9ec401233f1ce3c13948f"
     },
     {
-      "plan": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/fine_feature_architecture/plan.json",
+      "plan": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/fine_feature_architecture/plan.json",
       "bn_calibration_batches": 0,
       "sha256": "8cfbef57c3d9481fb7a73a5cbf9a48bce3918cc335b84b13616c9c9fb2c52dd3"
     },
     {
-      "plan": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/multiscale_pretrained/plan.json",
+      "plan": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/multiscale_pretrained/plan.json",
       "bn_calibration_batches": 0,
       "sha256": "12a6e1cd630d8768e322f0a67c2708093ef8909fc9249f80f797408b6b21f705"
     }

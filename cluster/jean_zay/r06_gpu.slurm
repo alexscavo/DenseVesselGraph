@@ -18,7 +18,7 @@ export JOBSCRATCH="$SLURM_SUBMIT_DIR/experiments/r06_relation_tokens_20261027/ru
 export TMPDIR="$JOBSCRATCH" PYTHONDONTWRITEBYTECODE=1 WANDB_MODE=offline
 export TORCH_EXTENSIONS_DIR="$SLURM_SUBMIT_DIR/.cache/torch" XDG_CACHE_HOME="$SLURM_SUBMIT_DIR/.cache"
 source cluster/jean_zay/env.sh
-export PYTHONPATH="/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-graph-errors-20261026/experiments/oracle_representatives_20261026/replay-runtime"
+export PYTHONPATH="/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/oracle_representatives_20261026/replay-runtime"
 export OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=2
 runtime_python=/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/bin/python
 if [[ "${1:-run}" == smoke ]]; then

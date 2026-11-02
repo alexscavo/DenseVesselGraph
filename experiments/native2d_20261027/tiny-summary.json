@@ -9,7 +9,7 @@
     "wide01_00",
     "wide01_01"
   ],
-  "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261027/runtime/tiny-last.pt",
+  "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_20261027/runtime/tiny-last.pt",
   "history": [
     {
       "step": 0,

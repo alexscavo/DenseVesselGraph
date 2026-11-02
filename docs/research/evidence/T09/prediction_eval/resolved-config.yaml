@@ -2,7 +2,7 @@ schema_version: 1
 experiment:
   name: finetune_ixi_vessels_q256_smoke
   seed: 364505
-  output_dir: /lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching/runs
+  output_dir: /lustre/fswork/projects/rech/vnc/upz25mj/projects/archive/graph-native-betti-matching-legacy/runs
 runtime:
   device: cuda
   distributed: false

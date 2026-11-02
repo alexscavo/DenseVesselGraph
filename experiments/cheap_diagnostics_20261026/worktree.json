@@ -1,5 +1,5 @@
 {
-  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-cheap-diagnostics-20261026",
+  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
   "branch": "research/cheap-diagnostics-20261026",
   "jobs": {
     "bn": {
@@ -15,7 +15,7 @@
       "dependency": "1584593"
     }
   },
-  "relation_results": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-cheap-diagnostics-20261026/experiments/cheap_diagnostics_20261026/relation-analysis.json",
+  "relation_results": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/cheap_diagnostics_20261026/relation-analysis.json",
   "bn_results": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/cheap_diagnostics_20261026",
   "reports": [
     "docs/research/spline_learning/spline-collapse-diagnosis.md",

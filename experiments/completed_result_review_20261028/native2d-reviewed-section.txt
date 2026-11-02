@@ -18,5 +18,5 @@ No duplicate nodes or false edges remain in these two memorized graphs; raw cove
 Main2D source and data-provenance report is the preceding section. Original numeric evidence and checkpoint are preserved in sibling `gnbm-native-2d-20261027/experiments/native2d_20261027/`, with checkpoint runtime on SCRATCH. The consolidated review JSON is `experiments/completed_result_review_20261028/review.json`. Print saved results with:
 
 ```bash
-python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/scripts/show_native2d.py
+python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/scripts/show_native2d.py
 ```

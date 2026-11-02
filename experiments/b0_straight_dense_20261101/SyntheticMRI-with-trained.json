@@ -3,7 +3,7 @@
   "subjects": 13,
   "patches": 480,
   "b0_checkpoint": {
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/92741/runs/B0/model-12000.pt",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/92741/runs/B0/model-12000.pt",
     "sha256": "8b90d07292761244991f7f1e2fbe07d52c1a0fb93175c1fa863176a2c6337afe",
     "step": 12000,
     "object_queries": 120

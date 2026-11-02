@@ -4,8 +4,8 @@ with the approach, discoveries, numbers and limitations, commit the relevant
 changes, and push branch representation to origin. Push authorization persists.
 
 Read /lustre/fswork/projects/rech/vnc/upz25mj/projects/AGENTS.md.
-Code repo: /lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation
-Research docs: /lustre/fswork/projects/rech/vnc/upz25mj/projects/graph-representation/docs
+Code repo: /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph
+Research docs: /lustre/fswork/projects/rech/vnc/upz25mj/projects/archive/graph-representation/docs
 Run root: /lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/runs/scratch_extend300_20261012
 Jobs: 949063 completed epochs10→150; 949065 continues150→300 (12h limit);
 949071 evaluates final and best for both arms on all1952 validation cases.

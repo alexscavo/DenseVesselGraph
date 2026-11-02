@@ -58,7 +58,7 @@
     "relation_rows": "all source rows after 120 moved after target object row 256",
     "added_object_rows": "rows 120:256 of torch.randn(256,552), dedicated torch.Generator seed 262017 = 261026+991",
     "common_initializer": "Same B0 trunk and shared query rows in all six IXI arms; only local-head settings differ",
-    "implementation": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/scripts/ixi_local_components.py",
+    "implementation": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/scripts/ixi_local_components.py",
     "implementation_sha256": "f8725a9bfabbfa0ef1a497a1830f94ac65a5311af9014aa2f732ba9a1e3ab1a8"
   }
 }

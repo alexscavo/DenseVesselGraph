@@ -3,7 +3,7 @@ import argparse,copy,csv,hashlib,io,json,os,re,sys,tarfile,time,zipfile
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 META=Path('experiments/cheap_diagnostics_20261026')
-ORIGINAL=Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation')
+ORIGINAL=Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph')
 RELATION=Path('/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_image_relation_learning_20261020-113444')
 BN_ROOT=Path('/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/cheap_diagnostics_20261026')
 ARMS=['token_geometry','endpoints','chord','corridor']

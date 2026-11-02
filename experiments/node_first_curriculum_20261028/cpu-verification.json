@@ -8,8 +8,8 @@
   "note": "Synthetic fixtures verify engineering only; no model efficacy result.",
   "total_focused_tests_passed": 8,
   "rechecked_after_relocation": true,
-  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-node-first-curriculum-20261028",
-  "shared_coordination": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/experiment_gpu_coordination",
+  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
+  "shared_coordination": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/archive/coordination",
   "submission_accepted": true,
   "accepted_job_ids": [
     "1670253",
@@ -18,5 +18,5 @@
     "1670256",
     "1670257"
   ],
-  "dependency_acceptance_file": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-node-first-curriculum-20261028/experiments/node_first_curriculum_20261028/acceptance.txt"
+  "dependency_acceptance_file": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/node_first_curriculum_20261028/acceptance.txt"
 }

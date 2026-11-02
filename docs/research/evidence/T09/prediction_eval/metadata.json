@@ -2,7 +2,7 @@
   "bn_calibration_batches": 0,
   "checkpoint": {
     "ignored_removed_parameters": [],
-    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching/runs/ixi_q256_smoke_20260923/models/best_checkpoint.pt",
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/archive/graph-native-betti-matching-legacy/runs/ixi_q256_smoke_20260923/models/best_checkpoint.pt",
     "size_bytes": 1364167434
   },
   "dataset": "synthetic_mri",

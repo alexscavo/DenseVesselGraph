@@ -56,7 +56,7 @@
     },
     "matched_augmentation_streams": true,
     "source": {
-      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/92741/runs/B0/model-12000.pt",
+      "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/92741/runs/B0/model-12000.pt",
       "seed": 92741,
       "step": 12000,
       "source_validation_edge_f1_2mm": 0.5967149758454107,
@@ -524,7 +524,7 @@
           }
         },
         "checkpoint": {
-          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-brava-long-20261027/experiments/brava_long_20261027/large/runs/scratch/model-epoch-300.pt",
+          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_long_20261027/large/runs/scratch/model-epoch-300.pt",
           "sha256": "7d19b56e91666ce6aabec1e56396cf23abb096011e3af7d64aa6d8ae7c9854c6",
           "epoch": 300,
           "step": 82200
@@ -994,7 +994,7 @@
           }
         },
         "checkpoint": {
-          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-brava-long-20261027/experiments/brava_long_20261027/large/runs/synthetic/model-epoch-300.pt",
+          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_long_20261027/large/runs/synthetic/model-epoch-300.pt",
           "sha256": "aeab859b5c8bc435ae1205baf598b9aca24b91ddde2a4d181364e0fab611fe59",
           "epoch": 300,
           "step": 82200
@@ -2538,7 +2538,7 @@
         }
       ]
     },
-    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261027/runtime/tiny-last.pt",
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_20261027/runtime/tiny-last.pt",
     "full_training_submitted": false
   },
   "no_training_or_inference_rerun": true,

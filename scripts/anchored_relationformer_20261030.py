@@ -35,7 +35,7 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 
 OUT = ROOT / 'experiments/anchored_rf_20261030'
 LARGE = Path('/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/anchored_rf_20261030')
-D08_PLAN = Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-brava-long-20261027/'
+D08_PLAN = Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/'
                 'experiments/brava_long_20261027/plan.json')
 MULTI_PLAN = ROOT / 'experiments/multidataset_continuous/plan.json'
 PROBE_ROOT = Path('/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/node_heatmap_probe_20261030')

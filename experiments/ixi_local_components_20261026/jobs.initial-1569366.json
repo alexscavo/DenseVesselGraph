@@ -1,6 +1,6 @@
 {
   "submitted_at": "2026-10-26T09:55:52+0100",
-  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026",
+  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
   "branch": "research/ixi-local-components-20261026",
   "max_h100": 1,
   "shared_global_limit": 2,

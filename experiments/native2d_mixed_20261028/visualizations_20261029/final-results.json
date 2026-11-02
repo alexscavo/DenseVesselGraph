@@ -30,8 +30,8 @@
     "gt_components": 1501,
     "predicted_cycles": 0,
     "gt_cycles": 196,
-    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/avwide_scratch_B0/final.pt",
-    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/avwide_scratch_B0/final-heldout.json"
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/avwide_scratch_B0/final.pt",
+    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/avwide_scratch_B0/final-heldout.json"
   },
   {
     "dataset": "avwide",
@@ -64,8 +64,8 @@
     "gt_components": 1501,
     "predicted_cycles": 0,
     "gt_cycles": 196,
-    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/avwide_scratch_Axyz/final.pt",
-    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/avwide_scratch_Axyz/final-heldout.json"
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/avwide_scratch_Axyz/final.pt",
+    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/avwide_scratch_Axyz/final-heldout.json"
   },
   {
     "dataset": "avwide",
@@ -98,8 +98,8 @@
     "gt_components": 1501,
     "predicted_cycles": 676,
     "gt_cycles": 196,
-    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/avwide_mixed_B0/final.pt",
-    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/avwide_mixed_B0/final-heldout.json"
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/avwide_mixed_B0/final.pt",
+    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/avwide_mixed_B0/final-heldout.json"
   },
   {
     "dataset": "avwide",
@@ -132,8 +132,8 @@
     "gt_components": 1501,
     "predicted_cycles": 651,
     "gt_cycles": 196,
-    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/avwide_mixed_Axyz/final.pt",
-    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/avwide_mixed_Axyz/final-heldout.json"
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/avwide_mixed_Axyz/final.pt",
+    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/avwide_mixed_Axyz/final-heldout.json"
   },
   {
     "dataset": "reaver",
@@ -166,8 +166,8 @@
     "gt_components": 232,
     "predicted_cycles": 0,
     "gt_cycles": 0,
-    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/reaver_scratch_B0/final.pt",
-    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/reaver_scratch_B0/final-heldout.json"
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/reaver_scratch_B0/final.pt",
+    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/reaver_scratch_B0/final-heldout.json"
   },
   {
     "dataset": "reaver",
@@ -200,8 +200,8 @@
     "gt_components": 232,
     "predicted_cycles": 0,
     "gt_cycles": 0,
-    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/reaver_scratch_Axyz/final.pt",
-    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/reaver_scratch_Axyz/final-heldout.json"
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/reaver_scratch_Axyz/final.pt",
+    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/reaver_scratch_Axyz/final-heldout.json"
   },
   {
     "dataset": "reaver",
@@ -234,8 +234,8 @@
     "gt_components": 232,
     "predicted_cycles": 29,
     "gt_cycles": 0,
-    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/reaver_mixed_B0/final.pt",
-    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/reaver_mixed_B0/final-heldout.json"
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/reaver_mixed_B0/final.pt",
+    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/reaver_mixed_B0/final-heldout.json"
   },
   {
     "dataset": "reaver",
@@ -268,8 +268,8 @@
     "gt_components": 232,
     "predicted_cycles": 2,
     "gt_cycles": 0,
-    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/reaver_mixed_Axyz/final.pt",
-    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/reaver_mixed_Axyz/final-heldout.json"
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/reaver_mixed_Axyz/final.pt",
+    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/reaver_mixed_Axyz/final-heldout.json"
   },
   {
     "dataset": "octasynth",
@@ -302,8 +302,8 @@
     "gt_components": 16402,
     "predicted_cycles": 0,
     "gt_cycles": 0,
-    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/octasynth_scratch_B0/final.pt",
-    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/octasynth_scratch_B0/final-heldout.json"
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/octasynth_scratch_B0/final.pt",
+    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/octasynth_scratch_B0/final-heldout.json"
   },
   {
     "dataset": "octasynth",
@@ -336,8 +336,8 @@
     "gt_components": 16402,
     "predicted_cycles": 0,
     "gt_cycles": 0,
-    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/octasynth_scratch_Axyz/final.pt",
-    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/octasynth_scratch_Axyz/final-heldout.json"
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/octasynth_scratch_Axyz/final.pt",
+    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/octasynth_scratch_Axyz/final-heldout.json"
   },
   {
     "dataset": "octasynth",
@@ -370,8 +370,8 @@
     "gt_components": 16402,
     "predicted_cycles": 4518,
     "gt_cycles": 0,
-    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/octasynth_mixed_B0/final.pt",
-    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/octasynth_mixed_B0/final-heldout.json"
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/octasynth_mixed_B0/final.pt",
+    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/octasynth_mixed_B0/final-heldout.json"
   },
   {
     "dataset": "octasynth",
@@ -404,7 +404,7 @@
     "gt_components": 16402,
     "predicted_cycles": 4836,
     "gt_cycles": 0,
-    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/octasynth_mixed_Axyz/final.pt",
-    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/runs/octasynth_mixed_Axyz/final-heldout.json"
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/octasynth_mixed_Axyz/final.pt",
+    "metrics": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_mixed_20261028/runs/octasynth_mixed_Axyz/final-heldout.json"
   }
 ]

@@ -1,6 +1,6 @@
 {
   "branch": "research/cheap-diagnostics-20261026",
-  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-cheap-diagnostics-20261026",
+  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
   "scope": "cache-only relation analysis and weight-frozen training-only BN inference; no optimization",
   "bn_output_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/cheap_diagnostics_20261026",
   "datasets": [

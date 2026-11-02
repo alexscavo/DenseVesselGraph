@@ -1,6 +1,6 @@
 {
   "submitted_at": "2026-10-26T15:20:44+0100",
-  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-cheap-diagnostics-20261026",
+  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
   "prior_gpu_jobs": [
     "1583591",
     "1583592",

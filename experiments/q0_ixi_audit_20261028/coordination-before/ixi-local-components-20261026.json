@@ -2,7 +2,7 @@
   "state": "failed_smoke_no_active_jobs",
   "concurrent_h100": 0,
   "global_limit": 2,
-  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026",
+  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
   "release_after": "1583594",
   "jobs": {
     "smoke": {
@@ -47,6 +47,6 @@
     }
   },
   "audited_at": "2026-10-28T10:38:26.134482+01:00",
-  "audit": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/experiments/n07_status_audit_20261028/status.json",
+  "audit": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/n07_status_audit_20261028/status.json",
   "note": "Smoke timeout; downstream cancelled. No GPU reservations remain; scientific experiment requires recovery."
 }

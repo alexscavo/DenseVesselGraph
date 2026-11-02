@@ -6,9 +6,9 @@
     "seed": 364505,
     "phase": "final",
     "step": 12000,
-    "prediction_archive": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A-xyz/step-12000/caches.zip",
+    "prediction_archive": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/364505/runs/A-xyz/step-12000/caches.zip",
     "prediction_archive_sha256": "dede3cef8680bdeb26918c63088401515ef78abdf97eb2640c370007089d500f",
-    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt",
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt",
     "checkpoint_identity": {
       "path": "experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt",
       "bytes": 1385706077,
@@ -25,9 +25,9 @@
     "seed": 92741,
     "phase": "final",
     "step": 12000,
-    "prediction_archive": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/92741/runs/A-xyz/step-12000/caches.zip",
+    "prediction_archive": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/92741/runs/A-xyz/step-12000/caches.zip",
     "prediction_archive_sha256": "e5bfcdff76cf0f1cbd5ae8e101066fdddbf700c8bab2562ddaac4be440c32cd4",
-    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/92741/runs/A-xyz/model-12000.pt",
+    "checkpoint": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/92741/runs/A-xyz/model-12000.pt",
     "checkpoint_identity": {
       "path": "experiments/local_refinement_long/92741/runs/A-xyz/model-12000.pt",
       "bytes": 1385706077,

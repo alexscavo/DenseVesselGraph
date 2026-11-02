@@ -47,9 +47,9 @@
     "A-xyz": "a1210fe958dffe0e588d38222cb62bf48b58e9b238fc57c027ec1c7a795277c9"
   },
   "source_paths": {
-    "B0": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/B0/model-12000.pt",
-    "A": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A/model-12000.pt",
-    "A-xyz": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt"
+    "B0": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/364505/runs/B0/model-12000.pt",
+    "A": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/364505/runs/A/model-12000.pt",
+    "A-xyz": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt"
   },
   "cohort": {
     "train": 4096,
@@ -68,8 +68,8 @@
         "ArrayTaskThrottle": null,
         "NumTasks": "1",
         "TresPerNode": "gres/gpu:1",
-        "WorkDir": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026",
-        "Command": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/cluster/jean_zay/ixi_local_components_gpu.slurm"
+        "WorkDir": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
+        "Command": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/cluster/jean_zay/ixi_local_components_gpu.slurm"
       }
     ],
     "1653859": [
@@ -80,8 +80,8 @@
         "ArrayTaskThrottle": null,
         "NumTasks": "1",
         "TresPerNode": "gres/gpu:1",
-        "WorkDir": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026",
-        "Command": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/cluster/jean_zay/ixi_local_components_gpu.slurm"
+        "WorkDir": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
+        "Command": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/cluster/jean_zay/ixi_local_components_gpu.slurm"
       }
     ],
     "1653860": [
@@ -92,8 +92,8 @@
         "ArrayTaskThrottle": "1",
         "NumTasks": "1",
         "TresPerNode": "gres/gpu:1",
-        "WorkDir": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026",
-        "Command": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/cluster/jean_zay/ixi_local_components_gpu.slurm"
+        "WorkDir": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
+        "Command": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/cluster/jean_zay/ixi_local_components_gpu.slurm"
       }
     ],
     "1653861": [
@@ -104,8 +104,8 @@
         "ArrayTaskThrottle": null,
         "NumTasks": "1",
         "TresPerNode": null,
-        "WorkDir": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026",
-        "Command": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-ixi-local-components-20261026/cluster/jean_zay/ixi_local_components_cpu.slurm"
+        "WorkDir": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
+        "Command": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/cluster/jean_zay/ixi_local_components_cpu.slurm"
       }
     ],
     "1653987": [
@@ -116,8 +116,8 @@
         "ArrayTaskThrottle": null,
         "NumTasks": "1",
         "TresPerNode": "gres/gpu:1",
-        "WorkDir": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027",
-        "Command": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/cluster/jean_zay/native2d_study_gpu.slurm"
+        "WorkDir": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
+        "Command": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/cluster/jean_zay/native2d_study_gpu.slurm"
       }
     ],
     "1653991": [
@@ -128,8 +128,8 @@
         "ArrayTaskThrottle": null,
         "NumTasks": "1",
         "TresPerNode": "gres/gpu:1",
-        "WorkDir": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027",
-        "Command": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/cluster/jean_zay/native2d_study_gpu.slurm"
+        "WorkDir": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
+        "Command": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/cluster/jean_zay/native2d_study_gpu.slurm"
       }
     ]
   },

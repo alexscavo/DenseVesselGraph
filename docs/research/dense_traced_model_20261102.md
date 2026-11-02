@@ -205,7 +205,7 @@ edges.
 - AV-WIDE is node-limited.
 - REAVER overfits and has 2 validation images.
 
-Report: `GNBM/gnbm-native-2d-20261027/experiments/dense_graph_2d_20261030/report.md`.
+Report: `DenseVesselGraph/experiments/dense_graph_2d_20261030/report.md`.
 
 ## 6. Limitations and next steps
 

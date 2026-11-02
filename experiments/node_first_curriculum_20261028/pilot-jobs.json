@@ -1,7 +1,7 @@
 {
   "stage": "pilot",
   "submitted_at": "2026-10-28T18:57:53+0100",
-  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-node-first-curriculum-20261028",
+  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
   "initializers": "random step0; no pretrained graph weights",
   "max_h100": 2,
   "shared_global_limit": 2,

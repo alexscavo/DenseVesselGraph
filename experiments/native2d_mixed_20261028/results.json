@@ -2563,7 +2563,7 @@
     "query_policy": "shared capacity >=96, derived from maximum contracted training GT across available source/target datasets; transfers all query slots unchanged",
     "design": "one B0 mixed plant+target training-split checkpoint per vessel dataset; common checkpoint initializes B0/Axyz; target finetuning vessel-only",
     "stopping": "fixed epochs; stop on nonfinite/error; no automatic extension, sweep or threshold change",
-    "data_root": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_long_20261028",
+    "data_root": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_long_20261028",
     "protocol_revision": "user correction: plants mixed with target vessels, not pure plants",
     "pretraining_epochs": 50,
     "mixed_batch_size": 32,
@@ -2575,7 +2575,7 @@
       "draws_per_epoch": 51734
     },
     "pretraining_geometry": "pixel for both domains; original dataset caches and target fine-tuning/evaluation calibration unchanged",
-    "supersedes": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_long_20261028"
+    "supersedes": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_long_20261028"
   },
   "gates": {
     "passed": true,

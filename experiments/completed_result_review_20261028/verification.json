@@ -14,12 +14,12 @@
   "no_training_or_inference": true,
   "checkpoints_preserved": true,
   "report_hashes": {
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/docs/research/BRAVA_experiment_plan.md": "f652f1e35d5044baf6bd3911b61465834e5c3226e9a84986587c34e8ec5c7509",
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/research/image-to-graph-vessel.md": "92bd611e6260e3318539cf8d6ac9793b81157a435027de9df7ff446ec7b4618e",
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/research/roadmap.md": "245704f6681a7d3ab48004ab6296603412844188c1a45310dd58b90c6795550e",
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/research/decisions.md": "23baeb8228a276ae28e1228e64856b68b83fbba8eb1457d2f400d60f95d5a802",
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/research/experiments.md": "e4225035c2e761565a7605fa77efce12e7c0acd62f4f1ede96fe82465e5f9e6d",
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/research/architecture.md": "e6f1faef315af066539ea804ee7ca5a8d7741f1f7fd431d53c0ae9aa820657d4",
-    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/research/VASCULAR_GRAPH_EXPERIMENT_REGISTRY_2026-10-26_UPDATED.md": "12b0de466df0420f69c1aea4c74df437c1a6489f3e22001335adb37abfc9681b"
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/BRAVA_experiment_plan.md": "f652f1e35d5044baf6bd3911b61465834e5c3226e9a84986587c34e8ec5c7509",
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/research/image-to-graph-vessel.md": "92bd611e6260e3318539cf8d6ac9793b81157a435027de9df7ff446ec7b4618e",
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/research/roadmap.md": "245704f6681a7d3ab48004ab6296603412844188c1a45310dd58b90c6795550e",
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/research/decisions.md": "23baeb8228a276ae28e1228e64856b68b83fbba8eb1457d2f400d60f95d5a802",
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/research/experiments.md": "e4225035c2e761565a7605fa77efce12e7c0acd62f4f1ede96fe82465e5f9e6d",
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/research/architecture.md": "e6f1faef315af066539ea804ee7ca5a8d7741f1f7fd431d53c0ae9aa820657d4",
+    "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/research/VASCULAR_GRAPH_EXPERIMENT_REGISTRY_2026-10-26_UPDATED.md": "12b0de466df0420f69c1aea4c74df437c1a6489f3e22001335adb37abfc9681b"
   }
 }

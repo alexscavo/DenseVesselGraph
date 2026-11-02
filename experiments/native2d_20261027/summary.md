@@ -24,11 +24,11 @@ Two training crops only; the table is a memorization diagnostic, **not validatio
 | 1000 | 0.1200 | wide01_00 | 1.0000 | 1.0000 | 1.0000 | 0.9789 |
 | 1000 | 0.1200 | wide01_01 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
 
-1000 updates in 22.9s; peak GPU allocation 659497472 bytes. Checkpoint: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261027/runtime/tiny-last.pt`.
+1000 updates in 22.9s; peak GPU allocation 659497472 bytes. Checkpoint: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_20261027/runtime/tiny-last.pt`.
 
 Passing this gate establishes implementation learnability on two crops only. It supplies no cross-subject generalization, baseline-versus-A-xyz benefit or journal reconstruction result. Full training remains pending subject/provenance/crossing and operating-point protocol decisions.
 
-Evidence: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261027`. Retrieval: `python3 scripts/show_native2d.py` from the main repository.
+Evidence: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_20261027`. Retrieval: `python3 scripts/show_native2d.py` from the main repository.
 
 
 <!-- NATIVE2D FINAL REVIEW 20261028 -->
@@ -52,5 +52,5 @@ No duplicate nodes or false edges remain in these two memorized graphs; raw cove
 Main2D source and data-provenance report is the preceding section. Original numeric evidence and checkpoint are preserved in sibling `gnbm-native-2d-20261027/experiments/native2d_20261027/`, with checkpoint runtime on SCRATCH. The consolidated review JSON is `experiments/completed_result_review_20261028/review.json`. Print saved results with:
 
 ```bash
-python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/scripts/show_native2d.py
+python3 /lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/scripts/show_native2d.py
 ```

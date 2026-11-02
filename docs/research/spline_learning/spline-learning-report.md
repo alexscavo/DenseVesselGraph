@@ -134,7 +134,7 @@ The Slurm script supplies the required data/output environment variables and rec
 
 ## Submitted job
 
-Slurm job **612351**, submitted on 2026-10-05. Log files: `Graph-Native-Betti-Matching-Representation/experiments/spline_learning/logs/612351.out` and `.err`. Source hashes and base commit are recorded in `experiments/spline_learning/submission.json`. Results will be under `experiments/spline_learning/runs/job-612351/`. No training results are claimed at submission.
+Slurm job **612351**, submitted on 2026-10-05. Log files: `DenseVesselGraph/experiments/spline_learning/logs/612351.out` and `.err`. Source hashes and base commit are recorded in `experiments/spline_learning/submission.json`. Results will be under `experiments/spline_learning/runs/job-612351/`. No training results are claimed at submission.
 
 ## GPU calibration and smoke checks
 
@@ -160,7 +160,7 @@ Mesh viewer verification: visibility toggle, opacity changes, physical coordinat
 
 ## Saved-model evaluation and training recap (2026-10-05)
 
-At the user's request, Slurm job **613399** ran `evaluate.py` on all three final `model.pt` files. Completed in **1 minute 14 seconds**, exit `0:0`. Submission script: `Graph-Native-Betti-Matching-Representation/cluster/jean_zay/spline_evaluate_four.slurm`. Each call uses the saved resolved config, `--dataset synthetic_mri --split val --max-samples 4 --batch-size 4 --workers 0 --device cuda`. The cache's `val` is the same four training patches; this evaluation is explicitly an overfit test, not held-out testing. No BN recalibration or threshold tuning was performed.
+At the user's request, Slurm job **613399** ran `evaluate.py` on all three final `model.pt` files. Completed in **1 minute 14 seconds**, exit `0:0`. Submission script: `DenseVesselGraph/cluster/jean_zay/spline_evaluate_four.slurm`. Each call uses the saved resolved config, `--dataset synthetic_mri --split val --max-samples 4 --batch-size 4 --workers 0 --device cuda`. The cache's `val` is the same four training patches; this evaluation is explicitly an overfit test, not held-out testing. No BN recalibration or threshold tuning was performed.
 
 All three runs achieved node/edge F1 and node/edge mAP **1.00**, with 98 true positive nodes and 79 true positive edges, zero false positives/negatives, and zero absolute Betti-0/Betti-1 error. Protocol: F1 IoU threshold 0.5; AP IoU thresholds 0.50–0.95, target node size 0.2 and edge half-width 0.1 in normalized coordinates. These box-based detection metrics do not measure spline tortuosity. Standard SMD samples straight graph edges in normalized coordinates, not the spline curves: V0 fine-tuned 0.0001615496, V0 scratch 0.0001617138, V1 fine-tuned 0.0001640488.
 

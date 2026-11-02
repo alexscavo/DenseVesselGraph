@@ -1299,23 +1299,23 @@
       "feature_cache_sha256": "7c81874251251194bdb040795ecafc07019577ba89c32875894f409cdd972736",
       "score_archives": {
         "R0": {
-          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/364505/runs/R0/scores-0000.zip",
+          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/r06_relation_tokens_20261027/large/364505/runs/R0/scores-0000.zip",
           "sha256": "70d849442692a6cb35feae044627e363ed3be7ca4f6072ac06acebfa6fff8e5f"
         },
         "R1": {
-          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/364505/runs/R1/scores-2000.zip",
+          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/r06_relation_tokens_20261027/large/364505/runs/R1/scores-2000.zip",
           "sha256": "f36691a0d97688b5d9efcc01cfed09f6c2bd8ebcd052adfa90fd4cc46cba7420"
         },
         "R2": {
-          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/364505/runs/R2/scores-2000.zip",
+          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/r06_relation_tokens_20261027/large/364505/runs/R2/scores-2000.zip",
           "sha256": "6154bc5451133c1bd357a0efbe8e4256eb0b82ab072f6d6df56c871f7858df65"
         },
         "R2_shuffled": {
-          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/364505/runs/R2/scores-2000-shuffled.zip",
+          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/r06_relation_tokens_20261027/large/364505/runs/R2/scores-2000-shuffled.zip",
           "sha256": "cf91db8e8e1bc7314e37d8bd17bf1defc166b8bd5c62a0a4206e52355a4b07a5"
         },
         "R3_head": {
-          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/364505/runs/R3_head/scores-2000.zip",
+          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/r06_relation_tokens_20261027/large/364505/runs/R3_head/scores-2000.zip",
           "sha256": "f9bcdba64848a9384f81e02a3ea416f2341d93295d35bb91abe239684d3db40e"
         }
       }
@@ -1326,23 +1326,23 @@
       "feature_cache_sha256": "27b603120e1d32250d9bc2472f22da510e6a6da1c43e088fdc02d6605641481e",
       "score_archives": {
         "R0": {
-          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/92741/runs/R0/scores-0000.zip",
+          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/r06_relation_tokens_20261027/large/92741/runs/R0/scores-0000.zip",
           "sha256": "ae197de64621254f73f75a2038e5e5988a5ab544c331e03ea39b36c8bd52f404"
         },
         "R1": {
-          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/92741/runs/R1/scores-2000.zip",
+          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/r06_relation_tokens_20261027/large/92741/runs/R1/scores-2000.zip",
           "sha256": "5ed7bb2b3c2ad4dc983888013fd13b02093f3a4b4cb93e906a6e0d22114cae55"
         },
         "R2": {
-          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/92741/runs/R2/scores-2000.zip",
+          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/r06_relation_tokens_20261027/large/92741/runs/R2/scores-2000.zip",
           "sha256": "4dc1d645741ba6b69f75c0dcb62b4b6c192048f97a9a699b1f7efb41b283e5b9"
         },
         "R2_shuffled": {
-          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/92741/runs/R2/scores-2000-shuffled.zip",
+          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/r06_relation_tokens_20261027/large/92741/runs/R2/scores-2000-shuffled.zip",
           "sha256": "f795f557f481eeb86ff27a9fa5396d83a56d2fe157f6c3354565dff40496325f"
         },
         "R3_head": {
-          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-r06-relation-token-20261027/experiments/r06_relation_tokens_20261027/large/92741/runs/R3_head/scores-2000.zip",
+          "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/r06_relation_tokens_20261027/large/92741/runs/R3_head/scores-2000.zip",
           "sha256": "b7053c830d4997774f927dc8b7209f81b0846132aecc040d69a4c21e16b0f4fd"
         }
       }

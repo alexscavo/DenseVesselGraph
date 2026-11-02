@@ -26,8 +26,8 @@ import shutil
 import sys
 from pathlib import Path
 
-REPO = Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation')
-D08 = Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-brava-long-20261027/experiments/brava_long_20261027')
+REPO = Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph')
+D08 = Path('/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_long_20261027')
 LARGE = Path(os.environ['SCRATCH'])/'experiments/gnbm/straight_lineage_20261101'
 RECORD = REPO/'experiments/straight_lineage_20261101'
 OUT = {'s1': LARGE/'s1', 's2': LARGE/'s2', 's3': RECORD/'ixi', 's4': LARGE/'brava'}

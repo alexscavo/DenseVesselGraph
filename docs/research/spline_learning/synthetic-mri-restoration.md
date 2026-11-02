@@ -8,7 +8,7 @@ Restore SyntheticMRI from today's dataset archive to `/lustre/fsn1/projects/rech
 
 Archive: `/lustre/fsstor/projects/rech/vnc/upz73jr/Graph-Native-Betti-Matching/2026-10-05/datasets.tar` (44 GB). A read-only archive scan found all 136 full segmentation volumes, the original generation configuration, 91 `graph.vvg` files and prepared SyntheticMRI patch data. This is a recovery archive, not evidence of complete full-graph coverage.
 
-First job 627391 could not access STORE from its compute node and failed before extraction. The archive was copied to WORK as `Graph-Native-Betti-Matching-Representation/experiments/spline_learning/datasets-restoration.tar`; retry job **627540** extracts only SyntheticMRI to a staging folder. Fresh filesystem timestamps are used while preserving file contents.
+First job 627391 could not access STORE from its compute node and failed before extraction. The archive was copied to WORK as `DenseVesselGraph/experiments/spline_learning/datasets-restoration.tar`; retry job **627540** extracts only SyntheticMRI to a staging folder. Fresh filesystem timestamps are used while preserving file contents.
 
 ## Checks before replacement
 
