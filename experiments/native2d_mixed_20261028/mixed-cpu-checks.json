@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "tests": 14,
+  "sampling": "balanced with replacement, twice source",
+  "pretraining_target_split_only": true,
+  "pretraining_pixel_vs_finetuning_micron_cache_isolation": true
+}

@@ -1,0 +1,110 @@
+/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/site-packages/paramiko/pkey.py:82: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from this module in 48.0.0.
+  "cipher": algorithms.TripleDES,
+/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/site-packages/paramiko/transport.py:219: CryptographyDeprecationWarning: Blowfish has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.Blowfish and will be removed from this module in 45.0.0.
+  "class": algorithms.Blowfish,
+/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/site-packages/paramiko/transport.py:243: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from this module in 48.0.0.
+  "class": algorithms.TripleDES,
+{
+  "passed": true,
+  "samples": 1891,
+  "branches": 25263,
+  "old_max_abs_control_pixel": 2007485.847792941,
+  "new_max_abs_control_pixel": 131.24514527642944,
+  "old_targets_over_512px": [
+    {
+      "sample_id": "wide02_x512_y128",
+      "split": "validation",
+      "old_control_max_abs_pixel": 73227.08917519754,
+      "new_control_max_abs_pixel": 127.0
+    },
+    {
+      "sample_id": "wide03_x1152_y256",
+      "split": "train",
+      "old_control_max_abs_pixel": 1578.8503995442084,
+      "new_control_max_abs_pixel": 127.0
+    },
+    {
+      "sample_id": "wide10_x384_y128",
+      "split": "train",
+      "old_control_max_abs_pixel": 552.6474074408465,
+      "new_control_max_abs_pixel": 127.0
+    },
+    {
+      "sample_id": "wide10_x640_y128",
+      "split": "train",
+      "old_control_max_abs_pixel": 1838.5027540459969,
+      "new_control_max_abs_pixel": 127.0
+    },
+    {
+      "sample_id": "wide12_x896_y384",
+      "split": "train",
+      "old_control_max_abs_pixel": 29572.52711620629,
+      "new_control_max_abs_pixel": 127.0
+    },
+    {
+      "sample_id": "wide12_x768_y512",
+      "split": "train",
+      "old_control_max_abs_pixel": 1715.7281800586697,
+      "new_control_max_abs_pixel": 127.0
+    },
+    {
+      "sample_id": "wide12_x1152_y640",
+      "split": "train",
+      "old_control_max_abs_pixel": 4747.390837073551,
+      "new_control_max_abs_pixel": 127.0
+    },
+    {
+      "sample_id": "wide12_x1152_y705",
+      "split": "train",
+      "old_control_max_abs_pixel": 4812.390837073493,
+      "new_control_max_abs_pixel": 127.0
+    },
+    {
+      "sample_id": "wide13_x128_y256",
+      "split": "train",
+      "old_control_max_abs_pixel": 56890.073578728014,
+      "new_control_max_abs_pixel": 127.0
+    },
+    {
+      "sample_id": "wide13_x1024_y256",
+      "split": "train",
+      "old_control_max_abs_pixel": 3448.3912697583423,
+      "new_control_max_abs_pixel": 127.04026699836324
+    },
+    {
+      "sample_id": "wide14_x1152_y384",
+      "split": "train",
+      "old_control_max_abs_pixel": 587.8715287872631,
+      "new_control_max_abs_pixel": 127.0
+    },
+    {
+      "sample_id": "wide16_x128_y384",
+      "split": "train",
+      "old_control_max_abs_pixel": 1536.9763289154869,
+      "new_control_max_abs_pixel": 127.0
+    },
+    {
+      "sample_id": "wide20_x512_y256",
+      "split": "validation",
+      "old_control_max_abs_pixel": 1208.7227513377704,
+      "new_control_max_abs_pixel": 127.0
+    },
+    {
+      "sample_id": "wide22_x256_y384",
+      "split": "validation",
+      "old_control_max_abs_pixel": 2007485.847792941,
+      "new_control_max_abs_pixel": 127.0
+    },
+    {
+      "sample_id": "wide23_x1152_y256",
+      "split": "validation",
+      "old_control_max_abs_pixel": 1110490.2968719422,
+      "new_control_max_abs_pixel": 127.46865258445206
+    }
+  ],
+  "uniform_design_condition_number": 4.553856527709281,
+  "invariants": "exact equality of nodes, edges, metric, full_paths, offsets, units, crops and splits; only fitted controls differ",
+  "original_experiment": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261028",
+  "new_experiment": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261028_targetfix",
+  "budget": "one fresh matched pair, same6000 updates; no continuation of old weights"
+}

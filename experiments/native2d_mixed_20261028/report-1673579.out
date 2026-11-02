@@ -1,0 +1,54 @@
+## Native2D-04 — mixed plant/vessel pretraining and longer vessel training, 28 October 2026
+
+User clarified that pretraining must mix plants and vessels. The superseded pure-plant gate/launcher1670808/1670809/1670810 were cancelled while pending; no pure-plant training occurred. Use50 mixed-pretraining epochs, then100 vessel-only epochs, with unchanged confidence cutoffs0.5. Previous pilot artifacts and the superseded protocol archive are retained.
+
+Protocol: [native2d_long_20261028.md](../docs/research/native2d_long_20261028.md). Queued/running states are not completed experimental results.
+GPU gate job `1671559`; conditional training launcher `1671560`. The launcher submits training only after all dataset/GPU gates pass.
+Full native ResNet101/512D,3+3 layers,5 relation tokens, common96 object queries from contracted training GT distributions. Each vessel stage:100 exact passes, batch4, identical exposure/augmentation/optimizer schedule within each B0/A-xyz pair.
+For each vessel dataset, pretrain one B0 on plants plus ONLY that target training split. Use the existing50:50 domain-balanced sampling with replacement and a twice-source epoch (51,734 draws), batch32, for50 epochs. The final mixed checkpoint for that target initializes both B0/A-xyz; A-xyz starts with zero coordinate residuals. Fresh optimizer/scheduler for100 vessel-only epochs, batch4; no plant replay. All pretraining geometry and target-validation distances use pixels; REAVER fine-tuning/final evaluation restores its original micron calibration. Pretraining validation/selection uses target validation only, never pooled plant/vessel metrics.
+
+| Dataset | Train / validation crops | Train maximum nodes | Units |
+|---|---:|---:|---|
+| avwide | 1385 / 506 | 76 | pixel |
+| reaver | 256 / 128 | 16 | micron |
+| plants | 25867 / 6398 | 28 | pixel |
+| octasynth | 10648 / 4840 | 52 | pixel |
+
+GPU gates passed: initialization/gradient/strict shared-weight transfer checks, fixed1,200-update full-model two-crop overfit per cohort and production-batch throughput. Gate weights are never reused for training.
+
+| Dataset / benchmark | Batch | Measured images/s | Estimated optimizer hours/run |
+|---|---:|---:|---:|
+| avwide | 4 | 71.48 | 0.54 |
+| reaver | 4 | 74.79 | 0.10 |
+| octasynth | 4 | 77.84 | 3.80 |
+| plants | 32 | 214.03 | 1.68 |
+| mixed_avwide | 32 | 213.65 | 3.36 |
+| mixed_reaver | 32 | 219.89 | 3.27 |
+| mixed_octasynth | 32 | 206.83 | 3.47 |
+
+| Run | Slurm | State | Epoch | Node mAP | Edge mAP | Node F1 @2 units | Edge F1 @2 units |
+|---|---|---|---:|---:|---:|---:|---:|
+| avwide_mixedpretrain_50 | 1673568 | complete | 50 | 0.2655 | 0.0695 | 0.1887 | 0.0103 |
+| avwide_scratch_B0 | 1673549 | complete | 100 | 0.0788 | 0.0296 | 0.0000 | 0.0000 |
+| avwide_scratch_Axyz | 1673551 | complete | 100 | 0.0757 | 0.0281 | 0.0000 | 0.0000 |
+| avwide_mixed_B0 | 1673572 | complete | 100 | 0.2760 | 0.0774 | 0.2045 | 0.0123 |
+| avwide_mixed_Axyz | 1673574 | complete | 100 | 0.2713 | 0.0691 | 0.1963 | 0.0088 |
+| reaver_mixedpretrain_50 | 1673557 | complete | 50 | 0.5239 | 0.0959 | 0.3309 | 0.0859 |
+| reaver_scratch_B0 | 1673553 | complete | 100 | 0.1135 | 0.0219 | 0.0000 | 0.0000 |
+| reaver_scratch_Axyz | 1673555 | complete | 100 | 0.1181 | 0.0065 | 0.0000 | 0.0000 |
+| reaver_mixed_B0 | 1673560 | complete | 100 | 0.4737 | 0.1190 | 0.7455 | 0.4085 |
+| reaver_mixed_Axyz | 1673562 | complete | 100 | 0.1815 | 0.0075 | 0.2040 | 0.0000 |
+| octasynth_mixedpretrain_50 | 1673564 | complete | 50 | 0.7379 | 0.5746 | 0.7262 | 0.4807 |
+| octasynth_scratch_B0 | 1673576 | complete | 100 | 0.0548 | 0.0377 | 0.0000 | 0.0000 |
+| octasynth_scratch_Axyz | 1673578 | complete | 100 | 0.1613 | 0.0580 | 0.0000 | 0.0000 |
+| octasynth_mixed_B0 | 1673566 | training | 61 | — | — | — | — |
+| octasynth_mixed_Axyz | 1673580 | starting / caching | — | — | — | — | — |
+
+Primary comparisons use the final fixed-epoch checkpoints on complete validation populations; selected checkpoints are secondary. Selection uses fixed interim source-image groups, excludes initialization and resolves trained ties toward later epochs. Pixel and micron metrics are reported separately. Raw versus filtered recall, conditional relation populations/AP, duplicates, components/cycles and same-graph K8/chord geometry remain in per-run validation JSON. Mixed-pretraining validation reports target-vessel detection/graph metrics in pixels. Plant graphs supply sparse source supervision; plant validation is not pooled into target metrics.
+
+No test arrays or predictions are used. AV-WIDE remains17 training /6 validation images with unknown patient independence; image07 excluded. REAVER is the separately verified diaphragm60x4/2-image cohort in microns. OCTA uses official source-image membership and regenerated128² crops with coordinate/crop-boundary QC. Plant parent IDs are disjoint across official train/val/test membership.
+
+Mixed pretraining adds vessel exposures as well as biological data. Relative to scratch100, a gain cannot isolate a biological-pretraining causal effect; no extra vessel-only-pretraining control or sweep is launched. Realized per-domain draws and source/target memberships are recorded in protocol.json and exposure.npy.
+
+Artifacts: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028`; validated datasets reused read-only from `/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_long_20261028`. Source/config hashes: `source.zip`, `code-identities.json`; epoch losses and full state checkpoints: `runs/<name>/`; final metrics: `final-heldout.json`; plots: `curves-<dataset>.png` and separate pretraining curves. Stop at50 mixed /100 vessel epochs; exceptions stop jobs without automatic retries, new sweeps or budget extensions.
+

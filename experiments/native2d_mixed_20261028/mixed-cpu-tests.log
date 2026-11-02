@@ -1,0 +1,25 @@
+/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/site-packages/paramiko/pkey.py:82: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from this module in 48.0.0.
+  "cipher": algorithms.TripleDES,
+/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/site-packages/paramiko/transport.py:219: CryptographyDeprecationWarning: Blowfish has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.Blowfish and will be removed from this module in 45.0.0.
+  "class": algorithms.Blowfish,
+/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/site-packages/paramiko/transport.py:243: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from this module in 48.0.0.
+  "class": algorithms.TripleDES,
+test_crop_preserves_outside_crossing_and_distinct_crossings (tests.test_native2d.Native2DTests.test_crop_preserves_outside_crossing_and_distinct_crossings) ... ok
+test_legacy_3d_factory_branch_is_unchanged (tests.test_native2d.Native2DTests.test_legacy_3d_factory_branch_is_unchanged) ... ok
+test_local_sampling_pixel_centers_and_zero_refinement (tests.test_native2d.Native2DTests.test_local_sampling_pixel_centers_and_zero_refinement) ... ok
+test_mask_junction_and_cycle (tests.test_native2d.Native2DTests.test_mask_junction_and_cycle) ... ok
+test_maximum_cardinality_positional_matching (tests.test_native2d.Native2DTests.test_maximum_cardinality_positional_matching) ... ok
+test_metric_identity_units_and_isometric_branch_counts (tests.test_native2d.Native2DTests.test_metric_identity_units_and_isometric_branch_counts) ... ok
+test_spacing_rotation_and_dense_paths (tests.test_native2d.Native2DTests.test_spacing_rotation_and_dense_paths) ... ok
+test_spline_chord_endpoints_gradients (tests.test_native2d.Native2DTests.test_spline_chord_endpoints_gradients) ... ok
+test_near_boundary_clip_does_not_reuse_outside_anchor (tests.test_native2d_fitting.StableSplineTargetTests.test_near_boundary_clip_does_not_reuse_outside_anchor) ... ok
+test_uneven_dense_path_retains_geometry (tests.test_native2d_fitting.StableSplineTargetTests.test_uneven_dense_path_retains_geometry) ... ok
+test_micron_conversion_and_cache_are_separate (tests.test_native2d_mixed.MixedPretrainingTests.test_micron_conversion_and_cache_are_separate) ... ok
+test_only_training_membership_is_sampled (tests.test_native2d_mixed.MixedPretrainingTests.test_only_training_membership_is_sampled) ... ok
+test_sampling_contract_and_reproducibility (tests.test_native2d_mixed.MixedPretrainingTests.test_sampling_contract_and_reproducibility) ... ok
+test_validation_selection_contains_only_target (tests.test_native2d_mixed.MixedPretrainingTests.test_validation_selection_contains_only_target) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 1.431s
+
+OK

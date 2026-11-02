@@ -1,0 +1,9 @@
+test_micron_conversion_and_cache_are_separate (tests.test_native2d_mixed.MixedPretrainingTests.test_micron_conversion_and_cache_are_separate) ... ok
+test_only_training_membership_is_sampled (tests.test_native2d_mixed.MixedPretrainingTests.test_only_training_membership_is_sampled) ... ok
+test_sampling_contract_and_reproducibility (tests.test_native2d_mixed.MixedPretrainingTests.test_sampling_contract_and_reproducibility) ... ok
+test_validation_selection_contains_only_target (tests.test_native2d_mixed.MixedPretrainingTests.test_validation_selection_contains_only_target) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.152s
+
+OK

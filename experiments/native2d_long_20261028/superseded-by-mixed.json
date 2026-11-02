@@ -1,0 +1,10 @@
+{
+  "reason": "User clarified mixed plants+vessels pretraining before any training started",
+  "replacement": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028",
+  "cancelled_pending_jobs": [
+    "1670808",
+    "1670809",
+    "1670810"
+  ],
+  "no_training_or_checkpoints_created": true
+}

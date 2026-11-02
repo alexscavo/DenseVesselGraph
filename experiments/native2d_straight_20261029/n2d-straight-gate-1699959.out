@@ -1,0 +1,1 @@
+STRAIGHT GATES PASSED {"node": {"tp": 18, "fp": 0, "fn": 0, "f1": 1.0, "recall": 1.0, "precision": 1.0}, "edge": {"tp": 14, "fp": 0, "fn": 0, "f1": 1.0, "recall": 1.0, "precision": 1.0}, "duplicates": 0, "conditional_relation_recall": 1.0, "raw_node_recall_macro": 1.0, "raw_node_recall_micro": 1.0}

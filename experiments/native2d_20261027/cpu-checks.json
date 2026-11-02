@@ -1,0 +1,429 @@
+{
+  "passed": true,
+  "device": "cpu",
+  "config": {
+    "schema_version": 1,
+    "experiment": {
+      "name": null,
+      "seed": 364505,
+      "output_dir": "${GNBM_OUTPUT_DIR}"
+    },
+    "runtime": {
+      "device": "cuda",
+      "distributed": false,
+      "deterministic": false,
+      "workers": 4,
+      "pin_memory": true
+    },
+    "tracking": {
+      "enabled": true,
+      "project": "focal-loss",
+      "entity": null,
+      "group": null,
+      "tags": [
+        "gnbm"
+      ],
+      "mode": null,
+      "save_code": true
+    },
+    "data": {
+      "spatial_dims": 2,
+      "input_modality": "raw_mra",
+      "image_size": [
+        64,
+        64
+      ],
+      "batch_size": 2,
+      "train_augmentation": true,
+      "mixed_sampling": {
+        "balance_source_target": true,
+        "epoch_size": "twice_source"
+      },
+      "datasets": {}
+    },
+    "augmentation": {
+      "coordinate_order": [
+        "D",
+        "H",
+        "W"
+      ],
+      "normalization_denominator": "axis_size",
+      "synthetic_mri": {
+        "rotate_90": {
+          "enabled": true,
+          "planes": [
+            [
+              "D",
+              "H"
+            ],
+            [
+              "D",
+              "W"
+            ],
+            [
+              "H",
+              "W"
+            ]
+          ]
+        },
+        "zoom": {
+          "enabled": true,
+          "range": [
+            0.6,
+            1.0
+          ],
+          "image_interpolation": "trilinear",
+          "segmentation_interpolation": "nearest"
+        },
+        "gaussian_noise": {
+          "enabled": true,
+          "probability": 0.35,
+          "std_range": [
+            0.0,
+            0.015
+          ]
+        },
+        "intensity_clamp": null
+      },
+      "plants": {
+        "projection_depth": 5,
+        "padding": 5,
+        "rotate_90": {
+          "enabled": true,
+          "planes": [
+            [
+              "D",
+              "H"
+            ],
+            [
+              "D",
+              "W"
+            ],
+            [
+              "H",
+              "W"
+            ]
+          ]
+        },
+        "flip": {
+          "enabled": true,
+          "axes": [
+            "D",
+            "H",
+            "W"
+          ],
+          "probability_per_axis": 0.5
+        },
+        "intensity_scale": [
+          -0.5,
+          0.5
+        ],
+        "pad_to_image_size": true
+      }
+    },
+    "model": {
+      "num_classes": 2,
+      "node_type": {
+        "enabled": false
+      },
+      "encoder": {
+        "type": "se_resnet",
+        "input_channels": 1,
+        "depths": [
+          4,
+          4,
+          16,
+          4
+        ],
+        "strides": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "backbone": "resnet18",
+        "init_weights": null,
+        "dilation": false
+      },
+      "decoder": {
+        "type": "deformable_detr",
+        "hidden_dim": 64,
+        "attention_heads": 4,
+        "encoder_layers": 1,
+        "decoder_layers": 1,
+        "feedforward_dim": 128,
+        "dropout": 0.0,
+        "activation": "relu",
+        "feature_levels": 3,
+        "decoder_points": 4,
+        "encoder_points": 4,
+        "object_queries": 16,
+        "relation_tokens": 2,
+        "dummy_tokens": 0,
+        "relation_attention": false,
+        "use_cuda_extension": true
+      },
+      "matcher": {
+        "type": "hungarian",
+        "class_cost": 2.0,
+        "node_cost": 5.0
+      },
+      "node_refinement": {
+        "enabled": true,
+        "radius_pixels": 4.0,
+        "image_mode": "full"
+      },
+      "spline": {
+        "enabled": true,
+        "controls": 8,
+        "samples": 64,
+        "gradient_route": "graph_only"
+      }
+    },
+    "domain_adaptation": {
+      "enabled": false,
+      "image_adversarial": true,
+      "graph_adversarial": true,
+      "consistency_regularization": true,
+      "alpha_coefficient": 1.0,
+      "learning_rate": 7e-05,
+      "hidden_size": 2048,
+      "class_weights": [
+        0.05,
+        0.95
+      ]
+    },
+    "training": {
+      "input": "image",
+      "start_epoch": 0,
+      "epochs": null,
+      "early_stopping": {
+        "enabled": false,
+        "monitor": "edge_mAP",
+        "mode": "max",
+        "patience_epochs": 50,
+        "min_epochs": 0,
+        "min_delta": 0.0
+      },
+      "warmup_epochs": 1,
+      "optimizer": {
+        "name": "adamw",
+        "base_lr": 7e-05,
+        "weight_decay": 0.0001,
+        "epsilon": 1e-08,
+        "betas": [
+          0.9,
+          0.999
+        ]
+      },
+      "scheduler": {
+        "name": "polynomial",
+        "warmup_lr": 1e-09,
+        "power": 0.9
+      },
+      "checkpoint": {
+        "policy": "interval_and_best",
+        "interval_epochs": 5,
+        "latest_interval_epochs": 1
+      }
+    },
+    "loss": {
+      "enabled": [
+        "boxes",
+        "class",
+        "cardinality",
+        "nodes",
+        "edges",
+        "spline"
+      ],
+      "supervise_target_graphs": true,
+      "weights": {
+        "boxes": 3.0,
+        "class": 4.0,
+        "cardinality": 0.8,
+        "nodes": 2.0,
+        "edges": 6.0,
+        "node_types": 1.0,
+        "domain": 1.0,
+        "spline": 1.4739989612791453
+      },
+      "node": {
+        "classification": {
+          "name": "focal",
+          "class_weights": [
+            1.0,
+            1.0
+          ],
+          "focal_gamma": 2.0,
+          "curriculum": {
+            "enabled": false,
+            "start_percent": 10.0,
+            "end_percent": 30.0
+          }
+        }
+      },
+      "node_type": {
+        "classification": {
+          "name": "cross_entropy",
+          "class_weights": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "focal_gamma": 2.0,
+          "curriculum": {
+            "enabled": false,
+            "start_percent": 10.0,
+            "end_percent": 30.0
+          }
+        }
+      },
+      "edge": {
+        "classification": {
+          "name": "cross_entropy",
+          "class_weights": [
+            1.0,
+            1.0
+          ],
+          "focal_gamma": 2.0,
+          "curriculum": {
+            "enabled": false,
+            "start_percent": 10.0,
+            "end_percent": 30.0
+          }
+        },
+        "candidates": {
+          "max_per_graph": 9999,
+          "positive_cap": null,
+          "include_unmatched": false,
+          "unmatched_object_threshold": 0.25,
+          "max_active_unmatched": 32,
+          "max_unmatched_pairs_per_graph": 256,
+          "unmatched_weight": 1.0,
+          "unmatched_warmup_epochs": 0,
+          "unmatched_ramp_epochs": 0
+        },
+        "balancing": {
+          "mode": "ratio_upsample",
+          "positive_to_negative_ratio": 0.15,
+          "tolerance": 0.02
+        }
+      },
+      "degree": {
+        "enabled": false,
+        "weight": 0.0,
+        "warmup_epochs": 0,
+        "ramp_epochs": 0
+      },
+      "spline": {
+        "target": "residual",
+        "mode": "controls",
+        "beta_distance": 1.0
+      }
+    },
+    "topology": {
+      "betti_h0": {
+        "enabled": false,
+        "log_only": true,
+        "weight": 0.0,
+        "warmup_epochs": 0,
+        "ramp_epochs": 0,
+        "unmatched_weight": 1.0,
+        "diagonal_factor": 0.5,
+        "normalize": true
+      },
+      "betti_h1": {
+        "enabled": false,
+        "log_only": true,
+        "weight": 0.0,
+        "warmup_epochs": 0,
+        "ramp_epochs": 0,
+        "false_positive_weight": 1.0,
+        "false_negative_weight": 1.0,
+        "diagonal_factor": 0.5,
+        "normalize": true
+      }
+    },
+    "evaluation": {
+      "interval_epochs": 5,
+      "node_threshold": 0.5,
+      "edge_threshold": 0.5,
+      "node_type_degree_caps": false,
+      "node_type_degree_penalty": 0.0,
+      "bn_calibration_batches": 0,
+      "training_metrics": {
+        "save_f1_checkpoints": false,
+        "enabled": false,
+        "dataset": "synthetic_mri",
+        "max_samples": 200,
+        "selection_metric": "edge_mAP",
+        "selection_mode": "max",
+        "save_best_checkpoint": false
+      },
+      "protocol": {
+        "f1_iou_threshold": 0.5,
+        "iou_thresholds": [
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8,
+          0.85,
+          0.9,
+          0.95
+        ],
+        "max_detections": 40,
+        "target_node_size": 0.2,
+        "edge_half_width": 0.1,
+        "smd_points": 100,
+        "smd_epsilon": 1e-07,
+        "smd_iterations": 100,
+        "folds": 5
+      }
+    }
+  },
+  "samples": [
+    "wide01_00",
+    "wide01_01"
+  ],
+  "token_shape": [
+    2,
+    18,
+    64
+  ],
+  "losses": {
+    "class": 0.24672327935695648,
+    "nodes": 0.5369203090667725,
+    "boxes": 1.2559945583343506,
+    "cardinality": 0.5,
+    "edges": 0.7476227283477783,
+    "degree": -0.0,
+    "spline": 0.42315879464149475,
+    "spline_control_distance": 18.38689613342285,
+    "spline_endpoint_distance": 18.929582595825195,
+    "spline_positive_edges": 9.0,
+    "betti_h0": -0.0,
+    "betti_h0_weighted": -0.0,
+    "betti_h1": -0.0,
+    "betti_h1_weighted": -0.0,
+    "total": 11.338189125061035
+  },
+  "checks": [
+    "native_BCHW_forward_backward",
+    "modern_focal_and_matched_CE",
+    "zero_Axyz_identity",
+    "optional_refinement_shared_initialization_parity",
+    "classification_unchanged",
+    "geometry_graph_only_gradient_isolation",
+    "finite_gradients",
+    "symmetric_relation_logits",
+    "spline_order_invariance",
+    "exact_spline_endpoints",
+    "strict_legacy_core_state_replay",
+    "eval_buffer_invariance",
+    "real_augmented_forward"
+  ]
+}

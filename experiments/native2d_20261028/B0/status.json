@@ -1,0 +1,8 @@
+{
+  "state": "complete",
+  "step": 6000,
+  "budget": 6000,
+  "elapsed": 436.20596552989446,
+  "exposure_sha256": "3e39df64203284b64927c88fc02c9ad68203758ccb5902940bad7971edd5a740",
+  "initialization_sha256": "cbe09d04296ccc975783dd0d991a844ba44a13cc32525710993e4006e07bcc28"
+}

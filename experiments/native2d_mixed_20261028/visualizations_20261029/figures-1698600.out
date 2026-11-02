@@ -1,0 +1,13 @@
+CHECKPOINT avwide_scratch_B0
+CHECKPOINT avwide_scratch_Axyz
+CHECKPOINT avwide_mixed_B0
+CHECKPOINT avwide_mixed_Axyz
+CHECKPOINT reaver_scratch_B0
+CHECKPOINT reaver_scratch_Axyz
+CHECKPOINT reaver_mixed_B0
+CHECKPOINT reaver_mixed_Axyz
+CHECKPOINT octasynth_scratch_B0
+CHECKPOINT octasynth_scratch_Axyz
+CHECKPOINT octasynth_mixed_B0
+CHECKPOINT octasynth_mixed_Axyz
+OUTPUT /lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/experiments/native2d_mixed_20261028/visualizations_20261029

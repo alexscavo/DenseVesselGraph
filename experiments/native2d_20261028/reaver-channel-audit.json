@@ -1,0 +1,1115 @@
+[
+  {
+    "name": "diaphragm_60x_1.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "diaphragm_60x_2.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "diaphragm_60x_3.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "diaphragm_60x_4.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "diaphragm_60x_5.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "diaphragm_60x_6.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "heart_60x_1.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "heart_60x_2.tif",
+    "raw_blue_exact": false,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        85,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "heart_60x_3.tif",
+    "raw_blue_exact": false,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "heart_60x_4.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "heart_60x_5.tif",
+    "raw_blue_exact": false,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "heart_60x_6.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "ing_fat_20x_1.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        1,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": null,
+    "spacing_tiff": [
+      0.013888888888888888,
+      0.013888888888888888
+    ],
+    "csv_umppix": [
+      0.310791038
+    ],
+    "tags": {
+      "ResolutionUnit": "2"
+    }
+  },
+  {
+    "name": "ing_fat_20x_2.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        1,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": null,
+    "spacing_tiff": [
+      0.013888888888888888,
+      0.013888888888888888
+    ],
+    "csv_umppix": [
+      0.310791038
+    ],
+    "tags": {
+      "ResolutionUnit": "2"
+    }
+  },
+  {
+    "name": "ing_fat_20x_3.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": null,
+    "spacing_tiff": [
+      0.013888888888888888,
+      0.013888888888888888
+    ],
+    "csv_umppix": [
+      0.310791038
+    ],
+    "tags": {
+      "ResolutionUnit": "2"
+    }
+  },
+  {
+    "name": "ing_fat_60x_1.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        1,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": null,
+    "spacing_tiff": [
+      0.013888888888888888,
+      0.013888888888888888
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ResolutionUnit": "2"
+    }
+  },
+  {
+    "name": "ing_fat_60x_2.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        1,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": null,
+    "spacing_tiff": [
+      0.013888888888888888,
+      0.013888888888888888
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ResolutionUnit": "2"
+    }
+  },
+  {
+    "name": "ing_fat_60x_3.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": null,
+    "spacing_tiff": [
+      0.013888888888888888,
+      0.013888888888888888
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ResolutionUnit": "2"
+    }
+  },
+  {
+    "name": "liver_60x_1.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "liver_60x_2.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "liver_60x_3.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "liver_60x_4.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "liver_60x_5.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "liver_60x_6.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "periton_cav_20x_1.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        1,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": null,
+    "spacing_tiff": [
+      0.013888888888888888,
+      0.013888888888888888
+    ],
+    "csv_umppix": [
+      0.310791038
+    ],
+    "tags": {
+      "ResolutionUnit": "2"
+    }
+  },
+  {
+    "name": "periton_cav_20x_2.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        1,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": null,
+    "spacing_tiff": [
+      0.013888888888888888,
+      0.013888888888888888
+    ],
+    "csv_umppix": [
+      0.310791038
+    ],
+    "tags": {
+      "ResolutionUnit": "2"
+    }
+  },
+  {
+    "name": "periton_cav_20x_3.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": null,
+    "spacing_tiff": [
+      0.013888888888888888,
+      0.013888888888888888
+    ],
+    "csv_umppix": [
+      0.310791038
+    ],
+    "tags": {
+      "ResolutionUnit": "2"
+    }
+  },
+  {
+    "name": "periton_cav_60x_1.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        1,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": null,
+    "spacing_tiff": [
+      0.013888888888888888,
+      0.013888888888888888
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ResolutionUnit": "2"
+    }
+  },
+  {
+    "name": "periton_cav_60x_2.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        1,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": null,
+    "spacing_tiff": [
+      0.013888888888888888,
+      0.013888888888888888
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ResolutionUnit": "2"
+    }
+  },
+  {
+    "name": "periton_cav_60x_3.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": null,
+    "spacing_tiff": [
+      0.013888888888888888,
+      0.013888888888888888
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ResolutionUnit": "2"
+    }
+  },
+  {
+    "name": "retina_20x_1.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.3107910377810017,
+      0.3107910377810017
+    ],
+    "csv_umppix": [
+      0.310791038
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "retina_20x_2.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.3107910377810017,
+      0.3107910377810017
+    ],
+    "csv_umppix": [
+      0.310791038
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "retina_20x_3.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.3107910377810017,
+      0.3107910377810017
+    ],
+    "csv_umppix": [
+      0.310791038
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "retina_60x_1.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "retina_60x_2.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  },
+  {
+    "name": "retina_60x_3.tif",
+    "raw_blue_exact": true,
+    "shape": [
+      1024,
+      1024,
+      3
+    ],
+    "unique_rg": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ],
+    "imagej_unit": "micron",
+    "spacing_tiff": [
+      0.20719402518733449,
+      0.20719402518733449
+    ],
+    "csv_umppix": [
+      0.207194025
+    ],
+    "tags": {
+      "ImageDescription": "ImageJ=1.52e\nunit=micron",
+      "ResolutionUnit": "1"
+    }
+  }
+]

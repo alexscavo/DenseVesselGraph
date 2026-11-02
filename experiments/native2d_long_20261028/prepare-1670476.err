@@ -1,0 +1,30 @@
+Loading pytorch-gpu/py3/2.3.1
+  Loading requirement: cuda/12.4.1 nccl/2.21.5-1-cuda cudnn/9.2.0.82-cuda
+    gcc/11.5.0 openmpi/4.1.5-cuda intel-oneapi-mkl/2024.1 magma/2.8.0-cuda
+    sox/14.4.2 hdf5/1.12.0-mpi-cuda libjpeg-turbo/2.1.3 ffmpeg/6.1.1
+/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/site-packages/paramiko/pkey.py:82: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from this module in 48.0.0.
+  "cipher": algorithms.TripleDES,
+/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/site-packages/paramiko/transport.py:219: CryptographyDeprecationWarning: Blowfish has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.Blowfish and will be removed from this module in 45.0.0.
+  "class": algorithms.Blowfish,
+/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/site-packages/paramiko/transport.py:243: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from this module in 48.0.0.
+  "class": algorithms.TripleDES,
+Traceback (most recent call last):
+  File "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/scripts/prepare_native2d_long.py", line 164, in <module>
+    octa();plants();plan()
+           ^^^^^^^^
+  File "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/scripts/prepare_native2d_long.py", line 93, in plants
+    graph=crop_graph(graph,[0,0],[128,128]);entry=split+'_'+path.stem+'.npz';packed.writestr(entry,encode(graph))
+                                                                                                   ^^^^^^^^^^^^^
+  File "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/scripts/prepare_native2d_long.py", line 63, in encode
+    stream=io.BytesIO();save_target(stream,graph,[128,128]);data=stream.getvalue()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/native2d/targets.py", line 162, in save_target
+    controls=np.stack([fit_controls(p*spacing) / spacing / size for p in graph.paths]) if graph.paths else np.empty((0,8,2))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/native2d/targets.py", line 162, in <listcomp>
+    controls=np.stack([fit_controls(p*spacing) / spacing / size for p in graph.paths]) if graph.paths else np.empty((0,8,2))
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fswork/projects/rech/vnc/upz25mj/projects/GNBM/gnbm-native-2d-20261027/native2d/targets.py", line 137, in fit_controls
+    if len(path)<2:raise ValueError('Cannot fit a zero-length branch')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Cannot fit a zero-length branch

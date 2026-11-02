@@ -1,0 +1,4642 @@
+{
+  "purpose": "GT geometry approximation only; not prediction performance",
+  "seed": 364505,
+  "branches": 256,
+  "units": "pixel",
+  "tolerance": 1.0,
+  "sampling": 0.25,
+  "summary": {
+    "K8": {
+      "curve_f1": 0.9947106105031139,
+      "precision": 0.9951335346369207,
+      "recall": 0.9942880456956344,
+      "max_distance_quantiles": [
+        0.16930594340580496,
+        0.6875794723690576,
+        1.455010066479295,
+        2.658920432572546
+      ]
+    },
+    "chord": {
+      "curve_f1": 0.5308345489990767,
+      "precision": 0.5381428442763218,
+      "recall": 0.5237220959375182,
+      "max_distance_quantiles": [
+        1.3530600535226607,
+        5.413472740397509,
+        13.219399477148723,
+        25.42511728520469
+      ]
+    }
+  },
+  "samples": [
+    {
+      "sample_id": "wide01_x0_y128",
+      "edge": 0,
+      "K8": {
+        "pred_samples": 235,
+        "gt_samples": 241,
+        "pred_supported": 235,
+        "gt_supported": 241,
+        "max_symmetric_distance": 0.747891911602277
+      },
+      "chord": {
+        "pred_samples": 227,
+        "gt_samples": 241,
+        "pred_supported": 33,
+        "gt_supported": 34,
+        "max_symmetric_distance": 5.326858308504505
+      }
+    },
+    {
+      "sample_id": "wide01_x384_y384",
+      "edge": 29,
+      "K8": {
+        "pred_samples": 22,
+        "gt_samples": 22,
+        "pred_supported": 22,
+        "gt_supported": 22,
+        "max_symmetric_distance": 0.021092185039228425
+      },
+      "chord": {
+        "pred_samples": 21,
+        "gt_samples": 22,
+        "pred_supported": 21,
+        "gt_supported": 22,
+        "max_symmetric_distance": 0.33605512605758997
+      }
+    },
+    {
+      "sample_id": "wide01_x1152_y384",
+      "edge": 23,
+      "K8": {
+        "pred_samples": 39,
+        "gt_samples": 39,
+        "pred_supported": 39,
+        "gt_supported": 39,
+        "max_symmetric_distance": 0.07062701631073083
+      },
+      "chord": {
+        "pred_samples": 38,
+        "gt_samples": 39,
+        "pred_supported": 38,
+        "gt_supported": 39,
+        "max_symmetric_distance": 0.9925340228515672
+      }
+    },
+    {
+      "sample_id": "wide02_x384_y256",
+      "edge": 4,
+      "K8": {
+        "pred_samples": 336,
+        "gt_samples": 341,
+        "pred_supported": 336,
+        "gt_supported": 341,
+        "max_symmetric_distance": 0.8894348216563807
+      },
+      "chord": {
+        "pred_samples": 333,
+        "gt_samples": 341,
+        "pred_supported": 103,
+        "gt_supported": 102,
+        "max_symmetric_distance": 4.511380272290658
+      }
+    },
+    {
+      "sample_id": "wide02_x896_y256",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 111,
+        "gt_samples": 111,
+        "pred_supported": 111,
+        "gt_supported": 111,
+        "max_symmetric_distance": 0.2506205889851017
+      },
+      "chord": {
+        "pred_samples": 108,
+        "gt_samples": 111,
+        "pred_supported": 75,
+        "gt_supported": 75,
+        "max_symmetric_distance": 1.866106368573792
+      }
+    },
+    {
+      "sample_id": "wide02_x896_y256",
+      "edge": 4,
+      "K8": {
+        "pred_samples": 176,
+        "gt_samples": 177,
+        "pred_supported": 176,
+        "gt_supported": 177,
+        "max_symmetric_distance": 0.20987043179682852
+      },
+      "chord": {
+        "pred_samples": 171,
+        "gt_samples": 177,
+        "pred_supported": 49,
+        "gt_supported": 50,
+        "max_symmetric_distance": 4.194887120781681
+      }
+    },
+    {
+      "sample_id": "wide02_x384_y384",
+      "edge": 12,
+      "K8": {
+        "pred_samples": 21,
+        "gt_samples": 21,
+        "pred_supported": 21,
+        "gt_supported": 21,
+        "max_symmetric_distance": 0.025776450740244403
+      },
+      "chord": {
+        "pred_samples": 21,
+        "gt_samples": 21,
+        "pred_supported": 21,
+        "gt_supported": 21,
+        "max_symmetric_distance": 0.3239377503777935
+      }
+    },
+    {
+      "sample_id": "wide02_x896_y384",
+      "edge": 21,
+      "K8": {
+        "pred_samples": 74,
+        "gt_samples": 74,
+        "pred_supported": 74,
+        "gt_supported": 74,
+        "max_symmetric_distance": 0.040404711200994196
+      },
+      "chord": {
+        "pred_samples": 73,
+        "gt_samples": 74,
+        "pred_supported": 73,
+        "gt_supported": 74,
+        "max_symmetric_distance": 0.7133619644286352
+      }
+    },
+    {
+      "sample_id": "wide02_x640_y512",
+      "edge": 20,
+      "K8": {
+        "pred_samples": 44,
+        "gt_samples": 44,
+        "pred_supported": 44,
+        "gt_supported": 44,
+        "max_symmetric_distance": 1.163920457993605e-13
+      },
+      "chord": {
+        "pred_samples": 44,
+        "gt_samples": 44,
+        "pred_supported": 44,
+        "gt_supported": 44,
+        "max_symmetric_distance": 6.4047456679787536e-15
+      }
+    },
+    {
+      "sample_id": "wide02_x0_y640",
+      "edge": 0,
+      "K8": {
+        "pred_samples": 64,
+        "gt_samples": 64,
+        "pred_supported": 64,
+        "gt_supported": 64,
+        "max_symmetric_distance": 0.045881573725295235
+      },
+      "chord": {
+        "pred_samples": 63,
+        "gt_samples": 64,
+        "pred_supported": 63,
+        "gt_supported": 64,
+        "max_symmetric_distance": 0.5900794112569422
+      }
+    },
+    {
+      "sample_id": "wide02_x896_y640",
+      "edge": 6,
+      "K8": {
+        "pred_samples": 370,
+        "gt_samples": 370,
+        "pred_supported": 370,
+        "gt_supported": 370,
+        "max_symmetric_distance": 0.22536131984397748
+      },
+      "chord": {
+        "pred_samples": 367,
+        "gt_samples": 370,
+        "pred_supported": 103,
+        "gt_supported": 103,
+        "max_symmetric_distance": 4.260861333530566
+      }
+    },
+    {
+      "sample_id": "wide03_x512_y0",
+      "edge": 9,
+      "K8": {
+        "pred_samples": 95,
+        "gt_samples": 95,
+        "pred_supported": 95,
+        "gt_supported": 95,
+        "max_symmetric_distance": 0.1683737669099472
+      },
+      "chord": {
+        "pred_samples": 93,
+        "gt_samples": 95,
+        "pred_supported": 30,
+        "gt_supported": 30,
+        "max_symmetric_distance": 2.0048342364043656
+      }
+    },
+    {
+      "sample_id": "wide03_x896_y0",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 368,
+        "gt_samples": 369,
+        "pred_supported": 368,
+        "gt_supported": 369,
+        "max_symmetric_distance": 0.4449029417294513
+      },
+      "chord": {
+        "pred_samples": 364,
+        "gt_samples": 369,
+        "pred_supported": 209,
+        "gt_supported": 210,
+        "max_symmetric_distance": 3.919623249741958
+      }
+    },
+    {
+      "sample_id": "wide03_x0_y256",
+      "edge": 3,
+      "K8": {
+        "pred_samples": 7,
+        "gt_samples": 7,
+        "pred_supported": 7,
+        "gt_supported": 7,
+        "max_symmetric_distance": 3.0298513174676085e-14
+      },
+      "chord": {
+        "pred_samples": 7,
+        "gt_samples": 7,
+        "pred_supported": 7,
+        "gt_supported": 7,
+        "max_symmetric_distance": 4.965068306494546e-16
+      }
+    },
+    {
+      "sample_id": "wide03_x640_y256",
+      "edge": 8,
+      "K8": {
+        "pred_samples": 111,
+        "gt_samples": 112,
+        "pred_supported": 111,
+        "gt_supported": 112,
+        "max_symmetric_distance": 0.2103328119906208
+      },
+      "chord": {
+        "pred_samples": 108,
+        "gt_samples": 112,
+        "pred_supported": 59,
+        "gt_supported": 59,
+        "max_symmetric_distance": 3.0023058466014985
+      }
+    },
+    {
+      "sample_id": "wide03_x1024_y256",
+      "edge": 39,
+      "K8": {
+        "pred_samples": 35,
+        "gt_samples": 35,
+        "pred_supported": 35,
+        "gt_supported": 35,
+        "max_symmetric_distance": 0.011688867668129438
+      },
+      "chord": {
+        "pred_samples": 35,
+        "gt_samples": 35,
+        "pred_supported": 35,
+        "gt_supported": 35,
+        "max_symmetric_distance": 0.21080663512348963
+      }
+    },
+    {
+      "sample_id": "wide03_x1423_y256",
+      "edge": 3,
+      "K8": {
+        "pred_samples": 53,
+        "gt_samples": 53,
+        "pred_supported": 53,
+        "gt_supported": 53,
+        "max_symmetric_distance": 0.023909740869010772
+      },
+      "chord": {
+        "pred_samples": 53,
+        "gt_samples": 53,
+        "pred_supported": 53,
+        "gt_supported": 53,
+        "max_symmetric_distance": 0.2559980390601757
+      }
+    },
+    {
+      "sample_id": "wide03_x896_y384",
+      "edge": 15,
+      "K8": {
+        "pred_samples": 107,
+        "gt_samples": 108,
+        "pred_supported": 107,
+        "gt_supported": 108,
+        "max_symmetric_distance": 0.3171943723296769
+      },
+      "chord": {
+        "pred_samples": 106,
+        "gt_samples": 108,
+        "pred_supported": 103,
+        "gt_supported": 103,
+        "max_symmetric_distance": 1.1436579414834998
+      }
+    },
+    {
+      "sample_id": "wide03_x1280_y384",
+      "edge": 19,
+      "K8": {
+        "pred_samples": 196,
+        "gt_samples": 196,
+        "pred_supported": 196,
+        "gt_supported": 196,
+        "max_symmetric_distance": 0.1320342480597412
+      },
+      "chord": {
+        "pred_samples": 195,
+        "gt_samples": 196,
+        "pred_supported": 142,
+        "gt_supported": 143,
+        "max_symmetric_distance": 1.3881169073589148
+      }
+    },
+    {
+      "sample_id": "wide03_x640_y512",
+      "edge": 24,
+      "K8": {
+        "pred_samples": 331,
+        "gt_samples": 341,
+        "pred_supported": 326,
+        "gt_supported": 331,
+        "max_symmetric_distance": 1.6719559796213037
+      },
+      "chord": {
+        "pred_samples": 326,
+        "gt_samples": 341,
+        "pred_supported": 129,
+        "gt_supported": 127,
+        "max_symmetric_distance": 4.75384520860674
+      }
+    },
+    {
+      "sample_id": "wide03_x640_y640",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 442,
+        "gt_samples": 444,
+        "pred_supported": 442,
+        "gt_supported": 444,
+        "max_symmetric_distance": 0.6928077268254301
+      },
+      "chord": {
+        "pred_samples": 402,
+        "gt_samples": 444,
+        "pred_supported": 17,
+        "gt_supported": 17,
+        "max_symmetric_distance": 21.422252952081237
+      }
+    },
+    {
+      "sample_id": "wide03_x768_y768",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 215,
+        "gt_samples": 215,
+        "pred_supported": 215,
+        "gt_supported": 215,
+        "max_symmetric_distance": 0.19338313242829866
+      },
+      "chord": {
+        "pred_samples": 212,
+        "gt_samples": 215,
+        "pred_supported": 32,
+        "gt_supported": 32,
+        "max_symmetric_distance": 3.2429574861966373
+      }
+    },
+    {
+      "sample_id": "wide03_x1152_y768",
+      "edge": 5,
+      "K8": {
+        "pred_samples": 363,
+        "gt_samples": 365,
+        "pred_supported": 363,
+        "gt_supported": 365,
+        "max_symmetric_distance": 0.9416664353378438
+      },
+      "chord": {
+        "pred_samples": 355,
+        "gt_samples": 365,
+        "pred_supported": 41,
+        "gt_supported": 41,
+        "max_symmetric_distance": 8.581864436774142
+      }
+    },
+    {
+      "sample_id": "wide03_x1280_y809",
+      "edge": 0,
+      "K8": {
+        "pred_samples": 191,
+        "gt_samples": 191,
+        "pred_supported": 191,
+        "gt_supported": 191,
+        "max_symmetric_distance": 0.16789658645396233
+      },
+      "chord": {
+        "pred_samples": 190,
+        "gt_samples": 191,
+        "pred_supported": 190,
+        "gt_supported": 191,
+        "max_symmetric_distance": 0.9042539336844669
+      }
+    },
+    {
+      "sample_id": "wide04_x0_y0",
+      "edge": 4,
+      "K8": {
+        "pred_samples": 97,
+        "gt_samples": 97,
+        "pred_supported": 97,
+        "gt_supported": 97,
+        "max_symmetric_distance": 0.07058791173296707
+      },
+      "chord": {
+        "pred_samples": 97,
+        "gt_samples": 97,
+        "pred_supported": 97,
+        "gt_supported": 97,
+        "max_symmetric_distance": 0.5196494163327536
+      }
+    },
+    {
+      "sample_id": "wide04_x128_y0",
+      "edge": 22,
+      "K8": {
+        "pred_samples": 38,
+        "gt_samples": 38,
+        "pred_supported": 38,
+        "gt_supported": 38,
+        "max_symmetric_distance": 0.011416818324440671
+      },
+      "chord": {
+        "pred_samples": 38,
+        "gt_samples": 38,
+        "pred_supported": 38,
+        "gt_supported": 38,
+        "max_symmetric_distance": 0.16324273875330464
+      }
+    },
+    {
+      "sample_id": "wide04_x768_y0",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 125,
+        "gt_samples": 126,
+        "pred_supported": 125,
+        "gt_supported": 126,
+        "max_symmetric_distance": 0.2823858510683428
+      },
+      "chord": {
+        "pred_samples": 123,
+        "gt_samples": 126,
+        "pred_supported": 78,
+        "gt_supported": 78,
+        "max_symmetric_distance": 1.6990794846349195
+      }
+    },
+    {
+      "sample_id": "wide04_x384_y256",
+      "edge": 13,
+      "K8": {
+        "pred_samples": 79,
+        "gt_samples": 80,
+        "pred_supported": 79,
+        "gt_supported": 80,
+        "max_symmetric_distance": 0.1699563294639743
+      },
+      "chord": {
+        "pred_samples": 75,
+        "gt_samples": 80,
+        "pred_supported": 47,
+        "gt_supported": 46,
+        "max_symmetric_distance": 2.3118666430796617
+      }
+    },
+    {
+      "sample_id": "wide04_x640_y256",
+      "edge": 18,
+      "K8": {
+        "pred_samples": 14,
+        "gt_samples": 14,
+        "pred_supported": 14,
+        "gt_supported": 14,
+        "max_symmetric_distance": 7.223415083023163e-14
+      },
+      "chord": {
+        "pred_samples": 14,
+        "gt_samples": 14,
+        "pred_supported": 14,
+        "gt_supported": 14,
+        "max_symmetric_distance": 4.965068306494546e-16
+      }
+    },
+    {
+      "sample_id": "wide04_x512_y384",
+      "edge": 12,
+      "K8": {
+        "pred_samples": 91,
+        "gt_samples": 91,
+        "pred_supported": 91,
+        "gt_supported": 91,
+        "max_symmetric_distance": 0.09354706161397612
+      },
+      "chord": {
+        "pred_samples": 88,
+        "gt_samples": 91,
+        "pred_supported": 28,
+        "gt_supported": 28,
+        "max_symmetric_distance": 2.4917763791154113
+      }
+    },
+    {
+      "sample_id": "wide04_x1024_y512",
+      "edge": 0,
+      "K8": {
+        "pred_samples": 86,
+        "gt_samples": 86,
+        "pred_supported": 86,
+        "gt_supported": 86,
+        "max_symmetric_distance": 0.17524443204468415
+      },
+      "chord": {
+        "pred_samples": 79,
+        "gt_samples": 86,
+        "pred_supported": 33,
+        "gt_supported": 32,
+        "max_symmetric_distance": 3.854151287393539
+      }
+    },
+    {
+      "sample_id": "wide04_x896_y603",
+      "edge": 0,
+      "K8": {
+        "pred_samples": 524,
+        "gt_samples": 534,
+        "pred_supported": 456,
+        "gt_supported": 457,
+        "max_symmetric_distance": 2.1686493527862263
+      },
+      "chord": {
+        "pred_samples": 519,
+        "gt_samples": 534,
+        "pred_supported": 180,
+        "gt_supported": 179,
+        "max_symmetric_distance": 8.371805758949167
+      }
+    },
+    {
+      "sample_id": "wide05_x896_y128",
+      "edge": 6,
+      "K8": {
+        "pred_samples": 13,
+        "gt_samples": 13,
+        "pred_supported": 13,
+        "gt_supported": 13,
+        "max_symmetric_distance": 7.034014214903312e-14
+      },
+      "chord": {
+        "pred_samples": 13,
+        "gt_samples": 13,
+        "pred_supported": 13,
+        "gt_supported": 13,
+        "max_symmetric_distance": 0.0
+      }
+    },
+    {
+      "sample_id": "wide05_x896_y256",
+      "edge": 12,
+      "K8": {
+        "pred_samples": 169,
+        "gt_samples": 170,
+        "pred_supported": 169,
+        "gt_supported": 170,
+        "max_symmetric_distance": 0.416901024627579
+      },
+      "chord": {
+        "pred_samples": 159,
+        "gt_samples": 170,
+        "pred_supported": 14,
+        "gt_supported": 14,
+        "max_symmetric_distance": 4.704327536200549
+      }
+    },
+    {
+      "sample_id": "wide05_x896_y256",
+      "edge": 23,
+      "K8": {
+        "pred_samples": 91,
+        "gt_samples": 91,
+        "pred_supported": 91,
+        "gt_supported": 91,
+        "max_symmetric_distance": 0.16865555734763563
+      },
+      "chord": {
+        "pred_samples": 89,
+        "gt_samples": 91,
+        "pred_supported": 50,
+        "gt_supported": 50,
+        "max_symmetric_distance": 1.7052141717699272
+      }
+    },
+    {
+      "sample_id": "wide05_x1024_y256",
+      "edge": 4,
+      "K8": {
+        "pred_samples": 122,
+        "gt_samples": 122,
+        "pred_supported": 122,
+        "gt_supported": 122,
+        "max_symmetric_distance": 0.17016874884484445
+      },
+      "chord": {
+        "pred_samples": 118,
+        "gt_samples": 122,
+        "pred_supported": 41,
+        "gt_supported": 41,
+        "max_symmetric_distance": 3.4313746909064053
+      }
+    },
+    {
+      "sample_id": "wide05_x1152_y256",
+      "edge": 5,
+      "K8": {
+        "pred_samples": 95,
+        "gt_samples": 95,
+        "pred_supported": 95,
+        "gt_supported": 95,
+        "max_symmetric_distance": 0.11894571945462644
+      },
+      "chord": {
+        "pred_samples": 93,
+        "gt_samples": 95,
+        "pred_supported": 44,
+        "gt_supported": 44,
+        "max_symmetric_distance": 2.124482602710515
+      }
+    },
+    {
+      "sample_id": "wide05_x512_y384",
+      "edge": 32,
+      "K8": {
+        "pred_samples": 99,
+        "gt_samples": 99,
+        "pred_supported": 99,
+        "gt_supported": 99,
+        "max_symmetric_distance": 0.10705177965136183
+      },
+      "chord": {
+        "pred_samples": 96,
+        "gt_samples": 99,
+        "pred_supported": 34,
+        "gt_supported": 34,
+        "max_symmetric_distance": 2.7528802836741018
+      }
+    },
+    {
+      "sample_id": "wide05_x640_y384",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 150,
+        "gt_samples": 151,
+        "pred_supported": 150,
+        "gt_supported": 151,
+        "max_symmetric_distance": 0.3072043167526456
+      },
+      "chord": {
+        "pred_samples": 141,
+        "gt_samples": 151,
+        "pred_supported": 22,
+        "gt_supported": 22,
+        "max_symmetric_distance": 5.728333102174888
+      }
+    },
+    {
+      "sample_id": "wide05_x896_y384",
+      "edge": 16,
+      "K8": {
+        "pred_samples": 120,
+        "gt_samples": 120,
+        "pred_supported": 120,
+        "gt_supported": 120,
+        "max_symmetric_distance": 0.09770873148648739
+      },
+      "chord": {
+        "pred_samples": 119,
+        "gt_samples": 120,
+        "pred_supported": 119,
+        "gt_supported": 120,
+        "max_symmetric_distance": 0.6904959205983957
+      }
+    },
+    {
+      "sample_id": "wide05_x512_y512",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 78,
+        "gt_samples": 78,
+        "pred_supported": 78,
+        "gt_supported": 78,
+        "max_symmetric_distance": 0.037136576032023125
+      },
+      "chord": {
+        "pred_samples": 78,
+        "gt_samples": 78,
+        "pred_supported": 78,
+        "gt_supported": 78,
+        "max_symmetric_distance": 0.2578402324979522
+      }
+    },
+    {
+      "sample_id": "wide05_x512_y512",
+      "edge": 24,
+      "K8": {
+        "pred_samples": 81,
+        "gt_samples": 82,
+        "pred_supported": 81,
+        "gt_supported": 82,
+        "max_symmetric_distance": 0.16117396988169871
+      },
+      "chord": {
+        "pred_samples": 80,
+        "gt_samples": 82,
+        "pred_supported": 80,
+        "gt_supported": 82,
+        "max_symmetric_distance": 0.8459327514561306
+      }
+    },
+    {
+      "sample_id": "wide05_x512_y640",
+      "edge": 3,
+      "K8": {
+        "pred_samples": 58,
+        "gt_samples": 58,
+        "pred_supported": 58,
+        "gt_supported": 58,
+        "max_symmetric_distance": 0.06217294837829382
+      },
+      "chord": {
+        "pred_samples": 58,
+        "gt_samples": 58,
+        "pred_supported": 58,
+        "gt_supported": 58,
+        "max_symmetric_distance": 0.42088633433835715
+      }
+    },
+    {
+      "sample_id": "wide06_x512_y128",
+      "edge": 6,
+      "K8": {
+        "pred_samples": 16,
+        "gt_samples": 16,
+        "pred_supported": 16,
+        "gt_supported": 16,
+        "max_symmetric_distance": 7.62000911181816e-14
+      },
+      "chord": {
+        "pred_samples": 16,
+        "gt_samples": 16,
+        "pred_supported": 16,
+        "gt_supported": 16,
+        "max_symmetric_distance": 8.005932084973442e-15
+      }
+    },
+    {
+      "sample_id": "wide06_x768_y256",
+      "edge": 10,
+      "K8": {
+        "pred_samples": 227,
+        "gt_samples": 231,
+        "pred_supported": 227,
+        "gt_supported": 230,
+        "max_symmetric_distance": 1.0544808790463394
+      },
+      "chord": {
+        "pred_samples": 218,
+        "gt_samples": 231,
+        "pred_supported": 22,
+        "gt_supported": 22,
+        "max_symmetric_distance": 6.28546252590934
+      }
+    },
+    {
+      "sample_id": "wide06_x1152_y256",
+      "edge": 7,
+      "K8": {
+        "pred_samples": 520,
+        "gt_samples": 526,
+        "pred_supported": 520,
+        "gt_supported": 526,
+        "max_symmetric_distance": 0.9896058607529492
+      },
+      "chord": {
+        "pred_samples": 519,
+        "gt_samples": 526,
+        "pred_supported": 151,
+        "gt_supported": 151,
+        "max_symmetric_distance": 3.998249952908073
+      }
+    },
+    {
+      "sample_id": "wide06_x896_y384",
+      "edge": 8,
+      "K8": {
+        "pred_samples": 23,
+        "gt_samples": 23,
+        "pred_supported": 23,
+        "gt_supported": 23,
+        "max_symmetric_distance": 6.791033416424777e-14
+      },
+      "chord": {
+        "pred_samples": 23,
+        "gt_samples": 23,
+        "pred_supported": 23,
+        "gt_supported": 23,
+        "max_symmetric_distance": 1.0731900677991188e-14
+      }
+    },
+    {
+      "sample_id": "wide06_x1152_y384",
+      "edge": 11,
+      "K8": {
+        "pred_samples": 239,
+        "gt_samples": 241,
+        "pred_supported": 239,
+        "gt_supported": 241,
+        "max_symmetric_distance": 0.6624933035078386
+      },
+      "chord": {
+        "pred_samples": 235,
+        "gt_samples": 241,
+        "pred_supported": 39,
+        "gt_supported": 39,
+        "max_symmetric_distance": 4.0156916806748875
+      }
+    },
+    {
+      "sample_id": "wide06_x1152_y384",
+      "edge": 16,
+      "K8": {
+        "pred_samples": 56,
+        "gt_samples": 56,
+        "pred_supported": 56,
+        "gt_supported": 56,
+        "max_symmetric_distance": 0.02415034805260485
+      },
+      "chord": {
+        "pred_samples": 56,
+        "gt_samples": 56,
+        "pred_supported": 56,
+        "gt_supported": 56,
+        "max_symmetric_distance": 0.29275258906366625
+      }
+    },
+    {
+      "sample_id": "wide06_x128_y512",
+      "edge": 11,
+      "K8": {
+        "pred_samples": 154,
+        "gt_samples": 154,
+        "pred_supported": 154,
+        "gt_supported": 154,
+        "max_symmetric_distance": 0.17573366715500915
+      },
+      "chord": {
+        "pred_samples": 152,
+        "gt_samples": 154,
+        "pred_supported": 59,
+        "gt_supported": 59,
+        "max_symmetric_distance": 2.4020060128567766
+      }
+    },
+    {
+      "sample_id": "wide06_x0_y583",
+      "edge": 8,
+      "K8": {
+        "pred_samples": 160,
+        "gt_samples": 160,
+        "pred_supported": 160,
+        "gt_supported": 160,
+        "max_symmetric_distance": 0.15719314539007959
+      },
+      "chord": {
+        "pred_samples": 159,
+        "gt_samples": 160,
+        "pred_supported": 159,
+        "gt_supported": 160,
+        "max_symmetric_distance": 0.9610562897049367
+      }
+    },
+    {
+      "sample_id": "wide06_x128_y583",
+      "edge": 15,
+      "K8": {
+        "pred_samples": 20,
+        "gt_samples": 20,
+        "pred_supported": 20,
+        "gt_supported": 20,
+        "max_symmetric_distance": 3.3164044210781516e-15
+      },
+      "chord": {
+        "pred_samples": 20,
+        "gt_samples": 20,
+        "pred_supported": 20,
+        "gt_supported": 20,
+        "max_symmetric_distance": 8.881784197001252e-16
+      }
+    },
+    {
+      "sample_id": "wide06_x512_y583",
+      "edge": 18,
+      "K8": {
+        "pred_samples": 60,
+        "gt_samples": 60,
+        "pred_supported": 60,
+        "gt_supported": 60,
+        "max_symmetric_distance": 0.22458151086703979
+      },
+      "chord": {
+        "pred_samples": 57,
+        "gt_samples": 60,
+        "pred_supported": 32,
+        "gt_supported": 32,
+        "max_symmetric_distance": 2.1149047025173924
+      }
+    },
+    {
+      "sample_id": "wide06_x768_y583",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 19,
+        "gt_samples": 19,
+        "pred_supported": 19,
+        "gt_supported": 19,
+        "max_symmetric_distance": 1.133150916076021e-13
+      },
+      "chord": {
+        "pred_samples": 19,
+        "gt_samples": 19,
+        "pred_supported": 19,
+        "gt_supported": 19,
+        "max_symmetric_distance": 6.778727589240029e-15
+      }
+    },
+    {
+      "sample_id": "wide08_x256_y256",
+      "edge": 16,
+      "K8": {
+        "pred_samples": 140,
+        "gt_samples": 140,
+        "pred_supported": 140,
+        "gt_supported": 140,
+        "max_symmetric_distance": 0.10593564419967016
+      },
+      "chord": {
+        "pred_samples": 139,
+        "gt_samples": 140,
+        "pred_supported": 92,
+        "gt_supported": 92,
+        "max_symmetric_distance": 1.6647748776784261
+      }
+    },
+    {
+      "sample_id": "wide08_x384_y256",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 113,
+        "gt_samples": 113,
+        "pred_supported": 113,
+        "gt_supported": 113,
+        "max_symmetric_distance": 0.14411516542322225
+      },
+      "chord": {
+        "pred_samples": 113,
+        "gt_samples": 113,
+        "pred_supported": 113,
+        "gt_supported": 113,
+        "max_symmetric_distance": 0.9744275083165791
+      }
+    },
+    {
+      "sample_id": "wide08_x896_y256",
+      "edge": 15,
+      "K8": {
+        "pred_samples": 32,
+        "gt_samples": 32,
+        "pred_supported": 32,
+        "gt_supported": 32,
+        "max_symmetric_distance": 1.2296926266433206e-14
+      },
+      "chord": {
+        "pred_samples": 32,
+        "gt_samples": 32,
+        "pred_supported": 32,
+        "gt_supported": 32,
+        "max_symmetric_distance": 1.4217791915866692e-15
+      }
+    },
+    {
+      "sample_id": "wide08_x384_y512",
+      "edge": 11,
+      "K8": {
+        "pred_samples": 128,
+        "gt_samples": 130,
+        "pred_supported": 128,
+        "gt_supported": 130,
+        "max_symmetric_distance": 0.23514242201551425
+      },
+      "chord": {
+        "pred_samples": 126,
+        "gt_samples": 130,
+        "pred_supported": 41,
+        "gt_supported": 43,
+        "max_symmetric_distance": 2.5184330996011552
+      }
+    },
+    {
+      "sample_id": "wide08_x896_y512",
+      "edge": 9,
+      "K8": {
+        "pred_samples": 45,
+        "gt_samples": 45,
+        "pred_supported": 45,
+        "gt_supported": 45,
+        "max_symmetric_distance": 0.0591629170223127
+      },
+      "chord": {
+        "pred_samples": 44,
+        "gt_samples": 45,
+        "pred_supported": 44,
+        "gt_supported": 45,
+        "max_symmetric_distance": 0.7465030343681948
+      }
+    },
+    {
+      "sample_id": "wide08_x512_y640",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 25,
+        "gt_samples": 25,
+        "pred_supported": 25,
+        "gt_supported": 25,
+        "max_symmetric_distance": 3.6277469714922474e-14
+      },
+      "chord": {
+        "pred_samples": 25,
+        "gt_samples": 25,
+        "pred_supported": 25,
+        "gt_supported": 25,
+        "max_symmetric_distance": 4.440892098500626e-16
+      }
+    },
+    {
+      "sample_id": "wide09_x384_y0",
+      "edge": 0,
+      "K8": {
+        "pred_samples": 151,
+        "gt_samples": 152,
+        "pred_supported": 151,
+        "gt_supported": 152,
+        "max_symmetric_distance": 0.4390061602036717
+      },
+      "chord": {
+        "pred_samples": 148,
+        "gt_samples": 152,
+        "pred_supported": 127,
+        "gt_supported": 128,
+        "max_symmetric_distance": 1.9827821822285496
+      }
+    },
+    {
+      "sample_id": "wide09_x896_y0",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 244,
+        "gt_samples": 248,
+        "pred_supported": 243,
+        "gt_supported": 244,
+        "max_symmetric_distance": 1.1957832846718506
+      },
+      "chord": {
+        "pred_samples": 234,
+        "gt_samples": 248,
+        "pred_supported": 73,
+        "gt_supported": 74,
+        "max_symmetric_distance": 7.8679489954423705
+      }
+    },
+    {
+      "sample_id": "wide09_x256_y128",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 134,
+        "gt_samples": 134,
+        "pred_supported": 134,
+        "gt_supported": 134,
+        "max_symmetric_distance": 0.19239849666033473
+      },
+      "chord": {
+        "pred_samples": 126,
+        "gt_samples": 134,
+        "pred_supported": 21,
+        "gt_supported": 21,
+        "max_symmetric_distance": 5.061549867868162
+      }
+    },
+    {
+      "sample_id": "wide09_x768_y128",
+      "edge": 6,
+      "K8": {
+        "pred_samples": 171,
+        "gt_samples": 172,
+        "pred_supported": 171,
+        "gt_supported": 172,
+        "max_symmetric_distance": 0.3484122261355447
+      },
+      "chord": {
+        "pred_samples": 169,
+        "gt_samples": 172,
+        "pred_supported": 58,
+        "gt_supported": 59,
+        "max_symmetric_distance": 2.3331094225771514
+      }
+    },
+    {
+      "sample_id": "wide09_x896_y128",
+      "edge": 5,
+      "K8": {
+        "pred_samples": 130,
+        "gt_samples": 131,
+        "pred_supported": 130,
+        "gt_supported": 131,
+        "max_symmetric_distance": 0.38823359415487685
+      },
+      "chord": {
+        "pred_samples": 127,
+        "gt_samples": 131,
+        "pred_supported": 82,
+        "gt_supported": 84,
+        "max_symmetric_distance": 2.2571166738946937
+      }
+    },
+    {
+      "sample_id": "wide09_x128_y256",
+      "edge": 14,
+      "K8": {
+        "pred_samples": 139,
+        "gt_samples": 140,
+        "pred_supported": 139,
+        "gt_supported": 140,
+        "max_symmetric_distance": 0.17009034427200204
+      },
+      "chord": {
+        "pred_samples": 139,
+        "gt_samples": 140,
+        "pred_supported": 102,
+        "gt_supported": 102,
+        "max_symmetric_distance": 1.3419661245664227
+      }
+    },
+    {
+      "sample_id": "wide09_x896_y256",
+      "edge": 15,
+      "K8": {
+        "pred_samples": 128,
+        "gt_samples": 128,
+        "pred_supported": 128,
+        "gt_supported": 128,
+        "max_symmetric_distance": 0.06936718970269858
+      },
+      "chord": {
+        "pred_samples": 127,
+        "gt_samples": 128,
+        "pred_supported": 101,
+        "gt_supported": 102,
+        "max_symmetric_distance": 1.3307989202807173
+      }
+    },
+    {
+      "sample_id": "wide09_x256_y384",
+      "edge": 0,
+      "K8": {
+        "pred_samples": 64,
+        "gt_samples": 64,
+        "pred_supported": 64,
+        "gt_supported": 64,
+        "max_symmetric_distance": 0.04263546548918074
+      },
+      "chord": {
+        "pred_samples": 64,
+        "gt_samples": 64,
+        "pred_supported": 64,
+        "gt_supported": 64,
+        "max_symmetric_distance": 0.9270726663154029
+      }
+    },
+    {
+      "sample_id": "wide09_x384_y384",
+      "edge": 6,
+      "K8": {
+        "pred_samples": 82,
+        "gt_samples": 82,
+        "pred_supported": 82,
+        "gt_supported": 82,
+        "max_symmetric_distance": 0.054431980656398114
+      },
+      "chord": {
+        "pred_samples": 81,
+        "gt_samples": 82,
+        "pred_supported": 81,
+        "gt_supported": 82,
+        "max_symmetric_distance": 0.7200471159961351
+      }
+    },
+    {
+      "sample_id": "wide09_x768_y512",
+      "edge": 47,
+      "K8": {
+        "pred_samples": 76,
+        "gt_samples": 76,
+        "pred_supported": 76,
+        "gt_supported": 76,
+        "max_symmetric_distance": 0.07108217222174217
+      },
+      "chord": {
+        "pred_samples": 73,
+        "gt_samples": 76,
+        "pred_supported": 22,
+        "gt_supported": 22,
+        "max_symmetric_distance": 2.3195434872269347
+      }
+    },
+    {
+      "sample_id": "wide09_x1152_y512",
+      "edge": 7,
+      "K8": {
+        "pred_samples": 185,
+        "gt_samples": 186,
+        "pred_supported": 185,
+        "gt_supported": 186,
+        "max_symmetric_distance": 0.3293567535420592
+      },
+      "chord": {
+        "pred_samples": 184,
+        "gt_samples": 186,
+        "pred_supported": 126,
+        "gt_supported": 127,
+        "max_symmetric_distance": 1.3239017399784976
+      }
+    },
+    {
+      "sample_id": "wide09_x384_y640",
+      "edge": 6,
+      "K8": {
+        "pred_samples": 59,
+        "gt_samples": 59,
+        "pred_supported": 59,
+        "gt_supported": 59,
+        "max_symmetric_distance": 0.05846868076638182
+      },
+      "chord": {
+        "pred_samples": 58,
+        "gt_samples": 59,
+        "pred_supported": 58,
+        "gt_supported": 59,
+        "max_symmetric_distance": 0.6967658502781993
+      }
+    },
+    {
+      "sample_id": "wide09_x1152_y640",
+      "edge": 3,
+      "K8": {
+        "pred_samples": 144,
+        "gt_samples": 144,
+        "pred_supported": 144,
+        "gt_supported": 144,
+        "max_symmetric_distance": 0.3346913368248448
+      },
+      "chord": {
+        "pred_samples": 142,
+        "gt_samples": 144,
+        "pred_supported": 67,
+        "gt_supported": 67,
+        "max_symmetric_distance": 2.609259329923323
+      }
+    },
+    {
+      "sample_id": "wide09_x128_y768",
+      "edge": 3,
+      "K8": {
+        "pred_samples": 118,
+        "gt_samples": 118,
+        "pred_supported": 118,
+        "gt_supported": 118,
+        "max_symmetric_distance": 0.11074085175483313
+      },
+      "chord": {
+        "pred_samples": 117,
+        "gt_samples": 118,
+        "pred_supported": 87,
+        "gt_supported": 87,
+        "max_symmetric_distance": 1.4437435857359773
+      }
+    },
+    {
+      "sample_id": "wide09_x384_y768",
+      "edge": 11,
+      "K8": {
+        "pred_samples": 13,
+        "gt_samples": 13,
+        "pred_supported": 13,
+        "gt_supported": 13,
+        "max_symmetric_distance": 3.31306445882318e-14
+      },
+      "chord": {
+        "pred_samples": 13,
+        "gt_samples": 13,
+        "pred_supported": 13,
+        "gt_supported": 13,
+        "max_symmetric_distance": 2.2644195468014703e-15
+      }
+    },
+    {
+      "sample_id": "wide09_x512_y768",
+      "edge": 11,
+      "K8": {
+        "pred_samples": 139,
+        "gt_samples": 144,
+        "pred_supported": 139,
+        "gt_supported": 144,
+        "max_symmetric_distance": 0.891746506739835
+      },
+      "chord": {
+        "pred_samples": 130,
+        "gt_samples": 144,
+        "pred_supported": 39,
+        "gt_supported": 37,
+        "max_symmetric_distance": 3.4525095735616005
+      }
+    },
+    {
+      "sample_id": "wide09_x1152_y768",
+      "edge": 3,
+      "K8": {
+        "pred_samples": 204,
+        "gt_samples": 204,
+        "pred_supported": 204,
+        "gt_supported": 204,
+        "max_symmetric_distance": 0.23285911735502052
+      },
+      "chord": {
+        "pred_samples": 204,
+        "gt_samples": 204,
+        "pred_supported": 204,
+        "gt_supported": 204,
+        "max_symmetric_distance": 0.7735587194100751
+      }
+    },
+    {
+      "sample_id": "wide10_x0_y0",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 413,
+        "gt_samples": 415,
+        "pred_supported": 413,
+        "gt_supported": 415,
+        "max_symmetric_distance": 0.4173663476221698
+      },
+      "chord": {
+        "pred_samples": 390,
+        "gt_samples": 415,
+        "pred_supported": 18,
+        "gt_supported": 18,
+        "max_symmetric_distance": 15.714597405160603
+      }
+    },
+    {
+      "sample_id": "wide10_x1024_y0",
+      "edge": 5,
+      "K8": {
+        "pred_samples": 167,
+        "gt_samples": 167,
+        "pred_supported": 167,
+        "gt_supported": 167,
+        "max_symmetric_distance": 0.31570993756674504
+      },
+      "chord": {
+        "pred_samples": 166,
+        "gt_samples": 167,
+        "pred_supported": 143,
+        "gt_supported": 143,
+        "max_symmetric_distance": 1.2665302094352435
+      }
+    },
+    {
+      "sample_id": "wide10_x512_y128",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 59,
+        "gt_samples": 59,
+        "pred_supported": 59,
+        "gt_supported": 59,
+        "max_symmetric_distance": 0.022896968794829265
+      },
+      "chord": {
+        "pred_samples": 59,
+        "gt_samples": 59,
+        "pred_supported": 59,
+        "gt_supported": 59,
+        "max_symmetric_distance": 0.2742232794372798
+      }
+    },
+    {
+      "sample_id": "wide10_x896_y128",
+      "edge": 11,
+      "K8": {
+        "pred_samples": 82,
+        "gt_samples": 82,
+        "pred_supported": 82,
+        "gt_supported": 82,
+        "max_symmetric_distance": 0.051787946873356666
+      },
+      "chord": {
+        "pred_samples": 81,
+        "gt_samples": 82,
+        "pred_supported": 81,
+        "gt_supported": 82,
+        "max_symmetric_distance": 0.5963027109421238
+      }
+    },
+    {
+      "sample_id": "wide10_x896_y128",
+      "edge": 16,
+      "K8": {
+        "pred_samples": 35,
+        "gt_samples": 35,
+        "pred_supported": 35,
+        "gt_supported": 35,
+        "max_symmetric_distance": 0.009749232432912943
+      },
+      "chord": {
+        "pred_samples": 35,
+        "gt_samples": 35,
+        "pred_supported": 35,
+        "gt_supported": 35,
+        "max_symmetric_distance": 0.17998268644039758
+      }
+    },
+    {
+      "sample_id": "wide10_x384_y256",
+      "edge": 3,
+      "K8": {
+        "pred_samples": 145,
+        "gt_samples": 146,
+        "pred_supported": 145,
+        "gt_supported": 146,
+        "max_symmetric_distance": 0.3023396703109205
+      },
+      "chord": {
+        "pred_samples": 139,
+        "gt_samples": 146,
+        "pred_supported": 35,
+        "gt_supported": 35,
+        "max_symmetric_distance": 4.351587163723959
+      }
+    },
+    {
+      "sample_id": "wide10_x640_y256",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 67,
+        "gt_samples": 67,
+        "pred_supported": 67,
+        "gt_supported": 67,
+        "max_symmetric_distance": 1.6806591203325514e-14
+      },
+      "chord": {
+        "pred_samples": 67,
+        "gt_samples": 67,
+        "pred_supported": 67,
+        "gt_supported": 67,
+        "max_symmetric_distance": 2.5121479338940403e-15
+      }
+    },
+    {
+      "sample_id": "wide10_x768_y256",
+      "edge": 64,
+      "K8": {
+        "pred_samples": 40,
+        "gt_samples": 40,
+        "pred_supported": 40,
+        "gt_supported": 40,
+        "max_symmetric_distance": 0.016275426516100196
+      },
+      "chord": {
+        "pred_samples": 40,
+        "gt_samples": 40,
+        "pred_supported": 40,
+        "gt_supported": 40,
+        "max_symmetric_distance": 0.3581272966287372
+      }
+    },
+    {
+      "sample_id": "wide10_x512_y384",
+      "edge": 32,
+      "K8": {
+        "pred_samples": 235,
+        "gt_samples": 238,
+        "pred_supported": 235,
+        "gt_supported": 238,
+        "max_symmetric_distance": 0.7627911455278126
+      },
+      "chord": {
+        "pred_samples": 226,
+        "gt_samples": 238,
+        "pred_supported": 82,
+        "gt_supported": 83,
+        "max_symmetric_distance": 4.734250952129133
+      }
+    },
+    {
+      "sample_id": "wide10_x768_y384",
+      "edge": 18,
+      "K8": {
+        "pred_samples": 47,
+        "gt_samples": 47,
+        "pred_supported": 47,
+        "gt_supported": 47,
+        "max_symmetric_distance": 0.15871790105988454
+      },
+      "chord": {
+        "pred_samples": 44,
+        "gt_samples": 47,
+        "pred_supported": 24,
+        "gt_supported": 24,
+        "max_symmetric_distance": 2.0063212270714246
+      }
+    },
+    {
+      "sample_id": "wide10_x1299_y384",
+      "edge": 7,
+      "K8": {
+        "pred_samples": 235,
+        "gt_samples": 235,
+        "pred_supported": 235,
+        "gt_supported": 235,
+        "max_symmetric_distance": 0.2957835799327673
+      },
+      "chord": {
+        "pred_samples": 233,
+        "gt_samples": 235,
+        "pred_supported": 167,
+        "gt_supported": 168,
+        "max_symmetric_distance": 1.8146167419919668
+      }
+    },
+    {
+      "sample_id": "wide10_x128_y512",
+      "edge": 9,
+      "K8": {
+        "pred_samples": 127,
+        "gt_samples": 127,
+        "pred_supported": 127,
+        "gt_supported": 127,
+        "max_symmetric_distance": 0.19134091473646475
+      },
+      "chord": {
+        "pred_samples": 123,
+        "gt_samples": 127,
+        "pred_supported": 25,
+        "gt_supported": 25,
+        "max_symmetric_distance": 3.277475474822571
+      }
+    },
+    {
+      "sample_id": "wide11_x0_y128",
+      "edge": 3,
+      "K8": {
+        "pred_samples": 189,
+        "gt_samples": 190,
+        "pred_supported": 189,
+        "gt_supported": 190,
+        "max_symmetric_distance": 0.4140148935193359
+      },
+      "chord": {
+        "pred_samples": 184,
+        "gt_samples": 190,
+        "pred_supported": 93,
+        "gt_supported": 94,
+        "max_symmetric_distance": 3.9982177981831053
+      }
+    },
+    {
+      "sample_id": "wide11_x256_y256",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 486,
+        "gt_samples": 487,
+        "pred_supported": 486,
+        "gt_supported": 487,
+        "max_symmetric_distance": 0.4241598530955314
+      },
+      "chord": {
+        "pred_samples": 486,
+        "gt_samples": 487,
+        "pred_supported": 416,
+        "gt_supported": 416,
+        "max_symmetric_distance": 1.3129810830238406
+      }
+    },
+    {
+      "sample_id": "wide11_x640_y256",
+      "edge": 33,
+      "K8": {
+        "pred_samples": 24,
+        "gt_samples": 24,
+        "pred_supported": 24,
+        "gt_supported": 24,
+        "max_symmetric_distance": 0.019558870235253226
+      },
+      "chord": {
+        "pred_samples": 24,
+        "gt_samples": 24,
+        "pred_supported": 24,
+        "gt_supported": 24,
+        "max_symmetric_distance": 0.32951797796908605
+      }
+    },
+    {
+      "sample_id": "wide11_x768_y256",
+      "edge": 26,
+      "K8": {
+        "pred_samples": 81,
+        "gt_samples": 81,
+        "pred_supported": 81,
+        "gt_supported": 81,
+        "max_symmetric_distance": 0.08529509149770576
+      },
+      "chord": {
+        "pred_samples": 80,
+        "gt_samples": 81,
+        "pred_supported": 37,
+        "gt_supported": 37,
+        "max_symmetric_distance": 1.451035723716744
+      }
+    },
+    {
+      "sample_id": "wide11_x128_y384",
+      "edge": 21,
+      "K8": {
+        "pred_samples": 40,
+        "gt_samples": 40,
+        "pred_supported": 40,
+        "gt_supported": 40,
+        "max_symmetric_distance": 0.04504444998728846
+      },
+      "chord": {
+        "pred_samples": 40,
+        "gt_samples": 40,
+        "pred_supported": 40,
+        "gt_supported": 40,
+        "max_symmetric_distance": 0.562343556666587
+      }
+    },
+    {
+      "sample_id": "wide11_x384_y384",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 288,
+        "gt_samples": 290,
+        "pred_supported": 288,
+        "gt_supported": 290,
+        "max_symmetric_distance": 0.5791509453738826
+      },
+      "chord": {
+        "pred_samples": 286,
+        "gt_samples": 290,
+        "pred_supported": 37,
+        "gt_supported": 37,
+        "max_symmetric_distance": 3.815775991777462
+      }
+    },
+    {
+      "sample_id": "wide11_x384_y384",
+      "edge": 7,
+      "K8": {
+        "pred_samples": 335,
+        "gt_samples": 339,
+        "pred_supported": 330,
+        "gt_supported": 332,
+        "max_symmetric_distance": 1.2034455266036839
+      },
+      "chord": {
+        "pred_samples": 327,
+        "gt_samples": 339,
+        "pred_supported": 92,
+        "gt_supported": 91,
+        "max_symmetric_distance": 5.595322641671523
+      }
+    },
+    {
+      "sample_id": "wide11_x768_y384",
+      "edge": 46,
+      "K8": {
+        "pred_samples": 24,
+        "gt_samples": 24,
+        "pred_supported": 24,
+        "gt_supported": 24,
+        "max_symmetric_distance": 7.252845917717682e-14
+      },
+      "chord": {
+        "pred_samples": 24,
+        "gt_samples": 24,
+        "pred_supported": 24,
+        "gt_supported": 24,
+        "max_symmetric_distance": 1.648671846230216e-14
+      }
+    },
+    {
+      "sample_id": "wide11_x768_y512",
+      "edge": 14,
+      "K8": {
+        "pred_samples": 216,
+        "gt_samples": 218,
+        "pred_supported": 216,
+        "gt_supported": 218,
+        "max_symmetric_distance": 0.5271606807316582
+      },
+      "chord": {
+        "pred_samples": 215,
+        "gt_samples": 218,
+        "pred_supported": 100,
+        "gt_supported": 99,
+        "max_symmetric_distance": 2.117394449258572
+      }
+    },
+    {
+      "sample_id": "wide11_x768_y512",
+      "edge": 29,
+      "K8": {
+        "pred_samples": 13,
+        "gt_samples": 13,
+        "pred_supported": 13,
+        "gt_supported": 13,
+        "max_symmetric_distance": 7.020534739221958e-14
+      },
+      "chord": {
+        "pred_samples": 13,
+        "gt_samples": 13,
+        "pred_supported": 13,
+        "gt_supported": 13,
+        "max_symmetric_distance": 4.871103520542874e-15
+      }
+    },
+    {
+      "sample_id": "wide11_x1151_y512",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 136,
+        "gt_samples": 136,
+        "pred_supported": 136,
+        "gt_supported": 136,
+        "max_symmetric_distance": 0.29222208393798216
+      },
+      "chord": {
+        "pred_samples": 134,
+        "gt_samples": 136,
+        "pred_supported": 93,
+        "gt_supported": 93,
+        "max_symmetric_distance": 1.7900244959492966
+      }
+    },
+    {
+      "sample_id": "wide11_x0_y640",
+      "edge": 0,
+      "K8": {
+        "pred_samples": 207,
+        "gt_samples": 209,
+        "pred_supported": 207,
+        "gt_supported": 209,
+        "max_symmetric_distance": 0.4250141197927018
+      },
+      "chord": {
+        "pred_samples": 206,
+        "gt_samples": 209,
+        "pred_supported": 114,
+        "gt_supported": 115,
+        "max_symmetric_distance": 1.9054314231425684
+      }
+    },
+    {
+      "sample_id": "wide11_x128_y771",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 252,
+        "gt_samples": 252,
+        "pred_supported": 252,
+        "gt_supported": 252,
+        "max_symmetric_distance": 0.2915068517181562
+      },
+      "chord": {
+        "pred_samples": 248,
+        "gt_samples": 252,
+        "pred_supported": 48,
+        "gt_supported": 48,
+        "max_symmetric_distance": 3.719874799051135
+      }
+    },
+    {
+      "sample_id": "wide12_x0_y0",
+      "edge": 5,
+      "K8": {
+        "pred_samples": 347,
+        "gt_samples": 350,
+        "pred_supported": 347,
+        "gt_supported": 350,
+        "max_symmetric_distance": 0.8188545823681552
+      },
+      "chord": {
+        "pred_samples": 347,
+        "gt_samples": 350,
+        "pred_supported": 163,
+        "gt_supported": 164,
+        "max_symmetric_distance": 1.8347074082147625
+      }
+    },
+    {
+      "sample_id": "wide12_x128_y0",
+      "edge": 5,
+      "K8": {
+        "pred_samples": 167,
+        "gt_samples": 167,
+        "pred_supported": 167,
+        "gt_supported": 167,
+        "max_symmetric_distance": 0.24384337117066995
+      },
+      "chord": {
+        "pred_samples": 164,
+        "gt_samples": 167,
+        "pred_supported": 87,
+        "gt_supported": 88,
+        "max_symmetric_distance": 2.240045214215088
+      }
+    },
+    {
+      "sample_id": "wide12_x1377_y0",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 16,
+        "gt_samples": 16,
+        "pred_supported": 16,
+        "gt_supported": 16,
+        "max_symmetric_distance": 1.8536828349219598e-13
+      },
+      "chord": {
+        "pred_samples": 16,
+        "gt_samples": 16,
+        "pred_supported": 16,
+        "gt_supported": 16,
+        "max_symmetric_distance": 8.005932084973442e-15
+      }
+    },
+    {
+      "sample_id": "wide12_x512_y128",
+      "edge": 12,
+      "K8": {
+        "pred_samples": 180,
+        "gt_samples": 181,
+        "pred_supported": 180,
+        "gt_supported": 181,
+        "max_symmetric_distance": 0.2654465639761714
+      },
+      "chord": {
+        "pred_samples": 163,
+        "gt_samples": 181,
+        "pred_supported": 17,
+        "gt_supported": 17,
+        "max_symmetric_distance": 8.715582673536439
+      }
+    },
+    {
+      "sample_id": "wide12_x0_y256",
+      "edge": 3,
+      "K8": {
+        "pred_samples": 87,
+        "gt_samples": 87,
+        "pred_supported": 87,
+        "gt_supported": 87,
+        "max_symmetric_distance": 0.07536664620933266
+      },
+      "chord": {
+        "pred_samples": 87,
+        "gt_samples": 87,
+        "pred_supported": 87,
+        "gt_supported": 87,
+        "max_symmetric_distance": 0.6032237255805912
+      }
+    },
+    {
+      "sample_id": "wide12_x768_y256",
+      "edge": 16,
+      "K8": {
+        "pred_samples": 74,
+        "gt_samples": 74,
+        "pred_supported": 74,
+        "gt_supported": 74,
+        "max_symmetric_distance": 0.19559231065486377
+      },
+      "chord": {
+        "pred_samples": 70,
+        "gt_samples": 74,
+        "pred_supported": 35,
+        "gt_supported": 33,
+        "max_symmetric_distance": 2.517344613934807
+      }
+    },
+    {
+      "sample_id": "wide12_x1152_y256",
+      "edge": 11,
+      "K8": {
+        "pred_samples": 65,
+        "gt_samples": 65,
+        "pred_supported": 65,
+        "gt_supported": 65,
+        "max_symmetric_distance": 0.05138477253993241
+      },
+      "chord": {
+        "pred_samples": 65,
+        "gt_samples": 65,
+        "pred_supported": 65,
+        "gt_supported": 65,
+        "max_symmetric_distance": 0.652428216718208
+      }
+    },
+    {
+      "sample_id": "wide12_x1280_y256",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 339,
+        "gt_samples": 341,
+        "pred_supported": 339,
+        "gt_supported": 341,
+        "max_symmetric_distance": 0.3905482563177771
+      },
+      "chord": {
+        "pred_samples": 338,
+        "gt_samples": 341,
+        "pred_supported": 338,
+        "gt_supported": 341,
+        "max_symmetric_distance": 0.9955331782830648
+      }
+    },
+    {
+      "sample_id": "wide12_x1280_y256",
+      "edge": 6,
+      "K8": {
+        "pred_samples": 143,
+        "gt_samples": 144,
+        "pred_supported": 143,
+        "gt_supported": 144,
+        "max_symmetric_distance": 0.40083005327322924
+      },
+      "chord": {
+        "pred_samples": 140,
+        "gt_samples": 144,
+        "pred_supported": 81,
+        "gt_supported": 81,
+        "max_symmetric_distance": 3.147476366514374
+      }
+    },
+    {
+      "sample_id": "wide12_x512_y384",
+      "edge": 38,
+      "K8": {
+        "pred_samples": 176,
+        "gt_samples": 176,
+        "pred_supported": 176,
+        "gt_supported": 176,
+        "max_symmetric_distance": 0.19802700059684072
+      },
+      "chord": {
+        "pred_samples": 173,
+        "gt_samples": 176,
+        "pred_supported": 86,
+        "gt_supported": 86,
+        "max_symmetric_distance": 2.9945170294237182
+      }
+    },
+    {
+      "sample_id": "wide12_x768_y384",
+      "edge": 33,
+      "K8": {
+        "pred_samples": 50,
+        "gt_samples": 50,
+        "pred_supported": 50,
+        "gt_supported": 50,
+        "max_symmetric_distance": 0.04240183733033195
+      },
+      "chord": {
+        "pred_samples": 50,
+        "gt_samples": 50,
+        "pred_supported": 50,
+        "gt_supported": 50,
+        "max_symmetric_distance": 0.49265177079777456
+      }
+    },
+    {
+      "sample_id": "wide12_x896_y512",
+      "edge": 8,
+      "K8": {
+        "pred_samples": 203,
+        "gt_samples": 204,
+        "pred_supported": 203,
+        "gt_supported": 204,
+        "max_symmetric_distance": 0.40723885020472667
+      },
+      "chord": {
+        "pred_samples": 202,
+        "gt_samples": 204,
+        "pred_supported": 202,
+        "gt_supported": 204,
+        "max_symmetric_distance": 0.9259731143853318
+      }
+    },
+    {
+      "sample_id": "wide12_x1024_y512",
+      "edge": 8,
+      "K8": {
+        "pred_samples": 212,
+        "gt_samples": 213,
+        "pred_supported": 212,
+        "gt_supported": 213,
+        "max_symmetric_distance": 0.2800394895794535
+      },
+      "chord": {
+        "pred_samples": 210,
+        "gt_samples": 213,
+        "pred_supported": 121,
+        "gt_supported": 120,
+        "max_symmetric_distance": 1.6339223398830487
+      }
+    },
+    {
+      "sample_id": "wide13_x896_y128",
+      "edge": 10,
+      "K8": {
+        "pred_samples": 76,
+        "gt_samples": 76,
+        "pred_supported": 76,
+        "gt_supported": 76,
+        "max_symmetric_distance": 0.09320215016903302
+      },
+      "chord": {
+        "pred_samples": 76,
+        "gt_samples": 76,
+        "pred_supported": 76,
+        "gt_supported": 76,
+        "max_symmetric_distance": 0.5281363157948513
+      }
+    },
+    {
+      "sample_id": "wide13_x1024_y128",
+      "edge": 11,
+      "K8": {
+        "pred_samples": 22,
+        "gt_samples": 22,
+        "pred_supported": 22,
+        "gt_supported": 22,
+        "max_symmetric_distance": 0.004029325290550241
+      },
+      "chord": {
+        "pred_samples": 22,
+        "gt_samples": 22,
+        "pred_supported": 22,
+        "gt_supported": 22,
+        "max_symmetric_distance": 0.06764576820532636
+      }
+    },
+    {
+      "sample_id": "wide13_x384_y256",
+      "edge": 6,
+      "K8": {
+        "pred_samples": 155,
+        "gt_samples": 155,
+        "pred_supported": 155,
+        "gt_supported": 155,
+        "max_symmetric_distance": 0.28973544606800106
+      },
+      "chord": {
+        "pred_samples": 154,
+        "gt_samples": 155,
+        "pred_supported": 152,
+        "gt_supported": 153,
+        "max_symmetric_distance": 1.0332906293002488
+      }
+    },
+    {
+      "sample_id": "wide13_x640_y256",
+      "edge": 13,
+      "K8": {
+        "pred_samples": 136,
+        "gt_samples": 136,
+        "pred_supported": 136,
+        "gt_supported": 136,
+        "max_symmetric_distance": 0.2497196681256944
+      },
+      "chord": {
+        "pred_samples": 124,
+        "gt_samples": 136,
+        "pred_supported": 18,
+        "gt_supported": 17,
+        "max_symmetric_distance": 5.679625903038115
+      }
+    },
+    {
+      "sample_id": "wide13_x640_y256",
+      "edge": 23,
+      "K8": {
+        "pred_samples": 369,
+        "gt_samples": 370,
+        "pred_supported": 369,
+        "gt_supported": 370,
+        "max_symmetric_distance": 0.5894436924443123
+      },
+      "chord": {
+        "pred_samples": 368,
+        "gt_samples": 370,
+        "pred_supported": 348,
+        "gt_supported": 350,
+        "max_symmetric_distance": 1.2699626714108272
+      }
+    },
+    {
+      "sample_id": "wide13_x896_y384",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 30,
+        "gt_samples": 30,
+        "pred_supported": 30,
+        "gt_supported": 30,
+        "max_symmetric_distance": 0.016745866591905103
+      },
+      "chord": {
+        "pred_samples": 30,
+        "gt_samples": 30,
+        "pred_supported": 30,
+        "gt_supported": 30,
+        "max_symmetric_distance": 0.27331723044074935
+      }
+    },
+    {
+      "sample_id": "wide13_x1024_y384",
+      "edge": 10,
+      "K8": {
+        "pred_samples": 36,
+        "gt_samples": 36,
+        "pred_supported": 36,
+        "gt_supported": 36,
+        "max_symmetric_distance": 0.030961061245311644
+      },
+      "chord": {
+        "pred_samples": 36,
+        "gt_samples": 36,
+        "pred_supported": 36,
+        "gt_supported": 36,
+        "max_symmetric_distance": 0.7992069442254672
+      }
+    },
+    {
+      "sample_id": "wide13_x0_y512",
+      "edge": 0,
+      "K8": {
+        "pred_samples": 40,
+        "gt_samples": 40,
+        "pred_supported": 40,
+        "gt_supported": 40,
+        "max_symmetric_distance": 0.0204800083157718
+      },
+      "chord": {
+        "pred_samples": 40,
+        "gt_samples": 40,
+        "pred_supported": 40,
+        "gt_supported": 40,
+        "max_symmetric_distance": 0.24648076208281333
+      }
+    },
+    {
+      "sample_id": "wide13_x640_y512",
+      "edge": 32,
+      "K8": {
+        "pred_samples": 77,
+        "gt_samples": 78,
+        "pred_supported": 77,
+        "gt_supported": 78,
+        "max_symmetric_distance": 0.25345261035746913
+      },
+      "chord": {
+        "pred_samples": 72,
+        "gt_samples": 78,
+        "pred_supported": 22,
+        "gt_supported": 22,
+        "max_symmetric_distance": 2.929987977400783
+      }
+    },
+    {
+      "sample_id": "wide13_x1024_y512",
+      "edge": 34,
+      "K8": {
+        "pred_samples": 35,
+        "gt_samples": 35,
+        "pred_supported": 35,
+        "gt_supported": 35,
+        "max_symmetric_distance": 0.005476877390041192
+      },
+      "chord": {
+        "pred_samples": 35,
+        "gt_samples": 35,
+        "pred_supported": 35,
+        "gt_supported": 35,
+        "max_symmetric_distance": 0.09792399100949617
+      }
+    },
+    {
+      "sample_id": "wide13_x1152_y512",
+      "edge": 3,
+      "K8": {
+        "pred_samples": 246,
+        "gt_samples": 250,
+        "pred_supported": 246,
+        "gt_supported": 250,
+        "max_symmetric_distance": 0.9428656765143623
+      },
+      "chord": {
+        "pred_samples": 241,
+        "gt_samples": 250,
+        "pred_supported": 188,
+        "gt_supported": 192,
+        "max_symmetric_distance": 2.0
+      }
+    },
+    {
+      "sample_id": "wide13_x1280_y512",
+      "edge": 23,
+      "K8": {
+        "pred_samples": 45,
+        "gt_samples": 45,
+        "pred_supported": 45,
+        "gt_supported": 45,
+        "max_symmetric_distance": 0.042484832298556624
+      },
+      "chord": {
+        "pred_samples": 45,
+        "gt_samples": 45,
+        "pred_supported": 45,
+        "gt_supported": 45,
+        "max_symmetric_distance": 0.5001114353140068
+      }
+    },
+    {
+      "sample_id": "wide13_x512_y640",
+      "edge": 8,
+      "K8": {
+        "pred_samples": 40,
+        "gt_samples": 40,
+        "pred_supported": 40,
+        "gt_supported": 40,
+        "max_symmetric_distance": 0.030263028507356026
+      },
+      "chord": {
+        "pred_samples": 40,
+        "gt_samples": 40,
+        "pred_supported": 40,
+        "gt_supported": 40,
+        "max_symmetric_distance": 0.35812020187420285
+      }
+    },
+    {
+      "sample_id": "wide13_x1280_y640",
+      "edge": 7,
+      "K8": {
+        "pred_samples": 96,
+        "gt_samples": 97,
+        "pred_supported": 96,
+        "gt_supported": 97,
+        "max_symmetric_distance": 0.15232405862942844
+      },
+      "chord": {
+        "pred_samples": 95,
+        "gt_samples": 97,
+        "pred_supported": 37,
+        "gt_supported": 37,
+        "max_symmetric_distance": 1.828575773928054
+      }
+    },
+    {
+      "sample_id": "wide13_x384_y701",
+      "edge": 7,
+      "K8": {
+        "pred_samples": 16,
+        "gt_samples": 16,
+        "pred_supported": 16,
+        "gt_supported": 16,
+        "max_symmetric_distance": 1.6949673507989192e-13
+      },
+      "chord": {
+        "pred_samples": 16,
+        "gt_samples": 16,
+        "pred_supported": 16,
+        "gt_supported": 16,
+        "max_symmetric_distance": 7.950313203316809e-15
+      }
+    },
+    {
+      "sample_id": "wide13_x768_y701",
+      "edge": 7,
+      "K8": {
+        "pred_samples": 86,
+        "gt_samples": 86,
+        "pred_supported": 86,
+        "gt_supported": 86,
+        "max_symmetric_distance": 0.16206887941039774
+      },
+      "chord": {
+        "pred_samples": 83,
+        "gt_samples": 86,
+        "pred_supported": 42,
+        "gt_supported": 41,
+        "max_symmetric_distance": 2.346922882818352
+      }
+    },
+    {
+      "sample_id": "wide14_x1152_y256",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 35,
+        "gt_samples": 35,
+        "pred_supported": 35,
+        "gt_supported": 35,
+        "max_symmetric_distance": 0.06120817767882194
+      },
+      "chord": {
+        "pred_samples": 34,
+        "gt_samples": 35,
+        "pred_supported": 34,
+        "gt_supported": 35,
+        "max_symmetric_distance": 0.7204682170980548
+      }
+    },
+    {
+      "sample_id": "wide14_x1245_y256",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 163,
+        "gt_samples": 164,
+        "pred_supported": 163,
+        "gt_supported": 164,
+        "max_symmetric_distance": 0.22256640247718068
+      },
+      "chord": {
+        "pred_samples": 163,
+        "gt_samples": 164,
+        "pred_supported": 127,
+        "gt_supported": 127,
+        "max_symmetric_distance": 1.3946618088625349
+      }
+    },
+    {
+      "sample_id": "wide14_x896_y384",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 32,
+        "gt_samples": 32,
+        "pred_supported": 32,
+        "gt_supported": 32,
+        "max_symmetric_distance": 0.07770660423641365
+      },
+      "chord": {
+        "pred_samples": 31,
+        "gt_samples": 32,
+        "pred_supported": 30,
+        "gt_supported": 29,
+        "max_symmetric_distance": 1.078402903058998
+      }
+    },
+    {
+      "sample_id": "wide14_x896_y512",
+      "edge": 12,
+      "K8": {
+        "pred_samples": 185,
+        "gt_samples": 186,
+        "pred_supported": 185,
+        "gt_supported": 186,
+        "max_symmetric_distance": 0.1460179615279679
+      },
+      "chord": {
+        "pred_samples": 181,
+        "gt_samples": 186,
+        "pred_supported": 46,
+        "gt_supported": 46,
+        "max_symmetric_distance": 3.940152405471503
+      }
+    },
+    {
+      "sample_id": "wide14_x1245_y637",
+      "edge": 15,
+      "K8": {
+        "pred_samples": 66,
+        "gt_samples": 66,
+        "pred_supported": 66,
+        "gt_supported": 66,
+        "max_symmetric_distance": 0.03821613451107108
+      },
+      "chord": {
+        "pred_samples": 65,
+        "gt_samples": 66,
+        "pred_supported": 65,
+        "gt_supported": 66,
+        "max_symmetric_distance": 0.9224503538420592
+      }
+    },
+    {
+      "sample_id": "wide15_x512_y128",
+      "edge": 25,
+      "K8": {
+        "pred_samples": 94,
+        "gt_samples": 94,
+        "pred_supported": 94,
+        "gt_supported": 94,
+        "max_symmetric_distance": 0.22564594081613087
+      },
+      "chord": {
+        "pred_samples": 84,
+        "gt_samples": 94,
+        "pred_supported": 19,
+        "gt_supported": 19,
+        "max_symmetric_distance": 4.09901693020805
+      }
+    },
+    {
+      "sample_id": "wide15_x256_y256",
+      "edge": 33,
+      "K8": {
+        "pred_samples": 286,
+        "gt_samples": 289,
+        "pred_supported": 286,
+        "gt_supported": 289,
+        "max_symmetric_distance": 0.8938536682585374
+      },
+      "chord": {
+        "pred_samples": 282,
+        "gt_samples": 289,
+        "pred_supported": 112,
+        "gt_supported": 112,
+        "max_symmetric_distance": 5.568249703968384
+      }
+    },
+    {
+      "sample_id": "wide15_x896_y256",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 184,
+        "gt_samples": 185,
+        "pred_supported": 184,
+        "gt_supported": 185,
+        "max_symmetric_distance": 0.347043997297159
+      },
+      "chord": {
+        "pred_samples": 183,
+        "gt_samples": 185,
+        "pred_supported": 170,
+        "gt_supported": 171,
+        "max_symmetric_distance": 1.1217161355121994
+      }
+    },
+    {
+      "sample_id": "wide15_x896_y256",
+      "edge": 20,
+      "K8": {
+        "pred_samples": 222,
+        "gt_samples": 224,
+        "pred_supported": 222,
+        "gt_supported": 224,
+        "max_symmetric_distance": 0.6218539894202577
+      },
+      "chord": {
+        "pred_samples": 197,
+        "gt_samples": 224,
+        "pred_supported": 11,
+        "gt_supported": 11,
+        "max_symmetric_distance": 10.48400021169513
+      }
+    },
+    {
+      "sample_id": "wide15_x896_y256",
+      "edge": 30,
+      "K8": {
+        "pred_samples": 38,
+        "gt_samples": 38,
+        "pred_supported": 38,
+        "gt_supported": 38,
+        "max_symmetric_distance": 0.030179799911965215
+      },
+      "chord": {
+        "pred_samples": 38,
+        "gt_samples": 38,
+        "pred_supported": 38,
+        "gt_supported": 38,
+        "max_symmetric_distance": 0.4289114922811353
+      }
+    },
+    {
+      "sample_id": "wide15_x256_y384",
+      "edge": 19,
+      "K8": {
+        "pred_samples": 139,
+        "gt_samples": 139,
+        "pred_supported": 139,
+        "gt_supported": 139,
+        "max_symmetric_distance": 0.16028858680699873
+      },
+      "chord": {
+        "pred_samples": 134,
+        "gt_samples": 139,
+        "pred_supported": 35,
+        "gt_supported": 34,
+        "max_symmetric_distance": 4.232285487097127
+      }
+    },
+    {
+      "sample_id": "wide15_x1152_y384",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 48,
+        "gt_samples": 48,
+        "pred_supported": 48,
+        "gt_supported": 48,
+        "max_symmetric_distance": 0.08832232053161386
+      },
+      "chord": {
+        "pred_samples": 47,
+        "gt_samples": 48,
+        "pred_supported": 46,
+        "gt_supported": 46,
+        "max_symmetric_distance": 1.0404466675352033
+      }
+    },
+    {
+      "sample_id": "wide15_x256_y512",
+      "edge": 5,
+      "K8": {
+        "pred_samples": 184,
+        "gt_samples": 185,
+        "pred_supported": 184,
+        "gt_supported": 185,
+        "max_symmetric_distance": 0.3398918536766709
+      },
+      "chord": {
+        "pred_samples": 178,
+        "gt_samples": 185,
+        "pred_supported": 71,
+        "gt_supported": 71,
+        "max_symmetric_distance": 4.1012450588050315
+      }
+    },
+    {
+      "sample_id": "wide15_x768_y512",
+      "edge": 3,
+      "K8": {
+        "pred_samples": 130,
+        "gt_samples": 130,
+        "pred_supported": 130,
+        "gt_supported": 130,
+        "max_symmetric_distance": 0.1614188693780115
+      },
+      "chord": {
+        "pred_samples": 130,
+        "gt_samples": 130,
+        "pred_supported": 130,
+        "gt_supported": 130,
+        "max_symmetric_distance": 0.8098945812121157
+      }
+    },
+    {
+      "sample_id": "wide15_x640_y603",
+      "edge": 0,
+      "K8": {
+        "pred_samples": 27,
+        "gt_samples": 27,
+        "pred_supported": 27,
+        "gt_supported": 27,
+        "max_symmetric_distance": 4.262355889238802e-14
+      },
+      "chord": {
+        "pred_samples": 27,
+        "gt_samples": 27,
+        "pred_supported": 27,
+        "gt_supported": 27,
+        "max_symmetric_distance": 3.233018248352212e-15
+      }
+    },
+    {
+      "sample_id": "wide15_x896_y603",
+      "edge": 3,
+      "K8": {
+        "pred_samples": 646,
+        "gt_samples": 651,
+        "pred_supported": 633,
+        "gt_supported": 638,
+        "max_symmetric_distance": 1.27750886481766
+      },
+      "chord": {
+        "pred_samples": 637,
+        "gt_samples": 651,
+        "pred_supported": 122,
+        "gt_supported": 121,
+        "max_symmetric_distance": 11.177873899684553
+      }
+    },
+    {
+      "sample_id": "wide16_x768_y384",
+      "edge": 9,
+      "K8": {
+        "pred_samples": 19,
+        "gt_samples": 19,
+        "pred_supported": 19,
+        "gt_supported": 19,
+        "max_symmetric_distance": 6.143496237364111e-14
+      },
+      "chord": {
+        "pred_samples": 19,
+        "gt_samples": 19,
+        "pred_supported": 19,
+        "gt_supported": 19,
+        "max_symmetric_distance": 6.358389842764979e-15
+      }
+    },
+    {
+      "sample_id": "wide16_x768_y384",
+      "edge": 18,
+      "K8": {
+        "pred_samples": 140,
+        "gt_samples": 141,
+        "pred_supported": 140,
+        "gt_supported": 141,
+        "max_symmetric_distance": 0.341215011650844
+      },
+      "chord": {
+        "pred_samples": 138,
+        "gt_samples": 141,
+        "pred_supported": 97,
+        "gt_supported": 97,
+        "max_symmetric_distance": 2.0283648307562423
+      }
+    },
+    {
+      "sample_id": "wide16_x1024_y384",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 223,
+        "gt_samples": 230,
+        "pred_supported": 223,
+        "gt_supported": 230,
+        "max_symmetric_distance": 0.9021656067974336
+      },
+      "chord": {
+        "pred_samples": 222,
+        "gt_samples": 230,
+        "pred_supported": 151,
+        "gt_supported": 150,
+        "max_symmetric_distance": 1.8534819819022836
+      }
+    },
+    {
+      "sample_id": "wide16_x384_y512",
+      "edge": 28,
+      "K8": {
+        "pred_samples": 2,
+        "gt_samples": 2,
+        "pred_supported": 2,
+        "gt_supported": 2,
+        "max_symmetric_distance": 0.0
+      },
+      "chord": {
+        "pred_samples": 2,
+        "gt_samples": 2,
+        "pred_supported": 2,
+        "gt_supported": 2,
+        "max_symmetric_distance": 0.0
+      }
+    },
+    {
+      "sample_id": "wide16_x256_y640",
+      "edge": 3,
+      "K8": {
+        "pred_samples": 318,
+        "gt_samples": 318,
+        "pred_supported": 318,
+        "gt_supported": 318,
+        "max_symmetric_distance": 0.42697028675434695
+      },
+      "chord": {
+        "pred_samples": 313,
+        "gt_samples": 318,
+        "pred_supported": 37,
+        "gt_supported": 37,
+        "max_symmetric_distance": 6.4564613046429935
+      }
+    },
+    {
+      "sample_id": "wide17_x128_y128",
+      "edge": 5,
+      "K8": {
+        "pred_samples": 67,
+        "gt_samples": 67,
+        "pred_supported": 67,
+        "gt_supported": 67,
+        "max_symmetric_distance": 0.03312739620705714
+      },
+      "chord": {
+        "pred_samples": 67,
+        "gt_samples": 67,
+        "pred_supported": 67,
+        "gt_supported": 67,
+        "max_symmetric_distance": 0.31935229187884734
+      }
+    },
+    {
+      "sample_id": "wide17_x256_y256",
+      "edge": 7,
+      "K8": {
+        "pred_samples": 57,
+        "gt_samples": 57,
+        "pred_supported": 57,
+        "gt_supported": 57,
+        "max_symmetric_distance": 0.051626428312632186
+      },
+      "chord": {
+        "pred_samples": 56,
+        "gt_samples": 57,
+        "pred_supported": 48,
+        "gt_supported": 48,
+        "max_symmetric_distance": 1.0338039887168033
+      }
+    },
+    {
+      "sample_id": "wide17_x512_y384",
+      "edge": 7,
+      "K8": {
+        "pred_samples": 91,
+        "gt_samples": 91,
+        "pred_supported": 91,
+        "gt_supported": 91,
+        "max_symmetric_distance": 0.17113657279048733
+      },
+      "chord": {
+        "pred_samples": 89,
+        "gt_samples": 91,
+        "pred_supported": 47,
+        "gt_supported": 47,
+        "max_symmetric_distance": 1.320276716568714
+      }
+    },
+    {
+      "sample_id": "wide17_x640_y384",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 19,
+        "gt_samples": 19,
+        "pred_supported": 19,
+        "gt_supported": 19,
+        "max_symmetric_distance": 0.06744378616607088
+      },
+      "chord": {
+        "pred_samples": 18,
+        "gt_samples": 19,
+        "pred_supported": 18,
+        "gt_supported": 19,
+        "max_symmetric_distance": 0.7449495188547272
+      }
+    },
+    {
+      "sample_id": "wide17_x640_y384",
+      "edge": 16,
+      "K8": {
+        "pred_samples": 53,
+        "gt_samples": 53,
+        "pred_supported": 53,
+        "gt_supported": 53,
+        "max_symmetric_distance": 0.005348143369503198
+      },
+      "chord": {
+        "pred_samples": 53,
+        "gt_samples": 53,
+        "pred_supported": 53,
+        "gt_supported": 53,
+        "max_symmetric_distance": 0.04188309742017194
+      }
+    },
+    {
+      "sample_id": "wide17_x896_y384",
+      "edge": 4,
+      "K8": {
+        "pred_samples": 94,
+        "gt_samples": 94,
+        "pred_supported": 94,
+        "gt_supported": 94,
+        "max_symmetric_distance": 0.21653966697519111
+      },
+      "chord": {
+        "pred_samples": 90,
+        "gt_samples": 94,
+        "pred_supported": 19,
+        "gt_supported": 20,
+        "max_symmetric_distance": 2.8806167594993655
+      }
+    },
+    {
+      "sample_id": "wide17_x640_y512",
+      "edge": 23,
+      "K8": {
+        "pred_samples": 27,
+        "gt_samples": 27,
+        "pred_supported": 27,
+        "gt_supported": 27,
+        "max_symmetric_distance": 2.445538776171125e-14
+      },
+      "chord": {
+        "pred_samples": 27,
+        "gt_samples": 27,
+        "pred_supported": 27,
+        "gt_supported": 27,
+        "max_symmetric_distance": 4.0943002132167226e-15
+      }
+    },
+    {
+      "sample_id": "wide17_x1024_y512",
+      "edge": 17,
+      "K8": {
+        "pred_samples": 122,
+        "gt_samples": 123,
+        "pred_supported": 122,
+        "gt_supported": 123,
+        "max_symmetric_distance": 0.1422749899233923
+      },
+      "chord": {
+        "pred_samples": 120,
+        "gt_samples": 123,
+        "pred_supported": 50,
+        "gt_supported": 50,
+        "max_symmetric_distance": 2.55263748207708
+      }
+    },
+    {
+      "sample_id": "wide17_x1152_y512",
+      "edge": 18,
+      "K8": {
+        "pred_samples": 78,
+        "gt_samples": 79,
+        "pred_supported": 78,
+        "gt_supported": 79,
+        "max_symmetric_distance": 0.2596493490357083
+      },
+      "chord": {
+        "pred_samples": 73,
+        "gt_samples": 79,
+        "pred_supported": 20,
+        "gt_supported": 20,
+        "max_symmetric_distance": 2.4470980953402295
+      }
+    },
+    {
+      "sample_id": "wide17_x1280_y512",
+      "edge": 6,
+      "K8": {
+        "pred_samples": 267,
+        "gt_samples": 269,
+        "pred_supported": 267,
+        "gt_supported": 269,
+        "max_symmetric_distance": 0.3492697335049025
+      },
+      "chord": {
+        "pred_samples": 253,
+        "gt_samples": 269,
+        "pred_supported": 33,
+        "gt_supported": 33,
+        "max_symmetric_distance": 8.739183455657018
+      }
+    },
+    {
+      "sample_id": "wide17_x512_y640",
+      "edge": 0,
+      "K8": {
+        "pred_samples": 240,
+        "gt_samples": 243,
+        "pred_supported": 240,
+        "gt_supported": 243,
+        "max_symmetric_distance": 0.7043435491622067
+      },
+      "chord": {
+        "pred_samples": 234,
+        "gt_samples": 243,
+        "pred_supported": 79,
+        "gt_supported": 79,
+        "max_symmetric_distance": 5.412110522001347
+      }
+    },
+    {
+      "sample_id": "wide18_x1024_y0",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 71,
+        "gt_samples": 71,
+        "pred_supported": 71,
+        "gt_supported": 71,
+        "max_symmetric_distance": 0.01593058281589669
+      },
+      "chord": {
+        "pred_samples": 71,
+        "gt_samples": 71,
+        "pred_supported": 71,
+        "gt_supported": 71,
+        "max_symmetric_distance": 0.10088819686667706
+      }
+    },
+    {
+      "sample_id": "wide18_x1152_y256",
+      "edge": 5,
+      "K8": {
+        "pred_samples": 109,
+        "gt_samples": 109,
+        "pred_supported": 109,
+        "gt_supported": 109,
+        "max_symmetric_distance": 0.23511946447863677
+      },
+      "chord": {
+        "pred_samples": 106,
+        "gt_samples": 109,
+        "pred_supported": 84,
+        "gt_supported": 85,
+        "max_symmetric_distance": 1.8351733479858683
+      }
+    },
+    {
+      "sample_id": "wide18_x0_y384",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 166,
+        "gt_samples": 167,
+        "pred_supported": 166,
+        "gt_supported": 167,
+        "max_symmetric_distance": 0.413364237893622
+      },
+      "chord": {
+        "pred_samples": 165,
+        "gt_samples": 167,
+        "pred_supported": 134,
+        "gt_supported": 134,
+        "max_symmetric_distance": 1.3120899637053292
+      }
+    },
+    {
+      "sample_id": "wide18_x384_y384",
+      "edge": 0,
+      "K8": {
+        "pred_samples": 151,
+        "gt_samples": 154,
+        "pred_supported": 151,
+        "gt_supported": 154,
+        "max_symmetric_distance": 0.7401815486538199
+      },
+      "chord": {
+        "pred_samples": 146,
+        "gt_samples": 154,
+        "pred_supported": 31,
+        "gt_supported": 29,
+        "max_symmetric_distance": 2.9634757242699616
+      }
+    },
+    {
+      "sample_id": "wide18_x640_y384",
+      "edge": 7,
+      "K8": {
+        "pred_samples": 44,
+        "gt_samples": 44,
+        "pred_supported": 44,
+        "gt_supported": 44,
+        "max_symmetric_distance": 0.03584134630685497
+      },
+      "chord": {
+        "pred_samples": 43,
+        "gt_samples": 44,
+        "pred_supported": 43,
+        "gt_supported": 44,
+        "max_symmetric_distance": 0.3552436749691685
+      }
+    },
+    {
+      "sample_id": "wide18_x640_y384",
+      "edge": 28,
+      "K8": {
+        "pred_samples": 45,
+        "gt_samples": 45,
+        "pred_supported": 45,
+        "gt_supported": 45,
+        "max_symmetric_distance": 0.03647119923690411
+      },
+      "chord": {
+        "pred_samples": 44,
+        "gt_samples": 45,
+        "pred_supported": 44,
+        "gt_supported": 45,
+        "max_symmetric_distance": 0.4342644508616247
+      }
+    },
+    {
+      "sample_id": "wide18_x768_y384",
+      "edge": 21,
+      "K8": {
+        "pred_samples": 220,
+        "gt_samples": 225,
+        "pred_supported": 220,
+        "gt_supported": 225,
+        "max_symmetric_distance": 0.7280448177316848
+      },
+      "chord": {
+        "pred_samples": 206,
+        "gt_samples": 225,
+        "pred_supported": 68,
+        "gt_supported": 67,
+        "max_symmetric_distance": 3.8655031579636145
+      }
+    },
+    {
+      "sample_id": "wide18_x512_y512",
+      "edge": 9,
+      "K8": {
+        "pred_samples": 164,
+        "gt_samples": 165,
+        "pred_supported": 164,
+        "gt_supported": 165,
+        "max_symmetric_distance": 0.4675501686828581
+      },
+      "chord": {
+        "pred_samples": 163,
+        "gt_samples": 165,
+        "pred_supported": 140,
+        "gt_supported": 141,
+        "max_symmetric_distance": 1.1835840469697665
+      }
+    },
+    {
+      "sample_id": "wide18_x512_y512",
+      "edge": 20,
+      "K8": {
+        "pred_samples": 134,
+        "gt_samples": 135,
+        "pred_supported": 134,
+        "gt_supported": 135,
+        "max_symmetric_distance": 0.2713253211550762
+      },
+      "chord": {
+        "pred_samples": 117,
+        "gt_samples": 135,
+        "pred_supported": 17,
+        "gt_supported": 17,
+        "max_symmetric_distance": 7.271554925319362
+      }
+    },
+    {
+      "sample_id": "wide18_x512_y512",
+      "edge": 22,
+      "K8": {
+        "pred_samples": 86,
+        "gt_samples": 87,
+        "pred_supported": 86,
+        "gt_supported": 87,
+        "max_symmetric_distance": 0.24370051028055983
+      },
+      "chord": {
+        "pred_samples": 66,
+        "gt_samples": 87,
+        "pred_supported": 10,
+        "gt_supported": 10,
+        "max_symmetric_distance": 5.675151489140912
+      }
+    },
+    {
+      "sample_id": "wide18_x896_y512",
+      "edge": 29,
+      "K8": {
+        "pred_samples": 38,
+        "gt_samples": 38,
+        "pred_supported": 38,
+        "gt_supported": 38,
+        "max_symmetric_distance": 4.526497862467019e-14
+      },
+      "chord": {
+        "pred_samples": 38,
+        "gt_samples": 38,
+        "pred_supported": 38,
+        "gt_supported": 38,
+        "max_symmetric_distance": 4.002966042486721e-15
+      }
+    },
+    {
+      "sample_id": "wide18_x1024_y512",
+      "edge": 10,
+      "K8": {
+        "pred_samples": 105,
+        "gt_samples": 105,
+        "pred_supported": 105,
+        "gt_supported": 105,
+        "max_symmetric_distance": 0.15634669306663024
+      },
+      "chord": {
+        "pred_samples": 104,
+        "gt_samples": 105,
+        "pred_supported": 104,
+        "gt_supported": 105,
+        "max_symmetric_distance": 0.9260363455464453
+      }
+    },
+    {
+      "sample_id": "wide18_x1024_y512",
+      "edge": 24,
+      "K8": {
+        "pred_samples": 107,
+        "gt_samples": 107,
+        "pred_supported": 107,
+        "gt_supported": 107,
+        "max_symmetric_distance": 0.23844425374670644
+      },
+      "chord": {
+        "pred_samples": 104,
+        "gt_samples": 107,
+        "pred_supported": 42,
+        "gt_supported": 42,
+        "max_symmetric_distance": 2.9262499990025255
+      }
+    },
+    {
+      "sample_id": "wide18_x640_y640",
+      "edge": 15,
+      "K8": {
+        "pred_samples": 174,
+        "gt_samples": 176,
+        "pred_supported": 174,
+        "gt_supported": 176,
+        "max_symmetric_distance": 0.6823512179126849
+      },
+      "chord": {
+        "pred_samples": 165,
+        "gt_samples": 176,
+        "pred_supported": 13,
+        "gt_supported": 13,
+        "max_symmetric_distance": 4.093648078658438
+      }
+    },
+    {
+      "sample_id": "wide18_x896_y640",
+      "edge": 0,
+      "K8": {
+        "pred_samples": 187,
+        "gt_samples": 188,
+        "pred_supported": 187,
+        "gt_supported": 188,
+        "max_symmetric_distance": 0.4462405740564755
+      },
+      "chord": {
+        "pred_samples": 187,
+        "gt_samples": 188,
+        "pred_supported": 179,
+        "gt_supported": 178,
+        "max_symmetric_distance": 1.2699129748121762
+      }
+    },
+    {
+      "sample_id": "wide18_x896_y768",
+      "edge": 8,
+      "K8": {
+        "pred_samples": 73,
+        "gt_samples": 73,
+        "pred_supported": 73,
+        "gt_supported": 73,
+        "max_symmetric_distance": 0.03986607346652487
+      },
+      "chord": {
+        "pred_samples": 73,
+        "gt_samples": 73,
+        "pred_supported": 73,
+        "gt_supported": 73,
+        "max_symmetric_distance": 0.3007543438846801
+      }
+    },
+    {
+      "sample_id": "wide19_x896_y256",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 151,
+        "gt_samples": 152,
+        "pred_supported": 151,
+        "gt_supported": 152,
+        "max_symmetric_distance": 0.5904915245508262
+      },
+      "chord": {
+        "pred_samples": 139,
+        "gt_samples": 152,
+        "pred_supported": 47,
+        "gt_supported": 47,
+        "max_symmetric_distance": 4.738581767347115
+      }
+    },
+    {
+      "sample_id": "wide19_x128_y384",
+      "edge": 8,
+      "K8": {
+        "pred_samples": 67,
+        "gt_samples": 67,
+        "pred_supported": 67,
+        "gt_supported": 67,
+        "max_symmetric_distance": 0.07126259625666775
+      },
+      "chord": {
+        "pred_samples": 66,
+        "gt_samples": 67,
+        "pred_supported": 66,
+        "gt_supported": 67,
+        "max_symmetric_distance": 0.7412736801203058
+      }
+    },
+    {
+      "sample_id": "wide19_x384_y512",
+      "edge": 4,
+      "K8": {
+        "pred_samples": 52,
+        "gt_samples": 52,
+        "pred_supported": 52,
+        "gt_supported": 52,
+        "max_symmetric_distance": 1.798370985572027e-13
+      },
+      "chord": {
+        "pred_samples": 52,
+        "gt_samples": 52,
+        "pred_supported": 52,
+        "gt_supported": 52,
+        "max_symmetric_distance": 8.188600426433445e-15
+      }
+    },
+    {
+      "sample_id": "wide19_x768_y512",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 188,
+        "gt_samples": 191,
+        "pred_supported": 188,
+        "gt_supported": 191,
+        "max_symmetric_distance": 0.8584117555125754
+      },
+      "chord": {
+        "pred_samples": 172,
+        "gt_samples": 191,
+        "pred_supported": 52,
+        "gt_supported": 51,
+        "max_symmetric_distance": 8.268232763470046
+      }
+    },
+    {
+      "sample_id": "wide19_x768_y512",
+      "edge": 35,
+      "K8": {
+        "pred_samples": 71,
+        "gt_samples": 71,
+        "pred_supported": 71,
+        "gt_supported": 71,
+        "max_symmetric_distance": 0.07846052627401064
+      },
+      "chord": {
+        "pred_samples": 71,
+        "gt_samples": 71,
+        "pred_supported": 71,
+        "gt_supported": 71,
+        "max_symmetric_distance": 0.7708878478436969
+      }
+    },
+    {
+      "sample_id": "wide19_x896_y512",
+      "edge": 11,
+      "K8": {
+        "pred_samples": 70,
+        "gt_samples": 70,
+        "pred_supported": 70,
+        "gt_supported": 70,
+        "max_symmetric_distance": 0.021921056233505664
+      },
+      "chord": {
+        "pred_samples": 70,
+        "gt_samples": 70,
+        "pred_supported": 70,
+        "gt_supported": 70,
+        "max_symmetric_distance": 0.5842660620213226
+      }
+    },
+    {
+      "sample_id": "wide19_x1152_y640",
+      "edge": 4,
+      "K8": {
+        "pred_samples": 130,
+        "gt_samples": 130,
+        "pred_supported": 130,
+        "gt_supported": 130,
+        "max_symmetric_distance": 0.1325937177172468
+      },
+      "chord": {
+        "pred_samples": 130,
+        "gt_samples": 130,
+        "pred_supported": 130,
+        "gt_supported": 130,
+        "max_symmetric_distance": 0.7471128028029232
+      }
+    },
+    {
+      "sample_id": "wide20_x512_y128",
+      "edge": 9,
+      "K8": {
+        "pred_samples": 400,
+        "gt_samples": 402,
+        "pred_supported": 400,
+        "gt_supported": 402,
+        "max_symmetric_distance": 0.4905832465355929
+      },
+      "chord": {
+        "pred_samples": 400,
+        "gt_samples": 402,
+        "pred_supported": 287,
+        "gt_supported": 286,
+        "max_symmetric_distance": 1.7143917299185958
+      }
+    },
+    {
+      "sample_id": "wide20_x1024_y128",
+      "edge": 0,
+      "K8": {
+        "pred_samples": 26,
+        "gt_samples": 26,
+        "pred_supported": 26,
+        "gt_supported": 26,
+        "max_symmetric_distance": 5.240864204079165e-14
+      },
+      "chord": {
+        "pred_samples": 26,
+        "gt_samples": 26,
+        "pred_supported": 26,
+        "gt_supported": 26,
+        "max_symmetric_distance": 3.7812833677378426e-14
+      }
+    },
+    {
+      "sample_id": "wide20_x1152_y128",
+      "edge": 14,
+      "K8": {
+        "pred_samples": 86,
+        "gt_samples": 86,
+        "pred_supported": 86,
+        "gt_supported": 86,
+        "max_symmetric_distance": 0.12921002879969357
+      },
+      "chord": {
+        "pred_samples": 82,
+        "gt_samples": 86,
+        "pred_supported": 21,
+        "gt_supported": 21,
+        "max_symmetric_distance": 2.2163848398702046
+      }
+    },
+    {
+      "sample_id": "wide20_x1280_y128",
+      "edge": 4,
+      "K8": {
+        "pred_samples": 210,
+        "gt_samples": 211,
+        "pred_supported": 210,
+        "gt_supported": 211,
+        "max_symmetric_distance": 0.4145938091266985
+      },
+      "chord": {
+        "pred_samples": 190,
+        "gt_samples": 211,
+        "pred_supported": 23,
+        "gt_supported": 23,
+        "max_symmetric_distance": 9.246839291746815
+      }
+    },
+    {
+      "sample_id": "wide20_x640_y256",
+      "edge": 20,
+      "K8": {
+        "pred_samples": 15,
+        "gt_samples": 15,
+        "pred_supported": 15,
+        "gt_supported": 15,
+        "max_symmetric_distance": 1.5303319970623714e-13
+      },
+      "chord": {
+        "pred_samples": 15,
+        "gt_samples": 15,
+        "pred_supported": 15,
+        "gt_supported": 15,
+        "max_symmetric_distance": 4.463127628559181e-15
+      }
+    },
+    {
+      "sample_id": "wide20_x768_y256",
+      "edge": 22,
+      "K8": {
+        "pred_samples": 74,
+        "gt_samples": 74,
+        "pred_supported": 74,
+        "gt_supported": 74,
+        "max_symmetric_distance": 0.06358820902616387
+      },
+      "chord": {
+        "pred_samples": 74,
+        "gt_samples": 74,
+        "pred_supported": 74,
+        "gt_supported": 74,
+        "max_symmetric_distance": 0.45340628839350405
+      }
+    },
+    {
+      "sample_id": "wide20_x1408_y256",
+      "edge": 20,
+      "K8": {
+        "pred_samples": 52,
+        "gt_samples": 52,
+        "pred_supported": 52,
+        "gt_supported": 52,
+        "max_symmetric_distance": 0.16997506499474008
+      },
+      "chord": {
+        "pred_samples": 49,
+        "gt_samples": 52,
+        "pred_supported": 22,
+        "gt_supported": 21,
+        "max_symmetric_distance": 2.1685778824441777
+      }
+    },
+    {
+      "sample_id": "wide20_x512_y384",
+      "edge": 0,
+      "K8": {
+        "pred_samples": 145,
+        "gt_samples": 145,
+        "pred_supported": 145,
+        "gt_supported": 145,
+        "max_symmetric_distance": 0.29958968589299295
+      },
+      "chord": {
+        "pred_samples": 144,
+        "gt_samples": 145,
+        "pred_supported": 144,
+        "gt_supported": 145,
+        "max_symmetric_distance": 0.39796052523478653
+      }
+    },
+    {
+      "sample_id": "wide20_x640_y384",
+      "edge": 4,
+      "K8": {
+        "pred_samples": 35,
+        "gt_samples": 35,
+        "pred_supported": 35,
+        "gt_supported": 35,
+        "max_symmetric_distance": 0.054242708903206614
+      },
+      "chord": {
+        "pred_samples": 34,
+        "gt_samples": 35,
+        "pred_supported": 34,
+        "gt_supported": 35,
+        "max_symmetric_distance": 0.7177768897168355
+      }
+    },
+    {
+      "sample_id": "wide20_x768_y384",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 145,
+        "gt_samples": 146,
+        "pred_supported": 145,
+        "gt_supported": 146,
+        "max_symmetric_distance": 0.47359320289272594
+      },
+      "chord": {
+        "pred_samples": 144,
+        "gt_samples": 146,
+        "pred_supported": 76,
+        "gt_supported": 75,
+        "max_symmetric_distance": 2.3025697854630867
+      }
+    },
+    {
+      "sample_id": "wide20_x768_y384",
+      "edge": 6,
+      "K8": {
+        "pred_samples": 19,
+        "gt_samples": 19,
+        "pred_supported": 19,
+        "gt_supported": 19,
+        "max_symmetric_distance": 6.355287432313019e-14
+      },
+      "chord": {
+        "pred_samples": 19,
+        "gt_samples": 19,
+        "pred_supported": 19,
+        "gt_supported": 19,
+        "max_symmetric_distance": 6.358389842764979e-15
+      }
+    },
+    {
+      "sample_id": "wide20_x1024_y384",
+      "edge": 15,
+      "K8": {
+        "pred_samples": 71,
+        "gt_samples": 71,
+        "pred_supported": 71,
+        "gt_supported": 71,
+        "max_symmetric_distance": 0.13561744531108494
+      },
+      "chord": {
+        "pred_samples": 68,
+        "gt_samples": 71,
+        "pred_supported": 22,
+        "gt_supported": 21,
+        "max_symmetric_distance": 2.156619097617212
+      }
+    },
+    {
+      "sample_id": "wide20_x1024_y512",
+      "edge": 4,
+      "K8": {
+        "pred_samples": 173,
+        "gt_samples": 173,
+        "pred_supported": 173,
+        "gt_supported": 173,
+        "max_symmetric_distance": 0.2108863381238639
+      },
+      "chord": {
+        "pred_samples": 172,
+        "gt_samples": 173,
+        "pred_supported": 172,
+        "gt_supported": 173,
+        "max_symmetric_distance": 0.7687386477759857
+      }
+    },
+    {
+      "sample_id": "wide20_x384_y640",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 90,
+        "gt_samples": 90,
+        "pred_supported": 90,
+        "gt_supported": 90,
+        "max_symmetric_distance": 0.043286723516667534
+      },
+      "chord": {
+        "pred_samples": 90,
+        "gt_samples": 90,
+        "pred_supported": 90,
+        "gt_supported": 90,
+        "max_symmetric_distance": 0.40588162166927283
+      }
+    },
+    {
+      "sample_id": "wide20_x896_y640",
+      "edge": 7,
+      "K8": {
+        "pred_samples": 371,
+        "gt_samples": 371,
+        "pred_supported": 371,
+        "gt_supported": 371,
+        "max_symmetric_distance": 0.506737635585425
+      },
+      "chord": {
+        "pred_samples": 366,
+        "gt_samples": 371,
+        "pred_supported": 77,
+        "gt_supported": 77,
+        "max_symmetric_distance": 5.985533516280707
+      }
+    },
+    {
+      "sample_id": "wide20_x1280_y753",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 136,
+        "gt_samples": 137,
+        "pred_supported": 136,
+        "gt_supported": 137,
+        "max_symmetric_distance": 0.3428449047412558
+      },
+      "chord": {
+        "pred_samples": 132,
+        "gt_samples": 137,
+        "pred_supported": 112,
+        "gt_supported": 112,
+        "max_symmetric_distance": 2.2809940549261793
+      }
+    },
+    {
+      "sample_id": "wide21_x1280_y0",
+      "edge": 9,
+      "K8": {
+        "pred_samples": 201,
+        "gt_samples": 202,
+        "pred_supported": 201,
+        "gt_supported": 202,
+        "max_symmetric_distance": 0.2615817967140322
+      },
+      "chord": {
+        "pred_samples": 200,
+        "gt_samples": 202,
+        "pred_supported": 183,
+        "gt_supported": 185,
+        "max_symmetric_distance": 1.1611357662678516
+      }
+    },
+    {
+      "sample_id": "wide21_x256_y128",
+      "edge": 26,
+      "K8": {
+        "pred_samples": 45,
+        "gt_samples": 45,
+        "pred_supported": 45,
+        "gt_supported": 45,
+        "max_symmetric_distance": 0.05904041682985653
+      },
+      "chord": {
+        "pred_samples": 44,
+        "gt_samples": 45,
+        "pred_supported": 44,
+        "gt_supported": 45,
+        "max_symmetric_distance": 0.8668128874864833
+      }
+    },
+    {
+      "sample_id": "wide21_x384_y128",
+      "edge": 12,
+      "K8": {
+        "pred_samples": 119,
+        "gt_samples": 119,
+        "pred_supported": 119,
+        "gt_supported": 119,
+        "max_symmetric_distance": 0.10538286072381241
+      },
+      "chord": {
+        "pred_samples": 119,
+        "gt_samples": 119,
+        "pred_supported": 86,
+        "gt_supported": 86,
+        "max_symmetric_distance": 1.3851019040826347
+      }
+    },
+    {
+      "sample_id": "wide21_x512_y128",
+      "edge": 15,
+      "K8": {
+        "pred_samples": 50,
+        "gt_samples": 50,
+        "pred_supported": 50,
+        "gt_supported": 50,
+        "max_symmetric_distance": 0.019994139552133153
+      },
+      "chord": {
+        "pred_samples": 49,
+        "gt_samples": 50,
+        "pred_supported": 49,
+        "gt_supported": 50,
+        "max_symmetric_distance": 0.42986983861910766
+      }
+    },
+    {
+      "sample_id": "wide21_x640_y128",
+      "edge": 22,
+      "K8": {
+        "pred_samples": 80,
+        "gt_samples": 81,
+        "pred_supported": 80,
+        "gt_supported": 81,
+        "max_symmetric_distance": 0.39956651519789865
+      },
+      "chord": {
+        "pred_samples": 71,
+        "gt_samples": 81,
+        "pred_supported": 19,
+        "gt_supported": 19,
+        "max_symmetric_distance": 4.381798115783541
+      }
+    },
+    {
+      "sample_id": "wide21_x1024_y128",
+      "edge": 6,
+      "K8": {
+        "pred_samples": 212,
+        "gt_samples": 213,
+        "pred_supported": 212,
+        "gt_supported": 213,
+        "max_symmetric_distance": 0.260528972513441
+      },
+      "chord": {
+        "pred_samples": 210,
+        "gt_samples": 213,
+        "pred_supported": 151,
+        "gt_supported": 152,
+        "max_symmetric_distance": 2.259684200853056
+      }
+    },
+    {
+      "sample_id": "wide21_x256_y256",
+      "edge": 6,
+      "K8": {
+        "pred_samples": 123,
+        "gt_samples": 124,
+        "pred_supported": 123,
+        "gt_supported": 124,
+        "max_symmetric_distance": 0.21802334909049043
+      },
+      "chord": {
+        "pred_samples": 122,
+        "gt_samples": 124,
+        "pred_supported": 114,
+        "gt_supported": 115,
+        "max_symmetric_distance": 1.2457380166107053
+      }
+    },
+    {
+      "sample_id": "wide21_x384_y256",
+      "edge": 26,
+      "K8": {
+        "pred_samples": 11,
+        "gt_samples": 11,
+        "pred_supported": 11,
+        "gt_supported": 11,
+        "max_symmetric_distance": 4.733314484149446e-14
+      },
+      "chord": {
+        "pred_samples": 11,
+        "gt_samples": 11,
+        "pred_supported": 11,
+        "gt_supported": 11,
+        "max_symmetric_distance": 2.401779625492033e-15
+      }
+    },
+    {
+      "sample_id": "wide21_x640_y256",
+      "edge": 5,
+      "K8": {
+        "pred_samples": 101,
+        "gt_samples": 101,
+        "pred_supported": 101,
+        "gt_supported": 101,
+        "max_symmetric_distance": 0.12320645558207484
+      },
+      "chord": {
+        "pred_samples": 99,
+        "gt_samples": 101,
+        "pred_supported": 51,
+        "gt_supported": 51,
+        "max_symmetric_distance": 2.5082748808456796
+      }
+    },
+    {
+      "sample_id": "wide21_x896_y256",
+      "edge": 10,
+      "K8": {
+        "pred_samples": 57,
+        "gt_samples": 57,
+        "pred_supported": 57,
+        "gt_supported": 57,
+        "max_symmetric_distance": 0.11729386525630552
+      },
+      "chord": {
+        "pred_samples": 55,
+        "gt_samples": 57,
+        "pred_supported": 55,
+        "gt_supported": 57,
+        "max_symmetric_distance": 1.0
+      }
+    },
+    {
+      "sample_id": "wide21_x1401_y256",
+      "edge": 3,
+      "K8": {
+        "pred_samples": 211,
+        "gt_samples": 212,
+        "pred_supported": 211,
+        "gt_supported": 212,
+        "max_symmetric_distance": 0.3131913353426956
+      },
+      "chord": {
+        "pred_samples": 206,
+        "gt_samples": 212,
+        "pred_supported": 91,
+        "gt_supported": 91,
+        "max_symmetric_distance": 4.8642407339942455
+      }
+    },
+    {
+      "sample_id": "wide21_x640_y512",
+      "edge": 18,
+      "K8": {
+        "pred_samples": 261,
+        "gt_samples": 262,
+        "pred_supported": 261,
+        "gt_supported": 262,
+        "max_symmetric_distance": 0.3895482815021097
+      },
+      "chord": {
+        "pred_samples": 260,
+        "gt_samples": 262,
+        "pred_supported": 249,
+        "gt_supported": 250,
+        "max_symmetric_distance": 1.113758496051055
+      }
+    },
+    {
+      "sample_id": "wide21_x384_y640",
+      "edge": 6,
+      "K8": {
+        "pred_samples": 146,
+        "gt_samples": 147,
+        "pred_supported": 146,
+        "gt_supported": 147,
+        "max_symmetric_distance": 0.28610906078002235
+      },
+      "chord": {
+        "pred_samples": 143,
+        "gt_samples": 147,
+        "pred_supported": 80,
+        "gt_supported": 81,
+        "max_symmetric_distance": 1.8285593137329954
+      }
+    },
+    {
+      "sample_id": "wide21_x1024_y640",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 159,
+        "gt_samples": 160,
+        "pred_supported": 159,
+        "gt_supported": 160,
+        "max_symmetric_distance": 0.27406356943612825
+      },
+      "chord": {
+        "pred_samples": 158,
+        "gt_samples": 160,
+        "pred_supported": 126,
+        "gt_supported": 127,
+        "max_symmetric_distance": 1.7150721787102567
+      }
+    },
+    {
+      "sample_id": "wide22_x768_y128",
+      "edge": 6,
+      "K8": {
+        "pred_samples": 309,
+        "gt_samples": 311,
+        "pred_supported": 309,
+        "gt_supported": 311,
+        "max_symmetric_distance": 0.4971099951125247
+      },
+      "chord": {
+        "pred_samples": 305,
+        "gt_samples": 311,
+        "pred_supported": 100,
+        "gt_supported": 101,
+        "max_symmetric_distance": 5.414834958793671
+      }
+    },
+    {
+      "sample_id": "wide22_x256_y384",
+      "edge": 10,
+      "K8": {
+        "pred_samples": 36,
+        "gt_samples": 36,
+        "pred_supported": 36,
+        "gt_supported": 36,
+        "max_symmetric_distance": 0.033168624723257586
+      },
+      "chord": {
+        "pred_samples": 36,
+        "gt_samples": 36,
+        "pred_supported": 36,
+        "gt_supported": 36,
+        "max_symmetric_distance": 0.2771887756217751
+      }
+    },
+    {
+      "sample_id": "wide22_x384_y384",
+      "edge": 22,
+      "K8": {
+        "pred_samples": 123,
+        "gt_samples": 123,
+        "pred_supported": 123,
+        "gt_supported": 123,
+        "max_symmetric_distance": 0.1829874667464383
+      },
+      "chord": {
+        "pred_samples": 116,
+        "gt_samples": 123,
+        "pred_supported": 50,
+        "gt_supported": 50,
+        "max_symmetric_distance": 4.177736304949998
+      }
+    },
+    {
+      "sample_id": "wide22_x896_y384",
+      "edge": 28,
+      "K8": {
+        "pred_samples": 83,
+        "gt_samples": 83,
+        "pred_supported": 83,
+        "gt_supported": 83,
+        "max_symmetric_distance": 0.18474601866097448
+      },
+      "chord": {
+        "pred_samples": 81,
+        "gt_samples": 83,
+        "pred_supported": 71,
+        "gt_supported": 71,
+        "max_symmetric_distance": 1.3641539824788986
+      }
+    },
+    {
+      "sample_id": "wide22_x1024_y384",
+      "edge": 23,
+      "K8": {
+        "pred_samples": 63,
+        "gt_samples": 64,
+        "pred_supported": 63,
+        "gt_supported": 64,
+        "max_symmetric_distance": 0.2837178414139223
+      },
+      "chord": {
+        "pred_samples": 56,
+        "gt_samples": 64,
+        "pred_supported": 21,
+        "gt_supported": 21,
+        "max_symmetric_distance": 2.5239418080256213
+      }
+    },
+    {
+      "sample_id": "wide22_x1152_y384",
+      "edge": 11,
+      "K8": {
+        "pred_samples": 18,
+        "gt_samples": 18,
+        "pred_supported": 18,
+        "gt_supported": 18,
+        "max_symmetric_distance": 1.2004658507402038e-13
+      },
+      "chord": {
+        "pred_samples": 18,
+        "gt_samples": 18,
+        "pred_supported": 18,
+        "gt_supported": 18,
+        "max_symmetric_distance": 4.55684004302105e-14
+      }
+    },
+    {
+      "sample_id": "wide22_x1155_y384",
+      "edge": 11,
+      "K8": {
+        "pred_samples": 334,
+        "gt_samples": 337,
+        "pred_supported": 334,
+        "gt_supported": 337,
+        "max_symmetric_distance": 0.7932674552349526
+      },
+      "chord": {
+        "pred_samples": 332,
+        "gt_samples": 337,
+        "pred_supported": 121,
+        "gt_supported": 123,
+        "max_symmetric_distance": 2.410402958893262
+      }
+    },
+    {
+      "sample_id": "wide22_x256_y512",
+      "edge": 10,
+      "K8": {
+        "pred_samples": 41,
+        "gt_samples": 41,
+        "pred_supported": 41,
+        "gt_supported": 41,
+        "max_symmetric_distance": 0.022895599646118966
+      },
+      "chord": {
+        "pred_samples": 40,
+        "gt_samples": 41,
+        "pred_supported": 40,
+        "gt_supported": 41,
+        "max_symmetric_distance": 0.3115820131165943
+      }
+    },
+    {
+      "sample_id": "wide22_x768_y512",
+      "edge": 16,
+      "K8": {
+        "pred_samples": 31,
+        "gt_samples": 31,
+        "pred_supported": 31,
+        "gt_supported": 31,
+        "max_symmetric_distance": 0.02551728927866095
+      },
+      "chord": {
+        "pred_samples": 31,
+        "gt_samples": 31,
+        "pred_supported": 31,
+        "gt_supported": 31,
+        "max_symmetric_distance": 0.44412669543186
+      }
+    },
+    {
+      "sample_id": "wide22_x128_y640",
+      "edge": 4,
+      "K8": {
+        "pred_samples": 187,
+        "gt_samples": 187,
+        "pred_supported": 187,
+        "gt_supported": 187,
+        "max_symmetric_distance": 0.05755080528783941
+      },
+      "chord": {
+        "pred_samples": 187,
+        "gt_samples": 187,
+        "pred_supported": 187,
+        "gt_supported": 187,
+        "max_symmetric_distance": 0.5726965377194423
+      }
+    },
+    {
+      "sample_id": "wide22_x640_y640",
+      "edge": 4,
+      "K8": {
+        "pred_samples": 9,
+        "gt_samples": 9,
+        "pred_supported": 9,
+        "gt_supported": 9,
+        "max_symmetric_distance": 1.7739521692586345e-14
+      },
+      "chord": {
+        "pred_samples": 9,
+        "gt_samples": 9,
+        "pred_supported": 9,
+        "gt_supported": 9,
+        "max_symmetric_distance": 2.482534153247273e-16
+      }
+    },
+    {
+      "sample_id": "wide22_x512_y776",
+      "edge": 3,
+      "K8": {
+        "pred_samples": 352,
+        "gt_samples": 354,
+        "pred_supported": 352,
+        "gt_supported": 354,
+        "max_symmetric_distance": 0.6505469846711758
+      },
+      "chord": {
+        "pred_samples": 344,
+        "gt_samples": 354,
+        "pred_supported": 62,
+        "gt_supported": 62,
+        "max_symmetric_distance": 7.605038768379507
+      }
+    },
+    {
+      "sample_id": "wide23_x768_y128",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 508,
+        "gt_samples": 516,
+        "pred_supported": 435,
+        "gt_supported": 435,
+        "max_symmetric_distance": 2.658920432572546
+      },
+      "chord": {
+        "pred_samples": 462,
+        "gt_samples": 516,
+        "pred_supported": 31,
+        "gt_supported": 31,
+        "max_symmetric_distance": 25.42511728520469
+      }
+    },
+    {
+      "sample_id": "wide23_x1305_y256",
+      "edge": 11,
+      "K8": {
+        "pred_samples": 188,
+        "gt_samples": 189,
+        "pred_supported": 188,
+        "gt_supported": 189,
+        "max_symmetric_distance": 0.3124294356399767
+      },
+      "chord": {
+        "pred_samples": 187,
+        "gt_samples": 189,
+        "pred_supported": 160,
+        "gt_supported": 160,
+        "max_symmetric_distance": 1.3881105428538156
+      }
+    },
+    {
+      "sample_id": "wide23_x896_y384",
+      "edge": 18,
+      "K8": {
+        "pred_samples": 62,
+        "gt_samples": 62,
+        "pred_supported": 62,
+        "gt_supported": 62,
+        "max_symmetric_distance": 0.07830738352867725
+      },
+      "chord": {
+        "pred_samples": 62,
+        "gt_samples": 62,
+        "pred_supported": 62,
+        "gt_supported": 62,
+        "max_symmetric_distance": 0.7693107907413175
+      }
+    },
+    {
+      "sample_id": "wide23_x896_y384",
+      "edge": 36,
+      "K8": {
+        "pred_samples": 163,
+        "gt_samples": 163,
+        "pred_supported": 163,
+        "gt_supported": 163,
+        "max_symmetric_distance": 0.2560993452725325
+      },
+      "chord": {
+        "pred_samples": 159,
+        "gt_samples": 163,
+        "pred_supported": 70,
+        "gt_supported": 69,
+        "max_symmetric_distance": 3.6422189294373197
+      }
+    },
+    {
+      "sample_id": "wide23_x1024_y384",
+      "edge": 7,
+      "K8": {
+        "pred_samples": 64,
+        "gt_samples": 64,
+        "pred_supported": 64,
+        "gt_supported": 64,
+        "max_symmetric_distance": 0.03759585881639624
+      },
+      "chord": {
+        "pred_samples": 64,
+        "gt_samples": 64,
+        "pred_supported": 64,
+        "gt_supported": 64,
+        "max_symmetric_distance": 0.6486921315867227
+      }
+    },
+    {
+      "sample_id": "wide23_x640_y512",
+      "edge": 4,
+      "K8": {
+        "pred_samples": 177,
+        "gt_samples": 180,
+        "pred_supported": 177,
+        "gt_supported": 180,
+        "max_symmetric_distance": 0.7676564146874908
+      },
+      "chord": {
+        "pred_samples": 161,
+        "gt_samples": 180,
+        "pred_supported": 41,
+        "gt_supported": 41,
+        "max_symmetric_distance": 6.43344434960922
+      }
+    },
+    {
+      "sample_id": "wide23_x768_y512",
+      "edge": 19,
+      "K8": {
+        "pred_samples": 34,
+        "gt_samples": 34,
+        "pred_supported": 34,
+        "gt_supported": 34,
+        "max_symmetric_distance": 0.015175713297082123
+      },
+      "chord": {
+        "pred_samples": 34,
+        "gt_samples": 34,
+        "pred_supported": 34,
+        "gt_supported": 34,
+        "max_symmetric_distance": 0.24440152864277298
+      }
+    },
+    {
+      "sample_id": "wide23_x896_y512",
+      "edge": 3,
+      "K8": {
+        "pred_samples": 221,
+        "gt_samples": 222,
+        "pred_supported": 221,
+        "gt_supported": 222,
+        "max_symmetric_distance": 0.2950979409492902
+      },
+      "chord": {
+        "pred_samples": 218,
+        "gt_samples": 222,
+        "pred_supported": 70,
+        "gt_supported": 70,
+        "max_symmetric_distance": 3.014530972543304
+      }
+    },
+    {
+      "sample_id": "wide23_x256_y640",
+      "edge": 3,
+      "K8": {
+        "pred_samples": 111,
+        "gt_samples": 111,
+        "pred_supported": 111,
+        "gt_supported": 111,
+        "max_symmetric_distance": 0.10181921011260062
+      },
+      "chord": {
+        "pred_samples": 111,
+        "gt_samples": 111,
+        "pred_supported": 111,
+        "gt_supported": 111,
+        "max_symmetric_distance": 0.36036312334358395
+      }
+    },
+    {
+      "sample_id": "wide24_x1024_y0",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 233,
+        "gt_samples": 234,
+        "pred_supported": 233,
+        "gt_supported": 234,
+        "max_symmetric_distance": 0.6571941305110434
+      },
+      "chord": {
+        "pred_samples": 227,
+        "gt_samples": 234,
+        "pred_supported": 60,
+        "gt_supported": 60,
+        "max_symmetric_distance": 3.8214413003282433
+      }
+    },
+    {
+      "sample_id": "wide24_x1024_y0",
+      "edge": 4,
+      "K8": {
+        "pred_samples": 8,
+        "gt_samples": 8,
+        "pred_supported": 8,
+        "gt_supported": 8,
+        "max_symmetric_distance": 9.080675421553401e-14
+      },
+      "chord": {
+        "pred_samples": 8,
+        "gt_samples": 8,
+        "pred_supported": 8,
+        "gt_supported": 8,
+        "max_symmetric_distance": 2.2185370327934623e-15
+      }
+    },
+    {
+      "sample_id": "wide24_x256_y128",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 23,
+        "gt_samples": 23,
+        "pred_supported": 23,
+        "gt_supported": 23,
+        "max_symmetric_distance": 0.009604495455634353
+      },
+      "chord": {
+        "pred_samples": 23,
+        "gt_samples": 23,
+        "pred_supported": 23,
+        "gt_supported": 23,
+        "max_symmetric_distance": 0.18339881068493666
+      }
+    },
+    {
+      "sample_id": "wide24_x640_y128",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 236,
+        "gt_samples": 236,
+        "pred_supported": 236,
+        "gt_supported": 236,
+        "max_symmetric_distance": 0.37801992700082665
+      },
+      "chord": {
+        "pred_samples": 236,
+        "gt_samples": 236,
+        "pred_supported": 236,
+        "gt_supported": 236,
+        "max_symmetric_distance": 0.7842218626821978
+      }
+    },
+    {
+      "sample_id": "wide24_x640_y128",
+      "edge": 5,
+      "K8": {
+        "pred_samples": 73,
+        "gt_samples": 73,
+        "pred_supported": 73,
+        "gt_supported": 73,
+        "max_symmetric_distance": 0.19178112514919085
+      },
+      "chord": {
+        "pred_samples": 66,
+        "gt_samples": 73,
+        "pred_supported": 22,
+        "gt_supported": 22,
+        "max_symmetric_distance": 3.459249047694453
+      }
+    },
+    {
+      "sample_id": "wide24_x1024_y128",
+      "edge": 2,
+      "K8": {
+        "pred_samples": 140,
+        "gt_samples": 141,
+        "pred_supported": 140,
+        "gt_supported": 141,
+        "max_symmetric_distance": 0.21869199056824326
+      },
+      "chord": {
+        "pred_samples": 136,
+        "gt_samples": 141,
+        "pred_supported": 29,
+        "gt_supported": 29,
+        "max_symmetric_distance": 3.756982014461784
+      }
+    },
+    {
+      "sample_id": "wide24_x1219_y128",
+      "edge": 4,
+      "K8": {
+        "pred_samples": 111,
+        "gt_samples": 112,
+        "pred_supported": 111,
+        "gt_supported": 112,
+        "max_symmetric_distance": 0.3070181291840414
+      },
+      "chord": {
+        "pred_samples": 106,
+        "gt_samples": 112,
+        "pred_supported": 26,
+        "gt_supported": 26,
+        "max_symmetric_distance": 3.6754368240596476
+      }
+    },
+    {
+      "sample_id": "wide24_x256_y256",
+      "edge": 0,
+      "K8": {
+        "pred_samples": 159,
+        "gt_samples": 159,
+        "pred_supported": 159,
+        "gt_supported": 159,
+        "max_symmetric_distance": 0.07257203080104123
+      },
+      "chord": {
+        "pred_samples": 159,
+        "gt_samples": 159,
+        "pred_supported": 159,
+        "gt_supported": 159,
+        "max_symmetric_distance": 0.4312079329014997
+      }
+    },
+    {
+      "sample_id": "wide24_x512_y256",
+      "edge": 8,
+      "K8": {
+        "pred_samples": 13,
+        "gt_samples": 13,
+        "pred_supported": 13,
+        "gt_supported": 13,
+        "max_symmetric_distance": 2.0097183471152322e-13
+      },
+      "chord": {
+        "pred_samples": 13,
+        "gt_samples": 13,
+        "pred_supported": 13,
+        "gt_supported": 13,
+        "max_symmetric_distance": 0.0
+      }
+    },
+    {
+      "sample_id": "wide24_x768_y256",
+      "edge": 28,
+      "K8": {
+        "pred_samples": 363,
+        "gt_samples": 366,
+        "pred_supported": 363,
+        "gt_supported": 366,
+        "max_symmetric_distance": 0.7023036288888321
+      },
+      "chord": {
+        "pred_samples": 351,
+        "gt_samples": 366,
+        "pred_supported": 23,
+        "gt_supported": 23,
+        "max_symmetric_distance": 7.430134268583304
+      }
+    },
+    {
+      "sample_id": "wide24_x1024_y256",
+      "edge": 25,
+      "K8": {
+        "pred_samples": 14,
+        "gt_samples": 14,
+        "pred_supported": 14,
+        "gt_supported": 14,
+        "max_symmetric_distance": 3.7746842608060483e-14
+      },
+      "chord": {
+        "pred_samples": 14,
+        "gt_samples": 14,
+        "pred_supported": 14,
+        "gt_supported": 14,
+        "max_symmetric_distance": 2.1065000811460206e-15
+      }
+    },
+    {
+      "sample_id": "wide24_x384_y384",
+      "edge": 13,
+      "K8": {
+        "pred_samples": 119,
+        "gt_samples": 119,
+        "pred_supported": 119,
+        "gt_supported": 119,
+        "max_symmetric_distance": 0.13506748463129126
+      },
+      "chord": {
+        "pred_samples": 118,
+        "gt_samples": 119,
+        "pred_supported": 101,
+        "gt_supported": 101,
+        "max_symmetric_distance": 1.1116801232619524
+      }
+    },
+    {
+      "sample_id": "wide24_x640_y384",
+      "edge": 30,
+      "K8": {
+        "pred_samples": 72,
+        "gt_samples": 72,
+        "pred_supported": 72,
+        "gt_supported": 72,
+        "max_symmetric_distance": 0.11055994804427494
+      },
+      "chord": {
+        "pred_samples": 70,
+        "gt_samples": 72,
+        "pred_supported": 31,
+        "gt_supported": 31,
+        "max_symmetric_distance": 1.5046249988354086
+      }
+    },
+    {
+      "sample_id": "wide24_x768_y384",
+      "edge": 21,
+      "K8": {
+        "pred_samples": 196,
+        "gt_samples": 201,
+        "pred_supported": 195,
+        "gt_supported": 198,
+        "max_symmetric_distance": 1.1017242492353947
+      },
+      "chord": {
+        "pred_samples": 184,
+        "gt_samples": 201,
+        "pred_supported": 71,
+        "gt_supported": 70,
+        "max_symmetric_distance": 5.574773511402123
+      }
+    },
+    {
+      "sample_id": "wide24_x896_y384",
+      "edge": 29,
+      "K8": {
+        "pred_samples": 100,
+        "gt_samples": 102,
+        "pred_supported": 100,
+        "gt_supported": 102,
+        "max_symmetric_distance": 0.5318450610609169
+      },
+      "chord": {
+        "pred_samples": 98,
+        "gt_samples": 102,
+        "pred_supported": 61,
+        "gt_supported": 63,
+        "max_symmetric_distance": 1.7103934974727686
+      }
+    },
+    {
+      "sample_id": "wide24_x256_y512",
+      "edge": 1,
+      "K8": {
+        "pred_samples": 295,
+        "gt_samples": 296,
+        "pred_supported": 295,
+        "gt_supported": 296,
+        "max_symmetric_distance": 0.5837690432765561
+      },
+      "chord": {
+        "pred_samples": 290,
+        "gt_samples": 296,
+        "pred_supported": 82,
+        "gt_supported": 83,
+        "max_symmetric_distance": 4.114609322805763
+      }
+    },
+    {
+      "sample_id": "wide24_x768_y512",
+      "edge": 4,
+      "K8": {
+        "pred_samples": 70,
+        "gt_samples": 70,
+        "pred_supported": 70,
+        "gt_supported": 70,
+        "max_symmetric_distance": 0.2134704621281845
+      },
+      "chord": {
+        "pred_samples": 67,
+        "gt_samples": 70,
+        "pred_supported": 23,
+        "gt_supported": 23,
+        "max_symmetric_distance": 1.825832467416003
+      }
+    },
+    {
+      "sample_id": "wide24_x1024_y512",
+      "edge": 5,
+      "K8": {
+        "pred_samples": 30,
+        "gt_samples": 30,
+        "pred_supported": 30,
+        "gt_supported": 30,
+        "max_symmetric_distance": 0.018455160218001712
+      },
+      "chord": {
+        "pred_samples": 30,
+        "gt_samples": 30,
+        "pred_supported": 30,
+        "gt_supported": 30,
+        "max_symmetric_distance": 0.13815915626780306
+      }
+    },
+    {
+      "sample_id": "wide24_x1152_y512",
+      "edge": 4,
+      "K8": {
+        "pred_samples": 218,
+        "gt_samples": 219,
+        "pred_supported": 218,
+        "gt_supported": 219,
+        "max_symmetric_distance": 0.3893545248500672
+      },
+      "chord": {
+        "pred_samples": 215,
+        "gt_samples": 219,
+        "pred_supported": 164,
+        "gt_supported": 164,
+        "max_symmetric_distance": 2.511182384436307
+      }
+    }
+  ]
+}

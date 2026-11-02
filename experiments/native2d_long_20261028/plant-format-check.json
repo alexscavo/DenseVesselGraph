@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/plants_3d2cut/patches/train/graphs/Set00_IMG_3283_000023_gt_graph.vtp",
+  "source_sha256": "7a1099f0a77223a7d3b35d6cfceec530c84d53b5fb0754c54fce69aa9965f850",
+  "repeated_identical_segments": 1,
+  "simple_undirected_topology": {
+    "source_nodes": 12,
+    "contracted_nodes": 10,
+    "betti": [
+      2,
+      0
+    ]
+  },
+  "distinct_geometry_paths_removed": 0
+}

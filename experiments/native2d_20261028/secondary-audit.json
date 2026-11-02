@@ -1,0 +1,5001 @@
+{
+  "AV-DRIVE": {
+    "files": [
+      {
+        "file": "21_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "22_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "23_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "24_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "25_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "26_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "27_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "28_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "29_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph",
+          "num_cycles",
+          "cycle_vertices"
+        ]
+      },
+      {
+        "file": "30_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "31_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "32_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph",
+          "num_cycles",
+          "cycle_vertices"
+        ]
+      },
+      {
+        "file": "33_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "34_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "35_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "36_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "37_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "38_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "39_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "40_manual1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      }
+    ],
+    "readiness": "graphs only; paired original images excluded by redistribution terms; blocked"
+  },
+  "AV-INSPIRE": {
+    "files": [
+      {
+        "file": "image1.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image10.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image11.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image12.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image13.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image14.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image15.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image16.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image17.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image18.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image19.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image2.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image20.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image21.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image22.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image23.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image24.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image25.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image26.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image27.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image28.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image29.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image3.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image30.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image31.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image32.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image33.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image34.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image35.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image36.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image37.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image38.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image39.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image4.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image40.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image5.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image6.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image7.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image8.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      },
+      {
+        "file": "image9.mat",
+        "variables": [
+          [
+            "G",
+            [
+              1,
+              1
+            ],
+            "struct"
+          ]
+        ],
+        "graph_fields": [
+          "V",
+          "A",
+          "v_ids",
+          "E",
+          "root",
+          "marked",
+          "unclear",
+          "lvl",
+          "changed",
+          "thick",
+          "inten",
+          "norms",
+          "vertex_colors",
+          "vertex_selected",
+          "twins",
+          "twins_flag",
+          "twins_pairs",
+          "V2",
+          "jitter_twins",
+          "draw_stat",
+          "edited",
+          "pseudo_edited",
+          "show_markings",
+          "art",
+          "ven",
+          "unsure",
+          "other",
+          "indices",
+          "subscripts",
+          "EC",
+          "EE",
+          "num_cycles",
+          "cycle_vertices",
+          "root_pos",
+          "onh_pos",
+          "onh_width",
+          "onh",
+          "image2_type",
+          "missing_paths",
+          "conn_paths",
+          "conn_subpaths",
+          "junctions",
+          "meta_graph"
+        ]
+      }
+    ],
+    "readiness": "graphs only; paired original images excluded by redistribution terms; blocked"
+  },
+  "REAVER": {
+    "images": [
+      {
+        "file": "diaphragm_60x_1.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 36,
+        "edges": 37,
+        "topology": [
+          3,
+          4
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/diaphragm_60x_1.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 19,
+        "ambiguous_degree4plus_pixels": 0,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 4633,
+        "requires_crossing_review": false
+      },
+      {
+        "file": "diaphragm_60x_2.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 114,
+        "edges": 99,
+        "topology": [
+          22,
+          7
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/diaphragm_60x_2.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 42,
+        "ambiguous_degree4plus_pixels": 0,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 10579,
+        "requires_crossing_review": false
+      },
+      {
+        "file": "diaphragm_60x_3.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 182,
+        "edges": 177,
+        "topology": [
+          19,
+          14
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/diaphragm_60x_3.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 85,
+        "ambiguous_degree4plus_pixels": 0,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 16081,
+        "requires_crossing_review": false
+      },
+      {
+        "file": "diaphragm_60x_4.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 100,
+        "edges": 94,
+        "topology": [
+          15,
+          9
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/diaphragm_60x_4.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 43,
+        "ambiguous_degree4plus_pixels": 0,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 15595,
+        "requires_crossing_review": false
+      },
+      {
+        "file": "diaphragm_60x_5.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 42,
+        "edges": 28,
+        "topology": [
+          14,
+          0
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/diaphragm_60x_5.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 7,
+        "ambiguous_degree4plus_pixels": 0,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 9703,
+        "requires_crossing_review": false
+      },
+      {
+        "file": "diaphragm_60x_6.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 79,
+        "edges": 72,
+        "topology": [
+          10,
+          3
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/diaphragm_60x_6.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 32,
+        "ambiguous_degree4plus_pixels": 0,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 11558,
+        "requires_crossing_review": false
+      },
+      {
+        "file": "heart_60x_1.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 0.9999028277135361,
+        "nodes": 79,
+        "edges": 58,
+        "topology": [
+          22,
+          1
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/heart_60x_1.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 19,
+        "ambiguous_degree4plus_pixels": 0,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 1,
+        "skeleton_pixels": 10291,
+        "requires_crossing_review": false
+      },
+      {
+        "file": "heart_60x_2.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": false,
+        "binary_red_green": false,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": false,
+        "raw_blue_difference_fraction": 5.53131103515625e-05,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            85,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 0.999604378214427,
+        "nodes": null,
+        "edges": null,
+        "topology": null
+      },
+      {
+        "file": "heart_60x_3.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": false,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": false,
+        "raw_blue_difference_fraction": 9.5367431640625e-07,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 0.9993759360958562,
+        "nodes": null,
+        "edges": null,
+        "topology": null
+      },
+      {
+        "file": "heart_60x_4.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 110,
+        "edges": 90,
+        "topology": [
+          23,
+          3
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/heart_60x_4.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 35,
+        "ambiguous_degree4plus_pixels": 0,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 11746,
+        "requires_crossing_review": false
+      },
+      {
+        "file": "heart_60x_5.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": false,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": false,
+        "raw_blue_difference_fraction": 2.384185791015625e-05,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": null,
+        "edges": null,
+        "topology": null
+      },
+      {
+        "file": "heart_60x_6.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 0.9999309535317269,
+        "nodes": 126,
+        "edges": 127,
+        "topology": [
+          13,
+          14
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/heart_60x_6.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 63,
+        "ambiguous_degree4plus_pixels": 0,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 14483,
+        "requires_crossing_review": false
+      },
+      {
+        "file": "ing_fat_20x_1.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": false,
+        "spacing_micron_xy": [
+          0.310791038,
+          0.310791038
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": false,
+        "scale_source": "CSV + Results.mat; TIFF resolution is display DPI",
+        "strict_pair_gate": false,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            1,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": null,
+        "edges": null,
+        "topology": null
+      },
+      {
+        "file": "ing_fat_20x_2.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": false,
+        "spacing_micron_xy": [
+          0.310791038,
+          0.310791038
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": false,
+        "scale_source": "CSV + Results.mat; TIFF resolution is display DPI",
+        "strict_pair_gate": false,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            1,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": null,
+        "edges": null,
+        "topology": null
+      },
+      {
+        "file": "ing_fat_20x_3.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.310791038,
+          0.310791038
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": false,
+        "scale_source": "CSV + Results.mat; TIFF resolution is display DPI",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 0.9997231961616534,
+        "nodes": 116,
+        "edges": 136,
+        "topology": [
+          2,
+          22
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/ing_fat_20x_3.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 76,
+        "ambiguous_degree4plus_pixels": 4,
+        "adjacent_junction_clusters": 3,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 10838,
+        "requires_crossing_review": true
+      },
+      {
+        "file": "ing_fat_60x_1.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": false,
+        "spacing_micron_xy": [
+          0.207194025,
+          0.207194025
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": false,
+        "scale_source": "CSV + Results.mat; TIFF resolution is display DPI",
+        "strict_pair_gate": false,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            1,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": null,
+        "edges": null,
+        "topology": null
+      },
+      {
+        "file": "ing_fat_60x_2.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": false,
+        "spacing_micron_xy": [
+          0.207194025,
+          0.207194025
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": false,
+        "scale_source": "CSV + Results.mat; TIFF resolution is display DPI",
+        "strict_pair_gate": false,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            1,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": null,
+        "edges": null,
+        "topology": null
+      },
+      {
+        "file": "ing_fat_60x_3.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.207194025,
+          0.207194025
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": false,
+        "scale_source": "CSV + Results.mat; TIFF resolution is display DPI",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 15,
+        "edges": 14,
+        "topology": [
+          1,
+          0
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/ing_fat_60x_3.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 6,
+        "ambiguous_degree4plus_pixels": 1,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 3116,
+        "requires_crossing_review": true
+      },
+      {
+        "file": "liver_60x_1.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 85,
+        "edges": 88,
+        "topology": [
+          4,
+          7
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/liver_60x_1.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 45,
+        "ambiguous_degree4plus_pixels": 1,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 11025,
+        "requires_crossing_review": true
+      },
+      {
+        "file": "liver_60x_2.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 147,
+        "edges": 153,
+        "topology": [
+          8,
+          14
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/liver_60x_2.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 79,
+        "ambiguous_degree4plus_pixels": 1,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 14751,
+        "requires_crossing_review": true
+      },
+      {
+        "file": "liver_60x_3.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 132,
+        "edges": 138,
+        "topology": [
+          8,
+          14
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/liver_60x_3.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 71,
+        "ambiguous_degree4plus_pixels": 1,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 13531,
+        "requires_crossing_review": true
+      },
+      {
+        "file": "liver_60x_4.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 140,
+        "edges": 154,
+        "topology": [
+          6,
+          20
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/liver_60x_4.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 84,
+        "ambiguous_degree4plus_pixels": 0,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 12815,
+        "requires_crossing_review": false
+      },
+      {
+        "file": "liver_60x_5.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 98,
+        "edges": 108,
+        "topology": [
+          4,
+          14
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/liver_60x_5.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 59,
+        "ambiguous_degree4plus_pixels": 0,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 11362,
+        "requires_crossing_review": false
+      },
+      {
+        "file": "liver_60x_6.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 151,
+        "edges": 163,
+        "topology": [
+          7,
+          19
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/liver_60x_6.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 87,
+        "ambiguous_degree4plus_pixels": 1,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 13305,
+        "requires_crossing_review": true
+      },
+      {
+        "file": "periton_cav_20x_1.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": false,
+        "spacing_micron_xy": [
+          0.310791038,
+          0.310791038
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": false,
+        "scale_source": "CSV + Results.mat; TIFF resolution is display DPI",
+        "strict_pair_gate": false,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            1,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": null,
+        "edges": null,
+        "topology": null
+      },
+      {
+        "file": "periton_cav_20x_2.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": false,
+        "spacing_micron_xy": [
+          0.310791038,
+          0.310791038
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": false,
+        "scale_source": "CSV + Results.mat; TIFF resolution is display DPI",
+        "strict_pair_gate": false,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            1,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": null,
+        "edges": null,
+        "topology": null
+      },
+      {
+        "file": "periton_cav_20x_3.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.310791038,
+          0.310791038
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": false,
+        "scale_source": "CSV + Results.mat; TIFF resolution is display DPI",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 80,
+        "edges": 83,
+        "topology": [
+          3,
+          6
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/periton_cav_20x_3.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 40,
+        "ambiguous_degree4plus_pixels": 4,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 13562,
+        "requires_crossing_review": true
+      },
+      {
+        "file": "periton_cav_60x_1.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": false,
+        "spacing_micron_xy": [
+          0.207194025,
+          0.207194025
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": false,
+        "scale_source": "CSV + Results.mat; TIFF resolution is display DPI",
+        "strict_pair_gate": false,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            1,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": null,
+        "edges": null,
+        "topology": null
+      },
+      {
+        "file": "periton_cav_60x_2.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": false,
+        "spacing_micron_xy": [
+          0.207194025,
+          0.207194025
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": false,
+        "scale_source": "CSV + Results.mat; TIFF resolution is display DPI",
+        "strict_pair_gate": false,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            1,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": null,
+        "edges": null,
+        "topology": null
+      },
+      {
+        "file": "periton_cav_60x_3.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.207194025,
+          0.207194025
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": false,
+        "scale_source": "CSV + Results.mat; TIFF resolution is display DPI",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 37,
+        "edges": 34,
+        "topology": [
+          6,
+          3
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/periton_cav_60x_3.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 15,
+        "ambiguous_degree4plus_pixels": 0,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 6848,
+        "requires_crossing_review": false
+      },
+      {
+        "file": "retina_20x_1.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.3107910377810017,
+          0.3107910377810017
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 0.999121908385775,
+        "nodes": 155,
+        "edges": 165,
+        "topology": [
+          5,
+          15
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/retina_20x_1.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 86,
+        "ambiguous_degree4plus_pixels": 0,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 13666,
+        "requires_crossing_review": false
+      },
+      {
+        "file": "retina_20x_2.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.3107910377810017,
+          0.3107910377810017
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 126,
+        "edges": 125,
+        "topology": [
+          12,
+          11
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/retina_20x_2.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 61,
+        "ambiguous_degree4plus_pixels": 0,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 13104,
+        "requires_crossing_review": false
+      },
+      {
+        "file": "retina_20x_3.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.3107910377810017,
+          0.3107910377810017
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 73,
+        "edges": 75,
+        "topology": [
+          6,
+          8
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/retina_20x_3.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 38,
+        "ambiguous_degree4plus_pixels": 0,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 9959,
+        "requires_crossing_review": false
+      },
+      {
+        "file": "retina_60x_1.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 74,
+        "edges": 75,
+        "topology": [
+          5,
+          6
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/retina_60x_1.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 38,
+        "ambiguous_degree4plus_pixels": 0,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 9670,
+        "requires_crossing_review": false
+      },
+      {
+        "file": "retina_60x_2.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 80,
+        "edges": 79,
+        "topology": [
+          6,
+          5
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/retina_60x_2.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 39,
+        "ambiguous_degree4plus_pixels": 0,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 9151,
+        "requires_crossing_review": false
+      },
+      {
+        "file": "retina_60x_3.tif",
+        "shape": [
+          1024,
+          1024
+        ],
+        "manual_folder": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual",
+        "raw_blue_exact": true,
+        "binary_red_green": true,
+        "spacing_micron_xy": [
+          0.20719402518733449,
+          0.20719402518733449
+        ],
+        "csv_and_mat_scale_parity": true,
+        "tiff_physical_unit_available": true,
+        "scale_source": "TIFF + CSV + Results.mat",
+        "strict_pair_gate": true,
+        "raw_blue_difference_fraction": 0.0,
+        "channel_values_rg": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "skeleton_in_mask": 1.0,
+        "nodes": 66,
+        "edges": 66,
+        "topology": [
+          4,
+          4
+        ],
+        "source": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/REAVER_Vascular_Networks_Image_Dataset/Manual/retina_60x_3.tif",
+        "graph_annotation": "derived_from_provided_centerline",
+        "junction_pixels": 33,
+        "ambiguous_degree4plus_pixels": 0,
+        "adjacent_junction_clusters": 0,
+        "junction_policy": "preserve adjacent junction identities; flag clusters for QC, no implicit merge",
+        "isolated_skeleton_pixels": 0,
+        "skeleton_pixels": 8390,
+        "requires_crossing_review": false
+      }
+    ],
+    "manual_directory_alias": "Description ImageJ_Manual is named Manual in this local copy; raw B and metadata verified",
+    "readiness": "paired manual-analysis data; independent connectivity and specimen identity unavailable; crossing/junction clusters need protocol before training",
+    "annotation": "R manual mask, G supplied manual-analysis skeleton, B original; all *_Auto folders excluded"
+  },
+  "OCTA-Synth": {
+    "train": {
+      "raw": 0,
+      "labels": 0,
+      "graphs": 0
+    },
+    "val": {
+      "raw": 0,
+      "labels": 0,
+      "graphs": 0
+    },
+    "test": {
+      "raw": 0,
+      "labels": 0,
+      "graphs": 0
+    },
+    "graph_directories": {
+      "train": 480,
+      "val": 220,
+      "test": 2000
+    },
+    "readiness": "blocked: every raw/label/graph file directory is empty; 480/220/2000 empty graph placeholder directories only"
+  },
+  "HALVS_DATASET": {
+    "readmes": [
+      "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/HALVS_DATASET/README.md"
+    ],
+    "readiness": "botanical image/mask source, graph derived; leaf grouping/checkpoint compatibility not established",
+    "pairs": {
+      "train": {
+        "img": 144,
+        "mask": 144
+      },
+      "val": {
+        "img": 6,
+        "mask": 6
+      }
+    },
+    "split_filename_overlap": [],
+    "filename_pairing": {
+      "train": true,
+      "val": true
+    },
+    "mask_semantics": "RGB vein orders: red first, green second, blue third; do not treat color mask as unqualified binary",
+    "checkpoint_blocker": "mixed_plants_halvs_2d checkpoint run exists but contains no files; no compatible checkpoint recovered"
+  },
+  "20cities_2d": {
+    "readmes": [],
+    "readiness": "road source, not vascular or botanical pretraining"
+  },
+  "RETA": {
+    "readiness": "archives present; 54 train/27 test; public test vessel masks withheld; extraction/correspondence not yet audited",
+    "archives": {
+      "mats.rar": 738049731,
+      "codes.rar": 596455,
+      "models.rar": 31308310,
+      "software.rar": 30705797,
+      "supports.rar": 70403341,
+      "images.rar": 6632719
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "gate_job": "1671559",
+  "state_at_amendment": "PENDING",
+  "changed_files": [
+    "scripts/collect_native2d_long.py"
+  ],
+  "reason": "Correct report wording to target-only validation during mixed pretraining; all training/model/data/sampling/config identities unchanged; before gate execution",
+  "previous_archive": "source.before-reporting-fix.zip"
+}

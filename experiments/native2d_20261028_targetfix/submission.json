@@ -1,0 +1,13 @@
+{
+  "phase": "target-fit-correction",
+  "global_h100_limit": 2,
+  "native2d_peak_concurrent_h100": 1,
+  "queue_at_gates": "1653861|PENDING|N/A|ixi-components-report\n1653860_[5%1]|PENDING|gres/gpu:1|ixi-local-components\n1653860_4|RUNNING|gres/gpu:1|ixi-local-components",
+  "gates": "1659581",
+  "queue_at_train": "1653861|PENDING|N/A|ixi-components-report\n1653860_[5%1]|PENDING|gres/gpu:1|ixi-local-components\n1653860_4|RUNNING|gres/gpu:1|ixi-local-components",
+  "B0": "1659729",
+  "Axyz": "1659730",
+  "collector": "1659731",
+  "full_training_submitted": true,
+  "updates": 6000
+}

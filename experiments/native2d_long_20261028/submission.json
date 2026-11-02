@@ -1,0 +1,9 @@
+{
+  "global_h100_limit": 2,
+  "runs": {},
+  "collectors": {},
+  "queue_at_gates": "1670256_1|PENDING|N/A|node-first-cpu\n1670257|PENDING|N/A|node-first-cpu\n1670256_0|PENDING|N/A|node-first-cpu\n1670535|RUNNING|N/A|native2d-long-stage\n1670255_[0-1%2]|PENDING|gres/gpu:1|node-first-gpu",
+  "gates": "1670808",
+  "train_launcher": "1670809",
+  "gate_collector": "1670810"
+}

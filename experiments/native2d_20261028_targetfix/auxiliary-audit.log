@@ -1,0 +1,8 @@
+/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/site-packages/paramiko/pkey.py:82: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from this module in 48.0.0.
+  "cipher": algorithms.TripleDES,
+/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/site-packages/paramiko/transport.py:219: CryptographyDeprecationWarning: Blowfish has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.Blowfish and will be removed from this module in 45.0.0.
+  "class": algorithms.Blowfish,
+/lustre/fshomisc/sup/pub/anaconda-py3/h100/2024.06/envs/pytorch-gpu-2.3.1+py3.11.9/lib/python3.11/site-packages/paramiko/transport.py:243: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from this module in 48.0.0.
+  "class": algorithms.TripleDES,
+GT capacity {"K8": {"curve_f1": 0.9947106105031139, "precision": 0.9951335346369207, "recall": 0.9942880456956344, "max_distance_quantiles": [0.16930594340580496, 0.6875794723690576, 1.455010066479295, 2.658920432572546]}, "chord": {"curve_f1": 0.5308345489990767, "precision": 0.5381428442763218, "recall": 0.5237220959375182, "max_distance_quantiles": [1.3530600535226607, 5.413472740397509, 13.219399477148723, 25.42511728520469]}}
+REAVER revised {"samples": 384, "max_abs_control_micron": 26.516424476337757}

@@ -1,0 +1,32 @@
+### Native 2D smoke collection — 27 October 2026
+
+GPU correctness: **passed**; original-size architecture: **passed**; tiny memorization gate: **passed**.
+Slurm GPU `1637307`, collector `1637308`. No full training was authorized or submitted.
+
+Two training crops only; the table is a memorization diagnostic, **not validation performance**.
+
+| Update | Loss | Crop | Node F1 @2px | Edge F1 @2px | Branch F1 | Curve F1 |
+|---:|---:|---|---:|---:|---:|---:|
+| 0 | 11.3064 | wide01_00 | 0.1000 | 0.0000 | 0.0000 | 0.0831 |
+| 0 | 11.3064 | wide01_01 | 0.1000 | 0.0000 | 0.0000 | 0.1023 |
+| 1 | 10.1148 | wide01_00 | 0.1333 | 0.0000 | 0.0000 | 0.0941 |
+| 1 | 10.1148 | wide01_01 | 0.1333 | 0.0000 | 0.0000 | 0.0971 |
+| 10 | 8.3737 | wide01_00 | 0.1667 | 0.0000 | 0.0000 | 0.0000 |
+| 10 | 8.3737 | wide01_01 | 0.1667 | 0.0000 | 0.0000 | 0.0000 |
+| 50 | 6.0358 | wide01_00 | 0.3333 | 0.0000 | 0.0000 | 0.0000 |
+| 50 | 6.0358 | wide01_01 | 0.3333 | 0.0000 | 0.0000 | 0.0000 |
+| 100 | 4.8604 | wide01_00 | 0.3333 | 0.3333 | 0.0000 | 0.1739 |
+| 100 | 4.8604 | wide01_01 | 0.3333 | 0.0000 | 0.0000 | 0.0000 |
+| 250 | 2.2569 | wide01_00 | 0.6667 | 0.3333 | 0.0000 | 0.2122 |
+| 250 | 2.2569 | wide01_01 | 0.8333 | 0.3333 | 0.0000 | 0.6148 |
+| 500 | 0.4029 | wide01_00 | 1.0000 | 1.0000 | 1.0000 | 0.9765 |
+| 500 | 0.4029 | wide01_01 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| 1000 | 0.1200 | wide01_00 | 1.0000 | 1.0000 | 1.0000 | 0.9789 |
+| 1000 | 0.1200 | wide01_01 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+
+1000 updates in 22.9s; peak GPU allocation 659497472 bytes. Checkpoint: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261027/runtime/tiny-last.pt`.
+
+Passing this gate establishes implementation learnability on two crops only. It supplies no cross-subject generalization, baseline-versus-A-xyz benefit or journal reconstruction result. Full training remains pending subject/provenance/crossing and operating-point protocol decisions.
+
+Evidence: `/lustre/fswork/projects/rech/vnc/upz25mj/projects/gnbm-native-2d-20261027/experiments/native2d_20261027`. Retrieval: `python3 scripts/show_native2d.py` from the main repository.
+

@@ -1,0 +1,9 @@
+{
+  "job": "1698600",
+  "queue_at_submission": "1698475|gres/gpu:1|grale-synthetic-matching\n",
+  "prior_gpu_jobs": [],
+  "purpose": "12 final-checkpoint validation-only inference/overlay checks; no training; 15min maximum",
+  "concurrent_h100": 1,
+  "global_limit": 2,
+  "dependency_cleared_reason": "only two single-GPU jobs exist, including this inference job; concurrent use stays within global limit2"
+}

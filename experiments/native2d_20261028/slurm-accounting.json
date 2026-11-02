@@ -1,0 +1,34 @@
+{
+  "gates": {
+    "job": "1653554",
+    "state": "COMPLETED",
+    "elapsed": "00:01:27"
+  },
+  "initial_B0": {
+    "job": "1653987",
+    "state": "CANCELLED",
+    "optimizer_updates": 0,
+    "elapsed": "00:01:40"
+  },
+  "B0": {
+    "job": "1654241",
+    "state": "TIMEOUT",
+    "elapsed": "01:45:22",
+    "optimizer_updates": 6000,
+    "final_evaluation_samples": 506,
+    "training_and_final_metrics_saved": true,
+    "timeout_phase": "redundant untrained initialization checkpoint geometry evaluation",
+    "checkpoint_index_repaired_without_training_or_new_inference": true
+  },
+  "Axyz": {
+    "job": "1653991",
+    "state": "COMPLETED",
+    "elapsed": "00:10:39",
+    "optimizer_updates": 6000
+  },
+  "collector": {
+    "job": "1653994",
+    "state": "COMPLETED",
+    "elapsed": "00:00:09"
+  }
+}

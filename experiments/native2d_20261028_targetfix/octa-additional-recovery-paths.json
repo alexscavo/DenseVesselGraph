@@ -1,0 +1,20 @@
+[
+  {
+    "path": "/lustre/fsn1/projects/rech/vnc/upz73jr/datasets/octasynth",
+    "exists": false,
+    "is_directory": false,
+    "size": null
+  },
+  {
+    "path": "/lustre/fsn1/projects/rech/vnc/upz73jr/datasets/OCTA-Synth",
+    "exists": false,
+    "is_directory": false,
+    "size": null
+  },
+  {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/code",
+    "exists": true,
+    "is_directory": false,
+    "size": 32736416
+  }
+]

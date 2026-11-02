@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "benchmark": [
+    {
+      "arm": "B0",
+      "seconds_per_update": 0.05753891950007528,
+      "images_per_second": 69.51816326677401,
+      "peak_bytes": 1430280192,
+      "batch": 4,
+      "input_shape": [
+        4,
+        3,
+        128,
+        128
+      ],
+      "attention": "existing PyTorch grid_sample implementation"
+    },
+    {
+      "arm": "Axyz",
+      "seconds_per_update": 0.057758737491288535,
+      "images_per_second": 69.25359129609265,
+      "peak_bytes": 1432031744,
+      "batch": 4,
+      "input_shape": [
+        4,
+        3,
+        128,
+        128
+      ],
+      "attention": "existing PyTorch grid_sample implementation"
+    }
+  ],
+  "attention_core_forward_backward_seconds": 0.0014658792526461184,
+  "attention_core_shape": {
+    "batch": 4,
+    "tokens": 340,
+    "heads": 8,
+    "head_width": 64,
+    "levels": 4,
+    "points": 4
+  },
+  "updates": 6000,
+  "max_epochs": 40,
+  "train_walltime_budget_seconds": 1800,
+  "initialization_sha256": "cbe09d04296ccc975783dd0d991a844ba44a13cc32525710993e4006e07bcc28",
+  "full_architecture_optimizer_updates": 1200,
+  "gate": "correctness + exact shared initialization + graph_only gradients + 128-square full-model overfit + short GPU throughput"
+}
