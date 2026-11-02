@@ -1,0 +1,111 @@
+audited 1000 / 23213
+audited 2000 / 23213
+audited 3000 / 23213
+audited 4000 / 23213
+audited 5000 / 23213
+audited 6000 / 23213
+audited 7000 / 23213
+audited 8000 / 23213
+audited 9000 / 23213
+audited 10000 / 23213
+audited 11000 / 23213
+audited 12000 / 23213
+audited 13000 / 23213
+audited 14000 / 23213
+audited 15000 / 23213
+audited 16000 / 23213
+audited 17000 / 23213
+audited 18000 / 23213
+audited 19000 / 23213
+audited 20000 / 23213
+audited 21000 / 23213
+audited 22000 / 23213
+audited 23000 / 23213
+{
+  "completed": true,
+  "smoke": false,
+  "patches": 23213,
+  "seconds": 156.55346453096718,
+  "distributions": {
+    "IXI": {
+      "train": {
+        "patches": 10000,
+        "maximum": 153,
+        "p95": 62.0,
+        "p99": 86.0,
+        "exceeding": {
+          "120": 5,
+          "192": 0,
+          "256": 0
+        },
+        "subjects": 123,
+        "modern_selected": {
+          "patches": 4096,
+          "minimum": 2,
+          "maximum": 153,
+          "mean": 22.02978515625,
+          "p95": 61.0,
+          "p99": 85.05000000000018,
+          "exceeding": {
+            "120": 1,
+            "192": 0,
+            "256": 0
+          },
+          "subjects": 123
+        }
+      },
+      "val": {
+        "patches": 2649,
+        "maximum": 141,
+        "p95": 66.0,
+        "p99": 87.51999999999998,
+        "exceeding": {
+          "120": 5,
+          "192": 0,
+          "256": 0
+        },
+        "subjects": 26,
+        "modern_selected": {
+          "patches": 512,
+          "minimum": 2,
+          "maximum": 124,
+          "mean": 25.58984375,
+          "p95": 66.0,
+          "p99": 83.0,
+          "exceeding": {
+            "120": 1,
+            "192": 0,
+            "256": 0
+          },
+          "subjects": 26
+        }
+      }
+    },
+    "BRAVA": {
+      "train": {
+        "patches": 8768,
+        "maximum": 64,
+        "p95": 38.0,
+        "p99": 47.0,
+        "exceeding": {
+          "120": 0,
+          "192": 0,
+          "256": 0
+        },
+        "subjects": 39
+      },
+      "val": {
+        "patches": 1796,
+        "maximum": 69,
+        "p95": 38.0,
+        "p99": 51.0,
+        "exceeding": {
+          "120": 0,
+          "192": 0,
+          "256": 0
+        },
+        "subjects": 8
+      }
+    }
+  }
+}

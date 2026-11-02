@@ -1,0 +1,32 @@
+{
+  "modern_B0": {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/B0/model-12000.pt",
+    "sha256": "91ac46e091bb3f74c5748758235c26dc7c8814a232adda03dd49def0c1c8a3de",
+    "hash_reverified": true,
+    "role": "SyntheticMRI source only; not an IXI-finetuned result"
+  },
+  "modern_A": {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A/model-12000.pt",
+    "sha256": "ebb47360f7799801f1ab364f3ef9e60a1b877038d39962b4861d33d1944b9385",
+    "hash_reverified": true,
+    "role": "SyntheticMRI source only; not an IXI-finetuned result"
+  },
+  "modern_A-xyz": {
+    "path": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/Graph-Native-Betti-Matching-Representation/experiments/local_refinement_long/364505/runs/A-xyz/model-12000.pt",
+    "sha256": "a1210fe958dffe0e588d38222cb62bf48b58e9b238fc57c027ec1c7a795277c9",
+    "hash_reverified": true,
+    "role": "SyntheticMRI source only; not an IXI-finetuned result"
+  },
+  "BN_ixi_spline": {
+    "path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/ixi_transfer_20261015/runs/ixi_delayed_spline/best.pt",
+    "sha256": "1cd9caf35a3683ef643c541ea4c4d06b247c490a4215d4a250f4519992d68eb3",
+    "hash_reverified": true,
+    "role": "Existing original BN-reference checkpoint"
+  },
+  "BN_synthetic_spline": {
+    "path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/spline_learning/plant_generalization_20261014_da_b32_w1_restart/runs/vessels_spline/best.pt",
+    "sha256": "06513f58b7b032c9eb4f7be7820312941e7bac08fb97915f263d48f1b894facb",
+    "hash_reverified": true,
+    "role": "Existing original BN-reference checkpoint"
+  }
+}
