@@ -1,0 +1,24 @@
+{
+  "checked_utc": "2026-10-27T13:02:52.600847+00:00",
+  "state": "PARTIAL / RECOVERY",
+  "audit_completed": true,
+  "training_completed": false,
+  "jobs": {
+    "1613828": {
+      "state": "FAILED",
+      "exit_code": "1:0",
+      "elapsed": "00:00:34"
+    },
+    "1613829_[0-1%2]": {
+      "state": "CANCELLED",
+      "elapsed": "00:00:00"
+    },
+    "1613830": {
+      "state": "CANCELLED",
+      "elapsed": "00:00:00"
+    }
+  },
+  "failure": "Strict checkpoint loading: node_refinement.network.2 weight/bias checkpoint shapes [3,128]/[3], constructed model [5,128]/[5].",
+  "scientific_results": "Only CPU supervision audit; no relation training or GPU smoke results.",
+  "new_jobs_submitted": false
+}

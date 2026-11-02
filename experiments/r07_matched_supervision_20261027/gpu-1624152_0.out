@@ -1,0 +1,20 @@
+Error importing huggingface_hub.file_download: No module named 'httpx.__version__'
+Error importing huggingface_hub.hf_api: No module named 'httpx.__version__'
+Error importing huggingface_hub.hf_api: No module named 'httpx.__version__'
+Error importing huggingface_hub.hf_api: No module named 'httpx.__version__'
+Error importing huggingface_hub.hf_api: No module named 'httpx.__version__'
+Error importing huggingface_hub.hf_api: No module named 'httpx.__version__'
+extracted 364505 64 608
+extracted 364505 192 608
+extracted 364505 256 608
+extracted 364505 320 608
+extracted 364505 384 608
+extracted 364505 448 608
+extracted 364505 512 608
+extracted 364505 576 608
+trained 364505 S0 100 3.6016364798415452
+trained 364505 S0 300 6.407827754039317
+trained 364505 S0 1000 12.988559165038168
+trained 364505 S1 100 3.3433570510242134
+trained 364505 S1 300 6.305094033945352
+trained 364505 S1 1000 13.322971943067387

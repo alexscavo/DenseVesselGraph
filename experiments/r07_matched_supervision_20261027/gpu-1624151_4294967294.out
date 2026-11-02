@@ -1,0 +1,9 @@
+Error importing huggingface_hub.file_download: No module named 'httpx.__version__'
+Error importing huggingface_hub.hf_api: No module named 'httpx.__version__'
+Error importing huggingface_hub.hf_api: No module named 'httpx.__version__'
+Error importing huggingface_hub.hf_api: No module named 'httpx.__version__'
+Error importing huggingface_hub.hf_api: No module named 'httpx.__version__'
+Error importing huggingface_hub.hf_api: No module named 'httpx.__version__'
+extracted 364505 0 8
+trained 364505 S0 3 0.12110721506178379
+trained 364505 S1 3 0.04027833393774927
