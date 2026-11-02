@@ -75,6 +75,10 @@ def arms(dataset):
                                     ('traced', 'traced_adaptive', 'final-validation-rows.pkl', 'final.json')):
         thr = json.loads((DENSE / dataset / sub / result).read_text())['thresholds']
         out[name] = (DENSE / dataset / sub / rows, thr, False)
+    for name in ('traced_gap', 'traced_soft'):
+        if (DENSE / dataset / name / 'final.json').exists():
+            thr = json.loads((DENSE / dataset / name / 'final.json').read_text())['thresholds']
+            out[name] = (DENSE / dataset / name / 'final-validation-rows.pkl', thr, False)
     if dataset != 'SyntheticMRI':
         thr = json.loads((ROOT / f'experiments/anchored_rf_20261030/final-{dataset}.json').read_text())['thresholds']
         out['anchored'] = (SCRATCH / f'anchored_rf_20261030/runs/{dataset}/evaluation/validation-rows.pkl', thr, True)
@@ -94,11 +98,15 @@ def summarize(per):
                 nodes_per_patch=float(a['nodes'].mean()), edges_per_patch=float(a['edges'].mean()))
 
 
-def main():
-    result = {}
+def main(only=()):
+    """Compute every arm, or with `only` just those arms, merged into the existing output."""
+    output = ROOT / 'experiments/dense_graph_20261030/topology-validation.json'
+    result = json.loads(output.read_text()) if only else {}
     with mp.get_context('fork').Pool(int(os.environ.get('SLURM_CPUS_PER_TASK', 8))) as pool:
         for dataset in ('SyntheticMRI', 'IXI', 'BRAVA'):
             for name, spec in arms(dataset).items():
+                if only and name not in only:
+                    continue
                 if isinstance(spec, tuple):
                     path, thr, strict = spec
                     items = list(from_rows(pickle.loads(Path(path).read_bytes()), thr['node'], thr['edge'], strict))
@@ -106,8 +114,9 @@ def main():
                     items = list(from_caches(spec, dataset))
                 result[f'{dataset}/{name}'] = summarize(pool.map(patch_metrics, items, chunksize=8))
                 print(dataset, name, json.dumps(result[f'{dataset}/{name}']), flush=True)
-    (ROOT / 'experiments/dense_graph_20261030/topology-validation.json').write_text(json.dumps(result, indent=1))
+    output.write_text(json.dumps(result, indent=1))
 
 
 if __name__ == '__main__':
-    main()
+    # usage: topology_metrics_20261102.py [<arm> ...]
+    main(tuple(sys.argv[1:]))

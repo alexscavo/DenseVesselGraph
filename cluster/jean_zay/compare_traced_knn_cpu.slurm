@@ -18,4 +18,4 @@ cmp_tmp="$SCRATCH/tmp/cmp-$SLURM_JOB_ID"; mkdir -p "$cmp_tmp"; export TMPDIR="$c
 runtime_python="$(python -c 'import sys; print(sys.base_prefix)')/bin/python"
 source cluster/jean_zay/stage_spline_runtime.sh
 source cluster/jean_zay/ixi_mechanism_runtime.sh
-for d in SyntheticMRI IXI BRAVA; do "$runtime_python" -u scripts/compare_traced_knn_20261030.py $d; done
+for d in SyntheticMRI IXI BRAVA; do "$runtime_python" -u scripts/compare_traced_knn_20261030.py $d "$@"; done

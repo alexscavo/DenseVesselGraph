@@ -18,4 +18,4 @@ cmp_tmp="$SCRATCH/tmp/cmp-$SLURM_JOB_ID"; mkdir -p "$cmp_tmp"; export TMPDIR="$c
 runtime_python="$(python -c 'import sys; print(sys.base_prefix)')/bin/python"
 source cluster/jean_zay/stage_spline_runtime.sh
 source cluster/jean_zay/ixi_mechanism_runtime.sh
-"$runtime_python" -u scripts/topology_metrics_20261102.py
+"$runtime_python" -u scripts/topology_metrics_20261102.py "$@"
