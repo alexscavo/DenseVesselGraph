@@ -51,6 +51,8 @@ def test_contract_chain():
     assert T.contract(row, 0.3, 0.5, 0.85)['contracted'] == []  # below tau
     busy = dict(row, edge_scores=np.array([0.9, 0.9, 0.95, 0.9]))  # C also connects to node 3: keep C
     assert T.contract(busy, 0.3, 0.5, 0.6)['contracted'] == []
+    empty = dict(nodes=np.zeros((1, 3)), node_scores=np.array([0.9]), pairs=np.zeros((0, 2), int), edge_scores=None, via=None)
+    assert T.contract(empty, 0.3, 0.5, 0.6)['contracted'] == []  # patch with fewer than two detections
 
 
 if __name__ == '__main__':

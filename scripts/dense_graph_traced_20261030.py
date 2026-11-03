@@ -426,7 +426,7 @@ def contract(row, node_t, edge_t, tau):
     with tau set, chains A-C-B are visited by decreasing pass-through score and, if score >= tau and C has no
     accepted edge other than to A or B, C and its edges are removed and A-B (joined-path curve) is accepted."""
     if row.get('pass_scores') is None or row['edge_scores'] is None:
-        return row
+        return {**row, 'contracted': []}  # e.g. a patch with fewer than two detections
     ns, es = row['node_scores'].copy(), row['edge_scores'].copy()
     pairs, via, q = row['pairs'], row['via'], row['pass_scores']
     hop = via >= 0
