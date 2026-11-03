@@ -350,6 +350,91 @@ edges.
   detector, so the edge representation does not change detection.
 - **Within the dense model.** Curve F1 is 0.68–0.95, against 0.31–0.62 for RelationFormer.
 
+### 4.6 Soft tracing and gap features (DONE, 3 Nov 2026)
+
+Two variants of the traced model (Dense + traced, called `traced_adaptive` here), with the same
+recipe and budget: warm start from `spline6`, 7500 updates, lr 3e-4.
+- `traced_gap`: the edge and geometry heads also read the centreline probability along the path.
+- `traced_soft`: `traced_gap`, plus no hard centreline mask (ink may cross any voxel at cost
+  1/(p+0.05)), plus candidates from geodesic contacts only, with no 16-NN fallback pairs.
+
+**Main result.** Neither variant improves long-edge recovery on IXI or BRAVA. Gap features alone
+change little. Soft tracing helps BRAVA Curve F1, hurts IXI, and removes most spurious IXI loops
+at the cost of edge recall.
+
+Paired differences in F1, with 95% CIs over validation subjects:
+
+| Dataset | Comparison | Node F1 | Edge F1 | Branch F1 | Curve F1 |
+|---|---|---|---|---|---|
+| SyntheticMRI | gap − adaptive | −0.001 [−0.003, +0.002] | 0.000 [−0.004, +0.005] | −0.004 [−0.012, +0.004] | +0.002 [−0.001, +0.006] |
+| SyntheticMRI | soft − gap | +0.001 [−0.001, +0.002] | +0.001 [−0.004, +0.005] | −0.002 [−0.008, +0.004] | **−0.008 [−0.011, −0.006]** |
+| IXI | gap − adaptive | +0.004 [−0.003, +0.011] | **+0.010 [+0.004, +0.018]** | **+0.010 [+0.002, +0.017]** | **+0.012 [+0.004, +0.022]** |
+| IXI | soft − gap | −0.005 [−0.012, +0.001] | **−0.019 [−0.026, −0.012]** | **−0.017 [−0.027, −0.005]** | **−0.084 [−0.093, −0.075]** |
+| BRAVA | gap − adaptive | −0.002 [−0.004, +0.000] | 0.000 [−0.005, +0.005] | −0.003 [−0.008, +0.003] | +0.002 [−0.001, +0.006] |
+| BRAVA | soft − gap | **+0.003 [+0.001, +0.005]** | **−0.003 [−0.005, −0.001]** | **+0.009 [+0.004, +0.013]** | **+0.025 [+0.019, +0.032]** |
+
+Bold marks a CI that excludes zero. Absolute node / edge / Branch / Curve F1:
+
+| Dataset | `traced_adaptive` | `traced_gap` | `traced_soft` |
+|---|---|---|---|
+| SyntheticMRI | 0.894 / 0.797 / 0.441 / 0.945 | 0.893 / 0.797 / 0.437 / 0.948 | 0.893 / 0.798 / 0.435 / 0.939 |
+| IXI | 0.649 / 0.313 / 0.179 / 0.770 | 0.653 / 0.323 / 0.189 / 0.783 | 0.648 / 0.305 / 0.173 / 0.699 |
+| BRAVA | 0.546 / 0.206 / 0.062 / 0.395 | 0.544 / 0.206 / 0.059 / 0.397 | 0.547 / 0.203 / 0.068 / 0.423 |
+
+Fraction of long GT edges recovered:
+
+| Dataset | Arc length (GT edges) | adaptive | gap | soft | gap − adaptive | soft − gap |
+|---|---|---|---|---|---|---|
+| SyntheticMRI | ≥ 20 mm (1556) | 0.809 | 0.814 | 0.797 | +0.004 [−0.001, +0.011] | **−0.017 [−0.027, −0.008]** |
+| SyntheticMRI | ≥ 40 mm (145) | 0.710 | 0.717 | 0.697 | +0.007 [−0.037, +0.044] | −0.021 [−0.060, +0.025] |
+| IXI | ≥ 20 mm (648) | 0.279 | 0.279 | 0.219 | 0.000 [−0.024, +0.023] | **−0.060 [−0.089, −0.031]** |
+| IXI | ≥ 40 mm (83) | 0.145 | 0.108 | 0.120 | −0.036 [−0.086, +0.014] | +0.012 [−0.052, +0.071] |
+| BRAVA | ≥ 20 mm (5042) | 0.092 | 0.092 | 0.091 | −0.001 [−0.008, +0.007] | −0.001 [−0.007, +0.005] |
+| BRAVA | ≥ 40 mm (1251) | 0.052 | 0.050 | 0.058 | −0.002 [−0.011, +0.010] | +0.008 [−0.003, +0.020] |
+
+Topology per patch, in the format of §4.3 (GT loops in brackets):
+
+| Dataset: arm | β₀ error | β₁ error | Loops | SMD ×10³ | Patches without SMD |
+|---|---|---|---|---|---|
+| SyntheticMRI: `traced_adaptive` | 1.02 | 0.22 | 0.20 (0.04) | 1.81 | 0 |
+| SyntheticMRI: `traced_gap` | 0.99 | 0.26 | 0.24 (0.04) | 1.69 | 0 |
+| SyntheticMRI: `traced_soft` | 1.17 | 0.12 | 0.09 (0.04) | 1.96 | 0 |
+| IXI: `traced_adaptive` | 1.68 | 3.50 | 4.10 (0.71) | 23.24 | 42 |
+| IXI: `traced_gap` | 3.00 | 2.69 | 3.25 (0.71) | 21.35 | 32 |
+| IXI: `traced_soft` | 3.17 | 0.74 | 0.86 (0.71) | 23.19 | 50 |
+| BRAVA: `traced_adaptive` | 4.08 | 0.62 | 0.62 (0.00) | 63.79 | 225 |
+| BRAVA: `traced_gap` | 3.96 | 0.72 | 0.72 (0.00) | 62.45 | 226 |
+| BRAVA: `traced_soft` | 3.85 | 0.60 | 0.60 (0.00) | 58.63 | 190 |
+
+Reading the results:
+- **Traced pair fraction.** On validation candidates: `traced_adaptive` and `traced_gap` 0.10–0.13,
+  `traced_soft` 1.0. In the last training log: 0.09–0.23 and 1.0.
+- **Why long edges do not improve.** Most misses on BRAVA are missing endpoints: 79–80% of edges
+  ≥ 20 mm in all three arms, which no change to stage 2 can fix. Soft tracing halves rejections there
+  (537 → 274 against `traced_gap`), but edges that are not candidates rise from 41 to 320, so
+  recovery is unchanged. These two effects come from the soft domain and the dropped fallback
+  together and cannot be separated here.
+- **IXI loops.** `traced_soft` comes close to the GT loop count (0.86 vs 0.71), but keeps 10.9 edges
+  per patch against 16.9 for `traced_gap`: edge precision rises from 0.366 to 0.451 and recall
+  falls from 0.289 to 0.230.
+
+Caveats:
+- Single seed, validation only, all arms warm-started from the same `spline6`. The CIs cover
+  subject sampling, not training variation, and are not corrected for multiple comparisons, so
+  small effects such as the IXI gain from `traced_gap` need more seeds.
+- Thresholds differ between arms, each selected on `monitor_train`. On IXI the node threshold is
+  0.30 for `traced_gap` and 0.35 for the other two (21.3 vs 17.8 nodes per patch). This probably
+  explains part of its worse β₀ error (3.00 vs 1.68) and fewer missing endpoints, and it confounds
+  both IXI comparisons.
+- SMD skips patches with no predicted edges, and their number differs between arms.
+- `traced_adaptive` was trained on 30 Oct, before the flags were added. The new code was not rerun
+  with the flags off to confirm it reproduces that run.
+
+Scripts: `scripts/compare_traced_knn_20261030.py <dataset> <arm_a> <arm_b>`,
+`scripts/compare_arc_length_20261102.py` and `scripts/topology_metrics_20261102.py`.
+Outputs in `experiments/dense_graph_20261030/`: `paired-traced_*-vs-*.json`,
+`paired-arc-traced_*-vs-*.json` and `topology-validation.json`.
+
 ## 5. 2D (validation; node / edge F1 @2 units)
 
 | Dataset | RelationFormer B0 (mixed pretraining) | Dense 16-NN, from scratch |

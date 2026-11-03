@@ -1,0 +1,73 @@
+{
+ "dataset": "BRAVA",
+ "subjects": 8,
+ "patches": 1796,
+ "thresholds": {
+  "traced_soft": {
+   "node": 0.3,
+   "edge": 0.6,
+   "policy": "train monitor only; candidates = geodesic contacts only"
+  },
+  "traced_gap": {
+   "node": 0.3,
+   "edge": 0.75,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  }
+ },
+ "traced_soft": {
+  "node_f1": 0.5468146883005978,
+  "edge_f1": 0.202891167292874,
+  "branch_f1": 0.06812617535393677,
+  "curve_f1": 0.42263580617701946
+ },
+ "traced_gap": {
+  "node_f1": 0.5436596504480994,
+  "edge_f1": 0.20573409959225608,
+  "branch_f1": 0.05940523109996417,
+  "curve_f1": 0.3973717120171633
+ },
+ "traced_soft_minus_traced_gap": {
+  "node_f1": {
+   "point": 0.003155037852498377,
+   "ci95": [
+    0.000683875884714133,
+    0.005059837447395016
+   ]
+  },
+  "edge_f1": {
+   "point": -0.002842932299382095,
+   "ci95": [
+    -0.004693399985723905,
+    -0.0008869099200739429
+   ]
+  },
+  "branch_f1": {
+   "point": 0.008720944253972594,
+   "ci95": [
+    0.0035857473068725905,
+    0.012613270488556318
+   ]
+  },
+  "curve_f1": {
+   "point": 0.025264094159856143,
+   "ci95": [
+    0.01886559794450199,
+    0.03214316145838582
+   ]
+  }
+ },
+ "parity_abs_difference_vs_reported": {
+  "traced_soft": {
+   "node_f1": 0.0,
+   "edge_f1": 0.0,
+   "branch_f1": 0.0,
+   "curve_f1": 0.0
+  },
+  "traced_gap": {
+   "node_f1": 0.0,
+   "edge_f1": 0.0,
+   "branch_f1": 0.0,
+   "curve_f1": 0.0
+  }
+ }
+}
