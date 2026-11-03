@@ -264,8 +264,8 @@ def choose_interior(paths_mm, traced):
 
 
 class TracedDenseGraph(D.DenseGraph):
-    def __init__(self, radius=12.0, gap_features=False, two_hop=False, passthrough=False):
-        super().__init__('spline', 6, radius)
+    def __init__(self, radius=12.0, gap_features=False, two_hop=False, passthrough=False, backbone='unet'):
+        super().__init__('spline', 6, radius, backbone)
         self.gap_features, self.two_hop = gap_features, two_hop or passthrough
         width = (self.edge_head[0].in_features + 1 + (GAP_FEATURES if gap_features else 0)
                  + (VIA_FEATURES if self.two_hop else 0))  # + arc length (+ gap statistics) (+ pass-through node)
@@ -547,7 +547,7 @@ def final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final.js
     val_rows = [contract(r, node_t, edge_t, tau) for r in raw_val]
     traced_share = float(np.mean(np.concatenate([r['traced'] for r in val_rows if r['traced'] is not None] or [np.zeros(0)])))
     interior = np.concatenate([r['interior'] for r in val_rows if r['interior'] is not None] or [np.zeros(0, int)])
-    result = dict(dataset=a.dataset, model='traced+adaptive', mode=dict(MODE), offset_radius=getattr(a, 'offset_radius', 0.0),
+    result = dict(dataset=a.dataset, model='traced+adaptive', mode=dict(MODE), offset_radius=getattr(a, 'offset_radius', 0.0), backbone=getattr(a, 'backbone', 'unet'),
                   updates=a.updates, batch=a.batch, lr=a.lr,
                   thresholds=dict(node=node_t, edge=edge_t, policy='train monitor only; candidates = geodesic contacts' + (' U 16-NN over retained nodes' if MODE['knn_fallback'] else ' only')),
                   train_monitor=D.evaluate(train_rows, node_t, edge_t), validation=D.evaluate(val_rows, node_t, edge_t),
@@ -614,6 +614,7 @@ def main():
     p.add_argument('--gap-features', action='store_true', help='Edge/geometry heads read centreline statistics along the path')
     p.add_argument('--two-hop', action='store_true', help='Also propose A-B through a traced pass-through node C')
     p.add_argument('--passthrough', action='store_true', help='Node-level decision for two-hop chains (implies --two-hop)')
+    p.add_argument('--backbone', choices=['unet', 'ukan', 'ukan_mlp', 'ukan_add'], default='unet', help='Must match the --init-from checkpoint')
     p.add_argument('--offset-radius', type=float, default=1.75,
                    help='Supervise offsets at all voxels within this radius of each GT node; default 1.75 (3x3x3) since '
                         '3 Nov 2026, 0 = GT voxel only (all runs before traced_twohop_offset)')
@@ -636,7 +637,8 @@ def main():
     if a.smoke:
         train_ids, val_ids, monitor = train_ids[:8], val_ids[:4], train_ids[:4]
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    model = TracedDenseGraph(gap_features=MODE['gap_features'], two_hop=MODE['two_hop'], passthrough=MODE['passthrough']).to(device)
+    model = TracedDenseGraph(gap_features=MODE['gap_features'], two_hop=MODE['two_hop'], passthrough=MODE['passthrough'],
+                             backbone=a.backbone).to(device)
     if a.evaluate_only:
         model.load_state_dict(torch.load(out_dir / 'model.pt', map_location=device)['model'])
         final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final-v2.json')

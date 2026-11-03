@@ -45,11 +45,15 @@ EDGE_THRESHOLDS = [round(t, 2) for t in np.arange(0.1, 0.91, 0.05)]
 
 
 class DenseGraph(nn.Module):
-    def __init__(self, mode='spline', interior=6, radius=12.0):
+    def __init__(self, mode='spline', interior=6, radius=12.0, backbone='unet'):
         super().__init__()
         from monai.networks.nets import BasicUNet
         self.mode, self.m, self.radius = mode, interior, float(radius)
-        self.unet = BasicUNet(spatial_dims=3, in_channels=1, out_channels=5 + 32, features=(32, 32, 64, 128, 256, 32))
+        features = (32, 32, 64, 128, 256, 32)
+        self.unet = BasicUNet(spatial_dims=3, in_channels=1, out_channels=5 + 32, features=features)
+        if backbone.startswith('ukan'):  # tokenized KAN (or MLP control) in the two deepest encoder / first two decoder stages
+            from models.ukan3d import kanify_basic_unet
+            kanify_basic_unet(self.unet, features, kan=backbone != 'ukan_mlp', skip='add' if backbone.endswith('_add') else 'cat')
         with torch.no_grad():
             self.unet.final_conv.bias[0] = -4.6
         self.corridor = nn.Sequential(
@@ -298,6 +302,8 @@ def main():
     p.add_argument('--init-from', type=Path, help='Warm start from a dense-model checkpoint (matching tensors)')
     p.add_argument('--run-name', default=None, help='Output subfolder name')
     p.add_argument('--evaluate-only', action='store_true', help='Re-evaluate the saved model.pt')
+    p.add_argument('--backbone', choices=['unet', 'ukan', 'ukan_mlp', 'ukan_add'], default='unet',
+                   help='ukan: U-KAN-style deepest stages (models/ukan3d.py); ukan_mlp: same blocks with MLPs; ukan_add: additive skips')
     a = p.parse_args()
     torch.manual_seed(364505)
     np.random.seed(364505)
@@ -309,7 +315,7 @@ def main():
         train_ids, val_ids, monitor = train_ids[:8], val_ids[:4], train_ids[:4]
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     train_ds = make_dataset(a.dataset, train_ids, augment=True)
-    model = DenseGraph(a.mode, a.interior).to(device)
+    model = DenseGraph(a.mode, a.interior, backbone=a.backbone).to(device)
     if a.init_from and not a.evaluate_only:
         (out_dir / 'warm-start.json').write_text(json.dumps(warm_start(model, a.init_from, device), indent=1))
     if a.evaluate_only:
@@ -377,7 +383,7 @@ def final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final.js
     import pickle  # per-patch rows for paired subject-level comparisons
     (out_dir / name.replace('.json', '-validation-rows.pkl')).write_bytes(pickle.dumps(val_rows))
     fixed = predict(model, val_ds, device, 0.5, a.workers, a.eval_batch)
-    result = dict(dataset=a.dataset, mode=a.mode, interior=a.interior, updates=a.updates, batch=a.batch, lr=a.lr,
+    result = dict(dataset=a.dataset, mode=a.mode, backbone=getattr(a, 'backbone', 'unet'), interior=a.interior, updates=a.updates, batch=a.batch, lr=a.lr,
                   thresholds=dict(node=node_t, edge=edge_t, policy='train monitor only; candidates = 16-NN over retained nodes'),
                   train_monitor=evaluate(train_rows, node_t, edge_t), validation=evaluate(val_rows, node_t, edge_t),
                   validation_fixed_0p5=evaluate(fixed, 0.5, 0.5))
