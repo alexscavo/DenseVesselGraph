@@ -1,0 +1,90 @@
+{
+ "dataset": "BRAVA",
+ "arms": [
+  "traced_twohop",
+  "traced_adaptive"
+ ],
+ "subjects": 8,
+ "thresholds": {
+  "traced_twohop": {
+   "node": 0.25,
+   "edge": 0.8,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "traced_adaptive": {
+   "node": 0.3,
+   "edge": 0.75,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  }
+ },
+ "ranges": {
+  "ge20mm": {
+   "counts": {
+    "traced_twohop": {
+     "edges": 5042,
+     "recovered": 518,
+     "endpoints_missing": 3567,
+     "not_candidate": 94,
+     "rejected": 863
+    },
+    "traced_adaptive": {
+     "edges": 5042,
+     "recovered": 466,
+     "endpoints_missing": 4024,
+     "not_candidate": 35,
+     "rejected": 517
+    }
+   },
+   "recovered_fraction": {
+    "traced_twohop": 0.10273700912336374,
+    "traced_adaptive": 0.09242364141213805
+   },
+   "difference": {
+    "point": 0.010313367711225693,
+    "ci95": [
+     0.0044891276548426565,
+     0.015523700638435903
+    ],
+    "resamples_with_edges": 2000
+   }
+  },
+  "ge40mm": {
+   "counts": {
+    "traced_twohop": {
+     "edges": 1251,
+     "recovered": 64,
+     "endpoints_missing": 930,
+     "not_candidate": 56,
+     "rejected": 201
+    },
+    "traced_adaptive": {
+     "edges": 1251,
+     "recovered": 65,
+     "endpoints_missing": 1031,
+     "not_candidate": 26,
+     "rejected": 129
+    }
+   },
+   "recovered_fraction": {
+    "traced_twohop": 0.051159072741806554,
+    "traced_adaptive": 0.05195843325339728
+   },
+   "difference": {
+    "point": -0.0007993605115907271,
+    "ci95": [
+     -0.011358768832943665,
+     0.008634485776307852
+    ],
+    "resamples_with_edges": 2000
+   }
+  }
+ },
+ "validation_traced_fraction": {
+  "traced_twohop": 0.22272216320379476,
+  "traced_adaptive": 0.11999774440330069
+ },
+ "last_training_traced_pair_fraction": {
+  "traced_twohop": 0.2041856626669566,
+  "traced_adaptive": 0.2296390039846301
+ }
+}

@@ -75,7 +75,7 @@ def arms(dataset):
                                     ('traced', 'traced_adaptive', 'final-validation-rows.pkl', 'final.json')):
         thr = json.loads((DENSE / dataset / sub / result).read_text())['thresholds']
         out[name] = (DENSE / dataset / sub / rows, thr, False)
-    for name in ('traced_gap', 'traced_soft'):
+    for name in ('traced_gap', 'traced_soft', 'traced_twohop', 'traced_twohop_offset'):
         if (DENSE / dataset / name / 'final.json').exists():
             thr = json.loads((DENSE / dataset / name / 'final.json').read_text())['thresholds']
             out[name] = (DENSE / dataset / name / 'final-validation-rows.pkl', thr, False)

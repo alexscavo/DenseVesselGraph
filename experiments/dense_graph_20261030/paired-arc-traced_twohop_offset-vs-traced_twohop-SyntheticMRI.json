@@ -1,0 +1,90 @@
+{
+ "dataset": "SyntheticMRI",
+ "arms": [
+  "traced_twohop_offset",
+  "traced_twohop"
+ ],
+ "subjects": 13,
+ "thresholds": {
+  "traced_twohop_offset": {
+   "node": 0.4,
+   "edge": 0.9,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "traced_twohop": {
+   "node": 0.45,
+   "edge": 0.9,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  }
+ },
+ "ranges": {
+  "ge20mm": {
+   "counts": {
+    "traced_twohop_offset": {
+     "edges": 1556,
+     "recovered": 1281,
+     "endpoints_missing": 188,
+     "not_candidate": 0,
+     "rejected": 87
+    },
+    "traced_twohop": {
+     "edges": 1556,
+     "recovered": 1272,
+     "endpoints_missing": 202,
+     "not_candidate": 0,
+     "rejected": 82
+    }
+   },
+   "recovered_fraction": {
+    "traced_twohop_offset": 0.8232647814910026,
+    "traced_twohop": 0.8174807197943444
+   },
+   "difference": {
+    "point": 0.005784061696658127,
+    "ci95": [
+     -0.006684940000860229,
+     0.0166562566730728
+    ],
+    "resamples_with_edges": 2000
+   }
+  },
+  "ge40mm": {
+   "counts": {
+    "traced_twohop_offset": {
+     "edges": 145,
+     "recovered": 110,
+     "endpoints_missing": 19,
+     "not_candidate": 0,
+     "rejected": 16
+    },
+    "traced_twohop": {
+     "edges": 145,
+     "recovered": 108,
+     "endpoints_missing": 24,
+     "not_candidate": 0,
+     "rejected": 13
+    }
+   },
+   "recovered_fraction": {
+    "traced_twohop_offset": 0.7586206896551724,
+    "traced_twohop": 0.7448275862068966
+   },
+   "difference": {
+    "point": 0.013793103448275779,
+    "ci95": [
+     -0.027401983939537078,
+     0.06206896551724139
+    ],
+    "resamples_with_edges": 2000
+   }
+  }
+ },
+ "validation_traced_fraction": {
+  "traced_twohop_offset": 0.1850526263281289,
+  "traced_twohop": 0.18987471234978268
+ },
+ "last_training_traced_pair_fraction": {
+  "traced_twohop_offset": 0.19538875203579664,
+  "traced_twohop": 0.19763538520783186
+ }
+}

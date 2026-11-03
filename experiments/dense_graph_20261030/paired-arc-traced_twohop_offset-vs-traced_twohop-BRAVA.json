@@ -1,0 +1,90 @@
+{
+ "dataset": "BRAVA",
+ "arms": [
+  "traced_twohop_offset",
+  "traced_twohop"
+ ],
+ "subjects": 8,
+ "thresholds": {
+  "traced_twohop_offset": {
+   "node": 0.3,
+   "edge": 0.75,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "traced_twohop": {
+   "node": 0.25,
+   "edge": 0.8,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  }
+ },
+ "ranges": {
+  "ge20mm": {
+   "counts": {
+    "traced_twohop_offset": {
+     "edges": 5042,
+     "recovered": 477,
+     "endpoints_missing": 4009,
+     "not_candidate": 21,
+     "rejected": 535
+    },
+    "traced_twohop": {
+     "edges": 5042,
+     "recovered": 518,
+     "endpoints_missing": 3567,
+     "not_candidate": 94,
+     "rejected": 863
+    }
+   },
+   "recovered_fraction": {
+    "traced_twohop_offset": 0.09460531535105117,
+    "traced_twohop": 0.10273700912336374
+   },
+   "difference": {
+    "point": -0.00813169377231257,
+    "ci95": [
+     -0.013129956071922294,
+     -0.0031399437220645853
+    ],
+    "resamples_with_edges": 2000
+   }
+  },
+  "ge40mm": {
+   "counts": {
+    "traced_twohop_offset": {
+     "edges": 1251,
+     "recovered": 59,
+     "endpoints_missing": 1021,
+     "not_candidate": 18,
+     "rejected": 153
+    },
+    "traced_twohop": {
+     "edges": 1251,
+     "recovered": 64,
+     "endpoints_missing": 930,
+     "not_candidate": 56,
+     "rejected": 201
+    }
+   },
+   "recovered_fraction": {
+    "traced_twohop_offset": 0.04716227018385292,
+    "traced_twohop": 0.051159072741806554
+   },
+   "difference": {
+    "point": -0.003996802557953635,
+    "ci95": [
+     -0.018166804293971925,
+     0.010463468440169552
+    ],
+    "resamples_with_edges": 2000
+   }
+  }
+ },
+ "validation_traced_fraction": {
+  "traced_twohop_offset": 0.21568909780023782,
+  "traced_twohop": 0.22272216320379476
+ },
+ "last_training_traced_pair_fraction": {
+  "traced_twohop_offset": 0.22598550003021955,
+  "traced_twohop": 0.2041856626669566
+ }
+}

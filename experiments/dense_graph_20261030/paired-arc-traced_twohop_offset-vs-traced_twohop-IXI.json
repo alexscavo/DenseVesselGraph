@@ -1,0 +1,90 @@
+{
+ "dataset": "IXI",
+ "arms": [
+  "traced_twohop_offset",
+  "traced_twohop"
+ ],
+ "subjects": 26,
+ "thresholds": {
+  "traced_twohop_offset": {
+   "node": 0.35,
+   "edge": 0.8,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "traced_twohop": {
+   "node": 0.3,
+   "edge": 0.85,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  }
+ },
+ "ranges": {
+  "ge20mm": {
+   "counts": {
+    "traced_twohop_offset": {
+     "edges": 648,
+     "recovered": 207,
+     "endpoints_missing": 353,
+     "not_candidate": 3,
+     "rejected": 85
+    },
+    "traced_twohop": {
+     "edges": 648,
+     "recovered": 201,
+     "endpoints_missing": 308,
+     "not_candidate": 13,
+     "rejected": 126
+    }
+   },
+   "recovered_fraction": {
+    "traced_twohop_offset": 0.3194444444444444,
+    "traced_twohop": 0.3101851851851852
+   },
+   "difference": {
+    "point": 0.009259259259259245,
+    "ci95": [
+     -0.017219853723503167,
+     0.03529911038489466
+    ],
+    "resamples_with_edges": 2000
+   }
+  },
+  "ge40mm": {
+   "counts": {
+    "traced_twohop_offset": {
+     "edges": 83,
+     "recovered": 21,
+     "endpoints_missing": 45,
+     "not_candidate": 2,
+     "rejected": 15
+    },
+    "traced_twohop": {
+     "edges": 83,
+     "recovered": 18,
+     "endpoints_missing": 39,
+     "not_candidate": 5,
+     "rejected": 21
+    }
+   },
+   "recovered_fraction": {
+    "traced_twohop_offset": 0.25301204819277107,
+    "traced_twohop": 0.21686746987951808
+   },
+   "difference": {
+    "point": 0.03614457831325299,
+    "ci95": [
+     -0.015939153439153433,
+     0.1038961038961039
+    ],
+    "resamples_with_edges": 2000
+   }
+  }
+ },
+ "validation_traced_fraction": {
+  "traced_twohop_offset": 0.265307945583093,
+  "traced_twohop": 0.26244875876563245
+ },
+ "last_training_traced_pair_fraction": {
+  "traced_twohop_offset": 0.28844095952808857,
+  "traced_twohop": 0.2872196310199797
+ }
+}
