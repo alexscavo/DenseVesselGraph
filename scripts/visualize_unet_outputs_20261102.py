@@ -33,9 +33,10 @@ OUT = REPO / 'docs/research/figures/unet_outputs_20261102'
 GREEN, ORANGE, RED = '#2ecc71', '#ff9f1c', '#e74c3c'
 
 
-def representative(rows, nt, et, pooled):
+def representative(rows, nt, et, pooled, rank=0):
+    """The rank-th closest patch (by edge F1 to the pooled value) among 300 random rows."""
     rng = np.random.default_rng(0)
-    best = None
+    ranked = []
     for i in rng.permutation(len(rows))[:300]:
         r = rows[i]
         with np.load(r['cache']) as z:
@@ -50,12 +51,12 @@ def representative(rows, nt, et, pooled):
         mapping = match_nodes(r['nodes'][keep] @ M.T, gn @ M.T, 2.0)
         row, *_ = edge_accounting(np.arange(len(keep)), local, sc, sc >= et, mapping, ge, len(gn))
         f1 = 2 * row['tp'] / max(1, 2 * row['tp'] + row['fp'] + row['fn'])
-        if best is None or abs(f1 - pooled) < best[0]:
-            best = (abs(f1 - pooled), r['sample_id'])
-    return best[1]
+        ranked.append((abs(f1 - pooled), r['sample_id']))
+    return sorted(ranked)[rank][1]
 
 
 def main():
+    example = int(sys.argv[1]) if len(sys.argv) > 1 else 1  # 1 = the original figure
     OUT.mkdir(parents=True, exist_ok=True)
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     datasets = ['SyntheticMRI', 'IXI', 'BRAVA']
@@ -64,7 +65,7 @@ def main():
         res = json.loads((RUN / d / 'traced_adaptive/final.json').read_text())
         nt, et = res['thresholds']['node'], res['thresholds']['edge']
         rows = pickle.loads((RUN / d / 'traced_adaptive/final-validation-rows.pkl').read_bytes())
-        sid = representative(rows, nt, et, res['validation']['edge_f1'])
+        sid = representative(rows, nt, et, res['validation']['edge_f1'], example - 1)
         ds = make_dataset(d, [sid], augment=False)
         sample = ds[0]
         img = sample[0][0].float()  # (1, 64, 64, 64)
@@ -150,8 +151,9 @@ def main():
         print(d, sid, 'nodes', len(refined), 'matched', int(matched.sum()), 'gt', len(gt_nodes), flush=True)
     fig.suptitle('Stage-1 U-Net outputs of the traced dense model on validation patches (64³)', fontsize=13)
     fig.tight_layout()
-    fig.savefig(OUT / 'unet_outputs_3d.png', dpi=110)
-    print('saved', OUT / 'unet_outputs_3d.png')
+    name = 'unet_outputs_3d.png' if example == 1 else f'unet_outputs_3d_example{example}.png'
+    fig.savefig(OUT / name, dpi=110)
+    print('saved', OUT / name)
 
 
 if __name__ == '__main__':

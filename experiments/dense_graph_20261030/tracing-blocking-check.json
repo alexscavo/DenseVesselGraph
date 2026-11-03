@@ -1,0 +1,253 @@
+{
+ "SyntheticMRI": {
+  "thresholds": {
+   "node": 0.45,
+   "edge": 0.9,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "by_intermediate_detection": {
+   "all": {
+    "intermediate_spurious": {
+     "edges": 100,
+     "not_traced_fraction": 0.96,
+     "recovered_fraction": 0.34,
+     "outcomes": {
+      "fallback_rejected": 64,
+      "fallback_recovered": 31,
+      "traced_rejected": 1,
+      "traced_recovered": 3,
+      "not_candidate": 1
+     }
+    },
+    "intermediate_matched": {
+     "edges": 0,
+     "not_traced_fraction": 0.0,
+     "recovered_fraction": 0.0,
+     "outcomes": {}
+    },
+    "clear": {
+     "edges": 5757,
+     "not_traced_fraction": 0.012506513809275664,
+     "recovered_fraction": 0.9807191245440333,
+     "outcomes": {
+      "traced_recovered": 5582,
+      "traced_rejected": 103,
+      "fallback_recovered": 64,
+      "fallback_rejected": 8
+     }
+    }
+   },
+   ">=20mm": {
+    "intermediate_spurious": {
+     "edges": 59,
+     "not_traced_fraction": 1.0,
+     "recovered_fraction": 0.22033898305084745,
+     "outcomes": {
+      "fallback_rejected": 45,
+      "fallback_recovered": 13,
+      "not_candidate": 1
+     }
+    },
+    "intermediate_matched": {
+     "edges": 0,
+     "not_traced_fraction": 0.0,
+     "recovered_fraction": 0.0,
+     "outcomes": {}
+    },
+    "clear": {
+     "edges": 1274,
+     "not_traced_fraction": 0.022762951334379906,
+     "recovered_fraction": 0.978021978021978,
+     "outcomes": {
+      "traced_recovered": 1224,
+      "fallback_rejected": 7,
+      "traced_rejected": 21,
+      "fallback_recovered": 22
+     }
+    }
+   }
+  },
+  "centreline_broken_all_gt_edges": 0.0002604505795025394,
+  "centreline_broken": {
+   "both_found/intact": 5857,
+   "endpoint_missing/intact": 1820,
+   "endpoint_missing/broken": 2
+  }
+ },
+ "IXI": {
+  "thresholds": {
+   "node": 0.35,
+   "edge": 0.75,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "by_intermediate_detection": {
+   "all": {
+    "intermediate_spurious": {
+     "edges": 294,
+     "not_traced_fraction": 0.9285714285714286,
+     "recovered_fraction": 0.41496598639455784,
+     "outcomes": {
+      "fallback_recovered": 114,
+      "traced_rejected": 13,
+      "not_candidate": 8,
+      "fallback_rejected": 151,
+      "traced_recovered": 8
+     }
+    },
+    "intermediate_matched": {
+     "edges": 83,
+     "not_traced_fraction": 0.9156626506024096,
+     "recovered_fraction": 0.2891566265060241,
+     "outcomes": {
+      "fallback_recovered": 20,
+      "fallback_rejected": 52,
+      "not_candidate": 4,
+      "traced_rejected": 3,
+      "traced_recovered": 4
+     }
+    },
+    "clear": {
+     "edges": 3190,
+     "not_traced_fraction": 0.08746081504702194,
+     "recovered_fraction": 0.903448275862069,
+     "outcomes": {
+      "traced_recovered": 2727,
+      "traced_rejected": 184,
+      "fallback_rejected": 119,
+      "fallback_recovered": 155,
+      "not_candidate": 5
+     }
+    }
+   },
+   ">=20mm": {
+    "intermediate_spurious": {
+     "edges": 81,
+     "not_traced_fraction": 0.9629629629629629,
+     "recovered_fraction": 0.20987654320987653,
+     "outcomes": {
+      "traced_rejected": 2,
+      "not_candidate": 7,
+      "fallback_rejected": 55,
+      "fallback_recovered": 16,
+      "traced_recovered": 1
+     }
+    },
+    "intermediate_matched": {
+     "edges": 12,
+     "not_traced_fraction": 1.0,
+     "recovered_fraction": 0.25,
+     "outcomes": {
+      "fallback_rejected": 7,
+      "fallback_recovered": 3,
+      "not_candidate": 2
+     }
+    },
+    "clear": {
+     "edges": 201,
+     "not_traced_fraction": 0.22885572139303484,
+     "recovered_fraction": 0.8009950248756219,
+     "outcomes": {
+      "traced_recovered": 147,
+      "fallback_rejected": 29,
+      "traced_rejected": 8,
+      "fallback_recovered": 14,
+      "not_candidate": 3
+     }
+    }
+   }
+  },
+  "centreline_broken_all_gt_edges": 0.021061269146608316,
+  "centreline_broken": {
+   "endpoint_missing/intact": 7174,
+   "both_found/intact": 3563,
+   "endpoint_missing/broken": 227,
+   "both_found/broken": 4
+  }
+ },
+ "BRAVA": {
+  "thresholds": {
+   "node": 0.3,
+   "edge": 0.75,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "by_intermediate_detection": {
+   "all": {
+    "intermediate_spurious": {
+     "edges": 290,
+     "not_traced_fraction": 0.9379310344827586,
+     "recovered_fraction": 0.2793103448275862,
+     "outcomes": {
+      "fallback_recovered": 75,
+      "fallback_rejected": 186,
+      "traced_rejected": 12,
+      "not_candidate": 11,
+      "traced_recovered": 6
+     }
+    },
+    "intermediate_matched": {
+     "edges": 14,
+     "not_traced_fraction": 0.9285714285714286,
+     "recovered_fraction": 0.14285714285714285,
+     "outcomes": {
+      "fallback_recovered": 2,
+      "traced_rejected": 1,
+      "fallback_rejected": 11
+     }
+    },
+    "clear": {
+     "edges": 4207,
+     "not_traced_fraction": 0.2253387211789874,
+     "recovered_fraction": 0.7240313762776325,
+     "outcomes": {
+      "fallback_recovered": 375,
+      "traced_rejected": 588,
+      "traced_recovered": 2671,
+      "fallback_rejected": 548,
+      "not_candidate": 25
+     }
+    }
+   },
+   ">=20mm": {
+    "intermediate_spurious": {
+     "edges": 123,
+     "not_traced_fraction": 0.975609756097561,
+     "recovered_fraction": 0.11382113821138211,
+     "outcomes": {
+      "fallback_rejected": 96,
+      "traced_rejected": 3,
+      "not_candidate": 10,
+      "fallback_recovered": 14
+     }
+    },
+    "intermediate_matched": {
+     "edges": 8,
+     "not_traced_fraction": 1.0,
+     "recovered_fraction": 0.125,
+     "outcomes": {
+      "fallback_rejected": 7,
+      "fallback_recovered": 1
+     }
+    },
+    "clear": {
+     "edges": 887,
+     "not_traced_fraction": 0.46561443066516345,
+     "recovered_fraction": 0.5084554678692221,
+     "outcomes": {
+      "fallback_recovered": 86,
+      "traced_recovered": 365,
+      "fallback_rejected": 302,
+      "traced_rejected": 109,
+      "not_candidate": 25
+     }
+    }
+   }
+  },
+  "centreline_broken_all_gt_edges": 0.11519078473722102,
+  "centreline_broken": {
+   "endpoint_missing/intact": 12760,
+   "both_found/intact": 4446,
+   "endpoint_missing/broken": 2175,
+   "both_found/broken": 65
+  }
+ }
+}

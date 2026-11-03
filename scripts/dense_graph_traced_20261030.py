@@ -43,6 +43,7 @@ INTERIOR = (6, 14, 22)  # K8 / K16 / K24
 #   knn_fallback: add 16-NN pairs (straight paths) to the traced candidates
 #   gap_features: edge/geometry heads also read centreline-probability statistics along the path
 MODE = dict(soft=False, knn_fallback=True, gap_features=False)
+PROB_HOOK = None  # analysis only: f(prob, nodes, geometry) -> centreline probability used by predict()
 GAP_FEATURES = 5
 OFFSETS = [(i, j, k) for i in (-1, 0, 1) for j in (-1, 0, 1) for k in (-1, 0, 1) if (i, j, k) != (0, 0, 0)]
 HALF = [o for o in OFFSETS if o > (0, 0, 0)]
@@ -328,6 +329,8 @@ def predict(model, ds, device, node_threshold, workers, batch=8):
         with torch.autocast('cuda', dtype=torch.bfloat16):
             out = model.forward_image(images.to(device))
         feats, heat, prob = out[:, 5:].float(), out[:, :1].float().sigmoid(), out[:, 4].float().sigmoid()
+        if PROB_HOOK is not None:
+            prob = PROB_HOOK(prob, nodes, geometry)
         found = D.peaks(out, node_threshold)
         contacts, dist, label = traced_pairs(prob, [p for p, _ in found])
         for b, (p, score) in enumerate(found):

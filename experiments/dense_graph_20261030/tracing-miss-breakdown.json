@@ -1,0 +1,752 @@
+{
+ "SyntheticMRI": {
+  "knn_continued": {
+   "thresholds": {
+    "node": 0.45,
+    "edge": 0.9
+   },
+   "all": {
+    "edges": 7679,
+    "endpoints_missing": 1770,
+    "both_found": 5909,
+    "traced_recovered": 0,
+    "traced_rejected": 0,
+    "fallback_recovered": 5638,
+    "fallback_rejected": 265,
+    "not_candidate": 6,
+    "missed_given_both_found": 0.04586224403452361,
+    "tracing_failure_given_both_found": 1.0,
+    "missed_by_tracing_given_both_found": 0.04586224403452361,
+    "missed_by_edge_head_given_both_found": 0.0
+   },
+   "<20mm": {
+    "edges": 6123,
+    "endpoints_missing": 1571,
+    "both_found": 4552,
+    "traced_recovered": 0,
+    "traced_rejected": 0,
+    "fallback_recovered": 4415,
+    "fallback_rejected": 137,
+    "not_candidate": 0,
+    "missed_given_both_found": 0.030096660808435854,
+    "tracing_failure_given_both_found": 1.0,
+    "missed_by_tracing_given_both_found": 0.030096660808435854,
+    "missed_by_edge_head_given_both_found": 0.0
+   },
+   ">=20mm": {
+    "edges": 1556,
+    "endpoints_missing": 199,
+    "both_found": 1357,
+    "traced_recovered": 0,
+    "traced_rejected": 0,
+    "fallback_recovered": 1223,
+    "fallback_rejected": 128,
+    "not_candidate": 6,
+    "missed_given_both_found": 0.09874723655121592,
+    "tracing_failure_given_both_found": 1.0,
+    "missed_by_tracing_given_both_found": 0.09874723655121592,
+    "missed_by_edge_head_given_both_found": 0.0
+   },
+   ">=40mm": {
+    "edges": 145,
+    "endpoints_missing": 25,
+    "both_found": 120,
+    "traced_recovered": 0,
+    "traced_rejected": 0,
+    "fallback_recovered": 82,
+    "fallback_rejected": 32,
+    "not_candidate": 6,
+    "missed_given_both_found": 0.31666666666666665,
+    "tracing_failure_given_both_found": 1.0,
+    "missed_by_tracing_given_both_found": 0.31666666666666665,
+    "missed_by_edge_head_given_both_found": 0.0
+   }
+  },
+  "traced_adaptive": {
+   "thresholds": {
+    "node": 0.45,
+    "edge": 0.9
+   },
+   "all": {
+    "edges": 7679,
+    "endpoints_missing": 1822,
+    "both_found": 5857,
+    "traced_recovered": 5585,
+    "traced_rejected": 104,
+    "fallback_recovered": 95,
+    "fallback_rejected": 72,
+    "not_candidate": 1,
+    "missed_given_both_found": 0.030220249274372547,
+    "tracing_failure_given_both_found": 0.028683626429912925,
+    "missed_by_tracing_given_both_found": 0.012463718627283592,
+    "missed_by_edge_head_given_both_found": 0.017756530647088955
+   },
+   "<20mm": {
+    "edges": 6123,
+    "endpoints_missing": 1599,
+    "both_found": 4524,
+    "traced_recovered": 4361,
+    "traced_rejected": 83,
+    "fallback_recovered": 60,
+    "fallback_rejected": 20,
+    "not_candidate": 0,
+    "missed_given_both_found": 0.022767462422634836,
+    "tracing_failure_given_both_found": 0.01768346595932803,
+    "missed_by_tracing_given_both_found": 0.004420866489832007,
+    "missed_by_edge_head_given_both_found": 0.01834659593280283
+   },
+   ">=20mm": {
+    "edges": 1556,
+    "endpoints_missing": 223,
+    "both_found": 1333,
+    "traced_recovered": 1224,
+    "traced_rejected": 21,
+    "fallback_recovered": 35,
+    "fallback_rejected": 52,
+    "not_candidate": 1,
+    "missed_given_both_found": 0.0555138784696174,
+    "tracing_failure_given_both_found": 0.06601650412603151,
+    "missed_by_tracing_given_both_found": 0.03975993998499625,
+    "missed_by_edge_head_given_both_found": 0.015753938484621154
+   },
+   ">=40mm": {
+    "edges": 145,
+    "endpoints_missing": 26,
+    "both_found": 119,
+    "traced_recovered": 96,
+    "traced_rejected": 1,
+    "fallback_recovered": 7,
+    "fallback_rejected": 14,
+    "not_candidate": 1,
+    "missed_given_both_found": 0.13445378151260504,
+    "tracing_failure_given_both_found": 0.18487394957983194,
+    "missed_by_tracing_given_both_found": 0.12605042016806722,
+    "missed_by_edge_head_given_both_found": 0.008403361344537815
+   }
+  },
+  "traced_gap": {
+   "thresholds": {
+    "node": 0.45,
+    "edge": 0.9
+   },
+   "all": {
+    "edges": 7679,
+    "endpoints_missing": 1793,
+    "both_found": 5886,
+    "traced_recovered": 5612,
+    "traced_rejected": 100,
+    "fallback_recovered": 88,
+    "fallback_rejected": 85,
+    "not_candidate": 1,
+    "missed_given_both_found": 0.03160040774719674,
+    "tracing_failure_given_both_found": 0.029561671763506627,
+    "missed_by_tracing_given_both_found": 0.014610941216445803,
+    "missed_by_edge_head_given_both_found": 0.016989466530750934
+   },
+   "<20mm": {
+    "edges": 6123,
+    "endpoints_missing": 1586,
+    "both_found": 4537,
+    "traced_recovered": 4380,
+    "traced_rejected": 77,
+    "fallback_recovered": 54,
+    "fallback_rejected": 26,
+    "not_candidate": 0,
+    "missed_given_both_found": 0.022702226140621555,
+    "tracing_failure_given_both_found": 0.01763279700242451,
+    "missed_by_tracing_given_both_found": 0.0057306590257879654,
+    "missed_by_edge_head_given_both_found": 0.01697156711483359
+   },
+   ">=20mm": {
+    "edges": 1556,
+    "endpoints_missing": 207,
+    "both_found": 1349,
+    "traced_recovered": 1232,
+    "traced_rejected": 23,
+    "fallback_recovered": 34,
+    "fallback_rejected": 59,
+    "not_candidate": 1,
+    "missed_given_both_found": 0.061527057079318014,
+    "tracing_failure_given_both_found": 0.06968124536693847,
+    "missed_by_tracing_given_both_found": 0.04447739065974796,
+    "missed_by_edge_head_given_both_found": 0.01704966641957005
+   },
+   ">=40mm": {
+    "edges": 145,
+    "endpoints_missing": 26,
+    "both_found": 119,
+    "traced_recovered": 100,
+    "traced_rejected": 3,
+    "fallback_recovered": 4,
+    "fallback_rejected": 11,
+    "not_candidate": 1,
+    "missed_given_both_found": 0.12605042016806722,
+    "tracing_failure_given_both_found": 0.13445378151260504,
+    "missed_by_tracing_given_both_found": 0.10084033613445378,
+    "missed_by_edge_head_given_both_found": 0.025210084033613446
+   }
+  },
+  "traced_soft": {
+   "thresholds": {
+    "node": 0.45,
+    "edge": 0.85
+   },
+   "all": {
+    "edges": 7679,
+    "endpoints_missing": 1802,
+    "both_found": 5877,
+    "traced_recovered": 5610,
+    "traced_rejected": 209,
+    "fallback_recovered": 0,
+    "fallback_rejected": 0,
+    "not_candidate": 58,
+    "missed_given_both_found": 0.04543134252169474,
+    "tracing_failure_given_both_found": 0.009868980772502978,
+    "missed_by_tracing_given_both_found": 0.009868980772502978,
+    "missed_by_edge_head_given_both_found": 0.035562361749191765
+   },
+   "<20mm": {
+    "edges": 6123,
+    "endpoints_missing": 1586,
+    "both_found": 4537,
+    "traced_recovered": 4370,
+    "traced_rejected": 151,
+    "fallback_recovered": 0,
+    "fallback_rejected": 0,
+    "not_candidate": 16,
+    "missed_given_both_found": 0.036808463742561165,
+    "tracing_failure_given_both_found": 0.003526559400484902,
+    "missed_by_tracing_given_both_found": 0.003526559400484902,
+    "missed_by_edge_head_given_both_found": 0.033281904342076264
+   },
+   ">=20mm": {
+    "edges": 1556,
+    "endpoints_missing": 216,
+    "both_found": 1340,
+    "traced_recovered": 1240,
+    "traced_rejected": 58,
+    "fallback_recovered": 0,
+    "fallback_rejected": 0,
+    "not_candidate": 42,
+    "missed_given_both_found": 0.07462686567164178,
+    "tracing_failure_given_both_found": 0.03134328358208955,
+    "missed_by_tracing_given_both_found": 0.03134328358208955,
+    "missed_by_edge_head_given_both_found": 0.04328358208955224
+   },
+   ">=40mm": {
+    "edges": 145,
+    "endpoints_missing": 25,
+    "both_found": 120,
+    "traced_recovered": 101,
+    "traced_rejected": 5,
+    "fallback_recovered": 0,
+    "fallback_rejected": 0,
+    "not_candidate": 14,
+    "missed_given_both_found": 0.15833333333333333,
+    "tracing_failure_given_both_found": 0.11666666666666667,
+    "missed_by_tracing_given_both_found": 0.11666666666666667,
+    "missed_by_edge_head_given_both_found": 0.041666666666666664
+   }
+  }
+ },
+ "IXI": {
+  "knn_continued": {
+   "thresholds": {
+    "node": 0.3,
+    "edge": 0.8
+   },
+   "all": {
+    "edges": 10968,
+    "endpoints_missing": 6960,
+    "both_found": 4008,
+    "traced_recovered": 0,
+    "traced_rejected": 0,
+    "fallback_recovered": 2994,
+    "fallback_rejected": 964,
+    "not_candidate": 50,
+    "missed_given_both_found": 0.25299401197604793,
+    "tracing_failure_given_both_found": 1.0,
+    "missed_by_tracing_given_both_found": 0.25299401197604793,
+    "missed_by_edge_head_given_both_found": 0.0
+   },
+   "<20mm": {
+    "edges": 10320,
+    "endpoints_missing": 6652,
+    "both_found": 3668,
+    "traced_recovered": 0,
+    "traced_rejected": 0,
+    "fallback_recovered": 2897,
+    "fallback_rejected": 758,
+    "not_candidate": 13,
+    "missed_given_both_found": 0.21019629225736097,
+    "tracing_failure_given_both_found": 1.0,
+    "missed_by_tracing_given_both_found": 0.21019629225736097,
+    "missed_by_edge_head_given_both_found": 0.0
+   },
+   ">=20mm": {
+    "edges": 648,
+    "endpoints_missing": 308,
+    "both_found": 340,
+    "traced_recovered": 0,
+    "traced_rejected": 0,
+    "fallback_recovered": 97,
+    "fallback_rejected": 206,
+    "not_candidate": 37,
+    "missed_given_both_found": 0.7147058823529412,
+    "tracing_failure_given_both_found": 1.0,
+    "missed_by_tracing_given_both_found": 0.7147058823529412,
+    "missed_by_edge_head_given_both_found": 0.0
+   },
+   ">=40mm": {
+    "edges": 83,
+    "endpoints_missing": 36,
+    "both_found": 47,
+    "traced_recovered": 0,
+    "traced_rejected": 0,
+    "fallback_recovered": 1,
+    "fallback_rejected": 34,
+    "not_candidate": 12,
+    "missed_given_both_found": 0.9787234042553191,
+    "tracing_failure_given_both_found": 1.0,
+    "missed_by_tracing_given_both_found": 0.9787234042553191,
+    "missed_by_edge_head_given_both_found": 0.0
+   }
+  },
+  "traced_adaptive": {
+   "thresholds": {
+    "node": 0.35,
+    "edge": 0.75
+   },
+   "all": {
+    "edges": 10968,
+    "endpoints_missing": 7401,
+    "both_found": 3567,
+    "traced_recovered": 2739,
+    "traced_rejected": 200,
+    "fallback_recovered": 289,
+    "fallback_rejected": 322,
+    "not_candidate": 17,
+    "missed_given_both_found": 0.15110737314269695,
+    "tracing_failure_given_both_found": 0.17605831230726102,
+    "missed_by_tracing_given_both_found": 0.09503784693019345,
+    "missed_by_edge_head_given_both_found": 0.0560695262125035
+   },
+   "<20mm": {
+    "edges": 10320,
+    "endpoints_missing": 7047,
+    "both_found": 3273,
+    "traced_recovered": 2591,
+    "traced_rejected": 190,
+    "fallback_recovered": 256,
+    "fallback_rejected": 231,
+    "not_candidate": 5,
+    "missed_given_both_found": 0.1301558203483043,
+    "tracing_failure_given_both_found": 0.15032080659945005,
+    "missed_by_tracing_given_both_found": 0.07210510235258173,
+    "missed_by_edge_head_given_both_found": 0.058050717995722576
+   },
+   ">=20mm": {
+    "edges": 648,
+    "endpoints_missing": 354,
+    "both_found": 294,
+    "traced_recovered": 148,
+    "traced_rejected": 10,
+    "fallback_recovered": 33,
+    "fallback_rejected": 91,
+    "not_candidate": 12,
+    "missed_given_both_found": 0.3843537414965986,
+    "tracing_failure_given_both_found": 0.46258503401360546,
+    "missed_by_tracing_given_both_found": 0.35034013605442177,
+    "missed_by_edge_head_given_both_found": 0.034013605442176874
+   },
+   ">=40mm": {
+    "edges": 83,
+    "endpoints_missing": 46,
+    "both_found": 37,
+    "traced_recovered": 10,
+    "traced_rejected": 0,
+    "fallback_recovered": 2,
+    "fallback_rejected": 20,
+    "not_candidate": 5,
+    "missed_given_both_found": 0.6756756756756757,
+    "tracing_failure_given_both_found": 0.7297297297297297,
+    "missed_by_tracing_given_both_found": 0.6756756756756757,
+    "missed_by_edge_head_given_both_found": 0.0
+   }
+  },
+  "traced_gap": {
+   "thresholds": {
+    "node": 0.3,
+    "edge": 0.8
+   },
+   "all": {
+    "edges": 10968,
+    "endpoints_missing": 6903,
+    "both_found": 4065,
+    "traced_recovered": 2792,
+    "traced_rejected": 378,
+    "fallback_recovered": 382,
+    "fallback_rejected": 485,
+    "not_candidate": 28,
+    "missed_given_both_found": 0.21918819188191882,
+    "tracing_failure_given_both_found": 0.2201722017220172,
+    "missed_by_tracing_given_both_found": 0.12619926199261994,
+    "missed_by_edge_head_given_both_found": 0.0929889298892989
+   },
+   "<20mm": {
+    "edges": 10320,
+    "endpoints_missing": 6599,
+    "both_found": 3721,
+    "traced_recovered": 2657,
+    "traced_rejected": 357,
+    "fallback_recovered": 336,
+    "fallback_rejected": 365,
+    "not_candidate": 6,
+    "missed_given_both_found": 0.19564633163128192,
+    "tracing_failure_given_both_found": 0.19000268744961032,
+    "missed_by_tracing_given_both_found": 0.09970438054286482,
+    "missed_by_edge_head_given_both_found": 0.09594195108841709
+   },
+   ">=20mm": {
+    "edges": 648,
+    "endpoints_missing": 304,
+    "both_found": 344,
+    "traced_recovered": 135,
+    "traced_rejected": 21,
+    "fallback_recovered": 46,
+    "fallback_rejected": 120,
+    "not_candidate": 22,
+    "missed_given_both_found": 0.4738372093023256,
+    "tracing_failure_given_both_found": 0.5465116279069767,
+    "missed_by_tracing_given_both_found": 0.4127906976744186,
+    "missed_by_edge_head_given_both_found": 0.061046511627906974
+   },
+   ">=40mm": {
+    "edges": 83,
+    "endpoints_missing": 35,
+    "both_found": 48,
+    "traced_recovered": 7,
+    "traced_rejected": 3,
+    "fallback_recovered": 2,
+    "fallback_rejected": 26,
+    "not_candidate": 10,
+    "missed_given_both_found": 0.8125,
+    "tracing_failure_given_both_found": 0.7916666666666666,
+    "missed_by_tracing_given_both_found": 0.75,
+    "missed_by_edge_head_given_both_found": 0.0625
+   }
+  },
+  "traced_soft": {
+   "thresholds": {
+    "node": 0.35,
+    "edge": 0.8
+   },
+   "all": {
+    "edges": 10968,
+    "endpoints_missing": 7464,
+    "both_found": 3504,
+    "traced_recovered": 2522,
+    "traced_rejected": 685,
+    "fallback_recovered": 0,
+    "fallback_rejected": 0,
+    "not_candidate": 297,
+    "missed_given_both_found": 0.2802511415525114,
+    "tracing_failure_given_both_found": 0.08476027397260275,
+    "missed_by_tracing_given_both_found": 0.08476027397260275,
+    "missed_by_edge_head_given_both_found": 0.1954908675799087
+   },
+   "<20mm": {
+    "edges": 10320,
+    "endpoints_missing": 7114,
+    "both_found": 3206,
+    "traced_recovered": 2380,
+    "traced_rejected": 602,
+    "fallback_recovered": 0,
+    "fallback_rejected": 0,
+    "not_candidate": 224,
+    "missed_given_both_found": 0.2576419213973799,
+    "tracing_failure_given_both_found": 0.06986899563318777,
+    "missed_by_tracing_given_both_found": 0.06986899563318777,
+    "missed_by_edge_head_given_both_found": 0.18777292576419213
+   },
+   ">=20mm": {
+    "edges": 648,
+    "endpoints_missing": 350,
+    "both_found": 298,
+    "traced_recovered": 142,
+    "traced_rejected": 83,
+    "fallback_recovered": 0,
+    "fallback_rejected": 0,
+    "not_candidate": 73,
+    "missed_given_both_found": 0.5234899328859061,
+    "tracing_failure_given_both_found": 0.24496644295302014,
+    "missed_by_tracing_given_both_found": 0.24496644295302014,
+    "missed_by_edge_head_given_both_found": 0.2785234899328859
+   },
+   ">=40mm": {
+    "edges": 83,
+    "endpoints_missing": 43,
+    "both_found": 40,
+    "traced_recovered": 10,
+    "traced_rejected": 13,
+    "fallback_recovered": 0,
+    "fallback_rejected": 0,
+    "not_candidate": 17,
+    "missed_given_both_found": 0.75,
+    "tracing_failure_given_both_found": 0.425,
+    "missed_by_tracing_given_both_found": 0.425,
+    "missed_by_edge_head_given_both_found": 0.325
+   }
+  }
+ },
+ "BRAVA": {
+  "knn_continued": {
+   "thresholds": {
+    "node": 0.3,
+    "edge": 0.75
+   },
+   "all": {
+    "edges": 19446,
+    "endpoints_missing": 14709,
+    "both_found": 4737,
+    "traced_recovered": 0,
+    "traced_rejected": 0,
+    "fallback_recovered": 3041,
+    "fallback_rejected": 1647,
+    "not_candidate": 49,
+    "missed_given_both_found": 0.3580325100274435,
+    "tracing_failure_given_both_found": 1.0,
+    "missed_by_tracing_given_both_found": 0.3580325100274435,
+    "missed_by_edge_head_given_both_found": 0.0
+   },
+   "<20mm": {
+    "edges": 14404,
+    "endpoints_missing": 10740,
+    "both_found": 3664,
+    "traced_recovered": 0,
+    "traced_rejected": 0,
+    "fallback_recovered": 2697,
+    "fallback_rejected": 967,
+    "not_candidate": 0,
+    "missed_given_both_found": 0.26391921397379914,
+    "tracing_failure_given_both_found": 1.0,
+    "missed_by_tracing_given_both_found": 0.26391921397379914,
+    "missed_by_edge_head_given_both_found": 0.0
+   },
+   ">=20mm": {
+    "edges": 5042,
+    "endpoints_missing": 3969,
+    "both_found": 1073,
+    "traced_recovered": 0,
+    "traced_rejected": 0,
+    "fallback_recovered": 344,
+    "fallback_rejected": 680,
+    "not_candidate": 49,
+    "missed_given_both_found": 0.679403541472507,
+    "tracing_failure_given_both_found": 1.0,
+    "missed_by_tracing_given_both_found": 0.679403541472507,
+    "missed_by_edge_head_given_both_found": 0.0
+   },
+   ">=40mm": {
+    "edges": 1251,
+    "endpoints_missing": 1018,
+    "both_found": 233,
+    "traced_recovered": 0,
+    "traced_rejected": 0,
+    "fallback_recovered": 30,
+    "fallback_rejected": 171,
+    "not_candidate": 32,
+    "missed_given_both_found": 0.871244635193133,
+    "tracing_failure_given_both_found": 1.0,
+    "missed_by_tracing_given_both_found": 0.871244635193133,
+    "missed_by_edge_head_given_both_found": 0.0
+   }
+  },
+  "traced_adaptive": {
+   "thresholds": {
+    "node": 0.3,
+    "edge": 0.75
+   },
+   "all": {
+    "edges": 19446,
+    "endpoints_missing": 14935,
+    "both_found": 4511,
+    "traced_recovered": 2677,
+    "traced_rejected": 601,
+    "fallback_recovered": 452,
+    "fallback_rejected": 745,
+    "not_candidate": 36,
+    "missed_given_both_found": 0.306362225670583,
+    "tracing_failure_given_both_found": 0.2733318554644203,
+    "missed_by_tracing_given_both_found": 0.1731323431611616,
+    "missed_by_edge_head_given_both_found": 0.13322988250942142
+   },
+   "<20mm": {
+    "edges": 14404,
+    "endpoints_missing": 10911,
+    "both_found": 3493,
+    "traced_recovered": 2312,
+    "traced_rejected": 489,
+    "fallback_recovered": 351,
+    "fallback_rejected": 340,
+    "not_candidate": 1,
+    "missed_given_both_found": 0.23761809332951617,
+    "tracing_failure_given_both_found": 0.1981105067277412,
+    "missed_by_tracing_given_both_found": 0.09762381906670484,
+    "missed_by_edge_head_given_both_found": 0.13999427426281133
+   },
+   ">=20mm": {
+    "edges": 5042,
+    "endpoints_missing": 4024,
+    "both_found": 1018,
+    "traced_recovered": 365,
+    "traced_rejected": 112,
+    "fallback_recovered": 101,
+    "fallback_rejected": 405,
+    "not_candidate": 35,
+    "missed_given_both_found": 0.5422396856581533,
+    "tracing_failure_given_both_found": 0.5314341846758349,
+    "missed_by_tracing_given_both_found": 0.43222003929273084,
+    "missed_by_edge_head_given_both_found": 0.1100196463654224
+   },
+   ">=40mm": {
+    "edges": 1251,
+    "endpoints_missing": 1031,
+    "both_found": 220,
+    "traced_recovered": 52,
+    "traced_rejected": 23,
+    "fallback_recovered": 13,
+    "fallback_rejected": 106,
+    "not_candidate": 26,
+    "missed_given_both_found": 0.7045454545454546,
+    "tracing_failure_given_both_found": 0.6590909090909091,
+    "missed_by_tracing_given_both_found": 0.6,
+    "missed_by_edge_head_given_both_found": 0.10454545454545454
+   }
+  },
+  "traced_gap": {
+   "thresholds": {
+    "node": 0.3,
+    "edge": 0.75
+   },
+   "all": {
+    "edges": 19446,
+    "endpoints_missing": 14838,
+    "both_found": 4608,
+    "traced_recovered": 2700,
+    "traced_rejected": 594,
+    "fallback_recovered": 504,
+    "fallback_rejected": 769,
+    "not_candidate": 41,
+    "missed_given_both_found": 0.3046875,
+    "tracing_failure_given_both_found": 0.28515625,
+    "missed_by_tracing_given_both_found": 0.17578125,
+    "missed_by_edge_head_given_both_found": 0.12890625
+   },
+   "<20mm": {
+    "edges": 14404,
+    "endpoints_missing": 10836,
+    "both_found": 3568,
+    "traced_recovered": 2332,
+    "traced_rejected": 473,
+    "fallback_recovered": 410,
+    "fallback_rejected": 353,
+    "not_candidate": 0,
+    "missed_given_both_found": 0.23150224215246637,
+    "tracing_failure_given_both_found": 0.21384529147982062,
+    "missed_by_tracing_given_both_found": 0.09893497757847533,
+    "missed_by_edge_head_given_both_found": 0.13256726457399104
+   },
+   ">=20mm": {
+    "edges": 5042,
+    "endpoints_missing": 4002,
+    "both_found": 1040,
+    "traced_recovered": 368,
+    "traced_rejected": 121,
+    "fallback_recovered": 94,
+    "fallback_rejected": 416,
+    "not_candidate": 41,
+    "missed_given_both_found": 0.5557692307692308,
+    "tracing_failure_given_both_found": 0.5298076923076923,
+    "missed_by_tracing_given_both_found": 0.4394230769230769,
+    "missed_by_edge_head_given_both_found": 0.11634615384615385
+   },
+   ">=40mm": {
+    "edges": 1251,
+    "endpoints_missing": 1025,
+    "both_found": 226,
+    "traced_recovered": 53,
+    "traced_rejected": 25,
+    "fallback_recovered": 9,
+    "fallback_rejected": 110,
+    "not_candidate": 29,
+    "missed_given_both_found": 0.7256637168141593,
+    "tracing_failure_given_both_found": 0.6548672566371682,
+    "missed_by_tracing_given_both_found": 0.6150442477876106,
+    "missed_by_edge_head_given_both_found": 0.11061946902654868
+   }
+  },
+  "traced_soft": {
+   "thresholds": {
+    "node": 0.3,
+    "edge": 0.6
+   },
+   "all": {
+    "edges": 19446,
+    "endpoints_missing": 14752,
+    "both_found": 4694,
+    "traced_recovered": 3186,
+    "traced_rejected": 874,
+    "fallback_recovered": 0,
+    "fallback_rejected": 0,
+    "not_candidate": 634,
+    "missed_given_both_found": 0.32126118449083935,
+    "tracing_failure_given_both_found": 0.13506604175543246,
+    "missed_by_tracing_given_both_found": 0.13506604175543246,
+    "missed_by_edge_head_given_both_found": 0.1861951427354069
+   },
+   "<20mm": {
+    "edges": 14404,
+    "endpoints_missing": 10763,
+    "both_found": 3641,
+    "traced_recovered": 2727,
+    "traced_rejected": 600,
+    "fallback_recovered": 0,
+    "fallback_rejected": 0,
+    "not_candidate": 314,
+    "missed_given_both_found": 0.25102993683054103,
+    "tracing_failure_given_both_found": 0.08624004394397143,
+    "missed_by_tracing_given_both_found": 0.08624004394397143,
+    "missed_by_edge_head_given_both_found": 0.16478989288656962
+   },
+   ">=20mm": {
+    "edges": 5042,
+    "endpoints_missing": 3989,
+    "both_found": 1053,
+    "traced_recovered": 459,
+    "traced_rejected": 274,
+    "fallback_recovered": 0,
+    "fallback_rejected": 0,
+    "not_candidate": 320,
+    "missed_given_both_found": 0.5641025641025641,
+    "tracing_failure_given_both_found": 0.30389363722697055,
+    "missed_by_tracing_given_both_found": 0.30389363722697055,
+    "missed_by_edge_head_given_both_found": 0.26020892687559355
+   },
+   ">=40mm": {
+    "edges": 1251,
+    "endpoints_missing": 1022,
+    "both_found": 229,
+    "traced_recovered": 72,
+    "traced_rejected": 55,
+    "fallback_recovered": 0,
+    "fallback_rejected": 0,
+    "not_candidate": 102,
+    "missed_given_both_found": 0.6855895196506551,
+    "tracing_failure_given_both_found": 0.44541484716157204,
+    "missed_by_tracing_given_both_found": 0.44541484716157204,
+    "missed_by_edge_head_given_both_found": 0.24017467248908297
+   }
+  }
+ }
+}

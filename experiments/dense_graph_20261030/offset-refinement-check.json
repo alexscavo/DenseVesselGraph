@@ -1,0 +1,191 @@
+{
+ "SyntheticMRI": {
+  "node_threshold": 0.45,
+  "patches": 200,
+  "matched_nodes": {
+   "peak_on_gt_voxel": 1588,
+   "peak_off_gt_voxel": 1956,
+   "on_fraction": 0.44808126410835214
+  },
+  "error_mm": {
+   "peak_on": {
+    "n": 1588,
+    "mean": 0.2036436713166929,
+    "median": 0.25
+   },
+   "ref_on": {
+    "n": 1588,
+    "mean": 0.19134949661380204,
+    "median": 0.1471671685576439
+   },
+   "peak_off": {
+    "n": 1956,
+    "mean": 1.06983674733551,
+    "median": 1.0
+   },
+   "ref_off": {
+    "n": 1956,
+    "mean": 1.0395262813945978,
+    "median": 0.9984478056430817
+   }
+  },
+  "refinement_helps_fraction": {
+   "on": 0.45591939546599497,
+   "off": 0.7315950920245399
+  },
+  "at_gt_voxel": {
+   "target_max_abs_vox": {
+    "n": 4150,
+    "mean": 0.17618763257222003,
+    "median": 0.208343505859375
+   },
+   "target_zero_fraction": 0.423855421686747,
+   "predicted_max_abs_vox": {
+    "n": 4150,
+    "mean": 0.10524115475587524,
+    "median": 0.05462322756648064
+   },
+   "error_rounded_mm": {
+    "n": 4150,
+    "mean": 0.2242450422377535,
+    "median": 0.25
+   },
+   "error_with_offset_mm": {
+    "n": 4150,
+    "mean": 0.19084886111536925,
+    "median": 0.13661713836625067
+   }
+  },
+  "predicted_max_abs_vox_at_peaks": {
+   "n": 3704,
+   "mean": 0.07351582445528518,
+   "median": 0.03906431421637535
+  }
+ },
+ "IXI": {
+  "node_threshold": 0.35,
+  "patches": 200,
+  "matched_nodes": {
+   "peak_on_gt_voxel": 941,
+   "peak_off_gt_voxel": 1804,
+   "on_fraction": 0.3428051001821494
+  },
+  "error_mm": {
+   "peak_on": {
+    "n": 941,
+    "mean": 0.2118150176599877,
+    "median": 0.22044271230697632
+   },
+   "ref_on": {
+    "n": 941,
+    "mean": 0.20126283835762207,
+    "median": 0.1974511593580246
+   },
+   "peak_off": {
+    "n": 1804,
+    "mean": 0.7465391440478106,
+    "median": 0.6465979814529419
+   },
+   "ref_off": {
+    "n": 1804,
+    "mean": 0.71307777071541,
+    "median": 0.5987745225429535
+   }
+  },
+  "refinement_helps_fraction": {
+   "on": 0.5536663124335813,
+   "off": 0.717849223946785
+  },
+  "at_gt_voxel": {
+   "target_max_abs_vox": {
+    "n": 4930,
+    "mean": 0.26494985979662955,
+    "median": 0.3043556213378906
+   },
+   "target_zero_fraction": 0.2618661257606491,
+   "predicted_max_abs_vox": {
+    "n": 4930,
+    "mean": 0.13451179337938568,
+    "median": 0.11235606297850609
+   },
+   "error_rounded_mm": {
+    "n": 4930,
+    "mean": 0.19246767944964208,
+    "median": 0.21052266964020389
+   },
+   "error_with_offset_mm": {
+    "n": 4930,
+    "mean": 0.17420864287212898,
+    "median": 0.1684388442471551
+   }
+  },
+  "predicted_max_abs_vox_at_peaks": {
+   "n": 3350,
+   "mean": 0.13781288029226377,
+   "median": 0.11784232407808304
+  }
+ },
+ "BRAVA": {
+  "node_threshold": 0.3,
+  "patches": 200,
+  "matched_nodes": {
+   "peak_on_gt_voxel": 356,
+   "peak_off_gt_voxel": 1573,
+   "on_fraction": 0.18455158113011924
+  },
+  "error_mm": {
+   "peak_on": {
+    "n": 356,
+    "mean": 0.3693687803624721,
+    "median": 0.38639989495277405
+   },
+   "ref_on": {
+    "n": 356,
+    "mean": 0.261663319297093,
+    "median": 0.2847146838903427
+   },
+   "peak_off": {
+    "n": 1573,
+    "mean": 0.9910710544170882,
+    "median": 0.9283329844474792
+   },
+   "ref_off": {
+    "n": 1573,
+    "mean": 0.9672320813452144,
+    "median": 0.8962825536727905
+   }
+  },
+  "refinement_helps_fraction": {
+   "on": 0.8370786516853933,
+   "off": 0.7590591226954864
+  },
+  "at_gt_voxel": {
+   "target_max_abs_vox": {
+    "n": 3560,
+    "mean": 0.41502808988764245,
+    "median": 0.5
+   },
+   "target_zero_fraction": 0.1699438202247191,
+   "predicted_max_abs_vox": {
+    "n": 3560,
+    "mean": 0.35186602862259464,
+    "median": 0.4865894615650177
+   },
+   "error_rounded_mm": {
+    "n": 3560,
+    "mean": 0.31258540039847105,
+    "median": 0.34589175194149496
+   },
+   "error_with_offset_mm": {
+    "n": 3560,
+    "mean": 0.223848153021517,
+    "median": 0.270996278491047
+   }
+  },
+  "predicted_max_abs_vox_at_peaks": {
+   "n": 3107,
+   "mean": 0.46662214248887635,
+   "median": 0.49402379989624023
+  }
+ }
+}

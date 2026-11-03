@@ -1,0 +1,409 @@
+{
+ "dataset": "BRAVA",
+ "arm": "traced_adaptive",
+ "thresholds": {
+  "node": 0.3,
+  "edge": 0.75
+ },
+ "patches": 1796,
+ "validation": {
+  "predicted": {
+   "node_threshold": 0.3,
+   "edge_threshold": 0.75,
+   "node_f1": 0.5455519458077003,
+   "node_precision": 0.582859463850528,
+   "node_recall": 0.5127330604820373,
+   "edge_f1": 0.2056590752242926,
+   "edge_precision": 0.28489483747609945,
+   "edge_recall": 0.16090712742980562,
+   "missed_edges_without_endpoint_pair": 0.915303058160201,
+   "false_edges_MM_MU_UU": [
+    1841,
+    4028,
+    1985
+   ],
+   "beta0_mae": 4.082962138084633,
+   "beta1_mae": 0.6224944320712695,
+   "patches": 1796,
+   "common_branch_f1": 0.06197039677055679,
+   "common_curve_f1": 0.3949220633425846,
+   "common_curve_precision": 0.7000470806382686,
+   "common_curve_recall": 0.27504149596956234,
+   "common_guide_distance_mm": 0.5456559357388009,
+   "common_anchor_f1": 0.19033691022430213
+  },
+  "repaired": {
+   "node_threshold": 0.3,
+   "edge_threshold": 0.75,
+   "node_f1": 0.5455519458077003,
+   "node_precision": 0.582859463850528,
+   "node_recall": 0.5127330604820373,
+   "edge_f1": 0.20340567612687813,
+   "edge_precision": 0.28998476770754,
+   "edge_recall": 0.1566388974596318,
+   "missed_edges_without_endpoint_pair": 0.910670731707317,
+   "false_edges_MM_MU_UU": [
+    1679,
+    3840,
+    1939
+   ],
+   "beta0_mae": 4.252783964365256,
+   "beta1_mae": 0.5913140311804009,
+   "patches": 1796,
+   "common_branch_f1": 0.06060829493087558,
+   "common_curve_f1": 0.3708350695860373,
+   "common_curve_precision": 0.6957055176612372,
+   "common_curve_recall": 0.2527905934636925,
+   "common_guide_distance_mm": 0.5300769742795989,
+   "common_anchor_f1": 0.18187788459784374
+  }
+ },
+ "breakdown": {
+  "predicted": {
+   "all": {
+    "edges": 19446,
+    "endpoints_missing": 14935,
+    "both_found": 4511,
+    "traced_recovered": 2677,
+    "traced_rejected": 601,
+    "fallback_recovered": 452,
+    "fallback_rejected": 745,
+    "not_candidate": 36,
+    "missed_given_both_found": 0.306362225670583,
+    "tracing_failure_given_both_found": 0.2733318554644203,
+    "missed_by_tracing_given_both_found": 0.1731323431611616,
+    "missed_by_edge_head_given_both_found": 0.13322988250942142
+   },
+   "<20mm": {
+    "edges": 14404,
+    "endpoints_missing": 10911,
+    "both_found": 3493,
+    "traced_recovered": 2312,
+    "traced_rejected": 489,
+    "fallback_recovered": 351,
+    "fallback_rejected": 340,
+    "not_candidate": 1,
+    "missed_given_both_found": 0.23761809332951617,
+    "tracing_failure_given_both_found": 0.1981105067277412,
+    "missed_by_tracing_given_both_found": 0.09762381906670484,
+    "missed_by_edge_head_given_both_found": 0.13999427426281133
+   },
+   ">=20mm": {
+    "edges": 5042,
+    "endpoints_missing": 4024,
+    "both_found": 1018,
+    "traced_recovered": 365,
+    "traced_rejected": 112,
+    "fallback_recovered": 101,
+    "fallback_rejected": 405,
+    "not_candidate": 35,
+    "missed_given_both_found": 0.5422396856581533,
+    "tracing_failure_given_both_found": 0.5314341846758349,
+    "missed_by_tracing_given_both_found": 0.43222003929273084,
+    "missed_by_edge_head_given_both_found": 0.1100196463654224
+   },
+   ">=40mm": {
+    "edges": 1251,
+    "endpoints_missing": 1031,
+    "both_found": 220,
+    "traced_recovered": 52,
+    "traced_rejected": 23,
+    "fallback_recovered": 13,
+    "fallback_rejected": 106,
+    "not_candidate": 26,
+    "missed_given_both_found": 0.7045454545454546,
+    "tracing_failure_given_both_found": 0.6590909090909091,
+    "missed_by_tracing_given_both_found": 0.6,
+    "missed_by_edge_head_given_both_found": 0.10454545454545454
+   }
+  },
+  "repaired": {
+   "all": {
+    "edges": 19446,
+    "endpoints_missing": 14935,
+    "both_found": 4511,
+    "traced_recovered": 2615,
+    "traced_rejected": 723,
+    "fallback_recovered": 431,
+    "fallback_rejected": 705,
+    "not_candidate": 37,
+    "missed_given_both_found": 0.32476169363777435,
+    "tracing_failure_given_both_found": 0.2600310352471736,
+    "missed_by_tracing_given_both_found": 0.16448681001995122,
+    "missed_by_edge_head_given_both_found": 0.1602748836178231
+   },
+   "<20mm": {
+    "edges": 14404,
+    "endpoints_missing": 10911,
+    "both_found": 3493,
+    "traced_recovered": 2279,
+    "traced_rejected": 559,
+    "fallback_recovered": 335,
+    "fallback_rejected": 319,
+    "not_candidate": 1,
+    "missed_given_both_found": 0.25164614944174063,
+    "tracing_failure_given_both_found": 0.18751789292871457,
+    "missed_by_tracing_given_both_found": 0.09161179501860865,
+    "missed_by_edge_head_given_both_found": 0.160034354423132
+   },
+   ">=20mm": {
+    "edges": 5042,
+    "endpoints_missing": 4024,
+    "both_found": 1018,
+    "traced_recovered": 336,
+    "traced_rejected": 164,
+    "fallback_recovered": 96,
+    "fallback_rejected": 386,
+    "not_candidate": 36,
+    "missed_given_both_found": 0.5756385068762279,
+    "tracing_failure_given_both_found": 0.5088408644400786,
+    "missed_by_tracing_given_both_found": 0.41453831041257366,
+    "missed_by_edge_head_given_both_found": 0.16110019646365423
+   },
+   ">=40mm": {
+    "edges": 1251,
+    "endpoints_missing": 1031,
+    "both_found": 220,
+    "traced_recovered": 48,
+    "traced_rejected": 32,
+    "fallback_recovered": 14,
+    "fallback_rejected": 100,
+    "not_candidate": 26,
+    "missed_given_both_found": 0.7181818181818181,
+    "tracing_failure_given_both_found": 0.6363636363636364,
+    "missed_by_tracing_given_both_found": 0.5727272727272728,
+    "missed_by_edge_head_given_both_found": 0.14545454545454545
+   }
+  }
+ },
+ "both_endpoints_found_by_gap": {
+  "intact": {
+   "all": {
+    "edges": 4446,
+    "predicted": {
+     "fallback_recovered": 439,
+     "traced_rejected": 592,
+     "traced_recovered": 2675,
+     "fallback_rejected": 705,
+     "not_candidate": 35
+    },
+    "repaired": {
+     "fallback_recovered": 418,
+     "traced_recovered": 2610,
+     "traced_rejected": 706,
+     "fallback_rejected": 676,
+     "not_candidate": 36
+    }
+   },
+   "<20mm": {
+    "edges": 3454,
+    "predicted": {
+     "fallback_recovered": 340,
+     "traced_rejected": 482,
+     "fallback_rejected": 320,
+     "traced_recovered": 2311,
+     "not_candidate": 1
+    },
+    "repaired": {
+     "fallback_recovered": 324,
+     "traced_recovered": 2277,
+     "traced_rejected": 551,
+     "fallback_rejected": 301,
+     "not_candidate": 1
+    }
+   },
+   ">=20mm": {
+    "edges": 992,
+    "predicted": {
+     "fallback_recovered": 99,
+     "traced_recovered": 364,
+     "fallback_rejected": 385,
+     "traced_rejected": 110,
+     "not_candidate": 34
+    },
+    "repaired": {
+     "fallback_recovered": 94,
+     "traced_recovered": 333,
+     "fallback_rejected": 375,
+     "traced_rejected": 155,
+     "not_candidate": 35
+    }
+   },
+   ">=40mm": {
+    "edges": 208,
+    "predicted": {
+     "fallback_recovered": 13,
+     "traced_recovered": 52,
+     "fallback_rejected": 96,
+     "traced_rejected": 22,
+     "not_candidate": 25
+    },
+    "repaired": {
+     "fallback_recovered": 14,
+     "traced_recovered": 48,
+     "fallback_rejected": 94,
+     "traced_rejected": 27,
+     "not_candidate": 25
+    }
+   }
+  },
+  "gap <2mm": {
+   "all": {
+    "edges": 42,
+    "predicted": {
+     "fallback_rejected": 23,
+     "not_candidate": 1,
+     "traced_recovered": 2,
+     "fallback_recovered": 13,
+     "traced_rejected": 3
+    },
+    "repaired": {
+     "fallback_rejected": 18,
+     "traced_rejected": 5,
+     "not_candidate": 1,
+     "traced_recovered": 5,
+     "fallback_recovered": 13
+    }
+   },
+   "<20mm": {
+    "edges": 30,
+    "predicted": {
+     "fallback_rejected": 16,
+     "traced_recovered": 1,
+     "fallback_recovered": 11,
+     "traced_rejected": 2
+    },
+    "repaired": {
+     "fallback_rejected": 14,
+     "traced_rejected": 3,
+     "traced_recovered": 2,
+     "fallback_recovered": 11
+    }
+   },
+   ">=20mm": {
+    "edges": 12,
+    "predicted": {
+     "fallback_rejected": 7,
+     "not_candidate": 1,
+     "traced_recovered": 1,
+     "fallback_recovered": 2,
+     "traced_rejected": 1
+    },
+    "repaired": {
+     "traced_rejected": 2,
+     "not_candidate": 1,
+     "fallback_rejected": 4,
+     "traced_recovered": 3,
+     "fallback_recovered": 2
+    }
+   },
+   ">=40mm": {
+    "edges": 4,
+    "predicted": {
+     "not_candidate": 1,
+     "fallback_rejected": 2,
+     "traced_rejected": 1
+    },
+    "repaired": {
+     "not_candidate": 1,
+     "fallback_rejected": 2,
+     "traced_rejected": 1
+    }
+   }
+  },
+  "gap 2-5mm": {
+   "all": {
+    "edges": 16,
+    "predicted": {
+     "fallback_rejected": 11,
+     "traced_rejected": 5
+    },
+    "repaired": {
+     "fallback_rejected": 7,
+     "traced_rejected": 9
+    }
+   },
+   "<20mm": {
+    "edges": 8,
+    "predicted": {
+     "fallback_rejected": 3,
+     "traced_rejected": 5
+    },
+    "repaired": {
+     "fallback_rejected": 3,
+     "traced_rejected": 5
+    }
+   },
+   ">=20mm": {
+    "edges": 8,
+    "predicted": {
+     "fallback_rejected": 8
+    },
+    "repaired": {
+     "fallback_rejected": 4,
+     "traced_rejected": 4
+    }
+   },
+   ">=40mm": {
+    "edges": 7,
+    "predicted": {
+     "fallback_rejected": 7
+    },
+    "repaired": {
+     "fallback_rejected": 3,
+     "traced_rejected": 4
+    }
+   }
+  },
+  "gap >=5mm": {
+   "all": {
+    "edges": 7,
+    "predicted": {
+     "traced_rejected": 1,
+     "fallback_rejected": 6
+    },
+    "repaired": {
+     "traced_rejected": 3,
+     "fallback_rejected": 4
+    }
+   },
+   "<20mm": {
+    "edges": 1,
+    "predicted": {
+     "fallback_rejected": 1
+    },
+    "repaired": {
+     "fallback_rejected": 1
+    }
+   },
+   ">=20mm": {
+    "edges": 6,
+    "predicted": {
+     "traced_rejected": 1,
+     "fallback_rejected": 5
+    },
+    "repaired": {
+     "traced_rejected": 3,
+     "fallback_rejected": 3
+    }
+   },
+   ">=40mm": {
+    "edges": 1,
+    "predicted": {
+     "fallback_rejected": 1
+    },
+    "repaired": {
+     "fallback_rejected": 1
+    }
+   }
+  }
+ },
+ "recall_gain_all_gt_edges": {
+  "recall_gain": -0.004268229970173815,
+  "ci95": [
+   -0.005203541677074284,
+   -0.003255868728900055
+  ],
+  "subjects": 8
+ }
+}
