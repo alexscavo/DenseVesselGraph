@@ -42,9 +42,14 @@ INTERIOR = (6, 14, 22)  # K8 / K16 / K24
 #   soft:         no hard centreline mask; ink may cross any voxel at cost 1/(p+0.05)
 #   knn_fallback: add 16-NN pairs (straight paths) to the traced candidates
 #   gap_features: edge/geometry heads also read centreline-probability statistics along the path
-MODE = dict(soft=False, knn_fallback=True, gap_features=False)
+# Opt-in (3 Nov 2026):
+#   two_hop:      for a traced chain A-C-B whose ends do not touch, also propose A-B along the joined
+#                 path A->C->B; the heads read a pass-through descriptor of C (flag, heat at C, bend at C)
+MODE = dict(soft=False, knn_fallback=True, gap_features=False, two_hop=False)
 PROB_HOOK = None  # analysis only: f(prob, nodes, geometry) -> centreline probability used by predict()
 GAP_FEATURES = 5
+VIA_FEATURES = 3
+MAX_VIA_DEGREE = 6  # skip pass-through pairs around nodes touching more regions than this
 OFFSETS = [(i, j, k) for i in (-1, 0, 1) for j in (-1, 0, 1) for k in (-1, 0, 1) if (i, j, k) != (0, 0, 0)]
 HALF = [o for o in OFFSETS if o > (0, 0, 0)]
 BALL = [(i, j, k) for i in range(-2, 3) for j in range(-2, 3) for k in range(-2, 3) if i * i + j * j + k * k <= SEED_RADIUS ** 2]
@@ -165,8 +170,38 @@ def smooth(path, k=5):
     return F.avg_pool1d(pad, k, 1).transpose(1, 2)
 
 
-def build_paths(cand, pairs, contacts, dist_b, label_b):
-    """Paths (P,SAMPLES,3) in voxels and a traced flag; chord paths for untraced pairs."""
+def two_hop_pairs(contacts):
+    """(A,B) -> C for every A-C, C-B contact pair whose ends do not touch (lowest joined cost wins)."""
+    nbr = {}
+    for (i, j), (cost, _) in contacts.items():
+        nbr.setdefault(i, []).append((j, cost))
+        nbr.setdefault(j, []).append((i, cost))
+    best = {}
+    for c, around in nbr.items():
+        if len(around) > MAX_VIA_DEGREE:
+            continue
+        for x, (u, cu) in enumerate(around):
+            for v, cv in around[x + 1:]:
+                key = (min(u, v), max(u, v))
+                if key in contacts:
+                    continue
+                if key not in best or cu + cv < best[key][1]:
+                    best[key] = (c, cu + cv)
+    return {k: c for k, (c, _) in best.items()}
+
+
+def via_points(cand, pairs, hops):
+    """(P,3) position of the pass-through node C, NaN for ordinary pairs."""
+    via = torch.full((len(pairs), 3), float('nan'), device=cand.device)
+    rows = [k for k, pr in enumerate(pairs.tolist()) if tuple(pr) in hops]
+    if rows:
+        via[rows] = cand[[hops[tuple(pairs[k].tolist())] for k in rows]]
+    return via
+
+
+def build_paths(cand, pairs, contacts, dist_b, label_b, hops=None):
+    """Paths (P,SAMPLES,3) in voxels and a traced flag; chord paths for untraced pairs.
+    Two-hop pairs (in hops) follow the traced A->C and C->B paths joined at C (flagged traced)."""
     P = len(pairs)
     a, b = cand[pairs[:, 0]], cand[pairs[:, 1]]
     s = torch.linspace(0, 1, SAMPLES, device=cand.device)[None, :, None]
@@ -183,6 +218,20 @@ def build_paths(cand, pairs, contacts, dist_b, label_b):
         full[:, 0], full[:, -1] = a[rows], b[rows]  # exact sub-voxel endpoints
         p = smooth(resample(full, SAMPLES))
         p[:, 0], p[:, -1] = a[rows], b[rows]
+        paths[rows] = p
+        traced[rows] = True
+    rows = [k for k, pr in enumerate(pairs.tolist()) if hops and tuple(pr) in hops and tuple(pr) not in contacts]
+    if rows:
+        ab = pairs[rows]
+        c = torch.tensor([hops[tuple(pr)] for pr in ab.tolist()], device=cand.device)
+        first = torch.stack([torch.minimum(ab[:, 0], c), torch.maximum(ab[:, 0], c)], 1)
+        second = torch.stack([torch.minimum(c, ab[:, 1]), torch.maximum(c, ab[:, 1])], 1)
+        p1, _ = build_paths(cand, first, contacts, dist_b, label_b)
+        p2, _ = build_paths(cand, second, contacts, dist_b, label_b)
+        p1 = torch.where((first[:, 0] == ab[:, 0])[:, None, None], p1, p1.flip(1))  # A -> C
+        p2 = torch.where((second[:, 0] == c)[:, None, None], p2, p2.flip(1))  # C -> B
+        p = smooth(resample(torch.cat([p1, p2[:, 1:]], 1), SAMPLES))
+        p[:, 0], p[:, -1] = cand[ab[:, 0]], cand[ab[:, 1]]
         paths[rows] = p
         traced[rows] = True
     return paths, traced
@@ -210,10 +259,11 @@ def choose_interior(paths_mm, traced):
 
 
 class TracedDenseGraph(D.DenseGraph):
-    def __init__(self, radius=12.0, gap_features=False):
+    def __init__(self, radius=12.0, gap_features=False, two_hop=False):
         super().__init__('spline', 6, radius)
-        self.gap_features = gap_features
-        width = self.edge_head[0].in_features + 1 + (GAP_FEATURES if gap_features else 0)  # + arc length (+ gap statistics)
+        self.gap_features, self.two_hop = gap_features, two_hop
+        width = (self.edge_head[0].in_features + 1 + (GAP_FEATURES if gap_features else 0)
+                 + (VIA_FEATURES if two_hop else 0))  # + arc length (+ gap statistics) (+ pass-through node)
         self.edge_head = nn.Sequential(nn.Linear(width, 256), nn.GELU(), nn.Linear(256, 1))
         del self.geometry_head  # replaced by the per-K heads below
         self.heads = nn.ModuleDict()
@@ -226,7 +276,7 @@ class TracedDenseGraph(D.DenseGraph):
             self.register_buffer(f'basis{m}', basis)
             self.register_buffer(f'greville{m}', greville[1:-1])
 
-    def path_features(self, volume, heat, paths, prob=None):
+    def path_features(self, volume, heat, paths, prob=None, via=None):
         a, b = paths[:, 0], paths[:, -1]
         p24 = resample(paths, L)
         t, u, w = frames(p24)
@@ -243,6 +293,8 @@ class TracedDenseGraph(D.DenseGraph):
                  point[:-1].permute(1, 2, 0).reshape(len(paths), -1), point[-1], arc / SIZE]
         if self.gap_features:
             parts.append(gap_statistics(prob, paths))
+        if self.two_hop:
+            parts.append(via_features(heat, a, b, via))
         return torch.cat(parts, -1)
 
     def path_curves(self, x, paths, interior, traced):
@@ -264,6 +316,21 @@ class TracedDenseGraph(D.DenseGraph):
         return curves
 
 
+def via_features(heat, a, b, via):
+    """Pass-through node descriptor: [is two-hop, heat at C, cos of the bend A->C->B]; zeros otherwise."""
+    out = torch.zeros(len(a), VIA_FEATURES, device=a.device)
+    if via is None:
+        return out
+    sel = ~torch.isnan(via[:, 0])
+    if sel.any():
+        c = via[sel]
+        g = (c / (SIZE - 1) * 2 - 1).flip(-1).view(1, -1, 1, 1, 3)
+        h = F.grid_sample(heat[None], g, align_corners=True).view(-1)
+        bend = F.cosine_similarity(c - a[sel], b[sel] - c, dim=-1)
+        out[sel] = torch.stack([torch.ones_like(h), h, bend], 1)
+    return out
+
+
 @torch.no_grad()
 def gap_statistics(prob, paths):
     """Centreline probability along each path (64 samples): mean, min, fraction < 0.5,
@@ -280,13 +347,14 @@ def gap_statistics(prob, paths):
                         torch.log(1.0 / (p + 0.05)).mean(1)], 1)
 
 
-def patch_candidates(cand, metric, contacts):
+def patch_candidates(cand, metric, contacts, hops=None):
+    extra = set(hops or ())
     if not MODE['knn_fallback']:
-        if not contacts:
+        if not contacts and not extra:
             return torch.zeros(0, 2, dtype=torch.long, device=cand.device)
-        return torch.tensor(sorted(contacts), dtype=torch.long, device=cand.device)
+        return torch.tensor(sorted(set(contacts) | extra), dtype=torch.long, device=cand.device)
     knn = D.candidate_pairs(cand @ metric.T)
-    keys = {tuple(p) for p in knn.tolist()} | set(contacts)
+    keys = {tuple(p) for p in knn.tolist()} | set(contacts) | extra
     if not keys:
         return knn
     return torch.tensor(sorted(keys), dtype=torch.long, device=cand.device)
@@ -295,7 +363,8 @@ def patch_candidates(cand, metric, contacts):
 def patch_terms(model, feats, heat, cand, gt_vox, gt_edges, guides, metric, mapping, contacts, dist_b, label_b, prob_b=None):
     if len(cand) < 2:
         return None
-    pairs = patch_candidates(cand, metric, contacts)
+    hops = two_hop_pairs(contacts) if MODE['two_hop'] else None
+    pairs = patch_candidates(cand, metric, contacts, hops)
     if len(pairs) == 0:
         return None
     labels = D.pair_labels(pairs, mapping, gt_edges)
@@ -303,8 +372,8 @@ def patch_terms(model, feats, heat, cand, gt_vox, gt_edges, guides, metric, mapp
     if len(negatives) > D.MAX_NEGATIVES:
         keep = torch.cat([torch.nonzero(labels > 0).squeeze(-1), negatives[torch.randperm(len(negatives), device=negatives.device)[:D.MAX_NEGATIVES]]])
         pairs, labels = pairs[keep], labels[keep]
-    paths, traced = build_paths(cand, pairs, contacts, dist_b, label_b)
-    x = model.path_features(feats, heat, paths, prob_b)
+    paths, traced = build_paths(cand, pairs, contacts, dist_b, label_b, hops)
+    x = model.path_features(feats, heat, paths, prob_b, via_points(cand, pairs, hops) if hops else None)
     logits = model.edge_head(x).squeeze(-1)
     pos = labels.sum()
     edge = F.binary_cross_entropy_with_logits(logits, labels, pos_weight=((len(labels) - pos) / pos.clamp_min(1)).clamp(max=20.0))
@@ -336,11 +405,14 @@ def predict(model, ds, device, node_threshold, workers, batch=8):
         for b, (p, score) in enumerate(found):
             metric = geometry[b]['metric'].to(device) / SIZE
             row = dict(nodes=(p / SIZE).cpu().numpy(), node_scores=score.cpu().numpy(), pairs=np.zeros((0, 2), int),
-                       edge_scores=None, curves=None, traced=None, interior=None)
-            pairs = patch_candidates(p, metric, contacts[b]) if len(p) >= 2 else None
+                       edge_scores=None, curves=None, traced=None, interior=None, via=None)
+            hops = two_hop_pairs(contacts[b]) if MODE['two_hop'] else None
+            pairs = patch_candidates(p, metric, contacts[b], hops) if len(p) >= 2 else None
             if pairs is not None and len(pairs):
-                paths, traced = build_paths(p, pairs, contacts[b], dist[b], label[b])
-                x = model.path_features(feats[b], heat[b], paths, prob[b])
+                paths, traced = build_paths(p, pairs, contacts[b], dist[b], label[b], hops)
+                x = model.path_features(feats[b], heat[b], paths, prob[b], via_points(p, pairs, hops) if hops else None)
+                if hops:
+                    row['via'] = np.array([hops.get(tuple(pr), -1) for pr in pairs.tolist()])
                 interior = choose_interior(to_mm(paths, metric[None].expand(len(paths), 3, 3)), traced)
                 row.update(pairs=pairs.cpu().numpy(), edge_scores=model.edge_head(x).squeeze(-1).sigmoid().cpu().numpy(),
                            curves=(model.path_curves(x, paths, interior, traced) / SIZE).cpu().numpy(),
@@ -392,13 +464,42 @@ def final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final.js
     (out_dir / name.replace('.json', '-validation-rows.pkl')).write_bytes(pickle.dumps(val_rows))
     traced_share = float(np.mean(np.concatenate([r['traced'] for r in val_rows if r['traced'] is not None] or [np.zeros(0)])))
     interior = np.concatenate([r['interior'] for r in val_rows if r['interior'] is not None] or [np.zeros(0, int)])
-    result = dict(dataset=a.dataset, model='traced+adaptive', mode=dict(MODE), updates=a.updates, batch=a.batch, lr=a.lr,
+    result = dict(dataset=a.dataset, model='traced+adaptive', mode=dict(MODE), offset_radius=getattr(a, 'offset_radius', 0.0),
+                  updates=a.updates, batch=a.batch, lr=a.lr,
                   thresholds=dict(node=node_t, edge=edge_t, policy='train monitor only; candidates = geodesic contacts' + (' U 16-NN over retained nodes' if MODE['knn_fallback'] else ' only')),
                   train_monitor=D.evaluate(train_rows, node_t, edge_t), validation=D.evaluate(val_rows, node_t, edge_t),
                   validation_by_arc_length=length_breakdown(val_rows, node_t, edge_t),
                   validation_candidates=dict(traced_fraction=traced_share, interior_histogram={str(m): int((interior == m).sum()) for m in INTERIOR}))
     (out_dir / name).write_text(json.dumps(result, indent=1))
     print('FINAL ' + json.dumps(result), flush=True)
+
+
+def neighbourhood_offsets(nodes, device, radius):
+    """Offset targets at every voxel within `radius` of each GT node's rounded voxel:
+    target = GT position - voxel; a voxel near several nodes takes the nearest."""
+    r = int(np.floor(radius))
+    g = torch.arange(-r, r + 1, device=device)
+    ball = torch.stack(torch.meshgrid(g, g, g, indexing='ij'), -1).view(-1, 3)
+    ball = ball[(ball.float() ** 2).sum(-1) <= radius ** 2]
+    B = len(nodes)
+    offset = torch.zeros(B, 3, SIZE, SIZE, SIZE, device=device)
+    mask = torch.zeros(B, SIZE, SIZE, SIZE, dtype=torch.bool, device=device)
+    for b, n in enumerate(nodes):
+        v = n.to(device) * SIZE
+        if not len(v):
+            continue
+        vox = (v.round().long()[:, None] + ball[None]).view(-1, 3)
+        src = v[:, None].expand(-1, len(ball), 3).reshape(-1, 3)
+        ok = ((vox >= 0) & (vox < SIZE)).all(1)
+        vox, src = vox[ok], src[ok]
+        d = (src - vox.float()).norm(dim=-1)
+        flat = (vox[:, 0] * SIZE + vox[:, 1]) * SIZE + vox[:, 2]
+        best = torch.full((SIZE ** 3,), float('inf'), device=device).scatter_reduce(0, flat, d, 'amin')
+        win = d <= best[flat]
+        vox, src = vox[win], src[win]
+        offset[b, :, vox[:, 0], vox[:, 1], vox[:, 2]] = (src - vox.float()).T
+        mask[b, vox[:, 0], vox[:, 1], vox[:, 2]] = True
+    return offset, mask
 
 
 def warm_start(model, path, device):
@@ -427,11 +528,14 @@ def main():
     p.add_argument('--soft-tracing', action='store_true', help='No hard centreline mask: cost 1/(p+0.05) everywhere')
     p.add_argument('--no-knn-fallback', action='store_true', help='Candidates = geodesic contacts only')
     p.add_argument('--gap-features', action='store_true', help='Edge/geometry heads read centreline statistics along the path')
+    p.add_argument('--two-hop', action='store_true', help='Also propose A-B through a traced pass-through node C')
+    p.add_argument('--offset-radius', type=float, default=0.0,
+                   help='Supervise offsets at all voxels within this radius of each GT node (0 = GT voxel only)')
     p.add_argument('--evaluate-only', action='store_true')
     p.add_argument('--breakdown-rows', type=Path, help='Only compute the arc-length breakdown for saved rows (CPU)')
     p.add_argument('--breakdown-thresholds', type=float, nargs=2)
     a = p.parse_args()
-    MODE.update(soft=a.soft_tracing, knn_fallback=not a.no_knn_fallback, gap_features=a.gap_features)
+    MODE.update(soft=a.soft_tracing, knn_fallback=not a.no_knn_fallback, gap_features=a.gap_features, two_hop=a.two_hop)
     if a.breakdown_rows:
         rows = pickle.loads(a.breakdown_rows.read_bytes())
         print(json.dumps(length_breakdown(rows, *a.breakdown_thresholds), indent=1))
@@ -445,7 +549,7 @@ def main():
     if a.smoke:
         train_ids, val_ids, monitor = train_ids[:8], val_ids[:4], train_ids[:4]
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    model = TracedDenseGraph(gap_features=MODE['gap_features']).to(device)
+    model = TracedDenseGraph(gap_features=MODE['gap_features'], two_hop=MODE['two_hop']).to(device)
     if a.evaluate_only:
         model.load_state_dict(torch.load(out_dir / 'model.pt', map_location=device)['model'])
         final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final-v2.json')
@@ -466,6 +570,8 @@ def main():
         with torch.autocast(device, dtype=torch.bfloat16, enabled=device == 'cuda'):
             out = model.forward_image(images.to(device))
         node_loss = focal(out[:, :1].float(), heat_t)
+        if a.offset_radius > 0:
+            offset_t, peak_t = neighbourhood_offsets(nodes, device, a.offset_radius)
         m = peak_t.unsqueeze(1).expand_as(offset_t)
         off_loss = F.l1_loss(out[:, 1:4].float()[m], offset_t[m]) if m.any() else out.sum() * 0
         line_loss = F.binary_cross_entropy_with_logits(out[:, 4:5].float(), line_t, pos_weight=torch.tensor(5.0, device=device))
