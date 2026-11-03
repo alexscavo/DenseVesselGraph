@@ -3,7 +3,7 @@
 Source: `/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_mechanisms_20261019-220459`.
 
 All replacement-chain jobs completed with exit 0. See
-[report 7](../../metrics/7-ixi-mechanism-batch.md) for interpretation and limitations.
+[report 7](../../../archive/legacy-20261103/docs/research/metrics/7-ixi-mechanism-batch.md) for interpretation and limitations.
 
 `comparison.csv`, `bootstrap.json`, `length-strata.csv` and `summary.json` are
 unaltered collector outputs. `B/` contains category/confidence/probe/recovery

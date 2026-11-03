@@ -8,7 +8,7 @@ record of this research line.
 - Main model and results: [`docs/research/dense_traced_model_20261102.md`](docs/research/dense_traced_model_20261102.md)
 - Full design, glossary and comparisons: [`docs/research/network_proposals_20261030.md`](docs/research/network_proposals_20261030.md)
 - Code: `scripts/dense_graph_20261030.py`, `scripts/dense_graph_traced_20261030.py`, `scripts/dense_graph_2d_20261030.py`
-- Earlier research overview: [`research/`](research/roadmap.md)
+- Research history and document index: [`docs/research/README.md`](docs/research/README.md) (consolidated histories of the earlier RelationFormer work; originals archived under [`docs/archive/legacy-20261103/`](docs/archive/legacy-20261103/))
 
 This repository was formerly `Graph-Native-Betti-Matching-Representation`, a fork of Alessandro
 Benvenuti's Graph-Native-Betti-Matching. On 2 Nov 2026 all experiment worktrees were
@@ -22,16 +22,12 @@ consolidated here. Branches `research/*`, `brava-representation-20261026` and
 
 ## Research overview
 
-The consolidated research documentation is in [`research/`](research/roadmap.md):
-
-- [Roadmap](research/roadmap.md): goals, milestones and current priorities.
-- [Architecture](research/architecture.md): components, code and dependencies.
-- [Decisions](research/decisions.md): reasoning, alternatives and scope.
-- [Experiments](research/experiments.md): configurations, results and the complete source catalog.
-
-Detailed protocols and evidence remain under `docs/research/`; code, datasets,
-checkpoints and existing collectors keep their stable paths. The reconstruction
-notes below retain their original historical context.
+The research documentation index is [`docs/research/README.md`](docs/research/README.md):
+it lists what to read first (the dense traced model), the consolidated topic histories of
+the earlier work, and the evidence folders. The former top-level `research/` overview
+(roadmap, architecture, decisions, experiment register) and the older dated reports were
+moved, unchanged apart from link targets, to
+[`docs/archive/legacy-20261103/`](docs/archive/legacy-20261103/) on 3 Nov 2026.
 
 
 Clean research implementation of a 3D graph-extraction pipeline with graph-native topology objectives.
@@ -106,7 +102,7 @@ plotting, and baseline loss-based model selection are in place. See
 `docs/MODEL.md`, `docs/LOSSES.md`, `docs/TRAINING.md`, and
 `docs/EVALUATION.md`. The read-only SyntheticMRI source/grid audit is documented
 in `docs/DATA_AUDIT.md`. The first controlled ablation matrix is documented in
-`docs/EXPERIMENTS.md`. The completed SyntheticMRI dataset findings and proposed
+`docs/archive/legacy-20261103/docs/EXPERIMENTS.md` (archived; never run). The completed SyntheticMRI dataset findings and proposed
 decisions are recorded in `docs/SYNTHETIC_MRI_DATASET_REPORT.md`.
 The safe, resumable v2 split and patch generator is documented in
 `docs/DATA_GENERATION.md`.

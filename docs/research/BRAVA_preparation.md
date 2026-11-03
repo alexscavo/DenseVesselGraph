@@ -195,7 +195,7 @@ python3 scripts/prepare_brava.py show --output /lustre/fsn1/projects/rech/vnc/up
 
 ## Bounded representation audit follow-up — 26 October 2026
 
-The completed fully trainable study is recorded in [BRAVA_experiment_plan.md](BRAVA_experiment_plan.md#fully-trainable-representation-follow-up--26-october-2026). It reuses the validated SWC transform, reflection corrections, immutable target manifest and subject split; it does not constitute a new full-dataset alignment audit.
+The completed fully trainable study is recorded in [BRAVA_experiment_plan.md](../archive/legacy-20261103/docs/research/BRAVA_experiment_plan.md#fully-trainable-representation-follow-up--26-october-2026). It reuses the validated SWC transform, reflection corrections, immutable target manifest and subject split; it does not constitute a new full-dataset alignment audit.
 
 On 1,504 development patches, actual degree-2 subdivision preserves all 15,718 parent paths and graph topology, increases node count from 24,863 to 30,446, and stays within 120 queries (maximum 69 nodes). All branches satisfy the existing splitter's 0.5-mm criterion. The audit distinguishes geometric face location from clipping provenance: 270 valid nodes outside the sigmoid voxel-center range have `boundary=False`; no targets were relabeled or clamped. Maximum sigmoid clamp displacement is 0.4402 mm. Numeric evidence: [target-summary.json](../../experiments/brava_representation_20261026/target-summary.json) and [target-audit.json](../../experiments/brava_representation_20261026/target-audit.json).
 

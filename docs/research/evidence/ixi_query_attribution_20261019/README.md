@@ -1,6 +1,6 @@
 # IXI query-attribution pilot evidence — 2026-10-19
 
-See [methods, results and recovery record](../../metrics/6-ixi-query-attribution.md).
+See [methods, results and recovery record](../../../archive/legacy-20261103/docs/research/metrics/6-ixi-query-attribution.md).
 
 Each arm contains summaries copied from its completed CPU collector. Original
 Slurm jobs failed during reporting after successful frozen-model evaluation;

@@ -10,7 +10,7 @@ and extraction experiments. The old commands in sections 9–10 are superseded
 and their one-off scripts were removed. The current 170-volume IXI and
 50-volume TopBrain workflow, with both selectable centerline backends, is
 documented in [the scripts guide](../scripts/README.md) and
-[the production run tracker](research/VEDO_PRODUCTION_RUN.md). The current
+[the production run tracker](archive/legacy-20261103/docs/research/VEDO_PRODUCTION_RUN.md). The current
 Vedo graphs and single-patch train/validation/test sets are complete.
 
 ## 1. Purpose and scope

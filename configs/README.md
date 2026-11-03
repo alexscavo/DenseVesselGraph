@@ -18,7 +18,7 @@ configuration before a dataset is constructed.
 - `finetune_synthetic_mri_focal_fgw.yaml`: a ready-to-run focal finetuning
   configuration using the FGW matcher.
 - `experiments/finetune_mri/`: controlled baseline/focal/Betti/focal+Betti
-  finetuning matrix. See `docs/EXPERIMENTS.md` before launching it.
+  finetuning matrix. See `docs/archive/legacy-20261103/docs/EXPERIMENTS.md` before launching it.
 - `experiments/focal_matrix_600/`: paired mixed-pretraining and 600-epoch MRI
   specialization configurations for the seven unweighted-focal recipes.
 - `losses/`: reusable focal and Betti overlays containing only loss changes;
