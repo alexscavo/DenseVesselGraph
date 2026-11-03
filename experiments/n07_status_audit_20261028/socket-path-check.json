@@ -1,7 +1,0 @@
-{
-  "original_tmpdir": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_local_components_20261026/runtime/1583591",
-  "socket_path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_local_components_20261026/runtime/1583591/pymp-12345678/listener-12345678",
-  "path_bytes": 133,
-  "reproduced_error": "AF_UNIX path too long",
-  "recovery_requirement": "Short SCRATCH-backed TMPDIR for multiprocessing sockets, separate from long runtime/cache root; full GPU smoke still required."
-}

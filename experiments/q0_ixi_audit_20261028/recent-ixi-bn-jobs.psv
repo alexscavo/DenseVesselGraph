@@ -1,6 +1,0 @@
-JobID|JobName|State|ExitCode|Elapsed
-1569366|ixi-local-components|FAILED|1:0|00:01:46
-1583591|ixi-local-components|TIMEOUT|0:0|00:30:04
-1584593_0|cheap-training-bn|FAILED|1:0|00:00:49
-1584593_1|cheap-training-bn|COMPLETED|0:0|00:01:37
-1653086|q0-ixi-target-audit|PENDING|0:0|00:00:00

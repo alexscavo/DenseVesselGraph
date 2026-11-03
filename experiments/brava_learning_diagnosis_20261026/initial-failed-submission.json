@@ -1,9 +1,0 @@
-{
-  "gpu_job": "1598674",
-  "cpu_collector": "1598675",
-  "gpu_dependencies_afterany": [],
-  "collector_dependency": "afterok:1598674",
-  "training": false,
-  "gpu_wall_time": "00:25:00",
-  "queue_at_submission": ""
-}

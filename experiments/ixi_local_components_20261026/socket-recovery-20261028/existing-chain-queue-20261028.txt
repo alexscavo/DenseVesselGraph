@@ -1,6 +1,0 @@
-1653994|native2d-study-report|PENDING|N/A|(Dependency)
-1653861|ixi-components-report|PENDING|N/A|(Dependency)
-1653991|native2d-Axyz|PENDING|gres/gpu:1|(Dependency)
-1653860_[0-5%1]|ixi-local-components|PENDING|gres/gpu:1|(Dependency)
-1654241|native2d-B0|RUNNING|gres/gpu:1|jzxh021
-1653859|ixi-local-components|RUNNING|gres/gpu:1|jzxh041

@@ -1,9 +1,0 @@
-{
-  "passed": true,
-  "tests": 10,
-  "cache_loader_parity": [
-    "avwide",
-    "reaver"
-  ],
-  "packed_loader_empty_positive_and_cache_immutability": "octasynth"
-}

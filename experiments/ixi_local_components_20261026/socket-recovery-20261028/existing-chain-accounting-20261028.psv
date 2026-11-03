@@ -1,7 +1,0 @@
-JobID|JobName|State|ExitCode|Elapsed|Start|End
-1653858|ixi-local-components|COMPLETED|0:0|00:02:54|2026-10-28T10:54:15|2026-10-28T10:57:09
-1653859|ixi-local-components|RUNNING|0:0|00:06:43|2026-10-28T10:58:16|Unknown
-1653861|ixi-components-report|PENDING|0:0|00:00:00|Unknown|Unknown
-1653860_[0-5%1]|ixi-local-components|PENDING|0:0|00:00:00|Unknown|Unknown
-1653987|native2d-B0|CANCELLED by 307254|0:0|00:01:40|2026-10-28T10:58:16|2026-10-28T10:59:56
-1653991|native2d-Axyz|PENDING|0:0|00:00:00|Unknown|Unknown

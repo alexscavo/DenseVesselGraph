@@ -1,5 +1,0 @@
-exact_source_crop,excluded_reason,foreground_voxels,maximum_reference_to_foreground_mm,patient_id,sample_id,split,subject
-True,,656,0.4727459611551447,000050,sample_000050_0019,train,IXI119-Guys-0765-MRA_IXI-Guys
-True,,6081,0.4782181344553125,000044,sample_000044_0067,train,IXI105-HH-1471-MRA_IXI-HH
-True,,767,0.4580125686563274,000040,sample_000040_0078,val,IXI100-Guys-0747-MRA_IXI-Guys
-True,,175,0.4749313296667674,000166,sample_000166_0036,val,IXI580-IOP-1157-MRA_IXI-IOP

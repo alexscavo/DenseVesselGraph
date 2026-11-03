@@ -1,8 +1,0 @@
-{
-  "models/relation_token_refinement.py": "0d4cd619dbdc232891105a2e1dea9ca1c861d77fa4b7a2243266097787eeaaf0",
-  "tests/test_relation_token_refinement.py": "ae20e2a0122c6e88f0545211765de733b4c834f39afddaa85b150b46f61e5832",
-  "scripts/r06_relation_tokens.py": "b41763ed36e6646a2e143527f24509b918b9a5c8821baa20908b2d949a555014",
-  "scripts/collect_r06.py": "9a058d81fd245ce8071a03c54016655b9a15cef13c117547fd08dd09526555d2",
-  "cluster/jean_zay/r06_gpu.slurm": "d16a25b1920bbfd8f5867ce44e6bf9e663cab35e4cc783d72f29dfff1e671094",
-  "cluster/jean_zay/r06_cpu.slurm": "a100a47e0815a4818d132cfd897c007b420c53943054f4986af0528673c066c8"
-}

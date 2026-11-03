@@ -1,8 +1,0 @@
-{
-  "completed": true,
-  "cpu_only": true,
-  "gpu_inference": false,
-  "training": false,
-  "primary": "local_profile",
-  "rows": 34048
-}

@@ -1,6 +1,0 @@
-{
-  "passed": true,
-  "original_training_code_unchanged": true,
-  "straight_config": true,
-  "identical_pretrain_and_finetune_exposures": true
-}

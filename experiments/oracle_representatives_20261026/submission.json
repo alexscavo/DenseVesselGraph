@@ -1,8 +1,0 @@
-{
-  "job_id": "1597409",
-  "purpose": "eight-patch original-feature replay; CPU drift failed parity",
-  "patches": 8,
-  "training": false,
-  "wall_time": "00:10:00",
-  "global_queue_before": ""
-}

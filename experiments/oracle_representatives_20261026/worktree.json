@@ -1,5 +1,0 @@
-{
-  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
-  "results": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/oracle_representatives_20261026",
-  "print_command": "python3 gnbm-graph-errors-20261026/scripts/show_oracle_representatives.py"
-}

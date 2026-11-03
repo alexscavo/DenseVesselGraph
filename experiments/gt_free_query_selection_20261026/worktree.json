@@ -1,6 +1,0 @@
-{
-  "id": "N08",
-  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
-  "results": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/gt_free_query_selection_20261026",
-  "summary_command": "python3 gnbm-query-selection-20261026/scripts/show_query_selection.py"
-}

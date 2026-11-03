@@ -1,9 +1,0 @@
-{
-  "failed_cpu_job": "1583536",
-  "gpu_jobs": "all dependency-cancelled with zero allocation",
-  "cause": "Audit incorrectly equated boundary clipping provenance with geometric face position",
-  "example": "sample_000002_0082 nodes 5 and 6 are valid half-voxel face vertices with boundary=False",
-  "fix": "Retain legal voxel-cell coordinate check and record unflagged face points separately; no targets changed",
-  "tests": "5 tests passed under fixed job runtime",
-  "runtime_reuse": "/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/br-1583536/gnbm-spline-runtime-1583536"
-}

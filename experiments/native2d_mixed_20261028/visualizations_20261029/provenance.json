@@ -1,9 +1,0 @@
-{
-  "script": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/scripts/visualize_native2d_results_20261029.py",
-  "script_sha256": "5cedc3fff883a1a4cd6c05183fdfa524b3b5ef7af59e8308ffb93ec7a816e739",
-  "evaluation": "final.pt, epoch100, validation only, node/edge cuts0.5, unchanged metrics",
-  "test_arrays_opened": 0,
-  "selection_is_prediction_independent": true,
-  "rendered_saved_predictions": true,
-  "inference_provenance": "inference-provenance.json"
-}

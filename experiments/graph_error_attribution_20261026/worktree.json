@@ -1,8 +1,0 @@
-{
-  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
-  "branch": "research/graph-error-attribution-20261026",
-  "results": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/graph_error_attribution_20261026",
-  "report": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/docs/research/metrics/6-ixi-query-attribution.md",
-  "completed": true,
-  "cpu_only": true
-}

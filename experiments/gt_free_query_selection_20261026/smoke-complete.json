@@ -1,8 +1,0 @@
-{
-  "completed": true,
-  "cpu_only": true,
-  "gpu_inference": false,
-  "training": false,
-  "primary": "guarded_global",
-  "rows": 112
-}

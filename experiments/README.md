@@ -3,11 +3,12 @@
 This folder keeps code-adjacent provenance for experiments: plans, compact JSON results,
 reports, logs and small analysis files. Large volumes, checkpoints and predictions live on
 SCRATCH under `$SCRATCH/experiments/gnbm/` (some subfolders here are symlinks to it).
-What each study found is summarised in [`../docs/research/HISTORY.md`](../docs/research/HISTORY.md);
-the original reports and plans of the studies up to 29 Oct 2026 are archived
-([`../docs/archive/README.md`](../docs/archive/README.md)).
+[`../docs/research/HISTORY.md`](../docs/research/HISTORY.md) summarises what each study found.
 
-## Current model (from 30 Oct 2026)
+## Live folders
+
+**Current model (from 30 Oct 2026).** The full design and every intermediate experiment of this
+phase are in [`../docs/research/network_proposals_20261030.md`](../docs/research/network_proposals_20261030.md).
 
 | Folder | Role |
 | --- | --- |
@@ -17,29 +18,41 @@ the original reports and plans of the studies up to 29 Oct 2026 are archived
 | `anchored_rf_20261030/` | Heatmap-anchored RelationFormer |
 | `node_heatmap_probe_20261030/`, `oracle_geometry_20261030/`, `ixi_long_20261030/` | Node-heatmap probe, oracle-topology edge-geometry study, literature-scale IXI RelationFormer control |
 
-The full design and every intermediate experiment of this phase are in
-[`../docs/research/network_proposals_20261030.md`](../docs/research/network_proposals_20261030.md).
+**Plans and prepared data that current code reads.**
 
-## Earlier studies (to 29 Oct 2026)
+| Folder | Role |
+| --- | --- |
+| `multidataset_continuous/` | Train/validation split and evaluation plan (`plan.json`) used by all current 3D code |
+| `native2d_long_20261028/` | Prepared native 2D datasets (AV-WIDE, REAVER, OCTA-Synth, plants: manifests and QC), read by the 2D scripts through `native2d_mixed_20261028/plan.json` |
+| `native2d_20261028/`, `native2d_20261028_targetfix/` | Native2D-02 and -03 AV-WIDE studies (original and corrected K8 targets). The AV-WIDE and REAVER manifests in `native2d_long_20261028/` point to the prepared crops and targets in these folders |
+| `brava_preparation/` | BRAVA SWC preparation and orientation/alignment probes |
 
-All other folders are records of earlier RelationFormer, transfer, representation, BRAVA and
-native-2D studies. Their status words (queued, running) describe the time they were written;
-`sacct` and the research history are the reference. Two non-experiment folders:
+## Superseded studies
 
-- `storage_cleanup/`: audited removal and archive manifests of the 16, 25 and 27 Oct 2026
-  cleanups. `storage_cleanup/20261027/secondary-artifacts.zip` holds old launchers and
-  secondary audit/viewer files; restore them with `storage_cleanup/20261027/restore.py`, which
-  refuses to overwrite differing files. Some loose prediction NPZ files of three October studies
-  were zipped by the 25 Oct cleanup and need selective restoration before reuse.
-- `coordination/`: small coordination records between parallel studies.
+The 49 earlier study folders (RelationFormer, transfer, representation, BRAVA, native-2D,
+audits and cleanup records, up to 30 Oct 2026) were removed on 3 Nov 2026.
+[`SUPERSEDED.md`](SUPERSEDED.md) has one entry per folder (what it tested and why it was
+superseded), lists the current scripts that still read files inside some of them, and gives
+restore instructions. Each folder is archived as
+`$STORE/DenseVesselGraph-experiments-archive-20261103/<folder>.tar.zst`
+(`STORE=/lustre/fsstor/projects/rech/vnc/upz25mj`). The original reports and plans of the studies
+up to 29 Oct 2026 are archived separately ([`../docs/archive/README.md`](../docs/archive/README.md)).
+
+## SCRATCH backup of current runs
+
+SCRATCH purges untouched files. The current run outputs under `$SCRATCH/experiments/gnbm/` (model
+checkpoints, `final.json`, validation rows) are backed up in
+`$STORE/DenseVesselGraph-experiments-archive-20261103/current-dense-graph-runs-scratch-20261103.tar.zst`.
 
 ## Retention rule
 
 Keep validation-selected best and final/resume checkpoints for completed scientific comparisons;
 keep source pretraining checkpoints, population manifests, configs, logs, predictions used by
 metrics and representative visualizations. A failed approach can still be important evidence.
-Smoke checkpoints are disposable once startup is verified. Abandoned attempts may be packed into
-a verified archive; do not delete them merely because a newer experiment exists.
+Smoke checkpoints are disposable once startup is verified. When a study is superseded, pack its
+folder into a verified zstd archive on STORE, add an entry to [`SUPERSEDED.md`](SUPERSEDED.md)
+(what it tested, why it was superseded, archive path), and only then remove it from the
+repository. Never delete a study merely because a newer experiment exists.
 
 No automatic age-based deletion. Datasets and derived graph/spline targets stay in their existing
 paths because configurations and repeat evaluations depend on them. SCRATCH purges untouched

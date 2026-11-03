@@ -1,4 +1,0 @@
-JobID|State|ExitCode|ElapsedRaw|AllocTRES
-1636355|COMPLETED|0:0|226|billing=4,cpu=8,energy=63689,mem=16000M,node=1
-1636588|CANCELLED by 307254|0:0|212|billing=1,cpu=12,energy=104487,gres/gpu:h100=1,gres/gpu=1,mem=30000M,node=1
-1636935|COMPLETED|0:0|99|billing=1,cpu=12,energy=50472,gres/gpu:h100=1,gres/gpu=1,mem=30000M,node=1

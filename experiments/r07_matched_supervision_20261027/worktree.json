@@ -1,7 +1,0 @@
-{
-  "id": "R07",
-  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
-  "results": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/r07_matched_supervision_20261027",
-  "large": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/r07_matched_supervision_20261027",
-  "summary_command": "python3 gnbm-r07-matched-supervision-20261027/scripts/show_r07.py"
-}

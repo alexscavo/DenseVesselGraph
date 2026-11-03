@@ -1,7 +1,0 @@
-{
-  "passed": true,
-  "sample": "sample_000001_0050",
-  "weighted_ap_tie_and_multiplicity_parity": true,
-  "baseline_edge_f1": 0.4444444444444444,
-  "baseline_ap": 1.0
-}

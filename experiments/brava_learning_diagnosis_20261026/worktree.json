@@ -1,7 +1,0 @@
-{
-  "worktree": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph",
-  "metadata": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/brava_learning_diagnosis_20261026",
-  "large_outputs": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/brava_learning_diagnosis_20261026",
-  "gpu_job": "1598848",
-  "cpu_collector": "1598849"
-}
