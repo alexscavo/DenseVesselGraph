@@ -250,7 +250,7 @@ Code:
 The concrete "B0" recipe values come from
 [`experiments/local_refinement_long/plan.json`](../../experiments/local_refinement_long/plan.json),
 which is the source of the D08 initialization, and from the D08 description in
-[`BRAVA_experiment_plan.md`](../archive/legacy-20261103/docs/research/BRAVA_experiment_plan.md).
+[`BRAVA_experiment_plan.md`](../archive/README.md).
 
 ### 1A. Simple description
 

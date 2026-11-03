@@ -1,7 +1,17 @@
 # Running the 3D RelationFormer model
 
-This guide describes the supported training and evaluation interfaces in this
-repository, with Jean-Zay H100 examples. It separates three kinds of settings:
+This guide describes the YAML-driven training and evaluation interfaces
+(`train.py`, `evaluate.py`) of the RelationFormer pipeline, with Jean-Zay H100
+examples. The current dense traced model does not use them: it is trained and
+evaluated by `scripts/dense_graph_20261030.py` and
+`scripts/dense_graph_traced_20261030.py`, launched with
+`sbatch cluster/jean_zay/dense_graph.slurm <dataset> ...` and
+`sbatch cluster/jean_zay/dense_graph_traced.slurm <dataset> ...` (see
+[`research/dense_traced_model_20261102.md`](research/dense_traced_model_20261102.md)).
+Workspace job rules (one GPU per job, smoke test first, at most about eight
+concurrent short jobs) are in the workspace `CLAUDE.md`.
+
+This guide separates three kinds of settings:
 
 1. environment variables used by shell launchers and YAML expansion;
 2. command-line arguments accepted by `train.py` and `evaluate.py`;
@@ -15,13 +25,18 @@ CLI and environment overrides mainly for paths, resources, and run identity.
 The expected layout is:
 
 ```text
-$WORK/projects/Graph-Native-Betti-Matching       repository
-$WORK/venvs/vascular-graph-extraction-h100-torch231
-$WORK/logs/graph-native-betti-matching           Slurm stdout/stderr
+$WORK/projects/DenseVesselGraph                  repository
+$WORK/venvs/vascular-graph-extraction-h100-torch231   venv (symlink to SCRATCH)
+$WORK/logs/graph-native-betti-matching           Slurm stdout/stderr of submit_train.sh
 $SCRATCH/datasets/plants_3d2cut/patches_3d       Plants data
 $SCRATCH/datasets/syntheticMRI/new_patches_boundary  boundary-corrected MRI patches
+$SCRATCH/datasets/IXI/vascular_patches/optimal_radius_0p75x_c095_vedo_original  IXI patches
 $SCRATCH/experiments/gnbm                        run outputs/checkpoints
 ```
+
+On Jean Zay `$SCRATCH/datasets` is
+`/lustre/fsn1/projects/rech/vnc/upz25mj/datasets`. The log directory keeps the
+repository's former name, `graph-native-betti-matching`.
 
 Never run training or GPU evaluation on a login node. The login node is only
 for preparing the environment, validating configuration, submitting jobs,
@@ -30,7 +45,7 @@ checking logs, and synchronizing offline W&B runs.
 Initialize a login shell with:
 
 ```bash
-cd "$WORK/projects/Graph-Native-Betti-Matching"
+cd "$WORK/projects/DenseVesselGraph"
 source cluster/jean_zay/env.sh
 
 export PLANTS_DATASET="$SCRATCH/datasets/plants_3d2cut/patches_3d"
@@ -115,7 +130,7 @@ Optional launcher variables:
 | `GNBM_GPUS` | `1`, `2`, or `4`; default `1` | H100s on one node. |
 | `GNBM_BATCH_SIZE` | positive integer | Per-GPU batch passed to `train.py`. A global batch of 32 uses `8` with four GPUs. |
 | `GNBM_WORKERS` | non-negative integer | DataLoader workers per process. |
-| `GNBM_QOS` | `qos_gpu_h100-dev`, `qos_gpu_h100-t3`, or `qos_gpu_h100-t4`; default `t3` | Queue class. Development is limited by this wrapper to at most two GPUs and two hours; `t3` to 20 hours; `t4` to 100 hours. |
+| `GNBM_QOS` | `qos_gpu_h100-dev`, `qos_gpu_h100-t3`, or `qos_gpu_h100-t4`; default `t3` | Queue class. Development is limited by this wrapper to at most two GPUs and two hours; `t3` to 20 hours; `t4` to 100 hours. `qos_gpu_h100-dev` is often blocked group-wide, so short `t3` jobs usually start sooner. |
 | `GNBM_WALLTIME` | `HH:MM:SS`; default `20:00:00` | Slurm time limit. Use `100:00:00` for the maximum supported `t4` request. |
 | `GNBM_INITIAL_WEIGHTS` | checkpoint path or unset | Model-only initialization. Cannot coexist with `GNBM_RESUME_CHECKPOINT`. |
 | `GNBM_RESUME_CHECKPOINT` | full checkpoint path or unset | Explicit restoration of model, optimizer, scheduler, runtime states and training control state. |
@@ -143,10 +158,12 @@ Additional repository scripts expose a few script-specific controls:
 experiment hyperparameters. The checked defaults are appropriate for the
 Jean-Zay H100 environment.
 
-Example: a fresh four-H100 run initialized from model weights:
+Example of the wrapper's multi-GPU options: a fresh four-H100 run initialized
+from model weights (the current workspace policy is one GPU per job, so use
+`GNBM_GPUS=1` unless a multi-GPU run has been agreed):
 
 ```bash
-cd "$WORK/projects/Graph-Native-Betti-Matching"
+cd "$WORK/projects/DenseVesselGraph"
 source cluster/jean_zay/env.sh
 
 export SYNTHETIC_MRI_DATASET="$SCRATCH/datasets/syntheticMRI/new_patches_boundary"
@@ -169,9 +186,17 @@ bash cluster/jean_zay/submit_train.sh \
 The wrapper prints the job ID and log path. It performs only preflight checks
 on the login node; training runs in Slurm.
 
-## 5. Current boundary-data gamma sweep
+## 5. Inherited multi-stage sweeps
 
-The current controlled experiment set contains five two-stage pipelines:
+The launchers in this section come from the upstream repository's focal-loss
+experiments (September 2026). No results from them are recorded in this
+repository's research history ([`research/HISTORY.md`](research/HISTORY.md));
+they are kept as working examples of two-stage pipelines. Their defaults
+(four GPUs, `t4`, 100-hour limits) exceed the current workspace job policy.
+
+### Boundary-data gamma sweep
+
+The sweep contains five two-stage pipelines:
 
 1. baseline;
 2. node focal with node gamma `2.0`;
@@ -206,11 +231,10 @@ initial weights.
 
 ### Development-QoS batch-size benchmark
 
-Before committing the full boundary-data sweep to a larger global batch, run
-the controlled batch-8 versus batch-32 benchmark:
+A controlled batch-8 versus batch-32 benchmark for that sweep:
 
 ```bash
-cd "$WORK/projects/Graph-Native-Betti-Matching"
+cd "$WORK/projects/DenseVesselGraph"
 source cluster/jean_zay/env.sh
 bash cluster/jean_zay/submit_h100_batch_benchmark.sh
 ```
@@ -227,7 +251,7 @@ preserves `performance.jsonl`, peak allocation, two-second GPU telemetry,
 allocated GPU-hours, resolved configuration, dataset manifest, train log, and
 software/hardware provenance.
 
-### Historical two-stage pipelines
+### Full-dataset two-stage pipelines
 
 These launchers submit limited-MRI mixed pretraining and dependent full-MRI
 fine-tuning automatically:
@@ -315,6 +339,7 @@ python evaluate.py --config CONFIG --checkpoint CHECKPOINT --output-dir DIR
                    [--max-samples N | --sample-id ID ... | --sample-list FILE]
                    [--batch-size N] [--workers N] [--device DEVICE]
                    [--node-threshold P] [--edge-threshold P]
+                   [--node-type-degree-penalty X]
                    [--bn-calibration-batches N]
                    [--visualizations N]
                    [--no-export-predictions]
@@ -326,7 +351,7 @@ python evaluate.py --config CONFIG --checkpoint CHECKPOINT --output-dir DIR
 | `--checkpoint` | Required model checkpoint. Any of the selected checkpoint slots can be evaluated. |
 | `--output-dir` | Required new evaluation directory. |
 | `--dataset` | Configured dataset key. It may be omitted when exactly one dataset has role `target`. |
-| `--split` | `val` or `test`; default `val`. Use validation to choose models/thresholds and test only for the final estimate. |
+| `--split` | `val` or `test`; default `val`. Project rule: choose thresholds and checkpoints on training data (`monitor_train`) only; keep test for one final, locked evaluation. |
 | `--max-samples` | Evaluate a positive-size prefix; mutually exclusive with sample-ID selection. Omit for the complete split. |
 | `--sample-id` | Exact source dataset ID. Repeat the option to select several patches. |
 | `--sample-list` | Text file with one source ID per line; blank lines and `#` comments are ignored. |
@@ -335,6 +360,7 @@ python evaluate.py --config CONFIG --checkpoint CHECKPOINT --output-dir DIR
 | `--device` | Normally `cuda`; `cpu` is possible but slow. |
 | `--node-threshold` | Object probability in `[0,1]`. Without it, inference keeps node-class argmax predictions. |
 | `--edge-threshold` | Edge probability in `[0,1]`. Without it, inference keeps edge-class argmax predictions. |
+| `--node-type-degree-penalty` | Non-negative weight of a soft degree-aware edge filter that uses the predicted node-type (degree) probabilities; requires a model with the node-type head. |
 | `--bn-calibration-batches` | Non-negative number of validation batches used to update BatchNorm statistics before inference. Zero disables it. |
 | `--visualizations` | Number of initial samples for static GT/prediction PNGs. Default `0`. |
 | `--no-export-predictions` | Skip the potentially large `predictions.json`. |
@@ -365,10 +391,11 @@ The error overlay is visualization-time distance matching, not the training
 Hungarian assignment. See [`GRAPH_PREDICTION_3D.md`](GRAPH_PREDICTION_3D.md)
 for its complete interface and gallery workflow.
 
-Example Slurm test-set evaluation:
+Example Slurm evaluation (shown on the test split; under the project rules,
+run this only for the final, locked evaluation):
 
 ```bash
-cd "$WORK/projects/Graph-Native-Betti-Matching"
+cd "$WORK/projects/DenseVesselGraph"
 source cluster/jean_zay/env.sh
 
 export SYNTHETIC_MRI_DATASET="$SCRATCH/datasets/syntheticMRI/new_patches_boundary"
@@ -383,17 +410,17 @@ sbatch \
   --account=vnc@h100 \
   --partition=gpu_p6 \
   --constraint=h100 \
-  --qos=qos_gpu_h100-dev \
+  --qos=qos_gpu_h100-t3 \
   --time=02:00:00 \
   --nodes=1 --ntasks=1 --gres=gpu:1 --cpus-per-task=10 \
   --output="$WORK/logs/graph-native-betti-matching/%x-%j.out" \
   --error="$WORK/logs/graph-native-betti-matching/%x-%j.err" \
   --export=ALL,EVAL_CONFIG,EVAL_CHECKPOINT,EVAL_OUTPUT \
-  --wrap='source "$WORK/projects/Graph-Native-Betti-Matching/cluster/jean_zay/env.sh" && "$GNBM_VENV/bin/python" -u evaluate.py --config "$EVAL_CONFIG" --checkpoint "$EVAL_CHECKPOINT" --output-dir "$EVAL_OUTPUT" --dataset synthetic_mri --split test --batch-size 32 --workers 4 --device cuda --visualizations 16'
+  --wrap='source "$WORK/projects/DenseVesselGraph/cluster/jean_zay/env.sh" && "$GNBM_VENV/bin/python" -u evaluate.py --config "$EVAL_CONFIG" --checkpoint "$EVAL_CHECKPOINT" --output-dir "$EVAL_OUTPUT" --dataset synthetic_mri --split test --batch-size 32 --workers 4 --device cuda --visualizations 16'
 ```
 
-If the complete test evaluation exceeds two hours, use `qos_gpu_h100-t3` and
-an appropriate time up to `20:00:00`. Evaluation does not modify the checkpoint.
+Set `--time` to about 1.3 times the measured duration (the `t3` limit is
+`20:00:00`). Evaluation does not modify the checkpoint.
 
 ## 8. W&B settings
 
@@ -452,13 +479,15 @@ bash cluster/jean_zay/sync_wandb_offline.sh "$GNBM_OUTPUT_DIR"
 
 | Key | Supported values and meaning |
 |---|---|
-| `data.spatial_dims` | Must be `3`. |
+| `data.spatial_dims` | `3` for this model (`2` selects the separate native 2D model). |
+| `data.input_modality` | `raw_mra` (default) or `vessel_mask` (feeds the segmentation through the image slot; needs `training.input: image`). |
 | `data.image_size` | Three positive integers in D/H/W order. Current experiments use `[64,64,64]`. |
 | `data.batch_size` | Positive per-process training batch. |
 | `data.validation_batch_size` | Optional positive validation batch. |
 | `data.train_augmentation` | Boolean. |
 | `data.mixed_sampling.balance_source_target` | Boolean. With source and target datasets, balances domain sampling when enabled. |
-| `data.datasets` | Mapping containing `plants` and/or `synthetic_mri`; at least one dataset must have role `target`. |
+| `data.mixed_sampling.epoch_size` | `twice_source` (default) or `combined`. |
+| `data.datasets` | Mapping containing `plants`, `synthetic_mri` and/or `source_mri`; at least one dataset must have role `target`. IXI, TopBrain and BRAVA patches are loaded through `synthetic_mri`. |
 | `data.datasets.NAME.role` | `source` or `target`. |
 | `data.datasets.NAME.root` | Non-empty path, commonly an expanded environment variable. |
 | `train_samples`, `validation_samples` | Positive integer cap or `null` for all discovered samples. |
@@ -467,6 +496,7 @@ bash cluster/jean_zay/sync_wandb_offline.sh "$GNBM_OUTPUT_DIR"
 | `synthetic_mri.foreground_mean` | Numeric intensity centering mean. |
 | `synthetic_mri.sample_cap_selection` | `first` or `seeded_random`. |
 | `synthetic_mri.sample_cap_seed` | Non-negative integer required by `seeded_random`. Selection is deterministic. |
+| `synthetic_mri.patch_selection` | `all`, `foreground`, or `graph_positive`; applied before the sample cap. |
 
 ### Augmentation
 
@@ -502,14 +532,16 @@ bash cluster/jean_zay/sync_wandb_offline.sh "$GNBM_OUTPUT_DIR"
 | `encoder_layers`, `decoder_layers`, `feedforward_dim`, `decoder_points`, `encoder_points`, `object_queries` | Positive integers. |
 | `decoder.dropout` | Number in `[0,1)`. |
 | `decoder.activation` | `relu`, `gelu`, or `glu`. |
-| `decoder.feature_levels` | Must be `1`. |
+| `decoder.feature_levels` | `1` (default) or `2` (adds a finer encoder level; `fine_feature_stage` `layer2` or `layer3`). |
 | `decoder.relation_tokens`, `dummy_tokens` | Non-negative integers. Relation attention needs at least one relation token. |
 | `decoder.relation_attention`, `use_cuda_extension` | Boolean. Production H100 runs use the CUDA extension. |
-| `matcher.type` | Current implementation uses `hungarian`. |
+| `matcher.type` | `hungarian` (default) or `fgw` (see `configs/matchers/fgw.yaml`). |
 | `matcher.class_cost`, `matcher.node_cost` | Matcher cost coefficients; use non-negative experimental values. |
 
-Architecture changes are not operational overrides: they generally make old
-checkpoints incompatible and require a new controlled training run.
+Optional heads (`model.node_type`, `model.spline`, `model.node_refinement`)
+are listed in [`MODEL.md`](MODEL.md). Architecture changes are not operational
+overrides: they generally make old checkpoints incompatible and require a new
+controlled training run.
 
 ### Training, optimizer and scheduler
 
@@ -558,9 +590,12 @@ checkpoint selection is controlled separately below.
 
 ### Losses
 
-`loss.enabled` is a subset of `boxes`, `class`, `cardinality`, `nodes`, and
-`edges`. `loss.weights` supplies the coefficient for every enabled component.
-The total loss is the weighted sum, plus enabled non-log-only topology terms.
+`loss.enabled` is a subset of `boxes`, `class`, `cardinality`, `nodes`,
+`edges`, `node_types`, `spline`, and `domain` (the last three need their model
+module or `domain_adaptation.enabled`; see [`TRAINING.md`](TRAINING.md)).
+`loss.weights` supplies the coefficient for every enabled component. The total
+loss is the weighted sum, plus the degree-consistency term (`loss.degree`) and
+enabled non-log-only topology terms.
 
 Node classification:
 
@@ -653,8 +688,10 @@ Protocol fields:
 
 The F1 values are micro-F1 over all retained detections at the configured
 confidence thresholds and `f1_iou_threshold`; they are not the harmonic mean
-of mAP and mAR. Selecting a model, selecting confidence thresholds, and
-reporting a final test score are distinct operations.
+of mAP and mAR, and they are box-based, not the physical 2 mm metrics reported
+in the current results ([`EVALUATION.md`](EVALUATION.md)). Selecting a model,
+selecting confidence thresholds, and reporting a final test score are distinct
+operations.
 
 ## 10. Monitoring and diagnosis
 
@@ -671,7 +708,8 @@ tail -f "$WORK/logs/graph-native-betti-matching/JOB_NAME-JOB_ID.out"
 tail -f "$WORK/logs/graph-native-betti-matching/JOB_NAME-JOB_ID.err"
 ```
 
-Accounting after a job leaves the queue:
+Accounting after a job leaves the queue (`sacct` is the ground truth for what
+ran and finished):
 
 ```bash
 sacct -j JOB_ID \

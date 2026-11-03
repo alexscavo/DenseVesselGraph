@@ -1,5 +1,0 @@
-job_id=2187821
-wall_seconds=56
-allocated_gpu_hours=0.015556
-exit_code=0
-finished_utc=2026-09-20T08:47:15Z

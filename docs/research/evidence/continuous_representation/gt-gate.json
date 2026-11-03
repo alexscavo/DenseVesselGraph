@@ -1,7 +1,0 @@
-{
-  "completed": true,
-  "larger_fixed_mean_improves": true,
-  "train_K8_mean_mm": 0.0922186518290837,
-  "train_K24_mean_mm": 0.013470688420549238,
-  "full_model_submission_authorized": false
-}

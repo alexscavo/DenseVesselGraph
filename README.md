@@ -1,112 +1,65 @@
 # DenseVesselGraph
 
-Vessel-graph extraction from 3D MRA (SyntheticMRI, IXI, BRAVA) and 2D images (AV-WIDE, REAVER,
-OCTA-Synth). The repository holds the chosen **two-stage dense model with traced
-connectivity**, together with every RelationFormer baseline, diagnostic and experiment
-record of this research line.
+This repository extracts vessel graphs from images. Nodes are vessel junctions, vessel ends and
+patch-border crossings. Each edge carries a curve.
+- **3D:** MRA and CT from SyntheticMRI, IXI, BRAVA and TopBrain.
+- **2D:** AV-WIDE, REAVER and OCTA-Synth.
 
-- Main model and results: [`docs/research/dense_traced_model_20261102.md`](docs/research/dense_traced_model_20261102.md)
-- Full design, glossary and comparisons: [`docs/research/network_proposals_20261030.md`](docs/research/network_proposals_20261030.md)
-- Code: `scripts/dense_graph_20261030.py`, `scripts/dense_graph_traced_20261030.py`, `scripts/dense_graph_2d_20261030.py`
-- Research history and document index: [`docs/research/README.md`](docs/research/README.md) (consolidated histories of the earlier RelationFormer work; originals archived under [`docs/archive/legacy-20261103/`](docs/archive/legacy-20261103/))
+The chosen model is a **two-stage dense model with traced connectivity**:
+1. A full-resolution 3D U-Net detects nodes as heatmap peaks.
+2. Edges are proposed by tracing the predicted centreline between nodes. Each edge is scored
+   and shaped from image features sampled along the traced path, as a B-spline with 8, 16 or
+   24 controls.
+
+It trains from scratch and beats every RelationFormer baseline on all three 3D datasets.
+Validation node / edge / Branch / Curve F1:
+
+| Model | SyntheticMRI | IXI | BRAVA |
+|---|---|---|---|
+| RelationFormer B0 | 0.794 / 0.607 / 0.197 / 0.615 | 0.508 / 0.156 / 0.024 / 0.344 | 0.368 / 0.073 / 0.005 / 0.161 |
+| Dense + traced | 0.894 / 0.797 / 0.441 / 0.945 | 0.649 / 0.313 / 0.179 / 0.770 | 0.546 / 0.206 / 0.062 / 0.395 |
+
+These are validation results from a single seed. Thresholds were chosen on training patches only;
+the test splits are unused.
+
+## Where to read
+
+| Document | What it is |
+|---|---|
+| [`docs/research/dense_traced_model_20261102.md`](docs/research/dense_traced_model_20261102.md) | **Start here.** Current model, main results, limitations. |
+| [`docs/research/network_proposals_20261030.md`](docs/research/network_proposals_20261030.md) | Full design, glossary of project shorthand, and the 30 Oct – 1 Nov comparisons (RelationFormer B0, anchored RelationFormer, dense models, AP, traced vs 16-NN). |
+| [`docs/research/HISTORY.md`](docs/research/HISTORY.md) | Condensed history of the earlier RelationFormer work (Sept – 29 Oct 2026): what was tried, the key numbers, and why it was superseded. |
+| [`docs/EVALUATION.md`](docs/EVALUATION.md) | Metric definitions (physical node/edge F1, Branch/Curve F1, β errors, AP, SMD) and which script computes each. |
+| [`docs/research/BRAVA_preparation.md`](docs/research/BRAVA_preparation.md), [`docs/IXI_DATASET.md`](docs/IXI_DATASET.md), [`docs/SYNTHETIC_MRI_DATASET_REPORT.md`](docs/SYNTHETIC_MRI_DATASET_REPORT.md), [`docs/DATA_GENERATION.md`](docs/DATA_GENERATION.md) | Dataset preparation and provenance. |
+| [`docs/MODEL.md`](docs/MODEL.md), [`docs/TRAINING.md`](docs/TRAINING.md), [`docs/DATA_PIPELINE.md`](docs/DATA_PIPELINE.md), [`docs/RUNNING_THE_MODEL.md`](docs/RUNNING_THE_MODEL.md), [`docs/GRAPH_PREDICTION_3D.md`](docs/GRAPH_PREDICTION_3D.md) | The RelationFormer baseline pipeline (`train.py`, `evaluate.py`): model, losses, data loading and augmentation, configuration, and the 3D viewer. |
+| [`configs/README.md`](configs/README.md), [`scripts/README.md`](scripts/README.md), [`cluster/jean_zay/README.md`](cluster/jean_zay/README.md), [`experiments/README.md`](experiments/README.md) | Configurations, data-extraction scripts, Jean Zay setup and launchers, and per-study experiment folders. |
+| [`docs/archive/README.md`](docs/archive/README.md) | What was archived on 3 Nov 2026 (old research logs and evidence reports) and how to restore it. |
+
+## Code map
+
+- **Dense model** (current), in `scripts/`:
+  - `dense_graph_20261030.py`: stage 1, 16-NN stage 2, training and evaluation;
+  - `dense_graph_traced_20261030.py`: tracing, path corridor, adaptive K;
+  - `dense_graph_2d_20261030.py`: 2D port.
+- **Dense model launchers:** `cluster/jean_zay/dense_graph*.slurm`.
+- **RelationFormer baseline:**
+  - `train.py`, `evaluate.py`;
+  - `models/` (SE-ResNet, deformable transformer, spline and refinement heads; CUDA ops source
+    in `models/ops/src/`);
+  - `training/` (losses, evaluation);
+  - `data/` (loaders, preprocessing);
+  - `configs/`.
+- **Native 2D RelationFormer:** `native2d/`.
+- **Metrics:** `metrics/` (common-v2 Branch/Curve F1, vessel suite), `boxes/`.
+- **Tests:** `tests/`.
+- **Data extraction and analysis scripts:** `scripts/`.
+
+The deformable-attention CUDA extension is compiled on Jean Zay. Build output is never committed.
+Setup is described in [`cluster/jean_zay/README.md`](cluster/jean_zay/README.md).
+
+## Provenance
 
 This repository was formerly `Graph-Native-Betti-Matching-Representation`, a fork of Alessandro
 Benvenuti's Graph-Native-Betti-Matching. On 2 Nov 2026 all experiment worktrees were
 consolidated here. Branches `research/*`, `brava-representation-20261026` and
-`graph-extraction` keep each worktree's final state; see
-`../archive/refactor-20261102/`.
-
----
-
-# Graph-Native Betti Matching
-
-## Research overview
-
-The research documentation index is [`docs/research/README.md`](docs/research/README.md):
-it lists what to read first (the dense traced model), the consolidated topic histories of
-the earlier work, and the evidence folders. The former top-level `research/` overview
-(roadmap, architecture, decisions, experiment register) and the older dated reports were
-moved, unchanged apart from link targets, to
-[`docs/archive/legacy-20261103/`](docs/archive/legacy-20261103/) on 3 Nov 2026.
-
-
-Clean research implementation of a 3D graph-extraction pipeline with graph-native topology objectives.
-
-This repository is being reconstructed from an experimental codebase. It
-contains the reviewed augmentation and loading pipeline, validated
-configuration schema, checkpoint-compatible 3D RelationFormer, the
-baseline/Betti/focal training stack, graph inference, corrected baseline
-evaluation metrics, plotting/export, and loss-based validation/checkpoint
-selection.
-
-## Intended scope
-
-The first supported workflow will focus on:
-
-- 3D training and checkpoint evaluation;
-- mixed plants and synthetic-MRI pretraining;
-- synthetic-MRI finetuning;
-- RelationFormer-style node and relation prediction;
-- focal hard-negative mining;
-- focal relation objectives;
-- graph-native Betti H0/H1 objectives;
-- baseline-compatible graph inference and loss-based model selection.
-
-Diameter-smoothing losses, metrics, profiling tools, and experiment configurations are intentionally out of scope.
-
-Road, OCTA, MoCo, 2D pretraining, and general-transformer adapter paths will not be migrated unless they are explicitly restored as supported requirements.
-
-## Planned structure
-
-```text
-.
-├── research/                Consolidated roadmap, architecture, decisions and experiments
-├── configs/                 Reproducible training and evaluation configurations
-├── data/
-│   ├── loaders/             Dataset loading and batching
-│   └── preprocessing/       Dataset creation, splitting, and normalization
-├── models/
-│   └── ops/                 Custom deformable-attention extension
-│       ├── functions/       Python autograd bindings
-│       ├── modules/         PyTorch modules
-│       └── src/
-│           ├── cpu/         C++ CPU implementation
-│           └── cuda/        CUDA implementation
-├── training/
-│   ├── losses/              Detection, relation, and topology losses
-│   └── evaluation/          Inference, metrics, and BN calibration
-├── metrics/                 Reusable evaluation metrics
-├── boxes/                   Box and non-maximum-suppression operations
-├── utils/                   Small shared utilities
-├── tests/                   Unit and integration tests
-├── scripts/                 Reproducible workflow entry points
-└── docs/                    Training, configuration, and evaluation documentation
-```
-
-## CUDA extension policy
-
-The custom CUDA/C++ source code required by deformable attention belongs in `models/ops/src/` and will be version-controlled.
-
-Precompiled shared libraries, object files, and `build/` directories will not be committed. They are tied to the operating system, CPU architecture, Python version, PyTorch version, CUDA toolkit, compiler, and C++ ABI of the machine that built them. The extension must therefore be compiled in the Jean Zay environment used for training.
-
-The future build documentation will record the tested Jean Zay modules and provide a reproducible build or installation command. Build output should be generated locally on the cluster and can be cached outside Git when useful.
-
-## Status
-
-The augmentation and data-loading contracts, merged/validated configuration
-loading, reproducible batching, optional real-dataset checks, minimal 3D
-RelationFormer, PyTorch deformable-attention fallback, CUDA extension source,
-Hungarian matching, modular graph losses, optimizer, scheduler, strict resume,
-training loop, inference, corrected SMD/AP/topology evaluation, graph export,
-plotting, and baseline loss-based model selection are in place. See
-`docs/MODEL.md`, `docs/LOSSES.md`, `docs/TRAINING.md`, and
-`docs/EVALUATION.md`. The read-only SyntheticMRI source/grid audit is documented
-in `docs/DATA_AUDIT.md`. The first controlled ablation matrix is documented in
-`docs/archive/legacy-20261103/docs/EXPERIMENTS.md` (archived; never run). The completed SyntheticMRI dataset findings and proposed
-decisions are recorded in `docs/SYNTHETIC_MRI_DATASET_REPORT.md`.
-The safe, resumable v2 split and patch generator is documented in
-`docs/DATA_GENERATION.md`.
-
-Jean Zay H100 environment setup, the bounded H100 development test, production
-submission, and resume instructions are documented in
-[`cluster/jean_zay/README.md`](cluster/jean_zay/README.md).
+`graph-extraction` keep each worktree's final state; see `../archive/refactor-20261102/`.

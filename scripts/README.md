@@ -71,5 +71,11 @@ The fork's original scripts remain in this directory:
 `compare_model_forward.py`, `diagnose_synthetic_mri_boundaries.py`,
 `evaluate_random_patches_3d.sh`, `generate_synthetic_mri_dataset.py`,
 `run_finetune_mri_experiment.sh`, and `visualize_graph_prediction_3d.py`.
-One-off sweep and comparison scripts were removed after their evidence was
-recorded; committed versions can be recovered from Git history.
+
+The directory also holds the research scripts of the September–November
+studies. The current dense model is `dense_graph_20261030.py` (stage 1, 16-NN
+stage 2, training, evaluation), `dense_graph_traced_20261030.py` (traced
+connectivity, adaptive K) and `dense_graph_2d_20261030.py`; the metric scripts
+are listed in [`../docs/EVALUATION.md`](../docs/EVALUATION.md). Older study
+scripts are kept because their recorded results refer to them; what each study
+found is in [`../docs/research/HISTORY.md`](../docs/research/HISTORY.md).

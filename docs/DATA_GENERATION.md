@@ -1,5 +1,17 @@
 # SyntheticMRI v2 dataset generation
 
+**Status: DONE.** The dataset in use is the boundary-corrected revision
+`new_patches_boundary` (format version 3, 136 patients, 130,560 patches,
+95/20/21 train/val/test patients), at
+`/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/syntheticMRI/new_patches_boundary`
+(`$SCRATCH/datasets/syntheticMRI/new_patches_boundary`). It was generated on
+3 Sept 2026 from the source copy in
+`/lustre/fsn1/projects/rech/vnc/upz73jr/datasets/syntheticMRI` (recorded as
+`source_root` in its `generation_config.json`); the folder in this account is a
+restored copy, checked by `restore-verification.json` next to it. The audit that motivated this
+design is in [`SYNTHETIC_MRI_DATASET_REPORT.md`](SYNTHETIC_MRI_DATASET_REPORT.md).
+The commands below document how it was made; do not regenerate it in place.
+
 `scripts/generate_synthetic_mri_dataset.py` creates a new dataset without
 modifying the inherited `patches/` directory or `splits.csv` file. Its default
 outputs are:
@@ -42,6 +54,10 @@ syntheticMRI/
 - VTP graph coordinates are stored in normalized patch coordinates, matching
   the current SyntheticMRI loader.
 
+The same generator is reused, unchanged, to cut the IXI, TopBrain and BRAVA
+patch sets (see [`../scripts/README.md`](../scripts/README.md) and
+[`research/BRAVA_preparation.md`](research/BRAVA_preparation.md)).
+
 The generator is restartable per patient. A completed patient has a private
 completion marker. With `--resume`, completed patients are skipped and an
 incomplete patient's files are regenerated. Configuration fingerprints prevent
@@ -49,10 +65,11 @@ accidentally mixing incompatible grids or splits.
 
 ## 1. Plan and inspect the split
 
-Run inside a CPU allocation from the repository root:
+Run inside a CPU allocation from the repository root (login nodes have a
+~3 GB memory limit):
 
 ```bash
-data_root=/lustre/fsn1/projects/rech/vnc/upz73jr/datasets/syntheticMRI
+data_root=$SCRATCH/datasets/syntheticMRI
 
 python -u scripts/generate_synthetic_mri_dataset.py \
   --root "$data_root" \
@@ -98,7 +115,7 @@ Jean Zay submission is:
 ```bash
 repo_dir="$(pwd)"
 python_exe="$(command -v python)"
-data_root=/lustre/fsn1/projects/rech/vnc/upz73jr/datasets/syntheticMRI
+data_root=$SCRATCH/datasets/syntheticMRI
 log_dir="$data_root/results/new_patch_generation_logs"
 
 mkdir -p "$log_dir"
@@ -147,14 +164,15 @@ and the new dataset has passed loader and graph-alignment checks.
 
 To preserve an existing `new_patches` dataset while correcting its VTP graphs,
 write a separate revision and reuse the unchanged raw/segmentation files as
-hard links:
+hard links. The revision in use was written to `new_patches_boundary`; pick a
+new directory name for any further revision:
 
 ```bash
-data_root=/lustre/fsn1/projects/rech/vnc/upz73jr/datasets/syntheticMRI
+data_root=$SCRATCH/datasets/syntheticMRI
 
 python -u scripts/generate_synthetic_mri_dataset.py \
   --root "$data_root" \
-  --output-dir "$data_root/new_patches_boundary_v3" \
+  --output-dir "$data_root/new_patches_boundary_vN" \
   --split-output "$data_root/new_split.csv" \
   --reuse-patches-from "$data_root/new_patches" \
   --resume \

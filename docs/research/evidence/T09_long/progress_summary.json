@@ -1,7 +1,0 @@
-{
-  "training_epochs_logged": 300,
-  "validation_loss_epochs_logged": 30,
-  "graph_metric_epochs_logged": 30,
-  "performance_epochs_logged": 300,
-  "latest_epoch": 300
-}

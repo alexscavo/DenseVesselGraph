@@ -5,13 +5,20 @@ volumes, vessel segmentations and brain masks, reduced to sparse vessel graphs
 and cut into 64-cubed patches in the layout the SyntheticMRI loader already
 consumes.
 
-**Historical research note.** Sections 1–8 describe the earlier IXI dataset
-and extraction experiments. The old commands in sections 9–10 are superseded
-and their one-off scripts were removed. The current 170-volume IXI and
-50-volume TopBrain workflow, with both selectable centerline backends, is
-documented in [the scripts guide](../scripts/README.md) and
-[the production run tracker](archive/legacy-20261103/docs/research/VEDO_PRODUCTION_RUN.md). The current
-Vedo graphs and single-patch train/validation/test sets are complete.
+**Historical research note (September 2026).** Sections 1–8 describe the first
+IXI extraction study: source inventory, header repair, brain masks, the
+extraction algorithm and its parameter sweeps. Most findings still hold, but
+several open decisions were settled later (see §8). The original stage-1/stage-2
+launchers of §9 were removed.
+
+**Current dataset (DONE, 23 Sept 2026).** 170 IXI MRA and 50 TopBrain volumes
+were extracted with the original Vedo centreline plus mask repair, simplified
+with the `optimal_radius_0p75x_c095` policy, and cut into graph-positive 64³
+patches:
+`/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/IXI/vascular_{graphs,patches}/optimal_radius_0p75x_c095_vedo_original/`.
+The commands are in [the scripts guide](../scripts/README.md); the production
+history is summarised in [`research/HISTORY.md`](research/HISTORY.md), and the
+original production log is archived ([`archive/README.md`](archive/README.md)).
 
 ## 1. Purpose and scope
 
@@ -31,8 +38,11 @@ Two properties of the target repository shape the ground truth:
   MRA**, never the segmentation. Ground truth therefore has to describe what is
   in the image, not what is in the mask. Where the two disagree, the mask is a
   lossy annotation rather than the phenomenon.
-- `decoder.object_queries: 120` — a hard ceiling on representable nodes per
-  patch. Every node-density choice in §7 is measured against it.
+- `decoder.object_queries: 120` (the `configs/base.yaml` default at the time)
+  — a hard ceiling on representable nodes per patch. Every node-density choice
+  in §7 is measured against it. The IXI configurations later moved to **256
+  queries** (`configs/finetune_ixi_vessels_q256.yaml`), because the full IXI
+  grid has patches with more than 192 nodes (§8).
 
 ## 2. Source data inventory
 
@@ -264,8 +274,8 @@ work. It was replaced by the local-redundancy rule above.
 | `max_artifact_self_loop` | 4 voxels | β₁ 257 → 162; threshold sweep: ≤3 → 165, ≤4 → 162, ≤6 → 160 |
 | `max_junction_extent_mm` | 1.5 | max node degree 13 → 7 (see sweep below) |
 | `smooth_iterations` / `smooth_alpha` | 5 / 0.5 | turn angle 45.0° → 5.6°, bracketing SyntheticMRI's 6.5° |
-| `rdp_voxels` | 2.0 (0.937 mm) | fits the 120-query budget (see below) |
-| `radius_fraction` | 0.0 (off) | **open** — see §8 |
+| `rdp_voxels` | 2.0 (0.937 mm) | fits the 120-query budget (see below); superseded, see §8 |
+| `radius_fraction` | 0.0 (off) | superseded: production uses 0.75 with the optimal solver, see §8 |
 | `brain_mask` | `none` | §4 |
 
 ### Centerline smoothing sweep
@@ -352,7 +362,8 @@ the centerline by 14 mm.
 The residual 4.6% has a specific cause — the 0.937 mm tolerance **exceeds the
 0.80 mm median vessel radius**, so a chord can satisfy its bound and still leave
 the lumen. Radius-adaptive tolerance addresses it (4.60% → 0.56% at 0.8× local
-radius) at the cost of 50% more nodes. Undecided; see §8.
+radius) at the cost of 50% more nodes. Production adopted a radius-adaptive
+tolerance; see §8.
 
 Precision of the final configuration (`IXI143-Guys-0785`):
 
@@ -395,20 +406,21 @@ fixable in the extractor**.
 3-way, occasionally 4-way. Partly addressed by bounding junction clustering
 (§7), partly the same fusion artifacts.
 
-### Open decisions
+### Decisions (as of the September production run)
 
-| question | options | status |
+| question | options considered | outcome |
 |---|---|---|
-| **Q33 — loop policy** | keep loops (faithful to mask) / break tiny ones by perimeter / break by waist ratio / fix the segmentation upstream | **undecided** |
-| RDP tolerance | fixed 2.0 vox (budget-safe, 4.18% of edges badly outside) vs adaptive 0.8× radius (0.56% outside, p99 119 against the 120 ceiling) | **undecided** |
-| junction extent | 1.5 mm (max degree 7, β₁ 166) vs 1.0 mm (max degree 6, no degree-7+, β₁ 167) | **undecided**, 1.5 mm is the current default |
+| Simplification tolerance | fixed 2.0 vox RDP (budget-safe, 4.18% of edges badly outside) vs adaptive 0.8× radius RDP (0.56% outside, p99 119 against the 120 ceiling) | **Decided: `optimal_radius_0p75x_c095`.** Exact constrained minimum-node simplification of each full-volume branch (a shortest path over the branch samples), with deviation ≤ 0.75 × local lumen radius and ≥ 95% of each chord inside the segmentation; graphs are cropped afterwards and never re-simplified per patch. Defaults of `scripts/extract_vessel_graphs.py`: `--simplification-method optimal --radius-fraction 0.75 --minimum-chord-fraction 0.95` |
+| Query capacity | 120 vs 192 vs 256 | **Decided: 256.** The full legacy-backend grid had 35 patches above 192 nodes (all IXI, max 239); no active Vedo-backend patch exceeds 256 nodes |
+| Junction extent | 1.5 mm (max degree 7, β₁ 166) vs 1.0 mm (max degree 6, no degree-7+, β₁ 167) | **1.5 mm kept** (`--max-junction-extent-mm` default); not revisited |
+| **Q33 — loop policy** | keep loops (faithful to mask) / break tiny ones by perimeter / break by waist ratio / fix the segmentation upstream | **Never decided; loops kept.** Production applied only the mask-containment rule; no loop cleaning was implemented. False segmentation loops remain an unmeasured source of label noise in the GT topology, and β₁ metrics inherit it |
 
 On Q33, no clean criterion has been established. The waist ratio was the first
 instinct and the data refuted it: a unimodal distribution centred at 0.506 is
 equally consistent with natural calibre taper along a branching tree, so it
 offers no threshold to stand on.
 
-A test that could separate the classes has been **proposed but not run**: sample
+A test that could separate the classes was **proposed but never run**: sample
 raw MRA intensity along each loop's thinnest edge, normalised against the two
 vessels it joins. A genuine vessel bridge carries bright flow signal; a
 segmentation bleed sits on dark voxels. A bimodal result yields a defensible
@@ -429,7 +441,12 @@ the H1 term with correct but sparse signal; and filtering IXI loops while
 SyntheticMRI keeps its own makes β₁-based metrics mean different things across
 the two domains.
 
-### Untested
+### Untested at the time of this study
+
+These were open when §1–8 were written. The later production run (170 IXI
+volumes, Vedo backend) generated and loaded IXI patches with the shared
+generator, so the patch-generation and loader items were exercised there; the
+other points were not revisited in the current docs.
 
 - **The 73 subjects at `(1024, 1024, 92)`** have never been run. They are 4× the
   voxels of the tested geometry, and their spacing is 0.264 mm rather than
@@ -451,10 +468,10 @@ the two domains.
   candidates across 397 subjects, against 14,045 in the superseded
   `IXI_patches_final`. Run the stage-2 preflight before committing storage and
   inodes.
-- **Mask provenance.** Unknown; the dataset originated as
-  `/data/scavone/vesselFM_datasets/IXI_patches_final` on another machine. No
-  record exists of whether the segmentations are manual, model-generated or
-  filter-based. This belongs in any write-up as a caveat.
+- **Mask provenance.** Unknown; the segmentations came with the pre-cut
+  `IXI_patches_final` set prepared on another machine. No record exists of
+  whether they are manual, model-generated or filter-based. This belongs in any
+  write-up as a caveat.
 
 ### Superseded
 
@@ -465,131 +482,27 @@ its ids are a filtered subsequence with gaps. Its splits cannot be reproduced
 and its patient-disjointness cannot be verified. Nothing in this pipeline reads
 from it.
 
-## 9. Pipeline
+## 9. Pipeline (superseded)
 
-Two stages. **Stage 1 emits exactly the layout
-`audit_synthetic_mri_grid.discover_sources()` expects, so stage 2 reuses
-`generate_synthetic_mri_dataset.py` unchanged** — inheriting its audited
-endpoint grid, boundary-aware graph cropping, MAD normalisation, manifests,
-fingerprints and per-patient resume, rather than a parallel implementation that
-could drift from it.
+The September study used a two-stage pipeline: stage 1 extracted per-subject
+sources and three graph products (`junction_only`, `adaptive`, `dense`) in the
+layout `audit_synthetic_mri_grid.discover_sources()` expects, and stage 2 reused
+`generate_synthetic_mri_dataset.py` unchanged for the patch grid, boundary-aware
+cropping, normalisation, manifests and per-patient resume. Subjects were mapped
+to deterministic numeric IDs with a `subject_map.csv`, so the provenance gap of
+`IXI_patches_final` cannot recur, and the split was subject-level and
+stratified by site.
 
-```text
-scripts/ixi_vessel_graph.py        graph extraction library
-scripts/prepare_ixi_sources.py     stage 1: per-subject, shardable, resumable
-scripts/make_ixi_split.py          site-stratified subject split
-scripts/ixi_graph_report_3d.py     interactive 3D QC report
-cluster/jean_zay/extract_ixi_sources.slurm   stage 1 array job
-cluster/jean_zay/submit_ixi_extraction.sh    stage 1 launcher
-cluster/jean_zay/generate_ixi_patches.slurm  stage 2 job
-cluster/jean_zay/submit_ixi_patches.sh       stage 2 launcher
-```
+The same design carries over to the current pipeline, which replaced the
+stage-1/stage-2 launchers (`prepare_ixi_sources.py`, `make_ixi_split.py`,
+`ixi_graph_report_3d.py` and their Slurm wrappers, all removed):
 
-### Stage 1 — sources
+- `scripts/ixi_vessel_graph.py`, still the graph-derivation library (§5);
+- `scripts/extract_vessel_graphs.py` for full-volume graphs,
+  `scripts/extract_vessel_patches.py` for patches, and
+  `scripts/visualize_vessel_graphs.py` for interactive 3D review (with
+  vessel mesh and node-type layers). See [the scripts guide](../scripts/README.md).
 
-```text
-$SCRATCH/datasets/IXI_sources/
-├── raw/<numeric_id>.nii.gz           float32, repaired affine
-├── seg/<numeric_id>.nii.gz           uint8
-├── graphs/
-│   ├── junction_only/<numeric_id>/{nodes.csv, edges.csv, graph.vvg}
-│   ├── adaptive/<numeric_id>/{nodes.csv, edges.csv, graph.vvg}
-│   └── dense/<numeric_id>/{nodes.csv, edges.csv, graph.vvg}
-├── subject_map.csv                   numeric id <-> IXI subject, site, provenance
-└── .complete/<numeric_id>.json       per-subject marker with counts and Betti numbers
-```
-
-The three graph directories are separate comparison products generated with the
-same topology settings. `junction_only` retains anchors, `adaptive` uses the
-smoothed centerline plus RDP-selected degree-2 nodes, and `dense` preserves every
-raw centerline sample after topology cleanup but before smoothing or RDP. The
-patch generator automatically selects `graphs/adaptive/` as the compact training
-target; the other representations are evaluation controls until the
-representation study justifies a final choice.
-
-Subject ids map to integers because the patch generator requires numeric patient
-ids (`patient_token`). The mapping is deterministic (sorted subject order) and
-recorded in `subject_map.csv` together with the originating file paths, so the
-provenance gap that killed `IXI_patches_final` cannot recur.
-
-```bash
-cd $WORK/projects/Graph-Native-Betti-Matching
-
-IXI_DRY_RUN=1 bash cluster/jean_zay/submit_ixi_extraction.sh   # preflight only
-
-export IXI_ARRAY="0-19"                 # 20 shards
-export IXI_CPUS=5                       # x 5 cpus = 100 parallel
-export IXI_TIME="03:00:00"
-export IXI_EXTRACT_ARGS="--workers 5"
-bash cluster/jean_zay/submit_ixi_extraction.sh
-```
-
-Shard `i` of `n` handles subjects whose index is congruent to `i` mod `n`; each
-subject writes its own files and completion marker, so shards never contend and
-re-runs skip completed work. Within a shard, `--workers` drives a process pool.
-
-Runs on `vnc@cpu` / `cpu_p1` / `qos_cpu-t3`. **The project venv's interpreter
-runs standalone on `cpu_p1` with no modules loaded** — verified by `srun`:
-numpy 1.24.4, scipy 1.10.1, skimage 0.24.0, nibabel 5.3.2 all import. This stage
-needs no torch, so `cluster/jean_zay/env.sh` (which loads `arch/h100`) is not
-used.
-
-Cost: ~35 s per 512×512×100 subject, dominated by `skeletonize` and
-`distance_transform_edt`. About 3.9 CPU-hours for all 397.
-
-### Stage 2 — patches
-
-```bash
-$IXI_PYTHON scripts/make_ixi_split.py \
-    --sources $IXI_SOURCES --output $IXI_SOURCES/ixi_split.csv
-
-IXI_DRY_RUN=1 bash cluster/jean_zay/submit_ixi_patches.sh   # prints candidate count
-bash cluster/jean_zay/submit_ixi_patches.sh
-```
-
-The split is **subject-level and stratified by site**. IXI was acquired at three
-sites on different scanners, so an unstratified draw can concentrate one site in
-the test split and turn a domain shift into apparent generalisation failure.
-Sizes match what the generator validates: floor(70%) train, floor(15%) val,
-remainder test — for 397 subjects, 277/59/61.
-
-**This stage is not yet verified on IXI sources.** See §8.
-
-## 10. QC artefacts
-
-```text
-$SCRATCH/experiments/ixi_qc/
-├── A_precision_<subject>.png     slab overlay + centredness, RDP error, summary
-├── B_mesh3d_<subject>.png        graph inside the vessel mesh, 3 viewpoints
-├── graph3d_<subject>.html        self-contained interactive 3D report (~6 MB)
-├── viz_precision.py  viz_mesh3d.py  viz_graph.py  count_patch_nodes.py
-└── graph_counts.py               node/edge counts by degree, whole-volume and per patch
-```
-
-The interactive report carries independently toggleable layers, for each of the
-junction-only, adaptive, and dense graph variants:
-
-| layer | appearance | default |
-|---|---|---|
-| vessel surface mesh | grey, semi-transparent | on |
-| edges (straight node-to-node, = the GT) | red | on |
-| highlight loops | thick magenta, drawn **over** the full edge set | on |
-| centerline (reference, **not** GT) | dotted teal | off |
-| junctions / terminations / degree-2 nodes | orange / blue / green | on |
-
-Hover any node for its id, degree and local vessel radius.
-
-```bash
-source cluster/jean_zay/env.sh
-python scripts/ixi_graph_report_3d.py IXI019-Guys-0702
-python scripts/ixi_graph_report_3d.py IXI002-Guys-0828 \
-    --half 70 --half-z 25 --rdp-voxels 1.5 --radius-fraction 0.8
-```
-
-`--half`/`--half-z` size the region, `--mesh-step` decimates the surface for a
-smaller file, `--full` renders the whole volume (tens of megabytes; a full
-512×512×100 mesh is roughly 300k faces).
-
-A full-brain maximum-intensity projection hides cycles — the topology bugs in §6
+A full-brain maximum-intensity projection hides cycles: the topology bugs in §6
 were invisible in it while the graphs looked correct. Use the Euler
-characteristic and the loop-highlight layer alongside it, not instead of it.
+characteristic and a 3D loop view alongside it, not instead of it.

@@ -1,8 +1,27 @@
 # SyntheticMRI dataset split and patch-selection report
 
-**Status:** discussion document for the next supervision meeting  
-**Audit date:** 25 August 2026  
-**Dataset:** `/lustre/fsn1/projects/rech/vnc/upz73jr/datasets/syntheticMRI`
+**Audit date:** 25 August 2026 (DONE)  
+**Dataset audited:** `/lustre/fsn1/projects/rech/vnc/upz73jr/datasets/syntheticMRI`
+(the copy used in this account is `$SCRATCH/datasets/syntheticMRI`)
+
+**Status, November 2026.** This was written as a discussion document for a
+supervision meeting. Its proposals were then implemented in
+`scripts/generate_synthetic_mri_dataset.py` ([`DATA_GENERATION.md`](DATA_GENERATION.md)):
+
+- a new patient-level 70/15/15 split, seed 42, balanced on foreground fraction,
+  nodes, edges, bifurcations, β₀ and β₁ (95/20/21 patients, `new_split.csv`);
+- the endpoint-distributed grid with maximum stride 40 (960 candidates per
+  volume, 130,560 in total);
+- every candidate materialized, with no GT or MRI selection filter;
+- a later boundary-corrected graph revision, `new_patches_boundary`, which is the
+  SyntheticMRI dataset used by all current experiments.
+
+The legacy `patches/` dataset and its 55/14/67 split were kept unchanged. The
+current models train on fixed subsets of `new_patches_boundary` (for the dense
+model, 4,096 training and 480 validation patches; see
+[`research/dense_traced_model_20261102.md`](research/dense_traced_model_20261102.md) §3).
+The "Questions" and "Decisions not yet made" sections below are kept as the
+record of what was open in August.
 
 ## Executive summary
 
@@ -307,3 +326,64 @@ on-demand cropping from a coordinate manifest should be measured.
 No existing dataset paths should be renamed while current experiments depend
 on them. Any replacement should be written under explicit versioned names and
 activated only after the legacy run is reproducibly preserved.
+
+## Appendix: rerunning the candidate-grid audit
+
+`scripts/audit_synthetic_mri_grid.py` reads the original SyntheticMRI `raw/`,
+`seg/`, `graphs/` and split CSV without modifying them. It writes only reports
+and never creates image or graph patches. The August audit wrote to
+`results/patch_audit_stride40_full/` and `results/patch_audit_stride40_legacy/`
+under the dataset root; in both dataset copies checked on 3 Nov 2026 these
+folders are empty, so the tables above are the remaining record.
+
+The default `full` grid uses the inherited 64³ patch, five-voxel padding and
+0.25 overlap: a 54³ source crop, stride 40, both ends of every scan axis
+included (the append-boundary grid of the audit, not the endpoint-distributed
+grid later used for generation). Ground truth describes every candidate after
+the grid is fixed; it never controls inclusion. The optional `legacy` grid
+reproduces the inherited random offset and cyclic starting position, and
+enumerates the entire candidate grid rather than stopping at a quota, because
+the exact historical generator invocation is not verified.
+
+The audit needs the legacy patient split file (`splits.csv`), which is not in
+the current dataset folders; locate it before rerunning. Run inside a Jean Zay
+CPU job, not on a login node. One-volume smoke audit:
+
+```bash
+data_root=$SCRATCH/datasets/syntheticMRI
+
+python -u scripts/audit_synthetic_mri_grid.py \
+  --root "$data_root" \
+  --splits /path/to/splits.csv \
+  --output-dir "$data_root/results/patch_audit_stride40_smoke" \
+  --grid both \
+  --patient-id 1
+```
+
+Complete audit, in a sufficiently long CPU allocation (`--grid full` when only
+the deployment-style grid is needed; graph cropping is CPU-intensive, so keep
+the log with the reports):
+
+```bash
+python -u scripts/audit_synthetic_mri_grid.py \
+  --root "$data_root" \
+  --splits /path/to/splits.csv \
+  --output-dir "$data_root/results/patch_audit_stride40_rerun" \
+  --grid both
+```
+
+Reports:
+
+- `scan_inventory.csv`: scan shape, spacing, dtype, intensity statistics,
+  foreground occupancy and full-volume graph size;
+- `candidate_audit.csv`: one row per candidate and grid, with foreground,
+  node/edge counts, GT-SNR, coordinate validity and the inherited rejection
+  reason;
+- `audit_summary_by_split.csv`: empty, graph-empty, `<3`-node, disagreement and
+  inherited-acceptance counts and percentages by grid and legacy split;
+- `audit_summary.json`: configuration, patient list, provenance notes and raw
+  counters.
+
+The audit does not simulate the historical quota. Quota effects can be
+reconstructed from the ordered `legacy` rows once the historical target counts
+and per-volume cap are confirmed.

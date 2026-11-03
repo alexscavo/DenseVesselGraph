@@ -1,5 +1,10 @@
 # Configuration contract
 
+These YAML files drive the RelationFormer pipeline (`train.py`, `evaluate.py`)
+and some October study drivers. The current dense traced model is configured
+by the command-line flags of its scripts, not by files here (see
+[`../docs/research/dense_traced_model_20261102.md`](../docs/research/dense_traced_model_20261102.md)).
+
 Configuration is split into one complete baseline and small experiment overlays.
 `configs.load_config` recursively merges the files listed in `defaults`, from
 left to right, expands environment variables, and validates the resolved
@@ -18,7 +23,9 @@ configuration before a dataset is constructed.
 - `finetune_synthetic_mri_focal_fgw.yaml`: a ready-to-run focal finetuning
   configuration using the FGW matcher.
 - `experiments/finetune_mri/`: controlled baseline/focal/Betti/focal+Betti
-  finetuning matrix. See `docs/archive/legacy-20261103/docs/EXPERIMENTS.md` before launching it.
+  SyntheticMRI finetuning matrix. It was designed but never run; the design
+  document is archived (see [`../docs/archive/README.md`](../docs/archive/README.md))
+  and summarised in [`../docs/research/HISTORY.md`](../docs/research/HISTORY.md).
 - `experiments/focal_matrix_600/`: paired mixed-pretraining and 600-epoch MRI
   specialization configurations for the seven unweighted-focal recipes.
 - `losses/`: reusable focal and Betti overlays containing only loss changes;
@@ -27,13 +34,21 @@ configuration before a dataset is constructed.
   by a hard one-to-one projection.
 - `smoke_mixed_focal_betti.yaml`: one-epoch, four-sample integration check for
   the complete focal + topology training path.
+- `finetune_ixi_vessels_q256*.yaml`, `pretrain_plants_ixi_domain_*.yaml`, and
+  the spline, scratch-comparison and transfer files: September–October
+  RelationFormer studies on IXI and SyntheticMRI, summarised in
+  [`../docs/research/HISTORY.md`](../docs/research/HISTORY.md).
+- `ixi_transfer*.yaml` and `{plant,leaf,combined}_generalization*.yaml` are not
+  `train.py` configs: they are study plans read by
+  `scripts/train_ixi_transfer.py` and `scripts/train_plant_generalization.py`.
 - `overfit_synthetic_mri_focal_betti.yaml`: ten-epoch fixed eight-sample MRI
   overfit check with augmentation disabled and one best checkpoint.
 
 The inference thresholds and complete metric protocol are defined under
 `evaluation` in `base.yaml`. See `docs/EVALUATION.md`; changing those values
 changes the scientific evaluation protocol and belongs in a version-controlled
-configuration overlay.
+configuration overlay. These are the native box-based metrics; the physical
+metrics reported in the current results are defined in the same document.
 
 Dataset and output paths are environment-variable references, not machine paths.
 The loader reports an unset variable together with its configuration location.
@@ -53,8 +68,10 @@ train_loader, validation_loader = build_data_loaders(config)
 
 `loss.edge.candidates.max_per_graph` is an upper bound on the number of matched
 edge candidates generated for one graph. It is not an upsampling target. With
-120 object queries, at most `120 * 119 / 2 = 7140` undirected pairs exist, so
-the compatibility value `9999` currently means "retain all pairs".
+the base 120 object queries, at most `120 * 119 / 2 = 7140` undirected pairs
+exist, so the compatibility value `9999` means "retain all pairs". With the 256
+queries of the IXI configurations up to 32,640 pairs exist, so `9999` can then
+be a real cap.
 
 `loss.edge.balancing` is a later, independent operation on the loss examples:
 
@@ -89,14 +106,20 @@ overwrites `best_checkpoint.pt` and never writes epoch checkpoints.
 The baseline numerical values come from the established experiment configurations.
 Configuration names are reorganized to describe behavior instead of preserving
 the old layout. Diameter smoothing is intentionally omitted. Inactive road,
-OCTA, MoCo, 2D, and adapter experiments are also omitted.
+OCTA, MoCo, and adapter experiments are also omitted. The later native 2D
+model has its own package (`native2d/`) and configuration (`native2d.yaml`).
 
-Adversarial domain adaptation is also absent from the active schema. The
-published baseline constructed and logged its domain loss but did not include it
-in the optimized total. Source/target sampling is independently configured by
+Adversarial domain adaptation is opt-in (`domain_adaptation.enabled`, off in
+`base.yaml`). The published baseline constructed and logged its domain loss but
+did not include it in the optimized total; here, enabling it requires `domain`
+in `loss.enabled`, so its term is actually optimized. It is enabled in
+`pretrain_plants_ixi_domain_{types,no_types}_50ep.yaml` and in the mixed
+pretraining arm of the `ixi_transfer*.yaml` and
+`{plant,leaf,combined}_generalization_da_b32*.yaml` study plans. Source/target
+sampling is configured independently by
 `data.mixed_sampling.balance_source_target`, and target graph supervision by
-`loss.supervise_target_graphs`. The archived implementation and reactivation
-contract are documented in `docs/experiments/domain_adaptation.md`.
+`loss.supervise_target_graphs`. See the domain-adaptation section of
+[`../docs/TRAINING.md`](../docs/TRAINING.md).
 
 CLI overrides should be restricted to operational values such as paths, batch
 size, worker count, resume checkpoint, and run name. Scientific settings such as
@@ -132,6 +155,8 @@ defaults:
 describe the effective legacy architecture. The old YAML displayed 4 encoder
 layers and `[2,2,2,2]`, but its builder silently used the transformer default of
 6 and ignored the first stage stride. These corrected fields are now consumed by
-the model builder. See `docs/MODEL.md` for the complete compatibility contract.
+the model builder. See [`../docs/MODEL.md`](../docs/MODEL.md) for the complete
+compatibility contract.
 
-See `docs/LOSSES.md` for the baseline, Betti, and focal/HNM loss contract.
+See the loss-stack section of [`../docs/TRAINING.md`](../docs/TRAINING.md) for
+the baseline, Betti, focal/HNM and opt-in loss contract.

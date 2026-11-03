@@ -1,3 +1,0 @@
-label,policy,subjects,topology_preserved_subjects,full_degree_2_nodes,patch_node_p95,patch_node_p99,patch_node_max,patches_over_120,patches_over_160,patches_over_192,p95_edge_error_mm,maximum_edge_error_mm,maximum_error_over_radius,length_weighted_shortening_fraction,mean_chord_containment_fraction,edges_below_95pct_containment
-greedy RDP 1.5×,radius_1p5x_c095,14,14,9682,100.5,142.75,186,57,14,0,0.6032867216423712,2.735639727068325,1.4961971952233755,0.017979692297733576,0.9981736075000817,0
-optimal 0.75×,optimal_radius_0p75x_c095,14,14,8962,95.0,139.0,182,45,7,0,0.5848686780694842,1.9132347140250987,0.7497115597317723,0.019382527797045995,0.996520714506568,0

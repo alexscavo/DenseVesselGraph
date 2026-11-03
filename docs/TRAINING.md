@@ -1,74 +1,65 @@
-# Training
+# Training the RelationFormer pipeline
 
-The supported entry point is `train.py`. Dataset and output paths remain
-environment-specific, while scientific settings stay in version-controlled
-YAML.
+This page covers `train.py`, the YAML-driven trainer for the 3D RelationFormer baseline, and its
+loss stack. It is **not** how the current dense traced model is trained: that model is trained by
+its own scripts ([`research/dense_traced_model_20261102.md`](research/dense_traced_model_20261102.md)
+§2.5 and §3). For Jean Zay launchers, every CLI flag and the YAML reference, see
+[`RUNNING_THE_MODEL.md`](RUNNING_THE_MODEL.md).
 
 ```bash
-export PLANTS_DATASET=/data/scavone/plants_3d2cut/patches_3d
-export SYNTHETIC_MRI_DATASET=/data/scavone/syntheticMRI/patches/syntheticMRI
-export GNBM_OUTPUT_DIR=/data/benvenut/gnbm-runs
+export PLANTS_DATASET="$SCRATCH/datasets/plants_3d2cut/patches_3d"
+export SYNTHETIC_MRI_DATASET="$SCRATCH/datasets/syntheticMRI/new_patches_boundary"
+export GNBM_OUTPUT_DIR="$SCRATCH/experiments/gnbm"
 
 python train.py --config configs/pretrain_mixed.yaml
 ```
 
-The baseline uses images as model input, AdamW, and the effective legacy
-per-iteration polynomial schedule with linear warmup. The configured legacy
-gradient clipping field was removed because the established trainer never
-executed it. The configured minimum learning rate was also removed because the
-legacy LambdaLR did not consume it. Likewise, inactive 3D encoder/decoder freeze
-flags, automatic-resume metadata, and EMA fields were removed instead of being
-kept as misleading no-ops. Focal unmatched-candidate mining scores candidates
-with the live relation head and is configured inside the focal edge objective.
+Run this inside a GPU job, never on a login node. Dataset and output paths come from the
+environment; scientific settings stay in version-controlled YAML.
 
-Operational overrides are limited to device, output directory, run name, batch
-size, worker count, and checkpoint paths. The fully resolved YAML is written to
-the run directory.
+The baseline uses images as model input, AdamW, and the legacy per-iteration polynomial schedule
+with linear warmup. Fields that the legacy trainer never used were removed rather than kept as
+misleading no-ops: gradient clipping, minimum learning rate, the 3D encoder/decoder freeze flags,
+automatic-resume metadata and EMA.
+
+Operational overrides are limited to device, output directory, run name, batch size, worker
+count and checkpoint paths. The fully resolved YAML is written to the run directory.
 
 ## Experiment tracking
 
-W&B tracking is enabled by `tracking` in `configs/base.yaml`. Training logs all
-loss components and learning rate against `train/iteration`, and validation
-losses against `validation/epoch`. Each call records the metrics for one
-training iteration together, avoiding artificial steps between loss components.
-TensorBoard is not used.
-
-Set credentials and operational destinations through the environment:
+W&B tracking is configured by `tracking` in `configs/base.yaml`. Training logs every loss
+component and the learning rate against `train/iteration`, and validation losses against
+`validation/epoch`. TensorBoard is not used.
 
 ```bash
 wandb login
 source cluster/jean_zay/wandb_env.sh
-export WANDB_RUN_GROUP=finetune-mri-ablation  # optional
+export WANDB_RUN_GROUP=my-group  # optional
 ```
 
-The repository W&B destination is
-`alessandrobenvenuti2002-politecnico-di-torino/focal-loss`. The shared shell
-file contains no API key and may be overridden with `WANDB_ENTITY` or
-`WANDB_PROJECT` before it is sourced.
+`wandb_env.sh` sets the default destination
+`alessandrobenvenuti2002-politecnico-di-torino/focal-loss` (inherited from the upstream
+repository); override it with `WANDB_ENTITY` / `WANDB_PROJECT` before sourcing. It contains no
+API key. Never store `WANDB_API_KEY` in configuration files. Compute nodes have no internet, so
+jobs normally use `WANDB_MODE=offline` and are synced later; `WANDB_MODE=disabled` suppresses
+tracking for a smoke test.
 
-Do not store `WANDB_API_KEY` in configuration files. `WANDB_MODE=offline`
-buffers a run for later `wandb sync`; `WANDB_MODE=disabled` suppresses tracking
-for a smoke test.
-
-When `--resume` targets the same run directory, `wandb-run.json` supplies the
-original W&B run ID and online metrics continue in that run. W&B does not
-support resuming while offline; sync an offline run before continuing it
-online. Training state still comes exclusively from the checkpoint passed to
-`--resume`.
+When `--resume` targets the same run directory, `wandb-run.json` supplies the original W&B run
+ID. W&B cannot resume offline; sync an offline run before continuing it online. Training state
+always comes from the checkpoint passed to `--resume`.
 
 ## Checkpoints
 
-Every saved training checkpoint contains strict model, optimizer, scheduler,
-epoch, and iteration state. Resume an interrupted run with:
+Every training checkpoint contains strict model, optimizer, scheduler, epoch and iteration
+state. Resume an interrupted run with:
 
 ```bash
 python train.py \
   --config configs/pretrain_mixed.yaml \
-  --resume /absolute/path/to/checkpoint_epoch=20.pt
+  --resume /absolute/path/to/latest_checkpoint.pt
 ```
 
-Load a trusted legacy checkpoint as initialization without restoring its
-optimizer or scheduler using:
+Load a trusted checkpoint as initialization, without its optimizer or scheduler:
 
 ```bash
 python train.py \
@@ -76,16 +67,27 @@ python train.py \
   --initial-weights "$GNBM_MRI_CHECKPOINT"
 ```
 
-`best_checkpoint.pt` tracks minimum validation loss. When metric selection is
-enabled, `best_metric_checkpoint.pt` independently tracks the configured
-validation metric (edge mAP in the full-data recipes, **not recall**).
-`best_only` keeps replaceable best slots plus `latest_checkpoint.pt`, rather
-than accumulating an epoch archive. See below for the optional F1 slots.
+| Checkpoint slot | Selection | Metadata |
+|---|---|---|
+| `best_checkpoint.pt` | Lowest validation loss | Training checkpoint state |
+| `best_metric_checkpoint.pt` | Configured metric, normally edge mAP (not recall) | `best-metric.json` |
+| `best_node_f1_checkpoint.pt` | Highest validation node F1 | `best-node-f1.json` |
+| `best_edge_f1_checkpoint.pt` | Highest validation edge F1 | `best-edge-f1.json` |
+| `latest_checkpoint.pt` | Latest scheduled save; always saved on early stop | Training checkpoint state |
 
-## Epoch patience and independent F1 checkpoints
+Each slot is a complete model and resume state. `best_only` keeps these replaceable slots
+rather than an epoch archive; slots are replaced atomically and share a hard-linked payload when
+several win in the same epoch. With `best_only` there are at most five slots, about 6.8 GB if all
+come from different epochs for the current model, plus headroom for temporary writes.
 
-The full-dataset MRI fine-tuning recipes enable these settings; older recipes
-default to disabled for backward compatibility:
+The F1 used for selection is the **native box-based** F1 of `evaluate.py`
+([`EVALUATION.md`](EVALUATION.md) §2.2), not the physical 2 mm edge F1 reported in the current
+results.
+
+## Epoch patience and F1 checkpoints
+
+The full-dataset MRI fine-tuning recipes enable these settings; older recipes default to
+disabled:
 
 ```yaml
 training:
@@ -108,121 +110,222 @@ evaluation:
     f1_iou_threshold: 0.5
 ```
 
-Patience counts **epochs**, not validation calls. Full-data fine-tuning uses a
-maximum of **250 total MRI epochs**, with **no minimum** (`min_epochs: 0`);
-pretraining is unchanged. If the last improvement is at epoch 105, training
-stops at epoch 155 absent further gains when validation is every five epochs.
-Ties do not improve the monitor. A positive `min_delta`
-requires a gain strictly greater than that amount relative to the last
-significant improvement; small cumulative gains can eventually qualify.
-With irregular intervals, stopping happens at the first validation at least
-50 epochs after the last improvement. The first finite validation initializes
-the reference. Missing/non-finite monitored metrics raise an error rather than
-silently deciding convergence.
+- Patience counts **epochs**, not validation calls. With validation every five epochs and the
+  last improvement at epoch 105, training stops at epoch 155 absent further gains. With
+  irregular intervals it stops at the first validation at least `patience_epochs` after the last
+  improvement.
+- Ties do not improve the monitor. A positive `min_delta` requires a gain strictly larger than
+  that amount relative to the last significant improvement.
+- The first finite validation initializes the reference. A missing or non-finite monitored
+  metric raises an error.
+- `monitor` may also be `edge_f1` or `node_f1` (and the other keys listed in
+  `RUNNING_THE_MODEL.md` §9). This does not change the independent AP slot. A node-F1 gain does
+  not reset an edge-AP or edge-F1 patience clock.
+- F1 uses micro-aggregated TP/FP/FN over the whole validation split at the configured node and
+  edge thresholds (normally 0.5), with all retained predictions and no top-40 cap. Changing
+  thresholds changes F1 and its winner.
 
-The default monitor remains edge AP for continuity with previous experiments.
-To stop on edge F1, set `training.early_stopping.monitor: edge_f1`; this does not
-change the independent AP checkpoint slot. `node_f1` is also supported. A
-separate node-F1 gain does not reset an edge-AP/edge-F1 patience clock.
+`validation-metrics.jsonl` and W&B include `node_precision`, `node_recall`, `node_f1` and their
+edge equivalents; JSON summaries add `node_tp_total`, `node_fp_total`, `node_fn_total` and the
+edge totals. W&B records selected epochs under `checkpoints/<metric>` and the patience clock
+under `stopping/*` (values only, not weight files).
 
-F1 uses **micro-aggregated TP/FP/FN over the whole validation split** at the
-configured node and edge confidence thresholds (normally 0.5). Matching is
-confidence-ordered, one-to-one box IoU at `f1_iou_threshold`; node boxes and
-edge boxes use the existing evaluation geometry. All retained predictions
-are included, without the AP protocol's top-40 cap. Node F1 and edge F1 are
-`2 TP / (2 TP + FP + FN)`, not the harmonic mean of AP and AR. False positives
-on empty-GT patches count; zero-denominator precision, recall, or F1 is defined
-as zero. Edge F1 is **spatial edge-box detection F1**, not an endpoint-correct
-adjacency metric and not Hungarian training-assignment F1. AP/AR are unchanged.
-Changing thresholds changes F1 and its selected winner; choose thresholds on
-validation, never on test.
+On early stop, rank zero broadcasts the decision so all DDP workers stop together after the final
+`latest_checkpoint.pt` is saved. `early-stopping.json` records the clock and
+`training-status.json` reports `early_stopping` or `max_epochs`. Patience and F1 winners are
+stored in the checkpoint, so resuming does not reset them. Changed stopping settings are rejected
+on strict resume. Older checkpoints without this state start the trackers at the first new
+validation.
 
-| Checkpoint slot | Selection | Metadata |
-|---|---|---|
-| `best_checkpoint.pt` | Lowest validation loss | Training checkpoint state |
-| `best_metric_checkpoint.pt` | Configured metric, normally edge AP | `best-metric.json` |
-| `best_node_f1_checkpoint.pt` | Highest validation node F1 | `best-node-f1.json` |
-| `best_edge_f1_checkpoint.pt` | Highest validation edge F1 | `best-edge-f1.json` |
-| `latest_checkpoint.pt` | Latest scheduled save; always saved on early stop | Training checkpoint state |
-
-Each is a **complete model and resume state**, not an independently swappable
-head. F1 metadata includes the epoch, iteration, metric value, thresholds, and
-all validation metrics at the winning epoch. Slots are replaced atomically;
-if several win in one epoch they share a hard-linked payload when supported.
-With `best_only`, there are at most five checkpoint slots, potentially about
-6.8 GB if all five are from different epochs for the current model. Temporary
-writes need additional headroom. The new F1 pair can require about 2.7 GB extra.
-
-`validation-metrics.jsonl` and W&B include `node_precision`, `node_recall`,
-`node_f1`, and their edge equivalents. JSON summaries additionally contain
-`node_tp_total`, `node_fp_total`, `node_fn_total`, and edge totals; un-suffixed
-count fields remain per-patch means. W&B records selected epochs under
-`checkpoints/<metric>` in the run summary and logs the patience clock under
-`stopping/*`. W&B checkpoint *values* are logged, not the large weight files.
-
-On early stop, rank zero broadcasts the decision so all DDP workers stop
-together after the final `latest_checkpoint.pt` is saved. `early-stopping.json`
-records the clock and `training-status.json` reports `early_stopping` versus
-`max_epochs`. The checkpoint stores patience and F1 winners, so interruption
-resume does not reset them. Resume from `latest_checkpoint.pt` in the same run
-directory. Changed stopping settings are rejected on strict resume; an already
-early-stopped checkpoint does not restart itself. Older checkpoints lacking
-patience/F1 state initialize those trackers at the first new validation.
-
-**Budget is not continuation policy.** Full-data fine-tuning configs now cap at
-250 total MRI epochs, with no early-stopping floor. This permits up to 150
-additional epochs when continuing at epoch 100; patience may stop it earlier.
-For new runs the scheduler is built for 250 epochs. Extending a completed
-100-epoch run still requires an explicitly chosen continuation learning-rate
-policy; simply changing `epochs` while restoring the old
-scheduler is not a validated extension strategy. Loading `--initial-weights`
-instead is a new fine-tuning experiment, not a true resume. Keep the existing
-results intact and do not rerun pretraining merely to enable patience.
-
-Focused CPU checks (the distributed test needs two local Gloo workers):
+**Budget is not continuation policy.** For a new run the scheduler is built for `epochs`.
+Extending a completed run needs an explicitly chosen continuation learning-rate policy: changing
+`epochs` while restoring the old scheduler is not a validated extension. Loading
+`--initial-weights` starts a new fine-tuning experiment, not a resume.
 
 ```bash
 python -m unittest -v tests.test_early_stopping tests.test_f1_metrics \
   tests.test_training_selection tests.test_training tests.test_tracking
 ```
 
-## Fast end-to-end cluster smoke run
+(The distributed test needs two local Gloo workers.)
 
-The smoke configuration keeps the full model and loss path, but limits each
-dataset to two training samples and one validation sample:
+## Loss stack
+
+The implementation is under `training/losses/`; `training.losses.build_criterion(config, model)`
+is the entry point.
+
+- `criterion.py`: matching, baseline supervision, edge candidates and the opt-in terms below;
+- `focal.py`: focal classification and hard-negative selection;
+- `betti_h0.py`, `betti_h1.py`: graph-native topology losses;
+- `relation_distance.py`: a pilot-only reweighting of nearby GT non-edges (used by
+  `scripts/train_relation_distance_pilot.py`, not by the main criterion).
+
+`loss.enabled` lists the optimized terms, each with a weight in `loss.weights`. The total is the
+weighted sum of the enabled terms, plus the degree term and the non-log-only Betti terms when
+those are enabled.
+
+### Baseline terms
+
+The default configuration (`enabled: [boxes, class, cardinality, nodes, edges]`) preserves the
+established 3D objective:
+
+1. Hungarian assignment combines object probability with L1 distance over the first three
+   predicted node coordinates.
+2. `class`: weighted cross-entropy with `[0.25, 0.75]`, class `1` being the object class.
+3. `nodes`: summed L1 error divided by the number of target nodes.
+4. `boxes`: the last three node-head values are predicted sizes, against a fixed target size of
+   `0.2`, scored by 3D generalized IoU.
+5. `edges`: matched nodes, one random orientation per undirected pair, cross-entropy and legacy
+   ratio upsampling.
+6. `cardinality`: normalized L1 error of the predicted object count.
+
+Disabled extensions do not score candidates, consume random numbers or enter the objective.
+
+### Opt-in terms
+
+| Term | Switch | What it does |
+|---|---|---|
+| `node_types` | `loss.enabled` + `model.node_type.enabled: true` | 4-class degree head on matched queries: isolated, patch terminal, degree-2, junction |
+| `spline` | `loss.enabled` + `model.spline.enabled: true` | Edge-shape loss for the B-spline (or Catmull-Rom) head on matched GT edges, against the full-path target cache; `loss.spline.mode` is `controls` or `curve` |
+| `domain` | `loss.enabled` + `domain_adaptation.enabled: true` | Adversarial domain loss (below) |
+| degree consistency | `loss.degree.enabled` with a positive weight | Matches expected node degrees from relation probabilities to GT degrees, correcting for sampled negatives; warmup and ramp configurable |
+| Betti H0 / H1 | `topology.betti_h0`, `topology.betti_h1` | Graph-native topology losses on the complete graph over Hungarian-matched nodes. Every undirected pair is scored in both endpoint orders and averaged; persistence matching uses detached probabilities while the selected filtration values keep gradients. Warmup, ramp, weight, normalization and `log_only` are configurable |
+| Focal classification | `loss.node.classification.name` / `loss.edge.classification.name: focal` | Focal loss, optionally with a gamma curriculum |
+| Hard-negative mining | `loss.edge.candidates.include_unmatched: true` (with focal edges) | See below |
+
+The training-time matcher can also be replaced by semi-relaxed Fused Gromov-Wasserstein
+matching (`configs/matchers/fgw.yaml`; see [`../configs/README.md`](../configs/README.md)).
+
+**Hard-negative mining** belongs to the focal edge candidates:
+
+```yaml
+loss:
+  edge:
+    classification:
+      name: focal
+    candidates:
+      include_unmatched: true
+```
+
+Active unmatched queries form candidates with matched and other active unmatched queries. Each
+candidate is evaluated in both endpoint orders and the two logit vectors are averaged, so
+selection and focal supervision are undirected. Selection ranks detached edge probabilities but
+indexes the original symmetric logits, keeping gradients through both relation-head evaluations
+and their endpoint tokens. Caps, threshold, weight, warmup and ramp are configurable.
+
+Diameter smoothing is not part of this stack, and there is no dormant diameter option.
+
+## Adversarial domain adaptation (opt-in)
+
+**Status.** Off by default (`domain_adaptation.enabled: false` in `configs/base.yaml`). It is
+enabled by:
+
+- `configs/pretrain_plants_ixi_domain_types_50ep.yaml` and its matched control
+  `configs/pretrain_plants_ixi_domain_no_types_50ep.yaml` (Plants source, IXI target, run through
+  `train.py`);
+- the October study plans `configs/ixi_transfer.yaml`, `configs/ixi_transfer_source_aug.yaml`,
+  `configs/{plant,leaf,combined}_generalization_da_b32.yaml` and their `_source_aug` variants.
+  These are not `train.py` configs: they are read by `scripts/train_ixi_transfer.py` and
+  `scripts/train_plant_generalization.py`, which turn domain adaptation on only for the mixed
+  source+MRI pretraining arm and off for MRI-only fine-tuning.
+
+Results of these runs are summarised in [`research/HISTORY.md`](research/HISTORY.md).
+
+Source and target labels are always in the model-facing batch. They describe dataset roles and
+may drive sampling and diagnostics; their presence does not enable adaptation.
+
+**Objective.** Domain-adversarial training in the style of Domain-Adaptive Faster R-CNN. A
+gradient-reversal layer precedes each discriminator:
+
+```text
+L_domain = w_image * NLL(image_domain_prediction, domain)
+         + w_graph * NLL(graph_domain_prediction, domain)
+         + w_consistency * MSE(mean_image_prediction, graph_prediction)
+
+L_total = L_graph + w_domain * L_domain
+```
+
+During backpropagation the reversal multiplies the feature gradient from `L_domain` by `-alpha`,
+pushing features towards domain invariance while the discriminators learn source versus target.
+
+**Implementation** (`models/domain_adaptation.py`, `RelationFormer`, `criterion.py`): two
+2048-wide discriminators, one on the projected image features and one on the flattened decoder
+tokens; two-pass gradient reversal; weighted image/instance NLL; consistency MSE; a logistic
+reversal schedule; and a separate discriminator learning rate. The target is sampled with
+replacement at the reference's expected 50% rate, using a combined-dataset epoch length.
+
+```yaml
+domain_adaptation:
+  enabled: true
+  image_adversarial: true
+  graph_adversarial: true
+  consistency_regularization: true
+  alpha_coefficient: 1.0
+  learning_rate: 0.00007
+  hidden_size: 2048
+  class_weights: [0.05, 0.95]
+
+loss:
+  enabled: [boxes, class, cardinality, nodes, edges, node_types, domain]
+  supervise_target_graphs: true
+  weights:
+    domain: 1.0
+```
+
+Configuration validation enforces the contract: `enabled: true` requires `domain` in
+`loss.enabled`, a positive domain weight, a source and a target dataset,
+`supervise_target_graphs: true`, both discriminators and consistency regularization; `domain`
+in `loss.enabled` without `enabled: true` is rejected. When disabled, no discriminator is built,
+run or optimized and no domain metric is logged. `tests/test_domain_adaptation.py` checks
+discriminator and feature gradients, the optimized loss, the disabled state, the sampler and
+checkpoint compatibility.
+
+**Why it was off in the inherited baseline.** The pre-focal reference repository built image-
+and instance-level discriminators and computed a domain loss, but its committed 3D configs
+enabled only `boxes`, `class`, `cards`, `nodes` and `edges`, and the trainer back-propagated only
+that total. The domain loss was logged but never trained anything. References:
+[model discriminators](https://github.com/alexscavo/Vascular-Graph-Extraction/blob/main/3d/models/relationformer.py#L69-L71),
+[domain loss](https://github.com/alexscavo/Vascular-Graph-Extraction/blob/main/3d/training/losses.py#L749-L777),
+[optimized total](https://github.com/alexscavo/Vascular-Graph-Extraction/blob/main/3d/training/losses.py#L850-L868),
+[3D loss list](https://github.com/alexscavo/Vascular-Graph-Extraction/blob/main/3d/configs/mixed_plants_synth_HNS_3D.yaml#L138-L145),
+[backward call](https://github.com/alexscavo/Vascular-Graph-Extraction/blob/main/3d/training/trainer.py#L318-L345).
+A separate cluster run did activate it, with `DOMAIN_LR: 0.00007`,
+`DOMAIN_WEIGHTING: [0.05, 0.95]`, both adversarial flags, consistency regularization,
+`ALPHA_COEFF: 1.0`, `domain` in `TRAIN.LOSSES` and `W_DOMAIN: 1.0`; the current defaults follow
+those values. The old `UPSAMPLE_TARGET_DOMAIN` and `COMPUTE_TARGET_GRAPH_LOSS` fields are now
+`data.mixed_sampling.balance_source_target` and `loss.supervise_target_graphs`.
+
+## Smoke runs and cluster tests
+
+The smoke configuration keeps the full model and loss path but uses two training samples and one
+validation sample per dataset:
 
 ```bash
 python train.py --config configs/smoke_mixed.yaml
 ```
 
-It is an integration check, not a scientific experiment. The resolved
-configuration and both the interval and best checkpoint should appear under
-`$GNBM_OUTPUT_DIR/smoke_mixed/`.
+The resolved configuration and checkpoints should appear under `$GNBM_OUTPUT_DIR/smoke_mixed/`.
 
-## Cluster smoke tests
-
-After building deformable attention, run the real CUDA forward and backward
-tests:
+After building deformable attention (`bash scripts/build_deformable_attention.sh`), run the CUDA
+forward and backward tests inside a GPU job:
 
 ```bash
 python -m unittest -v tests.test_model_cluster.CudaModelTests
 ```
 
-This covers the CUDA operator, model forward, complete baseline criterion
-backward, and combined focal + H0/H1 Betti backward. Dataset integration tests
-remain documented in `docs/DATA_LOADING.md`.
+This covers the CUDA operator, model forward, baseline criterion backward, and combined focal +
+H0/H1 Betti backward. Dataset integration tests are described in
+[`DATA_PIPELINE.md`](DATA_PIPELINE.md).
 
-To extend the already-passing checkpoint forward comparison through the
-baseline criterion, run:
+To compare the baseline criterion with the original repository:
 
 ```bash
 python scripts/compare_model_forward.py \
-  --legacy-root /data/benvenut/3d \
+  --legacy-root /absolute/path/to/original/3d \
   --checkpoint "$GNBM_MRI_CHECKPOINT" \
   --compare-losses
 ```
 
-The command fixes the relation-candidate random seed and compares the five
-weighted baseline components, cardinality, and total loss in addition to model
-outputs. Focal and Betti objectives are verified by their focused gradient
-tests because they are opt-in deviations rather than baseline parity targets.
+It fixes the relation-candidate random seed and compares the five weighted baseline components,
+cardinality and total loss, in addition to model outputs. Focal and Betti objectives are covered
+by their focused gradient tests, because they are opt-in deviations rather than parity targets.

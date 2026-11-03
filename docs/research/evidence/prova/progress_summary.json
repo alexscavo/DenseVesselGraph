@@ -1,9 +1,0 @@
-{
-  "run": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/ixi_q256_types_300ep_20260924",
-  "log": "/lustre/fswork/projects/rech/vnc/upz25mj/logs/graph-native-betti-matching/gnbm-train-145201.out",
-  "training_epochs_logged": 300,
-  "validation_loss_epochs_logged": 30,
-  "graph_metric_epochs_logged": 30,
-  "performance_epochs_logged": 300,
-  "latest_epoch": 300
-}

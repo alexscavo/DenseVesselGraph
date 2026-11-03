@@ -1,3 +1,0 @@
-representation,samples,non_integer_samples,policy
-dense,144,0,"pre-smoothing, pre-RDP"
-adaptive,78,38,"smoothed, RDP-compressed"

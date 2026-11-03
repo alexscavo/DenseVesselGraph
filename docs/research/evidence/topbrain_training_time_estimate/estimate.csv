@@ -1,4 +1,0 @@
-estimate,pretrain_step_seconds,finetune_step_seconds,pretrain_training_hours,finetune_training_hours,overhead_hours,total_wall_hours
-optimistic,0.200,0.090,4.497,2.255,0.500,7.252
-central,0.250,0.105,5.622,2.631,1.250,9.502
-conservative,0.320,0.130,7.196,3.257,2.500,12.953

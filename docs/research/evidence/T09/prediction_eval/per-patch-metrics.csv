@@ -1,2 +1,0 @@
-sample_id,source_sample_id,beta0_absolute_error,beta1_absolute_error,branch_f1,branch_fn,branch_fp,branch_matched_anchors,branch_precision,branch_recall,branch_tp,edge_count_absolute_error,edge_fn,edge_fp,edge_mAP,edge_mAR,edge_tp,node_count_absolute_error,node_fn,node_fp,node_mAP,node_mAR,node_tp,predicted_beta0,predicted_beta1,predicted_edges,predicted_nodes,smd,target_beta0,target_beta1,target_edges,target_nodes
-sample_000000,sample_000012_0062,26.0,0.0,0.0,4,0,0,0.0,0.0,0,29.0,29,0,0.0,0.0,0,3.0,33,30,0.0,0.0,0,30.0,0.0,0.0,30.0,,4.0,0.0,29.0,33.0

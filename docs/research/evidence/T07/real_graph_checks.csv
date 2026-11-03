@@ -1,5 +1,0 @@
-subject,case,precision,recall,f1,tp,fp,fn,matched_anchors,predicted_branches,gt_branches,predicted_betti_0,predicted_betti_1,gt_betti_0,gt_betti_1
-IXI122,adaptive vs dense,1.0,1.0,1.0,439,0,0,349,439,439,14,104,14,104
-IXI122,"adaptive, one edge broken",0.9977220956719818,0.9977220956719818,0.9977220956719818,438,1,1,349,439,439,15,104,14,104
-TopBrain-CT-001,adaptive vs dense,1.0,1.0,1.0,249,0,0,181,249,249,5,73,5,73
-TopBrain-CT-001,"adaptive, one edge broken",0.9919354838709677,0.9879518072289156,0.9899396378269618,246,2,3,180,248,249,5,72,5,73

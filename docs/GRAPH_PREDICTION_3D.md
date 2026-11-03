@@ -1,5 +1,11 @@
 # Interactive SyntheticMRI graph visualization
 
+This viewer reads the `predictions.json` written by the RelationFormer
+evaluator `evaluate.py` ([`EVALUATION.md`](EVALUATION.md) §2); the dense-model
+scripts do not write that format. For full-volume and patch ground-truth review
+of the IXI/TopBrain graphs, use `scripts/visualize_vessel_graphs.py`
+([`../scripts/README.md`](../scripts/README.md)).
+
 `scripts/visualize_graph_prediction_3d.py` creates a self-contained Plotly HTML
 report for one exported evaluation prediction. The report embeds its JavaScript,
 so it can be generated on Jean-Zay, copied elsewhere, and opened without a
@@ -73,11 +79,13 @@ for record in sorted(records, key=key, reverse=True)[:20]:
 PY
 ```
 
-Generate one interactive report:
+Generate one interactive report. `--dataset-root` must be the dataset the
+predictions were made on (for current SyntheticMRI runs,
+`$SCRATCH/datasets/syntheticMRI/new_patches_boundary`):
 
 ```bash
 python scripts/visualize_graph_prediction_3d.py \
-  --dataset-root "$SCRATCH/datasets/syntheticMRI/new_patches" \
+  --dataset-root "$SYNTHETIC_MRI_DATASET" \
   --split test \
   --predictions "$EVALUATION_DIR/predictions.json" \
   --sample-id sample_000109_0021 \
@@ -91,8 +99,9 @@ python scripts/visualize_graph_prediction_3d.py \
 `--match-distance` (default `0.1` in normalized D/H/W space). It marks unmatched
 nodes, edges incident to unmatched predicted nodes, edges between mapped nodes
 that are absent from GT, and GT edges missing between mapped endpoints. These
-are explicitly visualization-time diagnostics. They are not the official
-IoU-based evaluation matches and are not the training Hungarian assignment.
+are explicitly visualization-time diagnostics. They are not the IoU-based
+matches of `evaluate.py`, not the 2 mm physical matching of the reported
+metrics, and not the training Hungarian assignment.
 
 Generate a gallery for the ten worst beta/count samples:
 
@@ -108,7 +117,7 @@ for record in sorted(records, key=score, reverse=True)[:10]:
 PY
 while IFS= read -r sample; do
   python scripts/visualize_graph_prediction_3d.py \
-    --dataset-root "$SCRATCH/datasets/syntheticMRI/new_patches" \
+    --dataset-root "$SYNTHETIC_MRI_DATASET" \
     --split test \
     --predictions "$EVALUATION_DIR/predictions.json" \
     --sample-id "$sample" \
@@ -131,7 +140,7 @@ bash cluster/jean_zay/submit_evaluate_random_patches_3d.sh \
 ```
 
 The lower-level `scripts/evaluate_random_patches_3d.sh` must run inside a GPU
-allocation; launching it directly on `jean-zay3` fails because login nodes do
+allocation; launching it directly on a login node fails because login nodes do
 not expose CUDA. Other running Slurm jobs do not lend their GPUs to that shell.
 
 The script records the shared IDs in `source_sample_ids.txt` and refuses to
