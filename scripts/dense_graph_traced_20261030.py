@@ -45,11 +45,16 @@ INTERIOR = (6, 14, 22)  # K8 / K16 / K24
 # Opt-in (3 Nov 2026):
 #   two_hop:      for a traced chain A-C-B whose ends do not touch, also propose A-B along the joined
 #                 path A->C->B; the heads read a pass-through descriptor of C (flag, heat at C, bend at C)
-MODE = dict(soft=False, knn_fallback=True, gap_features=False, two_hop=False)
+#   passthrough:  node-level decision for two-hop chains (implies two_hop): a head scores whether C is a
+#                 pass-through point; if so C, A-C and C-B are replaced by A-B, otherwise A-B is dropped.
+#                 Two-hop pairs are never accepted as ordinary edges, so A-B/A-C/C-B cannot form a triangle.
+MODE = dict(soft=False, knn_fallback=True, gap_features=False, two_hop=False, passthrough=False)
 PROB_HOOK = None  # analysis only: f(prob, nodes, geometry) -> centreline probability used by predict()
 GAP_FEATURES = 5
 VIA_FEATURES = 3
 MAX_VIA_DEGREE = 6  # skip pass-through pairs around nodes touching more regions than this
+FEATURE_CHANNELS = 32  # U-Net channels 5..36
+PASS_THRESHOLDS = [round(t, 2) for t in np.arange(0.3, 0.96, 0.05)]
 OFFSETS = [(i, j, k) for i in (-1, 0, 1) for j in (-1, 0, 1) for k in (-1, 0, 1) if (i, j, k) != (0, 0, 0)]
 HALF = [o for o in OFFSETS if o > (0, 0, 0)]
 BALL = [(i, j, k) for i in range(-2, 3) for j in range(-2, 3) for k in range(-2, 3) if i * i + j * j + k * k <= SEED_RADIUS ** 2]
@@ -259,12 +264,14 @@ def choose_interior(paths_mm, traced):
 
 
 class TracedDenseGraph(D.DenseGraph):
-    def __init__(self, radius=12.0, gap_features=False, two_hop=False):
+    def __init__(self, radius=12.0, gap_features=False, two_hop=False, passthrough=False):
         super().__init__('spline', 6, radius)
-        self.gap_features, self.two_hop = gap_features, two_hop
+        self.gap_features, self.two_hop = gap_features, two_hop or passthrough
         width = (self.edge_head[0].in_features + 1 + (GAP_FEATURES if gap_features else 0)
-                 + (VIA_FEATURES if two_hop else 0))  # + arc length (+ gap statistics) (+ pass-through node)
+                 + (VIA_FEATURES if self.two_hop else 0))  # + arc length (+ gap statistics) (+ pass-through node)
         self.edge_head = nn.Sequential(nn.Linear(width, 256), nn.GELU(), nn.Linear(256, 1))
+        if passthrough:  # joined A->C->B path features + U-Net features at C
+            self.pass_head = nn.Sequential(nn.Linear(width + FEATURE_CHANNELS, 256), nn.GELU(), nn.Linear(256, 1))
         del self.geometry_head  # replaced by the per-K heads below
         self.heads = nn.ModuleDict()
         for m in INTERIOR:
@@ -296,6 +303,12 @@ class TracedDenseGraph(D.DenseGraph):
         if self.two_hop:
             parts.append(via_features(heat, a, b, via))
         return torch.cat(parts, -1)
+
+    def pass_logits(self, volume, x, via):
+        """Pass-through logit for two-hop rows: x = joined-path features, via = (n,3) voxel position of C."""
+        g = (via / (SIZE - 1) * 2 - 1).flip(-1).view(1, -1, 1, 1, 3)
+        at_c = F.grid_sample(volume[None], g, align_corners=True).view(volume.shape[0], -1).T
+        return self.pass_head(torch.cat([x, at_c], -1)).squeeze(-1)
 
     def path_curves(self, x, paths, interior, traced):
         """Adaptive-K B-spline around the path; residuals in path frames (12 vox chord / 4 vox traced)."""
@@ -368,15 +381,29 @@ def patch_terms(model, feats, heat, cand, gt_vox, gt_edges, guides, metric, mapp
     if len(pairs) == 0:
         return None
     labels = D.pair_labels(pairs, mapping, gt_edges)
-    negatives = torch.nonzero(labels == 0).squeeze(-1)
+    hop = hop_rows(pairs, contacts, hops) if MODE['passthrough'] else torch.zeros_like(labels, dtype=torch.bool)
+    negatives = torch.nonzero((labels == 0) & ~hop).squeeze(-1)  # chains are never subsampled
     if len(negatives) > D.MAX_NEGATIVES:
-        keep = torch.cat([torch.nonzero(labels > 0).squeeze(-1), negatives[torch.randperm(len(negatives), device=negatives.device)[:D.MAX_NEGATIVES]]])
-        pairs, labels = pairs[keep], labels[keep]
+        keep = torch.cat([torch.nonzero((labels > 0) | hop).squeeze(-1), negatives[torch.randperm(len(negatives), device=negatives.device)[:D.MAX_NEGATIVES]]])
+        pairs, labels, hop = pairs[keep], labels[keep], hop[keep]
     paths, traced = build_paths(cand, pairs, contacts, dist_b, label_b, hops)
-    x = model.path_features(feats, heat, paths, prob_b, via_points(cand, pairs, hops) if hops else None)
-    logits = model.edge_head(x).squeeze(-1)
-    pos = labels.sum()
-    edge = F.binary_cross_entropy_with_logits(logits, labels, pos_weight=((len(labels) - pos) / pos.clamp_min(1)).clamp(max=20.0))
+    via = via_points(cand, pairs, hops) if hops else None
+    x = model.path_features(feats, heat, paths, prob_b, via)
+    ordinary = ~hop  # with passthrough, two-hop rows train the pass-through head (and geometry), not the edge head
+    if ordinary.any():
+        logits = model.edge_head(x[ordinary]).squeeze(-1)
+        pos = labels[ordinary].sum()
+        edge = F.binary_cross_entropy_with_logits(logits, labels[ordinary], pos_weight=((ordinary.sum() - pos) / pos.clamp_min(1)).clamp(max=20.0))
+    else:
+        edge = x.sum() * 0
+    passthrough = None
+    if hop.any():
+        c = torch.tensor([hops[tuple(pr)] for pr in pairs[hop].tolist()], device=cand.device)
+        spurious = torch.tensor([int(i) not in mapping for i in c.tolist()], device=cand.device, dtype=labels.dtype)
+        target = labels[hop] * spurious  # C is a pass-through point iff C is spurious and A-B is a GT edge
+        z = model.pass_logits(feats, x[hop], via[hop])
+        npos = target.sum()
+        passthrough = F.binary_cross_entropy_with_logits(z, target, pos_weight=((len(target) - npos) / npos.clamp_min(1)).clamp(max=20.0))
     geo = None
     positive = labels.bool()
     if positive.any():
@@ -385,7 +412,44 @@ def patch_terms(model, feats, heat, cand, gt_vox, gt_edges, guides, metric, mapp
         curve = model.path_curves(x[positive], paths[positive], interior, traced[positive])
         ref = D.guide_for(pairs[positive], mapping, gt_edges, guides, gt_vox)
         geo = chamfer(to_mm(curve, m), to_mm(ref, m))
-    return edge, geo, traced
+    return edge, geo, traced, passthrough
+
+
+def hop_rows(pairs, contacts, hops):
+    """Rows of `pairs` that exist only as two-hop chains A-C-B."""
+    return torch.tensor([bool(hops) and tuple(pr) in hops and tuple(pr) not in contacts for pr in pairs.tolist()],
+                        dtype=torch.bool, device=pairs.device)
+
+
+def contract(row, node_t, edge_t, tau):
+    """Final graph of a passthrough row, encoded in its scores. Two-hop rows never count as ordinary edges;
+    with tau set, chains A-C-B are visited by decreasing pass-through score and, if score >= tau and C has no
+    accepted edge other than to A or B, C and its edges are removed and A-B (joined-path curve) is accepted."""
+    if row.get('pass_scores') is None or row['edge_scores'] is None:
+        return row
+    ns, es = row['node_scores'].copy(), row['edge_scores'].copy()
+    pairs, via, q = row['pairs'], row['via'], row['pass_scores']
+    hop = via >= 0
+    es[hop] = 0.0
+    contracted = []
+    if tau is not None:
+        acc = (es >= edge_t) & (ns[pairs[:, 0]] >= node_t) & (ns[pairs[:, 1]] >= node_t)
+        removed = set()
+        for j in np.argsort(-np.where(hop, q, -1.0)):
+            if not hop[j] or q[j] < tau:
+                break
+            a, b, c = int(pairs[j, 0]), int(pairs[j, 1]), int(via[j])
+            if {a, b, c} & removed or min(ns[a], ns[b], ns[c]) < node_t:
+                continue
+            inc = np.nonzero(acc & ((pairs[:, 0] == c) | (pairs[:, 1] == c)))[0]
+            if not set(pairs[inc].ravel().tolist()) - {c} <= {a, b}:
+                continue
+            es[inc], acc[inc] = 0.0, False
+            ns[c] = -1.0
+            removed.add(c)
+            es[j], acc[j] = 1.0, True
+            contracted.append((a, c, b))
+    return {**row, 'node_scores': ns, 'edge_scores': es, 'contracted': contracted}
 
 
 @torch.no_grad()
@@ -411,8 +475,15 @@ def predict(model, ds, device, node_threshold, workers, batch=8):
             if pairs is not None and len(pairs):
                 paths, traced = build_paths(p, pairs, contacts[b], dist[b], label[b], hops)
                 x = model.path_features(feats[b], heat[b], paths, prob[b], via_points(p, pairs, hops) if hops else None)
-                if hops:
-                    row['via'] = np.array([hops.get(tuple(pr), -1) for pr in pairs.tolist()])
+                hop = hop_rows(pairs, contacts[b], hops) if hops else torch.zeros(len(pairs), dtype=torch.bool, device=device)
+                if hops or MODE['passthrough']:
+                    row['via'] = np.where(hop.cpu().numpy(), [hops.get(tuple(pr), -1) if hops else -1 for pr in pairs.tolist()], -1)
+                if MODE['passthrough']:
+                    q = np.full(len(pairs), np.nan)
+                    if hop.any():
+                        via = via_points(p, pairs, hops)
+                        q[hop.cpu().numpy()] = model.pass_logits(feats[b], x[hop], via[hop]).sigmoid().cpu().numpy()
+                    row['pass_scores'] = q
                 interior = choose_interior(to_mm(paths, metric[None].expand(len(paths), 3, 3)), traced)
                 row.update(pairs=pairs.cpu().numpy(), edge_scores=model.edge_head(x).squeeze(-1).sigmoid().cpu().numpy(),
                            curves=(model.path_curves(x, paths, interior, traced) / SIZE).cpu().numpy(),
@@ -457,11 +528,23 @@ def length_breakdown(rows, node_t, edge_t):
 
 def final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final.json'):
     monitor_ds, val_ds = make_dataset(a.dataset, monitor, augment=False), make_dataset(a.dataset, val_ids, augment=False)
-    node_t = D.select_node_threshold(predict(model, monitor_ds, device, min(D.NODE_THRESHOLDS), a.workers, a.eval_batch))
-    train_rows = predict(model, monitor_ds, device, node_t, a.workers, a.eval_batch)
-    edge_t = D.select_edge_threshold(train_rows, node_t)
-    val_rows = predict(model, val_ds, device, node_t, a.workers, a.eval_batch)
-    (out_dir / name.replace('.json', '-validation-rows.pkl')).write_bytes(pickle.dumps(val_rows))
+    plain = lambda rows: [contract(r, None, None, None) for r in rows]  # identity unless passthrough
+    node_t = D.select_node_threshold(plain(predict(model, monitor_ds, device, min(D.NODE_THRESHOLDS), a.workers, a.eval_batch)))
+    raw_train = predict(model, monitor_ds, device, node_t, a.workers, a.eval_batch)
+    edge_t = D.select_edge_threshold(plain(raw_train), node_t)
+    raw_val = predict(model, val_ds, device, node_t, a.workers, a.eval_batch)
+    (out_dir / name.replace('.json', '-validation-rows.pkl')).write_bytes(pickle.dumps(raw_val))
+    tau, passthrough = None, None
+    if MODE['passthrough']:  # pass-through threshold on the train monitor, after node and edge thresholds
+        f1 = {t: D.evaluate([contract(r, node_t, edge_t, t) for r in raw_train], node_t, edge_t, geometry=False)['edge_f1']
+              for t in [None] + PASS_THRESHOLDS}
+        tau = max(f1, key=lambda t: (f1[t], t is None))
+        val_plain = plain(raw_val)
+        passthrough = dict(threshold=tau, train_monitor_edge_f1_by_threshold={str(k): v for k, v in f1.items()},
+                           validation_without_contraction=D.evaluate(val_plain, node_t, edge_t),
+                           contracted_per_patch=float(np.mean([len(contract(r, node_t, edge_t, tau)['contracted']) for r in raw_val])))
+    train_rows = [contract(r, node_t, edge_t, tau) for r in raw_train]
+    val_rows = [contract(r, node_t, edge_t, tau) for r in raw_val]
     traced_share = float(np.mean(np.concatenate([r['traced'] for r in val_rows if r['traced'] is not None] or [np.zeros(0)])))
     interior = np.concatenate([r['interior'] for r in val_rows if r['interior'] is not None] or [np.zeros(0, int)])
     result = dict(dataset=a.dataset, model='traced+adaptive', mode=dict(MODE), offset_radius=getattr(a, 'offset_radius', 0.0),
@@ -469,7 +552,8 @@ def final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final.js
                   thresholds=dict(node=node_t, edge=edge_t, policy='train monitor only; candidates = geodesic contacts' + (' U 16-NN over retained nodes' if MODE['knn_fallback'] else ' only')),
                   train_monitor=D.evaluate(train_rows, node_t, edge_t), validation=D.evaluate(val_rows, node_t, edge_t),
                   validation_by_arc_length=length_breakdown(val_rows, node_t, edge_t),
-                  validation_candidates=dict(traced_fraction=traced_share, interior_histogram={str(m): int((interior == m).sum()) for m in INTERIOR}))
+                  validation_candidates=dict(traced_fraction=traced_share, interior_histogram={str(m): int((interior == m).sum()) for m in INTERIOR}),
+                  passthrough=passthrough)
     (out_dir / name).write_text(json.dumps(result, indent=1))
     print('FINAL ' + json.dumps(result), flush=True)
 
@@ -529,13 +613,16 @@ def main():
     p.add_argument('--no-knn-fallback', action='store_true', help='Candidates = geodesic contacts only')
     p.add_argument('--gap-features', action='store_true', help='Edge/geometry heads read centreline statistics along the path')
     p.add_argument('--two-hop', action='store_true', help='Also propose A-B through a traced pass-through node C')
-    p.add_argument('--offset-radius', type=float, default=0.0,
-                   help='Supervise offsets at all voxels within this radius of each GT node (0 = GT voxel only)')
+    p.add_argument('--passthrough', action='store_true', help='Node-level decision for two-hop chains (implies --two-hop)')
+    p.add_argument('--offset-radius', type=float, default=1.75,
+                   help='Supervise offsets at all voxels within this radius of each GT node; default 1.75 (3x3x3) since '
+                        '3 Nov 2026, 0 = GT voxel only (all runs before traced_twohop_offset)')
     p.add_argument('--evaluate-only', action='store_true')
     p.add_argument('--breakdown-rows', type=Path, help='Only compute the arc-length breakdown for saved rows (CPU)')
     p.add_argument('--breakdown-thresholds', type=float, nargs=2)
     a = p.parse_args()
-    MODE.update(soft=a.soft_tracing, knn_fallback=not a.no_knn_fallback, gap_features=a.gap_features, two_hop=a.two_hop)
+    MODE.update(soft=a.soft_tracing, knn_fallback=not a.no_knn_fallback, gap_features=a.gap_features,
+                two_hop=a.two_hop or a.passthrough, passthrough=a.passthrough)
     if a.breakdown_rows:
         rows = pickle.loads(a.breakdown_rows.read_bytes())
         print(json.dumps(length_breakdown(rows, *a.breakdown_thresholds), indent=1))
@@ -549,7 +636,7 @@ def main():
     if a.smoke:
         train_ids, val_ids, monitor = train_ids[:8], val_ids[:4], train_ids[:4]
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    model = TracedDenseGraph(gap_features=MODE['gap_features'], two_hop=MODE['two_hop']).to(device)
+    model = TracedDenseGraph(gap_features=MODE['gap_features'], two_hop=MODE['two_hop'], passthrough=MODE['passthrough']).to(device)
     if a.evaluate_only:
         model.load_state_dict(torch.load(out_dir / 'model.pt', map_location=device)['model'])
         final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final-v2.json')
@@ -577,7 +664,7 @@ def main():
         line_loss = F.binary_cross_entropy_with_logits(out[:, 4:5].float(), line_t, pos_weight=torch.tensor(5.0, device=device))
         feats, heat, prob = out[:, 5:].float(), out[:, :1].float().sigmoid().detach(), out[:, 4].float().sigmoid().detach()
         sources = [('gt', None)] + ([('pred', D.peaks(out.detach(), a.train_peak_threshold))] if step > a.warmup_gt else [])
-        edge_terms, geo_terms, traced_counts = [], [], []
+        edge_terms, geo_terms, traced_counts, pass_terms = [], [], [], []
         for kind, predicted in sources:
             cands, maps = [], []
             for b in range(len(images)):
@@ -602,9 +689,12 @@ def main():
                 if res[1] is not None:
                     geo_terms.append(res[1])
                 traced_counts.append(float(res[2].float().mean()))
+                if res[3] is not None:
+                    pass_terms.append(res[3])
         edge_loss = torch.stack(edge_terms).mean() if edge_terms else out.sum() * 0
+        pass_loss = torch.stack(pass_terms).mean() if pass_terms else out.sum() * 0
         geo_loss = torch.cat(geo_terms).mean() if geo_terms else out.sum() * 0
-        loss = node_loss + off_loss + line_loss + edge_loss + geo_loss
+        loss = node_loss + off_loss + line_loss + edge_loss + geo_loss + pass_loss
         assert torch.isfinite(loss), 'nonfinite loss'
         opt.zero_grad(set_to_none=True)
         loss.backward()
@@ -613,6 +703,7 @@ def main():
         sched.step()
         if step % 100 == 0 or a.smoke:
             row = dict(step=step, seconds=time.time() - start, node=float(node_loss), centerline=float(line_loss), edge=float(edge_loss),
+                       passthrough=float(pass_loss),
                        geometry_mm=float(geo_loss), traced_pair_fraction=float(np.mean(traced_counts)) if traced_counts else 0.0,
                        predicted_candidates=step > a.warmup_gt)
             log.write(json.dumps(row) + '\n')

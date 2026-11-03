@@ -37,7 +37,24 @@ def test_neighbourhood_offsets_land_on_gt():
     assert int(mask.sum()) < 3 * 27 and int(mask.sum()) > 27
 
 
+def test_contract_chain():
+    import numpy as np
+    pairs = np.array([[0, 1], [1, 2], [0, 2], [1, 3]])
+    row = dict(node_scores=np.array([0.9, 0.5, 0.9, 0.9]), edge_scores=np.array([0.9, 0.9, 0.95, 0.1]),
+               pairs=pairs, via=np.array([-1, -1, 1, -1]), pass_scores=np.array([np.nan, np.nan, 0.8, np.nan]))
+    plain = T.contract(row, 0.3, 0.5, None)
+    assert plain['edge_scores'][2] == 0.0 and plain['edge_scores'][0] == 0.9  # chain never an ordinary edge
+    out = T.contract(row, 0.3, 0.5, 0.6)
+    assert out['contracted'] == [(0, 1, 2)]
+    assert out['node_scores'][1] < 0 and out['edge_scores'][2] == 1.0
+    assert out['edge_scores'][0] == 0.0 and out['edge_scores'][1] == 0.0
+    assert T.contract(row, 0.3, 0.5, 0.85)['contracted'] == []  # below tau
+    busy = dict(row, edge_scores=np.array([0.9, 0.9, 0.95, 0.9]))  # C also connects to node 3: keep C
+    assert T.contract(busy, 0.3, 0.5, 0.6)['contracted'] == []
+
+
 if __name__ == '__main__':
     test_two_hop_pairs()
     test_neighbourhood_offsets_land_on_gt()
+    test_contract_chain()
     print('ALL TESTS PASSED')
