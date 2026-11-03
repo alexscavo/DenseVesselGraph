@@ -28,6 +28,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / 'scripts'))
 from ixi_query_diagnostics import betti  # noqa: E402
 from b0_straight_dense_20261101 import PREDICTIONS, TRAINED_PREDICTIONS  # noqa: E402
+from dense_graph_traced_20261030 import contract  # noqa: E402
 import ixi_long_experiment_20261030 as ix  # noqa: E402
 
 SCRATCH = Path(os.environ['SCRATCH']) / 'experiments/gnbm'
@@ -75,9 +76,11 @@ def arms(dataset):
                                     ('traced', 'traced_adaptive', 'final-validation-rows.pkl', 'final.json')):
         thr = json.loads((DENSE / dataset / sub / result).read_text())['thresholds']
         out[name] = (DENSE / dataset / sub / rows, thr, False)
-    for name in ('traced_gap', 'traced_soft', 'traced_twohop', 'traced_twohop_offset'):
+    for name in ('traced_gap', 'traced_soft', 'traced_twohop', 'traced_twohop_offset', 'traced_offset', 'traced_passthrough',
+                 'traced_adaptive_ukan', 'traced_adaptive_ukan_mlp', 'spline6_ukan', 'spline6_ukan_mlp'):
         if (DENSE / dataset / name / 'final.json').exists():
-            thr = json.loads((DENSE / dataset / name / 'final.json').read_text())['thresholds']
+            res = json.loads((DENSE / dataset / name / 'final.json').read_text())
+            thr = dict(res['thresholds'], tau=(res.get('passthrough') or {}).get('threshold'))
             out[name] = (DENSE / dataset / name / 'final-validation-rows.pkl', thr, False)
     if dataset != 'SyntheticMRI':
         thr = json.loads((ROOT / f'experiments/anchored_rf_20261030/final-{dataset}.json').read_text())['thresholds']
@@ -109,7 +112,8 @@ def main(only=()):
                     continue
                 if isinstance(spec, tuple):
                     path, thr, strict = spec
-                    items = list(from_rows(pickle.loads(Path(path).read_bytes()), thr['node'], thr['edge'], strict))
+                    rows = [contract(r, thr['node'], thr['edge'], thr.get('tau')) for r in pickle.loads(Path(path).read_bytes())]
+                    items = list(from_rows(rows, thr['node'], thr['edge'], strict))
                 else:
                     items = list(from_caches(spec, dataset))
                 result[f'{dataset}/{name}'] = summarize(pool.map(patch_metrics, items, chunksize=8))

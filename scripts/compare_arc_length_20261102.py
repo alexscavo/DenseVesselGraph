@@ -10,7 +10,6 @@ the last logged training traced_pair_fraction when the arm has a training log.
 usage: compare_arc_length_20261102.py <dataset> <arm_a> <arm_b>   (reports arm_a - arm_b)
 """
 import json
-import pickle
 import sys
 from pathlib import Path
 
@@ -19,6 +18,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from compare_dense_anchored_20261030 import SCRATCH  # noqa: E402
+from compare_traced_knn_20261030 import load_arm  # noqa: E402
 from dense_graph_traced_20261030 import length_breakdown  # noqa: E402
 
 RANGES = {'ge20mm': ('20-40', '40-inf'), 'ge40mm': ('40-inf',)}
@@ -27,11 +27,11 @@ FIELDS = ('edges', 'recovered', 'endpoints_missing', 'not_candidate', 'rejected'
 
 def main(dataset, arms):
     run = SCRATCH / f'dense_graph_20261030/{dataset}'
-    result = {a: json.loads((run / a / 'final.json').read_text()) for a in arms}
-    per = {}
+    result, per = {}, {}
     for a in arms:
+        result[a], rows = load_arm(run, a)
         groups = {}
-        for r in pickle.loads((run / a / 'final-validation-rows.pkl').read_bytes()):
+        for r in rows:
             groups.setdefault(r['sample_id'].split('_')[1], []).append(r)
         thresholds = result[a]['thresholds']
         per[a] = {s: length_breakdown(rows, thresholds['node'], thresholds['edge']) for s, rows in groups.items()}

@@ -17,15 +17,28 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from compare_dense_anchored_20261030 import KEYS, SCRATCH, dense_patch, metrics  # noqa: E402
+from dense_graph_traced_20261030 import contract  # noqa: E402
 
 ARMS = ('traced_adaptive', 'knn_continued')
+
+
+def load_arm(run, arm):
+    """(final result, validation rows as decoded by that arm). Uses the re-evaluated final-v2 files when the
+    arm has no final rows (spline6). Pass-through runs save raw rows, so their decision is applied here."""
+    stem = 'final' if (run / arm / 'final-validation-rows.pkl').exists() else 'final-v2'
+    result = json.loads((run / arm / f'{stem}.json').read_text())
+    rows = pickle.loads((run / arm / f'{stem}-validation-rows.pkl').read_bytes())
+    t = result['thresholds']
+    tau = (result.get('passthrough') or {}).get('threshold')
+    return result, [contract(r, t['node'], t['edge'], tau) for r in rows]
 
 
 def main(dataset, arms=ARMS):
     """Report arms[0] - arms[1]. The default arms keep their original output file and key."""
     run = SCRATCH / f'dense_graph_20261030/{dataset}'
-    result = {a: json.loads((run / a / 'final.json').read_text()) for a in arms}
-    rows = {a: pickle.loads((run / a / 'final-validation-rows.pkl').read_bytes()) for a in arms}
+    loaded = {a: load_arm(run, a) for a in arms}
+    result = {a: loaded[a][0] for a in arms}
+    rows = {a: loaded[a][1] for a in arms}
     per = {a: {r['sample_id']: dense_patch(r, result[a]['thresholds']['node'], result[a]['thresholds']['edge'])
                for r in rows[a]} for a in arms}
     ids = sorted(per[arms[0]])
