@@ -102,7 +102,7 @@ def build(d):
         thresholds=dict(node=nt, edge=et), image_threshold=round(init, 1),
         summary=dict(gt_nodes=len(gn), gt_edges=len(ge), detected=len(pv), matched=node_tp, accepted_edges=len(acc),
                      correct_edges=n_tp, false_edges=n_fp, missed_edges=n_fn, node_f1=round(node_f1, 3), edge_f1=round(edge_f1, 3)),
-        image=b64(img8), prob=b64(np.clip(prob * 255, 0, 255)), seg=b64(seg > 0.5) if VESSEL_SEG[d] else None,
+        image=b64(img8), prob=b64(np.clip(prob * 255, 0, 255)), seg=b64((seg > 0.5) * 255) if VESSEL_SEG[d] else None,
         gt_found=lines([p for p, f in zip(gp, found_gt) if f]), gt_missed=lines([p for p, f in zip(gp, found_gt) if not f]),
         gt_nodes=points(gn), pred_tp=lines(tp), pred_fp=lines(fp),
         pred_matched=points(pv[matched]), pred_spurious=points(pv[~matched]))
@@ -110,7 +110,7 @@ def build(d):
     OUT.mkdir(parents=True, exist_ok=True)
     path = OUT / f'prediction_3d_{d}.html'
     path.write_text(html)
-    print('SAVED', path, f'{path.stat().st_size / 1e6:.1f} MB', json.dumps(data['summary']), flush=True)
+    print('SAVED', path, 'seg voxels', int((seg > 0.5).sum()) if VESSEL_SEG[d] else None, f'{path.stat().st_size / 1e6:.1f} MB', json.dumps(data['summary']), flush=True)
 
 
 TEMPLATE = r'''<!doctype html>
