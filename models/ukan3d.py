@@ -9,9 +9,10 @@ BasicUNet, as U-KAN does (conv stages at high resolution, tokenized KAN at the d
   conv -> BN -> ReLU), as in the official code (pre-norm residual).
 - TokKANDown replaces a BasicUNet Down: stride-2 3x3x3 conv tokenizer + LayerNorm (U-KAN's
   PatchEmbed), KANBlock, LayerNorm.
-- TokKANUp replaces a BasicUNet UpCat: conv + trilinear 2x upsampling, skip fusion by
-  concatenation + 1x1x1 projection (the paper's Eqs. 8-9, and what MONAI UpCat does) or by
-  addition (the released code), KANBlock, LayerNorm.
+- TokKANUp replaces a BasicUNet UpCat. skip='cat': conv + trilinear 2x upsampling, concatenation
+  + 1x1x1 projection (the paper's Eqs. 8-9, and what MONAI UpCat does), LayerNorm, KANBlock,
+  LayerNorm. skip='add': the released decoder exactly (archs.py): 2 x (conv-BN-ReLU), 2x
+  upsampling, ReLU, element-wise addition of the skip, KANBlock, LayerNorm.
 - kan=False gives the MLP control: identical blocks with nn.Linear instead of KANLinear (U-KAN's
   own KAN-vs-MLP ablation).
 Channels and resolutions match the replaced blocks, so BasicUNet.forward is unchanged.
@@ -107,18 +108,28 @@ class TokKANUp(nn.Module):
 
     def __init__(self, in_ch, skip_ch, out_ch, kan=True, skip='cat'):
         super().__init__()
-        self.conv = nn.Sequential(nn.Conv3d(in_ch, out_ch, 3, 1, 1), nn.BatchNorm3d(out_ch), nn.ReLU(inplace=True))
         self.skip = skip
-        self.fuse = nn.Conv3d(out_ch + skip_ch, out_ch, 1) if skip == 'cat' else nn.Conv3d(skip_ch, out_ch, 1)
-        self.embed_norm = nn.LayerNorm(out_ch)
+        if skip == 'cat':
+            self.conv = nn.Sequential(nn.Conv3d(in_ch, out_ch, 3, 1, 1), nn.BatchNorm3d(out_ch), nn.ReLU(inplace=True))
+            self.fuse = nn.Conv3d(out_ch + skip_ch, out_ch, 1)
+            self.embed_norm = nn.LayerNorm(out_ch)
+        else:  # U-KAN D_ConvLayer; the skip already has out_ch channels at both replaced levels
+            assert skip_ch == out_ch, 'additive skip needs matching channels'
+            self.conv = nn.Sequential(nn.Conv3d(in_ch, out_ch, 3, 1, 1), nn.BatchNorm3d(out_ch), nn.ReLU(inplace=True),
+                                      nn.Conv3d(out_ch, out_ch, 3, 1, 1), nn.BatchNorm3d(out_ch), nn.ReLU(inplace=True))
         self.block = KANBlock(out_ch, kan=kan)
         self.norm = nn.LayerNorm(out_ch)
 
     def forward(self, x, skip):
         x = F.interpolate(self.conv(x), size=skip.shape[2:], mode='trilinear', align_corners=False)
-        x = self.fuse(torch.cat([skip, x], 1)) if self.skip == 'cat' else x + self.fuse(skip)
+        if self.skip == 'cat':
+            x = self.fuse(torch.cat([skip, x], 1))
+            t = self.embed_norm(x.flatten(2).transpose(1, 2))
+        else:
+            x = F.relu(x) + skip
+            t = x.flatten(2).transpose(1, 2)
         size = x.shape[2:]
-        t = self.norm(self.block(self.embed_norm(x.flatten(2).transpose(1, 2)), size))
+        t = self.norm(self.block(t, size))
         return t.transpose(1, 2).reshape(x.shape[0], -1, *size)
 
 
