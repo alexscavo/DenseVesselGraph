@@ -614,7 +614,8 @@ def main():
     p.add_argument('--gap-features', action='store_true', help='Edge/geometry heads read centreline statistics along the path')
     p.add_argument('--two-hop', action='store_true', help='Also propose A-B through a traced pass-through node C')
     p.add_argument('--passthrough', action='store_true', help='Node-level decision for two-hop chains (implies --two-hop)')
-    p.add_argument('--backbone', choices=['unet', 'ukan', 'ukan_mlp', 'ukan_add'], default='unet', help='Must match the --init-from checkpoint')
+    p.add_argument('--backbone', choices=['unet', 'ukan', 'ukan_mlp', 'ukan_add', 'dsc3', 'dsc9'], default='unet',
+                   help='Must match the --init-from checkpoint')
     p.add_argument('--offset-radius', type=float, default=1.75,
                    help='Supervise offsets at all voxels within this radius of each GT node; default 1.75 (3x3x3) since '
                         '3 Nov 2026, 0 = GT voxel only (all runs before traced_twohop_offset)')
@@ -706,6 +707,7 @@ def main():
         if step % 100 == 0 or a.smoke:
             row = dict(step=step, seconds=time.time() - start, node=float(node_loss), centerline=float(line_loss), edge=float(edge_loss),
                        passthrough=float(pass_loss),
+                       max_memory_gb=torch.cuda.max_memory_allocated() / 1e9 if device == 'cuda' else 0.0,
                        geometry_mm=float(geo_loss), traced_pair_fraction=float(np.mean(traced_counts)) if traced_counts else 0.0,
                        predicted_candidates=step > a.warmup_gt)
             log.write(json.dumps(row) + '\n')

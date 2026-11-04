@@ -54,6 +54,9 @@ class DenseGraph(nn.Module):
         if backbone.startswith('ukan'):  # tokenized KAN (or MLP control) in the two deepest encoder / first two decoder stages
             from models.ukan3d import kanify_basic_unet
             kanify_basic_unet(self.unet, features, kan=backbone != 'ukan_mlp', skip='add' if backbone.endswith('_add') else 'cat')
+        elif backbone.startswith('dsc'):  # dynamic snake convolution blocks everywhere, dsc<K> = snake length K (models/dscnet3d.py)
+            from models.dscnet3d import dscify_basic_unet
+            dscify_basic_unet(self.unet, kernel_size=int(backbone[3:]))
         with torch.no_grad():
             self.unet.final_conv.bias[0] = -4.6
         self.corridor = nn.Sequential(
@@ -302,8 +305,9 @@ def main():
     p.add_argument('--init-from', type=Path, help='Warm start from a dense-model checkpoint (matching tensors)')
     p.add_argument('--run-name', default=None, help='Output subfolder name')
     p.add_argument('--evaluate-only', action='store_true', help='Re-evaluate the saved model.pt')
-    p.add_argument('--backbone', choices=['unet', 'ukan', 'ukan_mlp', 'ukan_add'], default='unet',
-                   help='ukan: U-KAN-style deepest stages (models/ukan3d.py); ukan_mlp: same blocks with MLPs; ukan_add: additive skips')
+    p.add_argument('--backbone', choices=['unet', 'ukan', 'ukan_mlp', 'ukan_add', 'dsc3', 'dsc9'], default='unet',
+                   help='ukan: U-KAN-style deepest stages (models/ukan3d.py); ukan_mlp: same blocks with MLPs; ukan_add: additive '
+                        'skips; dsc<K>: DSCNet snake-conv blocks in every stage, snake length K (models/dscnet3d.py)')
     a = p.parse_args()
     torch.manual_seed(364505)
     np.random.seed(364505)
@@ -365,6 +369,7 @@ def main():
         sched.step()
         if step % 100 == 0 or a.smoke:
             row = dict(step=step, seconds=time.time() - start, node=float(node_loss), offset=float(off_loss), centerline=float(line_loss),
+                       max_memory_gb=torch.cuda.max_memory_allocated() / 1e9 if device == 'cuda' else 0.0,
                        edge=float(edge_loss), geometry_mm=float(geo_loss), predicted_candidates=use_pred)
             log.write(json.dumps(row) + '\n')
             log.flush()
