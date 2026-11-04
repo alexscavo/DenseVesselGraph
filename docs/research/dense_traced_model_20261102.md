@@ -25,6 +25,10 @@ patches (`monitor_train`) only. No test data has been used.
   with or without splines gives identical graphs; only curve quality differs.
 - **Main remaining limit: node recall on real data.** About 80% of missed BRAVA long edges
   lack a detected endpoint.
+- **Variants tested 3–4 Nov (§4.7–4.9; single seed, validation only).** Neighbourhood offsets lower node error
+  slightly. The pass-through decision adds Edge F1 +0.003–0.010 on a fixed model, without improving long edges.
+  U-KAN does not beat the U-Net or its MLP control at this budget. On BRAVA the choice of node threshold
+  (0.25 vs 0.30) moves Edge F1 by about 0.03, more than any of these changes.
 
 ## 2. The new approach: two-stage dense model with traced connectivity
 
@@ -632,6 +636,150 @@ Scripts: `scripts/passthrough_effect_20261104.py`, `scripts/passthrough_figures_
 `passthrough-effect.json`, `passthrough-decisions.json`, `node-quality.json`, `paired-traced_offset-vs-*.json`,
 `paired-traced_passthrough-vs-*.json`, the matching `paired-arc-*` files, and `topology-validation.json`.
 
+### 4.9 U-KAN backbone (DONE, 3–4 Nov 2026)
+
+The 3D U-Net is replaced following U-KAN (arXiv 2406.02918): its two deepest encoder stages and first two
+decoder stages become tokenized KAN blocks (grid 5, cubic), with concatenated skips and nothing else changed.
+Three backbones run through the full two-stage pipeline with the same optimiser, lr, schedule and budget:
+
+| Name | Backbone | Stage 1 (15k updates, lr 1e-3) | Stage 2 (7500 updates, lr 3e-4, warm start) |
+|---|---|---|---|
+| U-Net | BasicUNet, the reference | `spline6` | `traced_adaptive` |
+| U-KAN | KAN blocks in those four stages | `spline6_ukan` | `traced_adaptive_ukan` |
+| MLP control | the same layout with `nn.Linear` in place of KAN layers | `spline6_ukan_mlp` | `traced_adaptive_ukan_mlp` |
+
+**Main result.** U-KAN does not improve on the U-Net at this budget, and the KAN layers do not improve on the
+MLP control. Edge F1 is lower on SyntheticMRI and IXI. On BRAVA the large gain comes from a lower selected
+node threshold, and at shared thresholds it shrinks to about +0.004. Node F1 and node error are essentially
+unchanged at both stages. Training was stable, so neither fallback (lower lr for KAN, `--backbone ukan_add`) applied.
+
+Paired differences for the full model (stage 2), each arm at its own thresholds. Bold marks a CI that excludes
+zero (some bounds round to 0.000):
+
+| Dataset | Comparison | Thresholds (node, edge) | Node F1 | Edge F1 | Branch F1 | Curve F1 |
+|---|---|---|---|---|---|---|
+| SyntheticMRI | U-KAN − U-Net | 0.45, 0.9 vs 0.45, 0.9 | −0.004 [−0.009, 0.000] | **−0.010 [−0.016, −0.003]** | −0.006 [−0.023, +0.009] | +0.001 [−0.004, +0.006] |
+| IXI | U-KAN − U-Net | 0.35, 0.8 vs 0.35, 0.75 | −0.004 [−0.010, +0.002] | −0.009 [−0.019, 0.000] | −0.004 [−0.013, +0.006] | **−0.015 [−0.023, −0.006]** |
+| BRAVA | U-KAN − U-Net | 0.25, 0.75 vs 0.3, 0.75 | +0.006 [−0.001, +0.013] | **+0.035 [+0.030, +0.041]** | **+0.005 [+0.001, +0.009]** | **+0.082 [+0.072, +0.093]** |
+| SyntheticMRI | U-KAN − MLP | 0.45, 0.9 vs 0.4, 0.9 | −0.001 [−0.006, +0.003] | **−0.005 [−0.011, 0.000]** | 0.000 [−0.012, +0.012] | −0.001 [−0.005, +0.003] |
+| IXI | U-KAN − MLP | 0.35, 0.8 vs 0.35, 0.85 | −0.006 [−0.013, +0.001] | **−0.013 [−0.024, −0.002]** | −0.004 [−0.013, +0.005] | **+0.026 [+0.018, +0.034]** |
+| BRAVA | U-KAN − MLP | 0.25, 0.75 vs 0.3, 0.7 | +0.004 [−0.002, +0.010] | **+0.035 [+0.030, +0.040]** | **+0.009 [+0.003, +0.014]** | **+0.070 [+0.061, +0.076]** |
+
+The same comparisons with both arms decoded at shared thresholds (the higher node threshold, the second arm's
+edge threshold). SyntheticMRI U-KAN − U-Net already shares its thresholds:
+
+| Dataset | Comparison | Shared (node, edge) | Node F1 | Edge F1 | Branch F1 | Curve F1 |
+|---|---|---|---|---|---|---|
+| IXI (exact) | U-KAN − U-Net | 0.35, 0.75 | −0.004 [−0.010, +0.002] | **−0.012 [−0.022, −0.002]** | −0.002 [−0.011, +0.006] | +0.002 [−0.005, +0.010] |
+| IXI (exact) | U-KAN − MLP | 0.35, 0.85 | −0.006 [−0.013, +0.001] | **−0.014 [−0.025, −0.003]** | −0.006 [−0.013, +0.002] | −0.004 [−0.014, +0.006] |
+| SyntheticMRI (approximate) | U-KAN − MLP | 0.45, 0.9 | −0.002 [−0.006, +0.002] | −0.004 [−0.010, +0.001] | +0.001 [−0.011, +0.013] | +0.004 [−0.002, +0.009] |
+| BRAVA (approximate) | U-KAN − U-Net | 0.3, 0.75 | **+0.004 [+0.001, +0.007]** | **+0.004 [0.000, +0.009]** | 0.000 [−0.004, +0.003] | **−0.039 [−0.046, −0.029]** |
+| BRAVA (approximate) | U-KAN − MLP | 0.3, 0.7 | +0.002 [−0.001, +0.004] | +0.004 [−0.002, +0.011] | −0.002 [−0.007, +0.003] | **−0.032 [−0.038, −0.024]** |
+
+*Exact* means the arms differ only in edge threshold. *Approximate* means one arm's rows were filtered to a higher
+node threshold, as in §4.7, which penalises that arm's Curve F1, so those Curve F1 values are not fair estimates.
+
+Stage 1 alone, against the U-Net `spline6`, each arm at its own thresholds:
+
+| Dataset | Comparison | Thresholds (node, edge) | Node F1 | Edge F1 | Branch F1 | Curve F1 |
+|---|---|---|---|---|---|---|
+| SyntheticMRI | U-KAN − U-Net | 0.4, 0.9 vs 0.45, 0.85 | −0.001 [−0.003, +0.002] | −0.003 [−0.010, +0.005] | −0.009 [−0.022, +0.004] | **−0.009 [−0.012, −0.005]** |
+| IXI | U-KAN − U-Net | 0.3, 0.85 vs 0.3, 0.8 | 0.000 [−0.005, +0.004] | **−0.013 [−0.020, −0.005]** | −0.010 [−0.019, +0.001] | **−0.044 [−0.052, −0.036]** |
+| BRAVA | U-KAN − U-Net | 0.25, 0.8 vs 0.25, 0.75 | **+0.004 [+0.001, +0.007]** | −0.001 [−0.007, +0.005] | +0.002 [−0.003, +0.006] | **−0.035 [−0.045, −0.025]** |
+| SyntheticMRI | MLP − U-Net | 0.4, 0.9 vs 0.45, 0.85 | 0.000 [−0.003, +0.003] | −0.003 [−0.008, +0.001] | **−0.013 [−0.022, −0.003]** | **−0.012 [−0.016, −0.008]** |
+| IXI | MLP − U-Net | 0.35, 0.85 vs 0.3, 0.8 | −0.004 [−0.010, +0.003] | **−0.017 [−0.026, −0.009]** | **−0.011 [−0.019, −0.002]** | **−0.073 [−0.084, −0.063]** |
+| BRAVA | MLP − U-Net | 0.3, 0.7 vs 0.25, 0.75 | −0.001 [−0.006, +0.005] | **−0.032 [−0.040, −0.023]** | **−0.006 [−0.010, −0.001]** | **−0.078 [−0.082, −0.072]** |
+
+All of these stage-1 rows have threshold shifts, and no shared-threshold check was run for stage 1. Node F1 is
+the least affected. Curve F1 falls when the edge threshold rises, so its size here is partly a threshold effect.
+
+Absolute node / edge / Branch / Curve F1:
+
+| Dataset | Stage | U-Net | U-KAN | MLP control |
+|---|---|---|---|---|
+| SyntheticMRI | 1 | 0.890 / 0.792 / 0.429 / 0.936 | 0.890 / 0.789 / 0.421 / 0.928 | 0.890 / 0.788 / 0.416 / 0.924 |
+| SyntheticMRI | 2 | 0.894 / 0.797 / 0.441 / 0.945 | 0.890 / 0.788 / 0.434 / 0.946 | 0.891 / 0.793 / 0.435 / 0.947 |
+| IXI | 1 | 0.648 / 0.315 / 0.163 / 0.677 | 0.647 / 0.303 / 0.153 / 0.633 | 0.644 / 0.299 / 0.152 / 0.604 |
+| IXI | 2 | 0.649 / 0.313 / 0.179 / 0.770 | 0.645 / 0.304 / 0.176 / 0.756 | 0.651 / 0.317 / 0.180 / 0.729 |
+| BRAVA | 1 | 0.543 / 0.217 / 0.054 / 0.365 | 0.547 / 0.216 / 0.055 / 0.329 | 0.542 / 0.185 / 0.048 / 0.287 |
+| BRAVA | 2 | 0.546 / 0.206 / 0.062 / 0.395 | 0.552 / 0.240 / 0.067 / 0.477 | 0.548 / 0.206 / 0.058 / 0.407 |
+
+Matched-node error in mm, median / 90th percentile (each arm's own matched nodes, no CI):
+
+| Dataset | Stage 1: U-Net | U-KAN | MLP | Stage 2: U-Net | U-KAN | MLP |
+|---|---|---|---|---|---|---|
+| SyntheticMRI | 0.67 / 1.39 | 0.65 / 1.39 | 0.66 / 1.39 | 0.65 / 1.39 | 0.65 / 1.39 | 0.65 / 1.39 |
+| IXI | 0.47 / 1.13 | 0.47 / 1.11 | 0.46 / 1.06 | 0.46 / 1.05 | 0.46 / 1.04 | 0.46 / 1.06 |
+| BRAVA | 0.75 / 1.44 | 0.76 / 1.44 | 0.75 / 1.44 | 0.74 / 1.44 | 0.76 / 1.43 | 0.75 / 1.44 |
+
+Fraction of long GT edges recovered (stage 2, own thresholds):
+
+| Dataset | Arc length (GT edges) | U-Net | U-KAN | MLP | U-KAN − U-Net | U-KAN − MLP |
+|---|---|---|---|---|---|---|
+| SyntheticMRI | ≥ 20 mm (1556) | 0.809 | 0.804 | 0.812 | −0.005 [−0.019, +0.008] | −0.008 [−0.018, +0.003] |
+| SyntheticMRI | ≥ 40 mm (145) | 0.710 | 0.690 | 0.710 | −0.021 [−0.095, +0.050] | −0.021 [−0.094, +0.040] |
+| IXI | ≥ 20 mm (648) | 0.279 | 0.258 | 0.258 | −0.022 [−0.050, +0.009] | 0.000 [−0.026, +0.023] |
+| IXI | ≥ 40 mm (83) | 0.145 | 0.133 | 0.157 | −0.012 [−0.092, +0.066] | −0.024 [−0.085, +0.031] |
+| BRAVA | ≥ 20 mm (5042) | 0.092 | 0.121 | 0.102 | **+0.029 [+0.023, +0.035]** | **+0.019 [+0.014, +0.024]** |
+| BRAVA | ≥ 40 mm (1251) | 0.052 | 0.066 | 0.067 | **+0.014 [+0.006, +0.026]** | −0.002 [−0.012, +0.008] |
+
+The BRAVA U-KAN gains at ≥ 20 mm track the node threshold: missing endpoints are 4024 (U-Net), 3563 (U-KAN), 4030 (MLP).
+
+Topology per patch, in the format of §4.3:
+
+| Dataset: arm | β₀ error | β₁ error | Loops | SMD ×10³ | Patches without SMD | Nodes | Edges |
+|---|---|---|---|---|---|---|---|
+| SyntheticMRI: `traced_adaptive` | 1.02 | 0.22 | 0.20 (0.04) | 1.81 | 0 | 19.3 | 13.7 |
+| SyntheticMRI: `traced_adaptive_ukan` | 1.03 | 0.29 | 0.28 (0.04) | 1.76 | 0 | 19.3 | 13.8 |
+| SyntheticMRI: `traced_adaptive_ukan_mlp` | 1.17 | 0.30 | 0.30 (0.04) | 1.69 | 0 | 19.6 | 13.9 |
+| IXI: `traced_adaptive` | 1.68 | 3.50 | 4.10 (0.71) | 23.24 | 42 | 17.8 | 16.4 |
+| IXI: `traced_adaptive_ukan` | 1.94 | 2.05 | 2.62 (0.71) | 21.44 | 41 | 17.6 | 14.3 |
+| IXI: `traced_adaptive_ukan_mlp` | 2.82 | 1.12 | 1.54 (0.71) | 22.22 | 41 | 17.6 | 12.0 |
+| BRAVA: `traced_adaptive` | 4.08 | 0.62 | 0.62 (0.00) | 63.79 | 225 | 15.1 | 6.1 |
+| BRAVA: `traced_adaptive_ukan` | 6.01 | 1.41 | 1.41 (0.00) | 50.39 | 170 | 20.5 | 9.9 |
+| BRAVA: `traced_adaptive_ukan_mlp` | 3.42 | 0.98 | 0.98 (0.00) | 58.92 | 189 | 15.1 | 7.2 |
+| SyntheticMRI: `spline6` | 1.01 | 0.32 | 0.29 (0.04) | 1.84 | 0 | 19.3 | 13.8 |
+| SyntheticMRI: `spline6_ukan` | 1.37 | 0.29 | 0.28 (0.04) | 2.29 | 0 | 19.6 | 13.6 |
+| SyntheticMRI: `spline6_ukan_mlp` | 1.39 | 0.32 | 0.30 (0.04) | 2.49 | 0 | 19.6 | 13.6 |
+| IXI: `spline6` | 4.02 | 3.05 | 3.64 (0.71) | 27.02 | 39 | 21.0 | 16.0 |
+| IXI: `spline6_ukan` | 5.51 | 1.55 | 1.97 (0.71) | 28.34 | 48 | 20.6 | 12.4 |
+| IXI: `spline6_ukan_mlp` | 3.60 | 1.40 | 1.74 (0.71) | 30.07 | 55 | 17.3 | 10.9 |
+| BRAVA: `spline6` | 7.15 | 1.50 | 1.50 (0.00) | 61.03 | 191 | 20.6 | 8.8 |
+| BRAVA: `spline6_ukan` | 7.93 | 0.96 | 0.96 (0.00) | 63.96 | 255 | 20.4 | 7.3 |
+| BRAVA: `spline6_ukan_mlp` | 4.20 | 0.89 | 0.89 (0.00) | 72.57 | 270 | 14.8 | 6.0 |
+
+Reading the results:
+- **The node threshold dominates BRAVA across all arms.** Full-model arms at node threshold 0.25 reach Edge F1
+  0.237–0.240 (`traced_offset`, `traced_adaptive_ukan`). Those at 0.30 reach 0.206–0.207 (`traced_adaptive`,
+  `traced_passthrough`, `traced_adaptive_ukan_mlp`, whatever their other differences). The selection falls either side
+  of a grid step, and this gap is larger than any Edge F1 effect of a model change in §4.7–4.9. The lower threshold
+  also brings more nodes per patch (about 20 vs 15) and worse β₀ error.
+- **KAN vs MLP.** At shared thresholds U-KAN is below the control on IXI and no CI favours it on Edge F1. The +0.026
+  Curve F1 on IXI disappears at the shared edge threshold (−0.004 [−0.014, +0.006]), so it was a threshold effect.
+- **IXI loops.** Both replaced backbones have fewer loops than the U-Net, with fewer edges per patch. The MLP control
+  has the fewest (1.54 vs 2.62), so this is not specific to KAN layers, and its higher edge threshold (0.85)
+  contributes too.
+- **Spurious nodes at stage 1.** At the same node threshold, U-KAN changes spurious detections little: IXI 3039 → 2905
+  and BRAVA 18600 → 18175, with matched nodes 7728 → 7657 and 18402 → 18433.
+- **Stability.** No non-finite values in any training log, and loss levels and maxima similar to the U-Net's, so lr was
+  not lowered for the KAN arm and `ukan_add` was not run. Stage 1 took about 15–20% longer than the 30 Oct U-Net
+  (3845 vs 3181 s on IXI), on possibly different nodes.
+
+Caveats:
+- Single seed, validation only. The CIs cover subject sampling, not training variation, and are not corrected for
+  multiple comparisons.
+- This tests U-KAN at this project's budget and optimiser, as decided for this comparison, not at the longer schedule
+  of the U-KAN paper. It is not evidence against U-KAN at a literature-scale budget, which was not tried.
+- Each arm has its own train-selected thresholds; the deltas that depend on a threshold shift are called out above.
+- `spline6` and `traced_adaptive` were trained on 30 Oct with earlier code. The U-KAN arms ran on the 3 Nov code with
+  `--offset-radius 0`. The U-Net was not rerun on the new code to confirm that it reproduces.
+- The backbones warm-start stage 2 from their own stage 1, so a stage-1 difference carries into stage 2.
+
+Scripts: `scripts/compare_shared_threshold_20261104.py`, `scripts/node_quality_20261103.py`, and the three in §4.6.
+Outputs in `experiments/dense_graph_20261030/`: `shared-thresholds.json`, `node-quality.json`,
+`paired-traced_adaptive_ukan-vs-*.json`, `paired-spline6_ukan*-vs-spline6-*.json`, the matching `paired-arc-*` files, and
+`topology-validation.json`.
+
 ## 5. 2D (validation; node / edge F1 @2 units)
 
 | Dataset | RelationFormer B0 (mixed pretraining) | Dense 16-NN, from scratch |
@@ -664,3 +812,8 @@ Report: `DenseVesselGraph/experiments/dense_graph_2d_20261030/report.md`.
   3. **Ablation.** Tracing with K8 only, to separate tracing from adaptive K.
   4. **2D.** Port tracing to 2D.
   5. **Before any paper claim.** Seeds, then one locked test evaluation.
+  6. **BRAVA at a fixed node threshold (PROPOSED).** Re-evaluate `traced_adaptive`, `traced_offset`, `traced_passthrough`
+     and the U-KAN arms at one node threshold, repeating tracing on GPU. §4.7–4.9 could only filter saved rows, so
+     their BRAVA shared-threshold comparisons are approximate.
+  7. **Pass-through rule (PROPOSED).** Require A–C and C–B to be accepted before contracting, and separate two-hop
+     training from the head (§4.8).

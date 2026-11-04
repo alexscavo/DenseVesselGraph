@@ -1,0 +1,90 @@
+{
+ "dataset": "IXI",
+ "arms": [
+  "traced_adaptive_ukan",
+  "traced_adaptive_ukan_mlp"
+ ],
+ "subjects": 26,
+ "thresholds": {
+  "traced_adaptive_ukan": {
+   "node": 0.35,
+   "edge": 0.8,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "traced_adaptive_ukan_mlp": {
+   "node": 0.35,
+   "edge": 0.85,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  }
+ },
+ "ranges": {
+  "ge20mm": {
+   "counts": {
+    "traced_adaptive_ukan": {
+     "edges": 648,
+     "recovered": 167,
+     "endpoints_missing": 370,
+     "not_candidate": 8,
+     "rejected": 103
+    },
+    "traced_adaptive_ukan_mlp": {
+     "edges": 648,
+     "recovered": 167,
+     "endpoints_missing": 346,
+     "not_candidate": 10,
+     "rejected": 125
+    }
+   },
+   "recovered_fraction": {
+    "traced_adaptive_ukan": 0.25771604938271603,
+    "traced_adaptive_ukan_mlp": 0.25771604938271603
+   },
+   "difference": {
+    "point": 0.0,
+    "ci95": [
+     -0.02568700816738373,
+     0.023291925465838498
+    ],
+    "resamples_with_edges": 2000
+   }
+  },
+  "ge40mm": {
+   "counts": {
+    "traced_adaptive_ukan": {
+     "edges": 83,
+     "recovered": 11,
+     "endpoints_missing": 48,
+     "not_candidate": 2,
+     "rejected": 22
+    },
+    "traced_adaptive_ukan_mlp": {
+     "edges": 83,
+     "recovered": 13,
+     "endpoints_missing": 42,
+     "not_candidate": 4,
+     "rejected": 24
+    }
+   },
+   "recovered_fraction": {
+    "traced_adaptive_ukan": 0.13253012048192772,
+    "traced_adaptive_ukan_mlp": 0.1566265060240964
+   },
+   "difference": {
+    "point": -0.02409638554216867,
+    "ci95": [
+     -0.08451301026497969,
+     0.03125
+    ],
+    "resamples_with_edges": 2000
+   }
+  }
+ },
+ "validation_traced_fraction": {
+  "traced_adaptive_ukan": 0.1304575780215747,
+  "traced_adaptive_ukan_mlp": 0.1302682997193737
+ },
+ "last_training_traced_pair_fraction": {
+  "traced_adaptive_ukan": 0.2848839075304568,
+  "traced_adaptive_ukan_mlp": 0.17951561277732253
+ }
+}

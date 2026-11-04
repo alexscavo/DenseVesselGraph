@@ -1,0 +1,73 @@
+{
+ "dataset": "BRAVA",
+ "subjects": 8,
+ "patches": 1796,
+ "thresholds": {
+  "spline6_ukan": {
+   "node": 0.25,
+   "edge": 0.8,
+   "policy": "train monitor only; candidates = 16-NN over retained nodes"
+  },
+  "spline6": {
+   "node": 0.25,
+   "edge": 0.75,
+   "policy": "train monitor only; candidates = 16-NN over retained nodes"
+  }
+ },
+ "spline6_ukan": {
+  "node_f1": 0.5470219900881385,
+  "edge_f1": 0.21571819047326557,
+  "branch_f1": 0.05528488994851594,
+  "curve_f1": 0.32932528662072075
+ },
+ "spline6": {
+  "node_f1": 0.542927951849885,
+  "edge_f1": 0.217007303402593,
+  "branch_f1": 0.053593886040437265,
+  "curve_f1": 0.3647485698080478
+ },
+ "spline6_ukan_minus_spline6": {
+  "node_f1": {
+   "point": 0.0040940382382534946,
+   "ci95": [
+    0.0005992893801886695,
+    0.006605621089939041
+   ]
+  },
+  "edge_f1": {
+   "point": -0.0012891129293274295,
+   "ci95": [
+    -0.007444622621382692,
+    0.005342762853691646
+   ]
+  },
+  "branch_f1": {
+   "point": 0.0016910039080786782,
+   "ci95": [
+    -0.0029561233698892895,
+    0.006005740146563331
+   ]
+  },
+  "curve_f1": {
+   "point": -0.03542328318732707,
+   "ci95": [
+    -0.04485109539804248,
+    -0.02478189790411597
+   ]
+  }
+ },
+ "parity_abs_difference_vs_reported": {
+  "spline6_ukan": {
+   "node_f1": 0.0,
+   "edge_f1": 0.0,
+   "branch_f1": 0.0,
+   "curve_f1": 0.0
+  },
+  "spline6": {
+   "node_f1": 0.0,
+   "edge_f1": 0.0,
+   "branch_f1": 0.0,
+   "curve_f1": 0.0
+  }
+ }
+}

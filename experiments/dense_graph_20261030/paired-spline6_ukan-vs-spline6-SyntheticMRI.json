@@ -1,0 +1,73 @@
+{
+ "dataset": "SyntheticMRI",
+ "subjects": 13,
+ "patches": 480,
+ "thresholds": {
+  "spline6_ukan": {
+   "node": 0.4,
+   "edge": 0.9,
+   "policy": "train monitor only; candidates = 16-NN over retained nodes"
+  },
+  "spline6": {
+   "node": 0.45,
+   "edge": 0.85,
+   "policy": "train monitor only; candidates = 16-NN over retained nodes"
+  }
+ },
+ "spline6_ukan": {
+  "node_f1": 0.8895957315821875,
+  "edge_f1": 0.788859192572795,
+  "branch_f1": 0.4205832906951246,
+  "curve_f1": 0.9276525567524345
+ },
+ "spline6": {
+  "node_f1": 0.8904860392967943,
+  "edge_f1": 0.7915821855554779,
+  "branch_f1": 0.42922507081124267,
+  "curve_f1": 0.9362507002712169
+ },
+ "spline6_ukan_minus_spline6": {
+  "node_f1": {
+   "point": -0.0008903077146067417,
+   "ci95": [
+    -0.003351917631729512,
+    0.0018076336845757222
+   ]
+  },
+  "edge_f1": {
+   "point": -0.002722992982682859,
+   "ci95": [
+    -0.009779051680037561,
+    0.00548372647454244
+   ]
+  },
+  "branch_f1": {
+   "point": -0.008641780116118047,
+   "ci95": [
+    -0.021912202036468147,
+    0.0035919475658897234
+   ]
+  },
+  "curve_f1": {
+   "point": -0.008598143518782408,
+   "ci95": [
+    -0.01232009287176106,
+    -0.005211561876666513
+   ]
+  }
+ },
+ "parity_abs_difference_vs_reported": {
+  "spline6_ukan": {
+   "node_f1": 0.0,
+   "edge_f1": 0.0,
+   "branch_f1": 0.0,
+   "curve_f1": 0.0
+  },
+  "spline6": {
+   "node_f1": 0.0,
+   "edge_f1": 0.0,
+   "branch_f1": 0.0,
+   "curve_f1": 0.0
+  }
+ }
+}

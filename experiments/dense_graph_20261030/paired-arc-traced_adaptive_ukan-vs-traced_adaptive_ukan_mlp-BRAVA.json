@@ -1,0 +1,90 @@
+{
+ "dataset": "BRAVA",
+ "arms": [
+  "traced_adaptive_ukan",
+  "traced_adaptive_ukan_mlp"
+ ],
+ "subjects": 8,
+ "thresholds": {
+  "traced_adaptive_ukan": {
+   "node": 0.25,
+   "edge": 0.75,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "traced_adaptive_ukan_mlp": {
+   "node": 0.3,
+   "edge": 0.7,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  }
+ },
+ "ranges": {
+  "ge20mm": {
+   "counts": {
+    "traced_adaptive_ukan": {
+     "edges": 5042,
+     "recovered": 611,
+     "endpoints_missing": 3563,
+     "not_candidate": 144,
+     "rejected": 724
+    },
+    "traced_adaptive_ukan_mlp": {
+     "edges": 5042,
+     "recovered": 513,
+     "endpoints_missing": 4030,
+     "not_candidate": 30,
+     "rejected": 469
+    }
+   },
+   "recovered_fraction": {
+    "traced_adaptive_ukan": 0.12118207060690202,
+    "traced_adaptive_ukan_mlp": 0.1017453391511305
+   },
+   "difference": {
+    "point": 0.019436731455771517,
+    "ci95": [
+     0.014101335071011245,
+     0.024364332041619086
+    ],
+    "resamples_with_edges": 2000
+   }
+  },
+  "ge40mm": {
+   "counts": {
+    "traced_adaptive_ukan": {
+     "edges": 1251,
+     "recovered": 82,
+     "endpoints_missing": 908,
+     "not_candidate": 82,
+     "rejected": 179
+    },
+    "traced_adaptive_ukan_mlp": {
+     "edges": 1251,
+     "recovered": 84,
+     "endpoints_missing": 1010,
+     "not_candidate": 25,
+     "rejected": 132
+    }
+   },
+   "recovered_fraction": {
+    "traced_adaptive_ukan": 0.06554756195043965,
+    "traced_adaptive_ukan_mlp": 0.0671462829736211
+   },
+   "difference": {
+    "point": -0.0015987210231814541,
+    "ci95": [
+     -0.011583411438423856,
+     0.007741150093948742
+    ],
+    "resamples_with_edges": 2000
+   }
+  }
+ },
+ "validation_traced_fraction": {
+  "traced_adaptive_ukan": 0.11807098672752388,
+  "traced_adaptive_ukan_mlp": 0.12144870045529782
+ },
+ "last_training_traced_pair_fraction": {
+  "traced_adaptive_ukan": 0.21099536074325442,
+  "traced_adaptive_ukan_mlp": 0.13085473468527198
+ }
+}
