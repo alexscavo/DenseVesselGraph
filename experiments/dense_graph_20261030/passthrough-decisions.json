@@ -1,0 +1,107 @@
+{
+ "SyntheticMRI": {
+  "pass-through": {
+   "chains": 158,
+   "contracted": 65,
+   "q_median": 0.8548235297203064
+  },
+  "spurious-no-edge": {
+   "chains": 203,
+   "contracted": 11,
+   "q_median": 0.0059270416386425495
+  },
+  "real-node": {
+   "chains": 6840,
+   "contracted": 89,
+   "q_median": 0.00022931061539566144
+  },
+  "contractions": 165,
+  "contraction_precision": 0.3939393939393939,
+  "pass_through_recall": 0.41139240506329117,
+  "threshold": 0.75,
+  "audit_of_contractions": {
+   "correct_after_rematching": 0.5878787878787879,
+   "c_within_2mm_of_endpoint": 0.45454545454545453,
+   "near_mm_median": 3.1518261432647705,
+   "both_sides_accepted_before": 0.21212121212121213,
+   "one_side_accepted_before": 0.6181818181818182,
+   "no_side_accepted_before": 0.1696969696969697,
+   "true_edges_removed": 79
+  },
+  "above_threshold_not_contracted": {
+   "pass-through": 35,
+   "spurious-no-edge": 12,
+   "real-node": 65
+  }
+ },
+ "IXI": {
+  "pass-through": {
+   "chains": 314,
+   "contracted": 66,
+   "q_median": 0.6159906089305878
+  },
+  "spurious-no-edge": {
+   "chains": 1537,
+   "contracted": 44,
+   "q_median": 0.1781841516494751
+  },
+  "real-node": {
+   "chains": 8802,
+   "contracted": 60,
+   "q_median": 0.0695178210735321
+  },
+  "contractions": 170,
+  "contraction_precision": 0.38823529411764707,
+  "pass_through_recall": 0.21019108280254778,
+  "threshold": 0.85,
+  "audit_of_contractions": {
+   "correct_after_rematching": 0.5117647058823529,
+   "c_within_2mm_of_endpoint": 0.4294117647058823,
+   "near_mm_median": 2.45599102973938,
+   "both_sides_accepted_before": 0.49411764705882355,
+   "one_side_accepted_before": 0.4411764705882353,
+   "no_side_accepted_before": 0.06470588235294118,
+   "true_edges_removed": 55
+  },
+  "above_threshold_not_contracted": {
+   "pass-through": 10,
+   "spurious-no-edge": 10,
+   "real-node": 52
+  }
+ },
+ "BRAVA": {
+  "pass-through": {
+   "chains": 687,
+   "contracted": 181,
+   "q_median": 0.5346812605857849
+  },
+  "spurious-no-edge": {
+   "chains": 8440,
+   "contracted": 233,
+   "q_median": 0.14832951873540878
+  },
+  "real-node": {
+   "chains": 13231,
+   "contracted": 329,
+   "q_median": 0.1290750503540039
+  },
+  "contractions": 743,
+  "contraction_precision": 0.24360699865410498,
+  "pass_through_recall": 0.26346433770014555,
+  "threshold": 0.65,
+  "audit_of_contractions": {
+   "correct_after_rematching": 0.44414535666218036,
+   "c_within_2mm_of_endpoint": 0.873485868102288,
+   "near_mm_median": 1.0570154190063477,
+   "both_sides_accepted_before": 0.19380888290713325,
+   "one_side_accepted_before": 0.7550471063257066,
+   "no_side_accepted_before": 0.05114401076716016,
+   "true_edges_removed": 212
+  },
+  "above_threshold_not_contracted": {
+   "pass-through": 51,
+   "spurious-no-edge": 132,
+   "real-node": 170
+  }
+ }
+}

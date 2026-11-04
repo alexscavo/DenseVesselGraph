@@ -435,6 +435,203 @@ Scripts: `scripts/compare_traced_knn_20261030.py <dataset> <arm_a> <arm_b>`,
 Outputs in `experiments/dense_graph_20261030/`: `paired-traced_*-vs-*.json`,
 `paired-arc-traced_*-vs-*.json` and `topology-validation.json`.
 
+### 4.7 Neighbourhood offsets (DONE, 3–4 Nov 2026)
+
+`traced_offset` is `traced_adaptive` with one training change: the node offset is supervised on every
+voxel within 1.75 voxels of a GT node, not only on the rounded GT voxel (`--offset-radius 1.75`, now the
+default). Same warm start from `spline6`, 7500 updates, lr 3e-4.
+
+**Main result.** Offsets lower node error slightly and, where thresholds are equal, raise Branch F1
+sharply on SyntheticMRI. The large BRAVA gains come mostly from a lower selected node threshold, and
+they cost fragmentation.
+
+Paired differences, `traced_offset` − `traced_adaptive`, with 95% CIs over validation subjects. Bold
+marks a CI that excludes zero (some bounds round to 0.000):
+
+| Dataset | Thresholds, offset vs adaptive (node, edge) | Node F1 | Edge F1 | Branch F1 | Curve F1 |
+|---|---|---|---|---|---|
+| SyntheticMRI | 0.45, 0.9 vs 0.45, 0.9 | +0.003 [0.000, +0.006] | +0.001 [−0.005, +0.006] | **+0.086 [+0.067, +0.106]** | **+0.008 [+0.003, +0.012]** |
+| IXI | 0.35, 0.8 vs 0.35, 0.75 | −0.001 [−0.004, +0.002] | +0.006 [−0.002, +0.012] | **+0.007 [0.000, +0.014]** | **−0.009 [−0.015, −0.002]** |
+| BRAVA | 0.25, 0.75 vs 0.3, 0.75 | **+0.007 [+0.002, +0.013]** | **+0.031 [+0.025, +0.038]** | **+0.013 [+0.008, +0.017]** | **+0.071 [+0.064, +0.079]** |
+
+The same comparison with `traced_offset` decoded at `traced_adaptive`'s thresholds, to remove the shift:
+
+| Dataset | Node F1 | Edge F1 | Branch F1 | Curve F1 |
+|---|---|---|---|---|
+| IXI (exact) | −0.001 [−0.004, +0.002] | +0.003 [−0.004, +0.009] | +0.006 [−0.002, +0.013] | **+0.009 [+0.002, +0.016]** |
+| BRAVA (approximate) | **+0.004 [+0.002, +0.006]** | +0.003 [0.000, +0.007] | **+0.007 [+0.003, +0.012]** | **−0.048 [−0.052, −0.043]** |
+
+- **IXI** is exact, because an edge threshold only filters scores. The Curve F1 loss above reverses into a
+  gain, so that loss was the threshold shift.
+- **BRAVA** is approximate. Saved rows were traced among nodes ≥ 0.25, and filtering them to ≥ 0.30 does
+  not repeat tracing among the retained nodes. Candidates that ran through a removed node are lost, which
+  penalises `traced_offset`, so its Curve F1 here is not a fair estimate. An exact answer needs a GPU
+  re-evaluation with the node threshold fixed; this was not run.
+
+Matched-node error in mm, median / 90th percentile (each arm's own matched nodes, no CI):
+
+| Dataset | `traced_adaptive` | `traced_offset` |
+|---|---|---|
+| SyntheticMRI | 0.65 / 1.39 | 0.57 / 1.16 |
+| IXI | 0.46 / 1.05 | 0.43 / 1.04 |
+| BRAVA | 0.74 / 1.44 | 0.73 / 1.41 |
+
+Reading the results:
+- **Fragmentation on BRAVA.** The lower threshold keeps 20.4 nodes per patch against 15.1, and β₀ error rises
+  from 4.08 to 6.28 and loops from 0.62 to 1.28 (table in §4.8). Missing endpoints among edges ≥ 20 mm fall
+  from 4024 to 3553, which accounts for the +0.030 in long-edge recovery.
+- **Branch F1 on SyntheticMRI.** This is the largest effect at equal thresholds and it comes with the lower
+  node error. Why it is confined to SyntheticMRI was not investigated.
+
+### 4.8 Pass-through decision (DONE, 3–4 Nov 2026)
+
+`traced_passthrough` is `traced_offset` plus two-hop candidates and a pass-through head (`--passthrough`).
+The head scores each traced chain A–C–B, where C is a detected node between A and B. At inference, chains
+are visited by decreasing score q. If q ≥ τ and C has no accepted edge other than to A or B, then C, A–C
+and C–B are replaced by A–B. τ is selected on `monitor_train` after the node and edge thresholds. Two-hop
+rows are never ordinary edges, so A–B can be accepted only through this decision.
+
+**Main result.** On a fixed model the decision helps a little on all three datasets: Edge F1 rises by
+0.003–0.010, because it removes more false edges than true ones. It does not improve long-edge recovery,
+and on real data the arm recovers fewer blocked edges than `traced_offset`. Its clearest gain is fewer
+spurious loops, and that comes from training with the two-hop rows rather than from the decision.
+
+**How the head works.** Scores for 2 mm-labelled chains on validation (log scale, because real nodes
+outnumber correct chains 19–43×):
+
+![Pass-through score per chain category](figures/passthrough_20261103/q_distributions.png)
+
+The head separates correct chains well on SyntheticMRI and only partly on IXI and BRAVA. On all three, most
+chains above τ are still not correct (100 of 277, 76 of 242, 232 of 1096 are), because the other categories are
+so much larger. Examples, before and after the decision:
+
+![Pass-through decisions, before and after](figures/passthrough_20261103/examples.png)
+
+**The decision alone:** the same model with contraction on vs off, at the same node and edge thresholds.
+This is the only comparison here free of threshold shifts and of training differences:
+
+| Dataset | τ | Node F1 | Edge F1 | Branch F1 | Curve F1 | True edges | False edges |
+|---|---|---|---|---|---|---|---|
+| SyntheticMRI | 0.75 | **+0.002 [0.000, +0.003]** | **+0.003 [+0.001, +0.006]** | **+0.007 [+0.004, +0.010]** | **+0.005 [+0.003, +0.007]** | +22 | −29 |
+| IXI | 0.85 | **+0.001 [0.000, +0.003]** | **+0.005 [+0.002, +0.008]** | **+0.002 [0.000, +0.005]** | **+0.005 [+0.003, +0.007]** | +34 | −107 |
+| BRAVA | 0.65 | **+0.002 [+0.001, +0.003]** | **+0.010 [+0.006, +0.013]** | 0.000 [−0.001, +0.001] | **+0.002 [+0.001, +0.002]** | +129 | −235 |
+
+**What each contraction did:**
+
+| Dataset | Contractions (per patch) | A–B correct, strict | A–B correct, final graph | C within 2 mm of A or B | Sides accepted before: both / one / none | True edges removed | Correct chains contracted |
+|---|---|---|---|---|---|---|---|
+| SyntheticMRI | 165 (0.34) | 0.39 | 0.59 | 0.45 | 0.21 / 0.62 / 0.17 | 79 | 0.41 |
+| IXI | 170 (0.33) | 0.39 | 0.51 | 0.43 | 0.49 / 0.44 / 0.06 | 55 | 0.21 |
+| BRAVA | 743 (0.41) | 0.24 | 0.44 | 0.87 | 0.19 / 0.76 / 0.05 | 212 | 0.26 |
+
+- *Strict* uses the node matching before contraction: C spurious and A–B a GT edge. *Final graph* re-matches
+  the kept nodes after contraction. The two differ because the matching is one-to-one: with C and an endpoint
+  both near one GT node, removing C lets that endpoint take the match.
+- *Sides accepted* counts how many of A–C and C–B the edge head had accepted. The rule does not require either.
+- *Correct chains contracted* is the share of chains with the strict "correct" label that were contracted.
+
+**Blocked edges:** GT edges with both endpoints matched and a spurious detection within 1.5 mm of their
+interior. The set is fixed before contraction and recovery is counted in the final graph:
+
+| Dataset | `traced_adaptive` | `traced_offset` | Pass-through, off | Pass-through, on | On − off | Pass-through − offset |
+|---|---|---|---|---|---|---|
+| SyntheticMRI | 34/100 (0.34) | 26/94 (0.28) | 13/110 (0.12) | 45/110 (0.41) | **+0.291 [+0.204, +0.378]** | +0.132 [−0.007, +0.265] |
+| IXI | 126/318 (0.40) | 98/313 (0.31) | 22/306 (0.07) | 68/306 (0.22) | **+0.150 [+0.105, +0.200]** | **−0.091 [−0.135, −0.044]** |
+| BRAVA | 82/295 (0.28) | 165/758 (0.22) | 25/308 (0.08) | 51/308 (0.17) | **+0.084 [+0.058, +0.108]** | **−0.052 [−0.101, −0.016]** |
+
+The arms' blocked sets differ, so the last column compares rates. On BRAVA `traced_offset` runs at a lower node
+threshold; against `traced_adaptive`, at the same thresholds, the difference is **−0.112 [−0.165, −0.073]**.
+
+**Against `traced_offset`,** each arm at its own thresholds:
+
+| Dataset | Thresholds, pass-through vs offset (node, edge) | Node F1 | Edge F1 | Branch F1 | Curve F1 |
+|---|---|---|---|---|---|
+| SyntheticMRI | 0.45, 0.9 vs 0.45, 0.9 | 0.000 [−0.002, +0.003] | +0.003 [−0.003, +0.009] | −0.004 [−0.013, +0.005] | **+0.005 [+0.001, +0.009]** |
+| IXI | 0.35, 0.8 vs 0.35, 0.8 | +0.004 [0.000, +0.008] | +0.001 [−0.007, +0.009] | +0.006 [0.000, +0.013] | **−0.009 [−0.016, −0.002]** |
+| BRAVA | 0.3, 0.75 vs 0.25, 0.75 | −0.003 [−0.009, +0.002] | **−0.030 [−0.038, −0.023]** | +0.007 [−0.001, +0.014] | **−0.077 [−0.086, −0.070]** |
+
+The BRAVA row is confounded by the node threshold. With `traced_offset` filtered to 0.30 (approximate, see
+§4.7), the Edge F1 difference is −0.002 [−0.006, +0.002] in pass-through's direction. So there is no
+detectable Edge F1 change, and the −0.030 should not be read as the head's effect.
+
+Absolute node / edge / Branch / Curve F1:
+
+| Dataset | `traced_adaptive` | `traced_offset` | `traced_passthrough` |
+|---|---|---|---|
+| SyntheticMRI | 0.894 / 0.797 / 0.441 / 0.945 | 0.897 / 0.798 / 0.527 / 0.953 | 0.897 / 0.801 / 0.523 / 0.958 |
+| IXI | 0.649 / 0.313 / 0.179 / 0.770 | 0.648 / 0.319 / 0.187 / 0.762 | 0.651 / 0.320 / 0.193 / 0.753 |
+| BRAVA | 0.546 / 0.206 / 0.062 / 0.395 | 0.553 / 0.237 / 0.075 / 0.466 | 0.549 / 0.207 / 0.082 / 0.389 |
+
+Fraction of long GT edges recovered:
+
+| Dataset | Arc length (GT edges) | adaptive | offset | pass-through | offset − adaptive | pass-through − offset |
+|---|---|---|---|---|---|---|
+| SyntheticMRI | ≥ 20 mm (1556) | 0.809 | 0.815 | 0.812 | +0.006 [−0.004, +0.017] | −0.003 [−0.018, +0.013] |
+| SyntheticMRI | ≥ 40 mm (145) | 0.710 | 0.731 | 0.752 | +0.021 [−0.014, +0.056] | +0.021 [−0.014, +0.063] |
+| IXI | ≥ 20 mm (648) | 0.279 | 0.276 | 0.265 | −0.003 [−0.029, +0.023] | −0.011 [−0.032, +0.011] |
+| IXI | ≥ 40 mm (83) | 0.145 | 0.157 | 0.169 | +0.012 [−0.053, +0.074] | +0.012 [−0.027, +0.053] |
+| BRAVA | ≥ 20 mm (5042) | 0.092 | 0.122 | 0.089 | **+0.030 [+0.016, +0.042]** | **−0.034 [−0.046, −0.020]** |
+| BRAVA | ≥ 40 mm (1251) | 0.052 | 0.058 | 0.054 | +0.006 [−0.002, +0.016] | −0.004 [−0.019, +0.011] |
+
+Both BRAVA ≥ 20 mm differences follow the node threshold: missing endpoints are 4024 / 3553 / 4014.
+
+Topology per patch, in the format of §4.3:
+
+| Dataset: arm | β₀ error | β₁ error | Loops | SMD ×10³ | Patches without SMD | Nodes | Edges |
+|---|---|---|---|---|---|---|---|
+| SyntheticMRI: `traced_adaptive` | 1.02 | 0.22 | 0.20 (0.04) | 1.81 | 0 | 19.3 | 13.7 |
+| SyntheticMRI: `traced_offset` | 0.94 | 0.28 | 0.25 (0.04) | 1.72 | 0 | 19.3 | 13.8 |
+| SyntheticMRI: `traced_passthrough` | 0.83 | 0.16 | 0.13 (0.04) | 1.38 | 0 | 19.1 | 13.6 |
+| IXI: `traced_adaptive` | 1.68 | 3.50 | 4.10 (0.71) | 23.24 | 42 | 17.8 | 16.4 |
+| IXI: `traced_offset` | 1.81 | 2.25 | 2.82 (0.71) | 21.18 | 42 | 17.8 | 14.6 |
+| IXI: `traced_passthrough` | 2.02 | 1.04 | 1.44 (0.71) | 21.21 | 42 | 17.5 | 12.6 |
+| BRAVA: `traced_adaptive` | 4.08 | 0.62 | 0.62 (0.00) | 63.79 | 225 | 15.1 | 6.1 |
+| BRAVA: `traced_offset` | 6.28 | 1.28 | 1.28 (0.00) | 49.67 | 172 | 20.4 | 9.3 |
+| BRAVA: `traced_passthrough` | 4.41 | 0.30 | 0.30 (0.00) | 68.37 | 252 | 14.8 | 5.1 |
+
+Reading the results:
+- **Why Edge F1 rises although most contractions are not clean.** Only 0.44–0.59 of the new A–B edges are
+  correct in the final graph, but what they replace is mostly wrong too: false edges fall by more than true
+  edges are lost.
+- **On BRAVA the head mostly removes near-duplicates.** In 87% of contractions C is within the 2 mm matching
+  radius of an endpoint (43–45% on the other two). It is not mainly doing what it was designed for there,
+  which is removing a spurious node in the middle of an edge.
+- **Blocked edges.** The decision raises recovery by 0.08–0.29, but with two-hop rows barred from being ordinary
+  edges the arm starts from only 0.07–0.12. `traced_offset` reaches 0.22–0.31 by having the ordinary edge
+  head accept A–B as a 16-NN candidate, which can leave A–C and C–B accepted too. So on IXI and BRAVA the
+  arm trades blocked-edge recovery for fewer loops.
+- **Loops come from training, not from the decision.** Within `traced_passthrough`, turning contraction on
+  barely changes β₁ error (0.158 → 0.160, 1.029 → 1.037, 0.286 → 0.300). The fall against `traced_offset` on
+  IXI (2.25 → 1.04) comes with fewer edges (14.6 → 12.6 per patch) and precision 0.393 → 0.431, recall
+  0.268 → 0.254. Contraction does improve β₀ error on all three datasets (1.06 → 0.83, 2.14 → 2.02,
+  4.69 → 4.41).
+- **Curves.** A contracted A–B uses the joined A–C–B path, which can wiggle at C (fifth row of the examples).
+- **The guard.** It blocks some correct chains above τ (35, 10 and 51). It also lets through chains where neither
+  side was accepted (5–17% of contractions), so a contraction can add an edge the edge head had rejected
+  on both sides. Requiring accepted sides is an untested option.
+
+Caveats:
+- Single seed, validation only, all arms warm-started from the same `spline6`. The CIs cover subject sampling,
+  not training variation, and are not corrected for multiple comparisons.
+- Each arm has its own train-selected thresholds. `traced_offset` vs `traced_adaptive` is confounded on IXI
+  (edge) and BRAVA (node), and `traced_passthrough` vs `traced_offset` on BRAVA (node).
+- `traced_passthrough` differs from `traced_offset` in both two-hop training and the head, and those two were
+  not separated. Only the on/off comparison isolates the inference decision.
+- τ was selected on `monitor_train`, where contraction also helps (Edge F1 0.803 → 0.809, 0.343 → 0.346,
+  0.189 → 0.200). The curve over τ is shallow, so τ itself is not sharply determined.
+- `node-quality.json` has a `blocked_edges` field computed after contraction. It is biased low for
+  `traced_passthrough` because successful contractions leave the denominator; use `passthrough-effect.json`.
+- IXI and BRAVA `traced_passthrough` crashed in final evaluation after completing training, on patches with fewer
+  than two detections (fixed in `87c37b4`). They were re-evaluated from the saved `model.pt`, not retrained. The
+  rows the crashed jobs had already saved are byte-identical to the re-evaluation's. For all three datasets the
+  paired comparison and arc-length counts reproduce the numbers in each run's `final.json`, which confirms that
+  the scripts apply contraction as the model did.
+
+Scripts: `scripts/passthrough_effect_20261104.py`, `scripts/passthrough_figures_20261103.py`,
+`scripts/node_quality_20261103.py`, and the three in §4.6. Outputs in `experiments/dense_graph_20261030/`:
+`passthrough-effect.json`, `passthrough-decisions.json`, `node-quality.json`, `paired-traced_offset-vs-*.json`,
+`paired-traced_passthrough-vs-*.json`, the matching `paired-arc-*` files, and `topology-validation.json`.
+
 ## 5. 2D (validation; node / edge F1 @2 units)
 
 | Dataset | RelationFormer B0 (mixed pretraining) | Dense 16-NN, from scratch |

@@ -1,0 +1,90 @@
+{
+ "dataset": "BRAVA",
+ "arms": [
+  "traced_passthrough",
+  "traced_offset"
+ ],
+ "subjects": 8,
+ "thresholds": {
+  "traced_passthrough": {
+   "node": 0.3,
+   "edge": 0.75,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "traced_offset": {
+   "node": 0.25,
+   "edge": 0.75,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  }
+ },
+ "ranges": {
+  "ge20mm": {
+   "counts": {
+    "traced_passthrough": {
+     "edges": 5042,
+     "recovered": 447,
+     "endpoints_missing": 4014,
+     "not_candidate": 21,
+     "rejected": 560
+    },
+    "traced_offset": {
+     "edges": 5042,
+     "recovered": 616,
+     "endpoints_missing": 3553,
+     "not_candidate": 117,
+     "rejected": 756
+    }
+   },
+   "recovered_fraction": {
+    "traced_passthrough": 0.08865529551765172,
+    "traced_offset": 0.12217374057913527
+   },
+   "difference": {
+    "point": -0.03351844506148355,
+    "ci95": [
+     -0.04589860995604135,
+     -0.020213466913792586
+    ],
+    "resamples_with_edges": 2000
+   }
+  },
+  "ge40mm": {
+   "counts": {
+    "traced_passthrough": {
+     "edges": 1251,
+     "recovered": 67,
+     "endpoints_missing": 1027,
+     "not_candidate": 14,
+     "rejected": 143
+    },
+    "traced_offset": {
+     "edges": 1251,
+     "recovered": 72,
+     "endpoints_missing": 929,
+     "not_candidate": 79,
+     "rejected": 171
+    }
+   },
+   "recovered_fraction": {
+    "traced_passthrough": 0.053557154276578735,
+    "traced_offset": 0.05755395683453238
+   },
+   "difference": {
+    "point": -0.003996802557953642,
+    "ci95": [
+     -0.018518927135431996,
+     0.01121202480507413
+    ],
+    "resamples_with_edges": 2000
+   }
+  }
+ },
+ "validation_traced_fraction": {
+  "traced_passthrough": 0.21870194211413257,
+  "traced_offset": 0.11396768700419488
+ },
+ "last_training_traced_pair_fraction": {
+  "traced_passthrough": 0.27266935631632805,
+  "traced_offset": 0.22886779764667153
+ }
+}

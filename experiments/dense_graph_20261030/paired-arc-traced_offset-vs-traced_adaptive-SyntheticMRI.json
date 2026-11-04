@@ -1,0 +1,90 @@
+{
+ "dataset": "SyntheticMRI",
+ "arms": [
+  "traced_offset",
+  "traced_adaptive"
+ ],
+ "subjects": 13,
+ "thresholds": {
+  "traced_offset": {
+   "node": 0.45,
+   "edge": 0.9,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "traced_adaptive": {
+   "node": 0.45,
+   "edge": 0.9,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  }
+ },
+ "ranges": {
+  "ge20mm": {
+   "counts": {
+    "traced_offset": {
+     "edges": 1556,
+     "recovered": 1268,
+     "endpoints_missing": 206,
+     "not_candidate": 1,
+     "rejected": 81
+    },
+    "traced_adaptive": {
+     "edges": 1556,
+     "recovered": 1259,
+     "endpoints_missing": 223,
+     "not_candidate": 1,
+     "rejected": 73
+    }
+   },
+   "recovered_fraction": {
+    "traced_offset": 0.8149100257069408,
+    "traced_adaptive": 0.8091259640102828
+   },
+   "difference": {
+    "point": 0.005784061696658016,
+    "ci95": [
+     -0.004087472640371648,
+     0.016689404829114542
+    ],
+    "resamples_with_edges": 2000
+   }
+  },
+  "ge40mm": {
+   "counts": {
+    "traced_offset": {
+     "edges": 145,
+     "recovered": 106,
+     "endpoints_missing": 22,
+     "not_candidate": 1,
+     "rejected": 16
+    },
+    "traced_adaptive": {
+     "edges": 145,
+     "recovered": 103,
+     "endpoints_missing": 26,
+     "not_candidate": 1,
+     "rejected": 15
+    }
+   },
+   "recovered_fraction": {
+    "traced_offset": 0.7310344827586207,
+    "traced_adaptive": 0.7103448275862069
+   },
+   "difference": {
+    "point": 0.020689655172413834,
+    "ci95": [
+     -0.01379310344827589,
+     0.05599999999999994
+    ],
+    "resamples_with_edges": 2000
+   }
+  }
+ },
+ "validation_traced_fraction": {
+  "traced_offset": 0.0943439754944055,
+  "traced_adaptive": 0.09572513395094248
+ },
+ "last_training_traced_pair_fraction": {
+  "traced_offset": 0.1006233049556613,
+  "traced_adaptive": 0.10243818629533052
+ }
+}

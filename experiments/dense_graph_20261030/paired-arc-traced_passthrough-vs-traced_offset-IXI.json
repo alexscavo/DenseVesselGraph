@@ -1,0 +1,90 @@
+{
+ "dataset": "IXI",
+ "arms": [
+  "traced_passthrough",
+  "traced_offset"
+ ],
+ "subjects": 26,
+ "thresholds": {
+  "traced_passthrough": {
+   "node": 0.35,
+   "edge": 0.8,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "traced_offset": {
+   "node": 0.35,
+   "edge": 0.8,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  }
+ },
+ "ranges": {
+  "ge20mm": {
+   "counts": {
+    "traced_passthrough": {
+     "edges": 648,
+     "recovered": 172,
+     "endpoints_missing": 362,
+     "not_candidate": 2,
+     "rejected": 112
+    },
+    "traced_offset": {
+     "edges": 648,
+     "recovered": 179,
+     "endpoints_missing": 351,
+     "not_candidate": 9,
+     "rejected": 109
+    }
+   },
+   "recovered_fraction": {
+    "traced_passthrough": 0.2654320987654321,
+    "traced_offset": 0.2762345679012346
+   },
+   "difference": {
+    "point": -0.010802469135802462,
+    "ci95": [
+     -0.03235747303543912,
+     0.011328242165916802
+    ],
+    "resamples_with_edges": 2000
+   }
+  },
+  "ge40mm": {
+   "counts": {
+    "traced_passthrough": {
+     "edges": 83,
+     "recovered": 14,
+     "endpoints_missing": 47,
+     "not_candidate": 1,
+     "rejected": 21
+    },
+    "traced_offset": {
+     "edges": 83,
+     "recovered": 13,
+     "endpoints_missing": 45,
+     "not_candidate": 3,
+     "rejected": 22
+    }
+   },
+   "recovered_fraction": {
+    "traced_passthrough": 0.1686746987951807,
+    "traced_offset": 0.1566265060240964
+   },
+   "difference": {
+    "point": 0.01204819277108432,
+    "ci95": [
+     -0.026666666666666672,
+     0.05319503546099291
+    ],
+    "resamples_with_edges": 2000
+   }
+  }
+ },
+ "validation_traced_fraction": {
+  "traced_passthrough": 0.26389173672339555,
+  "traced_offset": 0.12788659994548074
+ },
+ "last_training_traced_pair_fraction": {
+  "traced_passthrough": 0.31390660116449,
+  "traced_offset": 0.19553937367163599
+ }
+}

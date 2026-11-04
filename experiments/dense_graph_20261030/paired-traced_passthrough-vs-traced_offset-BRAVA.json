@@ -1,0 +1,73 @@
+{
+ "dataset": "BRAVA",
+ "subjects": 8,
+ "patches": 1796,
+ "thresholds": {
+  "traced_passthrough": {
+   "node": 0.3,
+   "edge": 0.75,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "traced_offset": {
+   "node": 0.25,
+   "edge": 0.75,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  }
+ },
+ "traced_passthrough": {
+  "node_f1": 0.5493533845055959,
+  "edge_f1": 0.2067831017465262,
+  "branch_f1": 0.08196967422308962,
+  "curve_f1": 0.388941093677155
+ },
+ "traced_offset": {
+  "node_f1": 0.5527682944930978,
+  "edge_f1": 0.23678752177881027,
+  "branch_f1": 0.07495751777959594,
+  "curve_f1": 0.4659621632262784
+ },
+ "traced_passthrough_minus_traced_offset": {
+  "node_f1": {
+   "point": -0.003414909987501935,
+   "ci95": [
+    -0.009198447903119586,
+    0.0017176551107263623
+   ]
+  },
+  "edge_f1": {
+   "point": -0.030004420032284068,
+   "ci95": [
+    -0.038003424788153245,
+    -0.022961696301740088
+   ]
+  },
+  "branch_f1": {
+   "point": 0.007012156443493678,
+   "ci95": [
+    -0.0012608951209328641,
+    0.014239609955757316
+   ]
+  },
+  "curve_f1": {
+   "point": -0.07702106954912341,
+   "ci95": [
+    -0.08551651522537417,
+    -0.0696814288641241
+   ]
+  }
+ },
+ "parity_abs_difference_vs_reported": {
+  "traced_passthrough": {
+   "node_f1": 0.0,
+   "edge_f1": 0.0,
+   "branch_f1": 0.0,
+   "curve_f1": 0.0
+  },
+  "traced_offset": {
+   "node_f1": 0.0,
+   "edge_f1": 0.0,
+   "branch_f1": 0.0,
+   "curve_f1": 0.0
+  }
+ }
+}

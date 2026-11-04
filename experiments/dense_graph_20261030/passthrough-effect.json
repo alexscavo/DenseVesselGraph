@@ -1,0 +1,1335 @@
+{
+ "SyntheticMRI": {
+  "thresholds": {
+   "traced_adaptive": {
+    "node": 0.45,
+    "edge": 0.9
+   },
+   "traced_offset": {
+    "node": 0.45,
+    "edge": 0.9
+   },
+   "traced_passthrough": {
+    "node": 0.45,
+    "edge": 0.9
+   }
+  },
+  "tau": 0.75,
+  "on_vs_off": {
+   "a": {
+    "node_f1": 0.8967490247074122,
+    "edge_f1": 0.8010404949381328,
+    "branch_f1": 0.5230836236933798,
+    "curve_f1": 0.9575922212994221
+   },
+   "b": {
+    "node_f1": 0.8952037132542547,
+    "edge_f1": 0.7975546342491744,
+    "branch_f1": 0.5163546295621767,
+    "curve_f1": 0.9525323271591816
+   },
+   "counts_a": {
+    "node_tp": 8620,
+    "node_fp": 525,
+    "node_fn": 1460,
+    "tp": 5697,
+    "fp": 848,
+    "fn": 1982
+   },
+   "counts_b": {
+    "node_tp": 8679,
+    "node_fp": 631,
+    "node_fn": 1401,
+    "tp": 5675,
+    "fp": 877,
+    "fn": 2004
+   },
+   "difference": {
+    "node_f1": {
+     "point": 0.0015453114531575052,
+     "ci95": [
+      0.0003812134998340988,
+      0.0028559968188421126
+     ]
+    },
+    "edge_f1": {
+     "point": 0.0034858606889583976,
+     "ci95": [
+      0.0010602311709903805,
+      0.005818246957399225
+     ]
+    },
+    "branch_f1": {
+     "point": 0.006728994131203092,
+     "ci95": [
+      0.004148528510743943,
+      0.009548107044997485
+     ]
+    },
+    "curve_f1": {
+     "point": 0.005059894140240551,
+     "ci95": [
+      0.0034508060086983205,
+      0.006740151230521188
+     ]
+    }
+   }
+  },
+  "parity_off_vs_reported": 0.0,
+  "blocked": {
+   "traced_adaptive": {
+    "edges": 100,
+    "recovered": 34,
+    "fraction": 0.34,
+    "per_subject": {
+     "000013": {
+      "edges": 3,
+      "recovered": 1
+     },
+     "000014": {
+      "edges": 8,
+      "recovered": 3
+     },
+     "000016": {
+      "edges": 11,
+      "recovered": 3
+     },
+     "000041": {
+      "edges": 5,
+      "recovered": 3
+     },
+     "000066": {
+      "edges": 10,
+      "recovered": 3
+     },
+     "000070": {
+      "edges": 13,
+      "recovered": 4
+     },
+     "000075": {
+      "edges": 2,
+      "recovered": 2
+     },
+     "000076": {
+      "edges": 9,
+      "recovered": 5
+     },
+     "000079": {
+      "edges": 11,
+      "recovered": 0
+     },
+     "000092": {
+      "edges": 5,
+      "recovered": 3
+     },
+     "000114": {
+      "edges": 7,
+      "recovered": 3
+     },
+     "000115": {
+      "edges": 6,
+      "recovered": 1
+     },
+     "000126": {
+      "edges": 10,
+      "recovered": 3
+     }
+    }
+   },
+   "traced_offset": {
+    "edges": 94,
+    "recovered": 26,
+    "fraction": 0.2765957446808511,
+    "per_subject": {
+     "000013": {
+      "edges": 5,
+      "recovered": 0
+     },
+     "000014": {
+      "edges": 6,
+      "recovered": 2
+     },
+     "000016": {
+      "edges": 13,
+      "recovered": 3
+     },
+     "000041": {
+      "edges": 6,
+      "recovered": 5
+     },
+     "000066": {
+      "edges": 8,
+      "recovered": 1
+     },
+     "000070": {
+      "edges": 11,
+      "recovered": 4
+     },
+     "000075": {
+      "edges": 2,
+      "recovered": 0
+     },
+     "000076": {
+      "edges": 8,
+      "recovered": 4
+     },
+     "000079": {
+      "edges": 12,
+      "recovered": 1
+     },
+     "000092": {
+      "edges": 2,
+      "recovered": 1
+     },
+     "000114": {
+      "edges": 8,
+      "recovered": 4
+     },
+     "000115": {
+      "edges": 6,
+      "recovered": 0
+     },
+     "000126": {
+      "edges": 7,
+      "recovered": 1
+     }
+    }
+   },
+   "traced_passthrough": {
+    "edges": 110,
+    "recovered": 45,
+    "fraction": 0.4090909090909091,
+    "per_subject": {
+     "000013": {
+      "edges": 10,
+      "recovered": 6
+     },
+     "000014": {
+      "edges": 9,
+      "recovered": 4
+     },
+     "000016": {
+      "edges": 12,
+      "recovered": 4
+     },
+     "000041": {
+      "edges": 7,
+      "recovered": 6
+     },
+     "000066": {
+      "edges": 11,
+      "recovered": 5
+     },
+     "000070": {
+      "edges": 11,
+      "recovered": 5
+     },
+     "000075": {
+      "edges": 2,
+      "recovered": 0
+     },
+     "000076": {
+      "edges": 10,
+      "recovered": 3
+     },
+     "000079": {
+      "edges": 12,
+      "recovered": 4
+     },
+     "000092": {
+      "edges": 4,
+      "recovered": 1
+     },
+     "000114": {
+      "edges": 7,
+      "recovered": 1
+     },
+     "000115": {
+      "edges": 7,
+      "recovered": 1
+     },
+     "000126": {
+      "edges": 8,
+      "recovered": 5
+     }
+    }
+   },
+   "traced_passthrough_no_contraction": {
+    "edges": 110,
+    "recovered": 13,
+    "fraction": 0.11818181818181818,
+    "per_subject": {
+     "000013": {
+      "edges": 10,
+      "recovered": 1
+     },
+     "000014": {
+      "edges": 9,
+      "recovered": 2
+     },
+     "000016": {
+      "edges": 12,
+      "recovered": 1
+     },
+     "000041": {
+      "edges": 7,
+      "recovered": 1
+     },
+     "000066": {
+      "edges": 11,
+      "recovered": 2
+     },
+     "000070": {
+      "edges": 11,
+      "recovered": 1
+     },
+     "000075": {
+      "edges": 2,
+      "recovered": 0
+     },
+     "000076": {
+      "edges": 10,
+      "recovered": 1
+     },
+     "000079": {
+      "edges": 12,
+      "recovered": 0
+     },
+     "000092": {
+      "edges": 4,
+      "recovered": 2
+     },
+     "000114": {
+      "edges": 7,
+      "recovered": 0
+     },
+     "000115": {
+      "edges": 7,
+      "recovered": 0
+     },
+     "000126": {
+      "edges": 8,
+      "recovered": 2
+     }
+    }
+   }
+  },
+  "blocked_difference": {
+   "on_minus_off": {
+    "point": 0.29090909090909095,
+    "ci95": [
+     0.2038834951456311,
+     0.37795771852047905
+    ]
+   },
+   "passthrough_minus_offset": {
+    "point": 0.13249516441005804,
+    "ci95": [
+     -0.007132768361581914,
+     0.26528913150428585
+    ]
+   },
+   "passthrough_minus_adaptive": {
+    "point": 0.06909090909090909,
+    "ci95": [
+     -0.06063423053855741,
+     0.18306926041301025
+    ]
+   }
+  },
+  "shared": {}
+ },
+ "IXI": {
+  "thresholds": {
+   "traced_adaptive": {
+    "node": 0.35,
+    "edge": 0.75
+   },
+   "traced_offset": {
+    "node": 0.35,
+    "edge": 0.8
+   },
+   "traced_passthrough": {
+    "node": 0.35,
+    "edge": 0.8
+   }
+  },
+  "tau": 0.85,
+  "on_vs_off": {
+   "a": {
+    "node_f1": 0.6514513426617761,
+    "edge_f1": 0.3195361386991217,
+    "branch_f1": 0.1933043313788538,
+    "curve_f1": 0.7528747550135373
+   },
+   "b": {
+    "node_f1": 0.6499797780074597,
+    "edge_f1": 0.31431511548136293,
+    "branch_f1": 0.1910289571635859,
+    "curve_f1": 0.7483335772192875
+   },
+   "counts_a": {
+    "node_tp": 7193,
+    "node_fp": 1788,
+    "node_fn": 5909,
+    "tp": 2783,
+    "fp": 3668,
+    "fn": 8185
+   },
+   "counts_b": {
+    "node_tp": 7232,
+    "node_fp": 1919,
+    "node_fn": 5870,
+    "tp": 2749,
+    "fp": 3775,
+    "fn": 8219
+   },
+   "difference": {
+    "node_f1": {
+     "point": 0.0014715646543164151,
+     "ci95": [
+      0.0003370310509898361,
+      0.002596866491877431
+     ]
+    },
+    "edge_f1": {
+     "point": 0.005221023217758747,
+     "ci95": [
+      0.0022220018278201388,
+      0.0079565914169168
+     ]
+    },
+    "branch_f1": {
+     "point": 0.0022753742152679113,
+     "ci95": [
+      0.0004092669740584525,
+      0.004553498009863642
+     ]
+    },
+    "curve_f1": {
+     "point": 0.004541177794249784,
+     "ci95": [
+      0.002535581469901893,
+      0.0069863802252226655
+     ]
+    }
+   }
+  },
+  "parity_off_vs_reported": 0.0,
+  "blocked": {
+   "traced_adaptive": {
+    "edges": 318,
+    "recovered": 126,
+    "fraction": 0.39622641509433965,
+    "per_subject": {
+     "000001": {
+      "edges": 7,
+      "recovered": 3
+     },
+     "000006": {
+      "edges": 14,
+      "recovered": 6
+     },
+     "000012": {
+      "edges": 9,
+      "recovered": 3
+     },
+     "000019": {
+      "edges": 15,
+      "recovered": 7
+     },
+     "000023": {
+      "edges": 22,
+      "recovered": 8
+     },
+     "000038": {
+      "edges": 9,
+      "recovered": 6
+     },
+     "000039": {
+      "edges": 11,
+      "recovered": 5
+     },
+     "000040": {
+      "edges": 17,
+      "recovered": 5
+     },
+     "000046": {
+      "edges": 8,
+      "recovered": 2
+     },
+     "000051": {
+      "edges": 7,
+      "recovered": 1
+     },
+     "000058": {
+      "edges": 20,
+      "recovered": 11
+     },
+     "000071": {
+      "edges": 11,
+      "recovered": 6
+     },
+     "000076": {
+      "edges": 20,
+      "recovered": 7
+     },
+     "000080": {
+      "edges": 14,
+      "recovered": 5
+     },
+     "000084": {
+      "edges": 14,
+      "recovered": 6
+     },
+     "000086": {
+      "edges": 15,
+      "recovered": 7
+     },
+     "000115": {
+      "edges": 18,
+      "recovered": 7
+     },
+     "000117": {
+      "edges": 18,
+      "recovered": 6
+     },
+     "000120": {
+      "edges": 23,
+      "recovered": 5
+     },
+     "000140": {
+      "edges": 11,
+      "recovered": 5
+     },
+     "000147": {
+      "edges": 7,
+      "recovered": 2
+     },
+     "000149": {
+      "edges": 1,
+      "recovered": 0
+     },
+     "000155": {
+      "edges": 8,
+      "recovered": 4
+     },
+     "000158": {
+      "edges": 10,
+      "recovered": 6
+     },
+     "000163": {
+      "edges": 2,
+      "recovered": 0
+     },
+     "000166": {
+      "edges": 7,
+      "recovered": 3
+     }
+    }
+   },
+   "traced_offset": {
+    "edges": 313,
+    "recovered": 98,
+    "fraction": 0.31309904153354634,
+    "per_subject": {
+     "000001": {
+      "edges": 9,
+      "recovered": 3
+     },
+     "000006": {
+      "edges": 14,
+      "recovered": 5
+     },
+     "000012": {
+      "edges": 8,
+      "recovered": 4
+     },
+     "000019": {
+      "edges": 12,
+      "recovered": 4
+     },
+     "000023": {
+      "edges": 21,
+      "recovered": 8
+     },
+     "000038": {
+      "edges": 9,
+      "recovered": 4
+     },
+     "000039": {
+      "edges": 10,
+      "recovered": 1
+     },
+     "000040": {
+      "edges": 16,
+      "recovered": 4
+     },
+     "000046": {
+      "edges": 9,
+      "recovered": 4
+     },
+     "000051": {
+      "edges": 8,
+      "recovered": 2
+     },
+     "000058": {
+      "edges": 22,
+      "recovered": 9
+     },
+     "000071": {
+      "edges": 11,
+      "recovered": 4
+     },
+     "000076": {
+      "edges": 23,
+      "recovered": 4
+     },
+     "000080": {
+      "edges": 14,
+      "recovered": 4
+     },
+     "000084": {
+      "edges": 12,
+      "recovered": 6
+     },
+     "000086": {
+      "edges": 10,
+      "recovered": 3
+     },
+     "000115": {
+      "edges": 17,
+      "recovered": 5
+     },
+     "000117": {
+      "edges": 16,
+      "recovered": 6
+     },
+     "000120": {
+      "edges": 22,
+      "recovered": 4
+     },
+     "000140": {
+      "edges": 13,
+      "recovered": 2
+     },
+     "000147": {
+      "edges": 6,
+      "recovered": 2
+     },
+     "000149": {
+      "edges": 0,
+      "recovered": 0
+     },
+     "000155": {
+      "edges": 9,
+      "recovered": 4
+     },
+     "000158": {
+      "edges": 12,
+      "recovered": 2
+     },
+     "000163": {
+      "edges": 3,
+      "recovered": 1
+     },
+     "000166": {
+      "edges": 7,
+      "recovered": 3
+     }
+    }
+   },
+   "traced_passthrough": {
+    "edges": 306,
+    "recovered": 68,
+    "fraction": 0.2222222222222222,
+    "per_subject": {
+     "000001": {
+      "edges": 8,
+      "recovered": 4
+     },
+     "000006": {
+      "edges": 11,
+      "recovered": 2
+     },
+     "000012": {
+      "edges": 7,
+      "recovered": 2
+     },
+     "000019": {
+      "edges": 11,
+      "recovered": 3
+     },
+     "000023": {
+      "edges": 19,
+      "recovered": 5
+     },
+     "000038": {
+      "edges": 10,
+      "recovered": 5
+     },
+     "000039": {
+      "edges": 11,
+      "recovered": 1
+     },
+     "000040": {
+      "edges": 11,
+      "recovered": 1
+     },
+     "000046": {
+      "edges": 8,
+      "recovered": 3
+     },
+     "000051": {
+      "edges": 7,
+      "recovered": 3
+     },
+     "000058": {
+      "edges": 22,
+      "recovered": 7
+     },
+     "000071": {
+      "edges": 10,
+      "recovered": 3
+     },
+     "000076": {
+      "edges": 23,
+      "recovered": 1
+     },
+     "000080": {
+      "edges": 13,
+      "recovered": 1
+     },
+     "000084": {
+      "edges": 13,
+      "recovered": 3
+     },
+     "000086": {
+      "edges": 13,
+      "recovered": 6
+     },
+     "000115": {
+      "edges": 19,
+      "recovered": 3
+     },
+     "000117": {
+      "edges": 16,
+      "recovered": 2
+     },
+     "000120": {
+      "edges": 22,
+      "recovered": 4
+     },
+     "000140": {
+      "edges": 10,
+      "recovered": 2
+     },
+     "000147": {
+      "edges": 7,
+      "recovered": 1
+     },
+     "000149": {
+      "edges": 0,
+      "recovered": 0
+     },
+     "000155": {
+      "edges": 9,
+      "recovered": 2
+     },
+     "000158": {
+      "edges": 13,
+      "recovered": 2
+     },
+     "000163": {
+      "edges": 4,
+      "recovered": 0
+     },
+     "000166": {
+      "edges": 9,
+      "recovered": 2
+     }
+    }
+   },
+   "traced_passthrough_no_contraction": {
+    "edges": 306,
+    "recovered": 22,
+    "fraction": 0.0718954248366013,
+    "per_subject": {
+     "000001": {
+      "edges": 8,
+      "recovered": 1
+     },
+     "000006": {
+      "edges": 11,
+      "recovered": 2
+     },
+     "000012": {
+      "edges": 7,
+      "recovered": 0
+     },
+     "000019": {
+      "edges": 11,
+      "recovered": 1
+     },
+     "000023": {
+      "edges": 19,
+      "recovered": 1
+     },
+     "000038": {
+      "edges": 10,
+      "recovered": 1
+     },
+     "000039": {
+      "edges": 11,
+      "recovered": 0
+     },
+     "000040": {
+      "edges": 11,
+      "recovered": 0
+     },
+     "000046": {
+      "edges": 8,
+      "recovered": 2
+     },
+     "000051": {
+      "edges": 7,
+      "recovered": 2
+     },
+     "000058": {
+      "edges": 22,
+      "recovered": 1
+     },
+     "000071": {
+      "edges": 10,
+      "recovered": 1
+     },
+     "000076": {
+      "edges": 23,
+      "recovered": 1
+     },
+     "000080": {
+      "edges": 13,
+      "recovered": 1
+     },
+     "000084": {
+      "edges": 13,
+      "recovered": 0
+     },
+     "000086": {
+      "edges": 13,
+      "recovered": 1
+     },
+     "000115": {
+      "edges": 19,
+      "recovered": 2
+     },
+     "000117": {
+      "edges": 16,
+      "recovered": 1
+     },
+     "000120": {
+      "edges": 22,
+      "recovered": 1
+     },
+     "000140": {
+      "edges": 10,
+      "recovered": 0
+     },
+     "000147": {
+      "edges": 7,
+      "recovered": 0
+     },
+     "000149": {
+      "edges": 0,
+      "recovered": 0
+     },
+     "000155": {
+      "edges": 9,
+      "recovered": 1
+     },
+     "000158": {
+      "edges": 13,
+      "recovered": 1
+     },
+     "000163": {
+      "edges": 4,
+      "recovered": 0
+     },
+     "000166": {
+      "edges": 9,
+      "recovered": 1
+     }
+    }
+   }
+  },
+  "blocked_difference": {
+   "on_minus_off": {
+    "point": 0.1503267973856209,
+    "ci95": [
+     0.10510484307359308,
+     0.2
+    ]
+   },
+   "passthrough_minus_offset": {
+    "point": -0.09087681931132413,
+    "ci95": [
+     -0.13511078188956932,
+     -0.043928811779131334
+    ]
+   },
+   "passthrough_minus_adaptive": {
+    "point": -0.17400419287211744,
+    "ci95": [
+     -0.22418520233846365,
+     -0.1195778685665552
+    ]
+   }
+  },
+  "shared": {
+   "traced_offset_at_traced_adaptive_thresholds": {
+    "a": {
+     "node_f1": 0.6478454680534919,
+     "edge_f1": 0.3160336030510746,
+     "branch_f1": 0.18530676930043016,
+     "curve_f1": 0.7794635778045486
+    },
+    "b": {
+     "node_f1": 0.6490399748190117,
+     "edge_f1": 0.3129392310872261,
+     "branch_f1": 0.17939147155299173,
+     "curve_f1": 0.7704825034852576
+    },
+    "counts_a": {
+     "node_tp": 7194,
+     "node_fp": 1913,
+     "node_fn": 5908,
+     "tp": 3066,
+     "fp": 5369,
+     "fn": 7902
+    },
+    "counts_b": {
+     "node_tp": 7217,
+     "node_fp": 1920,
+     "node_fn": 5885,
+     "tp": 3028,
+     "fp": 5356,
+     "fn": 7940
+    },
+    "difference": {
+     "node_f1": {
+      "point": -0.0011945067655197983,
+      "ci95": [
+       -0.0038555461152316563,
+       0.0015728554924411963
+      ]
+     },
+     "edge_f1": {
+      "point": 0.0030943719638484857,
+      "ci95": [
+       -0.004005709723576272,
+       0.009356803198247225
+      ]
+     },
+     "branch_f1": {
+      "point": 0.0059152977474384305,
+      "ci95": [
+       -0.0015136752056083432,
+       0.013057723908367291
+      ]
+     },
+     "curve_f1": {
+      "point": 0.00898107431929096,
+      "ci95": [
+       0.0024725823531207476,
+       0.015604242816704177
+      ]
+     }
+    },
+    "exact": true
+   }
+  }
+ },
+ "BRAVA": {
+  "thresholds": {
+   "traced_adaptive": {
+    "node": 0.3,
+    "edge": 0.75
+   },
+   "traced_offset": {
+    "node": 0.25,
+    "edge": 0.75
+   },
+   "traced_passthrough": {
+    "node": 0.3,
+    "edge": 0.75
+   }
+  },
+  "tau": 0.65,
+  "on_vs_off": {
+   "a": {
+    "node_f1": 0.5493533845055959,
+    "edge_f1": 0.2067831017465262,
+    "branch_f1": 0.08196967422308962,
+    "curve_f1": 0.388941093677155
+   },
+   "b": {
+    "node_f1": 0.5470135404495154,
+    "edge_f1": 0.197022003696342,
+    "branch_f1": 0.08175817581758175,
+    "curve_f1": 0.38730624924471324
+   },
+   "counts_a": {
+    "node_tp": 15781,
+    "node_fp": 10886,
+    "node_fn": 15005,
+    "tp": 2954,
+    "fp": 6171,
+    "fn": 16492
+   },
+   "counts_b": {
+    "node_tp": 15917,
+    "node_fp": 11493,
+    "node_fn": 14869,
+    "tp": 2825,
+    "fp": 6406,
+    "fn": 16621
+   },
+   "difference": {
+    "node_f1": {
+     "point": 0.0023398440560804534,
+     "ci95": [
+      0.001319820331674723,
+      0.0033920964317029263
+     ]
+    },
+    "edge_f1": {
+     "point": 0.009761098050184186,
+     "ci95": [
+      0.0061194025292063935,
+      0.013304806034186918
+     ]
+    },
+    "branch_f1": {
+     "point": 0.0002114984055078678,
+     "ci95": [
+      -0.0007024282444104124,
+      0.000995038490878914
+     ]
+    },
+    "curve_f1": {
+     "point": 0.0016348444324417732,
+     "ci95": [
+      0.0007228644511548477,
+      0.0024239408474722723
+     ]
+    }
+   }
+  },
+  "parity_off_vs_reported": 0.0,
+  "blocked": {
+   "traced_adaptive": {
+    "edges": 295,
+    "recovered": 82,
+    "fraction": 0.27796610169491526,
+    "per_subject": {
+     "000000": {
+      "edges": 31,
+      "recovered": 11
+     },
+     "000001": {
+      "edges": 37,
+      "recovered": 7
+     },
+     "000009": {
+      "edges": 31,
+      "recovered": 5
+     },
+     "000023": {
+      "edges": 83,
+      "recovered": 24
+     },
+     "000034": {
+      "edges": 27,
+      "recovered": 11
+     },
+     "000041": {
+      "edges": 25,
+      "recovered": 9
+     },
+     "000042": {
+      "edges": 39,
+      "recovered": 9
+     },
+     "000054": {
+      "edges": 22,
+      "recovered": 6
+     }
+    }
+   },
+   "traced_offset": {
+    "edges": 758,
+    "recovered": 165,
+    "fraction": 0.21767810026385223,
+    "per_subject": {
+     "000000": {
+      "edges": 104,
+      "recovered": 23
+     },
+     "000001": {
+      "edges": 102,
+      "recovered": 10
+     },
+     "000009": {
+      "edges": 89,
+      "recovered": 22
+     },
+     "000023": {
+      "edges": 140,
+      "recovered": 35
+     },
+     "000034": {
+      "edges": 80,
+      "recovered": 17
+     },
+     "000041": {
+      "edges": 81,
+      "recovered": 25
+     },
+     "000042": {
+      "edges": 111,
+      "recovered": 25
+     },
+     "000054": {
+      "edges": 51,
+      "recovered": 8
+     }
+    }
+   },
+   "traced_passthrough": {
+    "edges": 308,
+    "recovered": 51,
+    "fraction": 0.16558441558441558,
+    "per_subject": {
+     "000000": {
+      "edges": 35,
+      "recovered": 8
+     },
+     "000001": {
+      "edges": 43,
+      "recovered": 4
+     },
+     "000009": {
+      "edges": 32,
+      "recovered": 3
+     },
+     "000023": {
+      "edges": 77,
+      "recovered": 16
+     },
+     "000034": {
+      "edges": 34,
+      "recovered": 7
+     },
+     "000041": {
+      "edges": 27,
+      "recovered": 3
+     },
+     "000042": {
+      "edges": 37,
+      "recovered": 8
+     },
+     "000054": {
+      "edges": 23,
+      "recovered": 2
+     }
+    }
+   },
+   "traced_passthrough_no_contraction": {
+    "edges": 308,
+    "recovered": 25,
+    "fraction": 0.08116883116883117,
+    "per_subject": {
+     "000000": {
+      "edges": 35,
+      "recovered": 6
+     },
+     "000001": {
+      "edges": 43,
+      "recovered": 2
+     },
+     "000009": {
+      "edges": 32,
+      "recovered": 1
+     },
+     "000023": {
+      "edges": 77,
+      "recovered": 6
+     },
+     "000034": {
+      "edges": 34,
+      "recovered": 4
+     },
+     "000041": {
+      "edges": 27,
+      "recovered": 1
+     },
+     "000042": {
+      "edges": 37,
+      "recovered": 4
+     },
+     "000054": {
+      "edges": 23,
+      "recovered": 1
+     }
+    }
+   }
+  },
+  "blocked_difference": {
+   "on_minus_off": {
+    "point": 0.08441558441558442,
+    "ci95": [
+     0.05769230769230768,
+     0.10825588357804848
+    ]
+   },
+   "passthrough_minus_offset": {
+    "point": -0.05209368467943665,
+    "ci95": [
+     -0.10123480381037046,
+     -0.015544982442008934
+    ]
+   },
+   "passthrough_minus_adaptive": {
+    "point": -0.11238168611049967,
+    "ci95": [
+     -0.16521707281157508,
+     -0.0730521200343855
+    ]
+   }
+  },
+  "shared": {
+   "traced_offset_at_traced_adaptive_thresholds": {
+    "a": {
+     "node_f1": 0.5496503012256769,
+     "edge_f1": 0.2091123860951738,
+     "branch_f1": 0.06944237918215614,
+     "curve_f1": 0.34676028670577097
+    },
+    "b": {
+     "node_f1": 0.5455519458077003,
+     "edge_f1": 0.2056590752242926,
+     "branch_f1": 0.06197039677055679,
+     "curve_f1": 0.3949220633425846
+    },
+    "counts_a": {
+     "node_tp": 15875,
+     "node_fp": 11103,
+     "node_fn": 14911,
+     "tp": 3098,
+     "fp": 7086,
+     "fn": 16348
+    },
+    "counts_b": {
+     "node_tp": 15785,
+     "node_fp": 11297,
+     "node_fn": 15001,
+     "tp": 3129,
+     "fp": 7854,
+     "fn": 16317
+    },
+    "difference": {
+     "node_f1": {
+      "point": 0.004098355417976651,
+      "ci95": [
+       0.002185117669560391,
+       0.005669076330698545
+      ]
+     },
+     "edge_f1": {
+      "point": 0.0034533108708811877,
+      "ci95": [
+       -0.0004873345159819589,
+       0.006905471621178594
+      ]
+     },
+     "branch_f1": {
+      "point": 0.007471982411599347,
+      "ci95": [
+       0.0030696290698205217,
+       0.012226925779488676
+      ]
+     },
+     "curve_f1": {
+      "point": -0.04816177663681365,
+      "ci95": [
+       -0.05244538189159836,
+       -0.042967272465450845
+      ]
+     }
+    },
+    "exact": false
+   },
+   "traced_offset_at_traced_passthrough_thresholds": {
+    "a": {
+     "node_f1": 0.5496503012256769,
+     "edge_f1": 0.2091123860951738,
+     "branch_f1": 0.06944237918215614,
+     "curve_f1": 0.34676028670577097
+    },
+    "b": {
+     "node_f1": 0.5493533845055959,
+     "edge_f1": 0.2067831017465262,
+     "branch_f1": 0.08196967422308962,
+     "curve_f1": 0.388941093677155
+    },
+    "counts_a": {
+     "node_tp": 15875,
+     "node_fp": 11103,
+     "node_fn": 14911,
+     "tp": 3098,
+     "fp": 7086,
+     "fn": 16348
+    },
+    "counts_b": {
+     "node_tp": 15781,
+     "node_fp": 10886,
+     "node_fn": 15005,
+     "tp": 2954,
+     "fp": 6171,
+     "fn": 16492
+    },
+    "difference": {
+     "node_f1": {
+      "point": 0.00029691672008103076,
+      "ci95": [
+       -0.0019032730906358652,
+       0.0023457667368132202
+      ]
+     },
+     "edge_f1": {
+      "point": 0.002329284348647598,
+      "ci95": [
+       -0.0015199283974546402,
+       0.006439636994445329
+      ]
+     },
+     "branch_f1": {
+      "point": -0.012527295040933487,
+      "ci95": [
+       -0.017937392648510436,
+       -0.007085975898850618
+      ]
+     },
+     "curve_f1": {
+      "point": -0.042180806971384044,
+      "ci95": [
+       -0.04677218991085322,
+       -0.03579851259558394
+      ]
+     }
+    },
+    "exact": false
+   }
+  }
+ }
+}

@@ -9,6 +9,10 @@ pass-through thresholds. Every chain row (A, B, via C) is labelled from GT (2 mm
 Outputs (docs/research/figures/passthrough_20261103/): q_distributions.png (pass-through score
 per category with the selected threshold), examples.png (before / after the decision, image
 MIP crops), and passthrough-decisions.json (decision counts and precision of contractions).
+The label above is the strict one, taken before contraction. Because removing C changes the one-to-one node
+matching, each contraction is also audited after re-matching the kept nodes (A-B correct in the final graph),
+with the distance from C to its nearer endpoint: within the 2 mm matching radius, C and that endpoint are near
+duplicates of one GT node, so a "real node" C can be removed with no loss.
 """
 import json
 import os
@@ -45,15 +49,26 @@ def chains(rows, nt, et, tau):
             M, gn, ge = z['metric'], z['nodes'] @ z['metric'].T, z['edges'].reshape(-1, 2)
         m = D.match(torch.as_tensor(r['nodes'] @ M.T), torch.as_tensor(gn))  # ok: rows only hold nodes >= nt
         gt = {tuple(sorted(map(int, e))) for e in ge}
-        done = {tuple(t) for t in T.contract(r, nt, et, tau)['contracted']}
+        final, plain = T.contract(r, nt, et, tau), T.contract(r, nt, et, None)
+        done = {tuple(t) for t in final['contracted']}
+        mm = r['nodes'] @ M.T
+        kept = np.nonzero(final['node_scores'] >= nt)[0]
+        m2 = {int(kept[i]): g for i, g in D.match(torch.as_tensor(mm[kept]), torch.as_tensor(gn)).items()}
+        accepted = {tuple(sorted(map(int, p))) for p, s in zip(r['pairs'], plain['edge_scores']) if s >= et}
+        is_gt = lambda u, v, mp: u in mp and v in mp and tuple(sorted((mp[u], mp[v]))) in gt  # noqa: E731
         for j in np.nonzero(r['via'] >= 0)[0]:
             a, b, c = int(r['pairs'][j, 0]), int(r['pairs'][j, 1]), int(r['via'][j])
             if c not in m:
                 cat = 'pass-through' if a in m and b in m and tuple(sorted((m[a], m[b]))) in gt else 'spurious-no-edge'
             else:
                 cat = 'real-node'
+            sides = [tuple(sorted(x)) for x in ((a, c), (c, b))]
             out.append(dict(sample=r['sample_id'], j=int(j), a=a, b=b, c=c, q=float(r['pass_scores'][j]), cat=cat,
-                            contracted=(a, c, b) in done, heat_c=float(r['node_scores'][c])))
+                            contracted=(a, c, b) in done, heat_c=float(r['node_scores'][c]),
+                            ac=sides[0] in accepted, cb=sides[1] in accepted,
+                            near_mm=float(min(np.linalg.norm(mm[c] - mm[a]), np.linalg.norm(mm[c] - mm[b]))),
+                            correct_after=is_gt(a, b, m2),
+                            tp_removed=sum(s in accepted and is_gt(*s, m) for s in sides)))
     return out
 
 
@@ -68,6 +83,17 @@ def summary(ch, tau):
     res['contraction_precision'] = res['pass-through']['contracted'] / max(1, n)
     res['pass_through_recall'] = res['pass-through']['contracted'] / max(1, res['pass-through']['chains'])
     res['threshold'] = tau
+    done = [c for c in ch if c['contracted']]
+    frac = lambda f: sum(map(f, done)) / max(1, n)  # noqa: E731
+    res['audit_of_contractions'] = dict(
+        correct_after_rematching=frac(lambda c: c['correct_after']),
+        c_within_2mm_of_endpoint=frac(lambda c: c['near_mm'] <= 2.0),
+        near_mm_median=float(np.median([c['near_mm'] for c in done])) if done else None,
+        both_sides_accepted_before=frac(lambda c: c['ac'] and c['cb']),
+        one_side_accepted_before=frac(lambda c: c['ac'] != c['cb']),
+        no_side_accepted_before=frac(lambda c: not c['ac'] and not c['cb']),
+        true_edges_removed=sum(c['tp_removed'] for c in done))
+    res['above_threshold_not_contracted'] = {k: sum(c['cat'] == k and tau is not None and c['q'] >= tau and not c['contracted'] for c in ch) for k, _, _ in CATS}
     return res
 
 
@@ -127,11 +153,13 @@ def example(axes, d, rows_by_id, ch, nt, et, tau, heading):
         axes[0].annotate(k, proj(nodes[i:i + 1]), xytext=(5, 5), textcoords='offset points', fontsize=12, weight='bold')
     axes[0].set_xlim(extent[0], extent[1]); axes[0].set_ylim(extent[2], extent[3]); axes[0].set_xticks([]); axes[0].set_yticks([])
     label = dict((k, t) for k, t, _ in CATS)[ch['cat']]
-    axes[0].set_title(f'{heading}\n{d} {ch["sample"]}: {label}; green = GT edge A–B', fontsize=9)
+    state = lambda ok: 'accepted' if ok else 'not accepted'  # noqa: E731
+    reason = 'q < τ' if ch['q'] < tau else 'guard: C has another accepted edge, or a chain node was already removed'
+    axes[0].set_title(f'{heading}\n{d} {ch["sample"]}\n{label}; green = GT edge A–B', fontsize=9)
     draw(axes[1], img, extent, proj, r, nodes, before['node_scores'], r['pairs'], curves, keep_nodes, near(before),
-         f'Before: accepted edges (A–C, C–B); heat(C) = {ch["heat_c"]:.2f}', gp, names)
+         f'Before: A–C {state(ch["ac"])}, C–B {state(ch["cb"])}; heat(C) = {ch["heat_c"]:.2f}; C to nearer end {ch["near_mm"]:.1f} mm', gp, names)
     draw(axes[2], img, extent, proj, r, nodes, after['node_scores'], r['pairs'], curves, keep_nodes, near(after),
-         f'After: pass-through score q(C) = {ch["q"]:.2f} vs τ = {tau}\n' + ('C removed, A–B accepted (joined-path curve)' if ch['contracted'] else 'C kept, A–B dropped'), gp, names)
+         f'After: pass-through score q(C) = {ch["q"]:.2f} vs τ = {tau}\n' + (f'C removed, A–B accepted; A–B correct after re-matching: {"yes" if ch["correct_after"] else "no"}' if ch['contracted'] else f'C kept ({reason})'), gp, names)
 
 
 def main():
@@ -148,36 +176,47 @@ def main():
         bins = np.linspace(0, 1, 26)
         for key, lab, col in CATS:
             q = [c['q'] for c in ch if c['cat'] == key]
-            axes[k].hist(q, bins=bins, histtype='step', lw=2, color=col, density=True, label=f'{lab} (n={len(q)})')
+            above = sum(v >= tau for v in q) if tau is not None else 0
+            axes[k].hist(q, bins=bins, histtype='step', lw=2, color=col, label=f'{lab} (n={len(q)}, {above} ≥ τ)')
+        axes[k].set_yscale('log')
         if tau is not None:
             axes[k].axvline(tau, color='k', ls='--', lw=1, label=f'selected τ = {tau}')
-        axes[k].set_title(f'{d}: contractions {report[d]["contractions"]}, precision {report[d]["contraction_precision"]:.2f}', fontsize=10)
+        audit = report[d]['audit_of_contractions']
+        axes[k].set_title(f'{d}: {report[d]["contractions"]} contractions\nA–B correct: {report[d]["contraction_precision"]:.2f} strict, {audit["correct_after_rematching"]:.2f} after re-matching', fontsize=10)
         axes[k].set_xlabel('pass-through score q(C)')
         axes[k].legend(fontsize=7)
         cache[d] = (rows, ch, nt, et, tau)
-    axes[0].set_ylabel('density')
+    axes[0].set_ylabel('chains (log scale)')
     fig.suptitle('Pass-through head on validation two-hop chains A–C–B (traced_passthrough)', fontsize=12)
-    fig.tight_layout()
+    fig.tight_layout(rect=(0, 0, 1, .95))
     fig.savefig(OUT / 'q_distributions.png', dpi=110)
-    # examples: one correct contraction per dataset, plus a real node correctly kept (IXI) and the worst wrong contraction (BRAVA)
+    # examples: one correct contraction per dataset (median q), a real node the head rejects, a strict-label "error" that is
+    # a near duplicate, and a wrong contraction that is not (highest q in each case but the rejection, which is a median)
     picks = []
     for d in ['SyntheticMRI', 'IXI', 'BRAVA']:
         rows, ch, nt, et, tau = cache[d]
         good = sorted([c for c in ch if c['cat'] == 'pass-through' and c['contracted']], key=lambda c: -c['q'])
         if good:
             picks.append((d, good[len(good) // 2], 'Correct contraction (median q among correct ones)'))
-    for d, cat, contracted, head in [('IXI', 'real-node', False, 'Real node correctly kept (highest q among kept real nodes)'),
-                                     ('BRAVA', 'real-node', True, 'Wrong contraction of a real node (highest q)')]:
-        rows, ch, nt, et, tau = cache[d]
-        cand = sorted([c for c in ch if c['cat'] == cat and c['contracted'] == contracted], key=lambda c: -c['q'])
-        if cand:
-            picks.append((d, cand[0], head))
+    rows, ch, *_ = cache['IXI']
+    tau = cache['IXI'][4]
+    rejected = sorted([c for c in ch if c['cat'] == 'real-node' and c['q'] < tau and c['ac'] and c['cb']], key=lambda c: c['q'])
+    if rejected:
+        picks.append(('IXI', rejected[len(rejected) // 2], 'Real node rejected by the head (median q)'))
+    rows, ch, *_ = cache['BRAVA']
+    wrong = sorted([c for c in ch if c['contracted'] and c['cat'] == 'real-node'], key=lambda c: -c['q'])
+    harmless = [c for c in wrong if c['correct_after']]
+    harmful = [c for c in wrong if not c['correct_after'] and c['near_mm'] > 2.0]
+    if harmless:
+        picks.append(('BRAVA', harmless[0], 'Strict label wrong, final graph right (highest q)'))
+    if harmful:
+        picks.append(('BRAVA', harmful[0], 'Wrong: real node removed, C > 2 mm from both ends (highest q)'))
     fig, axes = plt.subplots(len(picks), 3, figsize=(16, 5.2 * len(picks)), squeeze=False)
     for i, (d, ch, head) in enumerate(picks):
         rows, _, nt, et, tau = cache[d]
         example(axes[i], d, {r['sample_id']: r for r in rows}, ch, nt, et, tau, head)
-    fig.suptitle('Pass-through decision: before / after (blue = accepted edges, red x = removed node C)', fontsize=12)
-    fig.tight_layout()
+    fig.suptitle('Pass-through decision: before / after (blue = accepted edges, red x = removed node C)', fontsize=12, y=.995)
+    fig.tight_layout(rect=(0, 0, 1, .985))
     fig.savefig(OUT / 'examples.png', dpi=100)
     (REPO / 'experiments/dense_graph_20261030/passthrough-decisions.json').write_text(json.dumps(report, indent=1))
 
