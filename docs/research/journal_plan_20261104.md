@@ -187,3 +187,92 @@ At today's usage rate (~50 GPU-h/day) this fits in about 2 months, if the H100 q
 - **Licenses:** CC BY-NC sets are research-only. Trexplorer Super data is academic-only, and several codebases have no license.
 - **GT-tool bias:** if Voreen or Kimimaro produced the GT, the skeletonise baseline using the same tool is favoured. Use a different tool, or report both.
 - **Backbone:** U-KAN shows no gain at our budget. DSCNet is RUNNING; its capacity is 3× the U-Net's, so a straight-branch control is needed before any claim.
+
+## 11. Checklist (ordered)
+
+Work through the phases in order. Within a phase, items can run in parallel unless marked *(needs X)*. `[x]` = done. Owner: **U** = user, **C** = Claude.
+
+### Phase 0: decisions and inputs (week 1)
+- [ ] **U** Document the provenance of the IXI vessel masks (source, method, version).
+- [ ] **U** Identify the "missing ablation" in the MICCAI meta-review and add it to §7.
+- [ ] **U** Confirm the MedIA special-issue deadline and pin the timeline to it.
+- [ ] **U** Decide the E4 protocol for the "other targets": full budget only, or a few budgets too.
+- [ ] **U** Decide whether to add the same-size DSCNet control (straight, frozen-offset branches).
+- [ ] **U** Hand over the additional 2D datasets when available.
+
+### Phase 1: lock the architecture (weeks 1–2)
+- [x] **C** Dense model, traced connectivity, adaptive-K splines (single seed, 3 datasets).
+- [x] **C** Soft tracing, gap features, two-hop, pass-through and offset fix evaluated (single seed).
+- [x] **C** U-KAN (concat), MLP control and U-KAN (add) trained on both stages.
+- [ ] **C** DSCNet (kernels 3 and 9) on both stages — RUNNING.
+- [ ] **C** Full paired backbone comparison: U-Net / U-KAN concat / U-KAN add / MLP / DSCNet 3 / DSCNet 9, with shared thresholds, long edges and topology.
+- [ ] **C** Re-run the U-Net baseline on current code, to close the 30 Oct vs 3 Nov code gap.
+- [ ] **C** Fix the BRAVA node-threshold confound (one fixed node threshold with re-traced evaluation) for all comparisons.
+- [ ] **U+C** Freeze the final model configuration: backbone, offsets, pass-through yes/no, candidate rule.
+- [ ] **C** Merge the `KanKan` / `DSCNet` work into the main line; push after U approves.
+
+### Phase 2: data and ground truth (weeks 1–3, parallel with Phase 1)
+- [ ] **C** TopBrain: download, check segmentation quality, extract graph GT with our pipeline, make patches, define splits.
+- [ ] **C** VesSAP: obtain the data, extract graphs as in Berger et al., make patches, define splits.
+- [ ] **C** Circle of Willis graphs (Musio et al.): obtain the images, align with the provided graphs, make patches, define splits.
+- [ ] **C** Search for further 3D vessel datasets with excellent segmentations; U approves each one.
+- [ ] **C** 2D: check AV-WIDE / REAVER / OCTA-Synth splits; add a real OCTA set and a DRIVE-like fundus set.
+- [ ] **C** Write a held-out test split for every dataset, and lock it (no access until Phase 6).
+- [ ] **C** GT quality audit per dataset: alignment with the image, as in the BRAVA check; skeleton-tool bias.
+
+### Phase 3: sources and 2D→3D rendering (weeks 2–4)
+- [ ] **C** Acquire neuron data (MouseLight / HiNeuron / BigNeuron) and convert it to image + graph patches.
+- [ ] **C** Acquire Physarum / fungal networks and Blonder leaf venation, and convert them to graphs.
+- [ ] **C** Fabricated control: a procedural tree / loop generator with matched size statistics.
+- [ ] **C** 3D lifting: graph bending, arbitrary rotation, and boundary clipping with boundary nodes.
+- [ ] **C** Tube renderer with MRA-like appearance: profile, bias field, Rician noise, blur.
+- [ ] **C** Multi-tree composer: independent rotations, rejection of coplanar pairs and of intersecting tubes.
+- [ ] **C** Visual and statistical QA of rendered sources against real targets. **U** reviews the samples.
+- [ ] **C** Structural statistics (angles, segment lengths, tortuosity, loops, radii) per source and per target, for E6.
+
+### Phase 4: metric suite and baselines (weeks 2–5)
+- [ ] **C** Metric suite in one module, unit-tested on toy graphs:
+  - node/edge F1;
+  - Curve F1;
+  - Trexplorer point/branch F1;
+  - HD95;
+  - β₀/β₁;
+  - SMD;
+  - long-edge recovery;
+  - representation size;
+  - compute.
+- [ ] **C** Patch-to-volume stitching (for E7), if the full-volume pipeline is ready.
+- [ ] **C** Baselines, on our splits and with published recipes:
+  - [x] RelationFormer (IXI, BRAVA, SyntheticMRI);
+  - [ ] RelationFormer on the new datasets;
+  - [ ] Berger et al.;
+  - [ ] Vesselformer;
+  - [ ] Trexplorer Super, on tree targets only;
+  - [ ] Vesselpose;
+  - [ ] nnU-Net and nnU-Net + Skeleton Recall, each followed by Kimimaro / Voreen.
+- [ ] **C** Sanity check each baseline: reproduce its own published number on its own dataset where possible before training on ours.
+
+### Phase 5: experiments (weeks 3–9)
+- [ ] **C** E1: final model vs all baselines, all targets, 3 seeds *(needs Phases 1, 2, 4)*.
+- [ ] **C** E4a: regime selection (scratch / sequential / mixed) on one 3D target at 2 budgets, 3 seeds *(needs Phase 3)*.
+- [ ] **C** One-off source pretraining runs, for each source and the fabricated control.
+- [ ] **C** E4b: full label-budget curves (1, 2, 5, 10, 25, 100%) on 1–2 2D and 1–2 3D targets, all sources, best regime, 3 seeds.
+- [ ] **C** E4c: other targets, scratch vs best source + regime vs fabricated control, 3 seeds.
+- [ ] **C** E2: straight vs polyline vs spline (fixed vs adaptive K), with nodes identical, 3 seeds.
+- [ ] **C** E3: architecture ablations on the final configuration, 3 seeds.
+- [ ] **C** E5: 2D→3D lifting ablation (slab / bent sheet / tubes / multi-tree), small budgets, 3 seeds.
+- [ ] **C** E6: relate the structural-congruence statistics to the E4 gains.
+- [ ] **C** E7: full-volume evaluation of the final model and the main baselines *(needs stitching)*.
+
+### Phase 6: locked evaluation (weeks 9–11)
+- [ ] **U+C** Freeze every model, threshold and checkpoint (chosen on the train monitor only).
+- [ ] **C** Run the single locked test evaluation for E1, E4 and E7, with subject-paired CIs.
+- [ ] **C** Figures: qualitative 2D/3D examples, budget curves, congruence plot, representation-efficiency plot, 3D viewers.
+- [ ] **C** Results tables (main text and supplement), with every caveat stated.
+
+### Phase 7: writing (weeks 11–13)
+- [ ] **U+C** Outline mapped to the claims (§1) and the reviewer requests.
+- [ ] **U** Draft the introduction and related work (C provides the literature notes).
+- [ ] **C** Draft the methods, experiments and results from the docs; U revises.
+- [ ] **U+C** Internal review against the MICCAI reviews and the MedIA guidelines; reproducibility package (code, configs, splits).
+- [ ] **U** Submit.
