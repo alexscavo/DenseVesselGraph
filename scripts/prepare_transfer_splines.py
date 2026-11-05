@@ -141,7 +141,7 @@ def prepare(source, patches, output, limits, *, smoke=False, subdivide=False):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--source',required=True,type=Path);p.add_argument('--patches',required=True,type=Path);p.add_argument('--output',required=True,type=Path)
-    p.add_argument('--subdivide-loops',action='store_true',help='keep loop patches: insert breaking-point anchors (training encoding)');p.add_argument('--train-limit',type=int,default=10000);p.add_argument('--val-limit',type=int);p.add_argument('--test',action='store_true');p.add_argument('--smoke',action='store_true');a=p.parse_args()
+    p.add_argument('--no-subdivide-loops',dest='subdivide_loops',action='store_false',help='legacy (caches before 5 Nov 2026): exclude patches with parallel/closed branches instead of subdividing them');p.add_argument('--subdivide-loops',dest='subdivide_loops',action='store_true',help='default since 5 Nov 2026: keep loop patches with breaking-point anchors');p.set_defaults(subdivide_loops=True);p.add_argument('--train-limit',type=int,default=10000);p.add_argument('--val-limit',type=int);p.add_argument('--test',action='store_true');p.add_argument('--smoke',action='store_true');a=p.parse_args()
     limits={'train':2 if a.smoke else (a.train_limit if a.train_limit>0 else None),'val':2 if a.smoke else a.val_limit}  # --train-limit 0: all compatible patches
     if a.test:limits['test']=2 if a.smoke else None
     prepare(a.source,a.patches,a.output,limits,smoke=a.smoke,subdivide=a.subdivide_loops)

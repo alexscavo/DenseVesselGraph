@@ -780,6 +780,46 @@ Outputs in `experiments/dense_graph_20261030/`: `shared-thresholds.json`, `node-
 `paired-traced_adaptive_ukan-vs-*.json`, `paired-spline6_ukan*-vs-spline6-*.json`, the matching `paired-arc-*` files, and
 `topology-validation.json`.
 
+### 4.10 Loop patches in training and evaluation (DONE, 5 Nov 2026)
+
+**Problem.** The adjacency target stores one edge per node pair and no self-loop, so patches whose contracted
+graph had a parallel branch, a self-loop or an anchor-free ring were dropped from training *and* from
+validation/test (IXI 10.2%, TopBrain CTA 8.8%, TopBrain MRA 3.3%, SyntheticMRI 2.9%, BRAVA 0%). A
+GT-dependent filter on the evaluation set is not defensible for a paper.
+
+**Fix (DONE).**
+- *Training encoding:* such branches get degree-2 "breaking point" anchors (midpoint of a repeated pair; 1/3
+  and 2/3 of a self-loop; three anchors on an anchor-free ring); no patch is excluded. Geometry, beta_0 and
+  beta_1 are checked unchanged on every patch (`data/spline_targets.subdivide_loops`,
+  `prepare_transfer_splines.py`, default since 5 Nov; `--no-subdivide-loops` reproduces older caches).
+- *Evaluation:* inserted anchors are "don't care" nodes; edges are scored on the original branches as a
+  multiset (`metrics/loop_aware.py`). Loop-free patches score exactly as before. 2D crops are now contracted
+  again after cropping, with the same rule and explicit `inserted` masks (`native2d/targets.crop_graph`).
+- Validation (and later test) sets are complete. Old results remain comparisons on loop-free patches.
+
+**A/B (single seed, U-Net, traced_adaptive recipe).** Same recipe, trained without loop patches (A) or with
+them (B); both scored on the same complete validation list. Final model, B − A, 95% subject-bootstrap CI:
+
+| Dataset (val patches) | Thresholds | Node F1 | Edge F1 | Branch F1 | Curve F1 |
+|---|---|---|---|---|---|
+| IXI (2,961) | own | +0.002 [−0.005, +0.009] | +0.006 [−0.001, +0.011] | +0.002 [−0.003, +0.006] | +0.030 [+0.024, +0.036] |
+| TopBrain MRA (1,148) | same (exact) | +0.006 [−0.005, +0.019] | +0.008 [−0.006, +0.022] | +0.008 [−0.000, +0.014] | +0.007 [−0.014, +0.022] |
+| ↳ loop patches (49) | exact | +0.004 | +0.038 [+0.015, +0.060] | +0.028 [−0.002, +0.079] | +0.007 |
+| TopBrain CTA (803) | own | −0.011 [−0.020, −0.000] | +0.003 | +0.005 | +0.069 [+0.046, +0.089] |
+| SyntheticMRI (480; 8 with loops) | own | +0.001 | +0.002 | −0.006 | −0.002 |
+
+- On IXI, CTA and SyntheticMRI the B models selected a lower node threshold, so own-threshold gains are partly
+  a threshold effect. The shared-threshold approximation (higher node threshold, rows filtered without
+  re-tracing) penalises B and cannot settle it (IXI shared: Curve −0.027, Branch −0.011).
+- The only exact comparison (TopBrain MRA) shows B recovering more edges on loop patches and no change elsewhere.
+- **Decision (user, 5 Nov 2026): train with loop patches by default.** No harm under the real protocol, no
+  data dropped, training matches the complete evaluation sets. Not claimed as a result: effects are within
+  single-seed variation.
+- PROPOSED: exact re-scoring of the B models at A's node thresholds (re-traced, 4 GPU evaluations) and 2-3
+  seeds per arm on IXI and TopBrain CTA.
+- Files: `experiments/loop_subdivision_20261105/` (`loop-ab.json`, `ab_plan_summary.json`), plan entries
+  `<dataset>-loops` / `<dataset>-noloops`, `scripts/compare_loop_ab_20261105.py`.
+
 ## 5. 2D (validation; node / edge F1 @2 units)
 
 | Dataset | RelationFormer B0 (mixed pretraining) | Dense 16-NN, from scratch |
