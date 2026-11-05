@@ -14,6 +14,9 @@ class Graph2D:
     edges: np.ndarray
     paths: list
     provenance: dict
+    # Per-node masks, set by crop_graph(recontract=True); None for legacy graphs (then save_target omits them).
+    inserted: np.ndarray = None  # degree-2 'breaking point' of a parallel pair, self-loop or anchor-free ring
+    boundary: np.ndarray = None  # crop-boundary anchor (clipped crossing point)
 
 
 def _simple_graph(branches,provenance,isolates=()):
@@ -99,11 +102,18 @@ def clip_segment(a,b,low,high):
     return a+t0*d,a+t1*d
 
 
-def crop_graph(graph,start_xy,shape_hw):
+def crop_graph(graph,start_xy,shape_hw,*,recontract=True):
     """Clip every dense segment, including outside/outside and re-entering paths.
 
     Boundaries are pixel-center extents [0,W-1]×[0,H-1]. Crossing paths never
     merge by spatial proximity: source anchor identities remain authoritative.
+
+    recontract=True (default since 5 Nov 2026): the crop is contracted again, as the 3D targets are
+    (data/spline_targets.contract_spline_graph, subdivide=True): every degree-2 node except boundary anchors is
+    removed (e.g. a junction whose third branch lies outside the crop, or a breaking point of a loop the crop cut
+    open), then breaking-point anchors are inserted only where the contracted multigraph has a parallel branch,
+    a self-loop or an anchor-free ring. The result carries `inserted` and `boundary` node masks.
+    recontract=False reproduces the targets prepared before 5 Nov 2026 (whole-image contraction only).
     """
     start=np.asarray(start_xy,float);high=start+np.asarray(shape_hw)[::-1]-1
     branches=[]
@@ -126,8 +136,53 @@ def crop_graph(graph,start_xy,shape_hw):
             branches.append((ka,kb,path2-start))
     degrees=np.bincount(graph.edges.ravel(),minlength=len(graph.nodes))
     isolates=[(('source',i),p-start) for i,p in enumerate(graph.nodes) if degrees[i]==0 and np.all(p>=start) and np.all(p<=high)]
-    return _simple_graph(branches,{**graph.provenance,'crop_start_xy':start.tolist(),
-        'image_shape_hw':list(shape_hw),'boundary_convention':'pixel_centers_0_to_size_minus_1'},isolates)
+    provenance={**graph.provenance,'crop_start_xy':start.tolist(),
+        'image_shape_hw':list(shape_hw),'boundary_convention':'pixel_centers_0_to_size_minus_1'}
+    if not recontract:return _simple_graph(branches,provenance,isolates)
+    return _recontract(branches,{**provenance,'crop_contraction':'recontracted_20261105'},isolates)
+
+
+def _recontract(branches,provenance,isolates):
+    """Crop target from clipped fragments (key_a, key_b, polyline): 3D rule, see crop_graph."""
+    keys={}
+    def key_id(key):return keys.setdefault(key,len(keys))
+    for ka,kb,_ in branches:key_id(ka);key_id(kb)
+    for key,_ in isolates:key_id(key)
+    boundary_key=np.array([k[0]=='boundary' for k in keys],bool)
+    degree=np.zeros(len(keys),int);pairs=set();loops=False
+    for ka,kb,_ in branches:
+        a,b=keys[ka],keys[kb];degree[a]+=1;degree[b]+=1
+        loops|=a==b or tuple(sorted((a,b))) in pairs;pairs.add(tuple(sorted((a,b))))
+    if not loops and not np.any((degree==2)&~boundary_key):
+        # Nothing to contract and nothing to subdivide: the crop graph is already the target, identical to legacy.
+        out=_simple_graph(branches,provenance,isolates)
+        out.inserted=np.zeros(len(out.nodes),bool);out.boundary=boundary_key.copy()
+        return out
+    from data.spline_targets import contract_spline_graph
+    # Dense graph: one node per anchor key (first-appearance order), then one node per interior polyline point.
+    position=[None]*len(keys)
+    for ka,kb,path in branches:
+        for key,xy in ((ka,path[0]),(kb,path[-1])):
+            if position[keys[key]] is None:position[keys[key]]=np.asarray(xy,float)
+    for key,xy in isolates:
+        if position[keys[key]] is None:position[keys[key]]=np.asarray(xy,float)
+    dense=list(position);edges=[]
+    for ka,kb,path in branches:
+        ids=[keys[ka]]+list(range(len(dense),len(dense)+len(path)-2))+[keys[kb]]
+        dense.extend(np.asarray(path[1:-1],float));edges.extend(zip(ids[:-1],ids[1:]))
+    dense=np.asarray(dense,float).reshape(-1,2)
+    contracted,reason=contract_spline_graph(dense,np.asarray(edges,int).reshape(-1,2),max_anchors=np.inf,
+        preserve_nodes=np.flatnonzero(boundary_key).tolist(),subdivide=True)
+    if contracted is None:
+        if reason=='degenerate_branch':raise ValueError('Cannot fit a zero-length branch')
+        raise ValueError(reason)
+    order=sorted(contracted.anchors)  # surviving keys in first-appearance order, then inserted anchors
+    index={k:i for i,k in enumerate(order)}
+    return Graph2D(np.asarray([contracted.anchors[k] for k in order],float).reshape(-1,2),
+        np.asarray([(index[b.start],index[b.end]) for b in contracted.branches],int).reshape(-1,2),
+        [np.asarray(b.polyline,float) for b in contracted.branches],provenance,
+        inserted=np.array([k in contracted.inserted for k in order],bool),
+        boundary=np.array([k<len(keys) and boundary_key[k] for k in order],bool))
 
 
 def fit_controls(path,k=8):
@@ -162,5 +217,6 @@ def save_target(path,graph,shape_hw,*,spacing_xy=None,units=None):
     controls=np.stack([fit_controls(p*spacing) / spacing / size for p in graph.paths]) if graph.paths else np.empty((0,8,2))
     paths=np.concatenate(graph.paths)/size if graph.paths else np.empty((0,2))
     offsets=np.r_[0,np.cumsum([len(p) for p in graph.paths])]
+    masks={} if graph.inserted is None else dict(inserted=np.asarray(graph.inserted,bool),boundary=np.asarray(graph.boundary,bool))
     np.savez_compressed(path,nodes=graph.nodes/size,edges=graph.edges,controls=controls,
-        metric=metric,full_paths=paths,path_offsets=offsets,shape_hw=shape_hw,units=np.array(units))
+        metric=metric,full_paths=paths,path_offsets=offsets,shape_hw=shape_hw,units=np.array(units),**masks)

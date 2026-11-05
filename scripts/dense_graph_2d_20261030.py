@@ -407,7 +407,8 @@ def crop_metrics(r, node_threshold, edge_threshold, mode, geometry):
     m = np.asarray(gt['metric'])
     gn, ge = gt['nodes'], np.asarray(gt['edges']).reshape(-1, 2)
     decoded, local, scores = decode(r, node_threshold, edge_threshold, mode)
-    result = {str(t): positional(decoded['nodes'] @ m.T, decoded['edges'], gn @ m.T, ge, t) for t in [1., 2., 4.]}
+    inserted = gt.get('inserted')  # explicit mask of recontracted targets; None: degree-based fallback
+    result = {str(t): positional(decoded['nodes'] @ m.T, decoded['edges'], gn @ m.T, ge, t, inserted=inserted) for t in [1., 2., 4.]}
     raw = r['nodes']
     p0, p1 = graph_betti_numbers(len(decoded['nodes']), decoded['edges'])
     g0, g1 = graph_betti_numbers(len(gn), ge)
@@ -417,7 +418,7 @@ def crop_metrics(r, node_threshold, edge_threshold, mode, geometry):
     result.update(sample_id=r['sample_id'], source_image=r['source_image'], units=str(np.asarray(gt['units']).item()),
                   predicted_nodes=len(decoded['nodes']), target_nodes=len(gn), predicted_edges=len(decoded['edges']), target_edges=len(ge),
                   predicted_beta0=p0, target_beta0=g0, predicted_beta1=p1, target_beta1=g1, beta0_signed_error=p0 - g0, beta1_signed_error=p1 - g1,
-                  raw_node_recall={str(t): positional(raw @ m.T, np.empty((0, 2), int), gn @ m.T, ge, t)['node']['recall'] for t in [1., 2., 4.]},
+                  raw_node_recall={str(t): positional(raw @ m.T, np.empty((0, 2), int), gn @ m.T, ge, t, inserted=inserted)['node']['recall'] for t in [1., 2., 4.]},
                   gt_edges_in_candidates=len(gt_links & candidate_links), candidate_pairs=len(local))
     if geometry:
         result['node_mAP'], result['node_mAR'] = detection_ap_ar(_boxes(raw), r['node_scores'], _boxes(gn), max_detections=max(1, len(raw)))

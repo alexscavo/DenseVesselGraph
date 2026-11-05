@@ -1,8 +1,9 @@
 """Loop-aware graph scoring for targets with inserted breaking-point anchors (5 Nov 2026).
 
 Loop patches are kept in the training targets by subdividing parallel branches, self-loops and anchor-free rings
-with degree-2 'breaking point' anchors (data/spline_targets.subdivide_loops for 3D, native2d/targets._simple_graph
-for 2D). These anchors have no anatomical meaning, so evaluation must not reward or penalise them:
+with degree-2 'breaking point' anchors (data/spline_targets.subdivide_loops for 3D; for 2D the same rule in
+native2d/targets.crop_graph since 5 Nov 2026, earlier 2D targets used native2d/targets._simple_graph). These anchors
+have no anatomical meaning, so evaluation must not reward or penalise them:
 - a prediction matched to an inserted GT anchor is neither a true nor a false node;
 - edges are scored on the original branches: GT chains through inserted anchors are merged back (a parallel pair
   is two A-B edges, a self-loop an A-A edge), and so are predicted chains through degree-2 predictions matched to
@@ -88,8 +89,9 @@ def loop_aware_counts(n_pred, pred_edges, mapping, gt_edges, n_gt, inserted):
 
 
 def inserted_from_degree(n_nodes, edges):
-    """2D targets store no inserted flag. A breaking point has degree 2 AND lies on a cycle (it splits a parallel
-    pair, a self-loop or a ring). Degree alone is not enough: the 5 Nov 2026 audit found ordinary degree-2 nodes off
+    """Fallback for 2D targets prepared before 5 Nov 2026, which store no inserted flag (recontracted targets from
+    native2d/targets.crop_graph store an explicit `inserted` mask; use that instead). A breaking point has degree 2
+    AND lies on a cycle (it splits a parallel pair, a self-loop or a ring). Degree alone is not enough: the 5 Nov 2026 audit found ordinary degree-2 nodes off
     any cycle in AV-WIDE, REAVER and plants crops (experiments/loop_subdivision_20261105/audit_2d_degree_two.json),
     which must stay ordinary GT nodes. A non-inserted degree-2 node that happens to lie on a cycle would still be
     mislabelled; the 3D caches avoid this with an explicit `inserted` flag."""

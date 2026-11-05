@@ -122,3 +122,8 @@ temp/
 *.pt
 *.pth
 *.ckpt
+# Rebuilt 2D targets (5 Nov 2026, re-contracted crops): data stays out of git, reports and audits are tracked
+/experiments/native2d_recontracted_20261105/*/prepared/
+/experiments/native2d_recontracted_20261105/*/targets.zip
+/experiments/native2d_recontracted_20261105/octasynth/manifest.json
+/experiments/native2d_recontracted_20261105/plants/manifest.json

@@ -17,6 +17,7 @@ import tifffile
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+# recontract=False: reproduces the prepared data as built before 5 Nov 2026; recontracted targets: scripts/prepare_native2d_recontracted_20261105.py
 from native2d.targets import from_dense_graph, from_mask, crop_graph, save_target
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -83,7 +84,7 @@ def inspect_wide():
                     used=np.union1d(used,isolates)
                     remap=np.full(len(graph.nodes),-1);remap[used]=np.arange(len(used))
                     local=Graph2D(graph.nodes[used],remap[graph.edges[keep]],[graph.paths[i] for i in keep],graph.provenance)
-                patch=crop_graph(local,[x,y],[128,128])
+                patch=crop_graph(local,[x,y],[128,128],recontract=False)
                 assert np.isfinite(patch.nodes).all() and ((patch.nodes>=-1e-7)&(patch.nodes<=127+1e-7)).all()
                 for (u,v),p in zip(patch.edges,patch.paths):
                     np.testing.assert_allclose(p[[0,-1]],patch.nodes[[u,v]],atol=1e-6)

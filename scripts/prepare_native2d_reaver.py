@@ -8,6 +8,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import numpy as np
 from PIL import Image
 import tifffile
+# recontract=False: reproduces the prepared data as built before 5 Nov 2026; recontracted targets: scripts/prepare_native2d_recontracted_20261105.py
 from native2d.targets import from_mask,crop_graph,save_target
 from native2d.evaluation import common_metrics
 
@@ -28,7 +29,7 @@ def main():
         split='train' if number<=4 else 'validation'
         for y in range(0,raw.shape[0],128):
             for x in range(0,raw.shape[1],128):
-                patch=crop_graph(graph,[x,y],[128,128]);key=f'diaphragm60x{number}_x{x}_y{y}'
+                patch=crop_graph(graph,[x,y],[128,128],recontract=False);key=f'diaphragm60x{number}_x{x}_y{y}'
                 image=directory/(key+'.png');target=directory/(key+'.npz')
                 Image.fromarray(raw[y:y+128,x:x+128]).save(image)
                 # Legacy serializer converts micron metadata to mm. Convert its

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "units": "pixel",
+  "samples": {
+    "train": 1385,
+    "validation": 506
+  },
+  "training_node_quantiles": {
+    "min": 0.0,
+    "p50": 13.0,
+    "p90": 32.600000000000136,
+    "p95": 41.0,
+    "p99": 58.0,
+    "max": 76.0
+  },
+  "maximum_nodes": 76,
+  "training_maximum_nodes": 76,
+  "rebuild_report": "rebuild-report.json"
+}

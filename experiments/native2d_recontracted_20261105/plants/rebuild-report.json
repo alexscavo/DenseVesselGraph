@@ -1,0 +1,1043 @@
+{
+  "dataset": "plants",
+  "source_manifest": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_long_20261028/plants/manifest.json",
+  "rows": 32265,
+  "written": 32265,
+  "failures": [],
+  "per_split": {
+    "train": {
+      "crops": 25867,
+      "legacy_reproduced": 25867,
+      "changed": 65,
+      "with_violations": 0,
+      "nodes_before": 171730,
+      "nodes_after": 171665,
+      "edges_before": 119716,
+      "edges_after": 119651,
+      "degree2_before": 65,
+      "degree2_before_on_cycle": 0,
+      "degree2_after": 0,
+      "degree2_after_on_cycle": 0,
+      "inserted_after": 0,
+      "crops_with_inserted": 0,
+      "max_nodes_before": 28,
+      "max_nodes_after": 28
+    },
+    "validation": {
+      "crops": 6398,
+      "legacy_reproduced": 6398,
+      "changed": 10,
+      "with_violations": 0,
+      "nodes_before": 41890,
+      "nodes_after": 41880,
+      "edges_before": 29352,
+      "edges_after": 29342,
+      "degree2_before": 10,
+      "degree2_before_on_cycle": 0,
+      "degree2_after": 0,
+      "degree2_after_on_cycle": 0,
+      "inserted_after": 0,
+      "crops_with_inserted": 0,
+      "max_nodes_before": 34,
+      "max_nodes_after": 34
+    }
+  },
+  "total": {
+    "crops": 32265,
+    "legacy_reproduced": 32265,
+    "changed": 75,
+    "with_violations": 0,
+    "nodes_before": 213620,
+    "nodes_after": 213545,
+    "edges_before": 149068,
+    "edges_after": 148993,
+    "degree2_before": 75,
+    "degree2_before_on_cycle": 0,
+    "degree2_after": 0,
+    "degree2_after_on_cycle": 0,
+    "inserted_after": 0,
+    "crops_with_inserted": 0,
+    "max_nodes_before": 34,
+    "max_nodes_after": 34
+  },
+  "violations": [],
+  "not_reproduced": [],
+  "changed": [
+    {
+      "sample_id": "plants_Set01_IMG_3308_000011",
+      "split": "train",
+      "nodes": [
+        9,
+        8
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set01_IMG_3308_000012",
+      "split": "train",
+      "nodes": [
+        9,
+        8
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set01_IMG_3357_000011",
+      "split": "train",
+      "nodes": [
+        15,
+        14
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set01_IMG_3357_000018",
+      "split": "train",
+      "nodes": [
+        13,
+        12
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set02_IMG_3494_000007",
+      "split": "train",
+      "nodes": [
+        5,
+        4
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set02_IMG_3494_000014",
+      "split": "train",
+      "nodes": [
+        5,
+        4
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set02_IMG_3499_000014",
+      "split": "train",
+      "nodes": [
+        17,
+        16
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set02_IMG_3507_000023",
+      "split": "train",
+      "nodes": [
+        15,
+        14
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1063_000008",
+      "split": "train",
+      "nodes": [
+        9,
+        8
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1063_000009",
+      "split": "train",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1071_000022",
+      "split": "train",
+      "nodes": [
+        11,
+        10
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1075_000023",
+      "split": "train",
+      "nodes": [
+        9,
+        8
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1098_000027",
+      "split": "train",
+      "nodes": [
+        3,
+        2
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1246_000010",
+      "split": "train",
+      "nodes": [
+        9,
+        8
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1249_000020",
+      "split": "train",
+      "nodes": [
+        11,
+        10
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1249_000021",
+      "split": "train",
+      "nodes": [
+        11,
+        10
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1251_000009",
+      "split": "train",
+      "nodes": [
+        9,
+        8
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1251_000010",
+      "split": "train",
+      "nodes": [
+        5,
+        4
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1316_000018",
+      "split": "train",
+      "nodes": [
+        13,
+        12
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1316_000019",
+      "split": "train",
+      "nodes": [
+        11,
+        10
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1552_000021",
+      "split": "train",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1552_000024",
+      "split": "train",
+      "nodes": [
+        5,
+        4
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1610_000023",
+      "split": "train",
+      "nodes": [
+        3,
+        2
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1663_000012",
+      "split": "train",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1663_000013",
+      "split": "train",
+      "nodes": [
+        5,
+        4
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1676_000015",
+      "split": "train",
+      "nodes": [
+        5,
+        4
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_028A3B6B-9639-4452-8F8A-C85DABC33491_000017",
+      "split": "train",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_028A3B6B-9639-4452-8F8A-C85DABC33491_000018",
+      "split": "train",
+      "nodes": [
+        5,
+        4
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_1740FD02-6CB6-4284-B92E-5E70C0AD2B0D_000017",
+      "split": "train",
+      "nodes": [
+        5,
+        4
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_17E1910A-F018-49ED-8A61-4F38E2F3BF38_000021",
+      "split": "train",
+      "nodes": [
+        11,
+        10
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_23C0FA21-2DA2-4C1E-80E8-10BD64577024_000016",
+      "split": "train",
+      "nodes": [
+        9,
+        8
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_317ADDEB-91D8-4C3D-88C1-ED5526526A16_000018",
+      "split": "train",
+      "nodes": [
+        13,
+        12
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_317ADDEB-91D8-4C3D-88C1-ED5526526A16_000019",
+      "split": "train",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_55A22F0C-990B-45B8-BF73-9359F6FF72BB_000022",
+      "split": "train",
+      "nodes": [
+        13,
+        12
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_5A695E57-91F9-4AC9-AA88-4A1D3AB96A17_000020",
+      "split": "train",
+      "nodes": [
+        15,
+        14
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_5A695E57-91F9-4AC9-AA88-4A1D3AB96A17_000021",
+      "split": "train",
+      "nodes": [
+        13,
+        12
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_5BF18BB0-6F27-471D-9877-E591158DF285_000021",
+      "split": "train",
+      "nodes": [
+        11,
+        10
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_9DC3F5B8-90B4-4A3E-A402-BA395C4DA3FF_000013",
+      "split": "train",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_9DC3F5B8-90B4-4A3E-A402-BA395C4DA3FF_000014",
+      "split": "train",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_D0E10E00-E8A2-4A58-B341-90E91AD55AB1_000014",
+      "split": "train",
+      "nodes": [
+        11,
+        10
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_D0E10E00-E8A2-4A58-B341-90E91AD55AB1_000015",
+      "split": "train",
+      "nodes": [
+        9,
+        8
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_D0E10E00-E8A2-4A58-B341-90E91AD55AB1_000022",
+      "split": "train",
+      "nodes": [
+        13,
+        12
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_D0E10E00-E8A2-4A58-B341-90E91AD55AB1_000023",
+      "split": "train",
+      "nodes": [
+        11,
+        10
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_E545FD9C-C237-43A0-91D5-9EE2C08A08DC_000008",
+      "split": "train",
+      "nodes": [
+        5,
+        4
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_F02A90C0-AA92-4B33-A19C-AB61DAA8A495_000012",
+      "split": "train",
+      "nodes": [
+        5,
+        4
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set05_IMG_4383_000022",
+      "split": "train",
+      "nodes": [
+        15,
+        14
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set05_IMG_4418_000016",
+      "split": "train",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set05_IMG_4509_000018",
+      "split": "train",
+      "nodes": [
+        5,
+        4
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set05_IMG_4509_000023",
+      "split": "train",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set05_IMG_4605_000007",
+      "split": "train",
+      "nodes": [
+        11,
+        10
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set05_IMG_4666_000024",
+      "split": "train",
+      "nodes": [
+        9,
+        8
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set05_IMG_4842_000018",
+      "split": "train",
+      "nodes": [
+        11,
+        10
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set06_IMG_2784_000017",
+      "split": "train",
+      "nodes": [
+        11,
+        10
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set06_IMG_2784_000018",
+      "split": "train",
+      "nodes": [
+        15,
+        14
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set06_IMG_2820_000013",
+      "split": "train",
+      "nodes": [
+        11,
+        10
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set06_IMG_2820_000014",
+      "split": "train",
+      "nodes": [
+        15,
+        14
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set06_IMG_2975_000016",
+      "split": "train",
+      "nodes": [
+        9,
+        8
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set06_IMG_3002_000022",
+      "split": "train",
+      "nodes": [
+        15,
+        14
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set06_IMG_3002_000023",
+      "split": "train",
+      "nodes": [
+        27,
+        26
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set06_IMG_3014_000026",
+      "split": "train",
+      "nodes": [
+        17,
+        16
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set06_IMG_3171_000010",
+      "split": "train",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set06_IMG_3265_000012",
+      "split": "train",
+      "nodes": [
+        15,
+        14
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set06_IMG_3296_000021",
+      "split": "train",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set06_IMG_3296_000025",
+      "split": "train",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set06_IMG_3388_000014",
+      "split": "train",
+      "nodes": [
+        17,
+        16
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1155_000015",
+      "split": "validation",
+      "nodes": [
+        15,
+        14
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1472_000006",
+      "split": "validation",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1556_000017",
+      "split": "validation",
+      "nodes": [
+        13,
+        12
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1609_000006",
+      "split": "validation",
+      "nodes": [
+        5,
+        4
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set03_IMG_1658_000015",
+      "split": "validation",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_6243957E-9909-49A7-A5AA-D5CFCB03FE1F_000020",
+      "split": "validation",
+      "nodes": [
+        13,
+        12
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_C3BFBD82-1A88-4F9E-B311-F4403389388B_000009",
+      "split": "validation",
+      "nodes": [
+        9,
+        8
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set04_C5B14802-726C-4200-98E2-FE0EF88FDF10_000013",
+      "split": "validation",
+      "nodes": [
+        13,
+        12
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set05_IMG_4372_000018",
+      "split": "validation",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "plants_Set05_IMG_4861_000016",
+      "split": "validation",
+      "nodes": [
+        9,
+        8
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    }
+  ],
+  "seconds": 687.6839649677277
+}

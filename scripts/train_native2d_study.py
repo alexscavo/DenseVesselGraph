@@ -84,7 +84,8 @@ def metrics(model,x,targets,truth,rows,*,full_geometry=True):
     for b,(gt,row) in enumerate(zip(truth,rows)):
         decoded=decode(model,tokens,pred,b,targets['spline'][b]['metric'])
         m=np.asarray(gt['metric']);gn=gt['nodes'];ge=gt['edges']
-        result={str(t):positional(decoded['nodes']@m.T,decoded['edges'],gn@m.T,ge,t) for t in [1.,2.,4.]}
+        inserted=gt.get('inserted')
+        result={str(t):positional(decoded['nodes']@m.T,decoded['edges'],gn@m.T,ge,t,inserted=inserted) for t in [1.,2.,4.]}
         raw=pred['pred_nodes'][b,:,:2].cpu().numpy();scores=pred['pred_logits'][b].softmax(-1)[:,1].cpu().numpy()
         raw_boxes=pred['pred_nodes'][b].cpu().numpy();pairs=torch.combinations(torch.arange(len(raw),device=x.device),r=2)
         rel=model.relation_logits(tokens[b],pairs).softmax(-1)[:,1].cpu().numpy()
@@ -95,7 +96,7 @@ def metrics(model,x,targets,truth,rows,*,full_geometry=True):
             edge_mAP=edge_ap,edge_mAR=edge_ar,predicted_nodes=len(decoded['nodes']),target_nodes=len(gn),
             predicted_edges=len(decoded['edges']),target_edges=len(ge),predicted_beta0=p0,target_beta0=g0,predicted_beta1=p1,target_beta1=g1,
             beta0_signed_error=p0-g0,beta1_signed_error=p1-g1,
-            raw_node_recall={str(t):positional(raw@m.T,np.empty((0,2),int),gn@m.T,ge,t)['node']['recall'] for t in [1.,2.,4.]},
+            raw_node_recall={str(t):positional(raw@m.T,np.empty((0,2),int),gn@m.T,ge,t,inserted=inserted)['node']['recall'] for t in [1.,2.,4.]},
             ranking=relation_ranking(model,tokens,pred,b,gt))
         if full_geometry:
             result['spline']=common_metrics(decoded,gt)

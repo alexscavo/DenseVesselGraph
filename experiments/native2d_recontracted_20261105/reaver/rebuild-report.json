@@ -1,0 +1,224 @@
+{
+  "dataset": "reaver",
+  "source_manifest": "/lustre/fswork/projects/rech/vnc/upz25mj/projects/DenseVesselGraph/experiments/native2d_long_20261028/reaver/manifest.json",
+  "rows": 384,
+  "written": 384,
+  "failures": [],
+  "per_split": {
+    "train": {
+      "crops": 256,
+      "legacy_reproduced": 256,
+      "changed": 11,
+      "with_violations": 0,
+      "nodes_before": 1343,
+      "nodes_after": 1332,
+      "edges_before": 859,
+      "edges_after": 848,
+      "degree2_before": 11,
+      "degree2_before_on_cycle": 0,
+      "degree2_after": 0,
+      "degree2_after_on_cycle": 0,
+      "inserted_after": 0,
+      "crops_with_inserted": 0,
+      "max_nodes_before": 16,
+      "max_nodes_after": 16
+    },
+    "validation": {
+      "crops": 128,
+      "legacy_reproduced": 128,
+      "changed": 1,
+      "with_violations": 0,
+      "nodes_before": 543,
+      "nodes_after": 542,
+      "edges_before": 311,
+      "edges_after": 310,
+      "degree2_before": 1,
+      "degree2_before_on_cycle": 0,
+      "degree2_after": 0,
+      "degree2_after_on_cycle": 0,
+      "inserted_after": 0,
+      "crops_with_inserted": 0,
+      "max_nodes_before": 12,
+      "max_nodes_after": 12
+    }
+  },
+  "total": {
+    "crops": 384,
+    "legacy_reproduced": 384,
+    "changed": 12,
+    "with_violations": 0,
+    "nodes_before": 1886,
+    "nodes_after": 1874,
+    "edges_before": 1170,
+    "edges_after": 1158,
+    "degree2_before": 12,
+    "degree2_before_on_cycle": 0,
+    "degree2_after": 0,
+    "degree2_after_on_cycle": 0,
+    "inserted_after": 0,
+    "crops_with_inserted": 0,
+    "max_nodes_before": 16,
+    "max_nodes_after": 16
+  },
+  "violations": [],
+  "not_reproduced": [],
+  "changed": [
+    {
+      "sample_id": "diaphragm60x2_x512_y896",
+      "split": "train",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "diaphragm60x3_x128_y0",
+      "split": "train",
+      "nodes": [
+        9,
+        8
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "diaphragm60x3_x640_y128",
+      "split": "train",
+      "nodes": [
+        11,
+        10
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "diaphragm60x3_x256_y256",
+      "split": "train",
+      "nodes": [
+        13,
+        12
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "diaphragm60x3_x0_y512",
+      "split": "train",
+      "nodes": [
+        9,
+        8
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "diaphragm60x3_x384_y512",
+      "split": "train",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "diaphragm60x4_x128_y128",
+      "split": "train",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "diaphragm60x4_x384_y128",
+      "split": "train",
+      "nodes": [
+        9,
+        8
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "diaphragm60x4_x512_y128",
+      "split": "train",
+      "nodes": [
+        13,
+        12
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "diaphragm60x4_x768_y384",
+      "split": "train",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "diaphragm60x4_x640_y640",
+      "split": "train",
+      "nodes": [
+        9,
+        8
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    },
+    {
+      "sample_id": "diaphragm60x6_x512_y640",
+      "split": "validation",
+      "nodes": [
+        7,
+        6
+      ],
+      "degree2": [
+        1,
+        0
+      ],
+      "inserted": 0
+    }
+  ],
+  "seconds": 100.82671976089478
+}

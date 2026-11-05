@@ -14,6 +14,7 @@ import numpy as np
 from PIL import Image
 import pyvista as pv
 from scipy.ndimage import distance_transform_edt
+# recontract=False: reproduces the prepared data as built before 5 Nov 2026; recontracted targets: scripts/prepare_native2d_recontracted_20261105.py
 from native2d.targets import from_dense_graph,crop_graph,save_target
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -92,7 +93,7 @@ def plants():
                 if any(a==b for a,b in edges.tolist()):
                     rejected.append(dict(sample=path.stem,split=split,source=str(graph_path),reason='zero-length self-loop segment'));continue
                 graph=from_dense_graph(nodes,edges,provenance=dict(source=str(graph_path),coordinate_order='normalized XY, confirmed by paired segmentation; no unconditional legacy swap',annotation='supplied sparse plant graph; piecewise-linear guides only'))
-                graph=crop_graph(graph,[0,0],[128,128]);entry=split+'_'+path.stem+'.npz'
+                graph=crop_graph(graph,[0,0],[128,128],recontract=False);entry=split+'_'+path.stem+'.npz'
                 try:encoded=encode(graph)
                 except ValueError as error:
                     if str(error)!='Cannot fit a zero-length branch':raise
@@ -149,7 +150,7 @@ def octa():
             alignment.append(dict(parent=parent,xy_mean_distance=float(dt[xy[:,1],xy[:,0]].mean()),uncorrected_mean_distance=float(dt[np.clip(xy[:,0],0,height-1),np.clip(xy[:,1],0,width-1)].mean()),outside_nodes=int(((nodes<0)|(nodes>np.array([width-1,height-1]))).any(1).sum()),shape=[height,width],z_min=xyz[:,2].min().item(),z_max=xyz[:,2].max().item()))
             for y in sorted(set([*range(0,height-127,128),height-128])):
                 for x in sorted(set([*range(0,width-127,128),width-128])):
-                    patch=crop_graph(graph,[x,y],[128,128]);key=parent+f'_x{x}_y{y}';entry=key+'.npz'
+                    patch=crop_graph(graph,[x,y],[128,128],recontract=False);key=parent+f'_x{x}_y{y}';entry=key+'.npz'
                     image_path=directory/(key+'.png');Image.fromarray(image[y:y+128,x:x+128]).save(image_path);packed.writestr(entry,encode(patch))
                     rows.append(dict(sample_id='octa_'+key,subject_id='octa_'+parent,split='train' if split=='train' else 'validation',image=str(image_path),target=entry,target_archive='targets.zip',nodes=len(patch.nodes),edges=len(patch.edges),units='pixel',source=str(path),crop_start_xy=[x,y]))
             print('OCTA '+parent,flush=True)

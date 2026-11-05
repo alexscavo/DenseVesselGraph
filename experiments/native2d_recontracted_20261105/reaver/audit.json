@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "units": "micron",
+  "samples": {
+    "train": 256,
+    "validation": 128
+  },
+  "training_node_quantiles": {
+    "min": 0.0,
+    "p50": 6.0,
+    "p90": 10.0,
+    "p95": 10.5,
+    "p99": 12.899999999999977,
+    "max": 16.0
+  },
+  "maximum_nodes": 16,
+  "training_maximum_nodes": 16,
+  "rebuild_report": "rebuild-report.json"
+}

@@ -35,14 +35,20 @@ def counts(tp,npred,ngt):
         recall=tp/ngt if ngt else float(not npred),f1=2*tp/(npred+ngt) if npred+ngt else 1.)
 
 
-def positional(pred_nodes,pred_edges,gt_nodes,gt_edges,tolerance,loop_aware=True):
-    """Node/edge counts at a tolerance. loop_aware (default since 5 Nov 2026): degree-2 GT nodes lying on a cycle are the
-    inserted breaking points of loop branches (native2d/targets._simple_graph) and are scored as in metrics/loop_aware.py;
-    a target without loops gives exactly the plain counts."""
+def positional(pred_nodes,pred_edges,gt_nodes,gt_edges,tolerance,loop_aware=True,inserted=None):
+    """Node/edge counts at a tolerance. loop_aware (default since 5 Nov 2026): the inserted breaking points of loop
+    branches are scored as in metrics/loop_aware.py; a target without loops gives exactly the plain counts.
+    inserted: the target's explicit per-node `inserted` mask (targets recontracted since 5 Nov 2026, native2d/targets.
+    crop_graph); None for older targets, which store no flag: then degree-2 GT nodes lying on a cycle are taken as
+    inserted (metrics/loop_aware.inserted_from_degree)."""
     mapping,distance=match_nodes(pred_nodes,gt_nodes,tolerance)
     if loop_aware:
         from metrics.loop_aware import inserted_from_degree,loop_aware_counts
-        inserted=inserted_from_degree(len(np.asarray(gt_nodes).reshape(-1,2)),gt_edges)
+        n_gt=len(np.asarray(gt_nodes).reshape(-1,2))
+        if inserted is None:inserted=inserted_from_degree(n_gt,gt_edges)
+        else:
+            inserted=np.asarray(inserted,bool).reshape(-1)
+            if len(inserted)!=n_gt:raise ValueError('inserted mask does not match the GT nodes')
         if inserted.any():
             c=loop_aware_counts(len(np.asarray(pred_nodes).reshape(-1,2)),pred_edges,mapping,gt_edges,len(inserted),inserted)
             near=(cdist(np.asarray(pred_nodes).reshape(-1,2),np.asarray(gt_nodes).reshape(-1,2)).min(1)<=tolerance).sum() if len(gt_nodes) and len(pred_nodes) else 0
@@ -97,7 +103,7 @@ def common_metrics(prediction,target):
 def evaluate(prediction,target,tolerances=(1.,2.)):
     pn=np.asarray(prediction['nodes']).reshape(-1,2);pe=np.asarray(prediction['edges'],int).reshape(-1,2)
     gn=np.asarray(target['nodes']);ge=np.asarray(target['edges'],int).reshape(-1,2);metric=np.asarray(target['metric'])
-    result={str(t):positional(pn@metric.T,pe,gn@metric.T,ge,t) for t in tolerances}
+    result={str(t):positional(pn@metric.T,pe,gn@metric.T,ge,t,inserted=target.get('inserted')) for t in tolerances}
     p0,p1=graph_betti_numbers(len(pn),pe);g0,g1=graph_betti_numbers(len(gn),ge)
     result.update(units=str(np.asarray(target['units']).item()),predicted_nodes=len(pn),target_nodes=len(gn),
         predicted_edges=len(pe),target_edges=len(ge),node_count_bias=len(pn)-len(gn),edge_count_bias=len(pe)-len(ge),

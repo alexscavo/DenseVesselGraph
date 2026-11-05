@@ -1,0 +1,106 @@
+{
+ "avwide": {
+  "train": {
+   "crops": 1385,
+   "crops_with_degree2": 9,
+   "degree2": 9,
+   "on_cycle": 9,
+   "crops_with_mask": 1385,
+   "inserted": 9,
+   "degree2_flagged": 9,
+   "inserted_not_degree2": 0,
+   "inserted_off_cycle": 0,
+   "inserted_on_boundary": 0
+  },
+  "validation": {
+   "crops": 506,
+   "crops_with_degree2": 2,
+   "degree2": 3,
+   "on_cycle": 3,
+   "crops_with_mask": 506,
+   "inserted": 3,
+   "degree2_flagged": 3,
+   "inserted_not_degree2": 0,
+   "inserted_off_cycle": 0,
+   "inserted_on_boundary": 0
+  }
+ },
+ "reaver": {
+  "train": {
+   "crops": 256,
+   "crops_with_degree2": 0,
+   "degree2": 0,
+   "on_cycle": 0,
+   "crops_with_mask": 256,
+   "inserted": 0,
+   "degree2_flagged": 0,
+   "inserted_not_degree2": 0,
+   "inserted_off_cycle": 0,
+   "inserted_on_boundary": 0
+  },
+  "validation": {
+   "crops": 128,
+   "crops_with_degree2": 0,
+   "degree2": 0,
+   "on_cycle": 0,
+   "crops_with_mask": 128,
+   "inserted": 0,
+   "degree2_flagged": 0,
+   "inserted_not_degree2": 0,
+   "inserted_off_cycle": 0,
+   "inserted_on_boundary": 0
+  }
+ },
+ "octasynth": {
+  "train": {
+   "crops": 10648,
+   "crops_with_degree2": 0,
+   "degree2": 0,
+   "on_cycle": 0,
+   "crops_with_mask": 10648,
+   "inserted": 0,
+   "degree2_flagged": 0,
+   "inserted_not_degree2": 0,
+   "inserted_off_cycle": 0,
+   "inserted_on_boundary": 0
+  },
+  "validation": {
+   "crops": 4840,
+   "crops_with_degree2": 0,
+   "degree2": 0,
+   "on_cycle": 0,
+   "crops_with_mask": 4840,
+   "inserted": 0,
+   "degree2_flagged": 0,
+   "inserted_not_degree2": 0,
+   "inserted_off_cycle": 0,
+   "inserted_on_boundary": 0
+  }
+ },
+ "plants": {
+  "train": {
+   "crops": 25867,
+   "crops_with_degree2": 0,
+   "degree2": 0,
+   "on_cycle": 0,
+   "crops_with_mask": 25867,
+   "inserted": 0,
+   "degree2_flagged": 0,
+   "inserted_not_degree2": 0,
+   "inserted_off_cycle": 0,
+   "inserted_on_boundary": 0
+  },
+  "validation": {
+   "crops": 6398,
+   "crops_with_degree2": 0,
+   "degree2": 0,
+   "on_cycle": 0,
+   "crops_with_mask": 6398,
+   "inserted": 0,
+   "degree2_flagged": 0,
+   "inserted_not_degree2": 0,
+   "inserted_off_cycle": 0,
+   "inserted_on_boundary": 0
+  }
+ }
+}

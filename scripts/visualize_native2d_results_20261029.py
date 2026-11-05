@@ -112,7 +112,7 @@ def comparisons(render_saved=False):
                         if i not in ids:continue
                         result=decode(model,tokens,pred,b,t['spline'][b]['metric'],node_threshold=.5,edge_threshold=.5)
                         metric=np.asarray(g[b]['metric'])
-                        scores=positional(result['nodes']@metric.T,result['edges'],g[b]['nodes']@metric.T,g[b]['edges'],2.)
+                        scores=positional(result['nodes']@metric.T,result['edges'],g[b]['nodes']@metric.T,g[b]['edges'],2.,inserted=g[b].get('inserted'))
                         reference=saved[rows[b]['sample_id']]
                         assert len(result['nodes'])==reference['predicted_nodes'] and len(result['edges'])==reference['predicted_edges']
                         assert scores['node']==reference['2.0']['node'] and scores['edge']==reference['2.0']['edge']

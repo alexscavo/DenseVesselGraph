@@ -17,6 +17,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from scipy.interpolate import BSpline
+# recontract=False: reproduces the prepared data as built before 5 Nov 2026; recontracted targets: scripts/prepare_native2d_recontracted_20261105.py
 from native2d.targets import from_dense_graph,from_mask,crop_graph,save_target
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -95,7 +96,7 @@ def main():
         # DRIVE's existing test split are never loaded.
         for center in graph.nodes:
             start=np.clip(np.floor(center-32),0,np.array(image.shape[:2])[::-1]-64).astype(int)
-            patch=crop_graph(graph,start,[64,64])
+            patch=crop_graph(graph,start,[64,64],recontract=False)
             if not (2<=len(patch.nodes)<=12 and 1<=len(patch.edges)<=12):continue
             if any(np.linalg.norm(start-np.array(r['crop_start_xy']))<48 for r in samples if r['subject_id']==f'wide_{number:02d}'):continue
             key=f'wide{number:02d}_{accepted:02d}';target=prepared/f'{key}.npz';img=prepared/f'{key}.png'
@@ -129,7 +130,7 @@ def main():
         graph_annotation='derived by contraction of provided manual skeleton; no independent connectivity labels'))
     # One microscope crop for alignment only, not mixed into the retinal cohort.
     start=np.clip(np.floor(graph.nodes[len(graph.nodes)//2]-64),0,896).astype(int)
-    patch=crop_graph(graph,start,[128,128]);crop=image[start[1]:start[1]+128,start[0]:start[0]+128]
+    patch=crop_graph(graph,start,[128,128],recontract=False);crop=image[start[1]:start[1]+128,start[0]:start[0]+128]
     save_target(prepared/'reaver-alignment.npz',patch,[128,128],spacing_xy=spacing,units='micron')
     overlays(crop,patch,prepared/'reaver-alignment-overlay.png',mask=rgb[start[1]:start[1]+128,start[0]:start[0]+128,0]>0,
         skeleton=rgb[start[1]:start[1]+128,start[0]:start[0]+128,1]>0)

@@ -114,7 +114,7 @@ def tiny_fit(device,steps):
                     item['ranking']=relation_ranking(model,tokens,pred,b,g)
                     raw=dict(nodes=pred['pred_nodes'][b,:,:2].cpu().numpy(),edges=np.empty((0,2),int))
                     from native2d.evaluation import positional
-                    item['raw_node_coverage']=positional(raw['nodes']@g['metric'].T,raw['edges'],g['nodes']@g['metric'].T,g['edges'],2.)['node']['recall']
+                    item['raw_node_coverage']=positional(raw['nodes']@g['metric'].T,raw['edges'],g['nodes']@g['metric'].T,g['edges'],2.,inserted=g.get('inserted'))['node']['recall']
                     metrics.append(item)
             row=dict(step=step,elapsed_seconds=time.monotonic()-start,losses={k:float(v.detach()) for k,v in loss.items()},samples=metrics)
             history.append(row);print(json.dumps(dict(step=step,total=row['losses']['total'],node_f1=[m['2.0']['node']['f1'] for m in metrics],edge_f1=[m['2.0']['edge']['f1'] for m in metrics])),flush=True)
