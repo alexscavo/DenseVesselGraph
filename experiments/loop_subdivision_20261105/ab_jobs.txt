@@ -1,0 +1,8 @@
+IXI-noloops stage1 1998308 stage2 1998311
+IXI-loops stage1 1998312 stage2 1998313
+SyntheticMRI-noloops stage1 1998314 stage2 1998316
+SyntheticMRI-loops stage1 1998317 stage2 1998318
+TopBrainMRA-noloops stage1 1998319 stage2 1998320
+TopBrainMRA-loops stage1 1998321 stage2 1998322
+TopBrainCTA-noloops stage1 1998323 stage2 1998336
+TopBrainCTA-loops stage1 1998337 stage2 1998338
