@@ -43,6 +43,8 @@ def main() -> None:
                         help="optional previous patches with identical raw/seg grid")
     parser.add_argument("--patch-size", type=int, nargs=3, default=(64, 64, 64))
     parser.add_argument("--maximum-stride", type=int, nargs=3, default=(40, 40, 40))
+    parser.add_argument("--intensity-window", type=float, nargs=2, metavar=("LO", "HI"),
+                        help="opt-in fixed window normalization (passed to the patch generator)")
     parser.add_argument("--workers", type=int,
                         default=int(os.environ.get("SLURM_CPUS_PER_TASK", "1")))
     args = parser.parse_args()
@@ -77,6 +79,8 @@ def main() -> None:
                   "--workers", str(args.workers), "--resume", "--allow-existing-split-proportions"]
     if args.reuse_patches_from:
         generation.extend(("--reuse-patches-from", str(args.reuse_patches_from)))
+    if args.intensity_window:
+        generation.extend(("--intensity-window", *map(str, args.intensity_window)))
     run("generate_synthetic_mri_dataset.py", *generation)
     print("[3/4] audit patch eligibility", flush=True)
     run("audit_real_patch_eligibility.py", "--patch-root", str(output),

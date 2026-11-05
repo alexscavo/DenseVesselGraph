@@ -27,6 +27,16 @@ FILES = ("nodes.csv", "edges.csv", "graph.vvg")
 DATASET_DIRECTORIES = {
     "ixi": "IXI",
     "topbrain": "TopBrain_Data_Release_Batches1n2_081425",
+    # Skull-stripped TopBrain, labels clipped to the brain mask (prepare_topbrain_stripped_20261104.py);
+    # one dataset key per modality so that each gets its own patch set and split file.
+    "topbrain_stripped_mr": "TopBrain_stripped_20261104",
+    "topbrain_stripped_ct": "TopBrain_stripped_20261104",
+    # Full, unstripped TopBrain volumes with the complete labels (prepare_topbrain_full_20261104.py); supersedes stripped.
+    "topbrain_full_mr": "TopBrain_full_20261104",
+    "topbrain_full_ct": "TopBrain_full_20261104",
+    # Production: tight TopCoW brain mask (HD-BET / TotalSegmentator), labels clipped to it (5 Nov 2026).
+    "topbrain_tight_mr": "TopBrain_tight_20261105",
+    "topbrain_tight_ct": "TopBrain_tight_20261105",
 }
 GRAPH_POLICY_DIRECTORY = "optimal_radius_0p75x_c095"
 

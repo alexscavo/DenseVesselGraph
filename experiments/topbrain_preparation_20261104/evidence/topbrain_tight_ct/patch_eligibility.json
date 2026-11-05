@@ -1,0 +1,23 @@
+{
+  "datasets": {
+    "vascular_patches": {
+      "empty_mask": 4756,
+      "graph_positive": 4057,
+      "foreground_no_graph": 267
+    }
+  },
+  "overall": {
+    "empty_mask": 4756,
+    "graph_positive": 4057,
+    "foreground_no_graph": 267
+  },
+  "graph_on_empty_mask_count": 0,
+  "graph_on_empty_mask_examples": [],
+  "foreground_no_graph_interior_depth_at_least": {
+    "1": 166,
+    "4": 23,
+    "8": 4,
+    "12": 0
+  },
+  "definition": "graph_positive requires foreground>0, nodes>0, and edges>0"
+}

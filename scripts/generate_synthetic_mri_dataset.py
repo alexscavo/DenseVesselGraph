@@ -298,6 +298,8 @@ def split_diagnostics(
             if split == "all"
             else [patient_id for patient_id, value in split_map.items() if value == split]
         )
+        if not patient_ids:  # e.g. a regeneration restricted to train/val subjects
+            continue
         matrix = np.stack([feature_by_id[patient_id].vector() for patient_id in patient_ids])
         for column, feature_name in enumerate(FEATURE_NAMES):
             values = matrix[:, column]
@@ -359,6 +361,18 @@ def normalize_vessel_image(raw: np.ndarray) -> tuple[np.ndarray, float]:
         raise ValueError(f"Float normalization threshold is invalid: {threshold}")
     print(f"legacy intensity threshold unavailable; using float P99.5={threshold:.6g}", flush=True)
     return np.minimum(finite, threshold) / threshold, threshold
+
+
+def normalize_window(raw: np.ndarray, window: Sequence[float]) -> tuple[np.ndarray, float]:
+    """Opt-in fixed intensity window (e.g. CTA Hounsfield units): clip to [lo, hi], map to [0, 1]."""
+
+    lo, hi = (float(value) for value in window)
+    if not hi > lo:
+        raise ValueError(f"Invalid intensity window: {window}")
+    image = np.asarray(raw, dtype=np.float32)
+    if not np.isfinite(image).all():
+        raise ValueError("Cannot normalize an image containing non-finite intensities")
+    return (np.clip(image, lo, hi) - lo) / (hi - lo), hi
 
 
 def hardlink_patch(source: Path, destination: Path) -> None:
@@ -508,7 +522,10 @@ def _generate_patient(task: Mapping[str, object]) -> dict[str, object]:
     if reuse_rows is None:
         raw = np.asanyarray(raw_image.dataobj)
         segmentation = np.asarray(segmentation_image.dataobj)
-        normalized, threshold = normalize_vessel_image(raw)
+        window = task.get("intensity_window")
+        normalized, threshold = (
+            normalize_window(raw, window) if window else normalize_vessel_image(raw)
+        )
     else:
         segmentation = None
         normalized = None
@@ -731,6 +748,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--plan-only", action="store_true")
     parser.add_argument("--patient-id", action="append", default=[])
     parser.add_argument("--max-patients", type=int)
+    parser.add_argument("--intensity-window", type=float, nargs=2, metavar=("LO", "HI"),
+                        help="opt-in fixed window normalization instead of the legacy MAD clip")
     return parser
 
 
@@ -832,7 +851,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         "crop_size": list(crop_size),
         "maximum_stride": list(args.maximum_stride),
         "grid": "endpoint_distributed_v1",
-        "normalization": "legacy_mad_clip_v1",
+        "normalization": (
+            "window_{:g}_{:g}_v1".format(*args.intensity_window)
+            if args.intensity_window else "legacy_mad_clip_v1"
+        ),
         "graph_crop": "voxel_cell_box_endpoint_aware_with_boundary_provenance_v4",
         "selection_filter": None,
         "raw_seg_materialization": (
@@ -988,6 +1010,9 @@ def main(argv: Sequence[str] | None = None) -> int:
                 "patch_size": patch_size,
                 "pad": pad,
                 "maximum_stride": tuple(args.maximum_stride),
+                "intensity_window": (
+                    list(args.intensity_window) if args.intensity_window else None
+                ),
                 "fingerprint": fingerprint,
                 "reuse_patch_root": (
                     str(reuse_patch_root) if reuse_patch_root is not None else None
