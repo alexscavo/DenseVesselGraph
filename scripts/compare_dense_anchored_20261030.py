@@ -38,6 +38,7 @@ def counts(row, edge_row, common):
 def dense_patch(r, node_t, edge_t):
     with np.load(r['cache']) as z:
         gt_nodes, gt_edges, metric = z['nodes'], z['edges'].reshape(-1, 2), z['metric']
+        inserted = z['inserted'] if 'inserted' in z.files else None  # breaking-point anchors (loop caches)
     keep = np.nonzero(r['node_scores'] >= node_t)[0]
     remap = {int(k): i for i, k in enumerate(keep)}
     nodes = r['nodes'][keep]
@@ -47,7 +48,7 @@ def dense_patch(r, node_t, edge_t):
     scores = r['edge_scores'][valid] if len(sub) else np.zeros(0)
     local = np.array([[remap[a], remap[b]] for a, b in sub], int).reshape(-1, 2)
     mapping = match_nodes(nodes @ metric.T, gt_nodes @ metric.T, 2.0)
-    row, chosen, *_ = edge_accounting(np.arange(len(nodes)), local, scores, scores >= edge_t, mapping, gt_edges, len(gt_nodes))
+    row, chosen, *_ = edge_accounting(np.arange(len(nodes)), local, scores, scores >= edge_t, mapping, gt_edges, len(gt_nodes), inserted)
     sel, edges = np.nonzero(valid)[0][chosen], local[chosen]
     prediction = dict(nodes=nodes, edges=edges)
     if r['curves'] is not None and len(edges):
@@ -59,6 +60,7 @@ def dense_patch(r, node_t, edge_t):
 def anchored_patch(r, node_t, edge_t):
     with np.load(r['cache']) as z:
         gt_nodes, gt_edges, metric = z['nodes'], z['edges'].reshape(-1, 2), z['metric']
+        inserted = z['inserted'] if 'inserted' in z.files else None  # breaking-point anchors (loop caches)
     keep = np.nonzero(r['node_scores'] > node_t)[0]
     remap = {int(k): i for i, k in enumerate(keep)}
     pairs = r['pairs']

@@ -1,0 +1,66 @@
+{
+ "IXI-noloops": {
+  "train_ids": 4096,
+  "val_ids": 2961,
+  "monitor_train": 256,
+  "loop_training_patches": 0,
+  "loop_validation_patches": 312,
+  "max_target_nodes": 141
+ },
+ "IXI-loops": {
+  "train_ids": 4096,
+  "val_ids": 2961,
+  "monitor_train": 256,
+  "loop_training_patches": 429,
+  "loop_validation_patches": 312,
+  "max_target_nodes": 141
+ },
+ "SyntheticMRI-noloops": {
+  "train_ids": 4096,
+  "val_ids": 480,
+  "monitor_train": 256,
+  "loop_training_patches": 0,
+  "loop_validation_patches": 8,
+  "max_target_nodes": 50
+ },
+ "SyntheticMRI-loops": {
+  "train_ids": 4096,
+  "val_ids": 480,
+  "monitor_train": 256,
+  "loop_training_patches": 116,
+  "loop_validation_patches": 8,
+  "max_target_nodes": 52
+ },
+ "TopBrainMRA-noloops": {
+  "train_ids": 3684,
+  "val_ids": 1148,
+  "monitor_train": 256,
+  "loop_training_patches": 0,
+  "loop_validation_patches": 49,
+  "max_target_nodes": 77
+ },
+ "TopBrainMRA-loops": {
+  "train_ids": 3797,
+  "val_ids": 1148,
+  "monitor_train": 256,
+  "loop_training_patches": 113,
+  "loop_validation_patches": 49,
+  "max_target_nodes": 77
+ },
+ "TopBrainCTA-noloops": {
+  "train_ids": 2270,
+  "val_ids": 803,
+  "monitor_train": 256,
+  "loop_training_patches": 0,
+  "loop_validation_patches": 51,
+  "max_target_nodes": 66
+ },
+ "TopBrainCTA-loops": {
+  "train_ids": 2495,
+  "val_ids": 803,
+  "monitor_train": 256,
+  "loop_training_patches": 225,
+  "loop_validation_patches": 51,
+  "max_target_nodes": 66
+ }
+}

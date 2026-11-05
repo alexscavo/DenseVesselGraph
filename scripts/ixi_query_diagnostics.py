@@ -57,8 +57,43 @@ def categorize(nodes, gt, metric, mask, query_ids, tolerance):
     return mapping, categories, distance, inside
 
 
-def edge_accounting(query_ids, pairs, scores, selected, mapping, gt_edges, gt_count):
-    """Keep query identity (and oracle assignments) fixed through deletions."""
+def loop_aware_accounting(query_ids, pairs, scores, selected, mapping, gt_edges, gt_count, inserted):
+    """edge_accounting for GT with inserted breaking-point anchors: see metrics/loop_aware.py. Same row keys."""
+    from metrics.loop_aware import loop_aware_counts
+    active = np.isin(pairs, query_ids).all(1)
+    chosen = active & selected
+    remap = {int(q): i for i, q in enumerate(query_ids)}
+    edges = np.array([[remap[int(a)], remap[int(b)]] for a, b in pairs[chosen]], dtype=int).reshape(-1, 2)
+    local_map = {remap[int(q)]: int(g) for q, g in mapping.items() if int(q) in remap}
+    c = loop_aware_counts(len(query_ids), edges, local_map, gt_edges, gt_count, inserted)
+    labels = np.zeros(len(pairs), bool)
+    types = np.array(['UU'] * len(pairs), dtype='<U2')
+    labels[np.flatnonzero(chosen)] = c['labels']
+    types[np.flatnonzero(chosen)] = c['types']
+    p0, p1 = betti(len(query_ids), edges)
+    g0, g1 = betti(gt_count, gt_edges)
+    degree = c['degree']
+    row = dict(nodes=c['pred_nodes'], gt_nodes=c['gt_nodes'], node_tp=c['node_tp'], node_fp=c['node_fp'],
+               node_fn=c['gt_nodes'] - c['node_tp'], edges=c['pred_edges'], gt_edges=c['gt_edges'], tp=c['tp'],
+               fp=c['pred_edges'] - c['tp'], fn=c['gt_edges'] - c['tp'], recoverable_edges=c['recoverable'],
+               missing_endpoint_edges=c['gt_edges'] - c['recoverable'], missing_relation_edges=c['recoverable'] - c['tp'],
+               beta0=p0, beta1=p1, beta0_error=abs(p0 - g0), beta1_error=abs(p1 - g1),
+               isolates=int((degree == 0).sum()), max_degree=int(degree.max()) if len(degree) else 0,
+               degree_histogram=dict(Counter(map(int, degree))), ignored_nodes=c['ignored'],
+               dropped_gt_rings=c['dropped_gt_rings'])
+    for kind in ('MM', 'MU', 'UU'):
+        row[kind + '_tp'], row[kind + '_fp'] = c['kinds'].get(kind, [0, 0])
+    assert row['tp'] + row['fn'] == row['gt_edges'] and sum(row[k + '_fp'] for k in ('MM', 'MU', 'UU')) == row['fp']
+    return row, chosen, labels, types, edges
+
+
+def edge_accounting(query_ids, pairs, scores, selected, mapping, gt_edges, gt_count, inserted=None):
+    """Keep query identity (and oracle assignments) fixed through deletions.
+
+    inserted: optional per-GT-node mask of breaking-point anchors (subdivided loop caches); when any is set the
+    loop-aware protocol is used, otherwise this function is unchanged."""
+    if inserted is not None and np.any(inserted):
+        return loop_aware_accounting(query_ids, pairs, scores, selected, mapping, gt_edges, gt_count, inserted)
     links = {tuple(sorted(map(int, edge))) for edge in gt_edges}
     if len(links) != len(gt_edges) or any(a == b for a, b in links):
         raise ValueError('Closed/parallel GT requires an explicit multigraph protocol')

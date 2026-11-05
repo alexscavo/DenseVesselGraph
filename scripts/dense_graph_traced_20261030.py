@@ -597,7 +597,7 @@ def warm_start(model, path, device):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('--dataset', choices=['IXI', 'BRAVA', 'SyntheticMRI'], required=True)
+    p.add_argument('--dataset', choices=sorted(json.loads(PLAN.read_text())['datasets']), required=True)  # any plan entry
     p.add_argument('--updates', type=int, default=15000)
     p.add_argument('--warmup-gt', type=int, default=2000)
     p.add_argument('--batch', type=int, default=8)

@@ -1,0 +1,2 @@
+dataset,sample_id,split,patient_id,node_count,edge_count
+IXI,sample_000050_0096,train,000050,2,1

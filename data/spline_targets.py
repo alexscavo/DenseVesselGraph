@@ -4,10 +4,109 @@ import numpy as np
 from scipy.interpolate import BSpline
 
 
-def contract_spline_graph(nodes, edges, max_anchors=120, *, closed_components=0, preserve_nodes=()):
-    """Return the contracted target and its whole-patch exclusion reason."""
+def _point_at(poly, s):
+    """Point at arc length s along poly, and the vertex index after which it lies."""
+    d = np.r_[0., np.cumsum(np.linalg.norm(np.diff(poly, axis=0), axis=1))]
+    k = int(np.clip(np.searchsorted(d, s, side='right') - 1, 0, len(poly) - 2))
+    t = 0. if d[k + 1] - d[k] <= 0 else (s - d[k]) / (d[k + 1] - d[k])
+    return poly[k] + t * (poly[k + 1] - poly[k]), k
+
+
+def _split(poly, fractions):
+    """Split poly at arc-length fractions; returns the pieces and the cut points (geometry unchanged)."""
+    total = np.linalg.norm(np.diff(poly, axis=0), axis=1).sum()
+    pieces, cuts, start, rest = [], [], 0., poly
+    for f in fractions:
+        p, k = _point_at(rest, f * total - start)
+        pieces.append(np.vstack([rest[:k + 1], p[None]]))
+        rest = np.vstack([p[None], rest[k + 1:]])
+        start = f * total
+        cuts.append(p)
+    pieces.append(rest)
+    return pieces, cuts
+
+
+def subdivide_loops(graph, next_id):
+    """Make a contracted multigraph simple by inserting degree-2 'breaking point' anchors (training encoding).
+
+    The adjacency target stores one edge per unordered node pair and no self-loop, so:
+    - a branch repeating an existing pair (parallel branch) is split at its arc-length midpoint;
+    - a self-loop on an anchor is split at 1/3 and 2/3 of its length;
+    - a ring with no junction/end (contractor's virtual centroid anchor, negative id) gets three anchors on the
+      curve itself (its start point and 1/3, 2/3), replacing the virtual centroid, which is not on the curve.
+    Every polyline point is kept, so centreline geometry, length, beta_0 and beta_1 are unchanged. Inserted
+    anchors get ids >= next_id and are returned so evaluation can treat them as 'don't care' (they have no
+    anatomical meaning). Returns (anchors, branches, inserted_ids).
+    """
+    from metrics.branch_connectivity import Branch
+    anchors = {k: v.copy() for k, v in graph.anchors.items() if k >= 0}
+    inserted, branches, used = set(), [], set()
+
+    def new(point):
+        nonlocal next_id
+        anchors[next_id] = np.asarray(point, float).copy()
+        inserted.add(next_id)
+        next_id += 1
+        return next_id - 1
+
+    def chain(ids, pieces):
+        for a, b, piece in zip(ids[:-1], ids[1:], pieces):
+            branches.append(Branch(a, b, piece))
+            used.add(tuple(sorted((a, b))))
+
+    for branch in graph.branches:
+        a, b, poly = branch.start, branch.end, np.asarray(branch.polyline, float)
+        if np.linalg.norm(np.diff(poly, axis=0), axis=1).sum() < 1e-10:
+            raise ValueError('degenerate_branch')
+        if a == b:
+            if a < 0:  # ring without anchors: start point of the polyline becomes an anchor too
+                a = new(poly[0])
+            pieces, cuts = _split(poly, (1 / 3, 2 / 3))
+            chain([a, new(cuts[0]), new(cuts[1]), a], pieces)
+        elif tuple(sorted((a, b))) in used:
+            pieces, cuts = _split(poly, (0.5,))
+            chain([a, new(cuts[0]), b], pieces)
+        else:
+            chain([a, b], [poly])
+    return anchors, tuple(branches), inserted
+
+
+def contract_spline_graph(nodes, edges, max_anchors=120, *, closed_components=0, preserve_nodes=(), subdivide=False):
+    """Return the contracted target and its whole-patch exclusion reason.
+
+    subdivide=False (default, all caches before 5 Nov 2026): patches whose contracted graph has parallel branches,
+    self-loops or anchor-free rings are excluded. subdivide=True: such branches get inserted degree-2 anchors
+    (subdivide_loops) and the patch is kept; the returned graph then has an `inserted` set of anchor ids.
+    """
     from metrics.branch_connectivity import contract_degree_two
     links = np.asarray(edges, dtype=np.int64).reshape(-1, 2)
+    if subdivide:
+        from types import SimpleNamespace as NS
+        nodes = np.asarray(nodes, float)
+        # Zero-length dense self-loop records (a clipped closed part with no interior sample) carry no geometry.
+        links = links[links[:, 0] != links[:, 1]]
+        # A repeated dense record is a distinct parallel segment: give the repeat a midpoint sample (a degree-2
+        # dense node, contracted away) so the contractor sees two embedded paths instead of an ambiguous duplicate.
+        seen, extra, kept = set(), [], []
+        for a, b in links.tolist():
+            key = tuple(sorted((a, b)))
+            if key in seen:
+                m = len(nodes) + len(extra)
+                extra.append((nodes[a] + nodes[b]) / 2)
+                kept.extend(((a, m), (m, b)))
+            else:
+                seen.add(key)
+                kept.append((a, b))
+        if extra:
+            nodes = np.vstack([nodes, np.asarray(extra)])
+        links = np.asarray(kept, dtype=np.int64).reshape(-1, 2)
+        graph = contract_degree_two(nodes, links, preserve_nodes=preserve_nodes)
+        try:
+            anchors, branches, inserted = subdivide_loops(graph, len(nodes))
+        except ValueError as error:
+            return None, str(error)
+        out = NS(anchors=anchors, branches=branches, inserted=inserted, betti_0=graph.betti_0, betti_1=graph.betti_1)
+        return out, ('object_capacity' if len(anchors) > max_anchors else None)
     # The generic contractor only accepts simple embedded graphs. Check the
     # current decoder's unsupported cases before invoking it: never deduplicate
     # records, which could silently erase a parallel vessel branch.

@@ -1,0 +1,134 @@
+{
+ "n_subjects": 21,
+ "all_grids_match": true,
+ "patches": 2178,
+ "identical": 2178,
+ "subjects": {
+  "IXI035-IOP-0873-MRA_IXI-IOP.nii.gz": {
+   "patient_id": "000003",
+   "grid_matches_label": true,
+   "patches": 103,
+   "identical": 103
+  },
+  "IXI054-Guys-0707-MRA_IXI-Guys.nii.gz": {
+   "patient_id": "000010",
+   "grid_matches_label": true,
+   "patches": 97,
+   "identical": 97
+  },
+  "IXI065-Guys-0744-MRA_IXI-Guys.nii.gz": {
+   "patient_id": "000016",
+   "grid_matches_label": true,
+   "patches": 99,
+   "identical": 99
+  },
+  "IXI084-Guys-0741-MRA_IXI-Guys.nii.gz": {
+   "patient_id": "000028",
+   "grid_matches_label": true,
+   "patches": 115,
+   "identical": 115
+  },
+  "IXI087-Guys-0768-MRA_IXI-Guys.nii.gz": {
+   "patient_id": "000031",
+   "grid_matches_label": true,
+   "patches": 90,
+   "identical": 90
+  },
+  "IXI112-Guys-0735-MRA_IXI-Guys.nii.gz": {
+   "patient_id": "000048",
+   "grid_matches_label": true,
+   "patches": 121,
+   "identical": 121
+  },
+  "IXI122-Guys-0773-MRA_IXI-Guys.nii.gz": {
+   "patient_id": "000052",
+   "grid_matches_label": true,
+   "patches": 89,
+   "identical": 89
+  },
+  "IXI127-HH-1451-MRA_IXI-HH.nii.gz": {
+   "patient_id": "000054",
+   "grid_matches_label": true,
+   "patches": 99,
+   "identical": 99
+  },
+  "IXI130-HH-1528-MRA_IXI-HH.nii.gz": {
+   "patient_id": "000057",
+   "grid_matches_label": true,
+   "patches": 109,
+   "identical": 109
+  },
+  "IXI148-HH-1453-MRA_IXI-HH.nii.gz": {
+   "patient_id": "000066",
+   "grid_matches_label": true,
+   "patches": 102,
+   "identical": 102
+  },
+  "IXI177-Guys-0831-MRA_IXI-Guys.nii.gz": {
+   "patient_id": "000081",
+   "grid_matches_label": true,
+   "patches": 102,
+   "identical": 102
+  },
+  "IXI202-HH-1526-MRA_IXI-HH.nii.gz": {
+   "patient_id": "000089",
+   "grid_matches_label": true,
+   "patches": 101,
+   "identical": 101
+  },
+  "IXI218-HH-1815-MRA_IXI-HH.nii.gz": {
+   "patient_id": "000094",
+   "grid_matches_label": true,
+   "patches": 92,
+   "identical": 92
+  },
+  "IXI241-Guys-0833-MRA_IXI-Guys.nii.gz": {
+   "patient_id": "000101",
+   "grid_matches_label": true,
+   "patches": 104,
+   "identical": 104
+  },
+  "IXI248-HH-1972-MRA_IXI-HH.nii.gz": {
+   "patient_id": "000104",
+   "grid_matches_label": true,
+   "patches": 107,
+   "identical": 107
+  },
+  "IXI276-HH-1840-MRA_IXI-HH.nii.gz": {
+   "patient_id": "000118",
+   "grid_matches_label": true,
+   "patches": 105,
+   "identical": 105
+  },
+  "IXI290-IOP-0874-MRA_IXI-IOP.nii.gz": {
+   "patient_id": "000123",
+   "grid_matches_label": true,
+   "patches": 96,
+   "identical": 96
+  },
+  "IXI294-IOP-0868-MRA_IXI-IOP.nii.gz": {
+   "patient_id": "000127",
+   "grid_matches_label": true,
+   "patches": 109,
+   "identical": 109
+  },
+  "IXI315-IOP-0888-MRA_IXI-IOP.nii.gz": {
+   "patient_id": "000131",
+   "grid_matches_label": true,
+   "patches": 100,
+   "identical": 100
+  },
+  "IXI345-IOP-0928-MRA_IXI-IOP.nii.gz": {
+   "patient_id": "000137",
+   "grid_matches_label": true,
+   "patches": 112,
+   "identical": 112
+  },
+  "IXI388-IOP-0973-MRA_IXI-IOP.nii.gz": {
+   "patient_id": "000143",
+   "grid_matches_label": true,
+   "patches": 126,
+   "identical": 126
+  }
+ }
+}

@@ -179,7 +179,7 @@ def summarize(train_rows, val_rows):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('--dataset', choices=['IXI', 'BRAVA', 'SyntheticMRI'], required=True)
+    p.add_argument('--dataset', choices=sorted(json.loads(PLAN.read_text())['datasets']), required=True)  # any plan entry
     p.add_argument('--updates', type=int, default=10000)
     p.add_argument('--batch', type=int, default=8)
     p.add_argument('--lr', type=float, default=1e-3)

@@ -1,0 +1,32 @@
+{
+  "datasets": {
+    "IXI": {
+      "empty_mask": 2408,
+      "graph_positive": 16703,
+      "foreground_no_graph": 145
+    }
+  },
+  "overall": {
+    "empty_mask": 2408,
+    "graph_positive": 16703,
+    "foreground_no_graph": 145
+  },
+  "graph_on_empty_mask_count": 1,
+  "graph_on_empty_mask_examples": [
+    {
+      "dataset": "IXI",
+      "sample_id": "sample_000050_0096",
+      "split": "train",
+      "patient_id": "000050",
+      "node_count": 2,
+      "edge_count": 1
+    }
+  ],
+  "foreground_no_graph_interior_depth_at_least": {
+    "1": 36,
+    "4": 0,
+    "8": 0,
+    "12": 0
+  },
+  "definition": "graph_positive requires foreground>0, nodes>0, and edges>0"
+}

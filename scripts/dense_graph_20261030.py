@@ -231,6 +231,7 @@ def evaluate(rows, node_threshold, edge_threshold, geometry=True):
     for r in rows:
         with np.load(r['cache']) as z:
             gt_nodes, gt_edges, metric = z['nodes'], z['edges'].reshape(-1, 2), z['metric']
+            inserted = z['inserted'] if 'inserted' in z.files else None  # breaking-point anchors (loop caches)
         keep = np.nonzero(r['node_scores'] >= node_threshold)[0]
         remap = {int(k): i for i, k in enumerate(keep)}
         nodes = r['nodes'][keep]
@@ -240,7 +241,7 @@ def evaluate(rows, node_threshold, edge_threshold, geometry=True):
         scores = r['edge_scores'][valid] if len(sub) else np.zeros(0)
         local = np.array([[remap[a], remap[b]] for a, b in sub], int).reshape(-1, 2)
         mapping = match_nodes(nodes @ metric.T, gt_nodes @ metric.T, 2.0)
-        row, chosen, *_ = edge_accounting(np.arange(len(nodes)), local, scores, scores >= edge_threshold, mapping, gt_edges, len(gt_nodes))
+        row, chosen, *_ = edge_accounting(np.arange(len(nodes)), local, scores, scores >= edge_threshold, mapping, gt_edges, len(gt_nodes), inserted)
         for k in totals:
             totals[k] += row[k]
         if geometry:
@@ -290,7 +291,7 @@ def warm_start(model, path, device):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('--dataset', choices=['IXI', 'BRAVA', 'SyntheticMRI'], required=True)
+    p.add_argument('--dataset', choices=sorted(json.loads(PLAN.read_text())['datasets']), required=True)  # any plan entry
     p.add_argument('--mode', choices=['spline', 'polyline', 'chord'], default='spline')
     p.add_argument('--interior', type=int, default=6)
     p.add_argument('--updates', type=int, default=15000)

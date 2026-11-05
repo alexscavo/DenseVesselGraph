@@ -19,7 +19,31 @@ def rank(row):
     return hashlib.sha256(('364505/'+row['split']+'/'+row['sample_id']).encode()).digest()
 
 
-def prepare(source, patches, output, limits, *, smoke=False):
+def _betti(n, links):
+    parent=list(range(n))
+    def root(i):
+        while parent[i]!=i:parent[i]=parent[parent[i]];i=parent[i]
+        return i
+    for a,b in links:parent[root(a)]=root(b)
+    b0=len({root(i) for i in range(n)});return b0,len(links)-n+b0
+
+
+def _check_lossless(dense,anchor_ids,links,paths_mm,metric):
+    """Subdivision must keep beta_0, beta_1 and total centreline length of the cropped dense graph."""
+    edges=dense.edges[dense.edges[:,0]!=dense.edges[:,1]]
+    used=np.unique(edges) if len(edges) else np.zeros(0,int)
+    # dense isolated points are anchors too (contractor keeps them): compare on the same vertex set
+    iso=sorted(set(range(len(dense.positions)))-set(used.tolist()))
+    remap={k:i for i,k in enumerate(used.tolist()+iso)}
+    want=_betti(len(remap),[(remap[a],remap[b]) for a,b in edges.tolist()])
+    got=_betti(len(anchor_ids),links)
+    dense_len=float(np.linalg.norm(np.diff(dense.positions[edges]@metric.T,axis=1),axis=-1).sum()) if len(edges) else 0.
+    graph_len=float(sum(np.linalg.norm(np.diff(p,axis=0),axis=1).sum() for p in paths_mm))
+    if want!=got or abs(dense_len-graph_len)>1e-6*max(1.,dense_len):
+        raise AssertionError(f'subdivision not lossless: betti {want} vs {got}, length {dense_len:.6f} vs {graph_len:.6f}')
+
+
+def prepare(source, patches, output, limits, *, smoke=False, subdivide=False):
     config=json.loads((patches/'generation_config.json').read_text())
     assert config['patch_size']==[64,64,64]
     output.mkdir(parents=True,exist_ok=False)
@@ -53,10 +77,12 @@ def prepare(source, patches, output, limits, *, smoke=False):
         for row in group:
             name,split=row['sample_id'],row['split'];start=np.array([int(row['start_'+a]) for a in ('d','h','w')])
             dense=crop_dense_paths(full,patch_voxel_cell_bounds(start,crop),retain_tangent_contacts=True,boundary_policy='last_inside_sample')
-            graph,reason=contract_spline_graph((dense.positions-start+pad)/shape,dense.edges,max_anchors=256,closed_components=dense.closed_components,preserve_nodes=np.flatnonzero(dense.boundary))
+            graph,reason=contract_spline_graph((dense.positions-start+pad)/shape,dense.edges,max_anchors=256,closed_components=dense.closed_components,preserve_nodes=np.flatnonzero(dense.boundary),subdivide=subdivide)
             if reason:
                 excluded.append(dict(sample_id=name,split=split,reason=reason));continue
             ids=sorted(graph.anchors);mapping={k:i for i,k in enumerate(ids)}
+            inserted=np.array([k in getattr(graph,'inserted',()) for k in ids],dtype=bool)
+            boundary=np.array([bool(dense.boundary[k]) if 0<=k<len(dense.boundary) else False for k in ids],dtype=bool)
             nodes=np.asarray([graph.anchors[i] for i in ids]).reshape(-1,3)
             links=[];controls=[];curves=[];guides=[];paths=[];offsets=[0]
             for branch in graph.branches:
@@ -70,6 +96,10 @@ def prepare(source, patches, output, limits, *, smoke=False):
             if reason:
                 excluded.append(dict(sample_id=name,split=split,reason=reason));continue
             edges=np.asarray(links,dtype=np.int64).reshape(-1,2)
+            if subdivide:
+                try:_check_lossless(dense,ids,[tuple(e) for e in edges.tolist()],[p@metric.T for p in paths],affine[:3,:3])
+                except AssertionError as error:
+                    print(name,error,flush=True);excluded.append(dict(sample_id=name,split=split,reason='lossless_check_failed'));continue
             leaf=staging/split
             for folder in ('raw','seg','vtp','spline'):(leaf/folder).mkdir(parents=True,exist_ok=True)
             for folder,suffix in (('raw','data'),('seg','seg')):
@@ -82,8 +112,8 @@ def prepare(source, patches, output, limits, *, smoke=False):
             np.savez_compressed(leaf/'spline'/f'{name}.npz',nodes=nodes.astype('float32'),edges=edges,
                 controls=np.asarray(controls,dtype='float32').reshape(-1,8,3),curves=np.asarray(curves,dtype='float32').reshape(-1,64,3),
                 guides=np.asarray(guides,dtype='float32').reshape(-1,64,3),metric=metric.astype('float32'),
-                full_paths=(np.concatenate(paths) if paths else np.empty((0,3))).astype('float32'),path_offsets=np.asarray(offsets),boundary=dense.boundary[ids])
-            accepted.append(dict(row,anchor_count=len(nodes),branch_count=len(edges)))
+                full_paths=(np.concatenate(paths) if paths else np.empty((0,3))).astype('float32'),path_offsets=np.asarray(offsets),boundary=boundary,inserted=inserted)
+            accepted.append(dict(row,anchor_count=len(nodes),branch_count=len(edges),inserted_count=int(inserted.sum())))
         print(f'{patient}: accepted {len(accepted)}, excluded {len(excluded)}',flush=True)
     selected=[]
     for split,limit in limits.items():
@@ -94,7 +124,7 @@ def prepare(source, patches, output, limits, *, smoke=False):
         attempted=len(rows),source_counts=source_counts,missing_graph_subjects=missing_subjects,excluded=excluded,exclusion_counts=dict(Counter(r['reason'] for r in excluded)),
         boundary_policy='last_inside_sample_voxel_cells_with_sparse_component_exact_fallback',
         guide='Extracted/generated centerline paths are uncertain geometric supervision, not perfect anatomy.',
-        max_anchors=256,controls=8,train_ids=sorted(r['sample_id'] for r in selected if r['split']=='train'),
+        max_anchors=256,controls=8,loop_policy='subdivided: inserted degree-2 anchors (npz key inserted), no patch excluded for loops' if subdivide else 'patches with parallel/closed branches excluded',train_ids=sorted(r['sample_id'] for r in selected if r['split']=='train'),
         validation_ids=sorted(r['sample_id'] for r in selected if r['split']=='val'),test_ids=sorted(r['sample_id'] for r in selected if r['split']=='test'))
     (output/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     for split,limit in limits.items():
@@ -111,7 +141,7 @@ def prepare(source, patches, output, limits, *, smoke=False):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--source',required=True,type=Path);p.add_argument('--patches',required=True,type=Path);p.add_argument('--output',required=True,type=Path)
-    p.add_argument('--train-limit',type=int,default=10000);p.add_argument('--val-limit',type=int);p.add_argument('--test',action='store_true');p.add_argument('--smoke',action='store_true');a=p.parse_args()
-    limits={'train':2 if a.smoke else a.train_limit,'val':2 if a.smoke else a.val_limit}
+    p.add_argument('--subdivide-loops',action='store_true',help='keep loop patches: insert breaking-point anchors (training encoding)');p.add_argument('--train-limit',type=int,default=10000);p.add_argument('--val-limit',type=int);p.add_argument('--test',action='store_true');p.add_argument('--smoke',action='store_true');a=p.parse_args()
+    limits={'train':2 if a.smoke else (a.train_limit if a.train_limit>0 else None),'val':2 if a.smoke else a.val_limit}  # --train-limit 0: all compatible patches
     if a.test:limits['test']=2 if a.smoke else None
-    prepare(a.source,a.patches,a.output,limits,smoke=a.smoke)
+    prepare(a.source,a.patches,a.output,limits,smoke=a.smoke,subdivide=a.subdivide_loops)

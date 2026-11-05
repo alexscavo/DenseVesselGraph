@@ -1,0 +1,58 @@
+{
+ "avwide": {
+  "train": {
+   "crops": 1385,
+   "crops_with_degree2": 74,
+   "degree2": 80,
+   "on_cycle": 15
+  },
+  "validation": {
+   "crops": 506,
+   "crops_with_degree2": 21,
+   "degree2": 23,
+   "on_cycle": 8
+  }
+ },
+ "reaver": {
+  "train": {
+   "crops": 256,
+   "crops_with_degree2": 11,
+   "degree2": 11,
+   "on_cycle": 0
+  },
+  "validation": {
+   "crops": 128,
+   "crops_with_degree2": 1,
+   "degree2": 1,
+   "on_cycle": 0
+  }
+ },
+ "octasynth": {
+  "train": {
+   "crops": 10648,
+   "crops_with_degree2": 0,
+   "degree2": 0,
+   "on_cycle": 0
+  },
+  "validation": {
+   "crops": 4840,
+   "crops_with_degree2": 0,
+   "degree2": 0,
+   "on_cycle": 0
+  }
+ },
+ "plants": {
+  "train": {
+   "crops": 25867,
+   "crops_with_degree2": 65,
+   "degree2": 65,
+   "on_cycle": 0
+  },
+  "validation": {
+   "crops": 6398,
+   "crops_with_degree2": 10,
+   "degree2": 10,
+   "on_cycle": 0
+  }
+ }
+}
