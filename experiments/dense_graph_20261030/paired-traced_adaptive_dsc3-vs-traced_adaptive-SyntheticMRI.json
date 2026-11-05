@@ -1,0 +1,73 @@
+{
+ "dataset": "SyntheticMRI",
+ "subjects": 13,
+ "patches": 480,
+ "thresholds": {
+  "traced_adaptive_dsc3": {
+   "node": 0.45,
+   "edge": 0.9,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "traced_adaptive": {
+   "node": 0.45,
+   "edge": 0.9,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  }
+ },
+ "traced_adaptive_dsc3": {
+  "node_f1": 0.8922791464797444,
+  "edge_f1": 0.7957991375712895,
+  "branch_f1": 0.4341308734505621,
+  "curve_f1": 0.9501240220621612
+ },
+ "traced_adaptive": {
+  "node_f1": 0.8936808356603578,
+  "edge_f1": 0.7971929824561403,
+  "branch_f1": 0.44091634043787153,
+  "curve_f1": 0.9452947471554141
+ },
+ "traced_adaptive_dsc3_minus_traced_adaptive": {
+  "node_f1": {
+   "point": -0.0014016891806134524,
+   "ci95": [
+    -0.004868170635719935,
+    0.0024333286543583507
+   ]
+  },
+  "edge_f1": {
+   "point": -0.0013938448848508367,
+   "ci95": [
+    -0.008658711495838894,
+    0.007624115004253129
+   ]
+  },
+  "branch_f1": {
+   "point": -0.006785466987309419,
+   "ci95": [
+    -0.020460034758820942,
+    0.007981220990739344
+   ]
+  },
+  "curve_f1": {
+   "point": 0.004829274906747116,
+   "ci95": [
+    -9.722064319022949e-05,
+    0.009240416097717932
+   ]
+  }
+ },
+ "parity_abs_difference_vs_reported": {
+  "traced_adaptive_dsc3": {
+   "node_f1": 0.0,
+   "edge_f1": 0.0,
+   "branch_f1": 0.0,
+   "curve_f1": 0.0
+  },
+  "traced_adaptive": {
+   "node_f1": 0.0,
+   "edge_f1": 0.0,
+   "branch_f1": 0.0,
+   "curve_f1": 0.0
+  }
+ }
+}

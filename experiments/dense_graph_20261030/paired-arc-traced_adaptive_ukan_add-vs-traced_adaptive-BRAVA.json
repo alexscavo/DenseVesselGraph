@@ -1,0 +1,90 @@
+{
+ "dataset": "BRAVA",
+ "arms": [
+  "traced_adaptive_ukan_add",
+  "traced_adaptive"
+ ],
+ "subjects": 8,
+ "thresholds": {
+  "traced_adaptive_ukan_add": {
+   "node": 0.25,
+   "edge": 0.8,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "traced_adaptive": {
+   "node": 0.3,
+   "edge": 0.75,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  }
+ },
+ "ranges": {
+  "ge20mm": {
+   "counts": {
+    "traced_adaptive_ukan_add": {
+     "edges": 5042,
+     "recovered": 497,
+     "endpoints_missing": 3607,
+     "not_candidate": 136,
+     "rejected": 802
+    },
+    "traced_adaptive": {
+     "edges": 5042,
+     "recovered": 466,
+     "endpoints_missing": 4024,
+     "not_candidate": 35,
+     "rejected": 517
+    }
+   },
+   "recovered_fraction": {
+    "traced_adaptive_ukan_add": 0.09857199523998414,
+    "traced_adaptive": 0.09242364141213805
+   },
+   "difference": {
+    "point": 0.0061483538278460925,
+    "ci95": [
+     -0.0035722540763371015,
+     0.015234935833619925
+    ],
+    "resamples_with_edges": 2000
+   }
+  },
+  "ge40mm": {
+   "counts": {
+    "traced_adaptive_ukan_add": {
+     "edges": 1251,
+     "recovered": 74,
+     "endpoints_missing": 921,
+     "not_candidate": 79,
+     "rejected": 177
+    },
+    "traced_adaptive": {
+     "edges": 1251,
+     "recovered": 65,
+     "endpoints_missing": 1031,
+     "not_candidate": 26,
+     "rejected": 129
+    }
+   },
+   "recovered_fraction": {
+    "traced_adaptive_ukan_add": 0.05915267785771383,
+    "traced_adaptive": 0.05195843325339728
+   },
+   "difference": {
+    "point": 0.007194244604316551,
+    "ci95": [
+     -0.006988697662471103,
+     0.017784963621665324
+    ],
+    "resamples_with_edges": 2000
+   }
+  }
+ },
+ "validation_traced_fraction": {
+  "traced_adaptive_ukan_add": 0.11709199543986079,
+  "traced_adaptive": 0.11999774440330069
+ },
+ "last_training_traced_pair_fraction": {
+  "traced_adaptive_ukan_add": 0.11474910634569824,
+  "traced_adaptive": 0.2296390039846301
+ }
+}

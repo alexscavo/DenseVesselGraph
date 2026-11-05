@@ -1,0 +1,90 @@
+{
+ "dataset": "SyntheticMRI",
+ "arms": [
+  "traced_adaptive_dsc3",
+  "traced_adaptive"
+ ],
+ "subjects": 13,
+ "thresholds": {
+  "traced_adaptive_dsc3": {
+   "node": 0.45,
+   "edge": 0.9,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "traced_adaptive": {
+   "node": 0.45,
+   "edge": 0.9,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  }
+ },
+ "ranges": {
+  "ge20mm": {
+   "counts": {
+    "traced_adaptive_dsc3": {
+     "edges": 1556,
+     "recovered": 1275,
+     "endpoints_missing": 205,
+     "not_candidate": 1,
+     "rejected": 75
+    },
+    "traced_adaptive": {
+     "edges": 1556,
+     "recovered": 1259,
+     "endpoints_missing": 223,
+     "not_candidate": 1,
+     "rejected": 73
+    }
+   },
+   "recovered_fraction": {
+    "traced_adaptive_dsc3": 0.8194087403598972,
+    "traced_adaptive": 0.8091259640102828
+   },
+   "difference": {
+    "point": 0.010282776349614386,
+    "ci95": [
+     -0.005864250173125712,
+     0.025388382195213686
+    ],
+    "resamples_with_edges": 2000
+   }
+  },
+  "ge40mm": {
+   "counts": {
+    "traced_adaptive_dsc3": {
+     "edges": 145,
+     "recovered": 102,
+     "endpoints_missing": 30,
+     "not_candidate": 1,
+     "rejected": 12
+    },
+    "traced_adaptive": {
+     "edges": 145,
+     "recovered": 103,
+     "endpoints_missing": 26,
+     "not_candidate": 1,
+     "rejected": 15
+    }
+   },
+   "recovered_fraction": {
+    "traced_adaptive_dsc3": 0.7034482758620689,
+    "traced_adaptive": 0.7103448275862069
+   },
+   "difference": {
+    "point": -0.006896551724137945,
+    "ci95": [
+     -0.07948961654811541,
+     0.05982905982905984
+    ],
+    "resamples_with_edges": 2000
+   }
+  }
+ },
+ "validation_traced_fraction": {
+  "traced_adaptive_dsc3": 0.09667616092772494,
+  "traced_adaptive": 0.09572513395094248
+ },
+ "last_training_traced_pair_fraction": {
+  "traced_adaptive_dsc3": 0.10151305794715881,
+  "traced_adaptive": 0.10243818629533052
+ }
+}

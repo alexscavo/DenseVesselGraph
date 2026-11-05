@@ -1,0 +1,73 @@
+{
+ "dataset": "IXI",
+ "subjects": 26,
+ "patches": 512,
+ "thresholds": {
+  "traced_adaptive_dsc3": {
+   "node": 0.35,
+   "edge": 0.85,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "traced_adaptive": {
+   "node": 0.35,
+   "edge": 0.75,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  }
+ },
+ "traced_adaptive_dsc3": {
+  "node_f1": 0.66572388191621,
+  "edge_f1": 0.33232868922377024,
+  "branch_f1": 0.199252801992528,
+  "curve_f1": 0.7499148025050036
+ },
+ "traced_adaptive": {
+  "node_f1": 0.6490399748190117,
+  "edge_f1": 0.3129392310872261,
+  "branch_f1": 0.17939147155299173,
+  "curve_f1": 0.7704825034852576
+ },
+ "traced_adaptive_dsc3_minus_traced_adaptive": {
+  "node_f1": {
+   "point": 0.01668390709719836,
+   "ci95": [
+    0.01101797216047246,
+    0.023041739890483255
+   ]
+  },
+  "edge_f1": {
+   "point": 0.019389458136544135,
+   "ci95": [
+    0.009851920647418666,
+    0.03002848360033208
+   ]
+  },
+  "branch_f1": {
+   "point": 0.01986133043953628,
+   "ci95": [
+    0.008080307579005729,
+    0.03111054068949074
+   ]
+  },
+  "curve_f1": {
+   "point": -0.020567700980253956,
+   "ci95": [
+    -0.033067846600907884,
+    -0.007783278713526107
+   ]
+  }
+ },
+ "parity_abs_difference_vs_reported": {
+  "traced_adaptive_dsc3": {
+   "node_f1": 0.0,
+   "edge_f1": 0.0,
+   "branch_f1": 0.0,
+   "curve_f1": 0.0
+  },
+  "traced_adaptive": {
+   "node_f1": 0.0,
+   "edge_f1": 0.0,
+   "branch_f1": 0.0,
+   "curve_f1": 0.0
+  }
+ }
+}

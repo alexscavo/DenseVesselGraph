@@ -1,0 +1,90 @@
+{
+ "dataset": "IXI",
+ "arms": [
+  "traced_adaptive_dsc9",
+  "traced_adaptive"
+ ],
+ "subjects": 26,
+ "thresholds": {
+  "traced_adaptive_dsc9": {
+   "node": 0.35,
+   "edge": 0.85,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "traced_adaptive": {
+   "node": 0.35,
+   "edge": 0.75,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  }
+ },
+ "ranges": {
+  "ge20mm": {
+   "counts": {
+    "traced_adaptive_dsc9": {
+     "edges": 648,
+     "recovered": 202,
+     "endpoints_missing": 327,
+     "not_candidate": 13,
+     "rejected": 106
+    },
+    "traced_adaptive": {
+     "edges": 648,
+     "recovered": 181,
+     "endpoints_missing": 354,
+     "not_candidate": 12,
+     "rejected": 101
+    }
+   },
+   "recovered_fraction": {
+    "traced_adaptive_dsc9": 0.3117283950617284,
+    "traced_adaptive": 0.279320987654321
+   },
+   "difference": {
+    "point": 0.032407407407407385,
+    "ci95": [
+     0.0015220700152207,
+     0.06387185972734281
+    ],
+    "resamples_with_edges": 2000
+   }
+  },
+  "ge40mm": {
+   "counts": {
+    "traced_adaptive_dsc9": {
+     "edges": 83,
+     "recovered": 12,
+     "endpoints_missing": 44,
+     "not_candidate": 4,
+     "rejected": 23
+    },
+    "traced_adaptive": {
+     "edges": 83,
+     "recovered": 12,
+     "endpoints_missing": 46,
+     "not_candidate": 5,
+     "rejected": 20
+    }
+   },
+   "recovered_fraction": {
+    "traced_adaptive_dsc9": 0.14457831325301204,
+    "traced_adaptive": 0.14457831325301204
+   },
+   "difference": {
+    "point": 0.0,
+    "ci95": [
+     -0.0750237341772152,
+     0.08333333333333333
+    ],
+    "resamples_with_edges": 2000
+   }
+  }
+ },
+ "validation_traced_fraction": {
+  "traced_adaptive_dsc9": 0.1307791148780548,
+  "traced_adaptive": 0.13057452273695352
+ },
+ "last_training_traced_pair_fraction": {
+  "traced_adaptive_dsc9": 0.25033279694616795,
+  "traced_adaptive": 0.20304387202486396
+ }
+}

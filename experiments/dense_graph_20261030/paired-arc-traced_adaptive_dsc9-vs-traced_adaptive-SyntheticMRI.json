@@ -1,0 +1,90 @@
+{
+ "dataset": "SyntheticMRI",
+ "arms": [
+  "traced_adaptive_dsc9",
+  "traced_adaptive"
+ ],
+ "subjects": 13,
+ "thresholds": {
+  "traced_adaptive_dsc9": {
+   "node": 0.45,
+   "edge": 0.9,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "traced_adaptive": {
+   "node": 0.45,
+   "edge": 0.9,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  }
+ },
+ "ranges": {
+  "ge20mm": {
+   "counts": {
+    "traced_adaptive_dsc9": {
+     "edges": 1556,
+     "recovered": 1272,
+     "endpoints_missing": 208,
+     "not_candidate": 1,
+     "rejected": 75
+    },
+    "traced_adaptive": {
+     "edges": 1556,
+     "recovered": 1259,
+     "endpoints_missing": 223,
+     "not_candidate": 1,
+     "rejected": 73
+    }
+   },
+   "recovered_fraction": {
+    "traced_adaptive_dsc9": 0.8174807197943444,
+    "traced_adaptive": 0.8091259640102828
+   },
+   "difference": {
+    "point": 0.00835475578406164,
+    "ci95": [
+     -0.005436370088151826,
+     0.023319345775717558
+    ],
+    "resamples_with_edges": 2000
+   }
+  },
+  "ge40mm": {
+   "counts": {
+    "traced_adaptive_dsc9": {
+     "edges": 145,
+     "recovered": 97,
+     "endpoints_missing": 32,
+     "not_candidate": 1,
+     "rejected": 15
+    },
+    "traced_adaptive": {
+     "edges": 145,
+     "recovered": 103,
+     "endpoints_missing": 26,
+     "not_candidate": 1,
+     "rejected": 15
+    }
+   },
+   "recovered_fraction": {
+    "traced_adaptive_dsc9": 0.6689655172413793,
+    "traced_adaptive": 0.7103448275862069
+   },
+   "difference": {
+    "point": -0.04137931034482756,
+    "ci95": [
+     -0.10812649384077956,
+     0.02899616368286441
+    ],
+    "resamples_with_edges": 2000
+   }
+  }
+ },
+ "validation_traced_fraction": {
+  "traced_adaptive_dsc9": 0.09655778190798686,
+  "traced_adaptive": 0.09572513395094248
+ },
+ "last_training_traced_pair_fraction": {
+  "traced_adaptive_dsc9": 0.0940268961712718,
+  "traced_adaptive": 0.10243818629533052
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "dataset": "IXI",
+ "arms": [
+  "traced_adaptive_dsc3",
+  "traced_adaptive"
+ ],
+ "subjects": 26,
+ "thresholds": {
+  "traced_adaptive_dsc3": {
+   "node": 0.35,
+   "edge": 0.85,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "traced_adaptive": {
+   "node": 0.35,
+   "edge": 0.75,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  }
+ },
+ "ranges": {
+  "ge20mm": {
+   "counts": {
+    "traced_adaptive_dsc3": {
+     "edges": 648,
+     "recovered": 186,
+     "endpoints_missing": 330,
+     "not_candidate": 12,
+     "rejected": 120
+    },
+    "traced_adaptive": {
+     "edges": 648,
+     "recovered": 181,
+     "endpoints_missing": 354,
+     "not_candidate": 12,
+     "rejected": 101
+    }
+   },
+   "recovered_fraction": {
+    "traced_adaptive_dsc3": 0.28703703703703703,
+    "traced_adaptive": 0.279320987654321
+   },
+   "difference": {
+    "point": 0.007716049382716028,
+    "ci95": [
+     -0.021441383855024733,
+     0.038772213247172865
+    ],
+    "resamples_with_edges": 2000
+   }
+  },
+  "ge40mm": {
+   "counts": {
+    "traced_adaptive_dsc3": {
+     "edges": 83,
+     "recovered": 17,
+     "endpoints_missing": 44,
+     "not_candidate": 4,
+     "rejected": 18
+    },
+    "traced_adaptive": {
+     "edges": 83,
+     "recovered": 12,
+     "endpoints_missing": 46,
+     "not_candidate": 5,
+     "rejected": 20
+    }
+   },
+   "recovered_fraction": {
+    "traced_adaptive_dsc3": 0.20481927710843373,
+    "traced_adaptive": 0.14457831325301204
+   },
+   "difference": {
+    "point": 0.060240963855421686,
+    "ci95": [
+     -0.021058230683090717,
+     0.15004746835443014
+    ],
+    "resamples_with_edges": 2000
+   }
+  }
+ },
+ "validation_traced_fraction": {
+  "traced_adaptive_dsc3": 0.13160147745896628,
+  "traced_adaptive": 0.13057452273695352
+ },
+ "last_training_traced_pair_fraction": {
+  "traced_adaptive_dsc3": 0.12111814972013235,
+  "traced_adaptive": 0.20304387202486396
+ }
+}
