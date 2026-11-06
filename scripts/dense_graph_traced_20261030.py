@@ -614,7 +614,7 @@ def main():
     p.add_argument('--gap-features', action='store_true', help='Edge/geometry heads read centreline statistics along the path')
     p.add_argument('--two-hop', action='store_true', help='Also propose A-B through a traced pass-through node C')
     p.add_argument('--passthrough', action='store_true', help='Node-level decision for two-hop chains (implies --two-hop)')
-    p.add_argument('--backbone', choices=['unet', 'ukan', 'ukan_mlp', 'ukan_add', 'dsc3', 'dsc9'], default='unet',
+    p.add_argument('--backbone', choices=D.BACKBONES, default='unet',
                    help='Must match the --init-from checkpoint')
     p.add_argument('--offset-radius', type=float, default=1.75,
                    help='Supervise offsets at all voxels within this radius of each GT node; default 1.75 (3x3x3) since '

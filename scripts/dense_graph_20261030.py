@@ -44,19 +44,25 @@ NODE_THRESHOLDS = [round(t, 2) for t in np.arange(0.1, 0.71, 0.05)]
 EDGE_THRESHOLDS = [round(t, 2) for t in np.arange(0.1, 0.91, 0.05)]
 
 
+# Size-matched backbone controls (6 Nov 2026): U-Net widened to the DSC3 backbone size (15.57M vs 15.89M) and DSC3
+# narrowed to the U-Net backbone size (5.78M vs 5.75M); channel counts of dsc3_slim are multiples of 4 (GroupNorm).
+WIDTHS = {'unet_wide': (56, 56, 104, 208, 424, 56), 'dsc3_slim': (20, 20, 40, 76, 152, 20)}
+BACKBONES = ['unet', 'unet_wide', 'ukan', 'ukan_mlp', 'ukan_add', 'dsc3', 'dsc3_slim', 'dsc9']
+
+
 class DenseGraph(nn.Module):
     def __init__(self, mode='spline', interior=6, radius=12.0, backbone='unet'):
         super().__init__()
         from monai.networks.nets import BasicUNet
         self.mode, self.m, self.radius = mode, interior, float(radius)
-        features = (32, 32, 64, 128, 256, 32)
+        features = WIDTHS.get(backbone, (32, 32, 64, 128, 256, 32))
         self.unet = BasicUNet(spatial_dims=3, in_channels=1, out_channels=5 + 32, features=features)
         if backbone.startswith('ukan'):  # tokenized KAN (or MLP control) in the two deepest encoder / first two decoder stages
             from models.ukan3d import kanify_basic_unet
             kanify_basic_unet(self.unet, features, kan=backbone != 'ukan_mlp', skip='add' if backbone.endswith('_add') else 'cat')
         elif backbone.startswith('dsc'):  # dynamic snake convolution blocks everywhere, dsc<K> = snake length K (models/dscnet3d.py)
             from models.dscnet3d import dscify_basic_unet
-            dscify_basic_unet(self.unet, kernel_size=int(backbone[3:]))
+            dscify_basic_unet(self.unet, kernel_size=int(backbone[3:].split('_')[0]))
         with torch.no_grad():
             self.unet.final_conv.bias[0] = -4.6
         self.corridor = nn.Sequential(
@@ -306,7 +312,7 @@ def main():
     p.add_argument('--init-from', type=Path, help='Warm start from a dense-model checkpoint (matching tensors)')
     p.add_argument('--run-name', default=None, help='Output subfolder name')
     p.add_argument('--evaluate-only', action='store_true', help='Re-evaluate the saved model.pt')
-    p.add_argument('--backbone', choices=['unet', 'ukan', 'ukan_mlp', 'ukan_add', 'dsc3', 'dsc9'], default='unet',
+    p.add_argument('--backbone', choices=BACKBONES, default='unet',
                    help='ukan: U-KAN-style deepest stages (models/ukan3d.py); ukan_mlp: same blocks with MLPs; ukan_add: additive '
                         'skips; dsc<K>: DSCNet snake-conv blocks in every stage, snake length K (models/dscnet3d.py)')
     a = p.parse_args()
