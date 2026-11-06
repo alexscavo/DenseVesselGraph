@@ -1,0 +1,18 @@
+IXI-fold0 stage1 2012856 stage2 2012858
+IXI-fold1 stage1 2012859 stage2 2012860
+TopBrainCTA-fold0 stage1 2012861 stage2 2012862
+TopBrainCTA-fold1 stage1 2012863 stage2 2012864
+IXI-fold0 oof 2012890
+IXI-fold1 oof 2012891
+TopBrainCTA-fold0 oof 2012893
+TopBrainCTA-fold1 oof 2012895
+IXI scorer 2013766
+CTA scorer 2013767
+# resubmitted 2026-11-05 after WORK quota failure 17:02-17:30
+IXI-fold0 stage2 2022988 oof 2022989
+IXI-fold1 stage2 2022992 oof 2022994
+TopBrainCTA-fold0 stage2 2022998 oof 2022999
+TopBrainCTA-fold1 stage2 2023000 oof 2023001
+IXI scorer 2023005
+CTA scorer 2023006
+IXI study 2023007
