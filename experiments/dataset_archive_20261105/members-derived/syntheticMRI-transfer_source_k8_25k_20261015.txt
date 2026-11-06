@@ -1,0 +1,7 @@
+syntheticMRI/transfer_source_k8_25k_20261015/train
+syntheticMRI/transfer_source_k8_25k_20261015/val
+syntheticMRI/transfer_source_k8_25k_20261015/generation_config.json
+syntheticMRI/transfer_source_k8_25k_20261015/manifest.json
+syntheticMRI/transfer_source_k8_25k_20261015/patch_index.csv
+syntheticMRI/transfer_source_k8_25k_20261015/READY
+syntheticMRI/transfer_source_k8_25k_20261015/source_manifest.json

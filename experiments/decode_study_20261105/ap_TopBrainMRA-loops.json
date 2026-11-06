@@ -1,0 +1,72 @@
+{
+ "dataset": "TopBrainMRA-loops",
+ "run": "traced_adaptive",
+ "validation_patches": 1148,
+ "node_ap_2mm": {
+  "node_ap": 0.5723379076010601,
+  "max_recall": 0.9179896855091516,
+  "proposals": 268081,
+  "gt_nodes": 9889
+ },
+ "V0": {
+  "thresholds": {
+   "node": 0.3,
+   "edge": 0.75,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "edge_ap_all_retained": {
+   "ap": 0.4250335589732146,
+   "candidates": 53024,
+   "positives": 2323
+  },
+  "edge_ap_conditional": {
+   "ap": 0.7153265215205605,
+   "candidates": 18547,
+   "positives": 2323
+  },
+  "box_node_mAP": 0.26478920365062064,
+  "box_node_mAR": 0.3734654666801497,
+  "box_edge_mAP": 0.1325096703412202,
+  "box_edge_mAR": 0.22011343200995986
+ },
+ "V4": {
+  "config": {
+   "t_low": 0.2,
+   "t_high": 0.3,
+   "t_edge": 0.75,
+   "prune_isolated": false,
+   "weak_tree": true
+  },
+  "box_node_mAP": 0.28326694711409744,
+  "box_node_mAR": 0.41691778744059055,
+  "box_edge_mAP": 0.14506786983879663,
+  "box_edge_mAR": 0.2797897357864158
+ },
+ "stage1_spline6": {
+  "thresholds": {
+   "node": 0.3,
+   "edge": 0.7,
+   "policy": "train monitor only; candidates = 16-NN over retained nodes"
+  },
+  "node_ap_2mm": {
+   "node_ap": 0.5594013422812922,
+   "max_recall": 0.9128324400849429,
+   "proposals": 288582,
+   "gt_nodes": 9889
+  },
+  "edge_ap_all_retained": {
+   "ap": 0.4061817062634502,
+   "candidates": 50699,
+   "positives": 2169
+  },
+  "edge_ap_conditional": {
+   "ap": 0.7216781530171407,
+   "candidates": 17555,
+   "positives": 2169
+  },
+  "box_node_mAP": 0.2555930763666464,
+  "box_node_mAR": 0.3662554353321873,
+  "box_edge_mAP": 0.10430736541783636,
+  "box_edge_mAR": 0.18602849633420943
+ }
+}

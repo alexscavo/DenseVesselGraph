@@ -1,0 +1,4 @@
+octa-synth-packed/raw
+octa-synth-packed/labels
+octa-synth-packed/graphs
+octa-synth-packed/splits.csv

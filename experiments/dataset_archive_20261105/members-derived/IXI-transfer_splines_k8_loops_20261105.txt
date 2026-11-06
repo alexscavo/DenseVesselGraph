@@ -1,0 +1,8 @@
+IXI/transfer_splines_k8_loops_20261105/train
+IXI/transfer_splines_k8_loops_20261105/val
+IXI/transfer_splines_k8_loops_20261105/generation_config.json
+IXI/transfer_splines_k8_loops_20261105/manifest.json
+IXI/transfer_splines_k8_loops_20261105/monitoring.json
+IXI/transfer_splines_k8_loops_20261105/patch_index.csv
+IXI/transfer_splines_k8_loops_20261105/READY
+IXI/transfer_splines_k8_loops_20261105/source_manifest.json

@@ -1,0 +1,13 @@
+TopBrain_tight_20261105/images_ct
+TopBrain_tight_20261105/images_mr
+TopBrain_tight_20261105/labels_ct
+TopBrain_tight_20261105/labels_mr
+TopBrain_tight_20261105/manifest.csv
+TopBrain_tight_20261105/masks_ct
+TopBrain_tight_20261105/masks_mr
+TopBrain_tight_20261105/patient_split_ct.csv
+TopBrain_tight_20261105/patient_split_mr.csv
+TopBrain_tight_20261105/preparation.json
+TopBrain_tight_20261105/vascular_graphs
+TopBrain_tight_20261105/vascular_graph_sources
+TopBrain_tight_20261105/vascular_patches

@@ -84,10 +84,11 @@ def main(dataset, run='traced_adaptive'):
     print(dataset, json.dumps(result), flush=True)
     # stage 1 on the same validation list, for reference
     s1_dir = SCRATCH / 'dense_graph_20261030' / dataset / 'spline6'
-    s1_final = json.loads((s1_dir / 'final.json').read_text())
+    stem = 'final' if (s1_dir / 'final-validation-rows.pkl').exists() else 'final-v2'  # older runs: re-evaluated final-v2
+    s1_final = json.loads((s1_dir / f'{stem}.json').read_text())
     s1 = D.DenseGraph('spline', 6, backbone=s1_final.get('backbone', 'unet')).to(device)
     s1.load_state_dict(torch.load(s1_dir / 'model.pt', map_location=device)['model'])
-    s1_rows = pickle.loads((s1_dir / 'final-validation-rows.pkl').read_bytes())
+    s1_rows = pickle.loads((s1_dir / f'{stem}-validation-rows.pkl').read_bytes())
     t1 = s1_final['thresholds']
     result['stage1_spline6'] = dict(thresholds=t1, node_ap_2mm=node_ap_from_model(s1, ds, device),
                                     **edge_parts(s1_rows, t1['node'], strict=False), **box_map(s1_rows, t1['node'], t1['edge'], strict=False))

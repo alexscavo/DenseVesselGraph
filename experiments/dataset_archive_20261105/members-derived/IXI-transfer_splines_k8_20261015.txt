@@ -1,0 +1,9 @@
+IXI/transfer_splines_k8_20261015/train
+IXI/transfer_splines_k8_20261015/val
+IXI/transfer_splines_k8_20261015/test
+IXI/transfer_splines_k8_20261015/generation_config.json
+IXI/transfer_splines_k8_20261015/manifest.json
+IXI/transfer_splines_k8_20261015/monitoring.json
+IXI/transfer_splines_k8_20261015/patch_index.csv
+IXI/transfer_splines_k8_20261015/READY
+IXI/transfer_splines_k8_20261015/source_manifest.json

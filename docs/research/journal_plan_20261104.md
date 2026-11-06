@@ -116,6 +116,37 @@ Each metric is computed at patch level and, when available, at full-volume level
 - Equal total update counts across regimes, so "more exposure" is not mistaken for transfer.
 - Literature-scale training budget for every method before any option is dismissed.
 
+### 6.1 Decoding and threshold protocol (fixed 6 Nov 2026, before any locked evaluation)
+
+Implemented in `scripts/protocol_tables_20261106.py` and `scripts/protocol_report_20261106.py`
+(results: `experiments/evaluation_protocol_20261106/report.md`).
+
+- **Two kinds of claim are kept apart.**
+  - Model claims (architecture, edge representation, loop training, pretraining, sources) rest on threshold-free
+    metrics: node AP @2 mm, edge ranking AP, box mAP/mAR (RelationFormer/GrEVe protocol), PR curves; plus F1 and
+    topology at the single global operating point below.
+  - Decoding claims (tree-rule hysteresis V4 vs single thresholds V0) are a separate ablation on the same models.
+- **Four operating points, always labelled:**
+  1. *global, leave-one-dataset-out (headline)*: settings chosen on the training monitors of the other datasets
+     only (macro average). Nothing is tuned on the reported dataset; this is what an unseen dataset gets.
+  2. *global, pooled*: chosen on all training monitors; the frozen setting for any future dataset, including small
+     ones, which then need no tuning at all.
+  3. *per dataset*: chosen on the dataset's own training monitor (best achievable without validation data).
+  4. *oracle*: best on the evaluated set; an upper bound only, never claimed.
+- **Rules, identical for every dataset, operating point and method with a tunable decoder:**
+  - V0: node threshold by node F1, then edge threshold by edge F1.
+  - V4 (rule A): maximise edge F1 subject to |β₀| error, |β₁| error ≤ V0 and Curve F1 ≥ V0 on the same data.
+  - The unconstrained V4 (edge F1 only) is reported too, to show the constraint does not create the gains.
+- **Primary endpoints:** edge F1, Curve F1, |β₀| and |β₁| errors at the headline operating point; node AP @2 mm and
+  box edge mAP as threshold-free endpoints. Everything else is secondary.
+- **Statistics:** subject-paired bootstrap (2000 resamples), two-sided bootstrap p, Holm across datasets per
+  comparison and primary endpoint. Non-inferiority margins fixed in advance: F1 −0.01, Betti error +0.10 per patch.
+  "No loss" is claimed only when the CI clears the margin.
+- **Robustness evidence:** sensitivity curves (metric vs each threshold, descriptive), and the variance of
+  per-dataset choices when the rule runs on 100- and 256-patch monitor subsamples.
+- **Reporting:** all datasets, including unfavourable ones, in the main table; per-patch results and exact settings
+  released with the code. Validation is used for development only; the locked test runs once (Phase 6).
+
 ## 7. Experiments
 
 **E1. Main comparison (method pillar).**

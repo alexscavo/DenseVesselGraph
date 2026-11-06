@@ -127,3 +127,7 @@ temp/
 /experiments/native2d_recontracted_20261105/*/targets.zip
 /experiments/native2d_recontracted_20261105/octasynth/manifest.json
 /experiments/native2d_recontracted_20261105/plants/manifest.json
+# Evaluation protocol: per-setting tables are regenerable from the decode sweeps (scripts/protocol_tables_20261106.py)
+/experiments/evaluation_protocol_20261106/tables/*.npz
+/experiments/evaluation_protocol_20261106/smoke/
+/experiments/evaluation_protocol_20261106/logs/

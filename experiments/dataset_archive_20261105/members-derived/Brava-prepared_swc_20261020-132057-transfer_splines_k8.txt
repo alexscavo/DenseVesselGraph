@@ -1,0 +1,9 @@
+Brava/prepared_swc_20261020-132057/transfer_splines_k8/train
+Brava/prepared_swc_20261020-132057/transfer_splines_k8/val
+Brava/prepared_swc_20261020-132057/transfer_splines_k8/test
+Brava/prepared_swc_20261020-132057/transfer_splines_k8/brava_semantics.json
+Brava/prepared_swc_20261020-132057/transfer_splines_k8/generation_config.json
+Brava/prepared_swc_20261020-132057/transfer_splines_k8/manifest.json
+Brava/prepared_swc_20261020-132057/transfer_splines_k8/patch_index.csv
+Brava/prepared_swc_20261020-132057/transfer_splines_k8/READY
+Brava/prepared_swc_20261020-132057/transfer_splines_k8/source_manifest.json

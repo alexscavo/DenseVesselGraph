@@ -1,0 +1,72 @@
+{
+ "dataset": "TopBrainCTA-loops",
+ "run": "traced_adaptive",
+ "validation_patches": 803,
+ "node_ap_2mm": {
+  "node_ap": 0.44698125112915804,
+  "max_recall": 0.8411289518300589,
+  "proposals": 424577,
+  "gt_nodes": 10027
+ },
+ "V0": {
+  "thresholds": {
+   "node": 0.25,
+   "edge": 0.7,
+   "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+  },
+  "edge_ap_all_retained": {
+   "ap": 0.27471484384659456,
+   "candidates": 106488,
+   "positives": 2651
+  },
+  "edge_ap_conditional": {
+   "ap": 0.6411269406858543,
+   "candidates": 21817,
+   "positives": 2651
+  },
+  "box_node_mAP": 0.2273101300614231,
+  "box_node_mAR": 0.3697716166350853,
+  "box_edge_mAP": 0.11979742511068607,
+  "box_edge_mAR": 0.2482562453623547
+ },
+ "V4": {
+  "config": {
+   "t_low": 0.2,
+   "t_high": 0.3,
+   "t_edge": 0.75,
+   "prune_isolated": false,
+   "weak_tree": true
+  },
+  "box_node_mAP": 0.2266908854485294,
+  "box_node_mAR": 0.3658123067717164,
+  "box_edge_mAP": 0.11407818556615557,
+  "box_edge_mAR": 0.24699480583724953
+ },
+ "stage1_spline6": {
+  "thresholds": {
+   "node": 0.3,
+   "edge": 0.7,
+   "policy": "train monitor only; candidates = 16-NN over retained nodes"
+  },
+  "node_ap_2mm": {
+   "node_ap": 0.44277417567814403,
+   "max_recall": 0.8429241049167249,
+   "proposals": 478533,
+   "gt_nodes": 10027
+  },
+  "edge_ap_all_retained": {
+   "ap": 0.3208115909351706,
+   "candidates": 65578,
+   "positives": 2080
+  },
+  "edge_ap_conditional": {
+   "ap": 0.6568264091119134,
+   "candidates": 19088,
+   "positives": 2080
+  },
+  "box_node_mAP": 0.20510698573926311,
+  "box_node_mAR": 0.3231973671088062,
+  "box_edge_mAP": 0.08623813051205004,
+  "box_edge_mAR": 0.16177343556764778
+ }
+}

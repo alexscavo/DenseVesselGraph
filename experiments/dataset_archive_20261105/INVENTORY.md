@@ -141,3 +141,15 @@ Compression gains little because the sources are already compressed (`.nii.gz`, 
 
 ## Addendum 2026-11-05: IXI test images
 IXI.tar.zst was packed while 21 IXI test images were purged from SCRATCH (149/170 in imagesTr). They were restored and verified voxel-for-voxel against 2,178 September test patches, and are archived separately in `IXI_test_images_restored_20261105.tar.zst` (21 files).
+
+## Addendum 2026-11-05 (later): octa-synth-packed
+
+**Status: DONE.** The user approved archiving the non-patch content of `octa-synth-packed`, which settles item 2 of "Needs a decision". The checks are the same as above: counts, `zstd -t`, empty `tar --diff`, and the sha256 appended to `SHA256SUMS` and re-checked.
+
+| Archive | Source GB | Archive GB | Ratio | files src / arc | entries src / arc | sha256 |
+| :--- | ---: | ---: | ---: | ---: | ---: | :--- |
+| `octa-synth-packed.tar.zst` | 0.97 | 0.93 | 96.2% | 2001 / 2001 | 2504 / 2504 | `18973b4d8740b4274c00c848cdc76194e9f8ab51c35b7ab324608f8e96227344` |
+
+- Members: `octa-synth-packed/raw` (500 PNGs), `labels` (500), `graphs` (500 × nodes/edges CSV) and `splits.csv`.
+- Skipped: `patches/` (10,800 files, 0.09 GB, derived).
+- Job: 1998214, COMPLETED in 0:23.
