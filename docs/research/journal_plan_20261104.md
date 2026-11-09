@@ -240,8 +240,11 @@ Work through the phases in order. Within a phase, items can run in parallel unle
 - [x] **C** Dense model, traced connectivity, adaptive-K splines (single seed, 3 datasets).
 - [x] **C** Soft tracing, gap features, two-hop, pass-through and offset fix evaluated (single seed).
 - [x] **C** U-KAN (concat), MLP control and U-KAN (add) trained on both stages.
-- [ ] **C** DSCNet (kernels 3 and 9) on both stages — RUNNING.
+- [x] **C** DSCNet (kernels 3 and 9) on both stages; size-matched controls U-Net wide and DSC3 slim (dense_traced_model §4.11).
 - [ ] **C** Full paired backbone comparison: U-Net / U-KAN concat / U-KAN add / MLP / DSCNet 3 / DSCNet 9, with shared thresholds, long edges and topology.
+- [x] **C** Curve shape (9 Nov, §4.12): short edges coiled; arc-length penalty λ = 0.1 adopted as the stage-2 training default (decided by U); fit K rule not adopted.
+- [ ] **U** Number of controls: (a) one K24 head + output compression or (b) current K rule + output compression (tied on one seed, §4.12).
+- [x] **C** Feature width (9 Nov, §4.13): test-time ablation and 16-channel training; 32 channels kept (decided by U).
 - [ ] **C** Re-run the U-Net baseline on current code, to close the 30 Oct vs 3 Nov code gap.
 - [ ] **C** Fix the BRAVA node-threshold confound (one fixed node threshold with re-traced evaluation) for all comparisons.
 - [ ] **U+C** Freeze the final model configuration: backbone, offsets, pass-through yes/no, candidate rule.

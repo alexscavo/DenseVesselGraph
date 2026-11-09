@@ -1,0 +1,171 @@
+{
+ "dataset": "TopBrainCTA-loops",
+ "run": "traced_adaptive",
+ "smoke": false,
+ "thresholds": {
+  "node": 0.25,
+  "edge": 0.7
+ },
+ "rule_old": [
+  0.0,
+  0.0
+ ],
+ "rule_new": [
+  8.0,
+  20.0
+ ],
+ "max_edge_score_difference": 0.0,
+ "validation_patches": 803,
+ "candidates": {
+  "traced": 12274,
+  "K_changed": 6837,
+  "K_old_share": {
+   "K8": 0.3077236434740101,
+   "K16": 0.541795665634675,
+   "K24": 0.15048069089131497
+  },
+  "K_new_share": {
+   "K8": 0.8490304709141274,
+   "K16": 0.1346749226006192,
+   "K24": 0.016294606485253382
+  }
+ },
+ "old": {
+  "node_f1": 0.4759434573985216,
+  "edge_f1": 0.21372107783740119,
+  "branch_f1": 0.11253096883557179,
+  "curve_f1": 0.6431375165040204,
+  "mae_beta0": 5.11332503113325,
+  "mae_beta1": 2.6824408468244085
+ },
+ "new": {
+  "node_f1": 0.4759434573985216,
+  "edge_f1": 0.21372107783740119,
+  "branch_f1": 0.11253096883557179,
+  "curve_f1": 0.6433079880207443,
+  "mae_beta0": 5.11332503113325,
+  "mae_beta1": 2.6824408468244085
+ },
+ "new_minus_old": {
+  "node_f1": {
+   "point": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "p": 1.0
+  },
+  "edge_f1": {
+   "point": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "p": 1.0
+  },
+  "branch_f1": {
+   "point": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "p": 1.0
+  },
+  "curve_f1": {
+   "point": 0.00017047151672389127,
+   "ci95": [
+    -0.0031050500986347096,
+    0.003648611952814962
+   ],
+   "p": 0.837
+  },
+  "mae_beta0": {
+   "point": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "p": 1.0
+  },
+  "mae_beta1": {
+   "point": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "p": 1.0
+  }
+ },
+ "accepted_tp_edges_with_K_changed": {
+  "0-5mm": {
+   "tp_edges_with_K_changed": 703,
+   "mean_mm_old_median": 0.38868047578358383,
+   "mean_mm_new_median": 0.39103823954809985,
+   "mean_mm_change_median": 0.004459425467994826,
+   "mean_mm_improved_fraction": 0.47368421052631576,
+   "hausdorff_mm_old_median": 0.8921403511685665,
+   "hausdorff_mm_new_median": 0.8634380142636545,
+   "hausdorff_mm_change_median": 0.0,
+   "tort_gt_median": 1.0014805793762207,
+   "tort_old_median": 3.845512628555298,
+   "tort_new_median": 1.5396355390548706,
+   "turn_gt_median": 6.425956869594882,
+   "turn_old_median": 580.4127796104217,
+   "turn_new_median": 95.79348512116883,
+   "tort_excess_over_gt_old_median": 2.80612576007843,
+   "tort_excess_over_gt_new_median": 0.5270105600357056,
+   "turn_excess_over_gt_old_median": 573.4399517801897,
+   "turn_excess_over_gt_new_median": 80.99754987697905,
+   "turn_excess_over_45deg_old": 0.9246088193456614,
+   "turn_excess_over_45deg_new": 0.6827880512091038,
+   "turn_new_lower_fraction": 0.9345661450924608
+  },
+  "5-10mm": {
+   "tp_edges_with_K_changed": 95,
+   "mean_mm_old_median": 0.2752167651463158,
+   "mean_mm_new_median": 0.27645066763477777,
+   "mean_mm_change_median": 0.0004981571697846299,
+   "mean_mm_improved_fraction": 0.49473684210526314,
+   "hausdorff_mm_old_median": 0.6779665037200033,
+   "hausdorff_mm_new_median": 0.6471374155857263,
+   "hausdorff_mm_change_median": 0.0,
+   "tort_gt_median": 1.0526628494262695,
+   "tort_old_median": 1.1897399425506592,
+   "tort_new_median": 1.073556900024414,
+   "turn_gt_median": 48.598521768017974,
+   "turn_old_median": 118.72688738984124,
+   "turn_new_median": 82.15991855895886,
+   "tort_excess_over_gt_old_median": 0.09006345272064209,
+   "tort_excess_over_gt_new_median": 0.014779806137084961,
+   "turn_excess_over_gt_old_median": 60.32716749037723,
+   "turn_excess_over_gt_new_median": 27.93474695991958,
+   "turn_excess_over_45deg_old": 0.631578947368421,
+   "turn_excess_over_45deg_new": 0.2736842105263158,
+   "turn_new_lower_fraction": 0.9052631578947369
+  },
+  "10-20mm": {
+   "tp_edges_with_K_changed": 1,
+   "mean_mm_old_median": 0.2624991948836979,
+   "mean_mm_new_median": 0.27860071577673395,
+   "mean_mm_change_median": 0.01610152089303607,
+   "mean_mm_improved_fraction": 0.0,
+   "hausdorff_mm_old_median": 0.8331127305265368,
+   "hausdorff_mm_new_median": 0.8331127305265368,
+   "hausdorff_mm_change_median": 0.0,
+   "tort_gt_median": 1.6487476825714111,
+   "tort_old_median": 1.656434178352356,
+   "tort_new_median": 1.5905587673187256,
+   "turn_gt_median": 311.2162223256386,
+   "turn_old_median": 366.7232230307574,
+   "turn_new_median": 317.68916953969165,
+   "tort_excess_over_gt_old_median": 0.007686495780944824,
+   "tort_excess_over_gt_new_median": -0.05818891525268555,
+   "turn_excess_over_gt_old_median": 55.5070007051188,
+   "turn_excess_over_gt_new_median": 6.472947214053022,
+   "turn_excess_over_45deg_old": 1.0,
+   "turn_excess_over_45deg_new": 0.0,
+   "turn_new_lower_fraction": 1.0
+  }
+ },
+ "seconds": 46.7123646736145
+}

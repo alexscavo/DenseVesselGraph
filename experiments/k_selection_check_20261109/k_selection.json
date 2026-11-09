@@ -1,0 +1,2432 @@
+{
+ "needed_tol_voxels": 0.5,
+ "smooth_mm": 1.0,
+ "split": "monitor_train (training patches only)",
+ "per_dataset": {
+  "IXI-loops": {
+   "pairs": 1768,
+   "needed_share": {
+    "K8": 0.9852941176470589,
+    "K16": 0.014705882352941176,
+    "K24": 0.0
+   },
+   "overall": {
+    "ratio_original": {
+     "agreement": 0.31334841628959276,
+     "over": 0.6860859728506787,
+     "under": 0.0005656108597285068,
+     "mean_controls": 14.407239819004525
+    },
+    "ratio_min_arc": {
+     "agreement": 0.8144796380090498,
+     "over": 0.18495475113122173,
+     "under": 0.0005656108597285068,
+     "mean_controls": 9.642533936651583
+    },
+    "fit_tol0.25": {
+     "agreement": 0.8823529411764706,
+     "over": 0.1170814479638009,
+     "under": 0.0005656108597285068,
+     "mean_controls": 9.049773755656108
+    },
+    "fit_tol0.5": {
+     "agreement": 0.9773755656108597,
+     "over": 0.019796380090497737,
+     "under": 0.002828054298642534,
+     "mean_controls": 8.253393665158372
+    },
+    "fit_tol0.75": {
+     "agreement": 0.9932126696832579,
+     "over": 0.0016968325791855204,
+     "under": 0.005090497737556561,
+     "mean_controls": 8.09049773755656
+    },
+    "fit_tol1.0": {
+     "agreement": 0.9881221719457014,
+     "over": 0.0,
+     "under": 0.011877828054298642,
+     "mean_controls": 8.02262443438914
+    },
+    "fit_tol1.5": {
+     "agreement": 0.9858597285067874,
+     "over": 0.0,
+     "under": 0.01414027149321267,
+     "mean_controls": 8.004524886877828
+    },
+    "fit_tol2.0": {
+     "agreement": 0.9852941176470589,
+     "over": 0.0,
+     "under": 0.014705882352941176,
+     "mean_controls": 8.0
+    },
+    "fit_length_tol0.25": {
+     "agreement": 0.8648190045248869,
+     "over": 0.1346153846153846,
+     "under": 0.0005656108597285068,
+     "mean_controls": 9.199095022624434
+    },
+    "fit_length_tol0.5": {
+     "agreement": 0.9044117647058824,
+     "over": 0.09502262443438914,
+     "under": 0.0005656108597285068,
+     "mean_controls": 8.882352941176471
+    },
+    "fit_length_tol0.75": {
+     "agreement": 0.9049773755656109,
+     "over": 0.09445701357466063,
+     "under": 0.0005656108597285068,
+     "mean_controls": 8.877828054298643
+    },
+    "fit_length_tol1.0": {
+     "agreement": 0.9049773755656109,
+     "over": 0.09445701357466063,
+     "under": 0.0005656108597285068,
+     "mean_controls": 8.877828054298643
+    },
+    "fit_length_tol1.5": {
+     "agreement": 0.9049773755656109,
+     "over": 0.09445701357466063,
+     "under": 0.0005656108597285068,
+     "mean_controls": 8.877828054298643
+    },
+    "fit_length_tol2.0": {
+     "agreement": 0.9049773755656109,
+     "over": 0.09445701357466063,
+     "under": 0.0005656108597285068,
+     "mean_controls": 8.877828054298643
+    }
+   },
+   "by_chord": {
+    "0-5mm": {
+     "pairs": 1024,
+     "needed_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "ratio_original": {
+      "agreement": 0.2119140625,
+      "over": 0.7880859375,
+      "under": 0.0,
+      "mean_controls": 15.4453125
+     },
+     "ratio_min_arc": {
+      "agreement": 0.998046875,
+      "over": 0.001953125,
+      "under": 0.0,
+      "mean_controls": 8.015625
+     },
+     "fit_tol0.25": {
+      "agreement": 0.9990234375,
+      "over": 0.0009765625,
+      "under": 0.0,
+      "mean_controls": 8.0078125
+     },
+     "fit_tol0.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol0.75": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol2.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 0.998046875,
+      "over": 0.001953125,
+      "under": 0.0,
+      "mean_controls": 8.015625
+     },
+     "fit_length_tol0.5": {
+      "agreement": 0.9990234375,
+      "over": 0.0009765625,
+      "under": 0.0,
+      "mean_controls": 8.0078125
+     },
+     "fit_length_tol0.75": {
+      "agreement": 0.9990234375,
+      "over": 0.0009765625,
+      "under": 0.0,
+      "mean_controls": 8.0078125
+     },
+     "fit_length_tol1.0": {
+      "agreement": 0.9990234375,
+      "over": 0.0009765625,
+      "under": 0.0,
+      "mean_controls": 8.0078125
+     },
+     "fit_length_tol1.5": {
+      "agreement": 0.9990234375,
+      "over": 0.0009765625,
+      "under": 0.0,
+      "mean_controls": 8.0078125
+     },
+     "fit_length_tol2.0": {
+      "agreement": 0.9990234375,
+      "over": 0.0009765625,
+      "under": 0.0,
+      "mean_controls": 8.0078125
+     }
+    },
+    "5-10mm": {
+     "pairs": 448,
+     "needed_share": {
+      "K8": 0.9888392857142857,
+      "K16": 0.011160714285714286,
+      "K24": 0.0
+     },
+     "ratio_original": {
+      "agreement": 0.5379464285714286,
+      "over": 0.45982142857142855,
+      "under": 0.002232142857142857,
+      "mean_controls": 12.0
+     },
+     "ratio_min_arc": {
+      "agreement": 0.7165178571428571,
+      "over": 0.28125,
+      "under": 0.002232142857142857,
+      "mean_controls": 10.339285714285714
+     },
+     "fit_tol0.25": {
+      "agreement": 0.9352678571428571,
+      "over": 0.0625,
+      "under": 0.002232142857142857,
+      "mean_controls": 8.571428571428571
+     },
+     "fit_tol0.5": {
+      "agreement": 0.9933035714285714,
+      "over": 0.0,
+      "under": 0.006696428571428571,
+      "mean_controls": 8.035714285714286
+     },
+     "fit_tol0.75": {
+      "agreement": 0.9933035714285714,
+      "over": 0.0,
+      "under": 0.006696428571428571,
+      "mean_controls": 8.035714285714286
+     },
+     "fit_tol1.0": {
+      "agreement": 0.9910714285714286,
+      "over": 0.0,
+      "under": 0.008928571428571428,
+      "mean_controls": 8.017857142857142
+     },
+     "fit_tol1.5": {
+      "agreement": 0.9888392857142857,
+      "over": 0.0,
+      "under": 0.011160714285714286,
+      "mean_controls": 8.0
+     },
+     "fit_tol2.0": {
+      "agreement": 0.9888392857142857,
+      "over": 0.0,
+      "under": 0.011160714285714286,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 0.9352678571428571,
+      "over": 0.0625,
+      "under": 0.002232142857142857,
+      "mean_controls": 8.571428571428571
+     },
+     "fit_length_tol0.5": {
+      "agreement": 0.9955357142857143,
+      "over": 0.002232142857142857,
+      "under": 0.002232142857142857,
+      "mean_controls": 8.089285714285714
+     },
+     "fit_length_tol0.75": {
+      "agreement": 0.9955357142857143,
+      "over": 0.002232142857142857,
+      "under": 0.002232142857142857,
+      "mean_controls": 8.089285714285714
+     },
+     "fit_length_tol1.0": {
+      "agreement": 0.9955357142857143,
+      "over": 0.002232142857142857,
+      "under": 0.002232142857142857,
+      "mean_controls": 8.089285714285714
+     },
+     "fit_length_tol1.5": {
+      "agreement": 0.9955357142857143,
+      "over": 0.002232142857142857,
+      "under": 0.002232142857142857,
+      "mean_controls": 8.089285714285714
+     },
+     "fit_length_tol2.0": {
+      "agreement": 0.9955357142857143,
+      "over": 0.002232142857142857,
+      "under": 0.002232142857142857,
+      "mean_controls": 8.089285714285714
+     }
+    },
+    "10-20mm": {
+     "pairs": 254,
+     "needed_share": {
+      "K8": 0.9724409448818898,
+      "K16": 0.027559055118110236,
+      "K24": 0.0
+     },
+     "ratio_original": {
+      "agreement": 0.35039370078740156,
+      "over": 0.6496062992125984,
+      "under": 0.0,
+      "mean_controls": 13.88976377952756
+     },
+     "ratio_min_arc": {
+      "agreement": 0.3543307086614173,
+      "over": 0.6456692913385826,
+      "under": 0.0,
+      "mean_controls": 13.606299212598426
+     },
+     "fit_tol0.25": {
+      "agreement": 0.4015748031496063,
+      "over": 0.5984251968503937,
+      "under": 0.0,
+      "mean_controls": 13.007874015748031
+     },
+     "fit_tol0.5": {
+      "agreement": 0.9133858267716536,
+      "over": 0.08267716535433071,
+      "under": 0.003937007874015748,
+      "mean_controls": 8.850393700787402
+     },
+     "fit_tol0.75": {
+      "agreement": 0.9881889763779528,
+      "over": 0.0,
+      "under": 0.011811023622047244,
+      "mean_controls": 8.125984251968504
+     },
+     "fit_tol1.0": {
+      "agreement": 0.9724409448818898,
+      "over": 0.0,
+      "under": 0.027559055118110236,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.5": {
+      "agreement": 0.9724409448818898,
+      "over": 0.0,
+      "under": 0.027559055118110236,
+      "mean_controls": 8.0
+     },
+     "fit_tol2.0": {
+      "agreement": 0.9724409448818898,
+      "over": 0.0,
+      "under": 0.027559055118110236,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 0.3188976377952756,
+      "over": 0.6811023622047244,
+      "under": 0.0,
+      "mean_controls": 13.669291338582678
+     },
+     "fit_length_tol0.5": {
+      "agreement": 0.484251968503937,
+      "over": 0.515748031496063,
+      "under": 0.0,
+      "mean_controls": 12.346456692913385
+     },
+     "fit_length_tol0.75": {
+      "agreement": 0.4881889763779528,
+      "over": 0.5118110236220472,
+      "under": 0.0,
+      "mean_controls": 12.31496062992126
+     },
+     "fit_length_tol1.0": {
+      "agreement": 0.4881889763779528,
+      "over": 0.5118110236220472,
+      "under": 0.0,
+      "mean_controls": 12.31496062992126
+     },
+     "fit_length_tol1.5": {
+      "agreement": 0.4881889763779528,
+      "over": 0.5118110236220472,
+      "under": 0.0,
+      "mean_controls": 12.31496062992126
+     },
+     "fit_length_tol2.0": {
+      "agreement": 0.4881889763779528,
+      "over": 0.5118110236220472,
+      "under": 0.0,
+      "mean_controls": 12.31496062992126
+     }
+    },
+    "20-infmm": {
+     "pairs": 42,
+     "needed_share": {
+      "K8": 0.6666666666666666,
+      "K16": 0.3333333333333333,
+      "K24": 0.0
+     },
+     "ratio_original": {
+      "agreement": 0.16666666666666666,
+      "over": 0.8333333333333334,
+      "under": 0.0,
+      "mean_controls": 17.904761904761905
+     },
+     "ratio_min_arc": {
+      "agreement": 0.16666666666666666,
+      "over": 0.8333333333333334,
+      "under": 0.0,
+      "mean_controls": 17.904761904761905
+     },
+     "fit_tol0.25": {
+      "agreement": 0.38095238095238093,
+      "over": 0.6190476190476191,
+      "under": 0.0,
+      "mean_controls": 15.619047619047619
+     },
+     "fit_tol0.5": {
+      "agreement": 0.6428571428571429,
+      "over": 0.3333333333333333,
+      "under": 0.023809523809523808,
+      "mean_controls": 13.142857142857142
+     },
+     "fit_tol0.75": {
+      "agreement": 0.8571428571428571,
+      "over": 0.07142857142857142,
+      "under": 0.07142857142857142,
+      "mean_controls": 10.666666666666666
+     },
+     "fit_tol1.0": {
+      "agreement": 0.7619047619047619,
+      "over": 0.0,
+      "under": 0.23809523809523808,
+      "mean_controls": 8.761904761904763
+     },
+     "fit_tol1.5": {
+      "agreement": 0.6904761904761905,
+      "over": 0.0,
+      "under": 0.30952380952380953,
+      "mean_controls": 8.19047619047619
+     },
+     "fit_tol2.0": {
+      "agreement": 0.6666666666666666,
+      "over": 0.0,
+      "under": 0.3333333333333333,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 0.16666666666666666,
+      "over": 0.8333333333333334,
+      "under": 0.0,
+      "mean_controls": 17.714285714285715
+     },
+     "fit_length_tol0.5": {
+      "agreement": 0.16666666666666666,
+      "over": 0.8333333333333334,
+      "under": 0.0,
+      "mean_controls": 17.714285714285715
+     },
+     "fit_length_tol0.75": {
+      "agreement": 0.16666666666666666,
+      "over": 0.8333333333333334,
+      "under": 0.0,
+      "mean_controls": 17.714285714285715
+     },
+     "fit_length_tol1.0": {
+      "agreement": 0.16666666666666666,
+      "over": 0.8333333333333334,
+      "under": 0.0,
+      "mean_controls": 17.714285714285715
+     },
+     "fit_length_tol1.5": {
+      "agreement": 0.16666666666666666,
+      "over": 0.8333333333333334,
+      "under": 0.0,
+      "mean_controls": 17.714285714285715
+     },
+     "fit_length_tol2.0": {
+      "agreement": 0.16666666666666666,
+      "over": 0.8333333333333334,
+      "under": 0.0,
+      "mean_controls": 17.714285714285715
+     }
+    }
+   }
+  },
+  "BRAVA": {
+   "pairs": 567,
+   "needed_share": {
+    "K8": 0.8641975308641975,
+    "K16": 0.1146384479717813,
+    "K24": 0.021164021164021163
+   },
+   "overall": {
+    "ratio_original": {
+     "agreement": 0.49029982363315694,
+     "over": 0.49559082892416223,
+     "under": 0.014109347442680775,
+     "mean_controls": 13.742504409171076
+    },
+    "ratio_min_arc": {
+     "agreement": 0.7795414462081128,
+     "over": 0.20634920634920634,
+     "under": 0.014109347442680775,
+     "mean_controls": 10.807760141093475
+    },
+    "fit_tol0.25": {
+     "agreement": 0.8606701940035273,
+     "over": 0.09347442680776014,
+     "under": 0.04585537918871252,
+     "mean_controls": 9.63668430335097
+    },
+    "fit_tol0.5": {
+     "agreement": 0.892416225749559,
+     "over": 0.003527336860670194,
+     "under": 0.10405643738977072,
+     "mean_controls": 8.423280423280424
+    },
+    "fit_tol0.75": {
+     "agreement": 0.8712522045855379,
+     "over": 0.0,
+     "under": 0.12874779541446207,
+     "mean_controls": 8.16931216931217
+    },
+    "fit_tol1.0": {
+     "agreement": 0.8659611992945326,
+     "over": 0.0,
+     "under": 0.13403880070546736,
+     "mean_controls": 8.070546737213403
+    },
+    "fit_tol1.5": {
+     "agreement": 0.8641975308641975,
+     "over": 0.0,
+     "under": 0.13580246913580246,
+     "mean_controls": 8.028218694885362
+    },
+    "fit_tol2.0": {
+     "agreement": 0.8641975308641975,
+     "over": 0.0,
+     "under": 0.13580246913580246,
+     "mean_controls": 8.0
+    },
+    "fit_length_tol0.25": {
+     "agreement": 0.8342151675485009,
+     "over": 0.14285714285714285,
+     "under": 0.02292768959435626,
+     "mean_controls": 10.229276895943563
+    },
+    "fit_length_tol0.5": {
+     "agreement": 0.8606701940035273,
+     "over": 0.1128747795414462,
+     "under": 0.026455026455026454,
+     "mean_controls": 9.961199294532628
+    },
+    "fit_length_tol0.75": {
+     "agreement": 0.8606701940035273,
+     "over": 0.1128747795414462,
+     "under": 0.026455026455026454,
+     "mean_controls": 9.961199294532628
+    },
+    "fit_length_tol1.0": {
+     "agreement": 0.8606701940035273,
+     "over": 0.1128747795414462,
+     "under": 0.026455026455026454,
+     "mean_controls": 9.961199294532628
+    },
+    "fit_length_tol1.5": {
+     "agreement": 0.8606701940035273,
+     "over": 0.1128747795414462,
+     "under": 0.026455026455026454,
+     "mean_controls": 9.961199294532628
+    },
+    "fit_length_tol2.0": {
+     "agreement": 0.8606701940035273,
+     "over": 0.1128747795414462,
+     "under": 0.026455026455026454,
+     "mean_controls": 9.961199294532628
+    }
+   },
+   "by_chord": {
+    "0-5mm": {
+     "pairs": 190,
+     "needed_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "ratio_original": {
+      "agreement": 0.3,
+      "over": 0.7,
+      "under": 0.0,
+      "mean_controls": 15.073684210526316
+     },
+     "ratio_min_arc": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol0.25": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol0.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol0.75": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol2.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.75": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol1.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol1.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol2.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     }
+    },
+    "5-10mm": {
+     "pairs": 201,
+     "needed_share": {
+      "K8": 0.945273631840796,
+      "K16": 0.04975124378109453,
+      "K24": 0.004975124378109453
+     },
+     "ratio_original": {
+      "agreement": 0.6417910447761194,
+      "over": 0.34328358208955223,
+      "under": 0.014925373134328358,
+      "mean_controls": 11.383084577114428
+     },
+     "ratio_min_arc": {
+      "agreement": 0.7910447761194029,
+      "over": 0.19402985074626866,
+      "under": 0.014925373134328358,
+      "mean_controls": 9.91044776119403
+     },
+     "fit_tol0.25": {
+      "agreement": 0.9303482587064676,
+      "over": 0.03980099502487562,
+      "under": 0.029850746268656716,
+      "mean_controls": 8.557213930348258
+     },
+     "fit_tol0.5": {
+      "agreement": 0.9552238805970149,
+      "over": 0.0,
+      "under": 0.04477611940298507,
+      "mean_controls": 8.119402985074627
+     },
+     "fit_tol0.75": {
+      "agreement": 0.9502487562189055,
+      "over": 0.0,
+      "under": 0.04975124378109453,
+      "mean_controls": 8.07960199004975
+     },
+     "fit_tol1.0": {
+      "agreement": 0.9502487562189055,
+      "over": 0.0,
+      "under": 0.04975124378109453,
+      "mean_controls": 8.039800995024876
+     },
+     "fit_tol1.5": {
+      "agreement": 0.945273631840796,
+      "over": 0.0,
+      "under": 0.05472636815920398,
+      "mean_controls": 8.0
+     },
+     "fit_tol2.0": {
+      "agreement": 0.945273631840796,
+      "over": 0.0,
+      "under": 0.05472636815920398,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 0.9303482587064676,
+      "over": 0.04477611940298507,
+      "under": 0.024875621890547265,
+      "mean_controls": 8.63681592039801
+     },
+     "fit_length_tol0.5": {
+      "agreement": 0.9552238805970149,
+      "over": 0.009950248756218905,
+      "under": 0.03482587064676617,
+      "mean_controls": 8.278606965174129
+     },
+     "fit_length_tol0.75": {
+      "agreement": 0.9552238805970149,
+      "over": 0.009950248756218905,
+      "under": 0.03482587064676617,
+      "mean_controls": 8.278606965174129
+     },
+     "fit_length_tol1.0": {
+      "agreement": 0.9552238805970149,
+      "over": 0.009950248756218905,
+      "under": 0.03482587064676617,
+      "mean_controls": 8.278606965174129
+     },
+     "fit_length_tol1.5": {
+      "agreement": 0.9552238805970149,
+      "over": 0.009950248756218905,
+      "under": 0.03482587064676617,
+      "mean_controls": 8.278606965174129
+     },
+     "fit_length_tol2.0": {
+      "agreement": 0.9552238805970149,
+      "over": 0.009950248756218905,
+      "under": 0.03482587064676617,
+      "mean_controls": 8.278606965174129
+     }
+    },
+    "10-20mm": {
+     "pairs": 133,
+     "needed_share": {
+      "K8": 0.7819548872180451,
+      "K16": 0.20300751879699247,
+      "K24": 0.015037593984962405
+     },
+     "ratio_original": {
+      "agreement": 0.48872180451127817,
+      "over": 0.5037593984962406,
+      "under": 0.007518796992481203,
+      "mean_controls": 13.954887218045112
+     },
+     "ratio_min_arc": {
+      "agreement": 0.49624060150375937,
+      "over": 0.49624060150375937,
+      "under": 0.007518796992481203,
+      "mean_controls": 13.774436090225564
+     },
+     "fit_tol0.25": {
+      "agreement": 0.631578947368421,
+      "over": 0.2932330827067669,
+      "under": 0.07518796992481203,
+      "mean_controls": 11.609022556390977
+     },
+     "fit_tol0.5": {
+      "agreement": 0.8045112781954887,
+      "over": 0.007518796992481203,
+      "under": 0.18796992481203006,
+      "mean_controls": 8.421052631578947
+     },
+     "fit_tol0.75": {
+      "agreement": 0.7894736842105263,
+      "over": 0.0,
+      "under": 0.21052631578947367,
+      "mean_controls": 8.180451127819548
+     },
+     "fit_tol1.0": {
+      "agreement": 0.7819548872180451,
+      "over": 0.0,
+      "under": 0.21804511278195488,
+      "mean_controls": 8.06015037593985
+     },
+     "fit_tol1.5": {
+      "agreement": 0.7819548872180451,
+      "over": 0.0,
+      "under": 0.21804511278195488,
+      "mean_controls": 8.0
+     },
+     "fit_tol2.0": {
+      "agreement": 0.7819548872180451,
+      "over": 0.0,
+      "under": 0.21804511278195488,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 0.5112781954887218,
+      "over": 0.45864661654135336,
+      "under": 0.03007518796992481,
+      "mean_controls": 13.293233082706767
+     },
+     "fit_length_tol0.5": {
+      "agreement": 0.5864661654135338,
+      "over": 0.38345864661654133,
+      "under": 0.03007518796992481,
+      "mean_controls": 12.691729323308271
+     },
+     "fit_length_tol0.75": {
+      "agreement": 0.5864661654135338,
+      "over": 0.38345864661654133,
+      "under": 0.03007518796992481,
+      "mean_controls": 12.691729323308271
+     },
+     "fit_length_tol1.0": {
+      "agreement": 0.5864661654135338,
+      "over": 0.38345864661654133,
+      "under": 0.03007518796992481,
+      "mean_controls": 12.691729323308271
+     },
+     "fit_length_tol1.5": {
+      "agreement": 0.5864661654135338,
+      "over": 0.38345864661654133,
+      "under": 0.03007518796992481,
+      "mean_controls": 12.691729323308271
+     },
+     "fit_length_tol2.0": {
+      "agreement": 0.5864661654135338,
+      "over": 0.38345864661654133,
+      "under": 0.03007518796992481,
+      "mean_controls": 12.691729323308271
+     }
+    },
+    "20-infmm": {
+     "pairs": 43,
+     "needed_share": {
+      "K8": 0.13953488372093023,
+      "K16": 0.6511627906976745,
+      "K24": 0.20930232558139536
+     },
+     "ratio_original": {
+      "agreement": 0.627906976744186,
+      "over": 0.27906976744186046,
+      "under": 0.09302325581395349,
+      "mean_controls": 18.232558139534884
+     },
+     "ratio_min_arc": {
+      "agreement": 0.627906976744186,
+      "over": 0.27906976744186046,
+      "under": 0.09302325581395349,
+      "mean_controls": 18.232558139534884
+     },
+     "fit_tol0.25": {
+      "agreement": 0.627906976744186,
+      "over": 0.13953488372093023,
+      "under": 0.23255813953488372,
+      "mean_controls": 15.813953488372093
+     },
+     "fit_tol0.5": {
+      "agreement": 0.3953488372093023,
+      "over": 0.023255813953488372,
+      "under": 0.5813953488372093,
+      "mean_controls": 11.720930232558139
+     },
+     "fit_tol0.75": {
+      "agreement": 0.18604651162790697,
+      "over": 0.0,
+      "under": 0.813953488372093,
+      "mean_controls": 9.30232558139535
+     },
+     "fit_tol1.0": {
+      "agreement": 0.13953488372093023,
+      "over": 0.0,
+      "under": 0.8604651162790697,
+      "mean_controls": 8.55813953488372
+     },
+     "fit_tol1.5": {
+      "agreement": 0.13953488372093023,
+      "over": 0.0,
+      "under": 0.8604651162790697,
+      "mean_controls": 8.372093023255815
+     },
+     "fit_tol2.0": {
+      "agreement": 0.13953488372093023,
+      "over": 0.0,
+      "under": 0.8604651162790697,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 0.6511627906976745,
+      "over": 0.2558139534883721,
+      "under": 0.09302325581395349,
+      "mean_controls": 18.046511627906977
+     },
+     "fit_length_tol0.5": {
+      "agreement": 0.6511627906976745,
+      "over": 0.2558139534883721,
+      "under": 0.09302325581395349,
+      "mean_controls": 18.046511627906977
+     },
+     "fit_length_tol0.75": {
+      "agreement": 0.6511627906976745,
+      "over": 0.2558139534883721,
+      "under": 0.09302325581395349,
+      "mean_controls": 18.046511627906977
+     },
+     "fit_length_tol1.0": {
+      "agreement": 0.6511627906976745,
+      "over": 0.2558139534883721,
+      "under": 0.09302325581395349,
+      "mean_controls": 18.046511627906977
+     },
+     "fit_length_tol1.5": {
+      "agreement": 0.6511627906976745,
+      "over": 0.2558139534883721,
+      "under": 0.09302325581395349,
+      "mean_controls": 18.046511627906977
+     },
+     "fit_length_tol2.0": {
+      "agreement": 0.6511627906976745,
+      "over": 0.2558139534883721,
+      "under": 0.09302325581395349,
+      "mean_controls": 18.046511627906977
+     }
+    }
+   }
+  },
+  "TopBrainCTA-loops": {
+   "pairs": 540,
+   "needed_share": {
+    "K8": 0.9888888888888889,
+    "K16": 0.011111111111111112,
+    "K24": 0.0
+   },
+   "overall": {
+    "ratio_original": {
+     "agreement": 0.4351851851851852,
+     "over": 0.5648148148148148,
+     "under": 0.0,
+     "mean_controls": 13.451851851851853
+    },
+    "ratio_min_arc": {
+     "agreement": 0.8759259259259259,
+     "over": 0.12407407407407407,
+     "under": 0.0,
+     "mean_controls": 9.096296296296297
+    },
+    "fit_tol0.25": {
+     "agreement": 0.9148148148148149,
+     "over": 0.08518518518518518,
+     "under": 0.0,
+     "mean_controls": 8.77037037037037
+    },
+    "fit_tol0.5": {
+     "agreement": 0.9907407407407407,
+     "over": 0.005555555555555556,
+     "under": 0.003703703703703704,
+     "mean_controls": 8.103703703703705
+    },
+    "fit_tol0.75": {
+     "agreement": 0.9962962962962963,
+     "over": 0.0,
+     "under": 0.003703703703703704,
+     "mean_controls": 8.059259259259258
+    },
+    "fit_tol1.0": {
+     "agreement": 0.9888888888888889,
+     "over": 0.0,
+     "under": 0.011111111111111112,
+     "mean_controls": 8.0
+    },
+    "fit_tol1.5": {
+     "agreement": 0.9888888888888889,
+     "over": 0.0,
+     "under": 0.011111111111111112,
+     "mean_controls": 8.0
+    },
+    "fit_tol2.0": {
+     "agreement": 0.9888888888888889,
+     "over": 0.0,
+     "under": 0.011111111111111112,
+     "mean_controls": 8.0
+    },
+    "fit_length_tol0.25": {
+     "agreement": 0.8981481481481481,
+     "over": 0.10185185185185185,
+     "under": 0.0,
+     "mean_controls": 8.903703703703703
+    },
+    "fit_length_tol0.5": {
+     "agreement": 0.9296296296296296,
+     "over": 0.07037037037037037,
+     "under": 0.0,
+     "mean_controls": 8.651851851851852
+    },
+    "fit_length_tol0.75": {
+     "agreement": 0.9296296296296296,
+     "over": 0.07037037037037037,
+     "under": 0.0,
+     "mean_controls": 8.651851851851852
+    },
+    "fit_length_tol1.0": {
+     "agreement": 0.9296296296296296,
+     "over": 0.07037037037037037,
+     "under": 0.0,
+     "mean_controls": 8.651851851851852
+    },
+    "fit_length_tol1.5": {
+     "agreement": 0.9296296296296296,
+     "over": 0.07037037037037037,
+     "under": 0.0,
+     "mean_controls": 8.651851851851852
+    },
+    "fit_length_tol2.0": {
+     "agreement": 0.9296296296296296,
+     "over": 0.07037037037037037,
+     "under": 0.0,
+     "mean_controls": 8.651851851851852
+    }
+   },
+   "by_chord": {
+    "0-5mm": {
+     "pairs": 336,
+     "needed_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "ratio_original": {
+      "agreement": 0.34226190476190477,
+      "over": 0.6577380952380952,
+      "under": 0.0,
+      "mean_controls": 14.5
+     },
+     "ratio_min_arc": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol0.25": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol0.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol0.75": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol2.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.75": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol1.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol1.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol2.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     }
+    },
+    "5-10mm": {
+     "pairs": 133,
+     "needed_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "ratio_original": {
+      "agreement": 0.7142857142857143,
+      "over": 0.2857142857142857,
+      "under": 0.0,
+      "mean_controls": 10.526315789473685
+     },
+     "ratio_min_arc": {
+      "agreement": 0.8421052631578947,
+      "over": 0.15789473684210525,
+      "under": 0.0,
+      "mean_controls": 9.263157894736842
+     },
+     "fit_tol0.25": {
+      "agreement": 0.9473684210526315,
+      "over": 0.05263157894736842,
+      "under": 0.0,
+      "mean_controls": 8.421052631578947
+     },
+     "fit_tol0.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol0.75": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol2.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 0.9473684210526315,
+      "over": 0.05263157894736842,
+      "under": 0.0,
+      "mean_controls": 8.421052631578947
+     },
+     "fit_length_tol0.5": {
+      "agreement": 0.9924812030075187,
+      "over": 0.007518796992481203,
+      "under": 0.0,
+      "mean_controls": 8.06015037593985
+     },
+     "fit_length_tol0.75": {
+      "agreement": 0.9924812030075187,
+      "over": 0.007518796992481203,
+      "under": 0.0,
+      "mean_controls": 8.06015037593985
+     },
+     "fit_length_tol1.0": {
+      "agreement": 0.9924812030075187,
+      "over": 0.007518796992481203,
+      "under": 0.0,
+      "mean_controls": 8.06015037593985
+     },
+     "fit_length_tol1.5": {
+      "agreement": 0.9924812030075187,
+      "over": 0.007518796992481203,
+      "under": 0.0,
+      "mean_controls": 8.06015037593985
+     },
+     "fit_length_tol2.0": {
+      "agreement": 0.9924812030075187,
+      "over": 0.007518796992481203,
+      "under": 0.0,
+      "mean_controls": 8.06015037593985
+     }
+    },
+    "10-20mm": {
+     "pairs": 63,
+     "needed_share": {
+      "K8": 0.9365079365079365,
+      "K16": 0.06349206349206349,
+      "K24": 0.0
+     },
+     "ratio_original": {
+      "agreement": 0.36507936507936506,
+      "over": 0.6349206349206349,
+      "under": 0.0,
+      "mean_controls": 13.714285714285714
+     },
+     "ratio_min_arc": {
+      "agreement": 0.36507936507936506,
+      "over": 0.6349206349206349,
+      "under": 0.0,
+      "mean_controls": 13.714285714285714
+     },
+     "fit_tol0.25": {
+      "agreement": 0.4603174603174603,
+      "over": 0.5396825396825397,
+      "under": 0.0,
+      "mean_controls": 12.825396825396826
+     },
+     "fit_tol0.5": {
+      "agreement": 0.9523809523809523,
+      "over": 0.031746031746031744,
+      "under": 0.015873015873015872,
+      "mean_controls": 8.634920634920634
+     },
+     "fit_tol0.75": {
+      "agreement": 0.9841269841269841,
+      "over": 0.0,
+      "under": 0.015873015873015872,
+      "mean_controls": 8.380952380952381
+     },
+     "fit_tol1.0": {
+      "agreement": 0.9365079365079365,
+      "over": 0.0,
+      "under": 0.06349206349206349,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.5": {
+      "agreement": 0.9365079365079365,
+      "over": 0.0,
+      "under": 0.06349206349206349,
+      "mean_controls": 8.0
+     },
+     "fit_tol2.0": {
+      "agreement": 0.9365079365079365,
+      "over": 0.0,
+      "under": 0.06349206349206349,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 0.3333333333333333,
+      "over": 0.6666666666666666,
+      "under": 0.0,
+      "mean_controls": 13.841269841269842
+     },
+     "fit_length_tol0.5": {
+      "agreement": 0.5079365079365079,
+      "over": 0.49206349206349204,
+      "under": 0.0,
+      "mean_controls": 12.444444444444445
+     },
+     "fit_length_tol0.75": {
+      "agreement": 0.5079365079365079,
+      "over": 0.49206349206349204,
+      "under": 0.0,
+      "mean_controls": 12.444444444444445
+     },
+     "fit_length_tol1.0": {
+      "agreement": 0.5079365079365079,
+      "over": 0.49206349206349204,
+      "under": 0.0,
+      "mean_controls": 12.444444444444445
+     },
+     "fit_length_tol1.5": {
+      "agreement": 0.5079365079365079,
+      "over": 0.49206349206349204,
+      "under": 0.0,
+      "mean_controls": 12.444444444444445
+     },
+     "fit_length_tol2.0": {
+      "agreement": 0.5079365079365079,
+      "over": 0.49206349206349204,
+      "under": 0.0,
+      "mean_controls": 12.444444444444445
+     }
+    },
+    "20-infmm": {
+     "pairs": 8,
+     "needed_share": {
+      "K8": 0.75,
+      "K16": 0.25,
+      "K24": 0.0
+     },
+     "ratio_original": {
+      "agreement": 0.25,
+      "over": 0.75,
+      "under": 0.0,
+      "mean_controls": 16.0
+     },
+     "ratio_min_arc": {
+      "agreement": 0.25,
+      "over": 0.75,
+      "under": 0.0,
+      "mean_controls": 16.0
+     },
+     "fit_tol0.25": {
+      "agreement": 0.375,
+      "over": 0.625,
+      "under": 0.0,
+      "mean_controls": 15.0
+     },
+     "fit_tol0.5": {
+      "agreement": 0.75,
+      "over": 0.125,
+      "under": 0.125,
+      "mean_controls": 10.0
+     },
+     "fit_tol0.75": {
+      "agreement": 0.875,
+      "over": 0.0,
+      "under": 0.125,
+      "mean_controls": 9.0
+     },
+     "fit_tol1.0": {
+      "agreement": 0.75,
+      "over": 0.0,
+      "under": 0.25,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.5": {
+      "agreement": 0.75,
+      "over": 0.0,
+      "under": 0.25,
+      "mean_controls": 8.0
+     },
+     "fit_tol2.0": {
+      "agreement": 0.75,
+      "over": 0.0,
+      "under": 0.25,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 0.25,
+      "over": 0.75,
+      "under": 0.0,
+      "mean_controls": 16.0
+     },
+     "fit_length_tol0.5": {
+      "agreement": 0.25,
+      "over": 0.75,
+      "under": 0.0,
+      "mean_controls": 16.0
+     },
+     "fit_length_tol0.75": {
+      "agreement": 0.25,
+      "over": 0.75,
+      "under": 0.0,
+      "mean_controls": 16.0
+     },
+     "fit_length_tol1.0": {
+      "agreement": 0.25,
+      "over": 0.75,
+      "under": 0.0,
+      "mean_controls": 16.0
+     },
+     "fit_length_tol1.5": {
+      "agreement": 0.25,
+      "over": 0.75,
+      "under": 0.0,
+      "mean_controls": 16.0
+     },
+     "fit_length_tol2.0": {
+      "agreement": 0.25,
+      "over": 0.75,
+      "under": 0.0,
+      "mean_controls": 16.0
+     }
+    }
+   }
+  },
+  "TopBrainMRA-loops": {
+   "pairs": 522,
+   "needed_share": {
+    "K8": 0.9923371647509579,
+    "K16": 0.007662835249042145,
+    "K24": 0.0
+   },
+   "overall": {
+    "ratio_original": {
+     "agreement": 0.39080459770114945,
+     "over": 0.6091954022988506,
+     "under": 0.0,
+     "mean_controls": 13.793103448275861
+    },
+    "ratio_min_arc": {
+     "agreement": 0.8333333333333334,
+     "over": 0.16666666666666666,
+     "under": 0.0,
+     "mean_controls": 9.409961685823754
+    },
+    "fit_tol0.25": {
+     "agreement": 0.8352490421455939,
+     "over": 0.16475095785440613,
+     "under": 0.0,
+     "mean_controls": 9.379310344827585
+    },
+    "fit_tol0.5": {
+     "agreement": 0.9712643678160919,
+     "over": 0.028735632183908046,
+     "under": 0.0,
+     "mean_controls": 8.291187739463602
+    },
+    "fit_tol0.75": {
+     "agreement": 0.9942528735632183,
+     "over": 0.0019157088122605363,
+     "under": 0.0038314176245210726,
+     "mean_controls": 8.045977011494253
+    },
+    "fit_tol1.0": {
+     "agreement": 0.9923371647509579,
+     "over": 0.0019157088122605363,
+     "under": 0.005747126436781609,
+     "mean_controls": 8.030651340996169
+    },
+    "fit_tol1.5": {
+     "agreement": 0.9923371647509579,
+     "over": 0.0,
+     "under": 0.007662835249042145,
+     "mean_controls": 8.0
+    },
+    "fit_tol2.0": {
+     "agreement": 0.9923371647509579,
+     "over": 0.0,
+     "under": 0.007662835249042145,
+     "mean_controls": 8.0
+    },
+    "fit_length_tol0.25": {
+     "agreement": 0.8295019157088123,
+     "over": 0.17049808429118773,
+     "under": 0.0,
+     "mean_controls": 9.425287356321839
+    },
+    "fit_length_tol0.5": {
+     "agreement": 0.9195402298850575,
+     "over": 0.08045977011494253,
+     "under": 0.0,
+     "mean_controls": 8.704980842911878
+    },
+    "fit_length_tol0.75": {
+     "agreement": 0.9252873563218391,
+     "over": 0.07471264367816093,
+     "under": 0.0,
+     "mean_controls": 8.659003831417625
+    },
+    "fit_length_tol1.0": {
+     "agreement": 0.9252873563218391,
+     "over": 0.07471264367816093,
+     "under": 0.0,
+     "mean_controls": 8.659003831417625
+    },
+    "fit_length_tol1.5": {
+     "agreement": 0.9252873563218391,
+     "over": 0.07471264367816093,
+     "under": 0.0,
+     "mean_controls": 8.659003831417625
+    },
+    "fit_length_tol2.0": {
+     "agreement": 0.9252873563218391,
+     "over": 0.07471264367816093,
+     "under": 0.0,
+     "mean_controls": 8.659003831417625
+    }
+   },
+   "by_chord": {
+    "0-5mm": {
+     "pairs": 304,
+     "needed_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "ratio_original": {
+      "agreement": 0.3059210526315789,
+      "over": 0.694078947368421,
+      "under": 0.0,
+      "mean_controls": 14.868421052631579
+     },
+     "ratio_min_arc": {
+      "agreement": 0.9901315789473685,
+      "over": 0.009868421052631578,
+      "under": 0.0,
+      "mean_controls": 8.078947368421053
+     },
+     "fit_tol0.25": {
+      "agreement": 0.9967105263157895,
+      "over": 0.003289473684210526,
+      "under": 0.0,
+      "mean_controls": 8.026315789473685
+     },
+     "fit_tol0.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol0.75": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol2.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 0.9967105263157895,
+      "over": 0.003289473684210526,
+      "under": 0.0,
+      "mean_controls": 8.026315789473685
+     },
+     "fit_length_tol0.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.75": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol1.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol1.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol2.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     }
+    },
+    "5-10mm": {
+     "pairs": 143,
+     "needed_share": {
+      "K8": 0.993006993006993,
+      "K16": 0.006993006993006993,
+      "K24": 0.0
+     },
+     "ratio_original": {
+      "agreement": 0.5804195804195804,
+      "over": 0.4195804195804196,
+      "under": 0.0,
+      "mean_controls": 11.748251748251748
+     },
+     "ratio_min_arc": {
+      "agreement": 0.7412587412587412,
+      "over": 0.25874125874125875,
+      "under": 0.0,
+      "mean_controls": 10.181818181818182
+     },
+     "fit_tol0.25": {
+      "agreement": 0.7972027972027972,
+      "over": 0.20279720279720279,
+      "under": 0.0,
+      "mean_controls": 9.678321678321678
+     },
+     "fit_tol0.5": {
+      "agreement": 0.986013986013986,
+      "over": 0.013986013986013986,
+      "under": 0.0,
+      "mean_controls": 8.167832167832168
+     },
+     "fit_tol0.75": {
+      "agreement": 0.993006993006993,
+      "over": 0.006993006993006993,
+      "under": 0.0,
+      "mean_controls": 8.111888111888112
+     },
+     "fit_tol1.0": {
+      "agreement": 0.993006993006993,
+      "over": 0.006993006993006993,
+      "under": 0.0,
+      "mean_controls": 8.111888111888112
+     },
+     "fit_tol1.5": {
+      "agreement": 0.993006993006993,
+      "over": 0.0,
+      "under": 0.006993006993006993,
+      "mean_controls": 8.0
+     },
+     "fit_tol2.0": {
+      "agreement": 0.993006993006993,
+      "over": 0.0,
+      "under": 0.006993006993006993,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 0.7902097902097902,
+      "over": 0.2097902097902098,
+      "under": 0.0,
+      "mean_controls": 9.734265734265735
+     },
+     "fit_length_tol0.5": {
+      "agreement": 0.972027972027972,
+      "over": 0.027972027972027972,
+      "under": 0.0,
+      "mean_controls": 8.27972027972028
+     },
+     "fit_length_tol0.75": {
+      "agreement": 0.9790209790209791,
+      "over": 0.02097902097902098,
+      "under": 0.0,
+      "mean_controls": 8.223776223776223
+     },
+     "fit_length_tol1.0": {
+      "agreement": 0.9790209790209791,
+      "over": 0.02097902097902098,
+      "under": 0.0,
+      "mean_controls": 8.223776223776223
+     },
+     "fit_length_tol1.5": {
+      "agreement": 0.9790209790209791,
+      "over": 0.02097902097902098,
+      "under": 0.0,
+      "mean_controls": 8.223776223776223
+     },
+     "fit_length_tol2.0": {
+      "agreement": 0.9790209790209791,
+      "over": 0.02097902097902098,
+      "under": 0.0,
+      "mean_controls": 8.223776223776223
+     }
+    },
+    "10-20mm": {
+     "pairs": 69,
+     "needed_share": {
+      "K8": 0.9855072463768116,
+      "K16": 0.014492753623188406,
+      "K24": 0.0
+     },
+     "ratio_original": {
+      "agreement": 0.391304347826087,
+      "over": 0.6086956521739131,
+      "under": 0.0,
+      "mean_controls": 12.985507246376812
+     },
+     "ratio_min_arc": {
+      "agreement": 0.391304347826087,
+      "over": 0.6086956521739131,
+      "under": 0.0,
+      "mean_controls": 12.985507246376812
+     },
+     "fit_tol0.25": {
+      "agreement": 0.2463768115942029,
+      "over": 0.7536231884057971,
+      "under": 0.0,
+      "mean_controls": 14.144927536231885
+     },
+     "fit_tol0.5": {
+      "agreement": 0.8405797101449275,
+      "over": 0.15942028985507245,
+      "under": 0.0,
+      "mean_controls": 9.391304347826088
+     },
+     "fit_tol0.75": {
+      "agreement": 0.9855072463768116,
+      "over": 0.0,
+      "under": 0.014492753623188406,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.0": {
+      "agreement": 0.9855072463768116,
+      "over": 0.0,
+      "under": 0.014492753623188406,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.5": {
+      "agreement": 0.9855072463768116,
+      "over": 0.0,
+      "under": 0.014492753623188406,
+      "mean_controls": 8.0
+     },
+     "fit_tol2.0": {
+      "agreement": 0.9855072463768116,
+      "over": 0.0,
+      "under": 0.014492753623188406,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 0.21739130434782608,
+      "over": 0.782608695652174,
+      "under": 0.0,
+      "mean_controls": 14.376811594202898
+     },
+     "fit_length_tol0.5": {
+      "agreement": 0.5072463768115942,
+      "over": 0.4927536231884058,
+      "under": 0.0,
+      "mean_controls": 12.057971014492754
+     },
+     "fit_length_tol0.75": {
+      "agreement": 0.5362318840579711,
+      "over": 0.463768115942029,
+      "under": 0.0,
+      "mean_controls": 11.826086956521738
+     },
+     "fit_length_tol1.0": {
+      "agreement": 0.5362318840579711,
+      "over": 0.463768115942029,
+      "under": 0.0,
+      "mean_controls": 11.826086956521738
+     },
+     "fit_length_tol1.5": {
+      "agreement": 0.5362318840579711,
+      "over": 0.463768115942029,
+      "under": 0.0,
+      "mean_controls": 11.826086956521738
+     },
+     "fit_length_tol2.0": {
+      "agreement": 0.5362318840579711,
+      "over": 0.463768115942029,
+      "under": 0.0,
+      "mean_controls": 11.826086956521738
+     }
+    },
+    "20-infmm": {
+     "pairs": 6,
+     "needed_share": {
+      "K8": 0.6666666666666666,
+      "K16": 0.3333333333333333,
+      "K24": 0.0
+     },
+     "ratio_original": {
+      "agreement": 0.16666666666666666,
+      "over": 0.8333333333333334,
+      "under": 0.0,
+      "mean_controls": 17.333333333333332
+     },
+     "ratio_min_arc": {
+      "agreement": 0.16666666666666666,
+      "over": 0.8333333333333334,
+      "under": 0.0,
+      "mean_controls": 17.333333333333332
+     },
+     "fit_tol0.25": {
+      "agreement": 0.3333333333333333,
+      "over": 0.6666666666666666,
+      "under": 0.0,
+      "mean_controls": 16.0
+     },
+     "fit_tol0.5": {
+      "agreement": 0.6666666666666666,
+      "over": 0.3333333333333333,
+      "under": 0.0,
+      "mean_controls": 13.333333333333334
+     },
+     "fit_tol0.75": {
+      "agreement": 0.8333333333333334,
+      "over": 0.0,
+      "under": 0.16666666666666666,
+      "mean_controls": 9.333333333333334
+     },
+     "fit_tol1.0": {
+      "agreement": 0.6666666666666666,
+      "over": 0.0,
+      "under": 0.3333333333333333,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.5": {
+      "agreement": 0.6666666666666666,
+      "over": 0.0,
+      "under": 0.3333333333333333,
+      "mean_controls": 8.0
+     },
+     "fit_tol2.0": {
+      "agreement": 0.6666666666666666,
+      "over": 0.0,
+      "under": 0.3333333333333333,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 0.3333333333333333,
+      "over": 0.6666666666666666,
+      "under": 0.0,
+      "mean_controls": 16.0
+     },
+     "fit_length_tol0.5": {
+      "agreement": 0.3333333333333333,
+      "over": 0.6666666666666666,
+      "under": 0.0,
+      "mean_controls": 16.0
+     },
+     "fit_length_tol0.75": {
+      "agreement": 0.3333333333333333,
+      "over": 0.6666666666666666,
+      "under": 0.0,
+      "mean_controls": 16.0
+     },
+     "fit_length_tol1.0": {
+      "agreement": 0.3333333333333333,
+      "over": 0.6666666666666666,
+      "under": 0.0,
+      "mean_controls": 16.0
+     },
+     "fit_length_tol1.5": {
+      "agreement": 0.3333333333333333,
+      "over": 0.6666666666666666,
+      "under": 0.0,
+      "mean_controls": 16.0
+     },
+     "fit_length_tol2.0": {
+      "agreement": 0.3333333333333333,
+      "over": 0.6666666666666666,
+      "under": 0.0,
+      "mean_controls": 16.0
+     }
+    }
+   }
+  },
+  "SyntheticMRI-loops": {
+   "pairs": 3166,
+   "needed_share": {
+    "K8": 0.9977890082122552,
+    "K16": 0.0022109917877447885,
+    "K24": 0.0
+   },
+   "overall": {
+    "ratio_original": {
+     "agreement": 0.33607075173720785,
+     "over": 0.6639292482627922,
+     "under": 0.0,
+     "mean_controls": 13.794061907770057
+    },
+    "ratio_min_arc": {
+     "agreement": 0.5277953253316487,
+     "over": 0.47220467466835125,
+     "under": 0.0,
+     "mean_controls": 12.055590650663298
+    },
+    "fit_tol0.25": {
+     "agreement": 0.8765003158559697,
+     "over": 0.12349968414403033,
+     "under": 0.0,
+     "mean_controls": 9.010739102969046
+    },
+    "fit_tol0.5": {
+     "agreement": 0.9958938723941883,
+     "over": 0.002526847757422615,
+     "under": 0.0015792798483891346,
+     "mean_controls": 8.025268477574226
+    },
+    "fit_tol0.75": {
+     "agreement": 0.9977890082122552,
+     "over": 0.0,
+     "under": 0.0022109917877447885,
+     "mean_controls": 8.0
+    },
+    "fit_tol1.0": {
+     "agreement": 0.9977890082122552,
+     "over": 0.0,
+     "under": 0.0022109917877447885,
+     "mean_controls": 8.0
+    },
+    "fit_tol1.5": {
+     "agreement": 0.9977890082122552,
+     "over": 0.0,
+     "under": 0.0022109917877447885,
+     "mean_controls": 8.0
+    },
+    "fit_tol2.0": {
+     "agreement": 0.9977890082122552,
+     "over": 0.0,
+     "under": 0.0022109917877447885,
+     "mean_controls": 8.0
+    },
+    "fit_length_tol0.25": {
+     "agreement": 0.6061276058117498,
+     "over": 0.39387239418825015,
+     "under": 0.0,
+     "mean_controls": 11.428932406822488
+    },
+    "fit_length_tol0.5": {
+     "agreement": 0.6073910296904611,
+     "over": 0.39260897030953884,
+     "under": 0.0,
+     "mean_controls": 11.418825015792798
+    },
+    "fit_length_tol0.75": {
+     "agreement": 0.6073910296904611,
+     "over": 0.39260897030953884,
+     "under": 0.0,
+     "mean_controls": 11.418825015792798
+    },
+    "fit_length_tol1.0": {
+     "agreement": 0.6073910296904611,
+     "over": 0.39260897030953884,
+     "under": 0.0,
+     "mean_controls": 11.418825015792798
+    },
+    "fit_length_tol1.5": {
+     "agreement": 0.6073910296904611,
+     "over": 0.39260897030953884,
+     "under": 0.0,
+     "mean_controls": 11.418825015792798
+    },
+    "fit_length_tol2.0": {
+     "agreement": 0.6073910296904611,
+     "over": 0.39260897030953884,
+     "under": 0.0,
+     "mean_controls": 11.418825015792798
+    }
+   },
+   "by_chord": {
+    "0-5mm": {
+     "pairs": 448,
+     "needed_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "ratio_original": {
+      "agreement": 0.12946428571428573,
+      "over": 0.8705357142857143,
+      "under": 0.0,
+      "mean_controls": 16.410714285714285
+     },
+     "ratio_min_arc": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol0.25": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol0.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol0.75": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol2.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.75": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol1.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol1.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol2.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     }
+    },
+    "5-10mm": {
+     "pairs": 942,
+     "needed_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "ratio_original": {
+      "agreement": 0.5573248407643312,
+      "over": 0.4426751592356688,
+      "under": 0.0,
+      "mean_controls": 11.54140127388535
+     },
+     "ratio_min_arc": {
+      "agreement": 0.7876857749469215,
+      "over": 0.21231422505307856,
+      "under": 0.0,
+      "mean_controls": 9.698513800424628
+     },
+     "fit_tol0.25": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol0.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol0.75": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol2.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.75": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol1.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol1.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol2.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     }
+    },
+    "10-20mm": {
+     "pairs": 1159,
+     "needed_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "ratio_original": {
+      "agreement": 0.41501294219154444,
+      "over": 0.5849870578084556,
+      "under": 0.0,
+      "mean_controls": 12.679896462467644
+     },
+     "ratio_min_arc": {
+      "agreement": 0.41501294219154444,
+      "over": 0.5849870578084556,
+      "under": 0.0,
+      "mean_controls": 12.679896462467644
+     },
+     "fit_tol0.25": {
+      "agreement": 0.9465056082830026,
+      "over": 0.05349439171699741,
+      "under": 0.0,
+      "mean_controls": 8.42795513373598
+     },
+     "fit_tol0.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol0.75": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.5": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_tol2.0": {
+      "agreement": 1.0,
+      "over": 0.0,
+      "under": 0.0,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 0.45642795513373596,
+      "over": 0.543572044866264,
+      "under": 0.0,
+      "mean_controls": 12.348576358930112
+     },
+     "fit_length_tol0.5": {
+      "agreement": 0.4598792062122519,
+      "over": 0.540120793787748,
+      "under": 0.0,
+      "mean_controls": 12.320966350301985
+     },
+     "fit_length_tol0.75": {
+      "agreement": 0.4598792062122519,
+      "over": 0.540120793787748,
+      "under": 0.0,
+      "mean_controls": 12.320966350301985
+     },
+     "fit_length_tol1.0": {
+      "agreement": 0.4598792062122519,
+      "over": 0.540120793787748,
+      "under": 0.0,
+      "mean_controls": 12.320966350301985
+     },
+     "fit_length_tol1.5": {
+      "agreement": 0.4598792062122519,
+      "over": 0.540120793787748,
+      "under": 0.0,
+      "mean_controls": 12.320966350301985
+     },
+     "fit_length_tol2.0": {
+      "agreement": 0.4598792062122519,
+      "over": 0.540120793787748,
+      "under": 0.0,
+      "mean_controls": 12.320966350301985
+     }
+    },
+    "20-infmm": {
+     "pairs": 617,
+     "needed_share": {
+      "K8": 0.9886547811993517,
+      "K16": 0.011345218800648298,
+      "K24": 0.0
+     },
+     "ratio_original": {
+      "agreement": 0.0,
+      "over": 1.0,
+      "under": 0.0,
+      "mean_controls": 17.426256077795784
+     },
+     "ratio_min_arc": {
+      "agreement": 0.0,
+      "over": 1.0,
+      "under": 0.0,
+      "mean_controls": 17.426256077795784
+     },
+     "fit_tol0.25": {
+      "agreement": 0.46677471636953,
+      "over": 0.5332252836304701,
+      "under": 0.0,
+      "mean_controls": 12.382495948136143
+     },
+     "fit_tol0.5": {
+      "agreement": 0.9789303079416531,
+      "over": 0.012965964343598054,
+      "under": 0.008103727714748784,
+      "mean_controls": 8.12965964343598
+     },
+     "fit_tol0.75": {
+      "agreement": 0.9886547811993517,
+      "over": 0.0,
+      "under": 0.011345218800648298,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.0": {
+      "agreement": 0.9886547811993517,
+      "over": 0.0,
+      "under": 0.011345218800648298,
+      "mean_controls": 8.0
+     },
+     "fit_tol1.5": {
+      "agreement": 0.9886547811993517,
+      "over": 0.0,
+      "under": 0.011345218800648298,
+      "mean_controls": 8.0
+     },
+     "fit_tol2.0": {
+      "agreement": 0.9886547811993517,
+      "over": 0.0,
+      "under": 0.011345218800648298,
+      "mean_controls": 8.0
+     },
+     "fit_length_tol0.25": {
+      "agreement": 0.0,
+      "over": 1.0,
+      "under": 0.0,
+      "mean_controls": 17.426256077795784
+     },
+     "fit_length_tol0.5": {
+      "agreement": 0.0,
+      "over": 1.0,
+      "under": 0.0,
+      "mean_controls": 17.426256077795784
+     },
+     "fit_length_tol0.75": {
+      "agreement": 0.0,
+      "over": 1.0,
+      "under": 0.0,
+      "mean_controls": 17.426256077795784
+     },
+     "fit_length_tol1.0": {
+      "agreement": 0.0,
+      "over": 1.0,
+      "under": 0.0,
+      "mean_controls": 17.426256077795784
+     },
+     "fit_length_tol1.5": {
+      "agreement": 0.0,
+      "over": 1.0,
+      "under": 0.0,
+      "mean_controls": 17.426256077795784
+     },
+     "fit_length_tol2.0": {
+      "agreement": 0.0,
+      "over": 1.0,
+      "under": 0.0,
+      "mean_controls": 17.426256077795784
+     }
+    }
+   }
+  }
+ },
+ "macro_agreement": {
+  "ratio_original": 0.39314175490925846,
+  "ratio_min_arc": 0.7662151337616141,
+  "fit_tol0.25": 0.8739174615992752,
+  "fit_tol0.5": 0.9655381544622881,
+  "fit_tol0.75": 0.970560610468113,
+  "fit_tol1.0": 0.9666196866184672,
+  "fit_tol1.5": 0.9658144642446173,
+  "fit_tol2.0": 0.9657013420726717,
+  "fit_length_tol0.25": 0.8065623683484195,
+  "fit_length_tol0.5": 0.8443285695829117,
+  "fit_length_tol0.75": 0.8455911170422136,
+  "fit_length_tol1.0": 0.8455911170422136,
+  "fit_length_tol1.5": 0.8455911170422136,
+  "fit_length_tol2.0": 0.8455911170422136
+ },
+ "pooled": {
+  "ratio_original": {
+   "agreement": 0.35578241657778453,
+   "over": 0.6428462593326223,
+   "under": 0.0013713240895931737,
+   "mean_controls": 13.926557976535122
+  },
+  "ratio_min_arc": {
+   "agreement": 0.6797196404083499,
+   "over": 0.31890903550205696,
+   "under": 0.0013713240895931737,
+   "mean_controls": 10.843821423129667
+  },
+  "fit_tol0.25": {
+   "agreement": 0.8765808319366144,
+   "over": 0.11930519579460612,
+   "under": 0.004113972268779522,
+   "mean_controls": 9.084869724211488
+  },
+  "fit_tol0.5": {
+   "agreement": 0.9795825079993905,
+   "over": 0.009599268627152217,
+   "under": 0.01081822337345726,
+   "mean_controls": 8.148712479049216
+  },
+  "fit_tol0.75": {
+   "agreement": 0.9852201737010513,
+   "over": 0.0006094773731525217,
+   "under": 0.01417034892579613,
+   "mean_controls": 8.047539235105896
+  },
+  "fit_tol1.0": {
+   "agreement": 0.9826298948651532,
+   "over": 0.00015236934328813042,
+   "under": 0.01721773579155874,
+   "mean_controls": 8.01462745695566
+  },
+  "fit_tol1.5": {
+   "agreement": 0.9818680481487124,
+   "over": 0.0,
+   "under": 0.01813195185128752,
+   "mean_controls": 8.003656864238915
+  },
+  "fit_tol2.0": {
+   "agreement": 0.9817156788054243,
+   "over": 0.0,
+   "under": 0.01828432119457565,
+   "mean_controls": 8.0
+  },
+  "fit_length_tol0.25": {
+   "agreement": 0.7373152521712631,
+   "over": 0.26055157702270304,
+   "under": 0.002133170806033826,
+   "mean_controls": 10.357458479353953
+  },
+  "fit_length_tol0.5": {
+   "agreement": 0.7606277616943471,
+   "over": 0.23693432881304283,
+   "under": 0.0024379094926100867,
+   "mean_controls": 10.166082584184062
+  },
+  "fit_length_tol0.75": {
+   "agreement": 0.7612372390674996,
+   "over": 0.2363248514398903,
+   "under": 0.0024379094926100867,
+   "mean_controls": 10.161206765198841
+  },
+  "fit_length_tol1.0": {
+   "agreement": 0.7612372390674996,
+   "over": 0.2363248514398903,
+   "under": 0.0024379094926100867,
+   "mean_controls": 10.161206765198841
+  },
+  "fit_length_tol1.5": {
+   "agreement": 0.7612372390674996,
+   "over": 0.2363248514398903,
+   "under": 0.0024379094926100867,
+   "mean_controls": 10.161206765198841
+  },
+  "fit_length_tol2.0": {
+   "agreement": 0.7612372390674996,
+   "over": 0.2363248514398903,
+   "under": 0.0024379094926100867,
+   "mean_controls": 10.161206765198841
+  }
+ },
+ "selected_fit_tol_voxels": 0.75,
+ "selected_fit_length_tol_voxels": 0.75,
+ "selection_rule": "fit tolerance maximising macro-average agreement with the needed K over datasets"
+}

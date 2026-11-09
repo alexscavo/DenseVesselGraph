@@ -29,6 +29,11 @@ patches (`monitor_train`) only. No test data has been used.
   slightly. The pass-through decision adds Edge F1 +0.003–0.010 on a fixed model, without improving long edges.
   U-KAN does not beat the U-Net or its MLP control at this budget. On BRAVA the choice of node threshold
   (0.25 vs 0.30) moves Edge F1 by about 0.03, more than any of these changes.
+- **Curve shape and feature width (9 Nov, §4.12–4.13; single seed, validation only).** Short straight edges were
+  drawn as sub-millimetre coils (arc/chord 2–4, invisible to Curve F1). An arc-length penalty in the geometry loss
+  removes them with no metric loss and is now the training default; compressing each output curve to the fewest
+  controls within 0.5 voxel cuts the representation from about 13 to 8 controls per edge at no cost. The 32 feature
+  channels are kept: stage 2 uses about 12–16 directions, and a 16-channel model loses Curve F1 on TopBrain CTA.
 
 ## 2. The new approach: two-stage dense model with traced connectivity
 
@@ -177,6 +182,16 @@ connected).
 
   Each head is 6,983 → 256 → 3 × (interior points).
 - The curve is sampled at 64 points.
+- K is never learned: it is a fixed rule on the predicted traced path, or (option, 9 Nov) a compression of the
+  predicted curve. Options in `dense_graph_traced_20261030.py`, all recorded in each run's `final.json` (§4.12):
+  - `--k-rule ratio` (default): the table above; `--k-min-arc 8 20` (training default since 9 Nov) lets the arc/chord
+    ratio raise K only once the traced arc reaches 8 mm (K16) or 20 mm (K24);
+  - `--k-rule fit`: the fewest controls whose least-squares fit of the traced path (smoothed at 1 mm) is within a
+    tolerance; tested and not adopted;
+  - `--k-rule fixed24`: a single K24 head for every pair;
+  - output compression (`MODE['compress_tol']`, evaluation only): each predicted curve is replaced by the
+    fewest-control (K8, then K16) endpoint-pinned least-squares spline that reproduces it within 0.5 voxel
+    (Hausdorff), never more controls than it had.
 
 ### 2.5 Training
 
@@ -199,6 +214,16 @@ kept; negatives are randomly subsampled to at most 256 per patch and source.
 - **L_edge:** BCE with positive weight min(#neg/#pos, 20);
 - **L_geometry:** symmetric chamfer distance in mm between the predicted curve and the GT dense
   centreline (the original traced path, not a fitted spline), on positive pairs.
+  - The reference is the GT dense path resampled to 64 points by arc length (cache key `guides`, within about
+    0.1 mm of the path). The K8 fit stored in the caches (`curves`, drawn as "GT edge (B-spline)" in the 3D viewers)
+    is never used by the dense model; on long tortuous edges it leaves the vessel (§4.12).
+  - **Arc-length penalty (training default since 9 Nov 2026, weight λ = 0.1):** each positive pair adds
+    λ · max(0, L_pred − 1.02 · L_GT − 0.1 mm), where L_pred and L_GT are the arc lengths of the predicted curve and of
+    the reference (both from their 64 samples). The chamfer averages point distances, so a curve that coils inside the
+    vessel costs almost nothing; a coil is pure extra length, which this term charges. It never fires on a curve no
+    longer than the GT (+2% + 0.1 mm slack for sampling), so smooth bends and sideways shifts are not penalised.
+    `--arc-penalty 0` restores the original loss; runs before `traced_arcpen_r1109` used 0. Stage 1
+    (`dense_graph_20261030.py`) is unchanged.
 
 **Gradient flow.**
 - The edge and geometry losses train the corridor CNN, the heads and, through the sampling,
@@ -883,6 +908,126 @@ For |β₁| error, right of zero is worse:
   standard architecture), with DSC3 slim as the alternative; confirm with 2 more seeds of U-Net, U-Net wide and DSC3
   slim on the three datasets (~45 GPU-h) before the journal runs.
 
+### 4.12 Curve shape: coiled short edges, the arc-length penalty and the number of controls (DONE, 9 Nov 2026)
+
+**Problem.** On short, nearly straight vessels the predicted curves coiled inside the vessel. Accepted true edges with
+chord < 5 mm, reference models, medians (GT in brackets):
+
+| Dataset | arc / chord | total turning at 1 mm steps | share turning > 45° more than the GT |
+|---|---|---|---|
+| IXI-loops (`traced_adaptive`) | 2.42 (1.00) | 227° (9°) | 0.79 |
+| BRAVA (`traced_offset`) | 3.64 (1.04) | 1179° (31°) | 0.89 |
+| TopBrain CTA (`traced_adaptive`) | 2.09 (1.00) | 191° (10°) | 0.77 |
+
+Distance metrics did not show it: the coil stays within a fraction of a millimetre of the vessel (mean distance to the
+GT about 0.35 mm IXI, 0.6 mm BRAVA, as for straight curves), so Curve F1 and the chamfer loss are blind to it.
+
+**Causes.**
+- Each interior control may move about 4 voxels from the traced path whatever the edge length; on a 3 mm edge the
+  controls are 0.1–0.5 mm apart, so small offsets cross neighbours. BRAVA, chord < 5 mm: arc/chord 1.38 with K8,
+  5.11 with K16, 17.7 with K24.
+- The K rule gave K16/K24 to most short edges: the arc/chord ratio is read on the voxel-staircase trace, where noise of
+  fixed size inflates it on short paths (IXI chords < 5 mm: traced ratio 1.22 vs GT 1.00). On the training monitors
+  (`scripts/k_selection_check_20261109.py`), the fewest controls that fit the smoothed GT within 0.5 voxel ("needed K")
+  is K8 for 99–100% of traced true pairs (BRAVA 86%), and the original rule agrees with it on only 31–49%.
+
+**Arms** (stage 2 only: 7.5k updates, lr 3e-4, warm start from each dataset's stage-1 `spline6`, the reference recipe;
+one change each; IXI-loops / BRAVA / TopBrain CTA; scored at the frozen global decoding, node 0.30 / edge 0.75,
+subject-paired bootstrap vs the reference; `scripts/compare_arms_20261109.py`, `experiments/arm_compare_20261109/`):
+- `traced_arcpen_r1109`: arc-length penalty λ = 0.1 (§2.5), original K rule;
+- `traced_kfit_r1109`: fit K rule, tolerance 0.75 voxel (chosen on the training monitors);
+- `traced_k24_r1109`: one K24 head for every pair + arc penalty;
+- `@compressed`: the same model with output compression at 0.5 voxel (§2.4 d), evaluation only.
+
+| Dataset: arm | Edge F1 Δ | Curve F1 Δ | short arc/chord | > 45° extra: < 5 / 10–20 mm | controls per output edge |
+|---|---|---|---|---|---|
+| IXI: reference | 0.323 | 0.812 | 2.42 | 0.79 / 0.32 | 13.1 |
+| IXI: arc penalty | −0.001 [−0.003, +0.001] | −0.003 [−0.005, −0.002] | 1.09 | 0.16 / 0.12 | 13.2 |
+| IXI: arc penalty, compressed | −0.001 [−0.003, +0.001] | −0.004 [−0.005, −0.002] | 1.07 | 0.15 / 0.03 | **8.1** |
+| IXI: fit rule | −0.002 [−0.004, −0.000] | −0.006 [−0.008, −0.004] | 1.24 | 0.43 / 0.06 | — |
+| IXI: K24 + penalty, compressed | −0.002 [−0.004, +0.000] | −0.005 [−0.006, −0.003] | 1.08 | 0.16 / 0.04 | **8.1** |
+| BRAVA: reference | 0.208 | 0.391 | 3.64 | 0.89 / 0.33 | 12.9 |
+| BRAVA: arc penalty | +0.002 [−0.002, +0.007] | +0.000 [−0.004, +0.004] | 1.11 | 0.18 / 0.05 | 13.0 |
+| BRAVA: arc penalty, compressed | +0.002 [−0.002, +0.007] | −0.000 [−0.004, +0.004] | 1.09 | 0.15 / 0.02 | **8.4** |
+| BRAVA: fit rule | −0.000 [−0.003, +0.004] | −0.007 [−0.012, −0.003] | 1.62 | 0.76 / 0.09 | — |
+| BRAVA: K24 + penalty, compressed | −0.001 [−0.004, +0.002] | −0.004 [−0.009, +0.001] | 1.10 | 0.16 / 0.03 | **8.6** |
+| CTA: reference | 0.212 | 0.582 | 2.09 | 0.77 / 0.47 | 13.5 |
+| CTA: arc penalty | +0.004 [+0.000, +0.010] | −0.000 [−0.004, +0.007] | 1.11 | 0.20 / 0.13 | 13.4 |
+| CTA: arc penalty, compressed | +0.004 [+0.000, +0.010] | −0.000 [−0.004, +0.007] | 1.08 | 0.20 / 0.05 | **8.1** |
+| CTA: fit rule | +0.004 [−0.001, +0.009] | −0.010 [−0.020, −0.001] | 1.26 | 0.52 / 0.05 | — |
+| CTA: K24 + penalty, compressed | +0.005 [+0.001, +0.009] | −0.000 [−0.010, +0.012] | 1.09 | 0.22 / 0.05 | **8.1** |
+
+Reference rows give absolute values; Δ rows are arm − reference with 95% CIs. "Controls per output edge" is the mean K
+over accepted edges at the frozen decoding. Node F1, Branch F1 and node AP change by ≤ 0.005 in every arm.
+
+Real validation examples (a random sample, seed 0, not hand-picked; `scripts/curve_shape_figures_20261109.py`):
+
+![Random short true edges: reference curves coil, arc-penalty curves follow the GT](figures/curve_shape_20261109/curve_examples.png)
+
+![Whole validation patches: reference vs arc penalty with output compression](figures/curve_shape_20261109/patch_overlay.png)
+
+- **The arc penalty removes the coils** on all three datasets (short-edge arc/chord 2.1–3.6 → 1.09–1.11) with no loss
+  beyond the protocol's −0.01 F1 margin, and it improves the worst long edges (90th-percentile distance for GT arcs
+  ≥ 40 mm: IXI 0.77 → 0.47 mm, BRAVA 1.23 → 0.93 mm).
+- **Compression nearly halves the representation for free:** 13 → 8.1–8.6 controls per output edge, at most 0.001
+  Curve F1, and it removes the residual turning on mid-length edges (10–20 mm: 0.12 → 0.03 on IXI).
+- **Option (a) K24 + penalty + compression and option (b) penalty + current K rule + compression are tied** within
+  single-seed noise on every measure; (b) is marginally better on Curve F1 (IXI −0.004 vs −0.005, BRAVA −0.000 vs
+  −0.004) and on IXI long edges (p90 0.48 vs 0.55 mm), (a) is simpler (one head, no rule). Decision pending.
+- **The fit rule is not adopted:** it removes fewer coils (BRAVA 1.62) and is the only arm with a Curve F1 loss on all
+  three datasets.
+- **Decision (user, 9 Nov 2026): the arc penalty λ = 0.1 is the stage-2 training default.**
+
+Caveats: single seed; validation only; the arc-penalty arm used the original K rule, while the training default since
+9 Nov is the minimum-length rule (`--k-min-arc 8 20`), a combination not yet trained; the 3D viewers still draw the cache
+K8 fit as "GT edge" (on TubeTK edges of 40–80 mm only 69% of that fit lies inside the vessel, against ≥ 99% for the real
+path and for the training target).
+
+### 4.13 Width of the shared feature channels F (DONE, 9 Nov 2026)
+
+**Question.** Are the 32 feature channels read by stage 2 too many or too few?
+
+**Structure.** F = `final_conv(u1)` is a 1×1×1 *linear* map of the last decoder output u1 (32 channels for the U-Net),
+and the corridor CNN's first layer is linear too. So F carries at most 32 dimensions, more F channels alone add no
+information (the decoder width would have to grow), and a native channel is an arbitrary basis direction. Only stage 2
+reads F; nodes and tracing are unaffected by any change to it.
+
+**Test-time ablation** (`scripts/feature_ablation_20261109.py`, `experiments/feature_ablation_20261109/`): on the trained
+reference models, F is replaced by its projection onto the top-k principal directions of the corridor samples (fitted
+on the training monitor; removed directions set to their mean). Edge F1 change at the frozen global decoding:
+
+| Dataset (full Edge F1) | k = 1 | 2 | 4 | 8 | 12 | 16 | 24 | all removed |
+|---|---|---|---|---|---|---|---|---|
+| SyntheticMRI (0.787) | −0.111 | −0.044 | −0.029 | −0.004 | −0.004 | −0.001 | 0.000 | −0.787 |
+| IXI (0.323) | −0.066 | −0.032 | −0.022 | −0.004 | −0.003 | 0.000 | 0.000 | −0.244 |
+| BRAVA (0.208) | −0.052 | −0.078 | −0.009 | −0.002 | 0.000 | 0.000 | 0.000 | −0.169 |
+| TopBrain MRA (0.268) | −0.078 | −0.041 | −0.018 | −0.005 | 0.000 | 0.000 | 0.000 | −0.188 |
+| TopBrain CTA (0.212) | −0.018 | −0.016 | −0.008 | −0.009 | −0.002 | +0.002 | 0.000 | −0.156 |
+
+![Edge F1 change vs number of principal feature directions kept](figures/curve_shape_20261109/feature_ablation.png)
+
+- 12–16 directions keep everything (also Curve F1 within 0.002 at k = 16); the top 8 hold 80–83% of the variance,
+  participation ratio 5.7–8.3.
+- Single native channels matter little (worst: −0.026 Edge F1, channel 30 on CTA), but removing the 16 or 24 least
+  important native channels together costs up to −0.061 / −0.133: the information is spread across channels.
+- Removing all of F collapses stage 2 (−0.16 to −0.79 Edge F1): edges depend on the image features, not on geometry
+  alone.
+
+**Training with 16 channels** (`spline6_fc16_r1109` → `traced_fc16_r1109`, both stages from scratch, decoder unchanged,
+original K rule, arm_compare protocol), 16 − 32:
+
+| Dataset | Edge F1 | Branch F1 | Curve F1 | node AP |
+|---|---|---|---|---|
+| IXI | +0.003 [−0.001, +0.008] | +0.003 [−0.002, +0.008] | −0.000 [−0.004, +0.003] | 0.612 vs 0.611 |
+| BRAVA | +0.001 [−0.002, +0.005] | −0.004 [−0.008, +0.000] | +0.009 [−0.000, +0.020] | 0.517 vs 0.519 |
+| TopBrain CTA | −0.007 [−0.023, +0.007] | −0.010 [−0.019, +0.002] | **−0.024 [−0.036, −0.010]** | 0.445 vs 0.447 |
+
+- 16 channels match 32 on IXI and BRAVA but lose Curve F1 on TopBrain CTA, which the test-time ablation did not
+  predict. Stage 1 is only ~10% faster with 16.
+- **Decision (user, 9 Nov 2026): keep 32 feature channels.** 32 is not a bottleneck either; testing "more" would mean
+  widening the decoder (`--feature-channels` exists for both stages).
+- Single seed; validation only.
+
 ## 5. 2D (validation; node / edge F1 @2 units)
 
 | Dataset | RelationFormer B0 (mixed pretraining) | Dense 16-NN, from scratch |
@@ -920,3 +1065,8 @@ Report: `DenseVesselGraph/experiments/dense_graph_2d_20261030/report.md`.
      their BRAVA shared-threshold comparisons are approximate.
   7. **Pass-through rule (PROPOSED).** Require A–C and C–B to be accepted before contracting, and separate two-hop
      training from the head (§4.8).
+  8. **Number of controls (PROPOSED, decision pending).** Choose between (a) one K24 head + compression and (b) the
+     current K rule + compression (§4.12, tied on one seed), align the K-rule training default with it, make output
+     compression the evaluation default, and confirm with 3 seeds together with the backbone choice (§4.11).
+  9. **3D viewers (PROPOSED).** Label the blue "GT edge (B-spline)" as the cache's K8 display fit, or draw the dense
+     GT path, since the K8 fit leaves long tortuous vessels.

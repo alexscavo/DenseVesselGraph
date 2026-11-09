@@ -48,12 +48,43 @@ INTERIOR = (6, 14, 22)  # K8 / K16 / K24
 #   passthrough:  node-level decision for two-hop chains (implies two_hop): a head scores whether C is a
 #                 pass-through point; if so C, A-C and C-B are replaced by A-B, otherwise A-B is dropped.
 #                 Two-hop pairs are never accepted as ordinary edges, so A-B/A-C/C-B cannot form a triangle.
-MODE = dict(soft=False, knn_fallback=True, gap_features=False, two_hop=False, passthrough=False)
+# Opt-in (9 Nov 2026):
+#   k_min_arc:    (K16, K24) minimum traced arc in mm before the arc/chord ratio may raise K. On short traces the ratio
+#                 is dominated by voxel staircase / endpoint kinks (IXI chords < 5 mm: traced ratio 1.22 vs GT 1.00), so
+#                 short straight edges got K16/K24. (0, 0) = the original rule; training default since 9 Nov is (8, 20).
+#   arc_penalty:  training only. Weight of relu(arc_pred - 1.02 arc_gt - 0.1 mm) added to each positive pair's chamfer
+#                 (mm). The chamfer is blind to sub-mm curls: short straight edges were drawn with arc/chord 3-5 and
+#                 hundreds of degrees of turning (experiments/k_rule_check_20261109). TRAINING DEFAULT 0.1 since 9 Nov
+#                 (--arc-penalty; arm traced_arcpen_r1109 removed the curls with no metric loss, arm_compare_20261109).
+#                 The MODE default stays 0 so that runs saved before then are described as they were trained.
+#   k_rule:       'ratio' = arc / arc-chord thresholds above (with k_min_arc); 'fit' = the fewest controls that represent
+#                 the traced path: smooth it at k_fit_smooth_mm, least-squares fit K8 (then K16) with pinned endpoints, take
+#                 the first K whose Hausdorff deviation from the smoothed path is <= k_fit_tol voxels, else K24.
+#                 Uses only the traced path (no GT). 16-NN fallback pairs stay K8 under both rules.
+MODE = dict(soft=False, knn_fallback=True, gap_features=False, two_hop=False, passthrough=False, k_min_arc=(0.0, 0.0),
+            arc_penalty=0.0, k_rule='ratio', k_fit_tol=0.5, k_fit_smooth_mm=1.0, compress_tol=0.0)
+# k_rule 'fixed24' = every pair (traced and fallback) uses the K24 head: one head learns from every edge, no rule.
+# compress_tol (evaluation only, voxels): replace each predicted curve by the fewest-control (K8 / K16) endpoint-pinned
+# least-squares spline that reproduces it within this Hausdorff tolerance; curves needing more keep their K24 shape.
+# 0 = off. The chosen count is stored per pair as 'interior_compressed' (6 / 14 / 22).
+# k_rule 'fit_length' = 'fit', with the original length floors (arc >= 15 mm -> at least K16, >= 35 mm -> K24): on long
+# edges the traced path is smoother than the GT, so the fit alone under-selects (BRAVA >= 20 mm), and extra controls on
+# long edges are cheap (wide spacing). The arc/chord ratio is not used.
+K_MIN_ARC_DEFAULT = (8.0, 20.0)
+MODE_DEFAULTS = dict(MODE)
+
+
+def apply_saved_mode(final):
+    """Set MODE exactly as recorded in a run's final.json (keys it lacks take the original defaults, so a run that
+    predates a flag is evaluated as it was). Use instead of MODE.update when several runs share one process."""
+    MODE.clear()
+    MODE.update(MODE_DEFAULTS, **final.get('mode', {}))
+    MODE['k_min_arc'] = tuple(MODE['k_min_arc'])
 PROB_HOOK = None  # analysis only: f(prob, nodes, geometry) -> centreline probability used by predict()
 GAP_FEATURES = 5
 VIA_FEATURES = 3
 MAX_VIA_DEGREE = 6  # skip pass-through pairs around nodes touching more regions than this
-FEATURE_CHANNELS = 32  # U-Net channels 5..36
+FEATURE_CHANNELS = 32  # default number of U-Net feature channels (outputs 5..36); --feature-channels since 9 Nov 2026
 PASS_THRESHOLDS = [round(t, 2) for t in np.arange(0.3, 0.96, 0.05)]
 OFFSETS = [(i, j, k) for i in (-1, 0, 1) for j in (-1, 0, 1) for k in (-1, 0, 1) if (i, j, k) != (0, 0, 0)]
 HALF = [o for o in OFFSETS if o > (0, 0, 0)]
@@ -253,25 +284,126 @@ def frames(path):
     return t, u, torch.cross(t, u, dim=-1)
 
 
-def choose_interior(paths_mm, traced):
-    """Fixed adaptive rule on the traced path: arc length and arc/chord ratio."""
+def smooth_physical(paths_mm, scale_mm):
+    """Moving average over ~scale_mm of arc (per-path window on the 64 arc-length samples), endpoints pinned."""
+    step = (paths_mm[:, 1:] - paths_mm[:, :-1]).norm(dim=-1).mean(-1).clamp_min(1e-6)
+    half = ((scale_mm / step).round().long().clamp(1, 31) // 2)  # window 2*half+1 (odd), same as smooth(path, k)
+    n, pad = paths_mm.shape[1], 15
+    padded = torch.cat([paths_mm[:, :1].expand(-1, pad, -1), paths_mm, paths_mm[:, -1:].expand(-1, pad, -1)], 1)  # replicate
+    csum = F.pad(padded.cumsum(1), (0, 0, 1, 0))
+    i = torch.arange(n, device=paths_mm.device)[None] + pad
+    hi = (i + half[:, None] + 1)[..., None].expand(-1, -1, 3)
+    lo = (i - half[:, None])[..., None].expand(-1, -1, 3)
+    out = (csum.gather(1, hi) - csum.gather(1, lo)) / (2 * half + 1)[:, None, None].float()
+    out[:, 0], out[:, -1] = paths_mm[:, 0], paths_mm[:, -1]
+    return out
+
+
+def point_polyline_distance(x, y):
+    """(N,n,3) points to (N,m,3) polylines -> (N,n) distance to the nearest segment."""
+    a, b = y[:, :-1], y[:, 1:]
+    ab = b - a
+    t = (((x[:, :, None] - a[:, None]) * ab[:, None]).sum(-1) / (ab * ab).sum(-1).clamp_min(1e-12)[:, None]).clamp(0, 1)
+    return (x[:, :, None] - (a[:, None] + t[..., None] * ab[:, None])).norm(dim=-1).min(-1).values
+
+
+_FIT = {}
+
+
+def fit_errors(paths_mm, controls):
+    """Hausdorff deviation (mm) of the endpoint-pinned least-squares cubic B-spline with `controls` controls from each
+    path (N,64,3), parameterised by sample index (the paths are arc-length samples), as data/spline_targets.fit_spline."""
+    key = (controls, paths_mm.shape[1], str(paths_mm.device))
+    if key not in _FIT:
+        B = cubic_basis(controls, paths_mm.shape[1])[0].to(paths_mm.device)
+        _FIT[key] = (B.float(), torch.linalg.pinv(B[:, 1:-1]).float())
+    fitted = fit_spline_batch(paths_mm, controls)
+    return torch.maximum(point_polyline_distance(fitted, paths_mm).max(-1).values,
+                         point_polyline_distance(paths_mm, fitted).max(-1).values)
+
+
+def fit_spline_batch(paths, controls):
+    """Endpoint-pinned least-squares cubic B-spline with `controls` controls, sampled at the paths' sample count."""
+    key = (controls, paths.shape[1], str(paths.device))
+    if key not in _FIT:
+        B = cubic_basis(controls, paths.shape[1])[0].to(paths.device)
+        _FIT[key] = (B.float(), torch.linalg.pinv(B[:, 1:-1]).float())
+    B, pinv = _FIT[key]
+    ends = B[None, :, :1] * paths[:, :1] + B[None, :, -1:] * paths[:, -1:]
+    inner = pinv[None] @ (paths - ends)
+    return B[None] @ torch.cat([paths[:, :1], inner, paths[:, -1:]], 1)
+
+
+def compress_curves(curves, tol, interior=None):
+    """(P,64,3) predicted curves (voxels) -> (curves, interior counts): the fewest-control fit (K8, then K16) of each
+    arc-length-resampled curve within Hausdorff tol voxels; otherwise the curve is kept as predicted. Never more
+    controls than the curve already has (`interior`, 6 / 14 / 22; default 22): a K8 curve stays as it is."""
+    q = resample(curves, curves.shape[1])
+    m = interior.clone() if interior is not None else torch.full((len(curves),), 22, dtype=torch.long, device=curves.device)
+    out, open_ = curves.clone(), m > 6
+    for controls in (8, 16):
+        open_ &= m > controls - 2
+        if not open_.any():
+            break
+        idx = open_.nonzero().squeeze(1)
+        fitted = fit_spline_batch(q[idx], controls)
+        err = torch.maximum(point_polyline_distance(fitted, q[idx]).max(-1).values, point_polyline_distance(q[idx], fitted).max(-1).values)
+        ok = err <= tol
+        out[idx[ok]], m[idx[ok]] = fitted[ok], controls - 2
+        open_[idx[ok]] = False
+    return out, m
+
+
+def fit_interior(paths_mm, tol_mm, smooth_mm):
+    """Interior-control count (6/14/22) = fewest controls whose fit of the smoothed path is within tol_mm (N,)."""
+    p = smooth_physical(paths_mm, smooth_mm)
+    m = torch.full((len(p),), 22, dtype=torch.long, device=p.device)
+    open_ = torch.ones(len(p), dtype=torch.bool, device=p.device)
+    for controls in (8, 16):
+        if not open_.any():
+            break
+        ok = torch.zeros_like(open_)
+        ok[open_] = fit_errors(p[open_], controls) <= tol_mm[open_]
+        m[ok] = controls - 2
+        open_ &= ~ok
+    return m
+
+
+def choose_interior(paths_mm, traced, voxel_mm=None):
+    """Interior controls per pair from the traced path. 'ratio': arc length, and arc/chord once the arc reaches
+    MODE['k_min_arc']. 'fit': fewest controls that fit the smoothed traced path within MODE['k_fit_tol'] voxels
+    (voxel_mm = mean voxel size of the patch, required)."""
+    if MODE['k_rule'] == 'fixed24':
+        return torch.full((len(paths_mm),), 22, dtype=torch.long, device=paths_mm.device)
+    if MODE['k_rule'] in ('fit', 'fit_length'):
+        assert voxel_mm is not None, 'the fit rule needs the voxel size'
+        m = torch.full((len(paths_mm),), 6, dtype=torch.long, device=paths_mm.device)
+        if traced.any():
+            tol = torch.full((int(traced.sum()),), MODE['k_fit_tol'] * float(voxel_mm), device=paths_mm.device)
+            m[traced] = fit_interior(paths_mm[traced], tol, MODE['k_fit_smooth_mm'])
+        if MODE['k_rule'] == 'fit_length':
+            arc = (paths_mm[:, 1:] - paths_mm[:, :-1]).norm(dim=-1).sum(-1)
+            m[traced & (arc >= 15)] = m[traced & (arc >= 15)].clamp_min(14)
+            m[traced & (arc >= 35)] = 22
+        return m
     arc = (paths_mm[:, 1:] - paths_mm[:, :-1]).norm(dim=-1).sum(-1)
     ratio = arc / (paths_mm[:, -1] - paths_mm[:, 0]).norm(dim=-1).clamp_min(1e-3)
+    min16, min24 = MODE['k_min_arc']
     m = torch.full_like(arc, 6, dtype=torch.long)
-    m[traced & ((arc >= 15) | (ratio >= 1.15))] = 14
-    m[traced & ((arc >= 35) | (ratio >= 1.5))] = 22
+    m[traced & ((arc >= 15) | ((ratio >= 1.15) & (arc >= min16)))] = 14
+    m[traced & ((arc >= 35) | ((ratio >= 1.5) & (arc >= min24)))] = 22
     return m
 
 
 class TracedDenseGraph(D.DenseGraph):
-    def __init__(self, radius=12.0, gap_features=False, two_hop=False, passthrough=False, backbone='unet'):
-        super().__init__('spline', 6, radius, backbone)
+    def __init__(self, radius=12.0, gap_features=False, two_hop=False, passthrough=False, backbone='unet', feature_channels=FEATURE_CHANNELS):
+        super().__init__('spline', 6, radius, backbone, feature_channels)
         self.gap_features, self.two_hop = gap_features, two_hop or passthrough
         width = (self.edge_head[0].in_features + 1 + (GAP_FEATURES if gap_features else 0)
                  + (VIA_FEATURES if self.two_hop else 0))  # + arc length (+ gap statistics) (+ pass-through node)
         self.edge_head = nn.Sequential(nn.Linear(width, 256), nn.GELU(), nn.Linear(256, 1))
         if passthrough:  # joined A->C->B path features + U-Net features at C
-            self.pass_head = nn.Sequential(nn.Linear(width + FEATURE_CHANNELS, 256), nn.GELU(), nn.Linear(256, 1))
+            self.pass_head = nn.Sequential(nn.Linear(width + self.fc, 256), nn.GELU(), nn.Linear(256, 1))
         del self.geometry_head  # replaced by the per-K heads below
         self.heads = nn.ModuleDict()
         for m in INTERIOR:
@@ -327,6 +459,11 @@ class TracedDenseGraph(D.DenseGraph):
             controls = torch.cat([base[:, :1], interior_pts, base[:, -1:]], 1)
             curves[sel] = getattr(self, f'basis{m}') @ controls
         return curves
+
+
+def voxel_size(metric):
+    """Mean voxel edge (mm) of a patch metric (3x3, voxel -> mm, columns = voxel axes)."""
+    return float(metric.norm(dim=0).mean())
 
 
 def via_features(heat, a, b, via):
@@ -408,10 +545,15 @@ def patch_terms(model, feats, heat, cand, gt_vox, gt_edges, guides, metric, mapp
     positive = labels.bool()
     if positive.any():
         m = metric[None].expand(int(positive.sum()), 3, 3)
-        interior = choose_interior(to_mm(paths[positive], m), traced[positive])
+        interior = choose_interior(to_mm(paths[positive], m), traced[positive], voxel_size(metric))
         curve = model.path_curves(x[positive], paths[positive], interior, traced[positive])
         ref = D.guide_for(pairs[positive], mapping, gt_edges, guides, gt_vox)
-        geo = chamfer(to_mm(curve, m), to_mm(ref, m))
+        curve_mm, ref_mm = to_mm(curve, m), to_mm(ref, m)
+        geo = chamfer(curve_mm, ref_mm)
+        if MODE['arc_penalty']:
+            arc_pred = (curve_mm[:, 1:] - curve_mm[:, :-1]).norm(dim=-1).sum(-1)
+            arc_ref = (ref_mm[:, 1:] - ref_mm[:, :-1]).norm(dim=-1).sum(-1)
+            geo = geo + MODE['arc_penalty'] * F.relu(arc_pred - 1.02 * arc_ref - 0.1)
     return edge, geo, traced, passthrough
 
 
@@ -484,10 +626,13 @@ def predict(model, ds, device, node_threshold, workers, batch=8):
                         via = via_points(p, pairs, hops)
                         q[hop.cpu().numpy()] = model.pass_logits(feats[b], x[hop], via[hop]).sigmoid().cpu().numpy()
                     row['pass_scores'] = q
-                interior = choose_interior(to_mm(paths, metric[None].expand(len(paths), 3, 3)), traced)
+                interior = choose_interior(to_mm(paths, metric[None].expand(len(paths), 3, 3)), traced, voxel_size(metric))
+                curves = model.path_curves(x, paths, interior, traced)
+                if MODE['compress_tol']:
+                    curves, kept = compress_curves(curves, MODE['compress_tol'], interior)
+                    row['interior_compressed'] = kept.cpu().numpy()
                 row.update(pairs=pairs.cpu().numpy(), edge_scores=model.edge_head(x).squeeze(-1).sigmoid().cpu().numpy(),
-                           curves=(model.path_curves(x, paths, interior, traced) / SIZE).cpu().numpy(),
-                           traced=traced.cpu().numpy(), interior=interior.cpu().numpy())
+                           curves=(curves / SIZE).cpu().numpy(), traced=traced.cpu().numpy(), interior=interior.cpu().numpy())
             record = ds.records[offset + b]
             row.update(sample_id=record.sample_id, cache=str(record.graph.parent.parent / 'spline' / f'{record.sample_id}.npz'))
             rows.append(row)
@@ -548,6 +693,7 @@ def final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final.js
     traced_share = float(np.mean(np.concatenate([r['traced'] for r in val_rows if r['traced'] is not None] or [np.zeros(0)])))
     interior = np.concatenate([r['interior'] for r in val_rows if r['interior'] is not None] or [np.zeros(0, int)])
     result = dict(dataset=a.dataset, model='traced+adaptive', mode=dict(MODE), offset_radius=getattr(a, 'offset_radius', 0.0), backbone=getattr(a, 'backbone', 'unet'),
+                  feature_channels=getattr(a, 'feature_channels', FEATURE_CHANNELS),
                   updates=a.updates, batch=a.batch, lr=a.lr,
                   thresholds=dict(node=node_t, edge=edge_t, policy='train monitor only; candidates = geodesic contacts' + (' U 16-NN over retained nodes' if MODE['knn_fallback'] else ' only')),
                   train_monitor=D.evaluate(train_rows, node_t, edge_t), validation=D.evaluate(val_rows, node_t, edge_t),
@@ -619,10 +765,26 @@ def main():
     p.add_argument('--offset-radius', type=float, default=1.75,
                    help='Supervise offsets at all voxels within this radius of each GT node; default 1.75 (3x3x3) since '
                         '3 Nov 2026, 0 = GT voxel only (all runs before traced_twohop_offset)')
+    p.add_argument('--arc-penalty', type=float, default=0.1,
+                   help='Weight of the excess-arc term relu(arc_pred - 1.02 arc_gt - 0.1 mm) in the geometry loss. '
+                        'Default 0.1 since 9 Nov 2026; 0 = the original loss (all runs before traced_arcpen_r1109)')
+    p.add_argument('--feature-channels', type=int, default=FEATURE_CHANNELS,
+                   help='Shared feature channels F (must match the --init-from checkpoint); 32 = all runs before 9 Nov 2026')
+    p.add_argument('--k-min-arc', type=float, nargs=2, default=None, metavar=('K16', 'K24'),
+                   help='Minimum traced arc (mm) before arc/chord may raise K to K16 / K24. Training default 8 20 (since '
+                        '9 Nov 2026); 0 0 = original rule. --evaluate-only defaults to the rule recorded in final.json '
+                        '(original rule if none is recorded)')
+    p.add_argument('--k-rule', choices=['ratio', 'fit', 'fit_length', 'fixed24'], default=None,
+                   help="'ratio' (default): arc and arc/chord thresholds (+ --k-min-arc); 'fit': fewest controls whose "
+                        "least-squares fit of the smoothed traced path is within --k-fit-tol voxels; 'fit_length': fit "
+                        "with arc-length floors (>= 15 mm: K16, >= 35 mm: K24); 'fixed24': one K24 head for every pair")
+    p.add_argument('--k-fit-tol', type=float, default=None, help='Fit rule tolerance in voxels (default 0.5)')
+    p.add_argument('--k-fit-smooth-mm', type=float, default=None, help='Fit rule path smoothing scale in mm (default 1.0)')
     p.add_argument('--evaluate-only', action='store_true')
     p.add_argument('--breakdown-rows', type=Path, help='Only compute the arc-length breakdown for saved rows (CPU)')
     p.add_argument('--breakdown-thresholds', type=float, nargs=2)
     a = p.parse_args()
+    MODE.update(arc_penalty=a.arc_penalty)
     MODE.update(soft=a.soft_tracing, knn_fallback=not a.no_knn_fallback, gap_features=a.gap_features,
                 two_hop=a.two_hop or a.passthrough, passthrough=a.passthrough)
     if a.breakdown_rows:
@@ -633,13 +795,28 @@ def main():
     np.random.seed(364505)
     out_dir = a.output / a.dataset / (a.run_name or 'traced_adaptive')
     out_dir.mkdir(parents=True, exist_ok=True)
+    saved = {}
+    if a.evaluate_only and (out_dir / 'final.json').exists():  # reproduce the K rule the model was evaluated with
+        saved = json.loads((out_dir / 'final.json').read_text()).get('mode', {})
+    if a.evaluate_only:  # the penalty only affects training: keep the value the model was trained with in final.json
+        MODE['arc_penalty'] = saved.get('arc_penalty', 0.0)
+    for key, arg, train_default in (('k_min_arc', a.k_min_arc, K_MIN_ARC_DEFAULT), ('k_rule', a.k_rule, 'ratio'),
+                                    ('k_fit_tol', a.k_fit_tol, MODE_DEFAULTS['k_fit_tol']),
+                                    ('k_fit_smooth_mm', a.k_fit_smooth_mm, MODE_DEFAULTS['k_fit_smooth_mm'])):
+        if arg is not None:
+            MODE[key] = arg
+        elif a.evaluate_only:
+            MODE[key] = saved.get(key, MODE_DEFAULTS[key])
+        else:
+            MODE[key] = train_default
+    MODE['k_min_arc'] = tuple(MODE['k_min_arc'])
     plan = json.loads(PLAN.read_text())['datasets'][a.dataset]
     train_ids, val_ids, monitor = plan['train_ids'], plan['val_ids'], plan['monitor_train']
     if a.smoke:
         train_ids, val_ids, monitor = train_ids[:8], val_ids[:4], train_ids[:4]
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     model = TracedDenseGraph(gap_features=MODE['gap_features'], two_hop=MODE['two_hop'], passthrough=MODE['passthrough'],
-                             backbone=a.backbone).to(device)
+                             backbone=a.backbone, feature_channels=a.feature_channels).to(device)
     if a.evaluate_only:
         model.load_state_dict(torch.load(out_dir / 'model.pt', map_location=device)['model'])
         final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final-v2.json')
