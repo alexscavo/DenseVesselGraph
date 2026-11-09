@@ -101,6 +101,18 @@ Its 37 output channels are read as follows:
 Peaks are sorted by score. During training, peaks ≥ 0.2 are used (at most 200 per patch). At
 inference the threshold is the one selected on training patches (§2.6).
 
+Stage-1 outputs of `traced_adaptive` on one validation patch per dataset (detections at the train-selected node
+threshold, 2 mm matching):
+
+![Stage-1 U-Net outputs: image MIP with GT graph, node heatmap, detected nodes, sub-voxel offset zoom, centreline probability](figures/unet_outputs_20261102/unet_outputs_3d.png)
+
+A second set of patches: [`unet_outputs_3d_example2.png`](figures/unet_outputs_20261102/unet_outputs_3d_example2.png).
+Interactive 3D views of the same patches, prediction vs GT:
+[SyntheticMRI](figures/interactive_3d_20261103/prediction_3d_SyntheticMRI.html),
+[IXI](figures/interactive_3d_20261103/prediction_3d_IXI.html),
+[BRAVA](figures/interactive_3d_20261103/prediction_3d_BRAVA.html). GitHub shows HTML as source, so download the
+file and open it in a browser.
+
 ### 2.4 Stage 2: from nodes to edges
 
 **(a) Tracing the centreline: geodesic Voronoi regions.**
@@ -543,6 +555,11 @@ interior. The set is fixed before contraction and recovery is counted in the fin
 | IXI | 126/318 (0.40) | 98/313 (0.31) | 22/306 (0.07) | 68/306 (0.22) | **+0.150 [+0.105, +0.200]** | **−0.091 [−0.135, −0.044]** |
 | BRAVA | 82/295 (0.28) | 165/758 (0.22) | 25/308 (0.08) | 51/308 (0.17) | **+0.084 [+0.058, +0.108]** | **−0.052 [−0.101, −0.016]** |
 
+How a blocked edge arises, one example per dataset (`traced_adaptive`): a detection C on the vessel between A and B
+splits the geodesic regions, so tracing proposes A–C and C–B, and A–B is left to the straight 16-NN fallback.
+
+![In-between detection C blocks the traced candidate A–B](figures/unet_outputs_20261102/tracing_blocking_examples.png)
+
 The arms' blocked sets differ, so the last column compares rates. On BRAVA `traced_offset` runs at a lower node
 threshold; against `traced_adaptive`, at the same thresholds, the difference is **−0.112 [−0.165, −0.073]**.
 
@@ -780,6 +797,11 @@ Outputs in `experiments/dense_graph_20261030/`: `shared-thresholds.json`, `node-
 `paired-traced_adaptive_ukan-vs-*.json`, `paired-spline6_ukan*-vs-spline6-*.json`, the matching `paired-arc-*` files, and
 `topology-validation.json`.
 
+Summary figure of 4 Nov, which also includes U-KAN with additive skips and DSCNet (K = 3). That DSCNet arm has
+2.8x the U-Net's backbone parameters; §4.11 replaces the comparison with size-matched arms:
+
+![Backbone comparison of 4 Nov: U-KAN concat, U-KAN add, DSCNet K=3 minus U-Net](figures/backbones_20261104/backbone_comparison.png)
+
 ### 4.10 Loop patches in training and evaluation (DONE, 5 Nov 2026)
 
 **Problem.** The adjacency target stores one edge per node pair and no self-loop, so patches whose contracted
@@ -841,6 +863,12 @@ the evaluation protocol (V0: node 0.30 / edge 0.75), the same for every arm; sub
 | U-Net wide | **+0.016** [+0.012, +0.021] | **+0.027** [+0.021, +0.032] | +0.010 [−0.002, +0.020] | 0.624 / 0.526 / 0.461 |
 | DSC3 slim | **+0.012** [+0.008, +0.017] | **+0.011** [+0.005, +0.019] | **+0.024** [+0.012, +0.040] | 0.625 / 0.521 / 0.471 |
 | DSC3 | **+0.021** [+0.017, +0.027] | −0.003 [−0.009, +0.006] | +0.015 [−0.004, +0.034] | 0.638 / 0.520 / 0.478 |
+
+All four F1 measures and the |β₁| error, arm − U-Net with 95% subject-paired CIs (`scripts/backbone_figure_20261109.py`).
+For |β₁| error, right of zero is worse:
+
+![Size-matched backbones minus U-Net at the frozen global decoding setting, IXI / BRAVA / TopBrain CTA](figures/backbones_20261109/backbone_size_matched.png)
+
 
 - **Snake convolutions at equal small size help:** DSC3 slim beats the U-Net on all three datasets (edge, node and
   Curve F1; Branch F1 on IXI and CTA).

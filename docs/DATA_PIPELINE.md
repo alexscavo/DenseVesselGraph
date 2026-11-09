@@ -131,6 +131,22 @@ Splits are by patient/subject; test patches are never used before the locked eva
   the SCRATCH purge (verified identical); the 21 purged test images were restored and verified against 2,178
   September test patches.
 
+QC figures. TopBrain, tight mask: original image with the brain-mask outline, the stripped image, and vessel labels
+kept (white) or removed by the mask (red):
+
+![TopBrain MRA, tight-mask stripping QC](research/figures/topbrain_stripping_20261104/TopBrain_tight_20261105/stripping_qc_mr.png)
+
+![TopBrain CTA, tight-mask stripping QC](research/figures/topbrain_stripping_20261104/TopBrain_tight_20261105/stripping_qc_ct.png)
+
+TubeTK: MIPs of the stripped MRA with the clipped Skwerer graph (cyan), Skwerer parts cut by the mask (yellow) and
+Bullitt centreline not covered by Skwerer within 1 mm (red); no test subjects shown:
+
+![TubeTK Skwerer preparation QC](research/figures/tubetk_20261105/tubetk_stripping_qc.png)
+
+Interactive 3D ground-truth patches (validation): [TopBrain MRA](research/figures/topbrain_3d_20261105/topbrain_mr_patch_3d.html),
+[TopBrain CTA](research/figures/topbrain_3d_20261105/topbrain_ct_patch_3d.html),
+[TubeTK](research/figures/tubetk_20261105/tubetk_patch_3d.html). Download and open in a browser.
+
 ## Mixed-domain sampling
 
 Source and target datasets are concatenated. With

@@ -147,6 +147,11 @@ Implemented in `scripts/protocol_tables_20261106.py` and `scripts/protocol_repor
 - **Reporting:** all datasets, including unfavourable ones, in the main table; per-patch results and exact settings
   released with the code. Validation is used for development only; the locked test runs once (Phase 6).
 
+Sensitivity curves on validation (`scripts/protocol_report_20261106.py`; descriptive only, since settings are chosen
+on training monitors). Dotted line: per-dataset choice; dashed: leave-one-dataset-out; red: |β₁| error:
+
+![Validation sensitivity of edge / node F1 and |β1| error to the node, edge and high thresholds](figures/evaluation_protocol_20261106/sensitivity.png)
+
 ## 7. Experiments
 
 **E1. Main comparison (method pillar).**
