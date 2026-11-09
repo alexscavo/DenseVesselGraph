@@ -1,0 +1,76 @@
+{
+  "created_at": "2026-11-06T15:01:13.002496+00:00",
+  "old_jobs": {
+    "ixi_stage1": "2052010",
+    "ixi_stage2": "2052011",
+    "tubetk_targets": "2052267",
+    "tubetk_qc": "2052268"
+  },
+  "ixi_stage1_reused": {
+    "path": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/dense_graph_20261030/IXI-loops/spline6_dsc3_slim_r1106/model.pt",
+    "reason": "Original attempt completed all 15000 updates and final validation before NODE_FAIL; automatic restart failed during symlink setup. Checkpoint loaded on CPU; recipe, finite tensors, log steps and 2961 validation patches verified."
+  },
+  "tubetk_cache_reused": {
+    "counts": {
+      "train": 12395,
+      "val": 2514,
+      "test": 2775
+    },
+    "reason": "READY, manifest counts and index verified. Failed only in final collect due to missing Git."
+  },
+  "jobs": {
+    "tubetk_collect": {
+      "id": "2065819",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=tubetk-collect-retry",
+        "--cpus-per-task=8",
+        "--time=00:15:00",
+        "--export=ALL,STEP=collect,TUBETK_GIT_HEAD=6b097359c94418b976208aed4e43d08bee225b2c",
+        "cluster/jean_zay/tubetk_prepare_cpu.slurm"
+      ]
+    },
+    "tubetk_qc": {
+      "id": "2065820",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--dependency=afterok:2065819",
+        "--kill-on-invalid-dep=yes",
+        "--job-name=tubetk-qc",
+        "--cpus-per-task=8",
+        "--time=00:30:00",
+        "--export=ALL,STEP=qc",
+        "cluster/jean_zay/tubetk_prepare_cpu.slurm"
+      ]
+    },
+    "ixi_stage2": {
+      "id": "2065823",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=dt-IXI-loops-dsc3_slim",
+        "--time=03:00:00",
+        "cluster/jean_zay/dense_graph_traced.slurm",
+        "IXI-loops",
+        "--updates",
+        "7500",
+        "--lr",
+        "3e-4",
+        "--warmup-gt",
+        "0",
+        "--backbone",
+        "dsc3_slim",
+        "--init-from",
+        "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/dense_graph_20261030/IXI-loops/spline6_dsc3_slim_r1106/model.pt",
+        "--run-name",
+        "traced_dsc3_slim_r1106"
+      ]
+    }
+  },
+  "cancelled_superseded_jobs": [
+    "2052011",
+    "2052268"
+  ]
+}

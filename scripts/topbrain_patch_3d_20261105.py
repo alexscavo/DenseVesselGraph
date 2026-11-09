@@ -7,8 +7,11 @@ edges as their fitted 8-control B-spline curves, or as straight chords), the den
 graph was contracted from, and an adjustable image isosurface. The patch is a validation patch (never test)
 whose branch count is at the 75th percentile of the validation split, so it is busy but typical.
 Axes are voxel indices (D, H, W), aspect ratio from the physical spacing.
-usage: topbrain_patch_3d_20261105.py [dataset_dir]
+usage: topbrain_patch_3d_20261105.py [dataset_dir]                       (TopBrain, unchanged behaviour)
+       topbrain_patch_3d_20261105.py --dataset tubetk [--root dataset_dir] (TubeTK Skwerer, 5 Nov 2026: the seg
+       slot is the rasterized GT tree, and the page says so)
 """
+import argparse
 import base64
 import csv
 import json
@@ -19,9 +22,20 @@ import nibabel as nib
 import numpy as np
 
 REPO = Path(__file__).resolve().parents[1]
-ROOT = Path(sys.argv[1] if len(sys.argv) > 1 else '/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/TopBrain_tight_20261105')
-CACHE = ROOT / 'transfer_splines_k8_20261105'
-OUT = REPO / 'docs/research/figures/topbrain_3d_20261105'
+DATASETS = {
+    'topbrain': dict(root='/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/TopBrain_tight_20261105',
+                     cache='transfer_splines_k8_20261105', out='topbrain_3d_20261105', mods=('mr', 'ct'),
+                     names={'mr': 'TopBrain MRA', 'ct': 'TopBrain CTA'}, file='topbrain_{mod}_patch_3d.html',
+                     note='Skull-stripped with the tight TopCoW brain mask; labels clipped to the same mask.',
+                     seg_name='Vessel segmentation', seg_label='Vessel segmentation (mesh)'),
+    'tubetk': dict(root='/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/TubeTK_skwerer_20261105',
+                   cache='transfer_splines_k8_loops_20261105', out='tubetk_20261105', mods=('',),
+                   names={'': 'TubeTK MRA (Skwerer GT)'}, file='tubetk_patch_3d.html',
+                   note='Skull-stripped with desc-brain_mask; Skwerer tree clipped to the same mask. The pink surface is the '
+                        'seg slot = the Skwerer tree rasterized by the TubeTK pipeline (a rendering of this GT), '
+                        'NOT an independent vessel segmentation.',
+                   seg_name='Seg slot (rasterized GT tree)', seg_label='Seg slot: rasterized GT tree (mesh)'),
+}
 SIZE = 64
 
 
@@ -42,8 +56,9 @@ def points(p):
     return dict(x=np.round(p[:, 0], 2).tolist(), y=np.round(p[:, 1], 2).tolist(), z=np.round(p[:, 2], 2).tolist())
 
 
-def build(mod):
-    root = CACHE / mod
+def build(mod, ROOT, preset):
+    CACHE = ROOT / preset['cache']; OUT = REPO / 'docs/research/figures' / preset['out']
+    root = CACHE / mod if mod else CACHE
     rows = [r for r in csv.DictReader((root / 'patch_index.csv').open()) if r['split'] == 'val']
     rows.sort(key=lambda r: int(r['branch_count']))
     row = rows[int(0.75 * (len(rows) - 1))]
@@ -65,8 +80,8 @@ def build(mod):
     on = np.concatenate(paths) if paths else np.zeros((0, 3))
     vi = np.clip(np.round(on), 0, SIZE - 1).astype(int)
     init = float(np.percentile(img8[vi[:, 0], vi[:, 1], vi[:, 2]], 25)) if len(vi) else 160.0
-    name = {'mr': 'TopBrain MRA', 'ct': 'TopBrain CTA'}[mod]
-    data = dict(title=name, sample=sid, patient=row['patient_id'], size=SIZE, spacing=spacing.round(4).tolist(),
+    name = preset['names'][mod]
+    data = dict(title=name, note=preset['note'], seg_name=preset['seg_name'], seg_label=preset['seg_label'], sample=sid, patient=row['patient_id'], size=SIZE, spacing=spacing.round(4).tolist(),
                 image_threshold=round(init, 1), seg=b64(seg * 255), image=b64(img8),
                 curves=lines(curves), chords=lines(chords), centreline=lines(paths),
                 junctions=points(nodes[junction]), ends=points(nodes[end]), boundary=points(nodes[boundary]),
@@ -75,7 +90,7 @@ def build(mod):
                              centreline_mm=round(float(sum(np.linalg.norm(np.diff(p * spacing, axis=0), axis=1).sum() for p in paths)), 1)))
     html = TEMPLATE.replace('__TITLE__', f'{name} patch 3D').replace('__DATA__', json.dumps(data, separators=(',', ':')))
     OUT.mkdir(parents=True, exist_ok=True)
-    path = OUT / f'topbrain_{mod}_patch_3d.html'
+    path = OUT / preset['file'].format(mod=mod)
     path.write_text(html)
     print('SAVED', path, f'{path.stat().st_size / 1e6:.1f} MB', sid, json.dumps(data['summary']), flush=True)
 
@@ -122,7 +137,7 @@ add(pts('Junction',DATA.junctions,'#ff9f1c',4,'circle',true),'Ground-truth graph
 add(pts('End',DATA.ends,'#2ca02c',4,'diamond',true),'Ground-truth graph','End nodes','#2ca02c');
 add(pts('Patch-boundary anchor',DATA.boundary,'#9467bd',3,'square',true),'Ground-truth graph','Patch-boundary anchors','#9467bd');
 add(line('Extracted centreline',DATA.centreline,'#111111',2,'solid',true),'Centreline','Dense extracted centreline','#111111');
-add(iso('Vessel segmentation',decode(DATA.seg),128,'#e8a0a0',0.30,true),'Volumes','Vessel segmentation (mesh)','#e8a0a0');
+add(iso(DATA.seg_name,decode(DATA.seg),128,'#e8a0a0',0.30,true),'Volumes',DATA.seg_label,'#e8a0a0');
 const imgIdx=traces.length;
 add(iso('Image',decode(DATA.image),DATA.image_threshold,'#9aa4b4',0.2,false),'Volumes','Image isosurface','#9aa4b4');
 const sp=DATA.spacing, ext=sp.map(s=>s*N), mx=Math.max(...ext);
@@ -134,7 +149,7 @@ const layout={margin:{l:0,r:0,t:0,b:0},showlegend:false,paper_bgcolor:'rgba(0,0,
 Plotly.newPlot('plot',traces,layout,{responsive:true,displaylogo:false});
 const s=DATA.summary;
 document.getElementById('title').textContent=`${DATA.title}: ground truth on validation patch ${DATA.sample}`;
-document.getElementById('sub').textContent=`Skull-stripped with the tight TopCoW brain mask; labels clipped to the same mask. Voxel spacing ${sp.map(v=>v.toFixed(3)).join(' × ')} mm.`;
+document.getElementById('sub').textContent=`${DATA.note} Voxel spacing ${sp.map(v=>v.toFixed(3)).join(' × ')} mm.`;
 const c=document.getElementById('controls');
 let html='';
 for(const g of ['Ground-truth graph','Centreline','Volumes']){
@@ -160,5 +175,12 @@ thr.addEventListener('input',e=>{document.getElementById('tv').textContent=e.tar
 '''
 
 if __name__ == '__main__':
-    for m in ('mr', 'ct'):
-        build(m)
+    ap = argparse.ArgumentParser()
+    ap.add_argument('root_positional', nargs='?', help='dataset dir (TopBrain default usage)')
+    ap.add_argument('--dataset', choices=sorted(DATASETS), default='topbrain')
+    ap.add_argument('--root')
+    a = ap.parse_args()
+    preset = DATASETS[a.dataset]
+    root = Path(a.root or a.root_positional or preset['root'])
+    for m in preset['mods']:
+        build(m, root, preset)

@@ -103,6 +103,34 @@ continuous-rotation option were removed.
 rendering for plant and leaf sources, used by the October source-augmentation study
 ([`research/HISTORY.md`](research/HISTORY.md)).
 
+## Prepared 3D target datasets (November 2026)
+
+All under `/lustre/fsn1/projects/rech/vnc/upz25mj/datasets` (SCRATCH: purged when unread; originals and caches
+are archived in `$STORE/datasets-originals-20261105` and `$STORE/datasets-derived-20261105`). Every cache is a K8
+transfer-spline cache with loop subdivision (breaking-point anchors, `inserted` mask; no patch excluded for loops).
+Splits are by patient/subject; test patches are never used before the locked evaluation.
+
+- **TopBrain** (`TopBrain_tight_20261105/`, `scripts/prepare_topbrain_stripped_20261104.py --mask braintight`):
+  images and multi-class labels masked with the TopCoW *tight* brain mask (HD-BET for MRA, TotalSegmentator for CTA),
+  reoriented onto the TopBrain grid; the widened mask kept skull-base bone (CTA) and was rejected. Vessels kept:
+  median 47% (MRA) and 70% (CTA), mostly extracranial losses. MRA and CTA are separate datasets sharing one
+  patient split (15/5/5). CTA uses a fixed [-100, 400] HU window. Caches: `transfer_splines_k8_loops_20261105/{mr,ct}`.
+- **TubeTK** (`TubeTK_skwerer_20261105/`, `scripts/prepare_tubetk_skwerer_20261105.py`): ground truth = the Skwerer
+  trees (`vessel/`, original centrelines with tube links; 97 subjects), imported directly, never re-extracted;
+  `graph/` (CaravelMetrics re-extraction) is not used. Image `desc-brain_MRA` (= preproc MRA x `desc-brain_mask`);
+  trees clipped to the same mask (median 99.98% of length kept). Decisions (user, 6 Nov 2026):
+  - exact duplicate subtrees removed in Normal-008 (README) and Normal-014 (found by the duplicate count);
+  - in Normal-008 the two copy edges that link original roots (0.62 and 0.81 mm) are kept;
+  - family-aware split: families split by the seed-42 helper go wholly to train, val/test refilled from family-free
+    subjects (67/14/16).
+  Known GT limits: Skwerer lacks some Bullitt tubes, notably carotid siphons (median 2.3% of Bullitt length missing,
+  up to 40 mm of large-calibre vessel; flags in `preparation.json`, nothing excluded), and tracings are incomplete
+  (untraced bright vessels count as false positives). Cache: 12,395 / 2,514 / 2,775 patches, median 20 nodes.
+  QC: `docs/research/figures/tubetk_20261105/`.
+- **IXI** loop cache (`IXI/transfer_splines_k8_loops_20261105`, train/val) from the patch grid regenerated after
+  the SCRATCH purge (verified identical); the 21 purged test images were restored and verified against 2,178
+  September test patches.
+
 ## Mixed-domain sampling
 
 Source and target datasets are concatenated. With

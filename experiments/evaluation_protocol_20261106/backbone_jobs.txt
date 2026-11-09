@@ -1,0 +1,9 @@
+TopBrainCTA-loops unet_wide stage1 2052002 stage2 2052003 
+IXI-loops unet_wide stage1 2052004 stage2 2052005 
+BRAVA unet_wide stage1 2052006 stage2 2052007 
+TopBrainCTA-loops dsc3_slim stage1 2052008 stage2 2052009 
+IXI-loops dsc3_slim stage1 2052010 stage2 2065823 # validated completed stage1 artifacts reused after NODE_FAIL; replaces blocked 2052011
+BRAVA dsc3_slim stage1 2052012 stage2 2052013 
+TopBrainCTA-loops dsc3 stage1 2052014 stage2 2052015 
+IXI-loops dsc3 stage1 2052016 stage2 2052017 
+BRAVA dsc3 stage1 2052018 stage2 2052019 --dependency=afterany:2052002

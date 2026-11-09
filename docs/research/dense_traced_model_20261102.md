@@ -820,6 +820,41 @@ them (B); both scored on the same complete validation list. Final model, B − A
 - Files: `experiments/loop_subdivision_20261105/` (`loop-ab.json`, `ab_plan_summary.json`), plan entries
   `<dataset>-loops` / `<dataset>-noloops`, `scripts/compare_loop_ab_20261105.py`.
 
+### 4.11 Size-matched backbones: U-Net, U-Net wide, DSC3 slim, DSC3 (DONE, 9 Nov 2026)
+
+**Question.** DSC3 beat the U-Net on IXI and BRAVA (§4.9 follow-up, 4 Nov) but has 2.8x the backbone parameters.
+Is the gain from the snake convolutions or from capacity? 2x2 design on the current recipe (loop patches, offset
+radius 1.75), one seed, IXI / BRAVA / TopBrain CTA:
+
+| | ~5.8M backbone | ~15.7M backbone |
+|---|---|---|
+| U-Net | `unet` 5.75M (existing runs) | `unet_wide` 15.57M (widths 56-56-104-208-424-56) |
+| DSC3 | `dsc3_slim` 5.78M (widths 20-20-40-76-152-20) | `dsc3` 15.89M |
+
+**Protocol (review-safe).** Node AP @2 mm (threshold-free) and F1 / topology at the frozen global decoding setting of
+the evaluation protocol (V0: node 0.30 / edge 0.75), the same for every arm; subject-paired bootstrap vs U-Net.
+`scripts/backbone_compare_20261109.py`, results `experiments/backbone_compare_20261109/<dataset>.json`.
+
+| Arm − U-Net (V0 global) | IXI edge F1 | BRAVA edge F1 | CTA edge F1 | Node AP IXI / BRAVA / CTA |
+|---|---|---|---|---|
+| U-Net (absolute) | 0.323 | 0.208 | 0.212 | 0.611 / 0.519 / 0.447 |
+| U-Net wide | **+0.016** [+0.012, +0.021] | **+0.027** [+0.021, +0.032] | +0.010 [−0.002, +0.020] | 0.624 / 0.526 / 0.461 |
+| DSC3 slim | **+0.012** [+0.008, +0.017] | **+0.011** [+0.005, +0.019] | **+0.024** [+0.012, +0.040] | 0.625 / 0.521 / 0.471 |
+| DSC3 | **+0.021** [+0.017, +0.027] | −0.003 [−0.009, +0.006] | +0.015 [−0.004, +0.034] | 0.638 / 0.520 / 0.478 |
+
+- **Snake convolutions at equal small size help:** DSC3 slim beats the U-Net on all three datasets (edge, node and
+  Curve F1; Branch F1 on IXI and CTA).
+- **Capacity alone helps too:** U-Net wide beats the U-Net on IXI and BRAVA (Curve F1 +0.046 on BRAVA).
+- **At equal large size, DSC3 is not consistently better than U-Net wide:** better on IXI (+0.006 edge F1), worse on
+  BRAVA (−0.030), similar on CTA. Most of DSC3's earlier gain over the U-Net was capacity.
+- **Topology (|β1| error) moves both ways:** the DSC arms add loops on IXI (+0.52 / +0.55 per patch), U-Net wide
+  removes them (−0.22); on BRAVA all three larger/snake arms add loops (+0.19 to +0.42).
+- **Cost:** GPU-h per dataset (both stages): U-Net ~2.7, U-Net wide 2.4–3.1, DSC3 slim 4.0–4.4, DSC3 4.3–4.9.
+- **Single seed;** gaps between the three challengers (0.005–0.03) are of the size of seed variation seen in §4.10.
+- PROPOSED: U-Net wide as the default backbone (best or near-best on IXI and BRAVA, no extra training time, a
+  standard architecture), with DSC3 slim as the alternative; confirm with 2 more seeds of U-Net, U-Net wide and DSC3
+  slim on the three datasets (~45 GPU-h) before the journal runs.
+
 ## 5. 2D (validation; node / edge F1 @2 units)
 
 | Dataset | RelationFormer B0 (mixed pretraining) | Dense 16-NN, from scratch |
