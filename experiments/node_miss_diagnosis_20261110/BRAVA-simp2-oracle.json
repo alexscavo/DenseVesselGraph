@@ -1,0 +1,635 @@
+{
+ "dataset": "BRAVA-simp2",
+ "run": "traced_k24_r1110",
+ "own_thresholds": {
+  "node": 0.25,
+  "edge": 0.8,
+  "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+ },
+ "frozen": {
+  "node": 0.3,
+  "edge": 0.75
+ },
+ "splits": {
+  "monitor": {
+   "gt": {
+    "frozen_edge_threshold": {
+     "node_threshold": 0.0,
+     "edge_threshold": 0.75,
+     "node_f1": 1.0,
+     "node_precision": 1.0,
+     "node_recall": 1.0,
+     "edge_f1": 0.731149447567358,
+     "edge_precision": 0.682591386174448,
+     "edge_recall": 0.7871452420701168,
+     "missed_edges_without_endpoint_pair": 0.0,
+     "false_edges_MM_MU_UU": [
+      877,
+      0,
+      0
+     ],
+     "beta0_mae": 0.953125,
+     "beta1_mae": 1.58203125,
+     "patches": 256,
+     "common_branch_f1": 0.5282005371530887,
+     "common_curve_f1": 0.7686581224134433,
+     "common_curve_precision": 0.8444287838701393,
+     "common_curve_recall": 0.7053656104856163,
+     "common_guide_distance_mm": 0.4988269372168513,
+     "common_anchor_f1": 0.7360285374554102
+    },
+    "monitor_selected_edge_threshold": {
+     "node_threshold": 0.0,
+     "edge_threshold": 0.8,
+     "node_f1": 1.0,
+     "node_precision": 1.0,
+     "node_recall": 1.0,
+     "edge_f1": 0.7323827237032444,
+     "edge_precision": 0.7253376995497339,
+     "edge_recall": 0.7395659432387313,
+     "missed_edges_without_endpoint_pair": 0.0,
+     "false_edges_MM_MU_UU": [
+      671,
+      0,
+      0
+     ],
+     "beta0_mae": 1.25,
+     "beta1_mae": 1.01171875,
+     "patches": 256
+    }
+   },
+   "no_fp": {
+    "frozen_edge_threshold": {
+     "node_threshold": 0.0,
+     "edge_threshold": 0.75,
+     "node_f1": 0.6884262526464361,
+     "node_precision": 1.0,
+     "node_recall": 0.5248856604788809,
+     "edge_f1": 0.27537168713639304,
+     "edge_precision": 0.6103151862464183,
+     "edge_recall": 0.17779632721202004,
+     "missed_edges_without_endpoint_pair": 0.9436548223350254,
+     "false_edges_MM_MU_UU": [
+      272,
+      0,
+      0
+     ],
+     "beta0_mae": 1.65625,
+     "beta1_mae": 0.125,
+     "patches": 256,
+     "common_branch_f1": 0.11430575035063113,
+     "common_curve_f1": 0.37055081724649425,
+     "common_curve_precision": 0.8495962746187038,
+     "common_curve_recall": 0.2369476935048513,
+     "common_guide_distance_mm": 0.6167271028252514,
+     "common_anchor_f1": 0.25277161862527714
+    },
+    "monitor_selected_edge_threshold": {
+     "node_threshold": 0.0,
+     "edge_threshold": 0.65,
+     "node_f1": 0.6884262526464361,
+     "node_precision": 1.0,
+     "node_recall": 0.5248856604788809,
+     "edge_f1": 0.28334866605335784,
+     "edge_precision": 0.5341040462427745,
+     "edge_recall": 0.19282136894824708,
+     "missed_edges_without_endpoint_pair": 0.9612202688728024,
+     "false_edges_MM_MU_UU": [
+      403,
+      0,
+      0
+     ],
+     "beta0_mae": 1.59375,
+     "beta1_mae": 0.25390625,
+     "patches": 256
+    }
+   },
+   "no_fn": {
+    "frozen_edge_threshold": {
+     "node_threshold": 0.0,
+     "edge_threshold": 0.75,
+     "node_f1": 0.8547775094860297,
+     "node_precision": 0.7463855421686747,
+     "node_recall": 1.0,
+     "edge_f1": 0.5824964131994261,
+     "edge_precision": 0.5106918238993711,
+     "edge_recall": 0.67779632721202,
+     "missed_edges_without_endpoint_pair": 0.0,
+     "false_edges_MM_MU_UU": [
+      665,
+      697,
+      194
+     ],
+     "beta0_mae": 3.7421875,
+     "beta1_mae": 1.76171875,
+     "patches": 256,
+     "common_branch_f1": 0.29510309278350516,
+     "common_curve_f1": 0.6864750518368073,
+     "common_curve_precision": 0.7610247231233919,
+     "common_curve_recall": 0.6252279746127472,
+     "common_guide_distance_mm": 0.5785375603759598,
+     "common_anchor_f1": 0.4724735073662445
+    },
+    "monitor_selected_edge_threshold": {
+     "node_threshold": 0.0,
+     "edge_threshold": 0.75,
+     "node_f1": 0.8547775094860297,
+     "node_precision": 0.7463855421686747,
+     "node_recall": 1.0,
+     "edge_f1": 0.5824964131994261,
+     "edge_precision": 0.5106918238993711,
+     "edge_recall": 0.67779632721202,
+     "missed_edges_without_endpoint_pair": 0.0,
+     "false_edges_MM_MU_UU": [
+      665,
+      697,
+      194
+     ],
+     "beta0_mae": 3.7421875,
+     "beta1_mae": 1.76171875,
+     "patches": 256
+    }
+   },
+   "predicted": {
+    "frozen_edge_threshold": {
+     "node_threshold": 0.0,
+     "edge_threshold": 0.75,
+     "node_f1": 0.5629779252633098,
+     "node_precision": 0.6070317361543248,
+     "node_recall": 0.5248856604788809,
+     "edge_f1": 0.21921515561569688,
+     "edge_precision": 0.3117782909930716,
+     "edge_recall": 0.16903171953255425,
+     "missed_edges_without_endpoint_pair": 0.9337016574585635,
+     "false_edges_MM_MU_UU": [
+      241,
+      442,
+      211
+     ],
+     "beta0_mae": 3.41796875,
+     "beta1_mae": 0.37109375,
+     "patches": 256,
+     "common_branch_f1": 0.07727975270479134,
+     "common_curve_f1": 0.406213671908424,
+     "common_curve_precision": 0.7133261620053034,
+     "common_curve_recall": 0.28395909831481164,
+     "common_guide_distance_mm": 0.620215289770523,
+     "common_anchor_f1": 0.20998759305210918
+    },
+    "monitor_selected_edge_threshold": {
+     "node_threshold": 0.0,
+     "edge_threshold": 0.7,
+     "node_f1": 0.5629779252633098,
+     "node_precision": 0.6070317361543248,
+     "node_recall": 0.5248856604788809,
+     "edge_f1": 0.22004637979902086,
+     "edge_precision": 0.28754208754208754,
+     "edge_recall": 0.1782136894824708,
+     "missed_edges_without_endpoint_pair": 0.9441340782122905,
+     "false_edges_MM_MU_UU": [
+      301,
+      514,
+      243
+     ],
+     "beta0_mae": 2.9453125,
+     "beta1_mae": 0.5390625,
+     "patches": 256
+    }
+   }
+  },
+  "val": {
+   "gt": {
+    "frozen_edge_threshold": {
+     "node_threshold": 0.0,
+     "edge_threshold": 0.75,
+     "node_f1": 1.0,
+     "node_precision": 1.0,
+     "node_recall": 1.0,
+     "edge_f1": 0.7155334258427883,
+     "edge_precision": 0.680237972064149,
+     "edge_recall": 0.7546920736956896,
+     "missed_edges_without_endpoint_pair": 0.0,
+     "false_edges_MM_MU_UU": [
+      6181,
+      0,
+      0
+     ],
+     "beta0_mae": 1.1158129175946547,
+     "beta1_mae": 1.5484409799554566,
+     "patches": 1796,
+     "common_branch_f1": 0.49674359785014227,
+     "common_curve_f1": 0.7355961144183153,
+     "common_curve_precision": 0.8325491435904112,
+     "common_curve_recall": 0.658868728910308,
+     "common_guide_distance_mm": 0.4955344269497658,
+     "common_anchor_f1": 0.7009855827971002
+    },
+    "monitor_selected_edge_threshold": {
+     "node_threshold": 0.0,
+     "edge_threshold": 0.8,
+     "node_f1": 1.0,
+     "node_precision": 1.0,
+     "node_recall": 1.0,
+     "edge_f1": 0.7186941223971852,
+     "edge_precision": 0.7222769694510464,
+     "edge_recall": 0.7151466452390518,
+     "missed_edges_without_endpoint_pair": 0.0,
+     "false_edges_MM_MU_UU": [
+      4791,
+      0,
+      0
+     ],
+     "beta0_mae": 1.4304008908685968,
+     "beta1_mae": 1.0172605790645879,
+     "patches": 1796
+    },
+    "by_arc_length": {
+     "0-5": {
+      "edges": 2871,
+      "recovered": 2288,
+      "endpoints_missing": 0,
+      "not_candidate": 0,
+      "rejected": 583,
+      "traced_candidate": 2698,
+      "recovered_fraction": 0.7969348659003831,
+      "endpoints_missing_fraction": 0.0,
+      "not_candidate_fraction": 0.0,
+      "rejected_fraction": 0.20306513409961685
+     },
+     "5-10": {
+      "edges": 4177,
+      "recovered": 3740,
+      "endpoints_missing": 0,
+      "not_candidate": 0,
+      "rejected": 437,
+      "traced_candidate": 3619,
+      "recovered_fraction": 0.8953794589418242,
+      "endpoints_missing_fraction": 0.0,
+      "not_candidate_fraction": 0.0,
+      "rejected_fraction": 0.10462054105817573
+     },
+     "10-20": {
+      "edges": 5294,
+      "recovered": 4317,
+      "endpoints_missing": 0,
+      "not_candidate": 1,
+      "rejected": 976,
+      "traced_candidate": 3868,
+      "recovered_fraction": 0.8154514544767661,
+      "endpoints_missing_fraction": 0.0,
+      "not_candidate_fraction": 0.00018889308651303362,
+      "rejected_fraction": 0.1843596524367208
+     },
+     "20-40": {
+      "edges": 3825,
+      "recovered": 2331,
+      "endpoints_missing": 0,
+      "not_candidate": 27,
+      "rejected": 1467,
+      "traced_candidate": 2130,
+      "recovered_fraction": 0.6094117647058823,
+      "endpoints_missing_fraction": 0.0,
+      "not_candidate_fraction": 0.007058823529411765,
+      "rejected_fraction": 0.3835294117647059
+     },
+     "40-inf": {
+      "edges": 1256,
+      "recovered": 473,
+      "endpoints_missing": 0,
+      "not_candidate": 104,
+      "rejected": 679,
+      "traced_candidate": 442,
+      "recovered_fraction": 0.3765923566878981,
+      "endpoints_missing_fraction": 0.0,
+      "not_candidate_fraction": 0.08280254777070063,
+      "rejected_fraction": 0.5406050955414012
+     }
+    }
+   },
+   "no_fp": {
+    "frozen_edge_threshold": {
+     "node_threshold": 0.0,
+     "edge_threshold": 0.75,
+     "node_f1": 0.6905369612328437,
+     "node_precision": 1.0,
+     "node_recall": 0.5273436063403332,
+     "edge_f1": 0.28848377056469543,
+     "edge_precision": 0.6402210380895994,
+     "edge_recall": 0.18619066750846583,
+     "missed_edges_without_endpoint_pair": 0.9320121306156993,
+     "false_edges_MM_MU_UU": [
+      1823,
+      0,
+      0
+     ],
+     "beta0_mae": 1.6291759465478841,
+     "beta1_mae": 0.11024498886414254,
+     "patches": 1796,
+     "common_branch_f1": 0.13155623741490075,
+     "common_curve_f1": 0.3673823831612322,
+     "common_curve_precision": 0.8679010746320218,
+     "common_curve_recall": 0.2330071320546468,
+     "common_guide_distance_mm": 0.5498432477366461,
+     "common_anchor_f1": 0.26316846598041677
+    },
+    "monitor_selected_edge_threshold": {
+     "node_threshold": 0.0,
+     "edge_threshold": 0.65,
+     "node_f1": 0.6905369612328437,
+     "node_precision": 1.0,
+     "node_recall": 0.5273436063403332,
+     "edge_f1": 0.29666086808943953,
+     "edge_precision": 0.5688252521965506,
+     "edge_recall": 0.20065430752453653,
+     "missed_edges_without_endpoint_pair": 0.948876283478136,
+     "false_edges_MM_MU_UU": [
+      2650,
+      0,
+      0
+     ],
+     "beta0_mae": 1.5573496659242763,
+     "beta1_mae": 0.22717149220489977,
+     "patches": 1796
+    },
+    "by_arc_length": {
+     "0-5": {
+      "edges": 2871,
+      "recovered": 505,
+      "endpoints_missing": 2183,
+      "not_candidate": 0,
+      "rejected": 183,
+      "traced_candidate": 680,
+      "recovered_fraction": 0.17589690003483108,
+      "endpoints_missing_fraction": 0.7603622431208638,
+      "not_candidate_fraction": 0.0,
+      "rejected_fraction": 0.06374085684430512
+     },
+     "5-10": {
+      "edges": 4177,
+      "recovered": 960,
+      "endpoints_missing": 3103,
+      "not_candidate": 0,
+      "rejected": 114,
+      "traced_candidate": 1051,
+      "recovered_fraction": 0.2298300215465645,
+      "endpoints_missing_fraction": 0.7428776633947809,
+      "not_candidate_fraction": 0.0,
+      "rejected_fraction": 0.027292315058654537
+     },
+     "10-20": {
+      "edges": 5294,
+      "recovered": 1175,
+      "endpoints_missing": 3906,
+      "not_candidate": 0,
+      "rejected": 213,
+      "traced_candidate": 1247,
+      "recovered_fraction": 0.2219493766528145,
+      "endpoints_missing_fraction": 0.7378163959199093,
+      "not_candidate_fraction": 0.0,
+      "rejected_fraction": 0.04023422742727616
+     },
+     "20-40": {
+      "edges": 3825,
+      "recovered": 503,
+      "endpoints_missing": 3018,
+      "not_candidate": 0,
+      "rejected": 304,
+      "traced_candidate": 598,
+      "recovered_fraction": 0.1315032679738562,
+      "endpoints_missing_fraction": 0.7890196078431373,
+      "not_candidate_fraction": 0.0,
+      "rejected_fraction": 0.07947712418300654
+     },
+     "40-inf": {
+      "edges": 1256,
+      "recovered": 101,
+      "endpoints_missing": 1005,
+      "not_candidate": 1,
+      "rejected": 149,
+      "traced_candidate": 140,
+      "recovered_fraction": 0.0804140127388535,
+      "endpoints_missing_fraction": 0.8001592356687898,
+      "not_candidate_fraction": 0.0007961783439490446,
+      "rejected_fraction": 0.11863057324840764
+     }
+    }
+   },
+   "no_fn": {
+    "frozen_edge_threshold": {
+     "node_threshold": 0.0,
+     "edge_threshold": 0.75,
+     "node_f1": 0.8436811567222067,
+     "node_precision": 0.7296267475246196,
+     "node_recall": 1.0,
+     "edge_f1": 0.5584690672704696,
+     "edge_precision": 0.4849471458773784,
+     "edge_recall": 0.6582678069218849,
+     "missed_edges_without_endpoint_pair": 0.0,
+     "false_edges_MM_MU_UU": [
+      4707,
+      5725,
+      1749
+     ],
+     "beta0_mae": 4.152004454342984,
+     "beta1_mae": 1.94543429844098,
+     "patches": 1796,
+     "common_branch_f1": 0.28110922599894694,
+     "common_curve_f1": 0.6719624491642106,
+     "common_curve_precision": 0.7584580077455083,
+     "common_curve_recall": 0.6031755125769339,
+     "common_guide_distance_mm": 0.5801842905046306,
+     "common_anchor_f1": 0.4609986033519553
+    },
+    "monitor_selected_edge_threshold": {
+     "node_threshold": 0.0,
+     "edge_threshold": 0.75,
+     "node_f1": 0.8436811567222067,
+     "node_precision": 0.7296267475246196,
+     "node_recall": 1.0,
+     "edge_f1": 0.5584690672704696,
+     "edge_precision": 0.4849471458773784,
+     "edge_recall": 0.6582678069218849,
+     "missed_edges_without_endpoint_pair": 0.0,
+     "false_edges_MM_MU_UU": [
+      4707,
+      5725,
+      1749
+     ],
+     "beta0_mae": 4.152004454342984,
+     "beta1_mae": 1.94543429844098,
+     "patches": 1796
+    },
+    "by_arc_length": {
+     "0-5": {
+      "edges": 2871,
+      "recovered": 2077,
+      "endpoints_missing": 0,
+      "not_candidate": 0,
+      "rejected": 794,
+      "traced_candidate": 2594,
+      "recovered_fraction": 0.7234413096482062,
+      "endpoints_missing_fraction": 0.0,
+      "not_candidate_fraction": 0.0,
+      "rejected_fraction": 0.2765586903517938
+     },
+     "5-10": {
+      "edges": 4177,
+      "recovered": 3401,
+      "endpoints_missing": 0,
+      "not_candidate": 0,
+      "rejected": 776,
+      "traced_candidate": 3239,
+      "recovered_fraction": 0.8142207325831937,
+      "endpoints_missing_fraction": 0.0,
+      "not_candidate_fraction": 0.0,
+      "rejected_fraction": 0.1857792674168063
+     },
+     "10-20": {
+      "edges": 5294,
+      "recovered": 3828,
+      "endpoints_missing": 0,
+      "not_candidate": 6,
+      "rejected": 1460,
+      "traced_candidate": 3277,
+      "recovered_fraction": 0.7230827351718927,
+      "endpoints_missing_fraction": 0.0,
+      "not_candidate_fraction": 0.0011333585190782018,
+      "rejected_fraction": 0.2757839063090291
+     },
+     "20-40": {
+      "edges": 3825,
+      "recovered": 1853,
+      "endpoints_missing": 0,
+      "not_candidate": 136,
+      "rejected": 1836,
+      "traced_candidate": 1649,
+      "recovered_fraction": 0.48444444444444446,
+      "endpoints_missing_fraction": 0.0,
+      "not_candidate_fraction": 0.035555555555555556,
+      "rejected_fraction": 0.48
+     },
+     "40-inf": {
+      "edges": 1256,
+      "recovered": 309,
+      "endpoints_missing": 0,
+      "not_candidate": 257,
+      "rejected": 690,
+      "traced_candidate": 318,
+      "recovered_fraction": 0.24601910828025478,
+      "endpoints_missing_fraction": 0.0,
+      "not_candidate_fraction": 0.20461783439490447,
+      "rejected_fraction": 0.5493630573248408
+     }
+    }
+   },
+   "predicted": {
+    "frozen_edge_threshold": {
+     "node_threshold": 0.0,
+     "edge_threshold": 0.75,
+     "node_f1": 0.5557105762895788,
+     "node_precision": 0.5873028875691173,
+     "node_recall": 0.5273436063403332,
+     "edge_f1": 0.21937696067702633,
+     "edge_precision": 0.30097087378640774,
+     "edge_recall": 0.17258795844573266,
+     "missed_edges_without_endpoint_pair": 0.9167591564927858,
+     "false_edges_MM_MU_UU": [
+      1532,
+      3607,
+      1845
+     ],
+     "beta0_mae": 3.6302895322939865,
+     "beta1_mae": 0.4866369710467706,
+     "patches": 1796,
+     "common_branch_f1": 0.07949929536599519,
+     "common_curve_f1": 0.3999877604191788,
+     "common_curve_precision": 0.7186744510576206,
+     "common_curve_recall": 0.2771079160330105,
+     "common_guide_distance_mm": 0.5691520926608642,
+     "common_anchor_f1": 0.20843456051828319
+    },
+    "monitor_selected_edge_threshold": {
+     "node_threshold": 0.0,
+     "edge_threshold": 0.7,
+     "node_f1": 0.5557105762895788,
+     "node_precision": 0.5873028875691173,
+     "node_recall": 0.5273436063403332,
+     "edge_f1": 0.21978783886847397,
+     "edge_precision": 0.277510286264554,
+     "edge_recall": 0.18194340813866727,
+     "missed_edges_without_endpoint_pair": 0.9272433873570476,
+     "false_edges_MM_MU_UU": [
+      1874,
+      4241,
+      2138
+     ],
+     "beta0_mae": 3.185968819599109,
+     "beta1_mae": 0.7416481069042317,
+     "patches": 1796
+    },
+    "by_arc_length": {
+     "0-5": {
+      "edges": 2871,
+      "recovered": 485,
+      "endpoints_missing": 2184,
+      "not_candidate": 0,
+      "rejected": 202,
+      "traced_candidate": 624,
+      "recovered_fraction": 0.16893068617206547,
+      "endpoints_missing_fraction": 0.7607105538140021,
+      "not_candidate_fraction": 0.0,
+      "rejected_fraction": 0.07035876001393243
+     },
+     "5-10": {
+      "edges": 4177,
+      "recovered": 919,
+      "endpoints_missing": 3103,
+      "not_candidate": 0,
+      "rejected": 155,
+      "traced_candidate": 877,
+      "recovered_fraction": 0.22001436437634667,
+      "endpoints_missing_fraction": 0.7428776633947809,
+      "not_candidate_fraction": 0.0,
+      "rejected_fraction": 0.037107972228872396
+     },
+     "10-20": {
+      "edges": 5294,
+      "recovered": 1102,
+      "endpoints_missing": 3906,
+      "not_candidate": 0,
+      "rejected": 286,
+      "traced_candidate": 934,
+      "recovered_fraction": 0.20816018133736305,
+      "endpoints_missing_fraction": 0.7378163959199093,
+      "not_candidate_fraction": 0.0,
+      "rejected_fraction": 0.05402342274272762
+     },
+     "20-40": {
+      "edges": 3825,
+      "recovered": 430,
+      "endpoints_missing": 3018,
+      "not_candidate": 2,
+      "rejected": 375,
+      "traced_candidate": 427,
+      "recovered_fraction": 0.11241830065359477,
+      "endpoints_missing_fraction": 0.7890196078431373,
+      "not_candidate_fraction": 0.0005228758169934641,
+      "rejected_fraction": 0.09803921568627451
+     },
+     "40-inf": {
+      "edges": 1256,
+      "recovered": 71,
+      "endpoints_missing": 1005,
+      "not_candidate": 24,
+      "rejected": 156,
+      "traced_candidate": 81,
+      "recovered_fraction": 0.05652866242038217,
+      "endpoints_missing_fraction": 0.8001592356687898,
+      "not_candidate_fraction": 0.01910828025477707,
+      "rejected_fraction": 0.12420382165605096
+     }
+    }
+   }
+  }
+ }
+}

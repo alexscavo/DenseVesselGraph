@@ -1,0 +1,442 @@
+{
+ "entry": "BRAVA-simp2",
+ "run": "traced_k24_r1110",
+ "thresholds": {
+  "node": 0.25,
+  "edge": 0.8
+ },
+ "validation_patches": 600,
+ "min_tip_cost": 6.0,
+ "tips_per_patch": 25.523333333333333,
+ "tip_kinds": {
+  "off the GT graph (interior)": 0.5594880501501893,
+  "on a GT centreline, away from nodes": 0.20667363197074573,
+  "off the GT graph (at the patch face)": 0.16729789734883113,
+  "hits a missed GT node: terminal": 0.023638500718296984,
+  "within 2 mm of an already matched GT node": 0.018088024030299073,
+  "hits a missed GT node: boundary": 0.01658613033825258,
+  "hits a missed GT node: junction": 0.008227765443385137
+ },
+ "gt_centreline": {
+  "in_predicted_mask": 0.9373345771418358,
+  "in_region_with_a_node": 0.9262259960873898
+ },
+ "fallback_path_quality": {
+  "10-20 mm": {
+   "edges": 296,
+   "straight_median_mm": 1.4389504564119355,
+   "soft_median_mm": 1.7749942285319562,
+   "straight_within_1p5mm": 0.527027027027027,
+   "soft_within_1p5mm": 0.4189189189189189
+  },
+  "20-40 mm": {
+   "edges": 229,
+   "straight_median_mm": 2.504274171041331,
+   "soft_median_mm": 2.4746160864590228,
+   "straight_within_1p5mm": 0.10043668122270742,
+   "soft_within_1p5mm": 0.13100436681222707
+  },
+  ">= 40 mm": {
+   "edges": 62,
+   "straight_median_mm": 3.7696736202544665,
+   "soft_median_mm": 3.4713354325758132,
+   "straight_within_1p5mm": 0.016129032258064516,
+   "soft_within_1p5mm": 0.03225806451612903
+  },
+  "soft_path_available": 0.4514480408858603
+ },
+ "configurations": {
+  "predicted / straight": {
+   "node_f1": 0.5672622905286547,
+   "node_precision": 0.5038236987089878,
+   "node_recall": 0.6489778625145641,
+   "edge_f1": 0.25119297575873256,
+   "edge_precision": 0.2962629446195407,
+   "edge_recall": 0.21802518223989398,
+   "beta0_mae": 7.848333333333334,
+   "beta1_mae": 0.615,
+   "best_edge_threshold_on_these_patches": 0.8,
+   "edge_f1_at_best": 0.25119297575873256,
+   "by_arc": {
+    "0-5": {
+     "edges": 1000,
+     "recovered_fraction": 0.211,
+     "endpoints_missing_fraction": 0.621,
+     "rejected_fraction": 0.168,
+     "not_candidate_fraction": 0.0
+    },
+    "5-10": {
+     "edges": 1482,
+     "recovered_fraction": 0.28879892037786775,
+     "endpoints_missing_fraction": 0.573549257759784,
+     "rejected_fraction": 0.13765182186234817,
+     "not_candidate_fraction": 0.0
+    },
+    "10-20": {
+     "edges": 1826,
+     "recovered_fraction": 0.27710843373493976,
+     "endpoints_missing_fraction": 0.5843373493975904,
+     "rejected_fraction": 0.13745892661555312,
+     "not_candidate_fraction": 0.001095290251916758
+    },
+    "20-40": {
+     "edges": 1297,
+     "recovered_fraction": 0.1125674633770239,
+     "endpoints_missing_fraction": 0.6815728604471858,
+     "rejected_fraction": 0.18966846569005397,
+     "not_candidate_fraction": 0.016191210485736313
+    },
+    "40-inf": {
+     "edges": 431,
+     "recovered_fraction": 0.058004640371229696,
+     "endpoints_missing_fraction": 0.7053364269141531,
+     "rejected_fraction": 0.15777262180974477,
+     "not_candidate_fraction": 0.07888631090487239
+    }
+   }
+  },
+  "predicted / soft": {
+   "node_f1": 0.5672622905286547,
+   "node_precision": 0.5038236987089878,
+   "node_recall": 0.6489778625145641,
+   "edge_f1": 0.24362662434282314,
+   "edge_precision": 0.30358467243510506,
+   "edge_recall": 0.20344599072233266,
+   "beta0_mae": 8.29,
+   "beta1_mae": 0.3983333333333333,
+   "best_edge_threshold_on_these_patches": 0.8,
+   "edge_f1_at_best": 0.24362662434282314,
+   "by_arc": {
+    "0-5": {
+     "edges": 1000,
+     "recovered_fraction": 0.204,
+     "endpoints_missing_fraction": 0.621,
+     "rejected_fraction": 0.175,
+     "not_candidate_fraction": 0.0
+    },
+    "5-10": {
+     "edges": 1482,
+     "recovered_fraction": 0.26788124156545207,
+     "endpoints_missing_fraction": 0.573549257759784,
+     "rejected_fraction": 0.15856950067476383,
+     "not_candidate_fraction": 0.0
+    },
+    "10-20": {
+     "edges": 1826,
+     "recovered_fraction": 0.25355969331872946,
+     "endpoints_missing_fraction": 0.5843373493975904,
+     "rejected_fraction": 0.16100766703176342,
+     "not_candidate_fraction": 0.001095290251916758
+    },
+    "20-40": {
+     "edges": 1297,
+     "recovered_fraction": 0.1079414032382421,
+     "endpoints_missing_fraction": 0.6815728604471858,
+     "rejected_fraction": 0.19737856592135697,
+     "not_candidate_fraction": 0.013107170393215111
+    },
+    "40-inf": {
+     "edges": 431,
+     "recovered_fraction": 0.05568445475638051,
+     "endpoints_missing_fraction": 0.7053364269141531,
+     "rejected_fraction": 0.1740139211136891,
+     "not_candidate_fraction": 0.06496519721577726
+    }
+   }
+  },
+  "no_intermediate / straight": {
+   "node_f1": 0.6415370922988325,
+   "node_precision": 0.6342650103519669,
+   "node_recall": 0.6489778625145641,
+   "edge_f1": 0.33608569515733094,
+   "edge_precision": 0.5146958304853042,
+   "edge_recall": 0.24950298210735586,
+   "beta0_mae": 5.81,
+   "beta1_mae": 0.13833333333333334,
+   "best_edge_threshold_on_these_patches": 0.7,
+   "edge_f1_at_best": 0.3389930317008539,
+   "by_arc": {
+    "0-5": {
+     "edges": 1000,
+     "recovered_fraction": 0.236,
+     "endpoints_missing_fraction": 0.621,
+     "rejected_fraction": 0.143,
+     "not_candidate_fraction": 0.0
+    },
+    "5-10": {
+     "edges": 1482,
+     "recovered_fraction": 0.3360323886639676,
+     "endpoints_missing_fraction": 0.573549257759784,
+     "rejected_fraction": 0.09041835357624832,
+     "not_candidate_fraction": 0.0
+    },
+    "10-20": {
+     "edges": 1826,
+     "recovered_fraction": 0.3023001095290252,
+     "endpoints_missing_fraction": 0.5843373493975904,
+     "rejected_fraction": 0.11336254107338445,
+     "not_candidate_fraction": 0.0
+    },
+    "20-40": {
+     "edges": 1297,
+     "recovered_fraction": 0.14032382420971473,
+     "endpoints_missing_fraction": 0.6815728604471858,
+     "rejected_fraction": 0.17579028527370855,
+     "not_candidate_fraction": 0.002313030069390902
+    },
+    "40-inf": {
+     "edges": 431,
+     "recovered_fraction": 0.08816705336426914,
+     "endpoints_missing_fraction": 0.7053364269141531,
+     "rejected_fraction": 0.18561484918793503,
+     "not_candidate_fraction": 0.02088167053364269
+    }
+   }
+  },
+  "no_intermediate / soft": {
+   "node_f1": 0.6415370922988325,
+   "node_precision": 0.6342650103519669,
+   "node_recall": 0.6489778625145641,
+   "edge_f1": 0.33677287674339496,
+   "edge_precision": 0.5335968379446641,
+   "edge_recall": 0.24602385685884692,
+   "beta0_mae": 5.99,
+   "beta1_mae": 0.09333333333333334,
+   "best_edge_threshold_on_these_patches": 0.7,
+   "edge_f1_at_best": 0.3399129466545197,
+   "by_arc": {
+    "0-5": {
+     "edges": 1000,
+     "recovered_fraction": 0.235,
+     "endpoints_missing_fraction": 0.621,
+     "rejected_fraction": 0.144,
+     "not_candidate_fraction": 0.0
+    },
+    "5-10": {
+     "edges": 1482,
+     "recovered_fraction": 0.33535762483130904,
+     "endpoints_missing_fraction": 0.573549257759784,
+     "rejected_fraction": 0.09109311740890688,
+     "not_candidate_fraction": 0.0
+    },
+    "10-20": {
+     "edges": 1826,
+     "recovered_fraction": 0.29518072289156627,
+     "endpoints_missing_fraction": 0.5843373493975904,
+     "rejected_fraction": 0.12048192771084337,
+     "not_candidate_fraction": 0.0
+    },
+    "20-40": {
+     "edges": 1297,
+     "recovered_fraction": 0.13723978411719354,
+     "endpoints_missing_fraction": 0.6815728604471858,
+     "rejected_fraction": 0.17964533538936006,
+     "not_candidate_fraction": 0.0015420200462606013
+    },
+    "40-inf": {
+     "edges": 431,
+     "recovered_fraction": 0.08352668213457076,
+     "endpoints_missing_fraction": 0.7053364269141531,
+     "rejected_fraction": 0.1902552204176334,
+     "not_candidate_fraction": 0.02088167053364269
+    }
+   }
+  },
+  "tips / straight": {
+   "node_f1": 0.369920901506122,
+   "node_precision": 0.24851683348498635,
+   "node_recall": 0.7232284715602161,
+   "edge_f1": 0.06796289236243487,
+   "edge_precision": 0.04013930169023387,
+   "edge_recall": 0.2215043074884029,
+   "beta0_mae": 7.295,
+   "beta1_mae": 22.64666666666667,
+   "best_edge_threshold_on_these_patches": 0.85,
+   "edge_f1_at_best": 0.07186534703397844,
+   "by_arc": {
+    "0-5": {
+     "edges": 1000,
+     "recovered_fraction": 0.242,
+     "endpoints_missing_fraction": 0.569,
+     "rejected_fraction": 0.189,
+     "not_candidate_fraction": 0.0
+    },
+    "5-10": {
+     "edges": 1482,
+     "recovered_fraction": 0.33265856950067474,
+     "endpoints_missing_fraction": 0.48582995951417,
+     "rejected_fraction": 0.1815114709851552,
+     "not_candidate_fraction": 0.0
+    },
+    "10-20": {
+     "edges": 1826,
+     "recovered_fraction": 0.26998904709748084,
+     "endpoints_missing_fraction": 0.4846659364731654,
+     "rejected_fraction": 0.21741511500547644,
+     "not_candidate_fraction": 0.02792990142387733
+    },
+    "20-40": {
+     "edges": 1297,
+     "recovered_fraction": 0.08018504240555127,
+     "endpoints_missing_fraction": 0.5574402467232074,
+     "rejected_fraction": 0.19506553585196607,
+     "not_candidate_fraction": 0.16730917501927525
+    },
+    "40-inf": {
+     "edges": 431,
+     "recovered_fraction": 0.01160092807424594,
+     "endpoints_missing_fraction": 0.580046403712297,
+     "rejected_fraction": 0.05104408352668213,
+     "not_candidate_fraction": 0.35730858468677495
+    }
+   }
+  },
+  "tips / soft": {
+   "node_f1": 0.369920901506122,
+   "node_precision": 0.24851683348498635,
+   "node_recall": 0.7232284715602161,
+   "edge_f1": 0.06445334223112001,
+   "edge_precision": 0.038726276396685376,
+   "edge_recall": 0.19201457919151757,
+   "beta0_mae": 8.213333333333333,
+   "beta1_mae": 17.94,
+   "best_edge_threshold_on_these_patches": 0.85,
+   "edge_f1_at_best": 0.06822286590560572,
+   "by_arc": {
+    "0-5": {
+     "edges": 1000,
+     "recovered_fraction": 0.236,
+     "endpoints_missing_fraction": 0.569,
+     "rejected_fraction": 0.195,
+     "not_candidate_fraction": 0.0
+    },
+    "5-10": {
+     "edges": 1482,
+     "recovered_fraction": 0.30026990553306343,
+     "endpoints_missing_fraction": 0.48582995951417,
+     "rejected_fraction": 0.21390013495276652,
+     "not_candidate_fraction": 0.0
+    },
+    "10-20": {
+     "edges": 1826,
+     "recovered_fraction": 0.20974808324205915,
+     "endpoints_missing_fraction": 0.4846659364731654,
+     "rejected_fraction": 0.27984665936473163,
+     "not_candidate_fraction": 0.02573932092004381
+    },
+    "20-40": {
+     "edges": 1297,
+     "recovered_fraction": 0.06939090208172706,
+     "endpoints_missing_fraction": 0.5574402467232074,
+     "rejected_fraction": 0.21202775636083268,
+     "not_candidate_fraction": 0.16114109483423283
+    },
+    "40-inf": {
+     "edges": 431,
+     "recovered_fraction": 0.01160092807424594,
+     "endpoints_missing_fraction": 0.580046403712297,
+     "rejected_fraction": 0.06264501160092807,
+     "not_candidate_fraction": 0.345707656612529
+    }
+   }
+  },
+  "no_intermediate+tips / straight": {
+   "node_f1": 0.3968037193084411,
+   "node_precision": 0.2734043405141347,
+   "node_recall": 0.7232284715602161,
+   "edge_f1": 0.08018777805071099,
+   "edge_precision": 0.04800182988595889,
+   "edge_recall": 0.24337309476474486,
+   "beta0_mae": 5.955,
+   "beta1_mae": 20.935,
+   "best_edge_threshold_on_these_patches": 0.85,
+   "edge_f1_at_best": 0.08452396848711444,
+   "by_arc": {
+    "0-5": {
+     "edges": 1000,
+     "recovered_fraction": 0.268,
+     "endpoints_missing_fraction": 0.569,
+     "rejected_fraction": 0.163,
+     "not_candidate_fraction": 0.0
+    },
+    "5-10": {
+     "edges": 1482,
+     "recovered_fraction": 0.3792172739541161,
+     "endpoints_missing_fraction": 0.48582995951417,
+     "rejected_fraction": 0.1349527665317139,
+     "not_candidate_fraction": 0.0
+    },
+    "10-20": {
+     "edges": 1826,
+     "recovered_fraction": 0.28258488499452356,
+     "endpoints_missing_fraction": 0.4846659364731654,
+     "rejected_fraction": 0.21467688937568455,
+     "not_candidate_fraction": 0.018072289156626505
+    },
+    "20-40": {
+     "edges": 1297,
+     "recovered_fraction": 0.09020817270624518,
+     "endpoints_missing_fraction": 0.5574402467232074,
+     "rejected_fraction": 0.20508866615265997,
+     "not_candidate_fraction": 0.14726291441788744
+    },
+    "40-inf": {
+     "edges": 431,
+     "recovered_fraction": 0.013921113689095127,
+     "endpoints_missing_fraction": 0.580046403712297,
+     "rejected_fraction": 0.060324825986078884,
+     "not_candidate_fraction": 0.345707656612529
+    }
+   }
+  },
+  "no_intermediate+tips / soft": {
+   "node_f1": 0.3968037193084411,
+   "node_precision": 0.2734043405141347,
+   "node_recall": 0.7232284715602161,
+   "edge_f1": 0.0778565706316945,
+   "edge_precision": 0.047421115408248095,
+   "edge_recall": 0.21736249171636846,
+   "beta0_mae": 6.623333333333333,
+   "beta1_mae": 16.726666666666667,
+   "best_edge_threshold_on_these_patches": 0.85,
+   "edge_f1_at_best": 0.08196544664343954,
+   "by_arc": {
+    "0-5": {
+     "edges": 1000,
+     "recovered_fraction": 0.267,
+     "endpoints_missing_fraction": 0.569,
+     "rejected_fraction": 0.164,
+     "not_candidate_fraction": 0.0
+    },
+    "5-10": {
+     "edges": 1482,
+     "recovered_fraction": 0.3616734143049933,
+     "endpoints_missing_fraction": 0.48582995951417,
+     "rejected_fraction": 0.1524966261808367,
+     "not_candidate_fraction": 0.0
+    },
+    "10-20": {
+     "edges": 1826,
+     "recovered_fraction": 0.22070098576122674,
+     "endpoints_missing_fraction": 0.4846659364731654,
+     "rejected_fraction": 0.27710843373493976,
+     "not_candidate_fraction": 0.017524644030668127
+    },
+    "20-40": {
+     "edges": 1297,
+     "recovered_fraction": 0.07710100231303008,
+     "endpoints_missing_fraction": 0.5574402467232074,
+     "rejected_fraction": 0.2243639167309175,
+     "not_candidate_fraction": 0.14109483423284502
+    },
+    "40-inf": {
+     "edges": 431,
+     "recovered_fraction": 0.013921113689095127,
+     "endpoints_missing_fraction": 0.580046403712297,
+     "rejected_fraction": 0.07888631090487239,
+     "not_candidate_fraction": 0.3271461716937355
+    }
+   }
+  }
+ }
+}

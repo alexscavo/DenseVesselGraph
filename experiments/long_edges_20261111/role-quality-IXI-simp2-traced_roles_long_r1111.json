@@ -1,0 +1,55 @@
+{
+ "entry": "IXI-simp2",
+ "run": "traced_roles_long_r1111",
+ "node_threshold": 0.35,
+ "peaks": 9576,
+ "shares": {
+  "real": 0.764202172096909,
+  "intermediate": 0.10944026733500417,
+  "off_vessel": 0.1263575605680869
+ },
+ "by_tau": {
+  "intermediate >= 0.3": {
+   "removed_share_of_peaks": 0.118734335839599,
+   "recall": 0.41030534351145037,
+   "precision": 0.3781882145998241,
+   "real_nodes_removed": 0.0852691992347636
+  },
+  "intermediate >= 0.5": {
+   "removed_share_of_peaks": 0.027360066833751043,
+   "recall": 0.12595419847328243,
+   "precision": 0.5038167938931297,
+   "real_nodes_removed": 0.0154413774255261
+  },
+  "intermediate >= 0.7": {
+   "removed_share_of_peaks": 0.0012531328320802004,
+   "recall": 0.008587786259541985,
+   "precision": 0.75,
+   "real_nodes_removed": 0.00040994807324405577
+  },
+  "off_vessel >= 0.3": {
+   "removed_share_of_peaks": 0.12802840434419382,
+   "recall": 0.5454545454545454,
+   "precision": 0.5383360522022839,
+   "real_nodes_removed": 0.06873462694725335
+  },
+  "off_vessel >= 0.5": {
+   "removed_share_of_peaks": 0.061507936507936505,
+   "recall": 0.3322314049586777,
+   "precision": 0.6825127334465195,
+   "real_nodes_removed": 0.02405028696365127
+  },
+  "off_vessel >= 0.7": {
+   "removed_share_of_peaks": 0.017752715121136173,
+   "recall": 0.10743801652892562,
+   "precision": 0.7647058823529411,
+   "real_nodes_removed": 0.005329324952172725
+  }
+ },
+ "auc_intermediate_vs_rest": 0.7872258245850221,
+ "heat_score_median": {
+  "real": 0.6584175229072571,
+  "intermediate": 0.4532618522644043,
+  "off_vessel": 0.4378235340118408
+ }
+}

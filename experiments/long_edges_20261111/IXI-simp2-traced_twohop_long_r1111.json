@@ -1,0 +1,256 @@
+{
+ "entry": "IXI-simp2",
+ "run": "traced_twohop_long_r1111",
+ "thresholds": {
+  "node": 0.35,
+  "edge": 0.9
+ },
+ "validation_patches": 2961,
+ "long_edges": {
+  "10-20 mm": {
+   "edges": 9456,
+   "recovered": {
+    "share": 0.4671108291032149,
+    "coverage_mean": 0.9815616048521209,
+    "coverage_over_0p8": 0.9710210550147159
+   },
+   "endpoint missing": {
+    "share": 0.3825084602368866,
+    "coverage_mean": 0.33966685688164744,
+    "coverage_over_0p8": 0.2623721316007741
+   },
+   "traced, rejected": {
+    "share": 0.069585448392555,
+    "coverage_mean": 0.3809713800046113,
+    "coverage_over_0p8": 0.23708206686930092
+   },
+   "broken, all pieces accepted": {
+    "share": 0.04557952622673435,
+    "coverage_mean": 0.9839389297227367,
+    "coverage_over_0p8": 0.9651972157772621,
+    "interrupting_mean": 0.9211136890951276,
+    "interrupting_unmatched_share": 0.8916876574307305,
+    "chain_nodes_mean": 1.0904872389791183
+   },
+   "broken, a piece missing": {
+    "share": 0.02707275803722504,
+    "coverage_mean": 0.6399760582383585,
+    "coverage_over_0p8": 0.38671875,
+    "interrupting_mean": 1.28125,
+    "interrupting_unmatched_share": 0.9176829268292683,
+    "chain_nodes_mean": 0.0
+   },
+   "straight fallback, rejected": {
+    "share": 0.007931472081218274,
+    "coverage_mean": 0.37713022542427377,
+    "coverage_over_0p8": 0.18666666666666668
+   },
+   "not proposed": {
+    "share": 0.00021150592216582064,
+    "coverage_mean": 0.1415151515151515,
+    "coverage_over_0p8": 0.0
+   }
+  },
+  "20-40 mm": {
+   "edges": 3799,
+   "endpoint missing": {
+    "share": 0.3882600684390629,
+    "coverage_mean": 0.3038089832187905,
+    "coverage_over_0p8": 0.23254237288135593
+   },
+   "recovered": {
+    "share": 0.38378520663332455,
+    "coverage_mean": 0.9815322417459315,
+    "coverage_over_0p8": 0.9684499314128944
+   },
+   "traced, rejected": {
+    "share": 0.08212687549355094,
+    "coverage_mean": 0.23064248505350823,
+    "coverage_over_0p8": 0.13782051282051283
+   },
+   "broken, all pieces accepted": {
+    "share": 0.06817583574624901,
+    "coverage_mean": 0.96774395187479,
+    "coverage_over_0p8": 0.9382239382239382,
+    "interrupting_mean": 1.16988416988417,
+    "interrupting_unmatched_share": 0.9108910891089109,
+    "chain_nodes_mean": 1.1814671814671815
+   },
+   "broken, a piece missing": {
+    "share": 0.052645433008686494,
+    "coverage_mean": 0.5598899103046648,
+    "coverage_over_0p8": 0.29,
+    "interrupting_mean": 1.425,
+    "interrupting_unmatched_share": 0.9333333333333333,
+    "chain_nodes_mean": 0.0
+   },
+   "straight fallback, rejected": {
+    "share": 0.023690444853908924,
+    "coverage_mean": 0.2476195424558577,
+    "coverage_over_0p8": 0.1
+   },
+   "not proposed": {
+    "share": 0.0013161358252171624,
+    "coverage_mean": 0.1269142857142857,
+    "coverage_over_0p8": 0.0
+   }
+  },
+  ">= 40 mm": {
+   "edges": 474,
+   "endpoint missing": {
+    "share": 0.41139240506329117,
+    "coverage_mean": 0.2851821901682139,
+    "coverage_over_0p8": 0.16923076923076924
+   },
+   "recovered": {
+    "share": 0.229957805907173,
+    "coverage_mean": 0.9916610826387665,
+    "coverage_over_0p8": 0.981651376146789
+   },
+   "traced, rejected": {
+    "share": 0.12025316455696203,
+    "coverage_mean": 0.17909289996434655,
+    "coverage_over_0p8": 0.08771929824561403
+   },
+   "broken, a piece missing": {
+    "share": 0.11814345991561181,
+    "coverage_mean": 0.49123911712112,
+    "coverage_over_0p8": 0.21428571428571427,
+    "interrupting_mean": 1.6964285714285714,
+    "interrupting_unmatched_share": 0.9263157894736842,
+    "chain_nodes_mean": 0.0
+   },
+   "broken, all pieces accepted": {
+    "share": 0.07383966244725738,
+    "coverage_mean": 0.9973404551562786,
+    "coverage_over_0p8": 1.0,
+    "interrupting_mean": 1.2857142857142858,
+    "interrupting_unmatched_share": 0.8,
+    "chain_nodes_mean": 1.1428571428571428
+   },
+   "straight fallback, rejected": {
+    "share": 0.04430379746835443,
+    "coverage_mean": 0.24246743537383003,
+    "coverage_over_0p8": 0.14285714285714285
+   },
+   "not proposed": {
+    "share": 0.002109704641350211,
+    "coverage_mean": 0.2610619469026549,
+    "coverage_over_0p8": 0.0
+   }
+  }
+ },
+ "contraction": {
+  "none": {
+   "node_f1": 0.7505085345361281,
+   "node_precision": 0.7784606916796624,
+   "node_recall": 0.7244941517971485,
+   "edge_f1": 0.5008455127430849,
+   "edge_precision": 0.5746059241295687,
+   "edge_recall": 0.4438675836968448,
+   "beta0_mae": 2.2249240121580547,
+   "beta1_mae": 0.7970280310705843,
+   "recovered": {
+    "10-20 mm": 0.4671108291032149,
+    "20-40 mm": 0.38378520663332455,
+    ">= 40 mm": 0.229957805907173
+   }
+  },
+  "all": {
+   "node_f1": 0.7331362964647039,
+   "node_precision": 0.7842550707719247,
+   "node_recall": 0.6882737129684965,
+   "edge_f1": 0.4521766413052004,
+   "edge_precision": 0.5463643945712336,
+   "edge_recall": 0.3856879064415126,
+   "beta0_mae": 2.2249240121580547,
+   "beta1_mae": 0.7970280310705843,
+   "contractions_per_patch": 0.8486997635933806,
+   "recovered": {
+    "10-20 mm": 0.4073604060913706,
+    "20-40 mm": 0.34719663069228746,
+    ">= 40 mm": 0.23417721518987342
+   }
+  },
+  "score<0.5": {
+   "node_f1": 0.7457262563574037,
+   "node_precision": 0.7847408874428254,
+   "node_recall": 0.7104072398190046,
+   "edge_f1": 0.48679314904215737,
+   "edge_precision": 0.5720325203252032,
+   "edge_recall": 0.42366258998581635,
+   "beta0_mae": 2.2249240121580547,
+   "beta1_mae": 0.7970280310705843,
+   "contractions_per_patch": 0.4093211752786221,
+   "recovered": {
+    "10-20 mm": 0.4519881556683587,
+    "20-40 mm": 0.3816793893129771,
+    ">= 40 mm": 0.23628691983122363
+   }
+  },
+  "score<0.7": {
+   "node_f1": 0.7367454930710571,
+   "node_precision": 0.7852467331706964,
+   "node_recall": 0.6938871339537266,
+   "edge_f1": 0.4619853813956394,
+   "edge_precision": 0.5547428828626083,
+   "edge_recall": 0.3958037840875639,
+   "beta0_mae": 2.2249240121580547,
+   "beta1_mae": 0.7970280310705843,
+   "contractions_per_patch": 0.7531239446133063,
+   "recovered": {
+    "10-20 mm": 0.42163705583756345,
+    "20-40 mm": 0.36088444327454594,
+    ">= 40 mm": 0.24050632911392406
+   }
+  },
+  "angle<60": {
+   "node_f1": 0.7411421519129362,
+   "node_precision": 0.781233738587445,
+   "node_recall": 0.7049645692819944,
+   "edge_f1": 0.47403938002649987,
+   "edge_precision": 0.5586259486546352,
+   "edge_recall": 0.41170016324564457,
+   "beta0_mae": 2.2249240121580547,
+   "beta1_mae": 0.7970280310705843,
+   "contractions_per_patch": 0.4535629854778791,
+   "recovered": {
+    "10-20 mm": 0.43274111675126903,
+    "20-40 mm": 0.3656225322453277,
+    ">= 40 mm": 0.24261603375527427
+   }
+  },
+  "angle<60, score<0.7": {
+   "node_f1": 0.7432807740548288,
+   "node_precision": 0.7818772971444727,
+   "node_recall": 0.7083155468283104,
+   "edge_f1": 0.48008359970494224,
+   "edge_precision": 0.5637971485291463,
+   "edge_recall": 0.4180158963791581,
+   "beta0_mae": 2.2249240121580547,
+   "beta1_mae": 0.7970280310705843,
+   "contractions_per_patch": 0.39750084430935495,
+   "recovered": {
+    "10-20 mm": 0.44299915397631134,
+    "20-40 mm": 0.3727296657015004,
+    ">= 40 mm": 0.24472573839662448
+   }
+  },
+  "angle<30": {
+   "node_f1": 0.7480592174675981,
+   "node_precision": 0.7797818889068976,
+   "node_recall": 0.7188166993938359,
+   "edge_f1": 0.49306410197973166,
+   "edge_precision": 0.5703339191564147,
+   "edge_recall": 0.43423341451012926,
+   "beta0_mae": 2.2249240121580547,
+   "beta1_mae": 0.7970280310705843,
+   "contractions_per_patch": 0.1415062478892266,
+   "recovered": {
+    "10-20 mm": 0.4559010152284264,
+    "20-40 mm": 0.3811529349828902,
+    ">= 40 mm": 0.23839662447257384
+   }
+  }
+ }
+}

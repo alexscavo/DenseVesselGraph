@@ -1,0 +1,1011 @@
+{
+ "fit": {
+  "IXI-loops": {
+   "10-20 mm": {
+    "edges": 8675,
+    "K8": {
+     "median": 0.06625429998138048,
+     "p90": 0.21369204660720656,
+     "over_half_voxel": 0.00622478386167147,
+     "over_1_voxel": 0.0
+    },
+    "K16": {
+     "median": 0.014675033259392697,
+     "p90": 0.06564205421865052,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    },
+    "K24": {
+     "median": 0.012768718622442376,
+     "p90": 0.037170991356828866,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    },
+    "K32": {
+     "median": 0.011735090492212304,
+     "p90": 0.02712346762886233,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    },
+    "K48": {
+     "median": 0.008952811927666752,
+     "p90": 0.018625683468041554,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    }
+   },
+   "20-40 mm": {
+    "edges": 3362,
+    "K8": {
+     "median": 0.28612184738128377,
+     "p90": 0.7469073732735387,
+     "over_half_voxel": 0.23825104104699585,
+     "over_1_voxel": 0.03420582986317668
+    },
+    "K16": {
+     "median": 0.06037706066217456,
+     "p90": 0.1807673758545253,
+     "over_half_voxel": 0.00148720999405116,
+     "over_1_voxel": 0.0
+    },
+    "K24": {
+     "median": 0.0267766637826594,
+     "p90": 0.0948750483031545,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    },
+    "K32": {
+     "median": 0.017638594110611402,
+     "p90": 0.06184445137516411,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    },
+    "K48": {
+     "median": 0.013837427441420039,
+     "p90": 0.03369157618451909,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    }
+   },
+   ">= 40 mm": {
+    "edges": 399,
+    "K8": {
+     "median": 1.2123700562829152,
+     "p90": 2.1978602017700473,
+     "over_half_voxel": 0.9573934837092731,
+     "over_1_voxel": 0.681704260651629
+    },
+    "K16": {
+     "median": 0.2460604330395056,
+     "p90": 0.449483091353906,
+     "over_half_voxel": 0.07518796992481203,
+     "over_1_voxel": 0.002506265664160401
+    },
+    "K24": {
+     "median": 0.10246079240663905,
+     "p90": 0.23097362569009317,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    },
+    "K32": {
+     "median": 0.05643233490147583,
+     "p90": 0.15839469696002925,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    },
+    "K48": {
+     "median": 0.02496443049478311,
+     "p90": 0.0811057228796629,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    }
+   }
+  },
+  "BRAVA": {
+   "10-20 mm": {
+    "edges": 5271,
+    "K8": {
+     "median": 0.3988080431456825,
+     "p90": 0.6799764937509843,
+     "over_half_voxel": 0.29880478087649404,
+     "over_1_voxel": 0.0064503889205084425
+    },
+    "K16": {
+     "median": 0.14881511467568434,
+     "p90": 0.247663261479055,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    },
+    "K24": {
+     "median": 0.08929737363486513,
+     "p90": 0.14773261877596536,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    },
+    "K32": {
+     "median": 0.06121136042698938,
+     "p90": 0.10122189671489495,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    },
+    "K48": {
+     "median": 0.0343355501644417,
+     "p90": 0.059191434937634575,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    }
+   },
+   "20-40 mm": {
+    "edges": 3791,
+    "K8": {
+     "median": 0.8324256907003043,
+     "p90": 1.3784385602192246,
+     "over_half_voxel": 0.8950145080453706,
+     "over_1_voxel": 0.3062516486415194
+    },
+    "K16": {
+     "median": 0.3779947225131858,
+     "p90": 0.618442998703107,
+     "over_half_voxel": 0.24821946715906093,
+     "over_1_voxel": 0.0034291743603270903
+    },
+    "K24": {
+     "median": 0.20478563182694903,
+     "p90": 0.3513566225605135,
+     "over_half_voxel": 0.011078871010287523,
+     "over_1_voxel": 0.0
+    },
+    "K32": {
+     "median": 0.1359103149732203,
+     "p90": 0.22475817266783898,
+     "over_half_voxel": 0.0002637826431020839,
+     "over_1_voxel": 0.0
+    },
+    "K48": {
+     "median": 0.07807334885524012,
+     "p90": 0.12995452975882596,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    }
+   },
+   ">= 40 mm": {
+    "edges": 1251,
+    "K8": {
+     "median": 1.8105672764049785,
+     "p90": 3.2258658570313674,
+     "over_half_voxel": 1.0,
+     "over_1_voxel": 0.920863309352518
+    },
+    "K16": {
+     "median": 0.7595042132220653,
+     "p90": 1.1531851550646508,
+     "over_half_voxel": 0.9168665067945644,
+     "over_1_voxel": 0.19184652278177458
+    },
+    "K24": {
+     "median": 0.4984922848728675,
+     "p90": 0.7638539978806119,
+     "over_half_voxel": 0.49320543565147884,
+     "over_1_voxel": 0.020783373301358914
+    },
+    "K32": {
+     "median": 0.32428522800533277,
+     "p90": 0.5547239780332612,
+     "over_half_voxel": 0.15907274180655476,
+     "over_1_voxel": 0.0015987210231814548
+    },
+    "K48": {
+     "median": 0.169888229499476,
+     "p90": 0.2981560186124671,
+     "over_half_voxel": 0.007993605115907274,
+     "over_1_voxel": 0.0
+    }
+   }
+  },
+  "TopBrainCTA-loops": {
+   "10-20 mm": {
+    "edges": 1264,
+    "K8": {
+     "median": 0.06171256671271795,
+     "p90": 0.21890132709872742,
+     "over_half_voxel": 0.004746835443037975,
+     "over_1_voxel": 0.0
+    },
+    "K16": {
+     "median": 0.013614258434929331,
+     "p90": 0.06377537151601842,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    },
+    "K24": {
+     "median": 0.011667141525030074,
+     "p90": 0.03495411492451654,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    },
+    "K32": {
+     "median": 0.010835602061179091,
+     "p90": 0.024115244965117424,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    },
+    "K48": {
+     "median": 0.008039526695718117,
+     "p90": 0.016855657719086738,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    }
+   },
+   "20-40 mm": {
+    "edges": 458,
+    "K8": {
+     "median": 0.2738816009667726,
+     "p90": 0.7544934324216157,
+     "over_half_voxel": 0.2576419213973799,
+     "over_1_voxel": 0.048034934497816595
+    },
+    "K16": {
+     "median": 0.047431928889727484,
+     "p90": 0.18714003687285738,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    },
+    "K24": {
+     "median": 0.017453261021181953,
+     "p90": 0.08851987112259142,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    },
+    "K32": {
+     "median": 0.013167148365890669,
+     "p90": 0.048423137551085724,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    },
+    "K48": {
+     "median": 0.011841005279051298,
+     "p90": 0.030345144992037925,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    }
+   },
+   ">= 40 mm": {
+    "edges": 42,
+    "K8": {
+     "median": 1.3153326192186645,
+     "p90": 2.519980259789973,
+     "over_half_voxel": 0.9761904761904762,
+     "over_1_voxel": 0.7142857142857143
+    },
+    "K16": {
+     "median": 0.27313963772410527,
+     "p90": 0.6737709319344903,
+     "over_half_voxel": 0.11904761904761904,
+     "over_1_voxel": 0.047619047619047616
+    },
+    "K24": {
+     "median": 0.11599983865497061,
+     "p90": 0.2779163848787486,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    },
+    "K32": {
+     "median": 0.05149666198719746,
+     "p90": 0.1535140093966797,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    },
+    "K48": {
+     "median": 0.023467560080408286,
+     "p90": 0.07405469960032304,
+     "over_half_voxel": 0.0,
+     "over_1_voxel": 0.0
+    }
+   }
+  }
+ },
+ "arms": {
+  "IXI-loops": {
+   "traced_arcpen_r1109": {
+    "thresholds": {
+     "node": 0.3,
+     "edge": 0.8,
+     "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+    },
+    "by_arc": {
+     "0-5": {
+      "edges": 40486,
+      "recovered_fraction": 0.2281529417576446,
+      "rejected_fraction": 0.04181692436891765,
+      "not_candidate_fraction": 0.0,
+      "endpoints_missing_fraction": 0.7300301338734377
+     },
+     "5-10": {
+      "edges": 11671,
+      "recovered_fraction": 0.4371519150029989,
+      "rejected_fraction": 0.1075314883043441,
+      "not_candidate_fraction": 8.568246080027418e-05,
+      "endpoints_missing_fraction": 0.45523091423185674
+     },
+     "10-20": {
+      "edges": 8675,
+      "recovered_fraction": 0.41268011527377524,
+      "rejected_fraction": 0.11769452449567723,
+      "not_candidate_fraction": 0.005187319884726225,
+      "endpoints_missing_fraction": 0.4644380403458213
+     },
+     "20-40": {
+      "edges": 3362,
+      "recovered_fraction": 0.3004164187983343,
+      "rejected_fraction": 0.20374776918500892,
+      "not_candidate_fraction": 0.032123735871505056,
+      "endpoints_missing_fraction": 0.4637120761451517
+     },
+     "40-inf": {
+      "edges": 399,
+      "recovered_fraction": 0.12280701754385964,
+      "rejected_fraction": 0.3057644110275689,
+      "not_candidate_fraction": 0.11278195488721804,
+      "endpoints_missing_fraction": 0.45864661654135336
+     }
+    }
+   },
+   "traced_k24_r1109": {
+    "thresholds": {
+     "node": 0.3,
+     "edge": 0.8,
+     "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+    },
+    "by_arc": {
+     "0-5": {
+      "edges": 40486,
+      "recovered_fraction": 0.2266215481894976,
+      "rejected_fraction": 0.04166872499135504,
+      "not_candidate_fraction": 0.0,
+      "endpoints_missing_fraction": 0.7317097268191474
+     },
+     "5-10": {
+      "edges": 11671,
+      "recovered_fraction": 0.4368091851597978,
+      "rejected_fraction": 0.10581783908833861,
+      "not_candidate_fraction": 8.568246080027418e-05,
+      "endpoints_missing_fraction": 0.4572872932910633
+     },
+     "10-20": {
+      "edges": 8675,
+      "recovered_fraction": 0.4093371757925072,
+      "rejected_fraction": 0.11873198847262248,
+      "not_candidate_fraction": 0.005648414985590778,
+      "endpoints_missing_fraction": 0.46628242074927956
+     },
+     "20-40": {
+      "edges": 3362,
+      "recovered_fraction": 0.30071386079714457,
+      "rejected_fraction": 0.19839381320642474,
+      "not_candidate_fraction": 0.03361094586555621,
+      "endpoints_missing_fraction": 0.4672813801308745
+     },
+     "40-inf": {
+      "edges": 399,
+      "recovered_fraction": 0.12531328320802004,
+      "rejected_fraction": 0.2907268170426065,
+      "not_candidate_fraction": 0.12280701754385964,
+      "endpoints_missing_fraction": 0.46115288220551376
+     }
+    }
+   }
+  },
+  "BRAVA": {
+   "traced_arcpen_r1109": {
+    "thresholds": {
+     "node": 0.3,
+     "edge": 0.75,
+     "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+    },
+    "by_arc": {
+     "0-5": {
+      "edges": 5011,
+      "recovered_fraction": 0.1562562362801836,
+      "rejected_fraction": 0.06844941129515067,
+      "not_candidate_fraction": 0.0,
+      "endpoints_missing_fraction": 0.7752943524246657
+     },
+     "5-10": {
+      "edges": 4122,
+      "recovered_fraction": 0.21591460456089276,
+      "rejected_fraction": 0.03857350800582242,
+      "not_candidate_fraction": 0.0,
+      "endpoints_missing_fraction": 0.7455118874332848
+     },
+     "10-20": {
+      "edges": 5271,
+      "recovered_fraction": 0.20034149117814457,
+      "rejected_fraction": 0.059381521532915954,
+      "not_candidate_fraction": 0.0,
+      "endpoints_missing_fraction": 0.7402769872889394
+     },
+     "20-40": {
+      "edges": 3791,
+      "recovered_fraction": 0.10551305724083355,
+      "rejected_fraction": 0.10445792666842522,
+      "not_candidate_fraction": 0.002374043787918755,
+      "endpoints_missing_fraction": 0.7876549723028224
+     },
+     "40-inf": {
+      "edges": 1251,
+      "recovered_fraction": 0.051159072741806554,
+      "rejected_fraction": 0.10471622701838529,
+      "not_candidate_fraction": 0.016786570743405275,
+      "endpoints_missing_fraction": 0.8273381294964028
+     }
+    }
+   },
+   "traced_k24_r1109": {
+    "thresholds": {
+     "node": 0.3,
+     "edge": 0.8,
+     "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+    },
+    "by_arc": {
+     "0-5": {
+      "edges": 5011,
+      "recovered_fraction": 0.14089004190780283,
+      "rejected_fraction": 0.08142087407703054,
+      "not_candidate_fraction": 0.0,
+      "endpoints_missing_fraction": 0.7776890840151667
+     },
+     "5-10": {
+      "edges": 4122,
+      "recovered_fraction": 0.20378457059679767,
+      "rejected_fraction": 0.05167394468704512,
+      "not_candidate_fraction": 0.0,
+      "endpoints_missing_fraction": 0.7445414847161572
+     },
+     "10-20": {
+      "edges": 5271,
+      "recovered_fraction": 0.18630240940997914,
+      "rejected_fraction": 0.07436918990703852,
+      "not_candidate_fraction": 0.0,
+      "endpoints_missing_fraction": 0.7393284006829823
+     },
+     "20-40": {
+      "edges": 3791,
+      "recovered_fraction": 0.09047744658401477,
+      "rejected_fraction": 0.12002110261144816,
+      "not_candidate_fraction": 0.0013189132155104195,
+      "endpoints_missing_fraction": 0.7881825375890267
+     },
+     "40-inf": {
+      "edges": 1251,
+      "recovered_fraction": 0.03597122302158273,
+      "rejected_fraction": 0.11990407673860912,
+      "not_candidate_fraction": 0.016786570743405275,
+      "endpoints_missing_fraction": 0.8273381294964028
+     }
+    }
+   }
+  },
+  "TopBrainCTA-loops": {
+   "traced_arcpen_r1109": {
+    "thresholds": {
+     "node": 0.25,
+     "edge": 0.7,
+     "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+    },
+    "by_arc": {
+     "0-5": {
+      "edges": 4572,
+      "recovered_fraction": 0.2020997375328084,
+      "rejected_fraction": 0.045275590551181105,
+      "not_candidate_fraction": 0.0,
+      "endpoints_missing_fraction": 0.7526246719160105
+     },
+     "5-10": {
+      "edges": 1750,
+      "recovered_fraction": 0.33085714285714285,
+      "rejected_fraction": 0.11942857142857143,
+      "not_candidate_fraction": 0.0,
+      "endpoints_missing_fraction": 0.5497142857142857
+     },
+     "10-20": {
+      "edges": 1264,
+      "recovered_fraction": 0.23813291139240506,
+      "rejected_fraction": 0.19462025316455697,
+      "not_candidate_fraction": 0.005537974683544304,
+      "endpoints_missing_fraction": 0.5617088607594937
+     },
+     "20-40": {
+      "edges": 458,
+      "recovered_fraction": 0.11790393013100436,
+      "rejected_fraction": 0.2663755458515284,
+      "not_candidate_fraction": 0.024017467248908297,
+      "endpoints_missing_fraction": 0.5917030567685589
+     },
+     "40-inf": {
+      "edges": 42,
+      "recovered_fraction": 0.0,
+      "rejected_fraction": 0.30952380952380953,
+      "not_candidate_fraction": 0.047619047619047616,
+      "endpoints_missing_fraction": 0.6428571428571429
+     }
+    }
+   },
+   "traced_k24_r1109": {
+    "thresholds": {
+     "node": 0.25,
+     "edge": 0.7,
+     "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+    },
+    "by_arc": {
+     "0-5": {
+      "edges": 4572,
+      "recovered_fraction": 0.20275590551181102,
+      "rejected_fraction": 0.049650043744531934,
+      "not_candidate_fraction": 0.0,
+      "endpoints_missing_fraction": 0.747594050743657
+     },
+     "5-10": {
+      "edges": 1750,
+      "recovered_fraction": 0.33314285714285713,
+      "rejected_fraction": 0.11828571428571429,
+      "not_candidate_fraction": 0.0005714285714285715,
+      "endpoints_missing_fraction": 0.548
+     },
+     "10-20": {
+      "edges": 1264,
+      "recovered_fraction": 0.23259493670886075,
+      "rejected_fraction": 0.19541139240506328,
+      "not_candidate_fraction": 0.004746835443037975,
+      "endpoints_missing_fraction": 0.567246835443038
+     },
+     "20-40": {
+      "edges": 458,
+      "recovered_fraction": 0.12008733624454149,
+      "rejected_fraction": 0.26419213973799127,
+      "not_candidate_fraction": 0.024017467248908297,
+      "endpoints_missing_fraction": 0.5917030567685589
+     },
+     "40-inf": {
+      "edges": 42,
+      "recovered_fraction": 0.0,
+      "rejected_fraction": 0.2857142857142857,
+      "not_candidate_fraction": 0.07142857142857142,
+      "endpoints_missing_fraction": 0.6428571428571429
+     }
+    }
+   }
+  }
+ },
+ "oracle": {
+  "IXI-loops": {
+   "0-10 mm": {
+    "edges": 52157,
+    "traced": {
+     "share": 0.9048833330137853,
+     "accepted": 0.9121959488092212,
+     "K_share": {
+      "K8": 0.22796423425714044,
+      "K16": 0.4992160352572252,
+      "K24": 0.27281973048563435
+     },
+     "curve_distance_mm_median": 0.1553317735514111,
+     "curve_distance_mm_p90": 0.2853905026709515,
+     "curve_distance_mm_median_by_K": {
+      "K8": 0.16289990403137847,
+      "K16": 0.1680472559937163,
+      "K24": 0.12710153618561604
+     }
+    },
+    "straight fallback": {
+     "share": 0.09352531779051709,
+     "accepted": 0.47949979499795,
+     "K_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "curve_distance_mm_median": 0.16597318851714954,
+     "curve_distance_mm_p90": 0.4229427091378574,
+     "curve_distance_mm_median_by_K": {
+      "K8": 0.16597318851714954
+     }
+    },
+    "not proposed": {
+     "share": 0.0015913491956976054
+    }
+   },
+   "10-20 mm": {
+    "edges": 8675,
+    "traced": {
+     "share": 0.7605763688760807,
+     "accepted": 0.8845104577144589,
+     "K_share": {
+      "K8": 0.3548044862079418,
+      "K16": 0.5751742952409821,
+      "K24": 0.07002121855107608
+     },
+     "curve_distance_mm_median": 0.21718889449969633,
+     "curve_distance_mm_p90": 0.34959115279931297,
+     "curve_distance_mm_median_by_K": {
+      "K8": 0.21690801929338718,
+      "K16": 0.21369156523704042,
+      "K24": 0.24510920968601732
+     }
+    },
+    "straight fallback": {
+     "share": 0.21406340057636888,
+     "accepted": 0.3990306946688207,
+     "K_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "curve_distance_mm_median": 0.3552954074275391,
+     "curve_distance_mm_p90": 1.173936160004775,
+     "curve_distance_mm_median_by_K": {
+      "K8": 0.3552954074275391
+     }
+    },
+    "not proposed": {
+     "share": 0.025360230547550433
+    }
+   },
+   "20-40 mm": {
+    "edges": 3362,
+    "traced": {
+     "share": 0.6624033313503866,
+     "accepted": 0.8872923215087561,
+     "K_share": {
+      "K8": 0.003592276605298608,
+      "K16": 0.713515940727436,
+      "K24": 0.2828917826672654
+     },
+     "curve_distance_mm_median": 0.2531821050300551,
+     "curve_distance_mm_p90": 0.3787893257685259,
+     "curve_distance_mm_median_by_K": {
+      "K8": 0.5414972859339251,
+      "K16": 0.24220914106166977,
+      "K24": 0.27986149503617896
+     }
+    },
+    "straight fallback": {
+     "share": 0.2778108268887567,
+     "accepted": 0.20021413276231265,
+     "K_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "curve_distance_mm_median": 0.9576435693748394,
+     "curve_distance_mm_p90": 2.258241245425345,
+     "curve_distance_mm_median_by_K": {
+      "K8": 0.9576435693748394
+     }
+    },
+    "not proposed": {
+     "share": 0.059785841760856634
+    }
+   },
+   ">= 40 mm": {
+    "edges": 399,
+    "traced": {
+     "share": 0.46365914786967416,
+     "accepted": 0.9351351351351351,
+     "K_share": {
+      "K8": 0.0,
+      "K16": 0.016216216216216217,
+      "K24": 0.9837837837837838
+     },
+     "curve_distance_mm_median": 0.31145351362999385,
+     "curve_distance_mm_p90": 0.4367889467582112,
+     "curve_distance_mm_median_by_K": {
+      "K16": 0.3489724925581057,
+      "K24": 0.31055822337645717
+     }
+    },
+    "straight fallback": {
+     "share": 0.37343358395989973,
+     "accepted": 0.0,
+     "K_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "curve_distance_mm_median": 2.26265074504262,
+     "curve_distance_mm_p90": 4.114681649335882,
+     "curve_distance_mm_median_by_K": {
+      "K8": 2.26265074504262
+     }
+    },
+    "not proposed": {
+     "share": 0.16290726817042606
+    }
+   }
+  },
+  "BRAVA": {
+   "0-10 mm": {
+    "edges": 9133,
+    "traced": {
+     "share": 0.8589729552173437,
+     "accepted": 0.8634799235181644,
+     "K_share": {
+      "K8": 0.4653919694072658,
+      "K16": 0.4388782664117272,
+      "K24": 0.09572976418100701
+     },
+     "curve_distance_mm_median": 0.28152326060807914,
+     "curve_distance_mm_p90": 0.5012574391438414,
+     "curve_distance_mm_median_by_K": {
+      "K8": 0.30649578773080643,
+      "K16": 0.2776190401706031,
+      "K24": 0.16869366287035845
+     }
+    },
+    "straight fallback": {
+     "share": 0.1410270447826563,
+     "accepted": 0.6886645962732919,
+     "K_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "curve_distance_mm_median": 0.2722035226467461,
+     "curve_distance_mm_p90": 0.5926955858582251,
+     "curve_distance_mm_median_by_K": {
+      "K8": 0.2722035226467461
+     }
+    }
+   },
+   "10-20 mm": {
+    "edges": 5271,
+    "traced": {
+     "share": 0.7161828874976285,
+     "accepted": 0.9181456953642384,
+     "K_share": {
+      "K8": 0.39655629139072845,
+      "K16": 0.5610596026490067,
+      "K24": 0.0423841059602649
+     },
+     "curve_distance_mm_median": 0.451355601286261,
+     "curve_distance_mm_p90": 0.6987080735327454,
+     "curve_distance_mm_median_by_K": {
+      "K8": 0.43077697092938544,
+      "K16": 0.4607046377811518,
+      "K24": 0.5364740954148044
+     }
+    },
+    "straight fallback": {
+     "share": 0.28286852589641437,
+     "accepted": 0.5124077800134138,
+     "K_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "curve_distance_mm_median": 0.5784592511721715,
+     "curve_distance_mm_p90": 1.1681873999590493,
+     "curve_distance_mm_median_by_K": {
+      "K8": 0.5784592511721715
+     }
+    },
+    "not proposed": {
+     "share": 0.0009485866059571238
+    }
+   },
+   "20-40 mm": {
+    "edges": 3791,
+    "traced": {
+     "share": 0.5433922447902928,
+     "accepted": 0.8684466019417476,
+     "K_share": {
+      "K8": 0.04174757281553398,
+      "K16": 0.7708737864077669,
+      "K24": 0.18737864077669902
+     },
+     "curve_distance_mm_median": 0.5355618294536263,
+     "curve_distance_mm_p90": 0.8682090197722651,
+     "curve_distance_mm_median_by_K": {
+      "K8": 0.7233499411368958,
+      "K16": 0.5225526147993704,
+      "K24": 0.5776044564490077
+     }
+    },
+    "straight fallback": {
+     "share": 0.4436824056977051,
+     "accepted": 0.28299643281807374,
+     "K_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "curve_distance_mm_median": 0.9678822138410437,
+     "curve_distance_mm_p90": 1.8853653384956632,
+     "curve_distance_mm_median_by_K": {
+      "K8": 0.9678822138410437
+     }
+    },
+    "not proposed": {
+     "share": 0.01292534951200211
+    }
+   },
+   ">= 40 mm": {
+    "edges": 1251,
+    "traced": {
+     "share": 0.3301358912869704,
+     "accepted": 0.8305084745762712,
+     "K_share": {
+      "K8": 0.007263922518159807,
+      "K16": 0.1549636803874092,
+      "K24": 0.837772397094431
+     },
+     "curve_distance_mm_median": 0.6264836106466197,
+     "curve_distance_mm_p90": 1.055310586472491,
+     "curve_distance_mm_median_by_K": {
+      "K8": 0.20354621364843142,
+      "K16": 0.8970948599995143,
+      "K24": 0.6086244692697969
+     }
+    },
+    "straight fallback": {
+     "share": 0.5571542765787371,
+     "accepted": 0.13055954088952654,
+     "K_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "curve_distance_mm_median": 1.7873568799292936,
+     "curve_distance_mm_p90": 3.3290048433316466,
+     "curve_distance_mm_median_by_K": {
+      "K8": 1.7873568799292936
+     }
+    },
+    "not proposed": {
+     "share": 0.11270983213429256
+    }
+   }
+  },
+  "TopBrainCTA-loops": {
+   "0-10 mm": {
+    "edges": 6322,
+    "traced": {
+     "share": 0.9003479911420437,
+     "accepted": 0.8099086437104709,
+     "K_share": {
+      "K8": 0.3185172171468728,
+      "K16": 0.49402670414617006,
+      "K24": 0.18745607870695713
+     },
+     "curve_distance_mm_median": 0.16669173718723834,
+     "curve_distance_mm_p90": 0.2994296550663393,
+     "curve_distance_mm_median_by_K": {
+      "K8": 0.16711911928481737,
+      "K16": 0.1773220113648096,
+      "K24": 0.13694533667655542
+     }
+    },
+    "straight fallback": {
+     "share": 0.09965200885795635,
+     "accepted": 0.2968253968253968,
+     "K_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "curve_distance_mm_median": 0.19486338852020899,
+     "curve_distance_mm_p90": 0.46780544523643064,
+     "curve_distance_mm_median_by_K": {
+      "K8": 0.19486338852020899
+     }
+    }
+   },
+   "10-20 mm": {
+    "edges": 1264,
+    "traced": {
+     "share": 0.7721518987341772,
+     "accepted": 0.7725409836065574,
+     "K_share": {
+      "K8": 0.3760245901639344,
+      "K16": 0.5389344262295082,
+      "K24": 0.08504098360655737
+     },
+     "curve_distance_mm_median": 0.23131400094610147,
+     "curve_distance_mm_p90": 0.3687102863326085,
+     "curve_distance_mm_median_by_K": {
+      "K8": 0.21895263970049272,
+      "K16": 0.23720312664975396,
+      "K24": 0.2382928180425797
+     }
+    },
+    "straight fallback": {
+     "share": 0.2254746835443038,
+     "accepted": 0.16140350877192983,
+     "K_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "curve_distance_mm_median": 0.4307362727801667,
+     "curve_distance_mm_p90": 1.209749802951223,
+     "curve_distance_mm_median_by_K": {
+      "K8": 0.4307362727801667
+     }
+    },
+    "not proposed": {
+     "share": 0.0023734177215189874
+    }
+   },
+   "20-40 mm": {
+    "edges": 458,
+    "traced": {
+     "share": 0.6681222707423581,
+     "accepted": 0.630718954248366,
+     "K_share": {
+      "K8": 0.006535947712418301,
+      "K16": 0.6699346405228758,
+      "K24": 0.3235294117647059
+     },
+     "curve_distance_mm_median": 0.27241568963111784,
+     "curve_distance_mm_p90": 0.4033967490813052,
+     "curve_distance_mm_median_by_K": {
+      "K8": 0.5686557308057324,
+      "K16": 0.26317120988373094,
+      "K24": 0.2808982469490053
+     }
+    },
+    "straight fallback": {
+     "share": 0.32532751091703055,
+     "accepted": 0.026845637583892617,
+     "K_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "curve_distance_mm_median": 1.1906606168967528,
+     "curve_distance_mm_p90": 2.9221925847533163,
+     "curve_distance_mm_median_by_K": {
+      "K8": 1.1906606168967528
+     }
+    },
+    "not proposed": {
+     "share": 0.006550218340611353
+    }
+   },
+   ">= 40 mm": {
+    "edges": 42,
+    "traced": {
+     "share": 0.5714285714285714,
+     "accepted": 0.3333333333333333,
+     "K_share": {
+      "K8": 0.0,
+      "K16": 0.041666666666666664,
+      "K24": 0.9583333333333334
+     },
+     "curve_distance_mm_median": 0.38550269863244524,
+     "curve_distance_mm_p90": 0.5106472805175329,
+     "curve_distance_mm_median_by_K": {
+      "K16": 0.4533305966177811,
+      "K24": 0.37776073837225566
+     }
+    },
+    "straight fallback": {
+     "share": 0.40476190476190477,
+     "accepted": 0.0,
+     "K_share": {
+      "K8": 1.0,
+      "K16": 0.0,
+      "K24": 0.0
+     },
+     "curve_distance_mm_median": 2.334380153497365,
+     "curve_distance_mm_p90": 4.777573690429926,
+     "curve_distance_mm_median_by_K": {
+      "K8": 2.334380153497365
+     }
+    },
+    "not proposed": {
+     "share": 0.023809523809523808
+    }
+   }
+  }
+ }
+}

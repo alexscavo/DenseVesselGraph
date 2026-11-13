@@ -1,0 +1,1828 @@
+{
+ "scale_mm": 2.0,
+ "entries": {
+  "BRAVA-simp2": {
+   "summary": {
+    "source.nodes": 2471.375,
+    "source.edges": 2470.375,
+    "source.self_loop_edges": 0.0,
+    "source.self_loop_edges_without_interior_points": 0.0,
+    "source.length_mm": 6877.574596206983,
+    "source.degree2_nodes": 2268.375,
+    "source.degree0_nodes": 0.0,
+    "untouched.nodes": 203.0,
+    "untouched.edges": 202.0,
+    "untouched.components": 1.0,
+    "untouched.loops": 0.0,
+    "untouched.length_mm": 6877.574596206978,
+    "untouched.isolated_vertices": 0.0,
+    "simplified.nodes": 200.5,
+    "simplified.edges": 199.5,
+    "simplified.components": 1.0,
+    "simplified.loops": 0.0,
+    "simplified.length_mm": 6881.091107691955,
+    "simplified.isolated_vertices": 0.0,
+    "simplified.moved_mm_max": 0.8101749203356978,
+    "simplified.moved_mm_mean": 0.709493940106861,
+    "simplified.merged_nodes": 2.5,
+    "ops_total": {
+     "junction_merge": 20
+    },
+    "subjects": 8,
+    "limit0_only_removes_isolated_all": true
+   },
+   "per_subject": {
+    "000000": {
+     "source": {
+      "nodes": 2200,
+      "edges": 2199,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 6050.586465916673,
+      "degree2_nodes": 2002,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 198,
+      "edges": 197,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 6050.58646591663,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 198,
+      "edges": 197,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 6050.58646591663,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 197,
+      "edges": 196,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 6052.153294028514,
+      "isolated_vertices": 0,
+      "ops": {
+       "junction_merge": 1
+      },
+      "moved_mm_max": 0.7834140559418763,
+      "moved_mm_mean": 0.7834140559418763,
+      "merged_nodes": 1
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000001": {
+     "source": {
+      "nodes": 2862,
+      "edges": 2861,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 7488.783868031145,
+      "degree2_nodes": 2650,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 212,
+      "edges": 211,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 7488.783868031146,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 212,
+      "edges": 211,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 7488.783868031146,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 207,
+      "edges": 206,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 7495.450906913703,
+      "isolated_vertices": 0,
+      "ops": {
+       "junction_merge": 5
+      },
+      "moved_mm_max": 0.9024418215285273,
+      "moved_mm_mean": 0.6667038882558177,
+      "merged_nodes": 5
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000009": {
+     "source": {
+      "nodes": 2300,
+      "edges": 2299,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 6457.302549360661,
+      "degree2_nodes": 2116,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 184,
+      "edges": 183,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 6457.302549360654,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 184,
+      "edges": 183,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 6457.302549360654,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 182,
+      "edges": 181,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 6460.142379928865,
+      "isolated_vertices": 0,
+      "ops": {
+       "junction_merge": 2
+      },
+      "moved_mm_max": 0.709957642052748,
+      "moved_mm_mean": 0.7099576420525293,
+      "merged_nodes": 2
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000023": {
+     "source": {
+      "nodes": 3138,
+      "edges": 3137,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 8595.24683707618,
+      "degree2_nodes": 2884,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 254,
+      "edges": 253,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 8595.246837076174,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 254,
+      "edges": 253,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 8595.246837076174,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 252,
+      "edges": 251,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 8597.943174134161,
+      "isolated_vertices": 0,
+      "ops": {
+       "junction_merge": 2
+      },
+      "moved_mm_max": 0.6929017889728855,
+      "moved_mm_mean": 0.6740842644966212,
+      "merged_nodes": 2
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000034": {
+     "source": {
+      "nodes": 2802,
+      "edges": 2801,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 7399.949026122995,
+      "degree2_nodes": 2562,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 240,
+      "edges": 239,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 7399.949026123026,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 240,
+      "edges": 239,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 7399.949026123026,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 237,
+      "edges": 236,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 7403.995769949977,
+      "isolated_vertices": 0,
+      "ops": {
+       "junction_merge": 3
+      },
+      "moved_mm_max": 0.8671086795118006,
+      "moved_mm_mean": 0.6744573044919768,
+      "merged_nodes": 3
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000041": {
+     "source": {
+      "nodes": 2246,
+      "edges": 2245,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 6420.0278104817235,
+      "degree2_nodes": 2060,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 186,
+      "edges": 185,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 6420.027810481703,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 186,
+      "edges": 185,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 6420.027810481703,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 184,
+      "edges": 183,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 6422.289540486776,
+      "isolated_vertices": 0,
+      "ops": {
+       "junction_merge": 2
+      },
+      "moved_mm_max": 0.6929008823036594,
+      "moved_mm_mean": 0.5654325012682637,
+      "merged_nodes": 2
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000042": {
+     "source": {
+      "nodes": 2213,
+      "edges": 2212,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 6996.955848209734,
+      "degree2_nodes": 2007,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 206,
+      "edges": 205,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 6996.955848209727,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 206,
+      "edges": 205,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 6996.955848209727,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 203,
+      "edges": 202,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 7001.893776119032,
+      "isolated_vertices": 0,
+      "ops": {
+       "junction_merge": 3
+      },
+      "moved_mm_max": 0.9839873154485839,
+      "moved_mm_mean": 0.8229879848839093,
+      "merged_nodes": 3
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000054": {
+     "source": {
+      "nodes": 2010,
+      "edges": 2009,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 5611.744364456757,
+      "degree2_nodes": 1866,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 144,
+      "edges": 143,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 5611.744364456762,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 144,
+      "edges": 143,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 5611.744364456762,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 142,
+      "edges": 141,
+      "components": 1,
+      "loops": 0,
+      "length_mm": 5614.860019974618,
+      "isolated_vertices": 0,
+      "ops": {
+       "junction_merge": 2
+      },
+      "moved_mm_max": 0.8486871769255018,
+      "moved_mm_mean": 0.7789138794638929,
+      "merged_nodes": 2
+     },
+     "limit0_only_removes_isolated": true
+    }
+   }
+  },
+  "IXI-simp2": {
+   "summary": {
+    "source.nodes": 1318.1153846153845,
+    "source.edges": 1342.923076923077,
+    "source.self_loop_edges": 0.11538461538461539,
+    "source.self_loop_edges_without_interior_points": 0.0,
+    "source.length_mm": 3792.9195780825726,
+    "source.degree2_nodes": 889.2692307692307,
+    "source.degree0_nodes": 0.0,
+    "untouched.nodes": 428.84615384615387,
+    "untouched.edges": 453.65384615384613,
+    "untouched.components": 14.538461538461538,
+    "untouched.loops": 39.34615384615385,
+    "untouched.length_mm": 3792.919578082573,
+    "untouched.isolated_vertices": 0.0,
+    "simplified.nodes": 234.6153846153846,
+    "simplified.edges": 259.38461538461536,
+    "simplified.components": 14.423076923076923,
+    "simplified.loops": 39.19230769230769,
+    "simplified.length_mm": 3782.6132265921865,
+    "simplified.isolated_vertices": 0.0,
+    "simplified.moved_mm_max": 1.4441958141003328,
+    "simplified.moved_mm_mean": 0.6396526586218303,
+    "simplified.merged_nodes": 33.65384615384615,
+    "ops_total": {
+     "spur": 2133,
+     "junction_merge": 1028,
+     "tiny_loop": 4,
+     "fragment": 3
+    },
+    "subjects": 26,
+    "limit0_only_removes_isolated_all": true
+   },
+   "per_subject": {
+    "000001": {
+     "source": {
+      "nodes": 1308,
+      "edges": 1350,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 3842.938292774715,
+      "degree2_nodes": 837,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 471,
+      "edges": 513,
+      "components": 9,
+      "loops": 51,
+      "length_mm": 3842.938292774707,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 471,
+      "edges": 513,
+      "components": 9,
+      "loops": 51,
+      "length_mm": 3842.938292774707,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 241,
+      "edges": 283,
+      "components": 9,
+      "loops": 51,
+      "length_mm": 3821.220054193704,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 97,
+       "junction_merge": 48
+      },
+      "moved_mm_max": 1.3406343806294791,
+      "moved_mm_mean": 0.5618769002285766,
+      "merged_nodes": 43
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000006": {
+     "source": {
+      "nodes": 1251,
+      "edges": 1299,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 3590.5529647556154,
+      "degree2_nodes": 797,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 454,
+      "edges": 502,
+      "components": 6,
+      "loops": 54,
+      "length_mm": 3590.5529647556136,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 454,
+      "edges": 502,
+      "components": 6,
+      "loops": 54,
+      "length_mm": 3590.5529647556136,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 221,
+      "edges": 269,
+      "components": 6,
+      "loops": 54,
+      "length_mm": 3590.561874502994,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 95,
+       "junction_merge": 55
+      },
+      "moved_mm_max": 1.5142811248395538,
+      "moved_mm_mean": 0.6589893282877352,
+      "merged_nodes": 47
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000012": {
+     "source": {
+      "nodes": 1106,
+      "edges": 1126,
+      "self_loop_edges": 1,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 3448.469496799497,
+      "degree2_nodes": 749,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 357,
+      "edges": 377,
+      "components": 13,
+      "loops": 33,
+      "length_mm": 3448.4694967995047,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 357,
+      "edges": 377,
+      "components": 13,
+      "loops": 33,
+      "length_mm": 3448.4694967995047,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 208,
+      "edges": 227,
+      "components": 13,
+      "loops": 32,
+      "length_mm": 3435.3302137842243,
+      "isolated_vertices": 0,
+      "ops": {
+       "tiny_loop": 1,
+       "spur": 64,
+       "junction_merge": 27
+      },
+      "moved_mm_max": 1.4033640938382321,
+      "moved_mm_mean": 0.5894303759980942,
+      "merged_nodes": 24
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000019": {
+     "source": {
+      "nodes": 1256,
+      "edges": 1274,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 3315.063668188843,
+      "degree2_nodes": 832,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 424,
+      "edges": 442,
+      "components": 20,
+      "loops": 38,
+      "length_mm": 3315.0636681888545,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 424,
+      "edges": 442,
+      "components": 20,
+      "loops": 38,
+      "length_mm": 3315.0636681888545,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 253,
+      "edges": 271,
+      "components": 20,
+      "loops": 38,
+      "length_mm": 3313.132477909119,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 70,
+       "junction_merge": 40
+      },
+      "moved_mm_max": 1.358002911797441,
+      "moved_mm_mean": 0.7058459845124899,
+      "merged_nodes": 31
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000023": {
+     "source": {
+      "nodes": 1353,
+      "edges": 1370,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 3810.3524482587964,
+      "degree2_nodes": 896,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 457,
+      "edges": 474,
+      "components": 21,
+      "loops": 38,
+      "length_mm": 3810.352448258795,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 457,
+      "edges": 474,
+      "components": 21,
+      "loops": 38,
+      "length_mm": 3810.352448258795,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 264,
+      "edges": 281,
+      "components": 21,
+      "loops": 38,
+      "length_mm": 3789.085498602053,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 86,
+       "junction_merge": 32
+      },
+      "moved_mm_max": 1.4586967116224627,
+      "moved_mm_mean": 0.6834919462931731,
+      "merged_nodes": 26
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000038": {
+     "source": {
+      "nodes": 1312,
+      "edges": 1350,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 4157.956324331763,
+      "degree2_nodes": 952,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 360,
+      "edges": 398,
+      "components": 10,
+      "loops": 48,
+      "length_mm": 4157.956324331787,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 360,
+      "edges": 398,
+      "components": 10,
+      "loops": 48,
+      "length_mm": 4157.956324331787,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 245,
+      "edges": 283,
+      "components": 10,
+      "loops": 48,
+      "length_mm": 4189.400634798337,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 36,
+       "junction_merge": 49
+      },
+      "moved_mm_max": 1.8287899254646953,
+      "moved_mm_mean": 0.6773754186099757,
+      "merged_nodes": 42
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000039": {
+     "source": {
+      "nodes": 1289,
+      "edges": 1287,
+      "self_loop_edges": 1,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 3713.6415514865494,
+      "degree2_nodes": 888,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 401,
+      "edges": 399,
+      "components": 35,
+      "loops": 33,
+      "length_mm": 3713.641551486569,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 401,
+      "edges": 399,
+      "components": 35,
+      "loops": 33,
+      "length_mm": 3713.641551486569,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 236,
+      "edges": 234,
+      "components": 34,
+      "loops": 32,
+      "length_mm": 3702.6990676616115,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 67,
+       "junction_merge": 34,
+       "tiny_loop": 1,
+       "fragment": 1
+      },
+      "moved_mm_max": 1.557586965602951,
+      "moved_mm_mean": 0.640974801150457,
+      "merged_nodes": 29
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000040": {
+     "source": {
+      "nodes": 1097,
+      "edges": 1114,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 3446.905513247875,
+      "degree2_nodes": 752,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 345,
+      "edges": 362,
+      "components": 18,
+      "loops": 35,
+      "length_mm": 3446.9055132478893,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 345,
+      "edges": 362,
+      "components": 18,
+      "loops": 35,
+      "length_mm": 3446.9055132478893,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 232,
+      "edges": 249,
+      "components": 18,
+      "loops": 35,
+      "length_mm": 3460.1169475835077,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 42,
+       "junction_merge": 35
+      },
+      "moved_mm_max": 1.211929189881288,
+      "moved_mm_mean": 0.6978106052019852,
+      "merged_nodes": 31
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000046": {
+     "source": {
+      "nodes": 1475,
+      "edges": 1476,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 3947.5748058368526,
+      "degree2_nodes": 1018,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 457,
+      "edges": 458,
+      "components": 36,
+      "loops": 37,
+      "length_mm": 3947.5748058368617,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 457,
+      "edges": 458,
+      "components": 36,
+      "loops": 37,
+      "length_mm": 3947.5748058368617,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 255,
+      "edges": 257,
+      "components": 35,
+      "loops": 37,
+      "length_mm": 3928.197562472644,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 86,
+       "junction_merge": 36,
+       "fragment": 1
+      },
+      "moved_mm_max": 1.5075844774177178,
+      "moved_mm_mean": 0.6882103452768104,
+      "merged_nodes": 28
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000051": {
+     "source": {
+      "nodes": 1215,
+      "edges": 1203,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 3265.4182063752423,
+      "degree2_nodes": 813,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 402,
+      "edges": 390,
+      "components": 32,
+      "loops": 20,
+      "length_mm": 3265.4182063752364,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 402,
+      "edges": 390,
+      "components": 32,
+      "loops": 20,
+      "length_mm": 3265.4182063752364,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 209,
+      "edges": 197,
+      "components": 32,
+      "loops": 20,
+      "length_mm": 3229.922672274716,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 89,
+       "junction_merge": 23
+      },
+      "moved_mm_max": 1.2119105064363989,
+      "moved_mm_mean": 0.574620324324606,
+      "merged_nodes": 20
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000058": {
+     "source": {
+      "nodes": 1723,
+      "edges": 1735,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 4751.111358405193,
+      "degree2_nodes": 1115,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 608,
+      "edges": 620,
+      "components": 22,
+      "loops": 34,
+      "length_mm": 4751.111358405094,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 608,
+      "edges": 620,
+      "components": 22,
+      "loops": 34,
+      "length_mm": 4751.111358405094,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 306,
+      "edges": 318,
+      "components": 22,
+      "loops": 34,
+      "length_mm": 4719.594459077255,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 134,
+       "junction_merge": 49
+      },
+      "moved_mm_max": 1.5379274795718776,
+      "moved_mm_mean": 0.7198278919766367,
+      "merged_nodes": 37
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000071": {
+     "source": {
+      "nodes": 1181,
+      "edges": 1183,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 3297.013916311551,
+      "degree2_nodes": 814,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 367,
+      "edges": 369,
+      "components": 14,
+      "loops": 16,
+      "length_mm": 3297.0139163115955,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 367,
+      "edges": 369,
+      "components": 14,
+      "loops": 16,
+      "length_mm": 3297.0139163115955,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 196,
+      "edges": 198,
+      "components": 14,
+      "loops": 16,
+      "length_mm": 3273.8845784350847,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 79,
+       "junction_merge": 20
+      },
+      "moved_mm_max": 1.4636868437141786,
+      "moved_mm_mean": 0.654428190812398,
+      "merged_nodes": 17
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000076": {
+     "source": {
+      "nodes": 1598,
+      "edges": 1624,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 4397.6911750099025,
+      "degree2_nodes": 1052,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 546,
+      "edges": 572,
+      "components": 16,
+      "loops": 42,
+      "length_mm": 4397.691175009912,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 546,
+      "edges": 572,
+      "components": 16,
+      "loops": 42,
+      "length_mm": 4397.691175009912,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 283,
+      "edges": 309,
+      "components": 16,
+      "loops": 42,
+      "length_mm": 4380.384164807148,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 111,
+       "junction_merge": 55
+      },
+      "moved_mm_max": 1.491991731209173,
+      "moved_mm_mean": 0.5535997400731489,
+      "merged_nodes": 47
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000080": {
+     "source": {
+      "nodes": 1294,
+      "edges": 1294,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 3764.9858868079623,
+      "degree2_nodes": 872,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 422,
+      "edges": 422,
+      "components": 24,
+      "loops": 24,
+      "length_mm": 3764.9858868079564,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 422,
+      "edges": 422,
+      "components": 24,
+      "loops": 24,
+      "length_mm": 3764.9858868079564,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 244,
+      "edges": 244,
+      "components": 24,
+      "loops": 24,
+      "length_mm": 3734.7449790830756,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 80,
+       "junction_merge": 30
+      },
+      "moved_mm_max": 1.1663177703511516,
+      "moved_mm_mean": 0.5280888171506273,
+      "merged_nodes": 28
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000084": {
+     "source": {
+      "nodes": 1308,
+      "edges": 1308,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 3828.0024981326765,
+      "degree2_nodes": 875,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 433,
+      "edges": 433,
+      "components": 29,
+      "loops": 29,
+      "length_mm": 3828.002498132679,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 433,
+      "edges": 433,
+      "components": 29,
+      "loops": 29,
+      "length_mm": 3828.002498132679,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 236,
+      "edges": 236,
+      "components": 29,
+      "loops": 29,
+      "length_mm": 3807.2769608292615,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 87,
+       "junction_merge": 33
+      },
+      "moved_mm_max": 1.4719863294117788,
+      "moved_mm_mean": 0.570941839285971,
+      "merged_nodes": 30
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000086": {
+     "source": {
+      "nodes": 1554,
+      "edges": 1588,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 4377.296203908815,
+      "degree2_nodes": 1074,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 480,
+      "edges": 514,
+      "components": 11,
+      "loops": 45,
+      "length_mm": 4377.296203908863,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 480,
+      "edges": 514,
+      "components": 11,
+      "loops": 45,
+      "length_mm": 4377.296203908863,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 258,
+      "edges": 292,
+      "components": 11,
+      "loops": 45,
+      "length_mm": 4375.269728911616,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 92,
+       "junction_merge": 45
+      },
+      "moved_mm_max": 1.5030070648454377,
+      "moved_mm_mean": 0.6280648532274187,
+      "merged_nodes": 40
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000115": {
+     "source": {
+      "nodes": 1420,
+      "edges": 1434,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 4226.841225404555,
+      "degree2_nodes": 993,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 427,
+      "edges": 441,
+      "components": 10,
+      "loops": 24,
+      "length_mm": 4226.841225404489,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 427,
+      "edges": 441,
+      "components": 10,
+      "loops": 24,
+      "length_mm": 4226.841225404489,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 214,
+      "edges": 228,
+      "components": 10,
+      "loops": 24,
+      "length_mm": 4191.813752273958,
+      "isolated_vertices": 0,
+      "ops": {
+       "junction_merge": 26,
+       "spur": 98
+      },
+      "moved_mm_max": 1.272961172290549,
+      "moved_mm_mean": 0.6018023223645467,
+      "merged_nodes": 24
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000117": {
+     "source": {
+      "nodes": 1782,
+      "edges": 1827,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 4905.885578970201,
+      "degree2_nodes": 1328,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 454,
+      "edges": 499,
+      "components": 9,
+      "loops": 54,
+      "length_mm": 4905.885578970228,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 454,
+      "edges": 499,
+      "components": 9,
+      "loops": 54,
+      "length_mm": 4905.885578970228,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 272,
+      "edges": 317,
+      "components": 9,
+      "loops": 54,
+      "length_mm": 4910.479961568864,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 72,
+       "junction_merge": 45
+      },
+      "moved_mm_max": 1.6068504147128042,
+      "moved_mm_mean": 0.6035684762416325,
+      "merged_nodes": 37
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000120": {
+     "source": {
+      "nodes": 1706,
+      "edges": 1733,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 5026.485806605749,
+      "degree2_nodes": 1184,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 522,
+      "edges": 549,
+      "components": 15,
+      "loops": 42,
+      "length_mm": 5026.48580660573,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 522,
+      "edges": 549,
+      "components": 15,
+      "loops": 42,
+      "length_mm": 5026.48580660573,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 273,
+      "edges": 299,
+      "components": 15,
+      "loops": 41,
+      "length_mm": 4996.066066212799,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 109,
+       "junction_merge": 38,
+       "tiny_loop": 1
+      },
+      "moved_mm_max": 1.8877178865729565,
+      "moved_mm_mean": 0.6040399433050279,
+      "merged_nodes": 29
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000140": {
+     "source": {
+      "nodes": 845,
+      "edges": 886,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 2501.602725729211,
+      "degree2_nodes": 610,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 235,
+      "edges": 276,
+      "components": 1,
+      "loops": 42,
+      "length_mm": 2501.6027257292044,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 235,
+      "edges": 276,
+      "components": 1,
+      "loops": 42,
+      "length_mm": 2501.6027257292044,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 152,
+      "edges": 193,
+      "components": 1,
+      "loops": 42,
+      "length_mm": 2540.4604438917727,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 24,
+       "junction_merge": 41
+      },
+      "moved_mm_max": 1.568182101370905,
+      "moved_mm_mean": 0.7782118029823021,
+      "merged_nodes": 30
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000147": {
+     "source": {
+      "nodes": 1430,
+      "edges": 1485,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 3891.6614826947102,
+      "degree2_nodes": 880,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 550,
+      "edges": 605,
+      "components": 5,
+      "loops": 60,
+      "length_mm": 3891.6614826947157,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 550,
+      "edges": 605,
+      "components": 5,
+      "loops": 60,
+      "length_mm": 3891.6614826947157,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 260,
+      "edges": 315,
+      "components": 5,
+      "loops": 60,
+      "length_mm": 3883.503357483853,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 123,
+       "junction_merge": 64
+      },
+      "moved_mm_max": 1.4353059096598755,
+      "moved_mm_mean": 0.6567583594751931,
+      "merged_nodes": 54
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000149": {
+     "source": {
+      "nodes": 974,
+      "edges": 1002,
+      "self_loop_edges": 1,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 3114.827014943471,
+      "degree2_nodes": 613,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 361,
+      "edges": 389,
+      "components": 5,
+      "loops": 33,
+      "length_mm": 3114.827014943484,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 361,
+      "edges": 389,
+      "components": 5,
+      "loops": 33,
+      "length_mm": 3114.827014943484,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 172,
+      "edges": 199,
+      "components": 5,
+      "loops": 32,
+      "length_mm": 3091.2260863398596,
+      "isolated_vertices": 0,
+      "ops": {
+       "tiny_loop": 1,
+       "spur": 86,
+       "junction_merge": 29
+      },
+      "moved_mm_max": 1.2967822035595504,
+      "moved_mm_mean": 0.6802588033644098,
+      "merged_nodes": 25
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000155": {
+     "source": {
+      "nodes": 1273,
+      "edges": 1323,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 3613.205751916903,
+      "degree2_nodes": 843,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 430,
+      "edges": 480,
+      "components": 5,
+      "loops": 55,
+      "length_mm": 3613.2057519168984,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 430,
+      "edges": 480,
+      "components": 5,
+      "loops": 55,
+      "length_mm": 3613.2057519168984,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 233,
+      "edges": 283,
+      "components": 5,
+      "loops": 55,
+      "length_mm": 3618.989819223555,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 78,
+       "junction_merge": 51
+      },
+      "moved_mm_max": 1.3097131151836707,
+      "moved_mm_mean": 0.6251397329599001,
+      "merged_nodes": 46
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000158": {
+     "source": {
+      "nodes": 1045,
+      "edges": 1087,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 3324.0170672680138,
+      "degree2_nodes": 679,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 366,
+      "edges": 408,
+      "components": 3,
+      "loops": 45,
+      "length_mm": 3324.017067268017,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 366,
+      "edges": 408,
+      "components": 3,
+      "loops": 45,
+      "length_mm": 3324.017067268017,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 202,
+      "edges": 244,
+      "components": 3,
+      "loops": 45,
+      "length_mm": 3320.205247230096,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 68,
+       "junction_merge": 36
+      },
+      "moved_mm_max": 1.4498670401462408,
+      "moved_mm_mean": 0.6455282731502293,
+      "merged_nodes": 34
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000163": {
+     "source": {
+      "nodes": 1109,
+      "edges": 1149,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 3179.853870343549,
+      "degree2_nodes": 795,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 314,
+      "edges": 354,
+      "components": 3,
+      "loops": 43,
+      "length_mm": 3179.8538703435424,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 314,
+      "edges": 354,
+      "components": 3,
+      "loops": 43,
+      "length_mm": 3179.8538703435424,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 190,
+      "edges": 231,
+      "components": 2,
+      "loops": 43,
+      "length_mm": 3188.664358105911,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 47,
+       "junction_merge": 39,
+       "fragment": 1
+      },
+      "moved_mm_max": 1.2007924451476568,
+      "moved_mm_mean": 0.6172565550447325,
+      "merged_nodes": 34
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000166": {
+     "source": {
+      "nodes": 1367,
+      "edges": 1409,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 3876.554195638679,
+      "degree2_nodes": 860,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 507,
+      "edges": 549,
+      "components": 6,
+      "loops": 48,
+      "length_mm": 3876.5541956386737,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 507,
+      "edges": 549,
+      "components": 6,
+      "loops": 48,
+      "length_mm": 3876.5541956386737,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 245,
+      "edges": 287,
+      "components": 6,
+      "loops": 48,
+      "length_mm": 3855.7129241398006,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 113,
+       "junction_merge": 48
+      },
+      "moved_mm_max": 1.4932213713306433,
+      "moved_mm_mean": 0.684827492869511,
+      "merged_nodes": 42
+     },
+     "limit0_only_removes_isolated": true
+    }
+   }
+  },
+  "TopBrainCTA-simp2": {
+   "summary": {
+    "source.nodes": 638.2,
+    "source.edges": 645.0,
+    "source.self_loop_edges": 0.0,
+    "source.self_loop_edges_without_interior_points": 0.0,
+    "source.length_mm": 2151.000230100914,
+    "source.degree2_nodes": 414.2,
+    "source.degree0_nodes": 0.0,
+    "untouched.nodes": 224.0,
+    "untouched.edges": 230.8,
+    "untouched.components": 13.6,
+    "untouched.loops": 20.4,
+    "untouched.length_mm": 2151.000230100911,
+    "untouched.isolated_vertices": 0.0,
+    "simplified.nodes": 146.4,
+    "simplified.edges": 154.8,
+    "simplified.components": 12.0,
+    "simplified.loops": 20.4,
+    "simplified.length_mm": 2144.7544974088955,
+    "simplified.isolated_vertices": 0.0,
+    "simplified.moved_mm_max": 1.1180269148960844,
+    "simplified.moved_mm_mean": 0.6289390973347129,
+    "simplified.merged_nodes": 17.8,
+    "ops_total": {
+     "fragment": 8,
+     "spur": 147,
+     "junction_merge": 93
+    },
+    "subjects": 5,
+    "limit0_only_removes_isolated_all": true
+   },
+   "per_subject": {
+    "000028": {
+     "source": {
+      "nodes": 852,
+      "edges": 851,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 2546.440811018199,
+      "degree2_nodes": 539,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 313,
+      "edges": 312,
+      "components": 23,
+      "loops": 22,
+      "length_mm": 2546.4408110181926,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 313,
+      "edges": 312,
+      "components": 23,
+      "loops": 22,
+      "length_mm": 2546.4408110181926,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 177,
+      "edges": 179,
+      "components": 20,
+      "loops": 22,
+      "length_mm": 2526.1638413730607,
+      "isolated_vertices": 0,
+      "ops": {
+       "fragment": 3,
+       "spur": 56,
+       "junction_merge": 25
+      },
+      "moved_mm_max": 1.4732902914651036,
+      "moved_mm_mean": 0.6618949612361377,
+      "merged_nodes": 23
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000033": {
+     "source": {
+      "nodes": 335,
+      "edges": 334,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 1106.3849361436808,
+      "degree2_nodes": 210,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 125,
+      "edges": 124,
+      "components": 8,
+      "loops": 7,
+      "length_mm": 1106.384936143685,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 125,
+      "edges": 124,
+      "components": 8,
+      "loops": 7,
+      "length_mm": 1106.384936143685,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 85,
+      "edges": 84,
+      "components": 8,
+      "loops": 7,
+      "length_mm": 1101.299540057055,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 17,
+       "junction_merge": 7
+      },
+      "moved_mm_max": 0.9831458755707627,
+      "moved_mm_mean": 0.6703646326003944,
+      "merged_nodes": 7
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000037": {
+     "source": {
+      "nodes": 675,
+      "edges": 679,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 2371.430015879969,
+      "degree2_nodes": 446,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 229,
+      "edges": 233,
+      "components": 17,
+      "loops": 21,
+      "length_mm": 2371.430015879964,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 229,
+      "edges": 233,
+      "components": 17,
+      "loops": 21,
+      "length_mm": 2371.430015879964,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 164,
+      "edges": 171,
+      "components": 14,
+      "loops": 21,
+      "length_mm": 2370.1047499531055,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 21,
+       "fragment": 3,
+       "junction_merge": 20
+      },
+      "moved_mm_max": 0.9846861624751375,
+      "moved_mm_mean": 0.5554457640774622,
+      "merged_nodes": 20
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000038": {
+     "source": {
+      "nodes": 580,
+      "edges": 591,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 1894.835229847109,
+      "degree2_nodes": 410,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 170,
+      "edges": 181,
+      "components": 7,
+      "loops": 18,
+      "length_mm": 1894.8352298471075,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 170,
+      "edges": 181,
+      "components": 7,
+      "loops": 18,
+      "length_mm": 1894.8352298471075,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 113,
+      "edges": 125,
+      "components": 6,
+      "loops": 18,
+      "length_mm": 1892.9473799750515,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 21,
+       "junction_merge": 15,
+       "fragment": 1
+      },
+      "moved_mm_max": 0.9627797370710534,
+      "moved_mm_mean": 0.6220611675270943,
+      "merged_nodes": 15
+     },
+     "limit0_only_removes_isolated": true
+    },
+    "000044": {
+     "source": {
+      "nodes": 749,
+      "edges": 770,
+      "self_loop_edges": 0,
+      "self_loop_edges_without_interior_points": 0,
+      "length_mm": 2835.9101576156127,
+      "degree2_nodes": 466,
+      "degree0_nodes": 0
+     },
+     "untouched": {
+      "nodes": 283,
+      "edges": 304,
+      "components": 13,
+      "loops": 34,
+      "length_mm": 2835.910157615604,
+      "isolated_vertices": 0
+     },
+     "limit0": {
+      "nodes": 283,
+      "edges": 304,
+      "components": 13,
+      "loops": 34,
+      "length_mm": 2835.910157615604,
+      "isolated_vertices": 0,
+      "ops": {}
+     },
+     "simplified": {
+      "nodes": 193,
+      "edges": 215,
+      "components": 12,
+      "loops": 34,
+      "length_mm": 2833.256975686206,
+      "isolated_vertices": 0,
+      "ops": {
+       "spur": 32,
+       "junction_merge": 26,
+       "fragment": 1
+      },
+      "moved_mm_max": 1.1862325078983655,
+      "moved_mm_mean": 0.6349289612324763,
+      "merged_nodes": 24
+     },
+     "limit0_only_removes_isolated": true
+    }
+   }
+  }
+ }
+}

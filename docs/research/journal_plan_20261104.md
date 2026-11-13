@@ -222,6 +222,8 @@ At today's usage rate (~50 GPU-h/day) this fits in about 2 months, if the H100 q
 - **Baseline reproducibility:** Vesselpose reports that it could not reproduce the published baselines. Use published recipes and report our numbers alongside theirs.
 - **Licenses:** CC BY-NC sets are research-only. Trexplorer Super data is academic-only, and several codebases have no license.
 - **GT-tool bias:** if Voreen or Kimimaro produced the GT, the skeletonise baseline using the same tool is favoured. Use a different tool, or report both.
+- **GT coverage (10 Nov, §4.14):** 40–59% of the false node detections on IXI and TopBrain CTA are outside the vessel mask, and 97% of BRAVA's are at the patch face, mostly off any traced vessel. Precision on these datasets is bounded by what the labels cover; it concerns every method and must be stated. It makes the IXI mask provenance item more important.
+- **Terminals:** recall 0.07–0.31 on real data whatever the edge length (0.92 on SyntheticMRI): a free end is where the mask or the manual trace stops, not an image feature.
 - **Backbone:** U-KAN shows no gain at our budget. DSCNet is RUNNING; its capacity is 3× the U-Net's, so a straight-branch control is needed before any claim.
 
 ## 11. Checklist (ordered)
@@ -243,7 +245,20 @@ Work through the phases in order. Within a phase, items can run in parallel unle
 - [x] **C** DSCNet (kernels 3 and 9) on both stages; size-matched controls U-Net wide and DSC3 slim (dense_traced_model §4.11).
 - [ ] **C** Full paired backbone comparison: U-Net / U-KAN concat / U-KAN add / MLP / DSCNet 3 / DSCNet 9, with shared thresholds, long edges and topology.
 - [x] **C** Curve shape (9 Nov, §4.12): short edges coiled; arc-length penalty λ = 0.1 adopted as the stage-2 training default (decided by U); fit K rule not adopted.
-- [ ] **U** Number of controls: (a) one K24 head + output compression or (b) current K rule + output compression (tied on one seed, §4.12).
+- [x] **U** Number of controls (decided 11 Nov): (a) one K24 head + output compression at 0.5 voxel; both are the stage-2 defaults in code.
+- [x] **C** Missed-node diagnosis (10 Nov, dense_traced_model §4.14): nodes on GT edges shorter than the 2 mm matching tolerance hold 70% of the IXI misses; false detections sit mostly on structures the GT does not label; stage 2 reaches edge F1 0.66–0.70 with perfect nodes.
+- [x] **U** GT definition (decided 11 Nov): every dataset's graphs are simplified at 2 mm (criterion in §4.14; plan entries `<dataset>-simp2`, originals untouched). Every method, baselines included, is trained and scored on it; results on the original GT are reported next to it.
+- [x] **C** Fix arm on the simplified GT, both stages (10 Nov, §4.14): on the same validation GT, edge F1 +0.082 [+0.073, +0.091] on IXI and +0.052 [+0.039, +0.067] on TopBrain CTA; BRAVA unchanged. Single seed.
+- [ ] **C** Before the GT definition is adopted: 1 mm sensitivity arm (caches built), RelationFormer on the simplified GT, an audit sheet of removed nodes for U (all PROPOSED).
+- [x] **C** Training length, stage 1 (10 Nov, §4.14): 15k updates was not converged (2×: +0.023 node F1 on IXI and BRAVA, BRAVA edge F1 +0.047; TopBrain CTA starts to overfit at 2×).
+- [x] **U** Stage-1 schedule (decided 11 Nov): about 100 epochs, capped at 60k updates.
+- [x] **C** Backbone comparison at that length (12 Nov, §4.15): U-Net wide +0.017 edge F1 on IXI and +0.060 on BRAVA, no gain on TopBrain CTA; DSC3 slim's small-size advantage mostly disappears; DSC3 equals U-Net wide on IXI, loses on BRAVA, leads on TopBrain CTA at twice the cost. Single seed.
+- [x] **U** Backbone (decided 12 Nov): U-Net wide; default of new training runs. New models build only the K24 head.
+- [x] **C** Stage-2 length (12 Nov): 2× gives +0.006 edge F1; 7.5k updates kept unless U prefers 15k.
+- [x] **C** Long edges (§4.15): node-role head and two-hop candidates on the simplified GT, both without edge F1 gain (ceiling +0.08). Also not adopted: degree-2 contraction, centreline tips as end nodes, probability-following fallback path.
+- [x] **C** Long edges, decoding attempts (12 Nov, §4.15 item 7): exclusive / dedupe two-hop decoding and hysteresis on the U-Net wide models; no edge F1 or long-edge gain, topology improves. Long edges are reported as a limitation; the lever left is stage 1 (endpoints, centreline continuity).
+- [x] **C** K32 head (10 Nov, §4.14): no gain over K24 on IXI or BRAVA; K24 kept.
+- [ ] **C** Missing endpoints are the largest loss of long edges (43–70%, §4.15); no fix yet (PROPOSED: after the role arm, look at terminals).
 - [x] **C** Feature width (9 Nov, §4.13): test-time ablation and 16-channel training; 32 channels kept (decided by U).
 - [ ] **C** Re-run the U-Net baseline on current code, to close the 30 Oct vs 3 Nov code gap.
 - [ ] **C** Fix the BRAVA node-threshold confound (one fixed node threshold with re-traced evaluation) for all comparisons.
@@ -280,7 +295,8 @@ Work through the phases in order. Within a phase, items can run in parallel unle
   - long-edge recovery;
   - representation size;
   - compute.
-- [ ] **C** Patch-to-volume stitching (for E7), if the full-volume pipeline is ready.
+- [ ] **C** Patch-to-volume stitching (for E7). First version DONE 12 Nov (dense_traced_model §4.16): cores of overlapping patches, cut points matched one-to-one; near-lossless on GT patch graphs (node / edge F1 0.99). Stitched predictions: IXI node / edge F1 0.536 / 0.372, centreline P / R 0.955 / 0.668. Follow-ups DONE 12 Nov: using the overlap for unmatched cut points is not adopted (edge F1 falls on all three datasets); against the zero-overlap tiling with face matching (Vesselmerger), the overlap method gains edge F1 +0.071 [+0.057, +0.087] on IXI and +0.031 [+0.016, +0.046] on BRAVA, and ties on TopBrain CTA; one-to-one matching beats greedy by +0.026 to +0.051 edge F1; volume-level thresholds change edge F1 by at most +0.008. Single seed, validation. PROPOSED: extend the node-threshold range below 0.25 for BRAVA and TopBrain CTA.
+- [ ] **C** Defence of the 2 mm GT (12 Nov, §4.14): on expert-traced BRAVA, 96.8% of the operations remove patch-cropping leftovers; 0.26% of the nodes are changed inside a patch. At volume level (DONE 12 Nov) the rule makes 20 junction merges in the 8 BRAVA validation subjects (203.0 → 200.5 nodes per volume) and the stitched prediction scores the same against the untouched expert GT (node / edge F1 0.211 / 0.084 against 0.211 / 0.088). Decoder ceiling (DONE 12 Nov, ten-patch overfit): node / edge F1 on the training patches 0.883 / 0.711 (IXI), 0.975 / 0.925 (BRAVA), 0.898 / 0.730 (TopBrain CTA) on the original GT against 0.994 / 0.975, 0.997 / 0.989, 0.982 / 0.975 on the 2 mm GT; every missed node has another GT node within 2 mm. One seed. PROPOSED: count of sub-2 mm labelled Circle-of-Willis segments on TopBrain.
 - [ ] **C** Baselines, on our splits and with published recipes:
   - [x] RelationFormer (IXI, BRAVA, SyntheticMRI);
   - [ ] RelationFormer on the new datasets;

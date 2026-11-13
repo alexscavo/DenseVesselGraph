@@ -1,0 +1,1112 @@
+{
+ "dataset": "BRAVA",
+ "run": "traced_arcpen_r1109",
+ "matching_tolerance_mm": 2.0,
+ "splits": {
+  "monitor": {
+   "node_threshold": 0.3,
+   "patches": 256,
+   "gt_nodes": 4194,
+   "predicted_nodes": 3643,
+   "precision": 0.6030743892396376,
+   "recall": 0.5238435860753458,
+   "f1": 0.5606737271915274,
+   "by_type": {
+    "boundary": {
+     "nodes": 2917,
+     "share_of_gt": 0.695517405817835,
+     "recall": 0.6798080219403497,
+     "share_of_all_misses": 0.46770155232849275,
+     "miss_reasons": {
+      "peak below threshold": 0.6905781584582441,
+      "only peak belongs to another GT node": 0.14453961456102785,
+      "detection 2-4 mm away": 0.07173447537473233,
+      "heat but no peak": 0.07173447537473233,
+      "no response": 0.021413276231263382
+     },
+     "by_shortest_incident_edge": {
+      "0-1 mm": {
+       "nodes": 130,
+       "recall": 0.4,
+       "share_of_misses": 0.0835117773019272
+      },
+      "1-2 mm": {
+       "nodes": 235,
+       "recall": 0.4808510638297872,
+       "share_of_misses": 0.13062098501070663
+      },
+      "2-4 mm": {
+       "nodes": 357,
+       "recall": 0.5266106442577031,
+       "share_of_misses": 0.1809421841541756
+      },
+      "4-8 mm": {
+       "nodes": 468,
+       "recall": 0.7072649572649573,
+       "share_of_misses": 0.14668094218415417
+      },
+      ">= 8 mm": {
+       "nodes": 1670,
+       "recall": 0.7580838323353294,
+       "share_of_misses": 0.43254817987152033
+      }
+     },
+     "by_nearest_gt_node": {
+      "0-1 mm": {
+       "nodes": 297,
+       "recall": 0.4208754208754209,
+       "share_of_misses": 0.1841541755888651
+      },
+      "1-2 mm": {
+       "nodes": 361,
+       "recall": 0.5457063711911357,
+       "share_of_misses": 0.17558886509635974
+      },
+      "2-4 mm": {
+       "nodes": 753,
+       "recall": 0.6958831341301461,
+       "share_of_misses": 0.24518201284796573
+      },
+      ">= 4 mm": {
+       "nodes": 1506,
+       "recall": 0.7549800796812749,
+       "share_of_misses": 0.3950749464668094
+      }
+     },
+     "by_vessel_radius": {
+      "0.6-1 mm": {
+       "nodes": 1,
+       "recall": 0.0,
+       "share_of_misses": 0.0010706638115631692
+      },
+      "1-1.5 mm": {
+       "nodes": 6,
+       "recall": 0.0,
+       "share_of_misses": 0.006423982869379015
+      },
+      ">= 1.5 mm": {
+       "nodes": 2910,
+       "recall": 0.6814432989690722,
+       "share_of_misses": 0.9925053533190579
+      }
+     },
+     "by_distance_to_face": {
+      "0-1 voxels": {
+       "nodes": 2681,
+       "recall": 0.6795971652368519,
+       "share_of_misses": 0.9197002141327623
+      },
+      "1-3 voxels": {
+       "nodes": 209,
+       "recall": 0.7607655502392344,
+       "share_of_misses": 0.05353319057815846
+      },
+      "3-8 voxels": {
+       "nodes": 26,
+       "recall": 0.07692307692307693,
+       "share_of_misses": 0.02569593147751606
+      },
+      ">= 8 voxels": {
+       "nodes": 1,
+       "recall": 0.0,
+       "share_of_misses": 0.0010706638115631692
+      }
+     },
+     "median_heat_at_node": {
+      "matched": 0.32766830921173096,
+      "missed": 0.16667540371418
+     },
+     "median_centreline_probability": {
+      "matched": 0.9539660811424255,
+      "missed": 0.7676898241043091
+     }
+    },
+    "junction": {
+     "nodes": 614,
+     "share_of_gt": 0.14639961850262279,
+     "recall": 0.26547231270358307,
+     "share_of_all_misses": 0.2258387581372058,
+     "miss_reasons": {
+      "peak below threshold": 0.7738359201773836,
+      "only peak belongs to another GT node": 0.12195121951219512,
+      "heat but no peak": 0.06873614190687362,
+      "detection 2-4 mm away": 0.03547671840354767
+     },
+     "by_shortest_incident_edge": {
+      "0-1 mm": {
+       "nodes": 57,
+       "recall": 0.49122807017543857,
+       "share_of_misses": 0.06430155210643015
+      },
+      "1-2 mm": {
+       "nodes": 87,
+       "recall": 0.3793103448275862,
+       "share_of_misses": 0.1197339246119734
+      },
+      "2-4 mm": {
+       "nodes": 96,
+       "recall": 0.2708333333333333,
+       "share_of_misses": 0.15521064301552107
+      },
+      "4-8 mm": {
+       "nodes": 175,
+       "recall": 0.25142857142857145,
+       "share_of_misses": 0.29046563192904656
+      },
+      ">= 8 mm": {
+       "nodes": 199,
+       "recall": 0.16080402010050251,
+       "share_of_misses": 0.37028824833702884
+      }
+     },
+     "by_nearest_gt_node": {
+      "0-1 mm": {
+       "nodes": 63,
+       "recall": 0.4603174603174603,
+       "share_of_misses": 0.07538802660753881
+      },
+      "1-2 mm": {
+       "nodes": 93,
+       "recall": 0.3763440860215054,
+       "share_of_misses": 0.1286031042128603
+      },
+      "2-4 mm": {
+       "nodes": 134,
+       "recall": 0.22388059701492538,
+       "share_of_misses": 0.23059866962305986
+      },
+      ">= 4 mm": {
+       "nodes": 324,
+       "recall": 0.21296296296296297,
+       "share_of_misses": 0.565410199556541
+      }
+     },
+     "by_vessel_radius": {
+      "1-1.5 mm": {
+       "nodes": 2,
+       "recall": 0.0,
+       "share_of_misses": 0.004434589800443459
+      },
+      ">= 1.5 mm": {
+       "nodes": 612,
+       "recall": 0.26633986928104575,
+       "share_of_misses": 0.9955654101995566
+      }
+     },
+     "by_distance_to_face": {
+      "0-1 voxels": {
+       "nodes": 47,
+       "recall": 0.5106382978723404,
+       "share_of_misses": 0.050997782705099776
+      },
+      "1-3 voxels": {
+       "nodes": 104,
+       "recall": 0.375,
+       "share_of_misses": 0.14412416851441243
+      },
+      "3-8 voxels": {
+       "nodes": 198,
+       "recall": 0.21212121212121213,
+       "share_of_misses": 0.3458980044345898
+      },
+      ">= 8 voxels": {
+       "nodes": 265,
+       "recall": 0.2188679245283019,
+       "share_of_misses": 0.458980044345898
+      }
+     },
+     "median_heat_at_node": {
+      "matched": 0.23934932053089142,
+      "missed": 0.13296423852443695
+     },
+     "median_centreline_probability": {
+      "matched": 0.9908744096755981,
+      "missed": 0.9802808165550232
+     }
+    },
+    "terminal": {
+     "nodes": 652,
+     "share_of_gt": 0.15546018121125418,
+     "recall": 0.0736196319018405,
+     "share_of_all_misses": 0.3024536805207812,
+     "miss_reasons": {
+      "peak below threshold": 0.7483443708609272,
+      "heat but no peak": 0.13410596026490065,
+      "no response": 0.08278145695364239,
+      "only peak belongs to another GT node": 0.019867549668874173,
+      "detection 2-4 mm away": 0.014900662251655629
+     },
+     "by_shortest_incident_edge": {
+      "0-1 mm": {
+       "nodes": 19,
+       "recall": 0.05263157894736842,
+       "share_of_misses": 0.029801324503311258
+      },
+      "1-2 mm": {
+       "nodes": 26,
+       "recall": 0.15384615384615385,
+       "share_of_misses": 0.03642384105960265
+      },
+      "2-4 mm": {
+       "nodes": 59,
+       "recall": 0.06779661016949153,
+       "share_of_misses": 0.09105960264900662
+      },
+      "4-8 mm": {
+       "nodes": 75,
+       "recall": 0.16,
+       "share_of_misses": 0.10430463576158941
+      },
+      ">= 8 mm": {
+       "nodes": 473,
+       "recall": 0.05708245243128964,
+       "share_of_misses": 0.7384105960264901
+      }
+     },
+     "by_nearest_gt_node": {
+      "0-1 mm": {
+       "nodes": 24,
+       "recall": 0.08333333333333333,
+       "share_of_misses": 0.03642384105960265
+      },
+      "1-2 mm": {
+       "nodes": 36,
+       "recall": 0.19444444444444445,
+       "share_of_misses": 0.048013245033112585
+      },
+      "2-4 mm": {
+       "nodes": 95,
+       "recall": 0.12631578947368421,
+       "share_of_misses": 0.13741721854304637
+      },
+      ">= 4 mm": {
+       "nodes": 497,
+       "recall": 0.05432595573440644,
+       "share_of_misses": 0.7781456953642384
+      }
+     },
+     "by_vessel_radius": {
+      "0-0.01 mm": {
+       "nodes": 6,
+       "recall": 0.0,
+       "share_of_misses": 0.009933774834437087
+      },
+      "1-1.5 mm": {
+       "nodes": 3,
+       "recall": 0.0,
+       "share_of_misses": 0.004966887417218543
+      },
+      ">= 1.5 mm": {
+       "nodes": 643,
+       "recall": 0.07465007776049767,
+       "share_of_misses": 0.9850993377483444
+      }
+     },
+     "by_distance_to_face": {
+      "0-1 voxels": {
+       "nodes": 102,
+       "recall": 0.4019607843137255,
+       "share_of_misses": 0.10099337748344371
+      },
+      "1-3 voxels": {
+       "nodes": 100,
+       "recall": 0.06,
+       "share_of_misses": 0.15562913907284767
+      },
+      "3-8 voxels": {
+       "nodes": 203,
+       "recall": 0.0,
+       "share_of_misses": 0.3360927152317881
+      },
+      ">= 8 voxels": {
+       "nodes": 247,
+       "recall": 0.004048582995951417,
+       "share_of_misses": 0.40728476821192056
+      }
+     },
+     "median_heat_at_node": {
+      "matched": 0.26895250380039215,
+      "missed": 0.06187598779797554
+     },
+     "median_centreline_probability": {
+      "matched": 0.9184726178646088,
+      "missed": 0.6636689305305481
+     }
+    },
+    "isolated": {
+     "nodes": 11,
+     "share_of_gt": 0.0026227944682880307,
+     "recall": 0.2727272727272727,
+     "share_of_all_misses": 0.00400600901352028,
+     "miss_reasons": {
+      "peak below threshold": 0.75,
+      "heat but no peak": 0.25
+     },
+     "by_shortest_incident_edge": {},
+     "by_nearest_gt_node": {
+      "2-4 mm": {
+       "nodes": 3,
+       "recall": 0.3333333333333333,
+       "share_of_misses": 0.25
+      },
+      ">= 4 mm": {
+       "nodes": 8,
+       "recall": 0.25,
+       "share_of_misses": 0.75
+      }
+     },
+     "by_vessel_radius": {
+      ">= 1.5 mm": {
+       "nodes": 11,
+       "recall": 0.2727272727272727,
+       "share_of_misses": 1.0
+      }
+     },
+     "by_distance_to_face": {
+      "0-1 voxels": {
+       "nodes": 11,
+       "recall": 0.2727272727272727,
+       "share_of_misses": 1.0
+      }
+     },
+     "median_heat_at_node": {
+      "matched": 0.32082128524780273,
+      "missed": 0.10243474692106247
+     },
+     "median_centreline_probability": {
+      "matched": 0.8840392827987671,
+      "missed": 0.31107332557439804
+     }
+    }
+   },
+   "miss_reasons": {
+    "peak below threshold": 0.7270906359539309,
+    "only peak belongs to another GT node": 0.10115172759138708,
+    "heat but no peak": 0.09063595393089635,
+    "detection 2-4 mm away": 0.04606910365548322,
+    "no response": 0.03505257886830245
+   },
+   "all_nodes": {
+    "by_shortest_incident_edge": {
+     "0-1 mm": {
+      "nodes": 206,
+      "recall": 0.3932038834951456,
+      "share_of_misses": 0.06259389083625438
+     },
+     "1-2 mm": {
+      "nodes": 348,
+      "recall": 0.43103448275862066,
+      "share_of_misses": 0.09914872308462694
+     },
+     "2-4 mm": {
+      "nodes": 512,
+      "recall": 0.42578125,
+      "share_of_misses": 0.1472208312468703
+     },
+     "4-8 mm": {
+      "nodes": 718,
+      "recall": 0.5389972144846796,
+      "share_of_misses": 0.1657486229344016
+     },
+     ">= 8 mm": {
+      "nodes": 2342,
+      "recall": 0.5657557643040136,
+      "share_of_misses": 0.5092638958437656
+     }
+    },
+    "by_nearest_gt_node": {
+     "0-1 mm": {
+      "nodes": 384,
+      "recall": 0.40625,
+      "share_of_misses": 0.11417125688532799
+     },
+     "1-2 mm": {
+      "nodes": 490,
+      "recall": 0.48775510204081635,
+      "share_of_misses": 0.1256885327991988
+     },
+     "2-4 mm": {
+      "nodes": 985,
+      "recall": 0.5756345177664974,
+      "share_of_misses": 0.20931397095643464
+     },
+     ">= 4 mm": {
+      "nodes": 2335,
+      "recall": 0.5289079229122056,
+      "share_of_misses": 0.5508262393590385
+     }
+    },
+    "by_vessel_radius": {
+     "0-0.01 mm": {
+      "nodes": 6,
+      "recall": 0.0,
+      "share_of_misses": 0.0030045067601402104
+     },
+     "0.6-1 mm": {
+      "nodes": 1,
+      "recall": 0.0,
+      "share_of_misses": 0.000500751126690035
+     },
+     "1-1.5 mm": {
+      "nodes": 11,
+      "recall": 0.0,
+      "share_of_misses": 0.005508262393590386
+     },
+     ">= 1.5 mm": {
+      "nodes": 4176,
+      "recall": 0.5261015325670498,
+      "share_of_misses": 0.9909864797195793
+     }
+    }
+   },
+   "recall_nodes_with_all_edges_>=_1mm": {
+    "nodes": 3988,
+    "share_of_gt": 0.9508822126847878,
+    "recall": 0.5305917753259779
+   },
+   "recall_nodes_with_all_edges_>=_2mm": {
+    "nodes": 3640,
+    "share_of_gt": 0.8679065331425846,
+    "recall": 0.5401098901098901
+   },
+   "unmatched_predictions": {
+    "total": 1446,
+    "by_place": {
+     "inside the vessel mask, off the GT graph": {
+      "share": 0.5594744121715076,
+      "median_score": 0.3557748794555664,
+      "median_distance_to_gt_node_mm": 8.15062427520752,
+      "within_3_voxels_of_face": 0.9950556242274413,
+      "by_score": {
+       "0.3-0.4 ": 620,
+       "0.4-0.5 ": 167,
+       "0.5-0.7 ": 22,
+       "0.7-1.01 ": 0
+      }
+     },
+     "within 2 mm of a GT node": {
+      "share": 0.29322268326417705,
+      "median_score": 0.37205058336257935,
+      "median_distance_to_gt_node_mm": 1.1057358980178833,
+      "within_3_voxels_of_face": 0.964622641509434,
+      "by_score": {
+       "0.3-0.4 ": 279,
+       "0.4-0.5 ": 128,
+       "0.5-0.7 ": 17,
+       "0.7-1.01 ": 0
+      }
+     },
+     "on a GT centreline, between nodes": {
+      "share": 0.14730290456431536,
+      "median_score": 0.3380771279335022,
+      "median_distance_to_gt_node_mm": 3.170759916305542,
+      "within_3_voxels_of_face": 0.892018779342723,
+      "by_score": {
+       "0.3-0.4 ": 194,
+       "0.4-0.5 ": 17,
+       "0.5-0.7 ": 2,
+       "0.7-1.01 ": 0
+      }
+     }
+    }
+   },
+   "gt_edges": {
+    "total": 2677,
+    "by_arc": {
+     "0-1 mm": {
+      "edges": 110,
+      "share": 0.04109077325364214,
+      "both_endpoints_matched": 0.17272727272727273
+     },
+     "1-2 mm": {
+      "edges": 188,
+      "share": 0.07022786701531565,
+      "both_endpoints_matched": 0.2712765957446808
+     },
+     "2-4 mm": {
+      "edges": 278,
+      "share": 0.1038475905864774,
+      "both_endpoints_matched": 0.20863309352517986
+     },
+     "4-8 mm": {
+      "edges": 430,
+      "share": 0.16062756817332835,
+      "both_endpoints_matched": 0.2558139534883721
+     },
+     ">= 8 mm": {
+      "edges": 1671,
+      "share": 0.6242062009712365,
+      "both_endpoints_matched": 0.22022740873728305
+     }
+    }
+   }
+  },
+  "val": {
+   "node_threshold": 0.3,
+   "patches": 1796,
+   "gt_nodes": 30786,
+   "predicted_nodes": 26895,
+   "precision": 0.5896263245956498,
+   "recall": 0.5151042681738452,
+   "f1": 0.5498517709471057,
+   "by_type": {
+    "boundary": {
+     "nodes": 21613,
+     "share_of_gt": 0.7020398882608978,
+     "recall": 0.6694581964558368,
+     "share_of_all_misses": 0.47856377277599144,
+     "miss_reasons": {
+      "peak below threshold": 0.7025475923852184,
+      "only peak belongs to another GT node": 0.14361702127659576,
+      "heat but no peak": 0.06732922732362821,
+      "detection 2-4 mm away": 0.05977043673012318,
+      "no response": 0.02673572228443449
+     },
+     "by_shortest_incident_edge": {
+      "0-1 mm": {
+       "nodes": 1117,
+       "recall": 0.40555058191584603,
+       "share_of_misses": 0.0929451287793953
+      },
+      "1-2 mm": {
+       "nodes": 1545,
+       "recall": 0.47572815533980584,
+       "share_of_misses": 0.11338185890257559
+      },
+      "2-4 mm": {
+       "nodes": 2419,
+       "recall": 0.5469202149648615,
+       "share_of_misses": 0.1534154535274356
+      },
+      "4-8 mm": {
+       "nodes": 4083,
+       "recall": 0.671565025716385,
+       "share_of_misses": 0.18770996640537513
+      },
+      ">= 8 mm": {
+       "nodes": 12010,
+       "recall": 0.751706910907577,
+       "share_of_misses": 0.4174132138857783
+      }
+     },
+     "by_nearest_gt_node": {
+      "0-1 mm": {
+       "nodes": 2057,
+       "recall": 0.4049586776859504,
+       "share_of_misses": 0.1713325867861142
+      },
+      "1-2 mm": {
+       "nodes": 2669,
+       "recall": 0.5620082427875609,
+       "share_of_misses": 0.16363381858902576
+      },
+      "2-4 mm": {
+       "nodes": 5051,
+       "recall": 0.6547218372599485,
+       "share_of_misses": 0.24412094064949608
+      },
+      ">= 4 mm": {
+       "nodes": 11836,
+       "recall": 0.7459445758702264,
+       "share_of_misses": 0.4209126539753639
+      }
+     },
+     "by_vessel_radius": {
+      "0-0.01 mm": {
+       "nodes": 12,
+       "recall": 0.0,
+       "share_of_misses": 0.0016797312430011197
+      },
+      "0.6-1 mm": {
+       "nodes": 11,
+       "recall": 0.0,
+       "share_of_misses": 0.001539753639417693
+      },
+      "1-1.5 mm": {
+       "nodes": 56,
+       "recall": 0.08928571428571429,
+       "share_of_misses": 0.00713885778275476
+      },
+      ">= 1.5 mm": {
+       "nodes": 21534,
+       "recall": 0.6716819912696201,
+       "share_of_misses": 0.9896416573348265
+      }
+     },
+     "by_distance_to_face": {
+      "0-1 voxels": {
+       "nodes": 20106,
+       "recall": 0.6690042773301502,
+       "share_of_misses": 0.9315509518477044
+      },
+      "1-3 voxels": {
+       "nodes": 1356,
+       "recall": 0.7485250737463127,
+       "share_of_misses": 0.04773236282194849
+      },
+      "3-8 voxels": {
+       "nodes": 147,
+       "recall": 0.02040816326530612,
+       "share_of_misses": 0.020156774916013438
+      },
+      ">= 8 voxels": {
+       "nodes": 4,
+       "recall": 0.0,
+       "share_of_misses": 0.0005599104143337066
+      }
+     },
+     "median_heat_at_node": {
+      "matched": 0.3380771279335022,
+      "missed": 0.16026602685451508
+     },
+     "median_centreline_probability": {
+      "matched": 0.954647421836853,
+      "missed": 0.7446563243865967
+     }
+    },
+    "junction": {
+     "nodes": 4345,
+     "share_of_gt": 0.14113558110829597,
+     "recall": 0.2372842347525892,
+     "share_of_all_misses": 0.2219989281886388,
+     "miss_reasons": {
+      "peak below threshold": 0.7809293904646952,
+      "only peak belongs to another GT node": 0.11768255884127941,
+      "heat but no peak": 0.07815328907664454,
+      "detection 2-4 mm away": 0.02051901025950513,
+      "no response": 0.002715751357875679
+     },
+     "by_shortest_incident_edge": {
+      "0-1 mm": {
+       "nodes": 407,
+       "recall": 0.4250614250614251,
+       "share_of_misses": 0.07060953530476766
+      },
+      "1-2 mm": {
+       "nodes": 594,
+       "recall": 0.31313131313131315,
+       "share_of_misses": 0.12311406155703078
+      },
+      "2-4 mm": {
+       "nodes": 711,
+       "recall": 0.24050632911392406,
+       "share_of_misses": 0.16294508147254075
+      },
+      "4-8 mm": {
+       "nodes": 1212,
+       "recall": 0.22442244224422442,
+       "share_of_misses": 0.2836451418225709
+      },
+      ">= 8 mm": {
+       "nodes": 1421,
+       "recall": 0.16115411681914146,
+       "share_of_misses": 0.3596861798430899
+      }
+     },
+     "by_nearest_gt_node": {
+      "0-1 mm": {
+       "nodes": 411,
+       "recall": 0.4209245742092457,
+       "share_of_misses": 0.07181653590826795
+      },
+      "1-2 mm": {
+       "nodes": 659,
+       "recall": 0.3110773899848255,
+       "share_of_misses": 0.13699456849728425
+      },
+      "2-4 mm": {
+       "nodes": 971,
+       "recall": 0.21318228630278063,
+       "share_of_misses": 0.23053711526855764
+      },
+      ">= 4 mm": {
+       "nodes": 2304,
+       "recall": 0.1935763888888889,
+       "share_of_misses": 0.5606517803258901
+      }
+     },
+     "by_vessel_radius": {
+      "0-0.01 mm": {
+       "nodes": 8,
+       "recall": 0.0,
+       "share_of_misses": 0.0024140012070006035
+      },
+      "0.6-1 mm": {
+       "nodes": 6,
+       "recall": 0.0,
+       "share_of_misses": 0.0018105009052504525
+      },
+      ">= 1.5 mm": {
+       "nodes": 4331,
+       "recall": 0.23805125836989147,
+       "share_of_misses": 0.995775497887749
+      }
+     },
+     "by_distance_to_face": {
+      "0-1 voxels": {
+       "nodes": 347,
+       "recall": 0.4899135446685879,
+       "share_of_misses": 0.053409776704888355
+      },
+      "1-3 voxels": {
+       "nodes": 708,
+       "recall": 0.327683615819209,
+       "share_of_misses": 0.1436330718165359
+      },
+      "3-8 voxels": {
+       "nodes": 1356,
+       "recall": 0.18952802359882007,
+       "share_of_misses": 0.3316234158117079
+      },
+      ">= 8 voxels": {
+       "nodes": 1934,
+       "recall": 0.1923474663908997,
+       "share_of_misses": 0.4713337356668678
+      }
+     },
+     "median_heat_at_node": {
+      "matched": 0.25982561707496643,
+      "missed": 0.14033624529838562
+     },
+     "median_centreline_probability": {
+      "matched": 0.9916841983795166,
+      "missed": 0.9790357351303101
+     }
+    },
+    "terminal": {
+     "nodes": 4683,
+     "share_of_gt": 0.15211459754433834,
+     "recall": 0.07196241725389707,
+     "share_of_all_misses": 0.29113076098606644,
+     "miss_reasons": {
+      "peak below threshold": 0.7533364012885412,
+      "heat but no peak": 0.1194201564657156,
+      "no response": 0.09618039576622181,
+      "only peak belongs to another GT node": 0.020708697653014266,
+      "detection 2-4 mm away": 0.010354348826507133
+     },
+     "by_shortest_incident_edge": {
+      "0-1 mm": {
+       "nodes": 198,
+       "recall": 0.06565656565656566,
+       "share_of_misses": 0.04256787850897377
+      },
+      "1-2 mm": {
+       "nodes": 165,
+       "recall": 0.13333333333333333,
+       "share_of_misses": 0.032903819604233775
+      },
+      "2-4 mm": {
+       "nodes": 315,
+       "recall": 0.11746031746031746,
+       "share_of_misses": 0.06396686608375518
+      },
+      "4-8 mm": {
+       "nodes": 813,
+       "recall": 0.07749077490774908,
+       "share_of_misses": 0.17257248044178555
+      },
+      ">= 8 mm": {
+       "nodes": 3192,
+       "recall": 0.06328320802005012,
+       "share_of_misses": 0.6879889553612517
+      }
+     },
+     "by_nearest_gt_node": {
+      "0-1 mm": {
+       "nodes": 204,
+       "recall": 0.06372549019607843,
+       "share_of_misses": 0.04394845835250805
+      },
+      "1-2 mm": {
+       "nodes": 261,
+       "recall": 0.16091954022988506,
+       "share_of_misses": 0.05039116428900138
+      },
+      "2-4 mm": {
+       "nodes": 677,
+       "recall": 0.1137370753323486,
+       "share_of_misses": 0.13805798435342845
+      },
+      ">= 4 mm": {
+       "nodes": 3541,
+       "recall": 0.05789325049421067,
+       "share_of_misses": 0.7676023930050622
+      }
+     },
+     "by_vessel_radius": {
+      "0-0.01 mm": {
+       "nodes": 32,
+       "recall": 0.0,
+       "share_of_misses": 0.007363092498849517
+      },
+      "0.6-1 mm": {
+       "nodes": 12,
+       "recall": 0.0,
+       "share_of_misses": 0.0027611596870685687
+      },
+      "1-1.5 mm": {
+       "nodes": 30,
+       "recall": 0.0,
+       "share_of_misses": 0.006902899217671422
+      },
+      ">= 1.5 mm": {
+       "nodes": 4609,
+       "recall": 0.07311781297461488,
+       "share_of_misses": 0.9829728485964105
+      }
+     },
+     "by_distance_to_face": {
+      "0-1 voxels": {
+       "nodes": 810,
+       "recall": 0.3567901234567901,
+       "share_of_misses": 0.1198803497468937
+      },
+      "1-3 voxels": {
+       "nodes": 630,
+       "recall": 0.07301587301587302,
+       "share_of_misses": 0.13437643810400368
+      },
+      "3-8 voxels": {
+       "nodes": 1403,
+       "recall": 0.0007127583749109052,
+       "share_of_misses": 0.32259549010584443
+      },
+      ">= 8 voxels": {
+       "nodes": 1840,
+       "recall": 0.0005434782608695652,
+       "share_of_misses": 0.4231477220432582
+      }
+     },
+     "median_heat_at_node": {
+      "matched": 0.29098087549209595,
+      "missed": 0.06371499598026276
+     },
+     "median_centreline_probability": {
+      "matched": 0.9273632764816284,
+      "missed": 0.7025300860404968
+     }
+    },
+    "isolated": {
+     "nodes": 145,
+     "share_of_gt": 0.004709933086467875,
+     "recall": 0.14482758620689656,
+     "share_of_all_misses": 0.008306538049303322,
+     "miss_reasons": {
+      "peak below threshold": 0.6290322580645161,
+      "heat but no peak": 0.1774193548387097,
+      "only peak belongs to another GT node": 0.08064516129032258,
+      "no response": 0.07258064516129033,
+      "detection 2-4 mm away": 0.04032258064516129
+     },
+     "by_shortest_incident_edge": {},
+     "by_nearest_gt_node": {
+      "0-1 mm": {
+       "nodes": 2,
+       "recall": 0.0,
+       "share_of_misses": 0.016129032258064516
+      },
+      "1-2 mm": {
+       "nodes": 16,
+       "recall": 0.375,
+       "share_of_misses": 0.08064516129032258
+      },
+      "2-4 mm": {
+       "nodes": 60,
+       "recall": 0.11666666666666667,
+       "share_of_misses": 0.4274193548387097
+      },
+      ">= 4 mm": {
+       "nodes": 67,
+       "recall": 0.11940298507462686,
+       "share_of_misses": 0.47580645161290325
+      }
+     },
+     "by_vessel_radius": {
+      ">= 1.5 mm": {
+       "nodes": 145,
+       "recall": 0.14482758620689656,
+       "share_of_misses": 1.0
+      }
+     },
+     "by_distance_to_face": {
+      "0-1 voxels": {
+       "nodes": 145,
+       "recall": 0.14482758620689656,
+       "share_of_misses": 1.0
+      }
+     },
+     "median_heat_at_node": {
+      "matched": 0.272024542093277,
+      "missed": 0.10745816305279732
+     },
+     "median_centreline_probability": {
+      "matched": 0.9032942056655884,
+      "missed": 0.525367945432663
+     }
+    }
+   },
+   "miss_reasons": {
+    "peak below threshold": 0.7341237942122186,
+    "only peak belongs to another GT node": 0.10155412647374062,
+    "heat but no peak": 0.08581189710610933,
+    "no response": 0.0420016077170418,
+    "detection 2-4 mm away": 0.0365085744908896
+   },
+   "all_nodes": {
+    "by_shortest_incident_edge": {
+     "0-1 mm": {
+      "nodes": 1722,
+      "recall": 0.3710801393728223,
+      "share_of_misses": 0.07254823151125402
+     },
+     "1-2 mm": {
+      "nodes": 2304,
+      "recall": 0.4092881944444444,
+      "share_of_misses": 0.09117095391211147
+     },
+     "2-4 mm": {
+      "nodes": 3445,
+      "recall": 0.4444121915820029,
+      "share_of_misses": 0.12821543408360128
+     },
+     "4-8 mm": {
+      "nodes": 6108,
+      "recall": 0.5037655533726261,
+      "share_of_misses": 0.20304126473740622
+     },
+     ">= 8 mm": {
+      "nodes": 16623,
+      "recall": 0.5690308608554413,
+      "share_of_misses": 0.47990353697749194
+     }
+    },
+    "by_nearest_gt_node": {
+     "0-1 mm": {
+      "nodes": 2674,
+      "recall": 0.38107703814510097,
+      "share_of_misses": 0.11086548767416934
+     },
+     "1-2 mm": {
+      "nodes": 3605,
+      "recall": 0.4862690707350901,
+      "share_of_misses": 0.12406216505894962
+     },
+     "2-4 mm": {
+      "nodes": 6759,
+      "recall": 0.5323272673472407,
+      "share_of_misses": 0.2117497320471597
+     },
+     ">= 4 mm": {
+      "nodes": 17748,
+      "recall": 0.534595447374352,
+      "share_of_misses": 0.5533226152197214
+     }
+    },
+    "by_vessel_radius": {
+     "0-0.01 mm": {
+      "nodes": 52,
+      "recall": 0.0,
+      "share_of_misses": 0.0034833869239013935
+     },
+     "0.6-1 mm": {
+      "nodes": 29,
+      "recall": 0.0,
+      "share_of_misses": 0.001942658092175777
+     },
+     "1-1.5 mm": {
+      "nodes": 86,
+      "recall": 0.05813953488372093,
+      "share_of_misses": 0.005426045016077171
+     },
+     ">= 1.5 mm": {
+      "nodes": 30619,
+      "recall": 0.5177504164081126,
+      "share_of_misses": 0.9891479099678456
+     }
+    }
+   },
+   "recall_nodes_with_all_edges_>=_1mm": {
+    "nodes": 29064,
+    "share_of_gt": 0.9440654843110505,
+    "recall": 0.5236374896779521
+   },
+   "recall_nodes_with_all_edges_>=_2mm": {
+    "nodes": 26760,
+    "share_of_gt": 0.8692262716819333,
+    "recall": 0.5334828101644246
+   },
+   "unmatched_predictions": {
+    "total": 11037,
+    "by_place": {
+     "inside the vessel mask, off the GT graph": {
+      "share": 0.5847603515448039,
+      "median_score": 0.3593641221523285,
+      "median_distance_to_gt_node_mm": 8.42562198638916,
+      "within_3_voxels_of_face": 0.9959714905484971,
+      "by_score": {
+       "0.3-0.4 ": 4797,
+       "0.4-0.5 ": 1452,
+       "0.5-0.7 ": 205,
+       "0.7-1.01 ": 0
+      }
+     },
+     "within 2 mm of a GT node": {
+      "share": 0.27489353991120774,
+      "median_score": 0.3812195360660553,
+      "median_distance_to_gt_node_mm": 1.126020908355713,
+      "within_3_voxels_of_face": 0.976268951878708,
+      "by_score": {
+       "0.3-0.4 ": 1936,
+       "0.4-0.5 ": 963,
+       "0.5-0.7 ": 135,
+       "0.7-1.01 ": 0
+      }
+     },
+     "on a GT centreline, between nodes": {
+      "share": 0.1403461085439884,
+      "median_score": 0.3415825068950653,
+      "median_distance_to_gt_node_mm": 3.3744335174560547,
+      "within_3_voxels_of_face": 0.8721755971594577,
+      "by_score": {
+       "0.3-0.4 ": 1379,
+       "0.4-0.5 ": 157,
+       "0.5-0.7 ": 13,
+       "0.7-1.01 ": 0
+      }
+     }
+    }
+   },
+   "gt_edges": {
+    "total": 19446,
+    "by_arc": {
+     "0-1 mm": {
+      "edges": 908,
+      "share": 0.04669340738455209,
+      "both_endpoints_matched": 0.17731277533039647
+     },
+     "1-2 mm": {
+      "edges": 1253,
+      "share": 0.064434845212383,
+      "both_endpoints_matched": 0.20271348762968874
+     },
+     "2-4 mm": {
+      "edges": 1902,
+      "share": 0.09780931811169392,
+      "both_endpoints_matched": 0.2302839116719243
+     },
+     "4-8 mm": {
+      "edges": 3584,
+      "share": 0.18430525557955363,
+      "both_endpoints_matched": 0.2611607142857143
+     },
+     ">= 8 mm": {
+      "edges": 11799,
+      "share": 0.6067571737118174,
+      "both_endpoints_matched": 0.23527417577760829
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "entry": "TopBrainCTA-simp2",
+ "run": "traced_roles_long_r1111",
+ "node_threshold": 0.25,
+ "peaks": 7535,
+ "shares": {
+  "real": 0.4349037823490378,
+  "intermediate": 0.1754479097544791,
+  "off_vessel": 0.3896483078964831
+ },
+ "by_tau": {
+  "intermediate >= 0.3": {
+   "removed_share_of_peaks": 0.21207697412076973,
+   "recall": 0.5801815431164902,
+   "precision": 0.4799749687108886,
+   "real_nodes_removed": 0.13182789136405249
+  },
+  "intermediate >= 0.5": {
+   "removed_share_of_peaks": 0.07312541473125415,
+   "recall": 0.25113464447806355,
+   "precision": 0.6025408348457351,
+   "real_nodes_removed": 0.035398230088495575
+  },
+  "intermediate >= 0.7": {
+   "removed_share_of_peaks": 0.01247511612475116,
+   "recall": 0.0416036308623298,
+   "precision": 0.5851063829787234,
+   "real_nodes_removed": 0.004882514494964907
+  },
+  "off_vessel >= 0.3": {
+   "removed_share_of_peaks": 0.43729263437292637,
+   "recall": 0.7060626702997275,
+   "precision": 0.6291350531107739,
+   "real_nodes_removed": 0.2960024412572475
+  },
+  "off_vessel >= 0.5": {
+   "removed_share_of_peaks": 0.273921698739217,
+   "recall": 0.4935286103542234,
+   "precision": 0.7020348837209303,
+   "real_nodes_removed": 0.16203844980164786
+  },
+  "off_vessel >= 0.7": {
+   "removed_share_of_peaks": 0.13457199734571998,
+   "recall": 0.2557901907356948,
+   "precision": 0.7406311637080868,
+   "real_nodes_removed": 0.0729325602685383
+  }
+ },
+ "auc_intermediate_vs_rest": 0.8331789549655899,
+ "heat_score_median": {
+  "real": 0.49218809604644775,
+  "intermediate": 0.3380771279335022,
+  "off_vessel": 0.33111974596977234
+ }
+}

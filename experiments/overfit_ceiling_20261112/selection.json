@@ -1,0 +1,411 @@
+{
+ "rule": "simplified-entry training ids sorted by (GT node count in the simplified cache, id); patches with no node or no edge dropped; patch at floor((k + 0.5) * n / 10), k = 0..9",
+ "backup": "/lustre/fsn1/projects/rech/vnc/upz25mj/tmp/plan-backup-20261112-overfit.json",
+ "datasets": {
+  "IXI": {
+   "original_entry": "IXI-loops",
+   "simplified_entry": "IXI-simp2",
+   "training_patches": 4096,
+   "dropped_empty": 58,
+   "ids": [
+    "sample_000107_0020",
+    "sample_000164_0039",
+    "sample_000009_0089",
+    "sample_000110_0078",
+    "sample_000065_0024",
+    "sample_000097_0042",
+    "sample_000064_0087",
+    "sample_000121_0042",
+    "sample_000064_0101",
+    "sample_000164_0029"
+   ],
+   "simplified": [
+    {
+     "nodes": 2,
+     "real_nodes": 2,
+     "edges": 1
+    },
+    {
+     "nodes": 4,
+     "real_nodes": 4,
+     "edges": 2
+    },
+    {
+     "nodes": 8,
+     "real_nodes": 8,
+     "edges": 6
+    },
+    {
+     "nodes": 10,
+     "real_nodes": 10,
+     "edges": 7
+    },
+    {
+     "nodes": 13,
+     "real_nodes": 11,
+     "edges": 9
+    },
+    {
+     "nodes": 16,
+     "real_nodes": 16,
+     "edges": 13
+    },
+    {
+     "nodes": 20,
+     "real_nodes": 20,
+     "edges": 12
+    },
+    {
+     "nodes": 24,
+     "real_nodes": 24,
+     "edges": 19
+    },
+    {
+     "nodes": 29,
+     "real_nodes": 25,
+     "edges": 25
+    },
+    {
+     "nodes": 36,
+     "real_nodes": 36,
+     "edges": 34
+    }
+   ],
+   "original": [
+    {
+     "nodes": 2,
+     "real_nodes": 2,
+     "edges": 1
+    },
+    {
+     "nodes": 4,
+     "real_nodes": 4,
+     "edges": 2
+    },
+    {
+     "nodes": 16,
+     "real_nodes": 16,
+     "edges": 14
+    },
+    {
+     "nodes": 26,
+     "real_nodes": 26,
+     "edges": 22
+    },
+    {
+     "nodes": 20,
+     "real_nodes": 18,
+     "edges": 15
+    },
+    {
+     "nodes": 20,
+     "real_nodes": 20,
+     "edges": 16
+    },
+    {
+     "nodes": 30,
+     "real_nodes": 30,
+     "edges": 19
+    },
+    {
+     "nodes": 34,
+     "real_nodes": 34,
+     "edges": 29
+    },
+    {
+     "nodes": 35,
+     "real_nodes": 34,
+     "edges": 31
+    },
+    {
+     "nodes": 60,
+     "real_nodes": 60,
+     "edges": 56
+    }
+   ],
+   "simplified_node_count_deciles": [
+    2,
+    4,
+    6,
+    8,
+    12,
+    14,
+    18,
+    22,
+    26,
+    32,
+    56
+   ]
+  },
+  "BRAVA": {
+   "original_entry": "BRAVA",
+   "simplified_entry": "BRAVA-simp2",
+   "training_patches": 8768,
+   "dropped_empty": 159,
+   "ids": [
+    "sample_000027_0009",
+    "sample_000026_0117",
+    "sample_000033_0114",
+    "sample_000008_0209",
+    "sample_000026_0252",
+    "sample_000025_0193",
+    "sample_000045_0113",
+    "sample_000039_0252",
+    "sample_000024_0057",
+    "sample_000045_0093"
+   ],
+   "simplified": [
+    {
+     "nodes": 2,
+     "real_nodes": 2,
+     "edges": 1
+    },
+    {
+     "nodes": 4,
+     "real_nodes": 4,
+     "edges": 2
+    },
+    {
+     "nodes": 6,
+     "real_nodes": 6,
+     "edges": 4
+    },
+    {
+     "nodes": 9,
+     "real_nodes": 9,
+     "edges": 5
+    },
+    {
+     "nodes": 12,
+     "real_nodes": 12,
+     "edges": 7
+    },
+    {
+     "nodes": 15,
+     "real_nodes": 15,
+     "edges": 8
+    },
+    {
+     "nodes": 18,
+     "real_nodes": 18,
+     "edges": 10
+    },
+    {
+     "nodes": 22,
+     "real_nodes": 22,
+     "edges": 13
+    },
+    {
+     "nodes": 27,
+     "real_nodes": 27,
+     "edges": 18
+    },
+    {
+     "nodes": 34,
+     "real_nodes": 34,
+     "edges": 22
+    }
+   ],
+   "original": [
+    {
+     "nodes": 4,
+     "real_nodes": 4,
+     "edges": 2
+    },
+    {
+     "nodes": 6,
+     "real_nodes": 6,
+     "edges": 3
+    },
+    {
+     "nodes": 8,
+     "real_nodes": 8,
+     "edges": 5
+    },
+    {
+     "nodes": 10,
+     "real_nodes": 10,
+     "edges": 6
+    },
+    {
+     "nodes": 12,
+     "real_nodes": 12,
+     "edges": 7
+    },
+    {
+     "nodes": 17,
+     "real_nodes": 17,
+     "edges": 9
+    },
+    {
+     "nodes": 19,
+     "real_nodes": 19,
+     "edges": 10
+    },
+    {
+     "nodes": 22,
+     "real_nodes": 22,
+     "edges": 13
+    },
+    {
+     "nodes": 28,
+     "real_nodes": 28,
+     "edges": 19
+    },
+    {
+     "nodes": 40,
+     "real_nodes": 40,
+     "edges": 26
+    }
+   ],
+   "simplified_node_count_deciles": [
+    2,
+    2,
+    5,
+    8,
+    10,
+    14,
+    16,
+    20,
+    24,
+    30,
+    60
+   ]
+  },
+  "TopBrainCTA": {
+   "original_entry": "TopBrainCTA-loops",
+   "simplified_entry": "TopBrainCTA-simp2",
+   "training_patches": 2495,
+   "dropped_empty": 114,
+   "ids": [
+    "sample_000031_0068",
+    "sample_000041_0184",
+    "sample_000045_0194",
+    "sample_000041_0195",
+    "sample_000029_0250",
+    "sample_000045_0214",
+    "sample_000040_0930",
+    "sample_000035_0274",
+    "sample_000029_0058",
+    "sample_000034_0241"
+   ],
+   "simplified": [
+    {
+     "nodes": 2,
+     "real_nodes": 2,
+     "edges": 1
+    },
+    {
+     "nodes": 2,
+     "real_nodes": 2,
+     "edges": 1
+    },
+    {
+     "nodes": 3,
+     "real_nodes": 3,
+     "edges": 2
+    },
+    {
+     "nodes": 4,
+     "real_nodes": 4,
+     "edges": 2
+    },
+    {
+     "nodes": 6,
+     "real_nodes": 6,
+     "edges": 3
+    },
+    {
+     "nodes": 7,
+     "real_nodes": 7,
+     "edges": 6
+    },
+    {
+     "nodes": 9,
+     "real_nodes": 9,
+     "edges": 8
+    },
+    {
+     "nodes": 12,
+     "real_nodes": 12,
+     "edges": 7
+    },
+    {
+     "nodes": 16,
+     "real_nodes": 16,
+     "edges": 13
+    },
+    {
+     "nodes": 23,
+     "real_nodes": 22,
+     "edges": 20
+    }
+   ],
+   "original": [
+    {
+     "nodes": 2,
+     "real_nodes": 2,
+     "edges": 1
+    },
+    {
+     "nodes": 8,
+     "real_nodes": 8,
+     "edges": 7
+    },
+    {
+     "nodes": 12,
+     "real_nodes": 12,
+     "edges": 11
+    },
+    {
+     "nodes": 8,
+     "real_nodes": 8,
+     "edges": 4
+    },
+    {
+     "nodes": 8,
+     "real_nodes": 8,
+     "edges": 4
+    },
+    {
+     "nodes": 12,
+     "real_nodes": 12,
+     "edges": 11
+    },
+    {
+     "nodes": 20,
+     "real_nodes": 20,
+     "edges": 18
+    },
+    {
+     "nodes": 20,
+     "real_nodes": 20,
+     "edges": 15
+    },
+    {
+     "nodes": 24,
+     "real_nodes": 24,
+     "edges": 21
+    },
+    {
+     "nodes": 32,
+     "real_nodes": 32,
+     "edges": 28
+    }
+   ],
+   "simplified_node_count_deciles": [
+    2,
+    2,
+    2,
+    4,
+    4,
+    6,
+    8,
+    10,
+    14,
+    19,
+    39
+   ]
+  }
+ }
+}

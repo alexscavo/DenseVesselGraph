@@ -40,9 +40,10 @@ def records(dataset, ids):
     return [by_id[i] for i in ids]
 
 
-def make_dataset(dataset, ids, augment):
+def make_dataset(dataset, ids, augment, flip=False):
+    """flip: also random axis flips in the training augmentation (13 Nov 2026; default off = every earlier run)."""
     return SyntheticMRIDataset(records(dataset, ids), augment=augment, zoom_range=None,
-                               spline_controls=8, foreground_mean=0.33335259556770325)
+                               spline_controls=8, foreground_mean=0.33335259556770325, flip=flip)
 
 
 def collate(batch):
@@ -53,9 +54,11 @@ def collate(batch):
 GRID = None
 
 
-def targets(nodes, geometry, device):
-    """Heatmap (peak at rounded voxel), offsets, peak mask and centerline mask."""
+def targets(nodes, geometry, device, sigma=None):
+    """Heatmap (peak at rounded voxel), offsets, peak mask and centerline mask.
+    sigma: Gaussian width of the heatmap target in voxels; None = SIGMA (1.5, every run before 13 Nov 2026)."""
     global GRID
+    sigma = SIGMA if sigma is None else float(sigma)
     if GRID is None:
         axis = torch.arange(SIZE, device=device, dtype=torch.float32)
         GRID = torch.stack(torch.meshgrid(axis, axis, axis, indexing='ij'), -1).view(-1, 3)
@@ -70,7 +73,7 @@ def targets(nodes, geometry, device):
             c = v.round().clamp(0, SIZE - 1)
             for chunk in torch.split(c, 32):
                 d2 = ((GRID[:, None, :] - chunk[None]) ** 2).sum(-1)
-                heat[b] = torch.maximum(heat[b], torch.exp(-d2 / (2 * SIGMA ** 2)).amax(1))
+                heat[b] = torch.maximum(heat[b], torch.exp(-d2 / (2 * sigma ** 2)).amax(1))
             i = c.long()
             peak[b, i[:, 0], i[:, 1], i[:, 2]] = True
             offset[b, :, i[:, 0], i[:, 1], i[:, 2]] = (v - c).T

@@ -62,7 +62,21 @@ INTERIOR = (6, 14, 22)  # K8 / K16 / K24
 #                 the first K whose Hausdorff deviation from the smoothed path is <= k_fit_tol voxels, else K24.
 #                 Uses only the traced path (no GT). 16-NN fallback pairs stay K8 under both rules.
 MODE = dict(soft=False, knn_fallback=True, gap_features=False, two_hop=False, passthrough=False, k_min_arc=(0.0, 0.0),
-            arc_penalty=0.0, k_rule='ratio', k_fit_tol=0.5, k_fit_smooth_mm=1.0, compress_tol=0.0)
+            arc_penalty=0.0, k_rule='ratio', k_fit_tol=0.5, k_fit_smooth_mm=1.0, compress_tol=0.0, roles=False, role_tau=0.5,
+            single_head=False)
+#   single_head (12 Nov 2026): under a 'fixed<K>' rule build only that head. Runs up to 12 Nov carry the K8 and K16 heads
+#                 as well (3.59M parameters that the K24 rule never uses); False keeps their checkpoints loadable.
+# Opt-in (11 Nov 2026):
+#   roles:        node-role head. Every detected peak is classified from the features F in a 7x7x7 cube around it
+#                 (+ heat, centreline probability, distance to the patch face) as junction / end / intermediate /
+#                 off-vessel. 'Intermediate' = a detection on a vessel between two real nodes (or a duplicate of a
+#                 real node). Peaks with P(intermediate) >= role_tau are removed BEFORE tracing, so they no longer
+#                 split the traced region between the two real nodes (the blocked / broken long edges of
+#                 scripts/long_edge_breaks_20261111.py; oracle ceiling in long_edge_oracles_20261111.py).
+#                 Labels need no annotation: a peak matched to a GT node takes its role from the GT degree, an
+#                 unmatched peak within 1.5 mm of a GT centreline is intermediate, any other is off-vessel; jittered
+#                 GT nodes, points sampled on GT centrelines away from nodes and random background points are added.
+ROLE_GRID, ROLE_HALF, ROLE_NAMES = 7, 4.5, ('junction', 'end', 'intermediate', 'off')
 # k_rule 'fixed24' = every pair (traced and fallback) uses the K24 head: one head learns from every edge, no rule.
 # compress_tol (evaluation only, voxels): replace each predicted curve by the fewest-control (K8 / K16) endpoint-pinned
 # least-squares spline that reproduces it within this Hausdorff tolerance; curves needing more keep their K24 shape.
@@ -70,7 +84,22 @@ MODE = dict(soft=False, knn_fallback=True, gap_features=False, two_hop=False, pa
 # k_rule 'fit_length' = 'fit', with the original length floors (arc >= 15 mm -> at least K16, >= 35 mm -> K24): on long
 # edges the traced path is smoother than the GT, so the fit alone under-selects (BRAVA >= 20 mm), and extra controls on
 # long edges are cheap (wide spacing). The arc/chord ratio is not used.
+# k_rule 'fixed32' / 'fixed48' (10 Nov 2026) = as 'fixed24' with a larger single head. 24 controls fit every IXI and
+# TopBrain CTA validation edge within 0.5 voxel, but not 49% of the BRAVA edges >= 40 mm (16% with K32, 1% with K48;
+# scripts/long_edge_controls_check_20261110.py). The extra head exists only in models built under such a rule, so
+# every earlier checkpoint loads unchanged. Output compression then tries K8 / K16 / K24 / K32 in turn.
 K_MIN_ARC_DEFAULT = (8.0, 20.0)
+# Decision (user, 11 Nov 2026): one K24 head for every pair, and output compression at 0.5 voxel as the evaluation
+# default. These are the defaults of new training runs; --evaluate-only keeps what a run's final.json records (runs
+# before this date: the 'ratio' rule unless recorded otherwise, no compression). The MODE defaults stay as they were
+# so that older runs are described as they were trained.
+K_RULE_DEFAULT, COMPRESS_TOL_DEFAULT = 'fixed24', 0.5
+
+
+def fixed_interior():
+    """Interior controls of the single head under a 'fixed<K>' rule, else None."""
+    rule = str(MODE['k_rule'])
+    return int(rule[5:]) - 2 if rule.startswith('fixed') else None
 MODE_DEFAULTS = dict(MODE)
 
 
@@ -341,7 +370,7 @@ def compress_curves(curves, tol, interior=None):
     q = resample(curves, curves.shape[1])
     m = interior.clone() if interior is not None else torch.full((len(curves),), 22, dtype=torch.long, device=curves.device)
     out, open_ = curves.clone(), m > 6
-    for controls in (8, 16):
+    for controls in (8, 16, 24, 32):  # 24 / 32 only matter for curves drawn with more controls than that
         open_ &= m > controls - 2
         if not open_.any():
             break
@@ -373,8 +402,8 @@ def choose_interior(paths_mm, traced, voxel_mm=None):
     """Interior controls per pair from the traced path. 'ratio': arc length, and arc/chord once the arc reaches
     MODE['k_min_arc']. 'fit': fewest controls that fit the smoothed traced path within MODE['k_fit_tol'] voxels
     (voxel_mm = mean voxel size of the patch, required)."""
-    if MODE['k_rule'] == 'fixed24':
-        return torch.full((len(paths_mm),), 22, dtype=torch.long, device=paths_mm.device)
+    if fixed_interior() is not None:
+        return torch.full((len(paths_mm),), fixed_interior(), dtype=torch.long, device=paths_mm.device)
     if MODE['k_rule'] in ('fit', 'fit_length'):
         assert voxel_mm is not None, 'the fit rule needs the voxel size'
         m = torch.full((len(paths_mm),), 6, dtype=torch.long, device=paths_mm.device)
@@ -404,9 +433,19 @@ class TracedDenseGraph(D.DenseGraph):
         self.edge_head = nn.Sequential(nn.Linear(width, 256), nn.GELU(), nn.Linear(256, 1))
         if passthrough:  # joined A->C->B path features + U-Net features at C
             self.pass_head = nn.Sequential(nn.Linear(width + self.fc, 256), nn.GELU(), nn.Linear(256, 1))
+        self.roles = bool(MODE.get('roles'))  # MODE must be set before the model is built
+        if self.roles:
+            self.role_conv = nn.Sequential(nn.Conv3d(self.fc, 64, 3, stride=2, padding=1), nn.GELU(),
+                                           nn.Conv3d(64, 64, 3, stride=2, padding=1), nn.GELU())
+            self.role_mlp = nn.Sequential(nn.Linear(64 * 8 + 3, 128), nn.GELU(), nn.Linear(128, len(ROLE_NAMES)))
         del self.geometry_head  # replaced by the per-K heads below
         self.heads = nn.ModuleDict()
-        for m in INTERIOR:
+        extra = fixed_interior()  # a 'fixed32' / 'fixed48' rule adds its own head; MODE must be set before the model is built
+        if MODE.get('single_head') and extra is not None:
+            self.interiors = (extra,)
+        else:
+            self.interiors = INTERIOR + ((extra,) if extra is not None and extra not in INTERIOR else ())
+        for m in self.interiors:
             head = nn.Sequential(nn.Linear(width, 256), nn.GELU(), nn.Linear(256, 3 * m))
             nn.init.zeros_(head[-1].weight)
             nn.init.zeros_(head[-1].bias)
@@ -436,6 +475,19 @@ class TracedDenseGraph(D.DenseGraph):
             parts.append(via_features(heat, a, b, via))
         return torch.cat(parts, -1)
 
+    def role_logits(self, volume, heat, prob, points):
+        """Role logits (N,4) of nodes at `points` (N,3 voxels): F in an axis-aligned 7^3 cube of +-4.5 voxels, heat and
+        centreline probability at the point, distance to the patch face."""
+        o = torch.linspace(-ROLE_HALF, ROLE_HALF, ROLE_GRID, device=points.device)
+        off = torch.stack(torch.meshgrid(o, o, o, indexing='ij'), -1)
+        grid = ((points[:, None, None, None] + off[None]) / (SIZE - 1) * 2 - 1).flip(-1)
+        cube = F.grid_sample(volume[None], grid.reshape(1, -1, ROLE_GRID, ROLE_GRID, 3), align_corners=True)
+        cube = cube.view(volume.shape[0], len(points), ROLE_GRID, ROLE_GRID, ROLE_GRID).transpose(0, 1)
+        g = (points / (SIZE - 1) * 2 - 1).flip(-1).view(1, -1, 1, 1, 3)
+        at = F.grid_sample(torch.cat([heat, prob[None]], 0)[None], g, align_corners=True).view(2, -1).T
+        face = (torch.minimum(points + 0.5, SIZE - 0.5 - points).amin(-1, keepdim=True) / 32).clamp(0, 1)
+        return self.role_mlp(torch.cat([self.role_conv(cube).flatten(1), at, face], -1))
+
     def pass_logits(self, volume, x, via):
         """Pass-through logit for two-hop rows: x = joined-path features, via = (n,3) voxel position of C."""
         g = (via / (SIZE - 1) * 2 - 1).flip(-1).view(1, -1, 1, 1, 3)
@@ -445,7 +497,7 @@ class TracedDenseGraph(D.DenseGraph):
     def path_curves(self, x, paths, interior, traced):
         """Adaptive-K B-spline around the path; residuals in path frames (12 vox chord / 4 vox traced)."""
         curves = torch.empty(len(paths), SAMPLES, 3, device=paths.device)
-        for m in INTERIOR:
+        for m in self.interiors:
             sel = interior == m
             if not sel.any():
                 continue
@@ -495,6 +547,62 @@ def gap_statistics(prob, paths):
         best = torch.maximum(best, run)
     return torch.stack([p.mean(1), p.min(1).values, low.float().mean(1), best / p.shape[1],
                         torch.log(1.0 / (p + 0.05)).mean(1)], 1)
+
+
+def role_targets(cand, mapping, gt_vox, gt_edges, guides, metric):
+    """Role class per candidate node (voxels): 0 junction / 1 end for a node matched to a GT node of degree >= 3 / <= 1
+    (degree 2 = inserted loop anchor or a junction moved to an exit: -1, ignored), 2 intermediate for an unmatched node
+    within 1.5 mm of a GT centreline, 3 off-vessel otherwise."""
+    out = torch.full((len(cand),), 3, dtype=torch.long, device=cand.device)
+    if len(cand) == 0:
+        return out
+    if len(guides):
+        dense = F.interpolate(guides.transpose(1, 2), size=256, mode='linear', align_corners=True).transpose(1, 2).reshape(-1, 3)
+        near = torch.cdist(cand @ metric.T, dense @ metric.T).amin(1) <= 1.5
+        out[near] = 2
+    deg = torch.bincount(gt_edges.reshape(-1), minlength=len(gt_vox))
+    for q, g in mapping.items():
+        out[q] = 0 if deg[g] >= 3 else -1 if deg[g] == 2 else 1
+    return out
+
+
+def synthetic_role_points(gt_vox, guides, metric):
+    """Extra supervised points of one patch: positions on GT centrelines at least 3 mm from every GT node
+    (intermediate) and random positions at least 3 mm from every centreline (off-vessel), with 0.5 mm jitter."""
+    dev, n = gt_vox.device, max(4, len(gt_vox))
+    pts, cls = [], []
+    dense = (F.interpolate(guides.transpose(1, 2), size=256, mode='linear', align_corners=True).transpose(1, 2).reshape(-1, 3)
+             if len(guides) else gt_vox[:0])
+    if len(dense) and len(gt_vox):
+        far = dense[torch.cdist(dense @ metric.T, gt_vox @ metric.T).amin(1) >= 3.0]
+        if len(far):
+            pick = far[torch.randperm(len(far), device=dev)[:n]]
+            pts.append(pick)
+            cls.append(torch.full((len(pick),), 2, dtype=torch.long, device=dev))
+    rnd = torch.rand(n, 3, device=dev) * (SIZE - 1)
+    if len(dense):
+        rnd = rnd[torch.cdist(rnd @ metric.T, dense @ metric.T).amin(1) >= 3.0]
+    pts.append(rnd[:max(2, n // 2)])
+    cls.append(torch.full((len(pts[-1]),), 3, dtype=torch.long, device=dev))
+    pts = torch.cat(pts)
+    return (pts + torch.randn_like(pts) * (0.5 / float(metric[0].norm()))).clamp(0, SIZE - 1), torch.cat(cls)
+
+
+@torch.no_grad()
+def drop_intermediate(model, feats, heat, prob, found):
+    """Inference filter of the node-role head: per patch, peaks with P(intermediate) >= MODE['role_tau'] are removed.
+    Returns the filtered (positions, scores) and the role probabilities of the kept peaks."""
+    kept, probs = [], []
+    for b, (p, score) in enumerate(found):
+        if len(p) == 0:
+            kept.append((p, score))
+            probs.append(np.zeros((0, len(ROLE_NAMES)), np.float32))
+            continue
+        pr = model.role_logits(feats[b], heat[b], prob[b], p).softmax(-1)
+        keep = pr[:, 2] < MODE['role_tau']
+        kept.append((p[keep], score[keep]))
+        probs.append(pr[keep].cpu().numpy())
+    return kept, probs
 
 
 def patch_candidates(cand, metric, contacts, hops=None):
@@ -607,11 +715,16 @@ def predict(model, ds, device, node_threshold, workers, batch=8):
         if PROB_HOOK is not None:
             prob = PROB_HOOK(prob, nodes, geometry)
         found = D.peaks(out, node_threshold)
+        role_probs = None
+        if MODE['roles']:  # intermediate nodes are removed before tracing
+            found, role_probs = drop_intermediate(model, feats, heat, prob, found)
         contacts, dist, label = traced_pairs(prob, [p for p, _ in found])
         for b, (p, score) in enumerate(found):
             metric = geometry[b]['metric'].to(device) / SIZE
             row = dict(nodes=(p / SIZE).cpu().numpy(), node_scores=score.cpu().numpy(), pairs=np.zeros((0, 2), int),
                        edge_scores=None, curves=None, traced=None, interior=None, via=None)
+            if role_probs is not None:
+                row['role_probs'] = role_probs[b]
             hops = two_hop_pairs(contacts[b]) if MODE['two_hop'] else None
             pairs = patch_candidates(p, metric, contacts[b], hops) if len(p) >= 2 else None
             if pairs is not None and len(pairs):
@@ -692,13 +805,14 @@ def final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final.js
     val_rows = [contract(r, node_t, edge_t, tau) for r in raw_val]
     traced_share = float(np.mean(np.concatenate([r['traced'] for r in val_rows if r['traced'] is not None] or [np.zeros(0)])))
     interior = np.concatenate([r['interior'] for r in val_rows if r['interior'] is not None] or [np.zeros(0, int)])
-    result = dict(dataset=a.dataset, model='traced+adaptive', mode=dict(MODE), offset_radius=getattr(a, 'offset_radius', 0.0), backbone=getattr(a, 'backbone', 'unet'),
+    result = dict(dataset=a.dataset, model='traced+adaptive', seed=getattr(a, 'seed', 364505), mode=dict(MODE), offset_radius=getattr(a, 'offset_radius', 0.0), backbone=getattr(a, 'backbone', 'unet'),
                   feature_channels=getattr(a, 'feature_channels', FEATURE_CHANNELS),
-                  updates=a.updates, batch=a.batch, lr=a.lr,
+                  updates=a.updates, batch=a.batch, lr=a.lr, augment=not getattr(a, 'no_augment', False),
+                  sigma=float(getattr(a, 'sigma', None) or D.SIGMA), nms=D.NMS,
                   thresholds=dict(node=node_t, edge=edge_t, policy='train monitor only; candidates = geodesic contacts' + (' U 16-NN over retained nodes' if MODE['knn_fallback'] else ' only')),
                   train_monitor=D.evaluate(train_rows, node_t, edge_t), validation=D.evaluate(val_rows, node_t, edge_t),
                   validation_by_arc_length=length_breakdown(val_rows, node_t, edge_t),
-                  validation_candidates=dict(traced_fraction=traced_share, interior_histogram={str(m): int((interior == m).sum()) for m in INTERIOR}),
+                  validation_candidates=dict(traced_fraction=traced_share, interior_histogram={str(m): int((interior == m).sum()) for m in model.interiors}),
                   passthrough=passthrough)
     (out_dir / name).write_text(json.dumps(result, indent=1))
     print('FINAL ' + json.dumps(result), flush=True)
@@ -760,8 +874,15 @@ def main():
     p.add_argument('--gap-features', action='store_true', help='Edge/geometry heads read centreline statistics along the path')
     p.add_argument('--two-hop', action='store_true', help='Also propose A-B through a traced pass-through node C')
     p.add_argument('--passthrough', action='store_true', help='Node-level decision for two-hop chains (implies --two-hop)')
-    p.add_argument('--backbone', choices=D.BACKBONES, default='unet',
-                   help='Must match the --init-from checkpoint')
+    p.add_argument('--node-roles', action='store_true',
+                   help='Node-role head (junction / end / intermediate / off-vessel); peaks classified intermediate are '
+                        'removed before tracing (11 Nov 2026)')
+    p.add_argument('--role-tau', type=float, default=0.5, help='Remove a peak when P(intermediate) >= this')
+    p.add_argument('--role-warmup', type=int, default=500,
+                   help='Updates before the role filter is applied to the predicted-peak candidates in training')
+    p.add_argument('--backbone', choices=D.BACKBONES, default=None,
+                   help='Default: the backbone of the --init-from checkpoint (or of the run with --evaluate-only), else '
+                        'unet_wide (since 12 Nov 2026). If given, it must match the --init-from checkpoint')
     p.add_argument('--offset-radius', type=float, default=1.75,
                    help='Supervise offsets at all voxels within this radius of each GT node; default 1.75 (3x3x3) since '
                         '3 Nov 2026, 0 = GT voxel only (all runs before traced_twohop_offset)')
@@ -774,25 +895,41 @@ def main():
                    help='Minimum traced arc (mm) before arc/chord may raise K to K16 / K24. Training default 8 20 (since '
                         '9 Nov 2026); 0 0 = original rule. --evaluate-only defaults to the rule recorded in final.json '
                         '(original rule if none is recorded)')
-    p.add_argument('--k-rule', choices=['ratio', 'fit', 'fit_length', 'fixed24'], default=None,
-                   help="'ratio' (default): arc and arc/chord thresholds (+ --k-min-arc); 'fit': fewest controls whose "
+    p.add_argument('--k-rule', choices=['ratio', 'fit', 'fit_length', 'fixed24', 'fixed32', 'fixed48'], default=None,
+                   help="Training default 'fixed24' since 11 Nov 2026 (before: 'ratio'). 'ratio': arc and arc/chord thresholds (+ --k-min-arc); 'fit': fewest controls whose "
                         "least-squares fit of the smoothed traced path is within --k-fit-tol voxels; 'fit_length': fit "
-                        "with arc-length floors (>= 15 mm: K16, >= 35 mm: K24); 'fixed24': one K24 head for every pair")
+                        "with arc-length floors (>= 15 mm: K16, >= 35 mm: K24); 'fixed24' / 'fixed32' / 'fixed48': one head with that "
+                        "many controls for every pair")
+    p.add_argument('--compress-tol', type=float, default=None,
+                   help='Output compression tolerance in voxels for the evaluations of this run (0 = off). Training '
+                        'default 0.5 since 11 Nov 2026; --evaluate-only defaults to the value recorded in final.json')
     p.add_argument('--k-fit-tol', type=float, default=None, help='Fit rule tolerance in voxels (default 0.5)')
     p.add_argument('--k-fit-smooth-mm', type=float, default=None, help='Fit rule path smoothing scale in mm (default 1.0)')
+    p.add_argument('--seed', type=int, default=364505, help='Torch / NumPy seed; 364505 = every run before 10 Nov 2026')
+    p.add_argument('--eval-every', type=int, default=0,
+                   help='Learning-curve point every this many updates and at the end (D.curve_point); 0 = off')
+    p.add_argument('--no-augment', action='store_true',
+                   help='Train without augmentation (quarter turns + image noise). Default off = augmented, as every run '
+                        'before 12 Nov 2026; used for the overfit ceiling (scripts/overfit_ceiling_20261112.py)')
+    p.add_argument('--sigma', type=float, default=None,
+                   help='Width (voxels) of the Gaussian node-heatmap target. Default: the value recorded for the --init-from '
+                        'checkpoint (stage-1 run: final.json next to model.pt, else its args) or for the run with '
+                        '--evaluate-only, else 1.5 (every run before 13 Nov 2026); D.resolve_heat')
+    p.add_argument('--nms', type=int, default=None,
+                   help='Odd local-maximum window of node decoding (D.peaks) in training and evaluation; default as --sigma, else 3')
     p.add_argument('--evaluate-only', action='store_true')
     p.add_argument('--breakdown-rows', type=Path, help='Only compute the arc-length breakdown for saved rows (CPU)')
     p.add_argument('--breakdown-thresholds', type=float, nargs=2)
     a = p.parse_args()
     MODE.update(arc_penalty=a.arc_penalty)
     MODE.update(soft=a.soft_tracing, knn_fallback=not a.no_knn_fallback, gap_features=a.gap_features,
-                two_hop=a.two_hop or a.passthrough, passthrough=a.passthrough)
+                two_hop=a.two_hop or a.passthrough, passthrough=a.passthrough, roles=a.node_roles, role_tau=a.role_tau)
     if a.breakdown_rows:
         rows = pickle.loads(a.breakdown_rows.read_bytes())
         print(json.dumps(length_breakdown(rows, *a.breakdown_thresholds), indent=1))
         return
-    torch.manual_seed(364505)
-    np.random.seed(364505)
+    torch.manual_seed(a.seed)
+    np.random.seed(a.seed)
     out_dir = a.output / a.dataset / (a.run_name or 'traced_adaptive')
     out_dir.mkdir(parents=True, exist_ok=True)
     saved = {}
@@ -800,7 +937,8 @@ def main():
         saved = json.loads((out_dir / 'final.json').read_text()).get('mode', {})
     if a.evaluate_only:  # the penalty only affects training: keep the value the model was trained with in final.json
         MODE['arc_penalty'] = saved.get('arc_penalty', 0.0)
-    for key, arg, train_default in (('k_min_arc', a.k_min_arc, K_MIN_ARC_DEFAULT), ('k_rule', a.k_rule, 'ratio'),
+    for key, arg, train_default in (('k_min_arc', a.k_min_arc, K_MIN_ARC_DEFAULT), ('k_rule', a.k_rule, K_RULE_DEFAULT),
+                                    ('compress_tol', a.compress_tol, COMPRESS_TOL_DEFAULT),
                                     ('k_fit_tol', a.k_fit_tol, MODE_DEFAULTS['k_fit_tol']),
                                     ('k_fit_smooth_mm', a.k_fit_smooth_mm, MODE_DEFAULTS['k_fit_smooth_mm'])):
         if arg is not None:
@@ -810,6 +948,10 @@ def main():
         else:
             MODE[key] = train_default
     MODE['k_min_arc'] = tuple(MODE['k_min_arc'])
+    # Only the head in use is built for new runs under a 'fixed<K>' rule (12 Nov 2026); a run re-evaluated keeps its own layout.
+    MODE['single_head'] = bool(saved.get('single_head', False)) if a.evaluate_only else True
+    a.backbone = D.resolve_backbone(a, out_dir)
+    heat_record = D.resolve_heat(a, out_dir)  # sets D.NMS: stage 2 decodes (and trains its heat) as its stage 1 did
     plan = json.loads(PLAN.read_text())['datasets'][a.dataset]
     train_ids, val_ids, monitor = plan['train_ids'], plan['val_ids'], plan['monitor_train']
     if a.smoke:
@@ -819,21 +961,23 @@ def main():
                              backbone=a.backbone, feature_channels=a.feature_channels).to(device)
     if a.evaluate_only:
         model.load_state_dict(torch.load(out_dir / 'model.pt', map_location=device)['model'])
-        final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final-v2.json')
+        final_evaluation(model, a, monitor, val_ids, device, out_dir, name=D.eval_name('final-v2.json', a.nms, heat_record['nms']))
         return
     if a.init_from:
         (out_dir / 'warm-start.json').write_text(json.dumps(warm_start(model, a.init_from, device), indent=1))
-    train_ds = make_dataset(a.dataset, train_ids, augment=True)
-    opt = torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=1e-4)
+    train_ds = make_dataset(a.dataset, train_ids, augment=not a.no_augment)
+    opt =torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=1e-4)
     sched = torch.optim.lr_scheduler.OneCycleLR(opt, max_lr=a.lr, total_steps=a.updates, pct_start=0.05)
     sampler = torch.utils.data.RandomSampler(train_ds, replacement=True, num_samples=a.updates * a.batch)
     loader = torch.utils.data.DataLoader(train_ds, batch_size=a.batch, sampler=sampler, num_workers=a.workers,
                                          collate_fn=collate, drop_last=True, persistent_workers=a.workers > 0)
     log = (out_dir / 'training.jsonl').open('a')
+    curve_ds = D.curve_sets(a, plan) if a.eval_every else None
+    plain = lambda rows: [contract(r, None, None, None) for r in rows]  # identity unless passthrough
     start, step = time.time(), 0
     for images, nodes, edges, geometry in loader:
         step += 1
-        heat_t, offset_t, peak_t, line_t = targets(nodes, geometry, device)
+        heat_t, offset_t, peak_t, line_t = targets(nodes, geometry, device, sigma=a.sigma)
         with torch.autocast(device, dtype=torch.bfloat16, enabled=device == 'cuda'):
             out = model.forward_image(images.to(device))
         node_loss = focal(out[:, :1].float(), heat_t)
@@ -844,7 +988,7 @@ def main():
         line_loss = F.binary_cross_entropy_with_logits(out[:, 4:5].float(), line_t, pos_weight=torch.tensor(5.0, device=device))
         feats, heat, prob = out[:, 5:].float(), out[:, :1].float().sigmoid().detach(), out[:, 4].float().sigmoid().detach()
         sources = [('gt', None)] + ([('pred', D.peaks(out.detach(), a.train_peak_threshold))] if step > a.warmup_gt else [])
-        edge_terms, geo_terms, traced_counts, pass_terms = [], [], [], []
+        edge_terms, geo_terms, traced_counts, pass_terms, role_terms, role_hits = [], [], [], [], [], []
         for kind, predicted in sources:
             cands, maps = [], []
             for b in range(len(images)):
@@ -856,6 +1000,20 @@ def main():
                 else:
                     c = predicted[b][0][:D.MAX_PEAKS]
                     mp = D.match(c @ metric.T, gt_vox @ metric.T)
+                if MODE['roles']:  # role loss on these nodes (+ synthetic points with the GT source); filter the predicted ones
+                    guides_b, edges_b = geometry[b]['guides'].to(device) * SIZE, edges[b].to(device)
+                    pts, target = c, role_targets(c, mp, gt_vox, edges_b, guides_b, metric)
+                    if kind == 'gt':
+                        extra, extra_cls = synthetic_role_points(gt_vox, guides_b, metric)
+                        pts, target = torch.cat([c, extra]), torch.cat([target, extra_cls])
+                    if len(pts) and (target >= 0).any():
+                        logits = model.role_logits(feats[b], heat[b], prob[b], pts)
+                        role_terms.append(F.cross_entropy(logits, target, ignore_index=-1))
+                        role_hits.append((logits.argmax(-1) == target)[target >= 0].float().mean())
+                        if kind == 'pred' and step > a.role_warmup:  # as at inference: intermediate peaks leave before tracing
+                            keep = logits[:len(c)].softmax(-1)[:, 2].detach() < MODE['role_tau']
+                            c = c[keep]
+                            mp = D.match(c @ metric.T, gt_vox @ metric.T)
                 cands.append(c)
                 maps.append(mp)
             contacts, dist, label = traced_pairs(prob, cands)
@@ -874,7 +1032,8 @@ def main():
         edge_loss = torch.stack(edge_terms).mean() if edge_terms else out.sum() * 0
         pass_loss = torch.stack(pass_terms).mean() if pass_terms else out.sum() * 0
         geo_loss = torch.cat(geo_terms).mean() if geo_terms else out.sum() * 0
-        loss = node_loss + off_loss + line_loss + edge_loss + geo_loss + pass_loss
+        role_loss = torch.stack(role_terms).mean() if role_terms else out.sum() * 0
+        loss = node_loss + off_loss + line_loss + edge_loss + geo_loss + pass_loss + role_loss
         assert torch.isfinite(loss), 'nonfinite loss'
         opt.zero_grad(set_to_none=True)
         loss.backward()
@@ -883,13 +1042,16 @@ def main():
         sched.step()
         if step % 100 == 0 or a.smoke:
             row = dict(step=step, seconds=time.time() - start, node=float(node_loss), centerline=float(line_loss), edge=float(edge_loss),
-                       passthrough=float(pass_loss),
+                       passthrough=float(pass_loss), role=float(role_loss),
+                       role_accuracy=float(torch.stack(role_hits).mean()) if role_hits else 0.0,
                        max_memory_gb=torch.cuda.max_memory_allocated() / 1e9 if device == 'cuda' else 0.0,
                        geometry_mm=float(geo_loss), traced_pair_fraction=float(np.mean(traced_counts)) if traced_counts else 0.0,
                        predicted_candidates=step > a.warmup_gt)
             log.write(json.dumps(row) + '\n')
             log.flush()
             print('STEP ' + json.dumps(row), flush=True)
+        if a.eval_every and (step % a.eval_every == 0 or step == a.updates):
+            D.log_curve(out_dir, step, start, D.curve_point(predict, model, a, *curve_ds, device, plain))
     torch.save(dict(model=model.state_dict(), args={k: str(v) for k, v in vars(a).items()}), out_dir / 'model.pt')
     final_evaluation(model, a, monitor, val_ids, device, out_dir)
 

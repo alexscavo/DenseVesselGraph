@@ -1,0 +1,1023 @@
+{
+ "entry": "BRAVA-simp2-overfit10",
+ "run": "traced_unet_wide_overfit_r1112",
+ "patches": [
+  "sample_000027_0009",
+  "sample_000026_0117",
+  "sample_000033_0114",
+  "sample_000008_0209",
+  "sample_000026_0252",
+  "sample_000025_0193",
+  "sample_000045_0113",
+  "sample_000039_0252",
+  "sample_000024_0057",
+  "sample_000045_0093"
+ ],
+ "compress_tol": 0.5,
+ "augment": false,
+ "selected_thresholds": {
+  "node": 0.1,
+  "edge": 0.1,
+  "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+ },
+ "selected": {
+  "final_json_train_monitor": {
+   "node_f1": 0.9966329966329966,
+   "node_precision": 1.0,
+   "node_recall": 0.9932885906040269,
+   "edge_f1": 0.9887640449438202,
+   "edge_precision": 1.0,
+   "edge_recall": 0.9777777777777777
+  },
+  "recomputed": {
+   "node_f1": 0.9966329966329966,
+   "node_precision": 1.0,
+   "node_recall": 0.9932885906040269,
+   "edge_f1": 0.9887640449438202,
+   "edge_precision": 1.0,
+   "edge_recall": 0.9777777777777777
+  }
+ },
+ "fixed_0p30_0p75": {
+  "node": {
+   "precision": 1.0,
+   "recall": 0.9932885906040269,
+   "f1": 0.9966329966329966,
+   "tp": 148,
+   "fp": 0,
+   "fn": 1
+  },
+  "edge": {
+   "precision": 1.0,
+   "recall": 0.9777777777777777,
+   "f1": 0.9887640449438202,
+   "tp": 88,
+   "fp": 0,
+   "fn": 2
+  },
+  "V0_global": {
+   "node_f1": 0.9966329966329966,
+   "edge_f1": 0.9887640449438202,
+   "branch_f1": 0.9704142011834319,
+   "curve_f1": 0.9745881963413625,
+   "mae_beta0": 0.1,
+   "mae_beta1": 0.0
+  },
+  "node_ap_2mm": {
+   "node_ap": 0.9932885906040269,
+   "max_recall": 0.9932885906040269,
+   "proposals": 153,
+   "gt_nodes": 149
+  }
+ },
+ "breakdown_selected": {
+  "totals": {
+   "node_tp": 148,
+   "node_fp": 0,
+   "node_fn": 1,
+   "edge_tp": 88,
+   "edge_fp": 0,
+   "edge_fn": 2,
+   "gt_real_nodes": 149,
+   "gt_edges": 90,
+   "pred_nodes": 148
+  },
+  "node": {
+   "precision": 1.0,
+   "recall": 0.9932885906040269,
+   "f1": 0.9966329966329966,
+   "tp": 148,
+   "fp": 0,
+   "fn": 1
+  },
+  "edge": {
+   "precision": 1.0,
+   "recall": 0.9777777777777777,
+   "f1": 0.9887640449438202,
+   "tp": 88,
+   "fp": 0,
+   "fn": 2
+  },
+  "missed_gt_nodes": {
+   "total": 1,
+   "by_kind": {
+    "another GT node within 2 mm": 1
+   },
+   "with_kept_detection_within_2mm": 1,
+   "crowded_with_kept_detection_within_2mm": 1,
+   "nearest_gt_node_mm": {
+    "0-1": 0,
+    "1-1.5": 1,
+    "1.5-2": 0,
+    "2-3": 0,
+    "3-1000000000.0": 0
+   }
+  },
+  "false_nodes": {
+   "total": 0,
+   "by_where": {}
+  },
+  "missed_gt_edges": {
+   "total": 2,
+   "by_kind": {
+    "endpoint missed": 1,
+    "both endpoints found, not a candidate": 1
+   },
+   "endpoint_missed_both": 0,
+   "not_candidate_with_detection_on_path": 0,
+   "through_inserted_anchor": 0
+  },
+  "false_edges": {
+   "total": 0,
+   "by_kind": {},
+   "MM_by_gt_hops": {},
+   "chains_through_anchor_detections": 0
+  }
+ },
+ "breakdown_fixed": {
+  "totals": {
+   "node_tp": 148,
+   "node_fp": 0,
+   "node_fn": 1,
+   "edge_tp": 88,
+   "edge_fp": 0,
+   "edge_fn": 2,
+   "gt_real_nodes": 149,
+   "gt_edges": 90,
+   "pred_nodes": 148
+  },
+  "node": {
+   "precision": 1.0,
+   "recall": 0.9932885906040269,
+   "f1": 0.9966329966329966,
+   "tp": 148,
+   "fp": 0,
+   "fn": 1
+  },
+  "edge": {
+   "precision": 1.0,
+   "recall": 0.9777777777777777,
+   "f1": 0.9887640449438202,
+   "tp": 88,
+   "fp": 0,
+   "fn": 2
+  },
+  "missed_gt_nodes": {
+   "total": 1,
+   "by_kind": {
+    "another GT node within 2 mm": 1
+   },
+   "with_kept_detection_within_2mm": 1,
+   "crowded_with_kept_detection_within_2mm": 1,
+   "nearest_gt_node_mm": {
+    "0-1": 0,
+    "1-1.5": 1,
+    "1.5-2": 0,
+    "2-3": 0,
+    "3-1000000000.0": 0
+   }
+  },
+  "false_nodes": {
+   "total": 0,
+   "by_where": {}
+  },
+  "missed_gt_edges": {
+   "total": 2,
+   "by_kind": {
+    "endpoint missed": 1,
+    "both endpoints found, not a candidate": 1
+   },
+   "endpoint_missed_both": 0,
+   "not_candidate_with_detection_on_path": 0,
+   "through_inserted_anchor": 0
+  },
+  "false_edges": {
+   "total": 0,
+   "by_kind": {},
+   "MM_by_gt_hops": {},
+   "chains_through_anchor_detections": 0
+  }
+ },
+ "per_patch_selected": [
+  {
+   "sample_id": "sample_000027_0009",
+   "gt_real_nodes": 2,
+   "gt_inserted": 0,
+   "gt_edges": 1,
+   "pred_nodes": 2,
+   "node_tp": 2,
+   "node_fp": 0,
+   "node_fn": 0,
+   "edge_tp": 1,
+   "edge_fp": 0,
+   "edge_fn": 0,
+   "missed_nodes": [],
+   "false_nodes": [],
+   "missed_edges": [],
+   "false_edges": []
+  },
+  {
+   "sample_id": "sample_000026_0117",
+   "gt_real_nodes": 4,
+   "gt_inserted": 0,
+   "gt_edges": 2,
+   "pred_nodes": 4,
+   "node_tp": 4,
+   "node_fp": 0,
+   "node_fn": 0,
+   "edge_tp": 2,
+   "edge_fp": 0,
+   "edge_fn": 0,
+   "missed_nodes": [],
+   "false_nodes": [],
+   "missed_edges": [],
+   "false_edges": []
+  },
+  {
+   "sample_id": "sample_000033_0114",
+   "gt_real_nodes": 6,
+   "gt_inserted": 0,
+   "gt_edges": 4,
+   "pred_nodes": 6,
+   "node_tp": 6,
+   "node_fp": 0,
+   "node_fn": 0,
+   "edge_tp": 4,
+   "edge_fp": 0,
+   "edge_fn": 0,
+   "missed_nodes": [],
+   "false_nodes": [],
+   "missed_edges": [],
+   "false_edges": []
+  },
+  {
+   "sample_id": "sample_000008_0209",
+   "gt_real_nodes": 9,
+   "gt_inserted": 0,
+   "gt_edges": 5,
+   "pred_nodes": 9,
+   "node_tp": 9,
+   "node_fp": 0,
+   "node_fn": 0,
+   "edge_tp": 5,
+   "edge_fp": 0,
+   "edge_fn": 0,
+   "missed_nodes": [],
+   "false_nodes": [],
+   "missed_edges": [],
+   "false_edges": []
+  },
+  {
+   "sample_id": "sample_000026_0252",
+   "gt_real_nodes": 12,
+   "gt_inserted": 0,
+   "gt_edges": 7,
+   "pred_nodes": 11,
+   "node_tp": 11,
+   "node_fp": 0,
+   "node_fn": 1,
+   "edge_tp": 6,
+   "edge_fp": 0,
+   "edge_fn": 1,
+   "missed_nodes": [
+    {
+     "kind": "another GT node within 2 mm",
+     "near_real": 1,
+     "near_inserted": 0,
+     "nearest_gt_mm": 1.0916035175323486,
+     "kept_detection_within_2mm": true,
+     "nearest_detection_mm": 1.092826008796692
+    }
+   ],
+   "false_nodes": [],
+   "missed_edges": [
+    {
+     "arc_mm": 2.3951621837338792,
+     "through_inserted": 0,
+     "kind": "endpoint missed",
+     "both_missed": false
+    }
+   ],
+   "false_edges": []
+  },
+  {
+   "sample_id": "sample_000025_0193",
+   "gt_real_nodes": 15,
+   "gt_inserted": 0,
+   "gt_edges": 8,
+   "pred_nodes": 15,
+   "node_tp": 15,
+   "node_fp": 0,
+   "node_fn": 0,
+   "edge_tp": 8,
+   "edge_fp": 0,
+   "edge_fn": 0,
+   "missed_nodes": [],
+   "false_nodes": [],
+   "missed_edges": [],
+   "false_edges": []
+  },
+  {
+   "sample_id": "sample_000045_0113",
+   "gt_real_nodes": 18,
+   "gt_inserted": 0,
+   "gt_edges": 10,
+   "pred_nodes": 18,
+   "node_tp": 18,
+   "node_fp": 0,
+   "node_fn": 0,
+   "edge_tp": 10,
+   "edge_fp": 0,
+   "edge_fn": 0,
+   "missed_nodes": [],
+   "false_nodes": [],
+   "missed_edges": [],
+   "false_edges": []
+  },
+  {
+   "sample_id": "sample_000039_0252",
+   "gt_real_nodes": 22,
+   "gt_inserted": 0,
+   "gt_edges": 13,
+   "pred_nodes": 22,
+   "node_tp": 22,
+   "node_fp": 0,
+   "node_fn": 0,
+   "edge_tp": 13,
+   "edge_fp": 0,
+   "edge_fn": 0,
+   "missed_nodes": [],
+   "false_nodes": [],
+   "missed_edges": [],
+   "false_edges": []
+  },
+  {
+   "sample_id": "sample_000024_0057",
+   "gt_real_nodes": 27,
+   "gt_inserted": 0,
+   "gt_edges": 18,
+   "pred_nodes": 27,
+   "node_tp": 27,
+   "node_fp": 0,
+   "node_fn": 0,
+   "edge_tp": 17,
+   "edge_fp": 0,
+   "edge_fn": 1,
+   "missed_nodes": [],
+   "false_nodes": [],
+   "missed_edges": [
+    {
+     "arc_mm": 75.09276518128095,
+     "through_inserted": 0,
+     "detection_on_path": 0,
+     "detection_on_path_unmatched": 0,
+     "kind": "both endpoints found, not a candidate"
+    }
+   ],
+   "false_edges": []
+  },
+  {
+   "sample_id": "sample_000045_0093",
+   "gt_real_nodes": 34,
+   "gt_inserted": 0,
+   "gt_edges": 22,
+   "pred_nodes": 34,
+   "node_tp": 34,
+   "node_fp": 0,
+   "node_fn": 0,
+   "edge_tp": 22,
+   "edge_fp": 0,
+   "edge_fn": 0,
+   "missed_nodes": [],
+   "false_nodes": [],
+   "missed_edges": [],
+   "false_edges": []
+  }
+ ],
+ "missed_node_peaks_selected": {
+  "floor": 0.01,
+  "node_threshold": 0.1,
+  "missed": 1,
+  "by_kind": {
+   "only nearby peak belongs to another GT node": 1
+  },
+  "below_threshold_peak_scores": {
+   "0-0.01": 0,
+   "0.01-0.05": 0,
+   "0.05-0.1": 0,
+   "0.1-0.3": 0,
+   "0.3-1.01": 0
+  },
+  "heat_max_2mm": {
+   "0-0.01": 0,
+   "0.01-0.05": 0,
+   "0.05-0.1": 0,
+   "0.1-0.3": 0,
+   "0.3-1.01": 1
+  },
+  "nodes": [
+   {
+    "sample_id": "sample_000026_0252",
+    "kind": "only nearby peak belongs to another GT node",
+    "peak_score": 0.999937891960144,
+    "heat_max_2mm": 0.999937891960144,
+    "heat_at_node": 0.9991958737373352
+   }
+  ]
+ },
+ "missed_node_peaks_fixed": {
+  "floor": 0.01,
+  "node_threshold": 0.3,
+  "missed": 1,
+  "by_kind": {
+   "only nearby peak belongs to another GT node": 1
+  },
+  "below_threshold_peak_scores": {
+   "0-0.01": 0,
+   "0.01-0.05": 0,
+   "0.05-0.1": 0,
+   "0.1-0.3": 0,
+   "0.3-1.01": 0
+  },
+  "heat_max_2mm": {
+   "0-0.01": 0,
+   "0.01-0.05": 0,
+   "0.05-0.1": 0,
+   "0.1-0.3": 0,
+   "0.3-1.01": 1
+  },
+  "nodes": [
+   {
+    "sample_id": "sample_000026_0252",
+    "kind": "only nearby peak belongs to another GT node",
+    "peak_score": 0.999937891960144,
+    "heat_max_2mm": 0.999937891960144,
+    "heat_at_node": 0.9991958737373352
+   }
+  ]
+ },
+ "stage1_run": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/dense_graph_20261030/BRAVA-simp2-overfit10/spline6_unet_wide_overfit_r1112",
+ "curves": {
+  "stage1": {
+   "curve": [
+    {
+     "step": 1000,
+     "node_threshold": 0.15,
+     "edge_threshold": 0.8,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.7929,
+     "edge_precision": 0.8481,
+     "edge_recall": 0.7444
+    },
+    {
+     "step": 2000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.25,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.8523,
+     "edge_precision": 0.8721,
+     "edge_recall": 0.8333
+    },
+    {
+     "step": 3000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.25,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 4000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 5000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 6000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.2,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 7000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 8000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 9000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 10000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 11000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 12000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 13000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 14000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 15000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 16000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 17000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 18000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 19000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 20000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    }
+   ],
+   "loss": {
+    "terms": [
+     "node",
+     "offset",
+     "centerline",
+     "edge",
+     "geometry_mm"
+    ],
+    "window_rows": 10,
+    "first": {
+     "node": 0.02976829125545919,
+     "offset": 0.08442188147455454,
+     "centerline": 0.2274786416441202,
+     "edge": 0.08693502622190863,
+     "geometry_mm": 0.6121619790792465,
+     "logged_sum": 1.0407658196752891,
+     "steps": [
+      100,
+      1000
+     ]
+    },
+    "middle": {
+     "node": 1.897050869956729e-05,
+     "offset": 0.0046210479456931354,
+     "centerline": 0.00024925163452280683,
+     "edge": 0.0005765444228018168,
+     "geometry_mm": 0.11537794098258018,
+     "logged_sum": 0.12084375549429752,
+     "steps": [
+      9600,
+      10500
+     ]
+    },
+    "last": {
+     "node": 1.8668047118808318e-06,
+     "offset": 0.00035930438025388867,
+     "centerline": 1.966905128938379e-05,
+     "edge": 0.00015290665878069375,
+     "geometry_mm": 0.09015295207500458,
+     "logged_sum": 0.09068669897004042,
+     "steps": [
+      19100,
+      20000
+     ]
+    },
+    "seconds_per_update": 0.20963979389667511
+   }
+  },
+  "stage2": {
+   "curve": [
+    {
+     "step": 375,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.4,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9832,
+     "edge_precision": 0.9888,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 750,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.55,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 1125,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 1500,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 1875,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 2250,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 2625,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 3000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 3375,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 3750,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 4125,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.15,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 4500,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 4875,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 5250,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 5625,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 6000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 6375,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 6750,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 7125,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    },
+    {
+     "step": 7500,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9966,
+     "node_precision": 1.0,
+     "node_recall": 0.9933,
+     "edge_f1": 0.9888,
+     "edge_precision": 1.0,
+     "edge_recall": 0.9778
+    }
+   ],
+   "loss": {
+    "terms": [
+     "node",
+     "centerline",
+     "edge",
+     "geometry_mm",
+     "passthrough",
+     "role"
+    ],
+    "window_rows": 3,
+    "first": {
+     "node": 0.00014231267656820515,
+     "centerline": 0.0036740744059594968,
+     "edge": 0.023380859522148967,
+     "geometry_mm": 0.39866937200228375,
+     "passthrough": 0.0,
+     "role": 0.0,
+     "logged_sum": 0.4258666186069604,
+     "steps": [
+      100,
+      300
+     ]
+    },
+    "middle": {
+     "node": 1.8105226520977642e-06,
+     "centerline": 0.00012454203776239106,
+     "edge": 0.00020861608451620364,
+     "geometry_mm": 0.09977336476246516,
+     "passthrough": 0.0,
+     "role": 0.0,
+     "logged_sum": 0.10010833340739585,
+     "steps": [
+      3700,
+      3900
+     ]
+    },
+    "last": {
+     "node": 1.347929886226969e-06,
+     "centerline": 7.971331797307357e-05,
+     "edge": 7.953114072734024e-05,
+     "geometry_mm": 0.08618562668561935,
+     "passthrough": 0.0,
+     "role": 0.0,
+     "logged_sum": 0.08634621907420599,
+     "steps": [
+      7300,
+      7500
+     ]
+    },
+    "seconds_per_update": 0.4937183504104614
+   }
+  }
+ },
+ "stage1_final_train_monitor": {
+  "thresholds": {
+   "node": 0.1,
+   "edge": 0.1,
+   "policy": "train monitor only; candidates = 16-NN over retained nodes"
+  },
+  "node_f1": 0.9966329966329966,
+  "node_precision": 1.0,
+  "node_recall": 0.9932885906040269,
+  "edge_f1": 0.9887640449438202,
+  "edge_precision": 1.0,
+  "edge_recall": 0.9777777777777777
+ },
+ "check_breakdown_fixed_equals_compare_arms": true,
+ "check_selected_equals_final_json": true
+}

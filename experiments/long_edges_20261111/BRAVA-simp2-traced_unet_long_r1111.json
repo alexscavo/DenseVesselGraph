@@ -1,0 +1,251 @@
+{
+ "entry": "BRAVA-simp2",
+ "run": "traced_unet_long_r1111",
+ "thresholds": {
+  "node": 0.3,
+  "edge": 0.8
+ },
+ "validation_patches": 1796,
+ "long_edges": {
+  "10-20 mm": {
+   "edges": 5307,
+   "endpoint missing": {
+    "share": 0.6489542114188808,
+    "coverage_mean": 0.27176594874758264,
+    "coverage_over_0p8": 0.21602787456445993
+   },
+   "recovered": {
+    "share": 0.2849067269643867,
+    "coverage_mean": 0.9887278652662777,
+    "coverage_over_0p8": 0.9814814814814815
+   },
+   "straight fallback, rejected": {
+    "share": 0.0297719992462785,
+    "coverage_mean": 0.6510555340708497,
+    "coverage_over_0p8": 0.5443037974683544
+   },
+   "traced, rejected": {
+    "share": 0.01978518937252685,
+    "coverage_mean": 0.3155300851499111,
+    "coverage_over_0p8": 0.1619047619047619
+   },
+   "broken, a piece missing": {
+    "share": 0.009798379498775203,
+    "coverage_mean": 0.6428490122699869,
+    "coverage_over_0p8": 0.4423076923076923,
+    "interrupting_mean": 1.4807692307692308,
+    "interrupting_unmatched_share": 0.9090909090909091,
+    "chain_nodes_mean": 0.0
+   },
+   "broken, all pieces accepted": {
+    "share": 0.006783493499152063,
+    "coverage_mean": 0.9891329627354472,
+    "coverage_over_0p8": 0.9722222222222222,
+    "interrupting_mean": 1.0,
+    "interrupting_unmatched_share": 0.9444444444444444,
+    "chain_nodes_mean": 1.0833333333333333
+   }
+  },
+  "20-40 mm": {
+   "edges": 3791,
+   "endpoint missing": {
+    "share": 0.7013980480084411,
+    "coverage_mean": 0.20898018945085997,
+    "coverage_over_0p8": 0.14403911244828882
+   },
+   "recovered": {
+    "share": 0.17594302294908995,
+    "coverage_mean": 0.9597969397547113,
+    "coverage_over_0p8": 0.9370314842578711
+   },
+   "straight fallback, rejected": {
+    "share": 0.06119757319968346,
+    "coverage_mean": 0.3480732337472092,
+    "coverage_over_0p8": 0.25
+   },
+   "traced, rejected": {
+    "share": 0.02664204695331047,
+    "coverage_mean": 0.09379786780593269,
+    "coverage_over_0p8": 0.009900990099009901
+   },
+   "broken, a piece missing": {
+    "share": 0.018728567660247955,
+    "coverage_mean": 0.5952772220864233,
+    "coverage_over_0p8": 0.352112676056338,
+    "interrupting_mean": 1.647887323943662,
+    "interrupting_unmatched_share": 0.9401709401709402,
+    "chain_nodes_mean": 0.0
+   },
+   "broken, all pieces accepted": {
+    "share": 0.01424426272751253,
+    "coverage_mean": 0.9866976693778498,
+    "coverage_over_0p8": 0.9814814814814815,
+    "interrupting_mean": 1.1851851851851851,
+    "interrupting_unmatched_share": 0.984375,
+    "chain_nodes_mean": 1.1296296296296295
+   },
+   "not proposed": {
+    "share": 0.0018464785017145871,
+    "coverage_mean": 0.4118546003825445,
+    "coverage_over_0p8": 0.14285714285714285
+   }
+  },
+  ">= 40 mm": {
+   "edges": 1244,
+   "endpoint missing": {
+    "share": 0.7339228295819936,
+    "coverage_mean": 0.14323270187806417,
+    "coverage_over_0p8": 0.0832420591456736
+   },
+   "straight fallback, rejected": {
+    "share": 0.10369774919614148,
+    "coverage_mean": 0.26008246709979804,
+    "coverage_over_0p8": 0.18604651162790697
+   },
+   "recovered": {
+    "share": 0.07154340836012862,
+    "coverage_mean": 0.9437572685436144,
+    "coverage_over_0p8": 0.9101123595505618
+   },
+   "broken, a piece missing": {
+    "share": 0.02652733118971061,
+    "coverage_mean": 0.4790628165740708,
+    "coverage_over_0p8": 0.2727272727272727,
+    "interrupting_mean": 1.3636363636363635,
+    "interrupting_unmatched_share": 0.9555555555555556,
+    "chain_nodes_mean": 0.0
+   },
+   "not proposed": {
+    "share": 0.022508038585209004,
+    "coverage_mean": 0.27685361721923485,
+    "coverage_over_0p8": 0.17857142857142858
+   },
+   "traced, rejected": {
+    "share": 0.021704180064308683,
+    "coverage_mean": 0.06205310763814272,
+    "coverage_over_0p8": 0.0
+   },
+   "broken, all pieces accepted": {
+    "share": 0.02009646302250804,
+    "coverage_mean": 0.9705793822094736,
+    "coverage_over_0p8": 0.96,
+    "interrupting_mean": 0.92,
+    "interrupting_unmatched_share": 1.0,
+    "chain_nodes_mean": 1.08
+   }
+  }
+ },
+ "contraction": {
+  "none": {
+   "node_f1": 0.579283150121831,
+   "node_precision": 0.5860304079482161,
+   "node_recall": 0.5726894928468979,
+   "edge_f1": 0.2754546971466711,
+   "edge_precision": 0.32905437729229786,
+   "edge_recall": 0.23687080296160248,
+   "beta0_mae": 3.474944320712695,
+   "beta1_mae": 0.6319599109131403,
+   "recovered": {
+    "10-20 mm": 0.2849067269643867,
+    "20-40 mm": 0.17594302294908995,
+    ">= 40 mm": 0.07154340836012862
+   }
+  },
+  "all": {
+   "node_f1": 0.575474348648598,
+   "node_precision": 0.5863806397434919,
+   "node_recall": 0.5649663491596484,
+   "edge_f1": 0.2627150147004157,
+   "edge_precision": 0.3194444444444444,
+   "edge_recall": 0.2230959077082018,
+   "beta0_mae": 3.474944320712695,
+   "beta1_mae": 0.6319599109131403,
+   "contractions_per_patch": 0.20824053452115812,
+   "recovered": {
+    "10-20 mm": 0.2683248539664594,
+    "20-40 mm": 0.16143497757847533,
+    ">= 40 mm": 0.07395498392282958
+   }
+  },
+  "score<0.5": {
+   "node_f1": 0.5757144462339413,
+   "node_precision": 0.5865226847788759,
+   "node_recall": 0.565297341031959,
+   "edge_f1": 0.2635810810810811,
+   "edge_precision": 0.32035805206536916,
+   "edge_recall": 0.22389944326465017,
+   "beta0_mae": 3.474944320712695,
+   "beta1_mae": 0.6319599109131403,
+   "contractions_per_patch": 0.2032293986636971,
+   "recovered": {
+    "10-20 mm": 0.26907857546636516,
+    "20-40 mm": 0.16275389079398575,
+    ">= 40 mm": 0.07395498392282958
+   }
+  },
+  "score<0.7": {
+   "node_f1": 0.575474348648598,
+   "node_precision": 0.5863806397434919,
+   "node_recall": 0.5649663491596484,
+   "edge_f1": 0.2627150147004157,
+   "edge_precision": 0.3194444444444444,
+   "edge_recall": 0.2230959077082018,
+   "beta0_mae": 3.474944320712695,
+   "beta1_mae": 0.6319599109131403,
+   "contractions_per_patch": 0.20824053452115812,
+   "recovered": {
+    "10-20 mm": 0.2683248539664594,
+    "20-40 mm": 0.16143497757847533,
+    ">= 40 mm": 0.07395498392282958
+   }
+  },
+  "angle<60": {
+   "node_f1": 0.5776981639050605,
+   "node_precision": 0.5863414264611189,
+   "node_recall": 0.5693060203743886,
+   "edge_f1": 0.2696516077062496,
+   "edge_precision": 0.3247110177026918,
+   "edge_recall": 0.23055730930379384,
+   "beta0_mae": 3.474944320712695,
+   "beta1_mae": 0.6319599109131403,
+   "contractions_per_patch": 0.09521158129175947,
+   "recovered": {
+    "10-20 mm": 0.276615790465423,
+    "20-40 mm": 0.1685571089422316,
+    ">= 40 mm": 0.07315112540192927
+   }
+  },
+  "angle<60, score<0.7": {
+   "node_f1": 0.5776981639050605,
+   "node_precision": 0.5863414264611189,
+   "node_recall": 0.5693060203743886,
+   "edge_f1": 0.2696516077062496,
+   "edge_precision": 0.3247110177026918,
+   "edge_recall": 0.23055730930379384,
+   "beta0_mae": 3.474944320712695,
+   "beta1_mae": 0.6319599109131403,
+   "contractions_per_patch": 0.09521158129175947,
+   "recovered": {
+    "10-20 mm": 0.276615790465423,
+    "20-40 mm": 0.1685571089422316,
+    ">= 40 mm": 0.07315112540192927
+   }
+  },
+  "angle<30": {
+   "node_f1": 0.5788601537917295,
+   "node_precision": 0.5862055961988084,
+   "node_recall": 0.5716965172299658,
+   "edge_f1": 0.27367857978670057,
+   "edge_precision": 0.32775464445868036,
+   "edge_recall": 0.23491935946737072,
+   "beta0_mae": 3.474944320712695,
+   "beta1_mae": 0.6319599109131403,
+   "contractions_per_patch": 0.030066815144766147,
+   "recovered": {
+    "10-20 mm": 0.2807612587149048,
+    "20-40 mm": 0.17488789237668162,
+    ">= 40 mm": 0.07234726688102894
+   }
+  }
+ }
+}

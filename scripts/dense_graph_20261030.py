@@ -2,7 +2,7 @@
 """WS3 two-stage dense vessel-graph model (30 Oct 2026).
 
 Stage 1 (nodes): 3D U-Net -> CenterNet node heatmap + sub-voxel offsets + centerline
-aux + 32 feature channels (--feature-channels). Nodes = heatmap local maxima (3^3 NMS) above a threshold.
+aux + 32 feature channels (--feature-channels). Nodes = heatmap local maxima (3^3 NMS; --nms) above a threshold.
 Stage 2 (edges): candidate pairs = each node's 16 nearest nodes (mm). For each pair the
 features in a corridor around the chord feed a shared 3D CNN with two heads: an edge
 logit and the M interior points of a cubic B-spline (or polyline / chord arm).
@@ -32,10 +32,15 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / 'scripts'))
 from models.spline import cubic_basis  # noqa: E402
-from node_heatmap_probe_20261030 import PLAN, collate, make_dataset, targets, focal  # noqa: E402
+from node_heatmap_probe_20261030 import PLAN, SIGMA, collate, make_dataset, targets, focal  # noqa: E402
 from oracle_geometry_20261030 import frame, polyline, chamfer, to_mm  # noqa: E402
 
 SIZE = 64
+# Node decoding window (13 Nov 2026): peaks() keeps local maxima of the heatmap in an NMS x NMS x NMS window. 3 = every
+# run before 13 Nov 2026. A run sets it from --nms (training) or from its record (re-evaluation, stage-2 warm start), so
+# helper scripts that call peaks() without an argument decode with the module value.
+NMS_DEFAULT = 3
+NMS = NMS_DEFAULT
 L, S = 24, 11
 NEIGHBOURS = 16
 MAX_NEGATIVES = 256
@@ -48,6 +53,68 @@ EDGE_THRESHOLDS = [round(t, 2) for t in np.arange(0.1, 0.91, 0.05)]
 # narrowed to the U-Net backbone size (5.78M vs 5.75M); channel counts of dsc3_slim are multiples of 4 (GroupNorm).
 WIDTHS = {'unet_wide': (56, 56, 104, 208, 424, 56), 'dsc3_slim': (20, 20, 40, 76, 152, 20)}
 BACKBONES = ['unet', 'unet_wide', 'ukan', 'ukan_mlp', 'ukan_add', 'dsc3', 'dsc3_slim', 'dsc9']
+# Decision (user, 12 Nov 2026): U-Net wide is the backbone of new training runs (docs/research/dense_traced_model, 4.15).
+# A run that is re-evaluated, or a stage 2 warm-started from a checkpoint, takes the backbone recorded for that run or
+# checkpoint, so runs made before this date (U-Net unless stated) need no extra flag.
+BACKBONE_DEFAULT = 'unet_wide'
+
+
+def resolve_backbone(a, out_dir, device='cpu'):
+    """--backbone if given; else the backbone recorded for the run being re-evaluated or for the --init-from
+    checkpoint ('unet' when none is recorded: every run before the option existed); else BACKBONE_DEFAULT."""
+    if a.backbone is not None:
+        return a.backbone
+    if getattr(a, 'evaluate_only', False):
+        for name in ('final.json', 'final-v2.json'):
+            if (out_dir / name).exists():
+                return json.loads((out_dir / name).read_text()).get('backbone', 'unet')
+        return torch.load(out_dir / 'model.pt', map_location=device).get('args', {}).get('backbone', 'unet')
+    if getattr(a, 'init_from', None):
+        return torch.load(a.init_from, map_location=device).get('args', {}).get('backbone', 'unet')
+    return BACKBONE_DEFAULT
+
+
+def recorded_heat(a, out_dir, device='cpu'):
+    """Heatmap target width and decoding window recorded for the run being re-evaluated (--evaluate-only: its
+    final.json, else its model.pt args) or for the --init-from checkpoint (the final.json next to it, else the
+    checkpoint args); SIGMA / NMS (1.5, 3) where nothing is recorded (every run before 13 Nov 2026) or for a new run."""
+    record = None
+    if getattr(a, 'evaluate_only', False):
+        for name in ('final.json', 'final-v2.json'):
+            if (out_dir / name).exists():
+                record = json.loads((out_dir / name).read_text())
+                break
+        else:
+            record = torch.load(out_dir / 'model.pt', map_location=device).get('args', {})
+    elif getattr(a, 'init_from', None):
+        source = Path(a.init_from)
+        if (source.parent / 'final.json').exists():
+            record = json.loads((source.parent / 'final.json').read_text())
+        else:
+            record = torch.load(source, map_location=device).get('args', {})
+    record = record or {}
+    return dict(sigma=float(record.get('sigma', SIGMA)), nms=int(record.get('nms', NMS_DEFAULT)))
+
+
+def resolve_heat(a, out_dir, device='cpu'):
+    """--sigma / --nms if given, else recorded_heat(). Sets the module decoding window NMS and returns the record (the
+    values the run / checkpoint was trained with), which names the output of evaluations at another window."""
+    record = recorded_heat(a, out_dir, device)
+    for key in ('sigma', 'nms'):
+        if getattr(a, key) is None:
+            setattr(a, key, record[key])
+        elif (getattr(a, 'evaluate_only', False) or getattr(a, 'init_from', None)) and getattr(a, key) != record[key]:
+            print(f'NOTE --{key} {getattr(a, key)} differs from the value recorded for the run / checkpoint ({record[key]})', flush=True)
+    a.sigma, a.nms = float(a.sigma), int(a.nms)
+    assert a.nms >= 1 and a.nms % 2 == 1, '--nms must be an odd positive integer'
+    global NMS
+    NMS = a.nms
+    return record
+
+
+def eval_name(base, nms, trained_nms):
+    """Output name of an evaluation: `base` at the window the run was trained with, else base-nms<K>.json."""
+    return base if nms == trained_nms else base.replace('.json', f'-nms{nms}.json')
 
 
 class DenseGraph(nn.Module):
@@ -113,9 +180,11 @@ class DenseGraph(nn.Module):
 
 
 @torch.no_grad()
-def peaks(out, threshold):
+def peaks(out, threshold, nms=None):
+    """Heatmap local maxima in an nms^3 window (None = module NMS) with score >= threshold, highest first."""
+    k = NMS if nms is None else int(nms)
     heat = out[:, :1].float().sigmoid()
-    keep = (heat == F.max_pool3d(heat, 3, 1, 1)) & (heat >= threshold)
+    keep = (heat == F.max_pool3d(heat, k, 1, k // 2)) & (heat >= threshold)
     result = []
     for b in range(len(out)):
         idx = keep[b, 0].nonzero()
@@ -295,6 +364,36 @@ def warm_start(model, path, device):
     return dict(source=str(path), loaded=len(loaded), fresh=sorted(set(own) - set(loaded)))
 
 
+CURVE_KEYS = ('node_f1', 'node_precision', 'node_recall', 'edge_f1', 'edge_precision', 'edge_recall')
+
+
+def curve_point(predict_fn, model, a, monitor_ds, val_ds, device, plain=lambda rows: rows):
+    """One learning-curve point (--eval-every, 10 Nov 2026): thresholds chosen on the training monitor exactly as in
+    final_evaluation, then node / edge scores (no geometry) on the training monitor and on the plan's validation
+    monitor subset. Validation is only reported here, never used for a choice."""
+    node_t = select_node_threshold(plain(predict_fn(model, monitor_ds, device, min(NODE_THRESHOLDS), a.workers, a.eval_batch)))
+    train_rows = plain(predict_fn(model, monitor_ds, device, node_t, a.workers, a.eval_batch))
+    edge_t = select_edge_threshold(train_rows, node_t)
+    val_rows = plain(predict_fn(model, val_ds, device, node_t, a.workers, a.eval_batch))
+    pick = lambda rows: {k: v for k, v in evaluate(rows, node_t, edge_t, geometry=False).items() if k in CURVE_KEYS}
+    return dict(node_threshold=node_t, edge_threshold=edge_t, train_monitor=pick(train_rows), validation_monitor=pick(val_rows))
+
+
+def curve_sets(a, plan):
+    """Datasets for --eval-every: the training monitor and the validation monitor subset of the plan."""
+    monitor, val = plan['monitor_train'], plan.get('monitor_val') or plan['val_ids'][:256]
+    if a.smoke:
+        monitor, val = plan['train_ids'][:4], plan['val_ids'][:4]
+    return make_dataset(a.dataset, monitor, augment=False), make_dataset(a.dataset, val, augment=False)
+
+
+def log_curve(out_dir, step, start, point):
+    row = dict(step=step, seconds=time.time() - start, **point)
+    with (out_dir / 'learning-curve.jsonl').open('a') as f:
+        f.write(json.dumps(row) + '\n')
+    print('CURVE ' + json.dumps(row), flush=True)
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('--dataset', choices=sorted(json.loads(PLAN.read_text())['datasets']), required=True)  # any plan entry
@@ -312,28 +411,52 @@ def main():
     p.add_argument('--init-from', type=Path, help='Warm start from a dense-model checkpoint (matching tensors)')
     p.add_argument('--run-name', default=None, help='Output subfolder name')
     p.add_argument('--evaluate-only', action='store_true', help='Re-evaluate the saved model.pt')
-    p.add_argument('--backbone', choices=BACKBONES, default='unet',
-                   help='ukan: U-KAN-style deepest stages (models/ukan3d.py); ukan_mlp: same blocks with MLPs; ukan_add: additive '
+    p.add_argument('--backbone', choices=BACKBONES, default=None,
+                   help='Default: unet_wide for a new run (since 12 Nov 2026), else the backbone of the run / checkpoint used. ukan: U-KAN-style deepest stages (models/ukan3d.py); ukan_mlp: same blocks with MLPs; ukan_add: additive '
                         'skips; dsc<K>: DSCNet snake-conv blocks in every stage, snake length K (models/dscnet3d.py)')
     p.add_argument('--feature-channels', type=int, default=32,
                    help='Shared feature channels F read by stage 2 (U-Net outputs 5..). 32 = all runs before 9 Nov 2026')
+    p.add_argument('--seed', type=int, default=364505, help='Torch / NumPy seed; 364505 = every run before 10 Nov 2026')
+    p.add_argument('--eval-every', type=int, default=0,
+                   help='Write a learning-curve point (training monitor and validation monitor subset, thresholds chosen '
+                        'on the training monitor) to learning-curve.jsonl every this many updates and at the end; 0 = off')
+    p.add_argument('--no-augment', action='store_true',
+                   help='Train without augmentation (quarter turns + image noise). Default off = augmented, as every run '
+                        'before 12 Nov 2026; used for the overfit ceiling (scripts/overfit_ceiling_20261112.py)')
+    p.add_argument('--flip', action='store_true',
+                   help='Add random axis flips (each axis with probability 1/2) to the training augmentation; default off '
+                        '= quarter turns + image noise only, as every run before 13 Nov 2026')
+    p.add_argument('--sigma', type=float, default=None,
+                   help='Width (voxels) of the Gaussian node-heatmap target. Default: the value recorded for the run '
+                        '(--evaluate-only) or the --init-from checkpoint, else 1.5 (every run before 13 Nov 2026)')
+    p.add_argument('--nms', type=int, default=None,
+                   help='Odd local-maximum window of node decoding (peaks), used in training (predicted candidates) and '
+                        'evaluation. Default: recorded for the run / --init-from checkpoint, else 3 (every run before 13 Nov 2026)')
+    p.add_argument('--extra-nms', type=int, nargs='*', default=[],
+                   help='After the final evaluation, evaluate again at each of these windows (thresholds re-selected on '
+                        'the training monitor); written to final[-v2]-nms<K>.json')
+    p.add_argument('--eval-at-start', action='store_true',
+                   help='With --eval-every: also write a curve point at step 0 (before the first update; checks a warm start)')
     a = p.parse_args()
-    torch.manual_seed(364505)
-    np.random.seed(364505)
+    torch.manual_seed(a.seed)
+    np.random.seed(a.seed)
     out_dir = a.output / a.dataset / (a.run_name or (a.mode + (str(a.interior) if a.mode != 'chord' else '')))
     out_dir.mkdir(parents=True, exist_ok=True)
+    a.backbone = resolve_backbone(a, out_dir)
+    record = resolve_heat(a, out_dir)
+    trained_nms = record['nms'] if a.evaluate_only else a.nms  # window the model was trained with (output naming)
     plan = json.loads(PLAN.read_text())['datasets'][a.dataset]
     train_ids, val_ids, monitor = plan['train_ids'], plan['val_ids'], plan['monitor_train']
     if a.smoke:
         train_ids, val_ids, monitor = train_ids[:8], val_ids[:4], train_ids[:4]
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    train_ds = make_dataset(a.dataset, train_ids, augment=True)
+    train_ds = make_dataset(a.dataset, train_ids, augment=not a.no_augment, flip=a.flip)
     model = DenseGraph(a.mode, a.interior, backbone=a.backbone, feature_channels=a.feature_channels).to(device)
     if a.init_from and not a.evaluate_only:
         (out_dir / 'warm-start.json').write_text(json.dumps(warm_start(model, a.init_from, device), indent=1))
     if a.evaluate_only:
         model.load_state_dict(torch.load(out_dir / 'model.pt', map_location=device)['model'])
-        final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final-v2.json')
+        final_evaluations(model, a, monitor, val_ids, device, out_dir, 'final-v2.json', trained_nms)
         return
     opt = torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=1e-4)
     sched = torch.optim.lr_scheduler.OneCycleLR(opt, max_lr=a.lr, total_steps=a.updates, pct_start=0.05)
@@ -341,10 +464,13 @@ def main():
     loader = torch.utils.data.DataLoader(train_ds, batch_size=a.batch, sampler=sampler, num_workers=a.workers,
                                          collate_fn=collate, drop_last=True, persistent_workers=a.workers > 0)
     log = (out_dir / 'training.jsonl').open('a')
+    curve_ds = curve_sets(a, plan) if a.eval_every else None
     start, step = time.time(), 0
+    if a.eval_every and a.eval_at_start:
+        log_curve(out_dir, 0, start, curve_point(predict, model, a, *curve_ds, device))
     for images, nodes, edges, geometry in loader:
         step += 1
-        heat_t, offset_t, peak_t, line_t = targets(nodes, geometry, device)
+        heat_t, offset_t, peak_t, line_t = targets(nodes, geometry, device, sigma=a.sigma)
         with torch.autocast(device, dtype=torch.bfloat16, enabled=device == 'cuda'):
             out = model.forward_image(images.to(device))
         node_loss = focal(out[:, :1].float(), heat_t)
@@ -383,8 +509,20 @@ def main():
             log.write(json.dumps(row) + '\n')
             log.flush()
             print('STEP ' + json.dumps(row), flush=True)
+        if a.eval_every and (step % a.eval_every == 0 or step == a.updates):
+            log_curve(out_dir, step, start, curve_point(predict, model, a, *curve_ds, device))
     torch.save(dict(model=model.state_dict(), args={k: str(v) for k, v in vars(a).items()}), out_dir / 'model.pt')
-    final_evaluation(model, a, monitor, val_ids, device, out_dir)
+    final_evaluations(model, a, monitor, val_ids, device, out_dir, 'final.json', trained_nms)
+
+
+def final_evaluations(model, a, monitor, val_ids, device, out_dir, base, trained_nms):
+    """final_evaluation at the run's window a.nms, then at each --extra-nms window (module NMS restored after)."""
+    global NMS
+    for k in [a.nms] + [k for k in getattr(a, 'extra_nms', []) if k != a.nms]:
+        assert k >= 1 and k % 2 == 1, 'decoding windows must be odd positive integers'
+        NMS = k
+        final_evaluation(model, a, monitor, val_ids, device, out_dir, name=eval_name(base, k, trained_nms))
+    NMS = a.nms
 
 
 def final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final.json'):
@@ -397,7 +535,8 @@ def final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final.js
     import pickle  # per-patch rows for paired subject-level comparisons
     (out_dir / name.replace('.json', '-validation-rows.pkl')).write_bytes(pickle.dumps(val_rows))
     fixed = predict(model, val_ds, device, 0.5, a.workers, a.eval_batch)
-    result = dict(dataset=a.dataset, mode=a.mode, backbone=getattr(a, 'backbone', 'unet'), feature_channels=getattr(a, 'feature_channels', 32), interior=a.interior, updates=a.updates, batch=a.batch, lr=a.lr,
+    result = dict(dataset=a.dataset, mode=a.mode, seed=getattr(a, 'seed', 364505), backbone=getattr(a, 'backbone', 'unet'), feature_channels=getattr(a, 'feature_channels', 32), interior=a.interior, updates=a.updates, batch=a.batch, lr=a.lr,
+                  augment=not getattr(a, 'no_augment', False), flip=bool(getattr(a, 'flip', False)), sigma=float(getattr(a, 'sigma', None) or SIGMA), nms=NMS,
                   thresholds=dict(node=node_t, edge=edge_t, policy='train monitor only; candidates = 16-NN over retained nodes'),
                   train_monitor=evaluate(train_rows, node_t, edge_t), validation=evaluate(val_rows, node_t, edge_t),
                   validation_fixed_0p5=evaluate(fixed, 0.5, 0.5))

@@ -1,0 +1,1262 @@
+{
+ "entry": "BRAVA-overfit10",
+ "run": "traced_unet_wide_overfit_r1112",
+ "patches": [
+  "sample_000027_0009",
+  "sample_000026_0117",
+  "sample_000033_0114",
+  "sample_000008_0209",
+  "sample_000026_0252",
+  "sample_000025_0193",
+  "sample_000045_0113",
+  "sample_000039_0252",
+  "sample_000024_0057",
+  "sample_000045_0093"
+ ],
+ "compress_tol": 0.5,
+ "augment": false,
+ "selected_thresholds": {
+  "node": 0.1,
+  "edge": 0.1,
+  "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+ },
+ "selected": {
+  "final_json_train_monitor": {
+   "node_f1": 0.9753086419753086,
+   "node_precision": 1.0,
+   "node_recall": 0.9518072289156626,
+   "edge_f1": 0.9247311827956989,
+   "edge_precision": 1.0,
+   "edge_recall": 0.86
+  },
+  "recomputed": {
+   "node_f1": 0.9753086419753086,
+   "node_precision": 1.0,
+   "node_recall": 0.9518072289156626,
+   "edge_f1": 0.9247311827956989,
+   "edge_precision": 1.0,
+   "edge_recall": 0.86
+  }
+ },
+ "fixed_0p30_0p75": {
+  "node": {
+   "precision": 1.0,
+   "recall": 0.9518072289156626,
+   "f1": 0.9753086419753086,
+   "tp": 158,
+   "fp": 0,
+   "fn": 8
+  },
+  "edge": {
+   "precision": 1.0,
+   "recall": 0.86,
+   "f1": 0.9247311827956989,
+   "tp": 86,
+   "fp": 0,
+   "fn": 14
+  },
+  "V0_global": {
+   "node_f1": 0.9753086419753086,
+   "edge_f1": 0.9247311827956989,
+   "branch_f1": 0.8571428571428571,
+   "curve_f1": 0.9426578186149396,
+   "mae_beta0": 0.6,
+   "mae_beta1": 0.0
+  },
+  "node_ap_2mm": {
+   "node_ap": 0.9518072289156626,
+   "max_recall": 0.9518072289156626,
+   "proposals": 163,
+   "gt_nodes": 166
+  }
+ },
+ "breakdown_selected": {
+  "totals": {
+   "node_tp": 158,
+   "node_fp": 0,
+   "node_fn": 8,
+   "edge_tp": 86,
+   "edge_fp": 0,
+   "edge_fn": 14,
+   "gt_real_nodes": 166,
+   "gt_edges": 100,
+   "pred_nodes": 158
+  },
+  "node": {
+   "precision": 1.0,
+   "recall": 0.9518072289156626,
+   "f1": 0.9753086419753086,
+   "tp": 158,
+   "fp": 0,
+   "fn": 8
+  },
+  "edge": {
+   "precision": 1.0,
+   "recall": 0.86,
+   "f1": 0.9247311827956989,
+   "tp": 86,
+   "fp": 0,
+   "fn": 14
+  },
+  "missed_gt_nodes": {
+   "total": 8,
+   "by_kind": {
+    "another GT node within 2 mm": 8
+   },
+   "with_kept_detection_within_2mm": 8,
+   "crowded_with_kept_detection_within_2mm": 8,
+   "nearest_gt_node_mm": {
+    "0-1": 5,
+    "1-1.5": 3,
+    "1.5-2": 0,
+    "2-3": 0,
+    "3-1000000000.0": 0
+   }
+  },
+  "false_nodes": {
+   "total": 0,
+   "by_where": {}
+  },
+  "missed_gt_edges": {
+   "total": 14,
+   "by_kind": {
+    "endpoint missed": 12,
+    "both endpoints found, not a candidate": 2
+   },
+   "endpoint_missed_both": 0,
+   "not_candidate_with_detection_on_path": 0,
+   "through_inserted_anchor": 0
+  },
+  "false_edges": {
+   "total": 0,
+   "by_kind": {},
+   "MM_by_gt_hops": {},
+   "chains_through_anchor_detections": 0
+  }
+ },
+ "breakdown_fixed": {
+  "totals": {
+   "node_tp": 158,
+   "node_fp": 0,
+   "node_fn": 8,
+   "edge_tp": 86,
+   "edge_fp": 0,
+   "edge_fn": 14,
+   "gt_real_nodes": 166,
+   "gt_edges": 100,
+   "pred_nodes": 158
+  },
+  "node": {
+   "precision": 1.0,
+   "recall": 0.9518072289156626,
+   "f1": 0.9753086419753086,
+   "tp": 158,
+   "fp": 0,
+   "fn": 8
+  },
+  "edge": {
+   "precision": 1.0,
+   "recall": 0.86,
+   "f1": 0.9247311827956989,
+   "tp": 86,
+   "fp": 0,
+   "fn": 14
+  },
+  "missed_gt_nodes": {
+   "total": 8,
+   "by_kind": {
+    "another GT node within 2 mm": 8
+   },
+   "with_kept_detection_within_2mm": 8,
+   "crowded_with_kept_detection_within_2mm": 8,
+   "nearest_gt_node_mm": {
+    "0-1": 5,
+    "1-1.5": 3,
+    "1.5-2": 0,
+    "2-3": 0,
+    "3-1000000000.0": 0
+   }
+  },
+  "false_nodes": {
+   "total": 0,
+   "by_where": {}
+  },
+  "missed_gt_edges": {
+   "total": 14,
+   "by_kind": {
+    "endpoint missed": 12,
+    "both endpoints found, not a candidate": 2
+   },
+   "endpoint_missed_both": 0,
+   "not_candidate_with_detection_on_path": 0,
+   "through_inserted_anchor": 0
+  },
+  "false_edges": {
+   "total": 0,
+   "by_kind": {},
+   "MM_by_gt_hops": {},
+   "chains_through_anchor_detections": 0
+  }
+ },
+ "per_patch_selected": [
+  {
+   "sample_id": "sample_000027_0009",
+   "gt_real_nodes": 4,
+   "gt_inserted": 0,
+   "gt_edges": 2,
+   "pred_nodes": 3,
+   "node_tp": 3,
+   "node_fp": 0,
+   "node_fn": 1,
+   "edge_tp": 1,
+   "edge_fp": 0,
+   "edge_fn": 1,
+   "missed_nodes": [
+    {
+     "kind": "another GT node within 2 mm",
+     "near_real": 1,
+     "near_inserted": 0,
+     "nearest_gt_mm": 1.0832135677337646,
+     "kept_detection_within_2mm": true,
+     "nearest_detection_mm": 1.082755208015442
+    }
+   ],
+   "false_nodes": [],
+   "missed_edges": [
+    {
+     "arc_mm": 1.083213528919814,
+     "through_inserted": 0,
+     "kind": "endpoint missed",
+     "both_missed": false
+    }
+   ],
+   "false_edges": []
+  },
+  {
+   "sample_id": "sample_000026_0117",
+   "gt_real_nodes": 6,
+   "gt_inserted": 0,
+   "gt_edges": 3,
+   "pred_nodes": 6,
+   "node_tp": 6,
+   "node_fp": 0,
+   "node_fn": 0,
+   "edge_tp": 3,
+   "edge_fp": 0,
+   "edge_fn": 0,
+   "missed_nodes": [],
+   "false_nodes": [],
+   "missed_edges": [],
+   "false_edges": []
+  },
+  {
+   "sample_id": "sample_000033_0114",
+   "gt_real_nodes": 8,
+   "gt_inserted": 0,
+   "gt_edges": 5,
+   "pred_nodes": 7,
+   "node_tp": 7,
+   "node_fp": 0,
+   "node_fn": 1,
+   "edge_tp": 4,
+   "edge_fp": 0,
+   "edge_fn": 1,
+   "missed_nodes": [
+    {
+     "kind": "another GT node within 2 mm",
+     "near_real": 1,
+     "near_inserted": 0,
+     "nearest_gt_mm": 0.5580834746360779,
+     "kept_detection_within_2mm": true,
+     "nearest_detection_mm": 0.5587583184242249
+    }
+   ],
+   "false_nodes": [],
+   "missed_edges": [
+    {
+     "arc_mm": 0.8247030330314545,
+     "through_inserted": 0,
+     "kind": "endpoint missed",
+     "both_missed": false
+    }
+   ],
+   "false_edges": []
+  },
+  {
+   "sample_id": "sample_000008_0209",
+   "gt_real_nodes": 10,
+   "gt_inserted": 0,
+   "gt_edges": 6,
+   "pred_nodes": 9,
+   "node_tp": 9,
+   "node_fp": 0,
+   "node_fn": 1,
+   "edge_tp": 3,
+   "edge_fp": 0,
+   "edge_fn": 3,
+   "missed_nodes": [
+    {
+     "kind": "another GT node within 2 mm",
+     "near_real": 1,
+     "near_inserted": 0,
+     "nearest_gt_mm": 0.5362154245376587,
+     "kept_detection_within_2mm": true,
+     "nearest_detection_mm": 0.523736834526062
+    }
+   ],
+   "false_nodes": [],
+   "missed_edges": [
+    {
+     "arc_mm": 9.40045311379753,
+     "through_inserted": 0,
+     "kind": "endpoint missed",
+     "both_missed": false
+    },
+    {
+     "arc_mm": 16.511291964391276,
+     "through_inserted": 0,
+     "kind": "endpoint missed",
+     "both_missed": false
+    },
+    {
+     "arc_mm": 0.5362154283040231,
+     "through_inserted": 0,
+     "kind": "endpoint missed",
+     "both_missed": false
+    }
+   ],
+   "false_edges": []
+  },
+  {
+   "sample_id": "sample_000026_0252",
+   "gt_real_nodes": 12,
+   "gt_inserted": 0,
+   "gt_edges": 7,
+   "pred_nodes": 11,
+   "node_tp": 11,
+   "node_fp": 0,
+   "node_fn": 1,
+   "edge_tp": 6,
+   "edge_fp": 0,
+   "edge_fn": 1,
+   "missed_nodes": [
+    {
+     "kind": "another GT node within 2 mm",
+     "near_real": 1,
+     "near_inserted": 0,
+     "nearest_gt_mm": 1.0916035175323486,
+     "kept_detection_within_2mm": true,
+     "nearest_detection_mm": 1.0916558504104614
+    }
+   ],
+   "false_nodes": [],
+   "missed_edges": [
+    {
+     "arc_mm": 2.3951621837338792,
+     "through_inserted": 0,
+     "kind": "endpoint missed",
+     "both_missed": false
+    }
+   ],
+   "false_edges": []
+  },
+  {
+   "sample_id": "sample_000025_0193",
+   "gt_real_nodes": 17,
+   "gt_inserted": 0,
+   "gt_edges": 9,
+   "pred_nodes": 16,
+   "node_tp": 16,
+   "node_fp": 0,
+   "node_fn": 1,
+   "edge_tp": 8,
+   "edge_fp": 0,
+   "edge_fn": 1,
+   "missed_nodes": [
+    {
+     "kind": "another GT node within 2 mm",
+     "near_real": 1,
+     "near_inserted": 0,
+     "nearest_gt_mm": 1.3498235940933228,
+     "kept_detection_within_2mm": true,
+     "nearest_detection_mm": 1.3494783639907837
+    }
+   ],
+   "false_nodes": [],
+   "missed_edges": [
+    {
+     "arc_mm": 1.3498235293955776,
+     "through_inserted": 0,
+     "kind": "endpoint missed",
+     "both_missed": false
+    }
+   ],
+   "false_edges": []
+  },
+  {
+   "sample_id": "sample_000045_0113",
+   "gt_real_nodes": 19,
+   "gt_inserted": 0,
+   "gt_edges": 10,
+   "pred_nodes": 18,
+   "node_tp": 18,
+   "node_fp": 0,
+   "node_fn": 1,
+   "edge_tp": 9,
+   "edge_fp": 0,
+   "edge_fn": 1,
+   "missed_nodes": [
+    {
+     "kind": "another GT node within 2 mm",
+     "near_real": 2,
+     "near_inserted": 0,
+     "nearest_gt_mm": 7.577215222452638e-13,
+     "kept_detection_within_2mm": true,
+     "nearest_detection_mm": 0.0004285085014998913
+    }
+   ],
+   "false_nodes": [],
+   "missed_edges": [
+    {
+     "arc_mm": 2.1601251568126525,
+     "through_inserted": 0,
+     "kind": "endpoint missed",
+     "both_missed": false
+    }
+   ],
+   "false_edges": []
+  },
+  {
+   "sample_id": "sample_000039_0252",
+   "gt_real_nodes": 22,
+   "gt_inserted": 0,
+   "gt_edges": 13,
+   "pred_nodes": 22,
+   "node_tp": 22,
+   "node_fp": 0,
+   "node_fn": 0,
+   "edge_tp": 13,
+   "edge_fp": 0,
+   "edge_fn": 0,
+   "missed_nodes": [],
+   "false_nodes": [],
+   "missed_edges": [],
+   "false_edges": []
+  },
+  {
+   "sample_id": "sample_000024_0057",
+   "gt_real_nodes": 28,
+   "gt_inserted": 0,
+   "gt_edges": 19,
+   "pred_nodes": 28,
+   "node_tp": 28,
+   "node_fp": 0,
+   "node_fn": 0,
+   "edge_tp": 17,
+   "edge_fp": 0,
+   "edge_fn": 2,
+   "missed_nodes": [],
+   "false_nodes": [],
+   "missed_edges": [
+    {
+     "arc_mm": 75.09276518128095,
+     "through_inserted": 0,
+     "detection_on_path": 0,
+     "detection_on_path_unmatched": 0,
+     "kind": "both endpoints found, not a candidate"
+    },
+    {
+     "arc_mm": 44.90333848002804,
+     "through_inserted": 0,
+     "detection_on_path": 0,
+     "detection_on_path_unmatched": 0,
+     "kind": "both endpoints found, not a candidate"
+    }
+   ],
+   "false_edges": []
+  },
+  {
+   "sample_id": "sample_000045_0093",
+   "gt_real_nodes": 40,
+   "gt_inserted": 0,
+   "gt_edges": 26,
+   "pred_nodes": 38,
+   "node_tp": 38,
+   "node_fp": 0,
+   "node_fn": 2,
+   "edge_tp": 22,
+   "edge_fp": 0,
+   "edge_fn": 4,
+   "missed_nodes": [
+    {
+     "kind": "another GT node within 2 mm",
+     "near_real": 1,
+     "near_inserted": 0,
+     "nearest_gt_mm": 0.8759279251098633,
+     "kept_detection_within_2mm": true,
+     "nearest_detection_mm": 0.8752855658531189
+    },
+    {
+     "kind": "another GT node within 2 mm",
+     "near_real": 1,
+     "near_inserted": 0,
+     "nearest_gt_mm": 0.8026066422462463,
+     "kept_detection_within_2mm": true,
+     "nearest_detection_mm": 0.8028393983840942
+    }
+   ],
+   "false_nodes": [],
+   "missed_edges": [
+    {
+     "arc_mm": 0.8759279456494177,
+     "through_inserted": 0,
+     "kind": "endpoint missed",
+     "both_missed": false
+    },
+    {
+     "arc_mm": 11.815847901667622,
+     "through_inserted": 0,
+     "kind": "endpoint missed",
+     "both_missed": false
+    },
+    {
+     "arc_mm": 2.723451721729894,
+     "through_inserted": 0,
+     "kind": "endpoint missed",
+     "both_missed": false
+    },
+    {
+     "arc_mm": 0.8026066022954098,
+     "through_inserted": 0,
+     "kind": "endpoint missed",
+     "both_missed": false
+    }
+   ],
+   "false_edges": []
+  }
+ ],
+ "missed_node_peaks_selected": {
+  "floor": 0.01,
+  "node_threshold": 0.1,
+  "missed": 8,
+  "by_kind": {
+   "only nearby peak belongs to another GT node": 8
+  },
+  "below_threshold_peak_scores": {
+   "0-0.01": 0,
+   "0.01-0.05": 0,
+   "0.05-0.1": 0,
+   "0.1-0.3": 0,
+   "0.3-1.01": 0
+  },
+  "heat_max_2mm": {
+   "0-0.01": 0,
+   "0.01-0.05": 0,
+   "0.05-0.1": 0,
+   "0.1-0.3": 0,
+   "0.3-1.01": 8
+  },
+  "nodes": [
+   {
+    "sample_id": "sample_000027_0009",
+    "kind": "only nearby peak belongs to another GT node",
+    "peak_score": 0.9999452829360962,
+    "heat_max_2mm": 0.9999452829360962,
+    "heat_at_node": 0.9924227595329285
+   },
+   {
+    "sample_id": "sample_000033_0114",
+    "kind": "only nearby peak belongs to another GT node",
+    "peak_score": 0.9985895752906799,
+    "heat_max_2mm": 0.9985895752906799,
+    "heat_at_node": 0.9867772459983826
+   },
+   {
+    "sample_id": "sample_000008_0209",
+    "kind": "only nearby peak belongs to another GT node",
+    "peak_score": 0.9783847332000732,
+    "heat_max_2mm": 0.9783847332000732,
+    "heat_at_node": 0.9755768775939941
+   },
+   {
+    "sample_id": "sample_000026_0252",
+    "kind": "only nearby peak belongs to another GT node",
+    "peak_score": 0.9995694756507874,
+    "heat_max_2mm": 0.9995694756507874,
+    "heat_at_node": 0.9883127808570862
+   },
+   {
+    "sample_id": "sample_000025_0193",
+    "kind": "only nearby peak belongs to another GT node",
+    "peak_score": 0.9998601675033569,
+    "heat_max_2mm": 0.9998601675033569,
+    "heat_at_node": 0.9989012479782104
+   },
+   {
+    "sample_id": "sample_000045_0113",
+    "kind": "only nearby peak belongs to another GT node",
+    "peak_score": 0.9999926090240479,
+    "heat_max_2mm": 0.9999926090240479,
+    "heat_at_node": 0.9999926090240479
+   },
+   {
+    "sample_id": "sample_000045_0093",
+    "kind": "only nearby peak belongs to another GT node",
+    "peak_score": 0.9998089671134949,
+    "heat_max_2mm": 0.9998089671134949,
+    "heat_at_node": 0.9980732202529907
+   },
+   {
+    "sample_id": "sample_000045_0093",
+    "kind": "only nearby peak belongs to another GT node",
+    "peak_score": 0.9998089671134949,
+    "heat_max_2mm": 0.9998089671134949,
+    "heat_at_node": 0.9820137619972229
+   }
+  ]
+ },
+ "missed_node_peaks_fixed": {
+  "floor": 0.01,
+  "node_threshold": 0.3,
+  "missed": 8,
+  "by_kind": {
+   "only nearby peak belongs to another GT node": 8
+  },
+  "below_threshold_peak_scores": {
+   "0-0.01": 0,
+   "0.01-0.05": 0,
+   "0.05-0.1": 0,
+   "0.1-0.3": 0,
+   "0.3-1.01": 0
+  },
+  "heat_max_2mm": {
+   "0-0.01": 0,
+   "0.01-0.05": 0,
+   "0.05-0.1": 0,
+   "0.1-0.3": 0,
+   "0.3-1.01": 8
+  },
+  "nodes": [
+   {
+    "sample_id": "sample_000027_0009",
+    "kind": "only nearby peak belongs to another GT node",
+    "peak_score": 0.9999452829360962,
+    "heat_max_2mm": 0.9999452829360962,
+    "heat_at_node": 0.9924227595329285
+   },
+   {
+    "sample_id": "sample_000033_0114",
+    "kind": "only nearby peak belongs to another GT node",
+    "peak_score": 0.9985895752906799,
+    "heat_max_2mm": 0.9985895752906799,
+    "heat_at_node": 0.9867772459983826
+   },
+   {
+    "sample_id": "sample_000008_0209",
+    "kind": "only nearby peak belongs to another GT node",
+    "peak_score": 0.9783847332000732,
+    "heat_max_2mm": 0.9783847332000732,
+    "heat_at_node": 0.9755768775939941
+   },
+   {
+    "sample_id": "sample_000026_0252",
+    "kind": "only nearby peak belongs to another GT node",
+    "peak_score": 0.9995694756507874,
+    "heat_max_2mm": 0.9995694756507874,
+    "heat_at_node": 0.9883127808570862
+   },
+   {
+    "sample_id": "sample_000025_0193",
+    "kind": "only nearby peak belongs to another GT node",
+    "peak_score": 0.9998601675033569,
+    "heat_max_2mm": 0.9998601675033569,
+    "heat_at_node": 0.9989012479782104
+   },
+   {
+    "sample_id": "sample_000045_0113",
+    "kind": "only nearby peak belongs to another GT node",
+    "peak_score": 0.9999926090240479,
+    "heat_max_2mm": 0.9999926090240479,
+    "heat_at_node": 0.9999926090240479
+   },
+   {
+    "sample_id": "sample_000045_0093",
+    "kind": "only nearby peak belongs to another GT node",
+    "peak_score": 0.9998089671134949,
+    "heat_max_2mm": 0.9998089671134949,
+    "heat_at_node": 0.9980732202529907
+   },
+   {
+    "sample_id": "sample_000045_0093",
+    "kind": "only nearby peak belongs to another GT node",
+    "peak_score": 0.9998089671134949,
+    "heat_max_2mm": 0.9998089671134949,
+    "heat_at_node": 0.9820137619972229
+   }
+  ]
+ },
+ "stage1_run": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/dense_graph_20261030/BRAVA-overfit10/spline6_unet_wide_overfit_r1112",
+ "curves": {
+  "stage1": {
+   "curve": [
+    {
+     "step": 1000,
+     "node_threshold": 0.15,
+     "edge_threshold": 0.85,
+     "node_f1": 0.9755,
+     "node_precision": 0.9938,
+     "node_recall": 0.9578,
+     "edge_f1": 0.8235,
+     "edge_precision": 0.8851,
+     "edge_recall": 0.77
+    },
+    {
+     "step": 2000,
+     "node_threshold": 0.15,
+     "edge_threshold": 0.9,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.75,
+     "edge_precision": 0.8684,
+     "edge_recall": 0.66
+    },
+    {
+     "step": 3000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.15,
+     "node_f1": 0.9785,
+     "node_precision": 1.0,
+     "node_recall": 0.9578,
+     "edge_f1": 0.9305,
+     "edge_precision": 1.0,
+     "edge_recall": 0.87
+    },
+    {
+     "step": 4000,
+     "node_threshold": 0.25,
+     "edge_threshold": 0.85,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.8973,
+     "edge_precision": 0.9765,
+     "edge_recall": 0.83
+    },
+    {
+     "step": 5000,
+     "node_threshold": 0.15,
+     "edge_threshold": 0.7,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.913,
+     "edge_precision": 1.0,
+     "edge_recall": 0.84
+    },
+    {
+     "step": 6000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 7000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.15,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 8000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.15,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 9000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.25,
+     "node_f1": 0.9785,
+     "node_precision": 1.0,
+     "node_recall": 0.9578,
+     "edge_f1": 0.9305,
+     "edge_precision": 1.0,
+     "edge_recall": 0.87
+    },
+    {
+     "step": 10000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 11000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 12000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.35,
+     "node_f1": 0.9785,
+     "node_precision": 1.0,
+     "node_recall": 0.9578,
+     "edge_f1": 0.9305,
+     "edge_precision": 1.0,
+     "edge_recall": 0.87
+    },
+    {
+     "step": 13000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.2,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 14000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.3,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 15000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 16000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 17000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 18000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 19000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 20000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    }
+   ],
+   "loss": {
+    "terms": [
+     "node",
+     "offset",
+     "centerline",
+     "edge",
+     "geometry_mm"
+    ],
+    "window_rows": 10,
+    "first": {
+     "node": 0.029190491396002473,
+     "offset": 0.0874009970575571,
+     "centerline": 0.23003984428942204,
+     "edge": 0.14837353974580764,
+     "geometry_mm": 0.5815127193927765,
+     "logged_sum": 1.0765175918815657,
+     "steps": [
+      100,
+      1000
+     ]
+    },
+    "middle": {
+     "node": 2.643712650751695e-05,
+     "offset": 0.005008134758099914,
+     "centerline": 0.00023741965414956213,
+     "edge": 0.007616874516679672,
+     "geometry_mm": 0.11924016624689102,
+     "logged_sum": 0.1321290323023277,
+     "steps": [
+      9600,
+      10500
+     ]
+    },
+    "last": {
+     "node": 3.421041492401855e-06,
+     "offset": 0.00032403140503447505,
+     "centerline": 2.299212028447073e-05,
+     "edge": 0.008508246147539467,
+     "geometry_mm": 0.09084894806146622,
+     "logged_sum": 0.09970763877581704,
+     "steps": [
+      19100,
+      20000
+     ]
+    },
+    "seconds_per_update": 0.212593604016304
+   }
+  },
+  "stage2": {
+   "curve": [
+    {
+     "step": 375,
+     "node_threshold": 0.15,
+     "edge_threshold": 0.25,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9362,
+     "edge_precision": 1.0,
+     "edge_recall": 0.88
+    },
+    {
+     "step": 750,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9362,
+     "edge_precision": 1.0,
+     "edge_recall": 0.88
+    },
+    {
+     "step": 1125,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.15,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 1500,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.15,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 1875,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.7,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 2250,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 2625,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.25,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 3000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 3375,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 3750,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 4125,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.15,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 4500,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 4875,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 5250,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 5625,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 6000,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 6375,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 6750,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 7125,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    },
+    {
+     "step": 7500,
+     "node_threshold": 0.1,
+     "edge_threshold": 0.1,
+     "node_f1": 0.9753,
+     "node_precision": 1.0,
+     "node_recall": 0.9518,
+     "edge_f1": 0.9247,
+     "edge_precision": 1.0,
+     "edge_recall": 0.86
+    }
+   ],
+   "loss": {
+    "terms": [
+     "node",
+     "centerline",
+     "edge",
+     "geometry_mm",
+     "passthrough",
+     "role"
+    ],
+    "window_rows": 3,
+    "first": {
+     "node": 0.000249240862710091,
+     "centerline": 0.0024280689346293607,
+     "edge": 0.04965474642813206,
+     "geometry_mm": 0.3917684108018875,
+     "passthrough": 0.0,
+     "role": 0.0,
+     "logged_sum": 0.444100467027359,
+     "steps": [
+      100,
+      300
+     ]
+    },
+    "middle": {
+     "node": 3.4290206561612044e-06,
+     "centerline": 0.00010681918502086774,
+     "edge": 0.006261070879797141,
+     "geometry_mm": 0.11188744008541107,
+     "passthrough": 0.0,
+     "role": 0.0,
+     "logged_sum": 0.11825875917088524,
+     "steps": [
+      3700,
+      3900
+     ]
+    },
+    "last": {
+     "node": 2.117179406013747e-06,
+     "centerline": 7.527943065118355e-05,
+     "edge": 0.007091380966206391,
+     "geometry_mm": 0.10213832805554073,
+     "passthrough": 0.0,
+     "role": 0.0,
+     "logged_sum": 0.1093071056318043,
+     "steps": [
+      7300,
+      7500
+     ]
+    },
+    "seconds_per_update": 0.5005907740275065
+   }
+  }
+ },
+ "stage1_final_train_monitor": {
+  "thresholds": {
+   "node": 0.1,
+   "edge": 0.1,
+   "policy": "train monitor only; candidates = 16-NN over retained nodes"
+  },
+  "node_f1": 0.9753086419753086,
+  "node_precision": 1.0,
+  "node_recall": 0.9518072289156626,
+  "edge_f1": 0.9247311827956989,
+  "edge_precision": 1.0,
+  "edge_recall": 0.86
+ },
+ "check_breakdown_fixed_equals_compare_arms": true,
+ "check_selected_equals_final_json": true
+}

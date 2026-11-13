@@ -1,0 +1,55 @@
+{
+ "entry": "BRAVA-simp2",
+ "run": "traced_roles_long_r1111",
+ "node_threshold": 0.3,
+ "peaks": 9341,
+ "shares": {
+  "real": 0.5945830210898191,
+  "intermediate": 0.17717589123220212,
+  "off_vessel": 0.2282410876779788
+ },
+ "by_tau": {
+  "intermediate >= 0.3": {
+   "removed_share_of_peaks": 0.15854833529600684,
+   "recall": 0.3540785498489426,
+   "precision": 0.39567859554355167,
+   "real_nodes_removed": 0.11919337414476053
+  },
+  "intermediate >= 0.5": {
+   "removed_share_of_peaks": 0.023230917460657318,
+   "recall": 0.062235649546827795,
+   "precision": 0.47465437788018433,
+   "real_nodes_removed": 0.017824990997479292
+  },
+  "intermediate >= 0.7": {
+   "removed_share_of_peaks": 0.0,
+   "recall": 0.0,
+   "precision": null,
+   "real_nodes_removed": 0.0
+  },
+  "off_vessel >= 0.3": {
+   "removed_share_of_peaks": 0.27052778075152556,
+   "recall": 0.5192307692307693,
+   "precision": 0.4380688563514048,
+   "real_nodes_removed": 0.20183651422398272
+  },
+  "off_vessel >= 0.5": {
+   "removed_share_of_peaks": 0.07140563108874853,
+   "recall": 0.174953095684803,
+   "precision": 0.5592203898050975,
+   "real_nodes_removed": 0.044652502700756214
+  },
+  "off_vessel >= 0.7": {
+   "removed_share_of_peaks": 0.005138636120329729,
+   "recall": 0.0150093808630394,
+   "precision": 0.6666666666666666,
+   "real_nodes_removed": 0.002700756211739287
+  }
+ },
+ "auc_intermediate_vs_rest": 0.6937931641710553,
+ "heat_score_median": {
+  "real": 0.41869693994522095,
+  "intermediate": 0.3665897250175476,
+  "off_vessel": 0.3557748794555664
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "entry": "TopBrainCTA-simp2",
+ "run": "traced_twohop_long_r1111",
+ "thresholds": {
+  "node": 0.3,
+  "edge": 0.75
+ },
+ "decodings": {
+  "plain": {
+   "node_f1": 0.5599260823653643,
+   "node_precision": 0.5263680357364438,
+   "node_recall": 0.5980544198505569,
+   "edge_f1": 0.3091334894613583,
+   "edge_precision": 0.31718569780853517,
+   "edge_recall": 0.30147999269139414,
+   "beta0_mae": 2.8144458281444584,
+   "beta1_mae": 1.190535491905355,
+   "contractions_per_patch": 0.0,
+   "recovered": {
+    "10-20 mm": 0.31622641509433963,
+    "20-40 mm": 0.193158953722334,
+    ">= 40 mm": 0.034482758620689655
+   }
+  },
+  "no two-hop": {
+   "node_f1": 0.5599260823653643,
+   "node_precision": 0.5263680357364438,
+   "node_recall": 0.5980544198505569,
+   "edge_f1": 0.2994850669412976,
+   "edge_precision": 0.3431673353788058,
+   "edge_recall": 0.2656678238625982,
+   "beta0_mae": 3.1394769613947697,
+   "beta1_mae": 0.4943960149439601,
+   "contractions_per_patch": 0.0,
+   "recovered": {
+    "10-20 mm": 0.2588679245283019,
+    "20-40 mm": 0.15694164989939638,
+    ">= 40 mm": 0.034482758620689655
+   }
+  },
+  "dedupe": {
+   "node_f1": 0.5607887549130638,
+   "node_precision": 0.5315736297044709,
+   "node_recall": 0.5934019455801495,
+   "edge_f1": 0.30755341558832383,
+   "edge_precision": 0.34096975088967973,
+   "edge_recall": 0.280102320482368,
+   "beta0_mae": 2.8144458281444584,
+   "beta1_mae": 0.5915317559153176,
+   "contractions_per_patch": 0.1780821917808219,
+   "recovered": {
+    "10-20 mm": 0.2920754716981132,
+    "20-40 mm": 0.1750503018108652,
+    ">= 40 mm": 0.034482758620689655
+   }
+  }
+ },
+ "missing_endpoint_edges_ge_20mm": {
+  "edges": 296,
+  "missing junction": 0.5709459459459459,
+  "missing terminal": 0.36824324324324326,
+  "missing boundary": 0.27702702702702703,
+  "both ends missing": 0.21621621621621623
+ }
+}

@@ -1,0 +1,443 @@
+{
+ "entry": "IXI-simp2",
+ "run": "traced_k24_r1110",
+ "thresholds": {
+  "node": 0.35,
+  "edge": 0.9
+ },
+ "validation_patches": 600,
+ "min_tip_cost": 6.0,
+ "tips_per_patch": 24.383333333333333,
+ "tip_kinds": {
+  "off the GT graph (interior)": 0.33848257006151744,
+  "on a GT centreline, away from nodes": 0.315311004784689,
+  "off the GT graph (at the patch face)": 0.1761449077238551,
+  "within 2 mm of an already matched GT node": 0.10328092959671907,
+  "hits a missed GT node: terminal": 0.047641831852358166,
+  "hits a missed GT node: boundary": 0.007997265892002734,
+  "hits a missed GT node: junction": 0.007518796992481203,
+  "hits a missed GT node: other": 0.003622693096377307
+ },
+ "gt_centreline": {
+  "in_predicted_mask": 0.9908898020744793,
+  "in_region_with_a_node": 0.9839684801850799
+ },
+ "fallback_path_quality": {
+  "10-20 mm": {
+   "edges": 333,
+   "straight_median_mm": 1.2299161626680726,
+   "soft_median_mm": 1.6870805962683737,
+   "straight_within_1p5mm": 0.6186186186186187,
+   "soft_within_1p5mm": 0.4024024024024024
+  },
+  "20-40 mm": {
+   "edges": 184,
+   "straight_median_mm": 2.3469269379355957,
+   "soft_median_mm": 2.6382872595728912,
+   "straight_within_1p5mm": 0.1358695652173913,
+   "soft_within_1p5mm": 0.14130434782608695
+  },
+  ">= 40 mm": {
+   "edges": 28,
+   "straight_median_mm": 4.570842889362231,
+   "soft_median_mm": 3.986590823894327,
+   "straight_within_1p5mm": 0.0,
+   "soft_within_1p5mm": 0.0
+  },
+  "soft_path_available": 0.48256880733944957
+ },
+ "configurations": {
+  "predicted / straight": {
+   "node_f1": 0.7541141785044224,
+   "node_precision": 0.7502933333333334,
+   "node_recall": 0.7579741379310345,
+   "edge_f1": 0.5074282417423914,
+   "edge_precision": 0.5645057766367138,
+   "edge_recall": 0.46083311501178936,
+   "beta0_mae": 2.845,
+   "beta1_mae": 1.0216666666666667,
+   "best_edge_threshold_on_these_patches": 0.85,
+   "edge_f1_at_best": 0.5075933417335367,
+   "by_arc": {
+    "0-5": {
+     "edges": 2826,
+     "recovered_fraction": 0.3651804670912951,
+     "endpoints_missing_fraction": 0.5449398443029017,
+     "rejected_fraction": 0.08987968860580325,
+     "not_candidate_fraction": 0.0
+    },
+    "5-10": {
+     "edges": 2372,
+     "recovered_fraction": 0.5362563237774031,
+     "endpoints_missing_fraction": 0.34865092748735244,
+     "rejected_fraction": 0.11509274873524451,
+     "not_candidate_fraction": 0.0
+    },
+    "10-20": {
+     "edges": 1920,
+     "recovered_fraction": 0.49583333333333335,
+     "endpoints_missing_fraction": 0.3515625,
+     "rejected_fraction": 0.15260416666666668,
+     "not_candidate_fraction": 0.0
+    },
+    "20-40": {
+     "edges": 695,
+     "recovered_fraction": 0.35683453237410073,
+     "endpoints_missing_fraction": 0.3496402877697842,
+     "rejected_fraction": 0.28633093525179854,
+     "not_candidate_fraction": 0.007194244604316547
+    },
+    "40-inf": {
+     "edges": 82,
+     "recovered_fraction": 0.25609756097560976,
+     "endpoints_missing_fraction": 0.32926829268292684,
+     "rejected_fraction": 0.3902439024390244,
+     "not_candidate_fraction": 0.024390243902439025
+    }
+   }
+  },
+  "predicted / soft": {
+   "node_f1": 0.7541141785044224,
+   "node_precision": 0.7502933333333334,
+   "node_recall": 0.7579741379310345,
+   "edge_f1": 0.5043465339178245,
+   "edge_precision": 0.5826609442060086,
+   "edge_recall": 0.44458999214042444,
+   "beta0_mae": 3.145,
+   "beta1_mae": 0.895,
+   "best_edge_threshold_on_these_patches": 0.85,
+   "edge_f1_at_best": 0.5054306468350052,
+   "by_arc": {
+    "0-5": {
+     "edges": 2826,
+     "recovered_fraction": 0.3612880396319887,
+     "endpoints_missing_fraction": 0.5449398443029017,
+     "rejected_fraction": 0.0937721160651097,
+     "not_candidate_fraction": 0.0
+    },
+    "5-10": {
+     "edges": 2372,
+     "recovered_fraction": 0.5193929173693086,
+     "endpoints_missing_fraction": 0.34865092748735244,
+     "rejected_fraction": 0.13195615514333894,
+     "not_candidate_fraction": 0.0
+    },
+    "10-20": {
+     "edges": 1920,
+     "recovered_fraction": 0.46197916666666666,
+     "endpoints_missing_fraction": 0.3515625,
+     "rejected_fraction": 0.18645833333333334,
+     "not_candidate_fraction": 0.0
+    },
+    "20-40": {
+     "edges": 695,
+     "recovered_fraction": 0.34388489208633094,
+     "endpoints_missing_fraction": 0.3496402877697842,
+     "rejected_fraction": 0.30071942446043165,
+     "not_candidate_fraction": 0.0057553956834532375
+    },
+    "40-inf": {
+     "edges": 82,
+     "recovered_fraction": 0.25609756097560976,
+     "endpoints_missing_fraction": 0.32926829268292684,
+     "rejected_fraction": 0.3902439024390244,
+     "not_candidate_fraction": 0.024390243902439025
+    }
+   }
+  },
+  "no_intermediate / straight": {
+   "node_f1": 0.8034724998572162,
+   "node_precision": 0.8547818689998785,
+   "node_recall": 0.7579741379310345,
+   "edge_f1": 0.5858859097780253,
+   "edge_precision": 0.7460992907801418,
+   "edge_recall": 0.4823159549384333,
+   "beta0_mae": 2.5716666666666668,
+   "beta1_mae": 0.7716666666666666,
+   "best_edge_threshold_on_these_patches": 0.85,
+   "edge_f1_at_best": 0.5961869158878504,
+   "by_arc": {
+    "0-5": {
+     "edges": 2826,
+     "recovered_fraction": 0.37119603680113233,
+     "endpoints_missing_fraction": 0.5449398443029017,
+     "rejected_fraction": 0.08386411889596602,
+     "not_candidate_fraction": 0.0
+    },
+    "5-10": {
+     "edges": 2372,
+     "recovered_fraction": 0.5628161888701517,
+     "endpoints_missing_fraction": 0.34865092748735244,
+     "rejected_fraction": 0.08853288364249579,
+     "not_candidate_fraction": 0.0
+    },
+    "10-20": {
+     "edges": 1920,
+     "recovered_fraction": 0.521875,
+     "endpoints_missing_fraction": 0.3515625,
+     "rejected_fraction": 0.1265625,
+     "not_candidate_fraction": 0.0
+    },
+    "20-40": {
+     "edges": 695,
+     "recovered_fraction": 0.3985611510791367,
+     "endpoints_missing_fraction": 0.3496402877697842,
+     "rejected_fraction": 0.2503597122302158,
+     "not_candidate_fraction": 0.0014388489208633094
+    },
+    "40-inf": {
+     "edges": 82,
+     "recovered_fraction": 0.3048780487804878,
+     "endpoints_missing_fraction": 0.32926829268292684,
+     "rejected_fraction": 0.35365853658536583,
+     "not_candidate_fraction": 0.012195121951219513
+    }
+   }
+  },
+  "no_intermediate / soft": {
+   "node_f1": 0.8034724998572162,
+   "node_precision": 0.8547818689998785,
+   "node_recall": 0.7579741379310345,
+   "edge_f1": 0.5870251883048514,
+   "edge_precision": 0.7689369828134945,
+   "edge_recall": 0.47471836520827876,
+   "beta0_mae": 2.7383333333333333,
+   "beta1_mae": 0.7766666666666666,
+   "best_edge_threshold_on_these_patches": 0.8,
+   "edge_f1_at_best": 0.6021218191260479,
+   "by_arc": {
+    "0-5": {
+     "edges": 2826,
+     "recovered_fraction": 0.3708421797593772,
+     "endpoints_missing_fraction": 0.5449398443029017,
+     "rejected_fraction": 0.08421797593772117,
+     "not_candidate_fraction": 0.0
+    },
+    "5-10": {
+     "edges": 2372,
+     "recovered_fraction": 0.5581787521079258,
+     "endpoints_missing_fraction": 0.34865092748735244,
+     "rejected_fraction": 0.09317032040472176,
+     "not_candidate_fraction": 0.0
+    },
+    "10-20": {
+     "edges": 1920,
+     "recovered_fraction": 0.5020833333333333,
+     "endpoints_missing_fraction": 0.3515625,
+     "rejected_fraction": 0.14635416666666667,
+     "not_candidate_fraction": 0.0
+    },
+    "20-40": {
+     "edges": 695,
+     "recovered_fraction": 0.3856115107913669,
+     "endpoints_missing_fraction": 0.3496402877697842,
+     "rejected_fraction": 0.2633093525179856,
+     "not_candidate_fraction": 0.0014388489208633094
+    },
+    "40-inf": {
+     "edges": 82,
+     "recovered_fraction": 0.3048780487804878,
+     "endpoints_missing_fraction": 0.32926829268292684,
+     "rejected_fraction": 0.35365853658536583,
+     "not_candidate_fraction": 0.012195121951219513
+    }
+   }
+  },
+  "tips / straight": {
+   "node_f1": 0.4726835138387485,
+   "node_precision": 0.3278797996661102,
+   "node_recall": 0.846551724137931,
+   "edge_f1": 0.2293844769092294,
+   "edge_precision": 0.15589121023903632,
+   "edge_recall": 0.4339795651034844,
+   "beta0_mae": 8.556666666666667,
+   "beta1_mae": 6.685,
+   "best_edge_threshold_on_these_patches": 0.9,
+   "edge_f1_at_best": 0.2293844769092294,
+   "by_arc": {
+    "0-5": {
+     "edges": 2826,
+     "recovered_fraction": 0.41047416843595186,
+     "endpoints_missing_fraction": 0.4476291578202406,
+     "rejected_fraction": 0.1418966737438075,
+     "not_candidate_fraction": 0.0
+    },
+    "5-10": {
+     "edges": 2372,
+     "recovered_fraction": 0.5463743676222597,
+     "endpoints_missing_fraction": 0.25674536256323777,
+     "rejected_fraction": 0.19645868465430016,
+     "not_candidate_fraction": 0.00042158516020236085
+    },
+    "10-20": {
+     "edges": 1920,
+     "recovered_fraction": 0.4296875,
+     "endpoints_missing_fraction": 0.22864583333333333,
+     "rejected_fraction": 0.2604166666666667,
+     "not_candidate_fraction": 0.08125
+    },
+    "20-40": {
+     "edges": 695,
+     "recovered_fraction": 0.09640287769784173,
+     "endpoints_missing_fraction": 0.1841726618705036,
+     "rejected_fraction": 0.28345323741007195,
+     "not_candidate_fraction": 0.43597122302158275
+    },
+    "40-inf": {
+     "edges": 82,
+     "recovered_fraction": 0.0,
+     "endpoints_missing_fraction": 0.2073170731707317,
+     "rejected_fraction": 0.06097560975609756,
+     "not_candidate_fraction": 0.7317073170731707
+    }
+   }
+  },
+  "tips / soft": {
+   "node_f1": 0.4726835138387485,
+   "node_precision": 0.3278797996661102,
+   "node_recall": 0.846551724137931,
+   "edge_f1": 0.21785740509582202,
+   "edge_precision": 0.15134666394613344,
+   "edge_recall": 0.38865601257532095,
+   "beta0_mae": 9.638333333333334,
+   "beta1_mae": 5.083333333333333,
+   "best_edge_threshold_on_these_patches": 0.9,
+   "edge_f1_at_best": 0.21785740509582202,
+   "by_arc": {
+    "0-5": {
+     "edges": 2826,
+     "recovered_fraction": 0.40552016985138006,
+     "endpoints_missing_fraction": 0.4476291578202406,
+     "rejected_fraction": 0.14685067232837934,
+     "not_candidate_fraction": 0.0
+    },
+    "5-10": {
+     "edges": 2372,
+     "recovered_fraction": 0.48355817875210794,
+     "endpoints_missing_fraction": 0.25674536256323777,
+     "rejected_fraction": 0.25927487352445194,
+     "not_candidate_fraction": 0.00042158516020236085
+    },
+    "10-20": {
+     "edges": 1920,
+     "recovered_fraction": 0.3421875,
+     "endpoints_missing_fraction": 0.22864583333333333,
+     "rejected_fraction": 0.35625,
+     "not_candidate_fraction": 0.07291666666666667
+    },
+    "20-40": {
+     "edges": 695,
+     "recovered_fraction": 0.07625899280575539,
+     "endpoints_missing_fraction": 0.1841726618705036,
+     "rejected_fraction": 0.3237410071942446,
+     "not_candidate_fraction": 0.4158273381294964
+    },
+    "40-inf": {
+     "edges": 82,
+     "recovered_fraction": 0.0,
+     "endpoints_missing_fraction": 0.2073170731707317,
+     "rejected_fraction": 0.12195121951219512,
+     "not_candidate_fraction": 0.6707317073170732
+    }
+   }
+  },
+  "no_intermediate+tips / straight": {
+   "node_f1": 0.48956191188384124,
+   "node_precision": 0.3443499605505391,
+   "node_recall": 0.846551724137931,
+   "edge_f1": 0.25125997866313504,
+   "edge_precision": 0.1746892424164919,
+   "edge_recall": 0.4473408435944459,
+   "beta0_mae": 8.651666666666667,
+   "beta1_mae": 5.87,
+   "best_edge_threshold_on_these_patches": 0.9,
+   "edge_f1_at_best": 0.25125997866313504,
+   "by_arc": {
+    "0-5": {
+     "edges": 2826,
+     "recovered_fraction": 0.4164897381457891,
+     "endpoints_missing_fraction": 0.4476291578202406,
+     "rejected_fraction": 0.13588110403397027,
+     "not_candidate_fraction": 0.0
+    },
+    "5-10": {
+     "edges": 2372,
+     "recovered_fraction": 0.5704047217537943,
+     "endpoints_missing_fraction": 0.25674536256323777,
+     "rejected_fraction": 0.1724283305227656,
+     "not_candidate_fraction": 0.00042158516020236085
+    },
+    "10-20": {
+     "edges": 1920,
+     "recovered_fraction": 0.4427083333333333,
+     "endpoints_missing_fraction": 0.22864583333333333,
+     "rejected_fraction": 0.2609375,
+     "not_candidate_fraction": 0.06770833333333333
+    },
+    "20-40": {
+     "edges": 695,
+     "recovered_fraction": 0.10071942446043165,
+     "endpoints_missing_fraction": 0.1841726618705036,
+     "rejected_fraction": 0.3107913669064748,
+     "not_candidate_fraction": 0.40431654676258993
+    },
+    "40-inf": {
+     "edges": 82,
+     "recovered_fraction": 0.0,
+     "endpoints_missing_fraction": 0.2073170731707317,
+     "rejected_fraction": 0.08536585365853659,
+     "not_candidate_fraction": 0.7073170731707317
+    }
+   }
+  },
+  "no_intermediate+tips / soft": {
+   "node_f1": 0.48956191188384124,
+   "node_precision": 0.3443499605505391,
+   "node_recall": 0.846551724137931,
+   "edge_f1": 0.23913550493664,
+   "edge_precision": 0.1700198982975901,
+   "edge_recall": 0.40293424155095625,
+   "beta0_mae": 9.615,
+   "beta1_mae": 4.4783333333333335,
+   "best_edge_threshold_on_these_patches": 0.9,
+   "edge_f1_at_best": 0.23913550493664,
+   "by_arc": {
+    "0-5": {
+     "edges": 2826,
+     "recovered_fraction": 0.4150743099787686,
+     "endpoints_missing_fraction": 0.4476291578202406,
+     "rejected_fraction": 0.1372965322009908,
+     "not_candidate_fraction": 0.0
+    },
+    "5-10": {
+     "edges": 2372,
+     "recovered_fraction": 0.510539629005059,
+     "endpoints_missing_fraction": 0.25674536256323777,
+     "rejected_fraction": 0.23229342327150085,
+     "not_candidate_fraction": 0.00042158516020236085
+    },
+    "10-20": {
+     "edges": 1920,
+     "recovered_fraction": 0.35052083333333334,
+     "endpoints_missing_fraction": 0.22864583333333333,
+     "rejected_fraction": 0.3625,
+     "not_candidate_fraction": 0.058333333333333334
+    },
+    "20-40": {
+     "edges": 695,
+     "recovered_fraction": 0.07913669064748201,
+     "endpoints_missing_fraction": 0.1841726618705036,
+     "rejected_fraction": 0.34820143884892085,
+     "not_candidate_fraction": 0.38848920863309355
+    },
+    "40-inf": {
+     "edges": 82,
+     "recovered_fraction": 0.0,
+     "endpoints_missing_fraction": 0.2073170731707317,
+     "rejected_fraction": 0.14634146341463414,
+     "not_candidate_fraction": 0.6463414634146342
+    }
+   }
+  }
+ }
+}

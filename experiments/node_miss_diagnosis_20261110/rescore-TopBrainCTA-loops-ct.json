@@ -1,0 +1,78 @@
+{
+ "dataset": "TopBrainCTA-loops",
+ "simplified_root": "/lustre/fsn1/projects/rech/vnc/upz25mj/datasets/TopBrain_tight_20261105/transfer_splines_k8_loops_simp2mm_20261110/ct",
+ "runs": {
+  "traced_k24_r1109": {
+   "thresholds": {
+    "node": 0.25,
+    "edge": 0.7,
+    "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+   },
+   "patches_dropped": 0,
+   "original_gt": {
+    "node_f1": 0.4760337735440572,
+    "node_precision": 0.41894672662144655,
+    "node_recall": 0.5511329456587126,
+    "edge_f1": 0.2132717830351991,
+    "edge_precision": 0.19877379799935463,
+    "edge_recall": 0.23005103946221836,
+    "missed_edges_without_endpoint_pair": 0.8635408245755861,
+    "beta0_mae": 5.092154420921545,
+    "beta1_mae": 2.7260273972602738,
+    "patches": 803,
+    "common_branch_f1": 0.11285266457680251,
+    "common_curve_f1": 0.6417175244175902
+   },
+   "simplified_gt": {
+    "node_f1": 0.47475247524752473,
+    "node_precision": 0.3658350499732967,
+    "node_recall": 0.6760186098970816,
+    "edge_f1": 0.22655562326494685,
+    "edge_precision": 0.17996987951807228,
+    "edge_recall": 0.30568244107436504,
+    "missed_edges_without_endpoint_pair": 0.7065789473684211,
+    "beta0_mae": 5.434620174346202,
+    "beta1_mae": 2.7260273972602738,
+    "patches": 803,
+    "common_branch_f1": 0.12065637065637065,
+    "common_curve_f1": 0.6449949638753505
+   }
+  },
+  "traced_arcpen_r1109": {
+   "thresholds": {
+    "node": 0.25,
+    "edge": 0.7,
+    "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+   },
+   "patches_dropped": 0,
+   "original_gt": {
+    "node_f1": 0.4763267429760666,
+    "node_precision": 0.419633307868602,
+    "node_recall": 0.5507319029476639,
+    "edge_f1": 0.21363373772385905,
+    "edge_precision": 0.19931012180661853,
+    "edge_recall": 0.23017552595543384,
+    "missed_edges_without_endpoint_pair": 0.866267787839586,
+    "beta0_mae": 5.039850560398506,
+    "beta1_mae": 2.679950186799502,
+    "patches": 803,
+    "common_branch_f1": 0.11218241042345277,
+    "common_curve_f1": 0.6392882173533599
+   },
+   "simplified_gt": {
+    "node_f1": 0.47637463433982846,
+    "node_precision": 0.3673906393392475,
+    "node_recall": 0.6772874665162837,
+    "edge_f1": 0.22754085022713405,
+    "edge_precision": 0.18089693833548945,
+    "edge_recall": 0.30659601680979354,
+    "missed_edges_without_endpoint_pair": 0.7104084321475626,
+    "beta0_mae": 5.372353673723537,
+    "beta1_mae": 2.679950186799502,
+    "patches": 803,
+    "common_branch_f1": 0.12413793103448276,
+    "common_curve_f1": 0.6428590646450435
+   }
+  }
+ }
+}

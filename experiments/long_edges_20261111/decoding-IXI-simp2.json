@@ -1,0 +1,576 @@
+{
+ "entry": "IXI-simp2",
+ "run": "traced_unet_wide_long_r1111",
+ "decodings": {
+  "V0_current": {
+   "config": {
+    "t_high": 0.35,
+    "t_edge": 0.85
+   },
+   "validation_vs_V0": null,
+   "validation": {
+    "node_f1": 0.7661971217221732,
+    "edge_f1": 0.5237811386667036,
+    "branch_f1": 0.36820361840543236,
+    "curve_f1": 0.7999048088428502
+   },
+   "validation_betti": {
+    "signed_beta0": 1.1205673758865249,
+    "signed_beta1": 0.8443093549476528,
+    "mae_beta0": 1.558257345491388,
+    "mae_beta1": 1.2063492063492063
+   },
+   "long_edges": {
+    "10-20 mm": {
+     "edges": 9456,
+     "recovered": {
+      "share": 0.5385998307952623,
+      "coverage_mean": 0.9824635932896127,
+      "coverage_over_0p8": 0.9732966817200078
+     },
+     "endpoint missing": {
+      "share": 0.3404187817258883,
+      "coverage_mean": 0.39867902944643535,
+      "coverage_over_0p8": 0.32618825722274
+     },
+     "broken, all pieces accepted": {
+      "share": 0.05414551607445008,
+      "coverage_mean": 0.9698904148710346,
+      "coverage_over_0p8": 0.94140625,
+      "interrupting_mean": 0.982421875,
+      "interrupting_unmatched_share": 0.8906560636182903,
+      "chain_nodes_mean": 1.12109375
+     },
+     "not proposed": {
+      "share": 0.05054991539763113,
+      "coverage_mean": 0.3810960590698317,
+      "coverage_over_0p8": 0.25523012552301255
+     },
+     "broken, a piece missing": {
+      "share": 0.01628595600676819,
+      "coverage_mean": 0.6686604278917169,
+      "coverage_over_0p8": 0.44805194805194803,
+      "interrupting_mean": 1.37012987012987,
+      "interrupting_unmatched_share": 0.9146919431279621,
+      "chain_nodes_mean": 0.0
+     }
+    },
+    "20-40 mm": {
+     "edges": 3799,
+     "recovered": {
+      "share": 0.40010529086601737,
+      "coverage_mean": 0.9830026152513429,
+      "coverage_over_0p8": 0.9717105263157895
+     },
+     "endpoint missing": {
+      "share": 0.35351408265332984,
+      "coverage_mean": 0.3278640999711721,
+      "coverage_over_0p8": 0.2568875651526433
+     },
+     "not proposed": {
+      "share": 0.11134509081337195,
+      "coverage_mean": 0.23585863031293952,
+      "coverage_over_0p8": 0.1347517730496454
+     },
+     "broken, all pieces accepted": {
+      "share": 0.09133982627007108,
+      "coverage_mean": 0.9630824961197088,
+      "coverage_over_0p8": 0.9337175792507204,
+      "interrupting_mean": 1.1498559077809798,
+      "interrupting_unmatched_share": 0.9097744360902256,
+      "chain_nodes_mean": 1.181556195965418
+     },
+     "broken, a piece missing": {
+      "share": 0.04369570939720979,
+      "coverage_mean": 0.5203992191782831,
+      "coverage_over_0p8": 0.2469879518072289,
+      "interrupting_mean": 1.4036144578313252,
+      "interrupting_unmatched_share": 0.9484978540772532,
+      "chain_nodes_mean": 0.0
+     }
+    },
+    ">= 40 mm": {
+     "edges": 474,
+     "endpoint missing": {
+      "share": 0.379746835443038,
+      "coverage_mean": 0.24818856397337963,
+      "coverage_over_0p8": 0.15
+     },
+     "recovered": {
+      "share": 0.21518987341772153,
+      "coverage_mean": 0.9932813859385442,
+      "coverage_over_0p8": 0.9901960784313726
+     },
+     "not proposed": {
+      "share": 0.18565400843881857,
+      "coverage_mean": 0.16305709215552844,
+      "coverage_over_0p8": 0.10227272727272728
+     },
+     "broken, a piece missing": {
+      "share": 0.1308016877637131,
+      "coverage_mean": 0.49000200986991505,
+      "coverage_over_0p8": 0.20967741935483872,
+      "interrupting_mean": 1.7258064516129032,
+      "interrupting_unmatched_share": 0.9252336448598131,
+      "chain_nodes_mean": 0.0
+     },
+     "broken, all pieces accepted": {
+      "share": 0.08860759493670886,
+      "coverage_mean": 0.9727389394413868,
+      "coverage_over_0p8": 0.9523809523809523,
+      "interrupting_mean": 1.0476190476190477,
+      "interrupting_unmatched_share": 0.8181818181818182,
+      "chain_nodes_mean": 1.1666666666666667
+     }
+    }
+   }
+  },
+  "V1_joint": {
+   "config": {
+    "t_high": 0.35,
+    "t_edge": 0.85
+   },
+   "validation_vs_V0": {
+    "node_f1": {
+     "point": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "edge_f1": {
+     "point": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "branch_f1": {
+     "point": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "curve_f1": {
+     "point": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "validation": null,
+   "validation_betti": {
+    "signed_beta0": 1.1205673758865249,
+    "signed_beta1": 0.8443093549476528,
+    "mae_beta0": 1.558257345491388,
+    "mae_beta1": 1.2063492063492063
+   },
+   "long_edges": {
+    "10-20 mm": {
+     "edges": 9456,
+     "recovered": {
+      "share": 0.5385998307952623,
+      "coverage_mean": 0.9824635932896127,
+      "coverage_over_0p8": 0.9732966817200078
+     },
+     "endpoint missing": {
+      "share": 0.3404187817258883,
+      "coverage_mean": 0.39867902944643535,
+      "coverage_over_0p8": 0.32618825722274
+     },
+     "broken, all pieces accepted": {
+      "share": 0.05414551607445008,
+      "coverage_mean": 0.9698904148710346,
+      "coverage_over_0p8": 0.94140625,
+      "interrupting_mean": 0.982421875,
+      "interrupting_unmatched_share": 0.8906560636182903,
+      "chain_nodes_mean": 1.12109375
+     },
+     "not proposed": {
+      "share": 0.05054991539763113,
+      "coverage_mean": 0.3810960590698317,
+      "coverage_over_0p8": 0.25523012552301255
+     },
+     "broken, a piece missing": {
+      "share": 0.01628595600676819,
+      "coverage_mean": 0.6686604278917169,
+      "coverage_over_0p8": 0.44805194805194803,
+      "interrupting_mean": 1.37012987012987,
+      "interrupting_unmatched_share": 0.9146919431279621,
+      "chain_nodes_mean": 0.0
+     }
+    },
+    "20-40 mm": {
+     "edges": 3799,
+     "recovered": {
+      "share": 0.40010529086601737,
+      "coverage_mean": 0.9830026152513429,
+      "coverage_over_0p8": 0.9717105263157895
+     },
+     "endpoint missing": {
+      "share": 0.35351408265332984,
+      "coverage_mean": 0.3278640999711721,
+      "coverage_over_0p8": 0.2568875651526433
+     },
+     "not proposed": {
+      "share": 0.11134509081337195,
+      "coverage_mean": 0.23585863031293952,
+      "coverage_over_0p8": 0.1347517730496454
+     },
+     "broken, all pieces accepted": {
+      "share": 0.09133982627007108,
+      "coverage_mean": 0.9630824961197088,
+      "coverage_over_0p8": 0.9337175792507204,
+      "interrupting_mean": 1.1498559077809798,
+      "interrupting_unmatched_share": 0.9097744360902256,
+      "chain_nodes_mean": 1.181556195965418
+     },
+     "broken, a piece missing": {
+      "share": 0.04369570939720979,
+      "coverage_mean": 0.5203992191782831,
+      "coverage_over_0p8": 0.2469879518072289,
+      "interrupting_mean": 1.4036144578313252,
+      "interrupting_unmatched_share": 0.9484978540772532,
+      "chain_nodes_mean": 0.0
+     }
+    },
+    ">= 40 mm": {
+     "edges": 474,
+     "endpoint missing": {
+      "share": 0.379746835443038,
+      "coverage_mean": 0.24818856397337963,
+      "coverage_over_0p8": 0.15
+     },
+     "recovered": {
+      "share": 0.21518987341772153,
+      "coverage_mean": 0.9932813859385442,
+      "coverage_over_0p8": 0.9901960784313726
+     },
+     "not proposed": {
+      "share": 0.18565400843881857,
+      "coverage_mean": 0.16305709215552844,
+      "coverage_over_0p8": 0.10227272727272728
+     },
+     "broken, a piece missing": {
+      "share": 0.1308016877637131,
+      "coverage_mean": 0.49000200986991505,
+      "coverage_over_0p8": 0.20967741935483872,
+      "interrupting_mean": 1.7258064516129032,
+      "interrupting_unmatched_share": 0.9252336448598131,
+      "chain_nodes_mean": 0.0
+     },
+     "broken, all pieces accepted": {
+      "share": 0.08860759493670886,
+      "coverage_mean": 0.9727389394413868,
+      "coverage_over_0p8": 0.9523809523809523,
+      "interrupting_mean": 1.0476190476190477,
+      "interrupting_unmatched_share": 0.8181818181818182,
+      "chain_nodes_mean": 1.1666666666666667
+     }
+    }
+   }
+  },
+  "V2_hysteresis": {
+   "config": {
+    "t_low": 0.25,
+    "t_high": 0.45,
+    "t_edge": 0.9,
+    "prune_isolated": false,
+    "weak_tree": false
+   },
+   "validation_vs_V0": {
+    "node_f1": {
+     "point": -0.005314342980475506,
+     "ci95": [
+      -0.008431635777329582,
+      -0.0026666102183771443
+     ]
+    },
+    "edge_f1": {
+     "point": -0.002129893115102144,
+     "ci95": [
+      -0.005578535071218238,
+      0.0016184936359442525
+     ]
+    },
+    "branch_f1": {
+     "point": -0.014179050631416612,
+     "ci95": [
+      -0.01967725326640901,
+      -0.008545697691674637
+     ]
+    },
+    "curve_f1": {
+     "point": -0.02946121511343469,
+     "ci95": [
+      -0.03354544770020544,
+      -0.025161083910531647
+     ]
+    }
+   },
+   "validation": null,
+   "validation_betti": {
+    "signed_beta0": 0.6342451874366768,
+    "signed_beta1": 0.15940560621411684,
+    "mae_beta0": 1.3860182370820668,
+    "mae_beta1": 0.8395812225599459
+   },
+   "long_edges": {
+    "10-20 mm": {
+     "edges": 9456,
+     "recovered": {
+      "share": 0.5197758037225042,
+      "coverage_mean": 0.9818320098282743,
+      "coverage_over_0p8": 0.9723296032553408
+     },
+     "endpoint missing": {
+      "share": 0.3310067681895093,
+      "coverage_mean": 0.33754177528646895,
+      "coverage_over_0p8": 0.24824281150159744
+     },
+     "not proposed": {
+      "share": 0.06683587140439932,
+      "coverage_mean": 0.3517101634938128,
+      "coverage_over_0p8": 0.20094936708860758
+     },
+     "broken, all pieces accepted": {
+      "share": 0.05086717428087986,
+      "coverage_mean": 0.9675605923505599,
+      "coverage_over_0p8": 0.9334719334719335,
+      "interrupting_mean": 0.9272349272349273,
+      "interrupting_unmatched_share": 0.8901345291479821,
+      "chain_nodes_mean": 1.130977130977131
+     },
+     "broken, a piece missing": {
+      "share": 0.03151438240270728,
+      "coverage_mean": 0.6843669267903558,
+      "coverage_over_0p8": 0.36577181208053694,
+      "interrupting_mean": 1.3926174496644295,
+      "interrupting_unmatched_share": 0.9132530120481928,
+      "chain_nodes_mean": 0.0
+     }
+    },
+    "20-40 mm": {
+     "edges": 3799,
+     "endpoint missing": {
+      "share": 0.37220321137141354,
+      "coverage_mean": 0.26126409345128804,
+      "coverage_over_0p8": 0.17326732673267325
+     },
+     "recovered": {
+      "share": 0.3511450381679389,
+      "coverage_mean": 0.9827139601283601,
+      "coverage_over_0p8": 0.972263868065967
+     },
+     "not proposed": {
+      "share": 0.12213740458015267,
+      "coverage_mean": 0.20171927564988645,
+      "coverage_over_0p8": 0.10991379310344827
+     },
+     "broken, a piece missing": {
+      "share": 0.07949460384311662,
+      "coverage_mean": 0.5758165335599406,
+      "coverage_over_0p8": 0.2847682119205298,
+      "interrupting_mean": 1.4271523178807948,
+      "interrupting_unmatched_share": 0.9443155452436195,
+      "chain_nodes_mean": 0.0
+     },
+     "broken, all pieces accepted": {
+      "share": 0.07501974203737825,
+      "coverage_mean": 0.9400515563707941,
+      "coverage_over_0p8": 0.8912280701754386,
+      "interrupting_mean": 1.1964912280701754,
+      "interrupting_unmatched_share": 0.9032258064516129,
+      "chain_nodes_mean": 1.2456140350877194
+     }
+    },
+    ">= 40 mm": {
+     "edges": 474,
+     "endpoint missing": {
+      "share": 0.4219409282700422,
+      "coverage_mean": 0.20765510777817694,
+      "coverage_over_0p8": 0.115
+     },
+     "not proposed": {
+      "share": 0.19198312236286919,
+      "coverage_mean": 0.17309727901322347,
+      "coverage_over_0p8": 0.12087912087912088
+     },
+     "broken, a piece missing": {
+      "share": 0.189873417721519,
+      "coverage_mean": 0.45967195486420415,
+      "coverage_over_0p8": 0.14444444444444443,
+      "interrupting_mean": 1.6888888888888889,
+      "interrupting_unmatched_share": 0.9342105263157895,
+      "chain_nodes_mean": 0.0
+     },
+     "recovered": {
+      "share": 0.13924050632911392,
+      "coverage_mean": 0.9757226938595178,
+      "coverage_over_0p8": 0.9545454545454546
+     },
+     "broken, all pieces accepted": {
+      "share": 0.056962025316455694,
+      "coverage_mean": 0.951190432054439,
+      "coverage_over_0p8": 0.9259259259259259,
+      "interrupting_mean": 1.3703703703703705,
+      "interrupting_unmatched_share": 0.8918918918918919,
+      "chain_nodes_mean": 1.1111111111111112
+     }
+    }
+   }
+  },
+  "V4_hysteresis_weak_tree": {
+   "config": {
+    "t_low": 0.3,
+    "t_high": 0.45,
+    "t_edge": 0.85,
+    "prune_isolated": false,
+    "weak_tree": true
+   },
+   "validation_vs_V0": {
+    "node_f1": {
+     "point": -0.002252854973717744,
+     "ci95": [
+      -0.0045885206026925526,
+      -0.00018622114903387547
+     ]
+    },
+    "edge_f1": {
+     "point": -0.001192246876222991,
+     "ci95": [
+      -0.003948449445943331,
+      0.0019225156822670856
+     ]
+    },
+    "branch_f1": {
+     "point": -0.006929612240886396,
+     "ci95": [
+      -0.012281017095181295,
+      -0.0016423775379657507
+     ]
+    },
+    "curve_f1": {
+     "point": 0.006284911275321825,
+     "ci95": [
+      0.003047390070723724,
+      0.009860518236706646
+     ]
+    }
+   },
+   "validation": null,
+   "validation_betti": {
+    "signed_beta0": -0.006754474839581222,
+    "signed_beta1": 0.0800405268490375,
+    "mae_beta0": 1.08274231678487,
+    "mae_beta1": 0.8432961837217157
+   },
+   "long_edges": {
+    "10-20 mm": {
+     "edges": 9456,
+     "recovered": {
+      "share": 0.5454737732656514,
+      "coverage_mean": 0.9836959873361321,
+      "coverage_over_0p8": 0.9747964327258627
+     },
+     "endpoint missing": {
+      "share": 0.3187394247038917,
+      "coverage_mean": 0.40915362000631356,
+      "coverage_over_0p8": 0.32448573324485736
+     },
+     "not proposed": {
+      "share": 0.05573181049069374,
+      "coverage_mean": 0.5265952142118582,
+      "coverage_over_0p8": 0.38140417457305503
+     },
+     "broken, all pieces accepted": {
+      "share": 0.051607445008460234,
+      "coverage_mean": 0.9740591946709183,
+      "coverage_over_0p8": 0.9487704918032787,
+      "interrupting_mean": 0.9938524590163934,
+      "interrupting_unmatched_share": 0.8948453608247423,
+      "chain_nodes_mean": 1.1209016393442623
+     },
+     "broken, a piece missing": {
+      "share": 0.028447546531302877,
+      "coverage_mean": 0.7422461792823979,
+      "coverage_over_0p8": 0.49814126394052044,
+      "interrupting_mean": 1.449814126394052,
+      "interrupting_unmatched_share": 0.9282051282051282,
+      "chain_nodes_mean": 0.0
+     }
+    },
+    "20-40 mm": {
+     "edges": 3799,
+     "recovered": {
+      "share": 0.4011581995261911,
+      "coverage_mean": 0.9827050585707992,
+      "coverage_over_0p8": 0.9704724409448819
+     },
+     "endpoint missing": {
+      "share": 0.3516714924980258,
+      "coverage_mean": 0.333550133631071,
+      "coverage_over_0p8": 0.24775449101796407
+     },
+     "not proposed": {
+      "share": 0.09686759673598315,
+      "coverage_mean": 0.2687749703977391,
+      "coverage_over_0p8": 0.15760869565217392
+     },
+     "broken, all pieces accepted": {
+      "share": 0.08976046327981048,
+      "coverage_mean": 0.9559220521894868,
+      "coverage_over_0p8": 0.9208211143695014,
+      "interrupting_mean": 1.2023460410557185,
+      "interrupting_unmatched_share": 0.9097560975609756,
+      "chain_nodes_mean": 1.1994134897360704
+     },
+     "broken, a piece missing": {
+      "share": 0.06054224795998947,
+      "coverage_mean": 0.6308437310985489,
+      "coverage_over_0p8": 0.3391304347826087,
+      "interrupting_mean": 1.5260869565217392,
+      "interrupting_unmatched_share": 0.9629629629629629,
+      "chain_nodes_mean": 0.0
+     }
+    },
+    ">= 40 mm": {
+     "edges": 474,
+     "endpoint missing": {
+      "share": 0.4092827004219409,
+      "coverage_mean": 0.26995357969797107,
+      "coverage_over_0p8": 0.15463917525773196
+     },
+     "recovered": {
+      "share": 0.17721518987341772,
+      "coverage_mean": 0.9929345043501466,
+      "coverage_over_0p8": 0.9880952380952381
+     },
+     "not proposed": {
+      "share": 0.1729957805907173,
+      "coverage_mean": 0.18246401786331098,
+      "coverage_over_0p8": 0.13414634146341464
+     },
+     "broken, a piece missing": {
+      "share": 0.16455696202531644,
+      "coverage_mean": 0.5173499919995783,
+      "coverage_over_0p8": 0.20512820512820512,
+      "interrupting_mean": 1.7820512820512822,
+      "interrupting_unmatched_share": 0.9280575539568345,
+      "chain_nodes_mean": 0.0
+     },
+     "broken, all pieces accepted": {
+      "share": 0.0759493670886076,
+      "coverage_mean": 0.9672463885880354,
+      "coverage_over_0p8": 0.9444444444444444,
+      "interrupting_mean": 1.1388888888888888,
+      "interrupting_unmatched_share": 0.8780487804878049,
+      "chain_nodes_mean": 1.1388888888888888
+     }
+    }
+   }
+  }
+ }
+}

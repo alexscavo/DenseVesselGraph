@@ -85,6 +85,7 @@ class SyntheticMRIDataset(Dataset):
         coordinate_space: str = "normalized",
         augment: bool = False,
         rotate_90: bool = True,
+        flip: bool = False,
         zoom_range=(0.6, 1.0),
         gaussian_noise_probability: float = 0.35,
         gaussian_noise_max_std: float = 0.015,
@@ -115,6 +116,9 @@ class SyntheticMRIDataset(Dataset):
         if spline_controls is not None and self.augment and zoom_range is not None:
             raise ValueError('Spline augmentation currently supports quarter-turn rotations and image noise; disable zoom')
         self.rotate_90 = bool(rotate_90)
+        # Random axis flips (13 Nov 2026), opt-in: with augment, each axis is flipped with probability 1/2 after the quarter
+        # turns. Off by default, and no random number is drawn when off, so default runs are unchanged.
+        self.flip = bool(flip)
         self.zoom_range = (
             None
             if zoom_range is None
@@ -210,6 +214,22 @@ class SyntheticMRIDataset(Dataset):
             if geometry is not None:
                 from data.spline_augmentation import rotate_spline_geometry
                 geometry = rotate_spline_geometry(geometry, turns, shape_before_rotation)
+
+            if self.flip:
+                axes = tuple(self.rng.random() < 0.5 for _ in range(3))
+                if any(axes):
+                    shape = tuple(int(value) for value in image.shape[-3:])
+                    dims = [d for d, f in zip((-3, -2, -1), axes) if f]
+                    image = image.flip(dims)
+                    segmentation = segmentation.flip(dims)
+                    # voxel index i -> size-1-i, i.e. normalized x -> (size-1)/size - x on flipped axes
+                    sign = torch.tensor([-1.0 if f else 1.0 for f in axes], dtype=nodes.dtype)
+                    shift = torch.tensor([(s - 1) / s if f else 0.0 for f, s in zip(axes, shape)], dtype=nodes.dtype)
+                    nodes = nodes.clone()
+                    nodes[:, :3] = nodes[:, :3] * sign + shift
+                    if geometry is not None:
+                        from data.spline_augmentation import flip_spline_geometry
+                        geometry = flip_spline_geometry(geometry, axes, shape)
 
             if self.zoom_range is not None:
                 zoom_factor = self.rng.uniform(*self.zoom_range)

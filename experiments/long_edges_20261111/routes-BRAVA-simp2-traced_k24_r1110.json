@@ -1,0 +1,144 @@
+{
+ "entry": "BRAVA-simp2",
+ "run": "traced_k24_r1110",
+ "node_threshold": 0.25,
+ "validation_patches": 600,
+ "node_sets": {
+  "predicted": {
+   "10-20 mm": {
+    "edges": 298,
+    "why": {
+     "gap": 0.040268456375838924,
+     "third region": 0.959731543624161,
+     "neither": 0.0
+    },
+    "route_available": 0.9395973154362416,
+    "hops_mean": 2.0,
+    "intermediate_unmatched": 0.7922619047619048,
+    "straight_median_mm": 1.438557556564123,
+    "straight_within_1p5": 0.5302013422818792,
+    "with_route": {
+     "straight_median_mm": 1.4371717054062203,
+     "route_median_mm": 0.9191494375255094,
+     "spliced_median_mm": 0.9065034226348612,
+     "straight_within_1p5": 0.5357142857142857,
+     "route_within_1p5": 0.8678571428571429,
+     "spliced_within_1p5": 0.8821428571428571,
+     "spliced_arc_ratio_median": 0.9866967168686822
+    }
+   },
+   "20-40 mm": {
+    "edges": 250,
+    "why": {
+     "gap": 0.08,
+     "third region": 0.92,
+     "neither": 0.0
+    },
+    "route_available": 0.9,
+    "hops_mean": 2.0,
+    "intermediate_unmatched": 0.7285185185185186,
+    "straight_median_mm": 2.4794157914566894,
+    "straight_within_1p5": 0.108,
+    "with_route": {
+     "straight_median_mm": 2.486026710290895,
+     "route_median_mm": 1.1600678865232468,
+     "spliced_median_mm": 1.072057573957246,
+     "straight_within_1p5": 0.1111111111111111,
+     "route_within_1p5": 0.7333333333333333,
+     "spliced_within_1p5": 0.7733333333333333,
+     "spliced_arc_ratio_median": 0.9572970845275166
+    }
+   },
+   ">= 40 mm": {
+    "edges": 96,
+    "why": {
+     "gap": 0.125,
+     "third region": 0.875,
+     "neither": 0.0
+    },
+    "route_available": 0.8541666666666666,
+    "hops_mean": 3.0,
+    "intermediate_unmatched": 0.7052845528455284,
+    "straight_median_mm": 3.9628519599719194,
+    "straight_within_1p5": 0.010416666666666666,
+    "with_route": {
+     "straight_median_mm": 4.0820342067607465,
+     "route_median_mm": 1.4653976396454913,
+     "spliced_median_mm": 1.2559894989695204,
+     "straight_within_1p5": 0.012195121951219513,
+     "route_within_1p5": 0.5121951219512195,
+     "spliced_within_1p5": 0.5975609756097561,
+     "spliced_arc_ratio_median": 0.9251426403611853
+    }
+   }
+  },
+  "gt": {
+   "10-20 mm": {
+    "edges": 493,
+    "why": {
+     "gap": 0.332657200811359,
+     "third region": 0.6328600405679513,
+     "neither": 0.034482758620689655
+    },
+    "route_available": 0.6937119675456389,
+    "hops_mean": 2.0,
+    "intermediate_unmatched": 0.0,
+    "straight_median_mm": 1.3434438908166486,
+    "straight_within_1p5": 0.6105476673427992,
+    "with_route": {
+     "straight_median_mm": 1.3364272949162541,
+     "route_median_mm": 1.2676895963843102,
+     "spliced_median_mm": 1.1758856301840304,
+     "straight_within_1p5": 0.5964912280701754,
+     "route_within_1p5": 0.6169590643274854,
+     "spliced_within_1p5": 0.6812865497076024,
+     "spliced_arc_ratio_median": 1.0762154140327769
+    }
+   },
+   "20-40 mm": {
+    "edges": 570,
+    "why": {
+     "gap": 0.2789473684210526,
+     "third region": 0.6982456140350877,
+     "neither": 0.02280701754385965
+    },
+    "route_available": 0.7614035087719299,
+    "hops_mean": 2.0,
+    "intermediate_unmatched": 0.0,
+    "straight_median_mm": 2.3456652090673105,
+    "straight_within_1p5": 0.10526315789473684,
+    "with_route": {
+     "straight_median_mm": 2.2852257039999966,
+     "route_median_mm": 1.5449626954079902,
+     "spliced_median_mm": 1.4212867103906006,
+     "straight_within_1p5": 0.11059907834101383,
+     "route_within_1p5": 0.47235023041474655,
+     "spliced_within_1p5": 0.5391705069124424,
+     "spliced_arc_ratio_median": 0.9933393361887375
+    }
+   },
+   ">= 40 mm": {
+    "edges": 290,
+    "why": {
+     "gap": 0.30344827586206896,
+     "third region": 0.6931034482758621,
+     "neither": 0.0034482758620689655
+    },
+    "route_available": 0.7379310344827587,
+    "hops_mean": 2.0,
+    "intermediate_unmatched": 0.0,
+    "straight_median_mm": 3.635976430643068,
+    "straight_within_1p5": 0.017241379310344827,
+    "with_route": {
+     "straight_median_mm": 3.7536218509988712,
+     "route_median_mm": 2.0425771450785435,
+     "spliced_median_mm": 1.5919646207576212,
+     "straight_within_1p5": 0.014018691588785047,
+     "route_within_1p5": 0.32710280373831774,
+     "spliced_within_1p5": 0.4532710280373832,
+     "spliced_arc_ratio_median": 0.907780754291154
+    }
+   }
+  }
+ }
+}

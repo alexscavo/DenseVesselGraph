@@ -33,6 +33,19 @@ def rotate_spline_geometry(geometry, turns, shape):
     return result
 
 
+def flip_spline_geometry(geometry, axes, shape):
+    """Targets for flipping the image along the axes marked True: x' = x A^T + b with A = diag(+-1) and
+    b = (size-1)/size on flipped axes (voxel i -> size-1-i, normalized coordinates); M' = M A^-1 as for the quarter turns."""
+    controls = geometry['controls']
+    matrix = torch.diag(controls.new_tensor([-1.0 if f else 1.0 for f in axes]))
+    offset = controls.new_tensor([(int(s) - 1) / int(s) if f else 0.0 for f, s in zip(axes, shape)])
+    result = {key: value @ matrix.T + offset for key, value in geometry.items()
+              if key in ('controls', 'curves', 'guides', 'full_paths')}
+    metric = geometry['metric']
+    result['metric'] = metric @ torch.linalg.inv(matrix.to(metric))
+    return result
+
+
 def project_plant_geometry(geometry, parameters, inner_size, size, padding, voxel_mm):
     """PNG(y,x,0) -> projected/augmented/padded volume; virtual units, not plant mm.
 
