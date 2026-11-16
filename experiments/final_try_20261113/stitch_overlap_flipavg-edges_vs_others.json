@@ -1,0 +1,1629 @@
+{
+ "description": "Whole-volume stitching under three decodings of traced_unet_wide_long_r1111 (16 Nov 2026, CPU, reads json only).\n\nDecodings (validation subjects, grid 'overlap', stitching 'core, hungarian 2 mm', cleaned graphs, each at the run's\nthresholds under that decoding, chosen on monitor_train patches):\n  original       window 3, single pass                                  <entry>-<run>-overlap.json\n  flipavg        --flip-average --nms 5 (node heat over 8 flips)        <entry>-<run>-overlap-nms5-flipavg.json\n  flipavg_edges  + --flip-average-edges (edge logits over 8 flips)      <entry>-<run>-overlap-nms5-flipavg-edges.json\n(experiments/stitching_20261112/). Per decoding: pooled cleaned node / edge P / R / F1, centreline P / R (1.5 mm),\ncomponents and loops per volume (and GT), share of cut points matched (2 x merged pairs / cut nodes) \u2014 recomputed from the\nper-subject counts and checked against the pooled values in the files. Subject-paired differences of pooled node and\nedge F1 (and the other pooled ratios): 2000 bootstrap resamples of subjects, seed 261030, 95% percentile interval,\ntwo-sided bootstrap p as protocol_report_20261106.paired. Validation only; few subjects per entry (see 'subjects').\nWrites experiments/final_try_20261113/stitch_overlap_flipavg-edges_vs_others.json (refuses to overwrite).",
+ "stitching": "pred | core, hungarian 2 mm | cleaned",
+ "entries": {
+  "IXI-simp2": {
+   "subjects": [
+    "000001",
+    "000006",
+    "000012",
+    "000019",
+    "000023",
+    "000038",
+    "000039",
+    "000040",
+    "000046",
+    "000051",
+    "000058",
+    "000071",
+    "000076",
+    "000080",
+    "000084",
+    "000086",
+    "000115",
+    "000117",
+    "000120",
+    "000140",
+    "000147",
+    "000149",
+    "000155",
+    "000158",
+    "000163",
+    "000166"
+   ],
+   "decodings": {
+    "original": {
+     "file": "IXI-simp2-traced_unet_wide_long_r1111-overlap.json",
+     "thresholds": {
+      "node": 0.35,
+      "edge": 0.85
+     },
+     "decoding": null,
+     "pooled": {
+      "node_precision": 0.5041238605122269,
+      "node_recall": 0.5711475409836065,
+      "node_f1": 0.5355468449773269,
+      "edge_precision": 0.37488721804511277,
+      "edge_recall": 0.36966192170818507,
+      "edge_f1": 0.37225623413468717,
+      "centreline_precision": 0.9544824093078864,
+      "centreline_recall": 0.6678129724805753,
+      "beta0_per_volume": 38.19230769230769,
+      "gt_beta0_per_volume": 14.423076923076923,
+      "beta1_per_volume": 28.153846153846153,
+      "gt_beta1_per_volume": 39.19230769230769,
+      "nodes_per_volume": 265.8076923076923,
+      "edges_per_volume": 255.76923076923077
+     },
+     "cut_nodes_per_volume": 391.61538461538464,
+     "merged_pairs_per_volume": 137.84615384615384,
+     "unmatched_cuts_per_volume": 115.92307692307692,
+     "share_of_cut_points_matched": 0.7039874287959142,
+     "pooled_matches_file": true,
+     "per_subject": {
+      "000001": {
+       "node_f1": 0.5854545454545454,
+       "edge_f1": 0.448566610455312
+      },
+      "000006": {
+       "node_f1": 0.5741444866920152,
+       "edge_f1": 0.40707964601769914
+      },
+      "000012": {
+       "node_f1": 0.5875,
+       "edge_f1": 0.43243243243243246
+      },
+      "000019": {
+       "node_f1": 0.551440329218107,
+       "edge_f1": 0.36893203883495146
+      },
+      "000023": {
+       "node_f1": 0.5709281961471103,
+       "edge_f1": 0.39015817223198596
+      },
+      "000038": {
+       "node_f1": 0.5880281690140845,
+       "edge_f1": 0.4395229982964225
+      },
+      "000039": {
+       "node_f1": 0.5355648535564853,
+       "edge_f1": 0.39473684210526316
+      },
+      "000040": {
+       "node_f1": 0.5447316103379721,
+       "edge_f1": 0.39344262295081966
+      },
+      "000046": {
+       "node_f1": 0.5207547169811321,
+       "edge_f1": 0.3499005964214712
+      },
+      "000051": {
+       "node_f1": 0.5117370892018779,
+       "edge_f1": 0.39598997493734334
+      },
+      "000058": {
+       "node_f1": 0.544360902255639,
+       "edge_f1": 0.3540090771558245
+      },
+      "000071": {
+       "node_f1": 0.5223214285714286,
+       "edge_f1": 0.36613272311212813
+      },
+      "000076": {
+       "node_f1": 0.47468354430379744,
+       "edge_f1": 0.2909090909090909
+      },
+      "000080": {
+       "node_f1": 0.5420944558521561,
+       "edge_f1": 0.44676409185803756
+      },
+      "000084": {
+       "node_f1": 0.5379876796714579,
+       "edge_f1": 0.38666666666666666
+      },
+      "000086": {
+       "node_f1": 0.5230202578268877,
+       "edge_f1": 0.3518850987432675
+      },
+      "000115": {
+       "node_f1": 0.518095238095238,
+       "edge_f1": 0.35181644359464626
+      },
+      "000117": {
+       "node_f1": 0.5181347150259067,
+       "edge_f1": 0.3465818759936407
+      },
+      "000120": {
+       "node_f1": 0.5085271317829457,
+       "edge_f1": 0.34534534534534533
+      },
+      "000140": {
+       "node_f1": 0.5498281786941581,
+       "edge_f1": 0.38596491228070173
+      },
+      "000147": {
+       "node_f1": 0.535645472061657,
+       "edge_f1": 0.3523489932885906
+      },
+      "000149": {
+       "node_f1": 0.4936708860759494,
+       "edge_f1": 0.2848297213622291
+      },
+      "000155": {
+       "node_f1": 0.5274261603375527,
+       "edge_f1": 0.359375
+      },
+      "000158": {
+       "node_f1": 0.5357142857142857,
+       "edge_f1": 0.3325526932084309
+      },
+      "000163": {
+       "node_f1": 0.48866498740554154,
+       "edge_f1": 0.3695150115473441
+      },
+      "000166": {
+       "node_f1": 0.5192697768762677,
+       "edge_f1": 0.3388581952117864
+      }
+     }
+    },
+    "flipavg": {
+     "file": "IXI-simp2-traced_unet_wide_long_r1111-overlap-nms5-flipavg.json",
+     "thresholds": {
+      "node": 0.35,
+      "edge": 0.85
+     },
+     "decoding": {
+      "nms": 5,
+      "flip_average": true,
+      "record": "final-v2-nms5-flipavg.json",
+      "record_thresholds": {
+       "node": 0.35,
+       "edge": 0.85,
+       "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+      }
+     },
+     "pooled": {
+      "node_precision": 0.5753235547886109,
+      "node_recall": 0.5465573770491803,
+      "node_f1": 0.56057166876839,
+      "edge_precision": 0.4535895576504714,
+      "edge_recall": 0.3709964412811388,
+      "edge_f1": 0.40815660685154975,
+      "centreline_precision": 0.9592565268925104,
+      "centreline_recall": 0.6455785924694176,
+      "beta0_per_volume": 30.846153846153847,
+      "gt_beta0_per_volume": 14.423076923076923,
+      "beta1_per_volume": 20.115384615384617,
+      "gt_beta1_per_volume": 39.19230769230769,
+      "nodes_per_volume": 222.8846153846154,
+      "edges_per_volume": 212.15384615384616
+     },
+     "cut_nodes_per_volume": 342.03846153846155,
+     "merged_pairs_per_volume": 127.46153846153847,
+     "unmatched_cuts_per_volume": 87.11538461538461,
+     "share_of_cut_points_matched": 0.745305296300461,
+     "pooled_matches_file": true,
+     "per_subject": {
+      "000001": {
+       "node_f1": 0.6068702290076335,
+       "edge_f1": 0.47584973166368516
+      },
+      "000006": {
+       "node_f1": 0.6115702479338843,
+       "edge_f1": 0.4576923076923077
+      },
+      "000012": {
+       "node_f1": 0.6332574031890661,
+       "edge_f1": 0.503370786516854
+      },
+      "000019": {
+       "node_f1": 0.5758928571428571,
+       "edge_f1": 0.40085287846481876
+      },
+      "000023": {
+       "node_f1": 0.5852713178294574,
+       "edge_f1": 0.4444444444444444
+      },
+      "000038": {
+       "node_f1": 0.6363636363636364,
+       "edge_f1": 0.48044692737430167
+      },
+      "000039": {
+       "node_f1": 0.5351473922902494,
+       "edge_f1": 0.42482100238663484
+      },
+      "000040": {
+       "node_f1": 0.5714285714285714,
+       "edge_f1": 0.4298642533936652
+      },
+      "000046": {
+       "node_f1": 0.5389473684210526,
+       "edge_f1": 0.4
+      },
+      "000051": {
+       "node_f1": 0.5297029702970297,
+       "edge_f1": 0.40641711229946526
+      },
+      "000058": {
+       "node_f1": 0.5681444991789819,
+       "edge_f1": 0.3806343906510851
+      },
+      "000071": {
+       "node_f1": 0.5664160401002506,
+       "edge_f1": 0.4122137404580153
+      },
+      "000076": {
+       "node_f1": 0.4991212653778559,
+       "edge_f1": 0.3288135593220339
+      },
+      "000080": {
+       "node_f1": 0.5560538116591929,
+       "edge_f1": 0.45308924485125857
+      },
+      "000084": {
+       "node_f1": 0.5668934240362812,
+       "edge_f1": 0.42409638554216866
+      },
+      "000086": {
+       "node_f1": 0.5414141414141415,
+       "edge_f1": 0.36363636363636365
+      },
+      "000115": {
+       "node_f1": 0.5626373626373626,
+       "edge_f1": 0.40444444444444444
+      },
+      "000117": {
+       "node_f1": 0.5513307984790875,
+       "edge_f1": 0.3923611111111111
+      },
+      "000120": {
+       "node_f1": 0.5530434782608695,
+       "edge_f1": 0.39182282793867124
+      },
+      "000140": {
+       "node_f1": 0.5704225352112676,
+       "edge_f1": 0.4573170731707317
+      },
+      "000147": {
+       "node_f1": 0.5619834710743802,
+       "edge_f1": 0.3833634719710669
+      },
+      "000149": {
+       "node_f1": 0.48056537102473496,
+       "edge_f1": 0.30405405405405406
+      },
+      "000155": {
+       "node_f1": 0.5503355704697986,
+       "edge_f1": 0.4
+      },
+      "000158": {
+       "node_f1": 0.5498652291105122,
+       "edge_f1": 0.36180904522613067
+      },
+      "000163": {
+       "node_f1": 0.5105263157894737,
+       "edge_f1": 0.3645320197044335
+      },
+      "000166": {
+       "node_f1": 0.5201793721973094,
+       "edge_f1": 0.35655737704918034
+      }
+     }
+    },
+    "flipavg_edges": {
+     "file": "IXI-simp2-traced_unet_wide_long_r1111-overlap-nms5-flipavg-edges.json",
+     "thresholds": {
+      "node": 0.35,
+      "edge": 0.85
+     },
+     "decoding": {
+      "nms": 5,
+      "flip_average": true,
+      "record": "final-v2-nms5-flipavg-edges.json",
+      "record_thresholds": {
+       "node": 0.35,
+       "edge": 0.85,
+       "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+      },
+      "flip_average_edges": true
+     },
+     "pooled": {
+      "node_precision": 0.6029042667622804,
+      "node_recall": 0.551311475409836,
+      "node_f1": 0.5759547867785579,
+      "edge_precision": 0.4813635512268215,
+      "edge_recall": 0.38107947805456704,
+      "edge_f1": 0.4253910452702144,
+      "centreline_precision": 0.9686747938612065,
+      "centreline_recall": 0.6500039078607293,
+      "beta0_per_volume": 28.423076923076923,
+      "gt_beta0_per_volume": 14.423076923076923,
+      "beta1_per_volume": 19.23076923076923,
+      "gt_beta1_per_volume": 39.19230769230769,
+      "nodes_per_volume": 214.53846153846155,
+      "edges_per_volume": 205.34615384615384
+     },
+     "cut_nodes_per_volume": 331.4230769230769,
+     "merged_pairs_per_volume": 128.46153846153845,
+     "unmatched_cuts_per_volume": 74.5,
+     "share_of_cut_points_matched": 0.7752117906463967,
+     "pooled_matches_file": true,
+     "per_subject": {
+      "000001": {
+       "node_f1": 0.6467065868263473,
+       "edge_f1": 0.5211009174311927
+      },
+      "000006": {
+       "node_f1": 0.6170212765957447,
+       "edge_f1": 0.4603174603174603
+      },
+      "000012": {
+       "node_f1": 0.6361556064073226,
+       "edge_f1": 0.5137614678899083
+      },
+      "000019": {
+       "node_f1": 0.5895691609977324,
+       "edge_f1": 0.42950108459869846
+      },
+      "000023": {
+       "node_f1": 0.6039215686274509,
+       "edge_f1": 0.46990291262135925
+      },
+      "000038": {
+       "node_f1": 0.6396761133603239,
+       "edge_f1": 0.49142857142857144
+      },
+      "000039": {
+       "node_f1": 0.5454545454545454,
+       "edge_f1": 0.4172661870503597
+      },
+      "000040": {
+       "node_f1": 0.5887445887445888,
+       "edge_f1": 0.4488888888888889
+      },
+      "000046": {
+       "node_f1": 0.5496828752642706,
+       "edge_f1": 0.4222222222222222
+      },
+      "000051": {
+       "node_f1": 0.556390977443609,
+       "edge_f1": 0.45108695652173914
+      },
+      "000058": {
+       "node_f1": 0.5898305084745763,
+       "edge_f1": 0.3856655290102389
+      },
+      "000071": {
+       "node_f1": 0.5801526717557252,
+       "edge_f1": 0.4153846153846154
+      },
+      "000076": {
+       "node_f1": 0.5201465201465202,
+       "edge_f1": 0.3374340949033392
+      },
+      "000080": {
+       "node_f1": 0.5740318906605922,
+       "edge_f1": 0.46296296296296297
+      },
+      "000084": {
+       "node_f1": 0.5893271461716937,
+       "edge_f1": 0.46601941747572817
+      },
+      "000086": {
+       "node_f1": 0.5696465696465697,
+       "edge_f1": 0.40476190476190477
+      },
+      "000115": {
+       "node_f1": 0.6143187066974596,
+       "edge_f1": 0.4423963133640553
+      },
+      "000117": {
+       "node_f1": 0.562015503875969,
+       "edge_f1": 0.39501779359430605
+      },
+      "000120": {
+       "node_f1": 0.5577264653641207,
+       "edge_f1": 0.4020618556701031
+      },
+      "000140": {
+       "node_f1": 0.6029411764705882,
+       "edge_f1": 0.46439628482972134
+      },
+      "000147": {
+       "node_f1": 0.5738045738045738,
+       "edge_f1": 0.3963302752293578
+      },
+      "000149": {
+       "node_f1": 0.4726027397260274,
+       "edge_f1": 0.2809364548494983
+      },
+      "000155": {
+       "node_f1": 0.5603644646924829,
+       "edge_f1": 0.430327868852459
+      },
+      "000158": {
+       "node_f1": 0.555858310626703,
+       "edge_f1": 0.38287153652392947
+      },
+      "000163": {
+       "node_f1": 0.5303867403314917,
+       "edge_f1": 0.39
+      },
+      "000166": {
+       "node_f1": 0.5067264573991032,
+       "edge_f1": 0.36400817995910023
+      }
+     }
+    }
+   },
+   "paired": {
+    "flipavg_edges_minus_flipavg": {
+     "node_f1": {
+      "point": 0.015383118010167895,
+      "ci95": [
+       0.010399271898681488,
+       0.020502677871609743
+      ],
+      "p": 0.0
+     },
+     "edge_f1": {
+      "point": 0.01723443841866462,
+      "ci95": [
+       0.011293491987643196,
+       0.023258013327300153
+      ],
+      "p": 0.0
+     },
+     "node_precision": {
+      "point": 0.027580711973669514,
+      "ci95": [
+       0.01895133866509121,
+       0.035951698076541534
+      ],
+      "p": 0.0
+     },
+     "node_recall": {
+      "point": 0.004754098360655767,
+      "ci95": [
+       0.0009736900981746344,
+       0.008864865899540967
+      ],
+      "p": 0.016
+     },
+     "edge_precision": {
+      "point": 0.02777399357635013,
+      "ci95": [
+       0.020149856354065798,
+       0.035171508575706056
+      ],
+      "p": 0.0
+     },
+     "edge_recall": {
+      "point": 0.010083036773428256,
+      "ci95": [
+       0.00486684069936173,
+       0.015600794001877829
+      ],
+      "p": 0.0
+     },
+     "centreline_precision": {
+      "point": 0.009418266968696076,
+      "ci95": [
+       0.005871687651433616,
+       0.012741075133642948
+      ],
+      "p": 0.0
+     },
+     "centreline_recall": {
+      "point": 0.004425315391311635,
+      "ci95": [
+       0.000567454420647559,
+       0.00854700426108996
+      ],
+      "p": 0.027
+     },
+     "beta0_per_volume": {
+      "point": -2.4230769230769234,
+      "ci95": [
+       -4.039423076923079,
+       -0.73076923076923
+      ],
+      "p": 0.004
+     },
+     "beta1_per_volume": {
+      "point": -0.8846153846153868,
+      "ci95": [
+       -2.5,
+       0.7317307692307666
+      ],
+      "p": 0.298
+     },
+     "subjects_better_node_f1": 24,
+     "subjects_better_edge_f1": 24
+    },
+    "flipavg_edges_minus_original": {
+     "node_f1": {
+      "point": 0.040407941801231084,
+      "ci95": [
+       0.031941589248327726,
+       0.047989771342304914
+      ],
+      "p": 0.0
+     },
+     "edge_f1": {
+      "point": 0.053134811135527205,
+      "ci95": [
+       0.04504656728169062,
+       0.06086652354738158
+      ],
+      "p": 0.0
+     },
+     "node_precision": {
+      "point": 0.09878040625005347,
+      "ci95": [
+       0.08895194275070538,
+       0.10848086334179949
+      ],
+      "p": 0.0
+     },
+     "node_recall": {
+      "point": -0.01983606557377049,
+      "ci95": [
+       -0.02588905598196835,
+       -0.014098397477998122
+      ],
+      "p": 0.0
+     },
+     "edge_precision": {
+      "point": 0.10647633318170874,
+      "ci95": [
+       0.09771289222993372,
+       0.11483887189751148
+      ],
+      "p": 0.0
+     },
+     "edge_recall": {
+      "point": 0.011417556346381974,
+      "ci95": [
+       0.004124570621576694,
+       0.018978454352451105
+      ],
+      "p": 0.001
+     },
+     "centreline_precision": {
+      "point": 0.014192384553320059,
+      "ci95": [
+       0.009821082200138831,
+       0.01814211378380794
+      ],
+      "p": 0.0
+     },
+     "centreline_recall": {
+      "point": -0.017809064619845993,
+      "ci95": [
+       -0.02355105157445283,
+       -0.01195179963113844
+      ],
+      "p": 0.0
+     },
+     "beta0_per_volume": {
+      "point": -9.76923076923077,
+      "ci95": [
+       -12.19230769230769,
+       -7.4615384615384635
+      ],
+      "p": 0.0
+     },
+     "beta1_per_volume": {
+      "point": -8.923076923076923,
+      "ci95": [
+       -11.0,
+       -6.88365384615385
+      ],
+      "p": 0.0
+     },
+     "subjects_better_node_f1": 24,
+     "subjects_better_edge_f1": 25
+    },
+    "flipavg_minus_original (context)": {
+     "node_f1": {
+      "point": 0.02502482379106319,
+      "ci95": [
+       0.019646159097967117,
+       0.029997941161882764
+      ],
+      "p": 0.0
+     },
+     "edge_f1": {
+      "point": 0.03590037271686258,
+      "ci95": [
+       0.029155732001782272,
+       0.04207853098744853
+      ],
+      "p": 0.0
+     },
+     "node_precision": {
+      "point": 0.07119969427638395,
+      "ci95": [
+       0.0641999944223162,
+       0.07760631335159573
+      ],
+      "p": 0.0
+     },
+     "node_recall": {
+      "point": -0.024590163934426257,
+      "ci95": [
+       -0.02997511217013323,
+       -0.019150572528590905
+      ],
+      "p": 0.0
+     },
+     "edge_precision": {
+      "point": 0.0787023396053586,
+      "ci95": [
+       0.07054664495420586,
+       0.08588958672389632
+      ],
+      "p": 0.0
+     },
+     "edge_recall": {
+      "point": 0.0013345195729537185,
+      "ci95": [
+       -0.004287449197597426,
+       0.0071679980731834125
+      ],
+      "p": 0.684
+     },
+     "centreline_precision": {
+      "point": 0.0047741175846239825,
+      "ci95": [
+       0.002122373521533519,
+       0.007760385584142635
+      ],
+      "p": 0.0
+     },
+     "centreline_recall": {
+      "point": -0.02223438001115763,
+      "ci95": [
+       -0.028542651890327286,
+       -0.015722953156273062
+      ],
+      "p": 0.0
+     },
+     "beta0_per_volume": {
+      "point": -7.346153846153847,
+      "ci95": [
+       -9.42307692307692,
+       -5.19230769230769
+      ],
+      "p": 0.0
+     },
+     "beta1_per_volume": {
+      "point": -8.038461538461537,
+      "ci95": [
+       -9.770192307692309,
+       -6.30769230769231
+      ],
+      "p": 0.0
+     },
+     "subjects_better_node_f1": 24,
+     "subjects_better_edge_f1": 25
+    }
+   }
+  },
+  "BRAVA-simp2": {
+   "subjects": [
+    "000000",
+    "000001",
+    "000009",
+    "000023",
+    "000034",
+    "000041",
+    "000042",
+    "000054"
+   ],
+   "decodings": {
+    "original": {
+     "file": "BRAVA-simp2-traced_unet_wide_long_r1111-overlap.json",
+     "thresholds": {
+      "node": 0.3,
+      "edge": 0.75
+     },
+     "decoding": null,
+     "pooled": {
+      "node_precision": 0.16795580110497238,
+      "node_recall": 0.28428927680798005,
+      "node_f1": 0.2111599907385969,
+      "edge_precision": 0.08028821410190427,
+      "edge_recall": 0.09774436090225563,
+      "edge_f1": 0.08816049731562588,
+      "centreline_precision": 0.8295710940825883,
+      "centreline_recall": 0.3778801504731676,
+      "beta0_per_volume": 103.75,
+      "gt_beta0_per_volume": 1.0,
+      "beta1_per_volume": 7.25,
+      "gt_beta1_per_volume": 0.0,
+      "nodes_per_volume": 339.375,
+      "edges_per_volume": 242.875
+     },
+     "cut_nodes_per_volume": 563.75,
+     "merged_pairs_per_volume": 137.0,
+     "unmatched_cuts_per_volume": 289.75,
+     "share_of_cut_points_matched": 0.4860310421286031,
+     "pooled_matches_file": true,
+     "per_subject": {
+      "000000": {
+       "node_f1": 0.2608695652173913,
+       "edge_f1": 0.1024390243902439
+      },
+      "000001": {
+       "node_f1": 0.20758483033932135,
+       "edge_f1": 0.05555555555555555
+      },
+      "000009": {
+       "node_f1": 0.2145748987854251,
+       "edge_f1": 0.0916030534351145
+      },
+      "000023": {
+       "node_f1": 0.21007194244604316,
+       "edge_f1": 0.1116751269035533
+      },
+      "000034": {
+       "node_f1": 0.2260596546310832,
+       "edge_f1": 0.08108108108108109
+      },
+      "000041": {
+       "node_f1": 0.19210977701543738,
+       "edge_f1": 0.0875
+      },
+      "000042": {
+       "node_f1": 0.19001610305958133,
+       "edge_f1": 0.09523809523809523
+      },
+      "000054": {
+       "node_f1": 0.18360655737704917,
+       "edge_f1": 0.05668016194331984
+      }
+     }
+    },
+    "flipavg": {
+     "file": "BRAVA-simp2-traced_unet_wide_long_r1111-overlap-nms5-flipavg.json",
+     "thresholds": {
+      "node": 0.25,
+      "edge": 0.75
+     },
+     "decoding": {
+      "nms": 5,
+      "flip_average": true,
+      "record": "final-v2-nms5-flipavg.json",
+      "record_thresholds": {
+       "node": 0.25,
+       "edge": 0.75,
+       "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+      }
+     },
+     "pooled": {
+      "node_precision": 0.20625253755582623,
+      "node_recall": 0.3167082294264339,
+      "node_f1": 0.24981558888615688,
+      "edge_precision": 0.10653889515219842,
+      "edge_recall": 0.11842105263157894,
+      "edge_f1": 0.11216617210682493,
+      "centreline_precision": 0.8277289583344711,
+      "centreline_recall": 0.41181743372714985,
+      "beta0_per_volume": 91.0,
+      "gt_beta0_per_volume": 1.0,
+      "beta1_per_volume": 4.875,
+      "gt_beta1_per_volume": 0.0,
+      "nodes_per_volume": 307.875,
+      "edges_per_volume": 221.75
+     },
+     "cut_nodes_per_volume": 539.875,
+     "merged_pairs_per_volume": 150.125,
+     "unmatched_cuts_per_volume": 239.625,
+     "share_of_cut_points_matched": 0.5561472563093308,
+     "pooled_matches_file": true,
+     "per_subject": {
+      "000000": {
+       "node_f1": 0.31092436974789917,
+       "edge_f1": 0.15647921760391198
+      },
+      "000001": {
+       "node_f1": 0.2249488752556237,
+       "edge_f1": 0.0945273631840796
+      },
+      "000009": {
+       "node_f1": 0.2391304347826087,
+       "edge_f1": 0.09090909090909091
+      },
+      "000023": {
+       "node_f1": 0.2745709828393136,
+       "edge_f1": 0.1478743068391867
+      },
+      "000034": {
+       "node_f1": 0.2636986301369863,
+       "edge_f1": 0.10351966873706005
+      },
+      "000041": {
+       "node_f1": 0.2255083179297597,
+       "edge_f1": 0.10430839002267574
+      },
+      "000042": {
+       "node_f1": 0.24567474048442905,
+       "edge_f1": 0.11416490486257928
+      },
+      "000054": {
+       "node_f1": 0.18120805369127516,
+       "edge_f1": 0.048582995951417005
+      }
+     }
+    },
+    "flipavg_edges": {
+     "file": "BRAVA-simp2-traced_unet_wide_long_r1111-overlap-nms5-flipavg-edges.json",
+     "thresholds": {
+      "node": 0.25,
+      "edge": 0.8
+     },
+     "decoding": {
+      "nms": 5,
+      "flip_average": true,
+      "record": "final-v2-nms5-flipavg-edges.json",
+      "record_thresholds": {
+       "node": 0.25,
+       "edge": 0.8,
+       "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+      },
+      "flip_average_edges": true
+     },
+     "pooled": {
+      "node_precision": 0.2501276161306789,
+      "node_recall": 0.3054862842892768,
+      "node_f1": 0.275049115913556,
+      "edge_precision": 0.1423512747875354,
+      "edge_recall": 0.12593984962406016,
+      "edge_f1": 0.13364361702127658,
+      "centreline_precision": 0.8780522926909547,
+      "centreline_recall": 0.3810468465291248,
+      "beta0_per_volume": 71.375,
+      "gt_beta0_per_volume": 1.0,
+      "beta1_per_volume": 3.0,
+      "gt_beta1_per_volume": 0.0,
+      "nodes_per_volume": 244.875,
+      "edges_per_volume": 176.5
+     },
+     "cut_nodes_per_volume": 431.875,
+     "merged_pairs_per_volume": 127.25,
+     "unmatched_cuts_per_volume": 177.375,
+     "share_of_cut_points_matched": 0.5892908827785818,
+     "pooled_matches_file": true,
+     "per_subject": {
+      "000000": {
+       "node_f1": 0.33816425120772947,
+       "edge_f1": 0.18732782369146006
+      },
+      "000001": {
+       "node_f1": 0.24299065420560748,
+       "edge_f1": 0.08913649025069638
+      },
+      "000009": {
+       "node_f1": 0.2748091603053435,
+       "edge_f1": 0.12883435582822086
+      },
+      "000023": {
+       "node_f1": 0.30335097001763667,
+       "edge_f1": 0.17177914110429449
+      },
+      "000034": {
+       "node_f1": 0.28239845261121854,
+       "edge_f1": 0.1415525114155251
+      },
+      "000041": {
+       "node_f1": 0.26898047722342733,
+       "edge_f1": 0.12598425196850394
+      },
+      "000042": {
+       "node_f1": 0.2698412698412698,
+       "edge_f1": 0.12322274881516587
+      },
+      "000054": {
+       "node_f1": 0.17921146953405018,
+       "edge_f1": 0.06086956521739131
+      }
+     }
+    }
+   },
+   "paired": {
+    "flipavg_edges_minus_flipavg": {
+     "node_f1": {
+      "point": 0.025233527027399144,
+      "ci95": [
+       0.016613833246733885,
+       0.0324460561426806
+      ],
+      "p": 0.0
+     },
+     "edge_f1": {
+      "point": 0.02147744491445165,
+      "ci95": [
+       0.0111741598690428,
+       0.03064280438542498
+      ],
+      "p": 0.0
+     },
+     "node_precision": {
+      "point": 0.04387507857485268,
+      "ci95": [
+       0.034965847450089606,
+       0.05113452088231827
+      ],
+      "p": 0.0
+     },
+     "node_recall": {
+      "point": -0.011221945137157074,
+      "ci95": [
+       -0.015882712278558364,
+       -0.005889667887851464
+      ],
+      "p": 0.0
+     },
+     "edge_precision": {
+      "point": 0.03581237963533698,
+      "ci95": [
+       0.023916236443180135,
+       0.04650552162004087
+      ],
+      "p": 0.0
+     },
+     "edge_recall": {
+      "point": 0.0075187969924812165,
+      "ci95": [
+       -0.0012945193420192285,
+       0.016199973315058194
+      ],
+      "p": 0.133
+     },
+     "centreline_precision": {
+      "point": 0.05032333435648362,
+      "ci95": [
+       0.040935956982413625,
+       0.05928012175936378
+      ],
+      "p": 0.0
+     },
+     "centreline_recall": {
+      "point": -0.030770587198025057,
+      "ci95": [
+       -0.04274431803387151,
+       -0.017224478351232496
+      ],
+      "p": 0.0
+     },
+     "beta0_per_volume": {
+      "point": -19.625,
+      "ci95": [
+       -22.625,
+       -15.0
+      ],
+      "p": 0.0
+     },
+     "beta1_per_volume": {
+      "point": -1.875,
+      "ci95": [
+       -3.0,
+       -0.75
+      ],
+      "p": 0.0
+     },
+     "subjects_better_node_f1": 7,
+     "subjects_better_edge_f1": 7
+    },
+    "flipavg_edges_minus_original": {
+     "node_f1": {
+      "point": 0.06388912517495912,
+      "ci95": [
+       0.043669234216216525,
+       0.07884894242601415
+      ],
+      "p": 0.0
+     },
+     "edge_f1": {
+      "point": 0.04548311970565071,
+      "ci95": [
+       0.030291835807451258,
+       0.05956232958284991
+      ],
+      "p": 0.0
+     },
+     "node_precision": {
+      "point": 0.08217181502570653,
+      "ci95": [
+       0.06488184381904018,
+       0.09487636357881878
+      ],
+      "p": 0.0
+     },
+     "node_recall": {
+      "point": 0.02119700748129677,
+      "ci95": [
+       0.004284099878252533,
+       0.03645387839145526
+      ],
+      "p": 0.015
+     },
+     "edge_precision": {
+      "point": 0.062063060685631125,
+      "ci95": [
+       0.04483270422731175,
+       0.07841297164385347
+      ],
+      "p": 0.0
+     },
+     "edge_recall": {
+      "point": 0.028195488721804524,
+      "ci95": [
+       0.015235457063711905,
+       0.04130741050228774
+      ],
+      "p": 0.0
+     },
+     "centreline_precision": {
+      "point": 0.048481198608366416,
+      "ci95": [
+       0.02830666167486611,
+       0.06796193689607896
+      ],
+      "p": 0.0
+     },
+     "centreline_recall": {
+      "point": 0.0031666960559572077,
+      "ci95": [
+       -0.009598422459167295,
+       0.014722004814734338
+      ],
+      "p": 0.592
+     },
+     "beta0_per_volume": {
+      "point": -32.375,
+      "ci95": [
+       -39.125,
+       -24.621875000000017
+      ],
+      "p": 0.0
+     },
+     "beta1_per_volume": {
+      "point": -4.25,
+      "ci95": [
+       -8.625,
+       -0.875
+      ],
+      "p": 0.008
+     },
+     "subjects_better_node_f1": 7,
+     "subjects_better_edge_f1": 8
+    },
+    "flipavg_minus_original (context)": {
+     "node_f1": {
+      "point": 0.03865559814755998,
+      "ci95": [
+       0.024486226438520386,
+       0.05084348516737024
+      ],
+      "p": 0.0
+     },
+     "edge_f1": {
+      "point": 0.024005674791199055,
+      "ci95": [
+       0.011848157998867959,
+       0.03520677552922333
+      ],
+      "p": 0.0
+     },
+     "node_precision": {
+      "point": 0.03829673645085385,
+      "ci95": [
+       0.026514907451324704,
+       0.04866756891804491
+      ],
+      "p": 0.0
+     },
+     "node_recall": {
+      "point": 0.032418952618453845,
+      "ci95": [
+       0.016265493340126166,
+       0.048078596287703
+      ],
+      "p": 0.0
+     },
+     "edge_precision": {
+      "point": 0.026250681050294142,
+      "ci95": [
+       0.014774139560177667,
+       0.03678112703812954
+      ],
+      "p": 0.0
+     },
+     "edge_recall": {
+      "point": 0.020676691729323307,
+      "ci95": [
+       0.007762742459336707,
+       0.03373531626506025
+      ],
+      "p": 0.001
+     },
+     "centreline_precision": {
+      "point": -0.0018421357481172018,
+      "ci95": [
+       -0.015472048424425872,
+       0.013333624832295603
+      ],
+      "p": 0.848
+     },
+     "centreline_recall": {
+      "point": 0.033937283253982264,
+      "ci95": [
+       0.02430574586766028,
+       0.04429039028284507
+      ],
+      "p": 0.0
+     },
+     "beta0_per_volume": {
+      "point": -12.75,
+      "ci95": [
+       -17.25,
+       -8.0
+      ],
+      "p": 0.0
+     },
+     "beta1_per_volume": {
+      "point": -2.375,
+      "ci95": [
+       -6.625,
+       1.0
+      ],
+      "p": 0.255
+     },
+     "subjects_better_node_f1": 7,
+     "subjects_better_edge_f1": 6
+    }
+   }
+  },
+  "TopBrainCTA-simp2": {
+   "subjects": [
+    "000028",
+    "000033",
+    "000037",
+    "000038",
+    "000044"
+   ],
+   "decodings": {
+    "original": {
+     "file": "TopBrainCTA-simp2-traced_unet_wide_long_r1111-overlap.json",
+     "thresholds": {
+      "node": 0.3,
+      "edge": 0.65
+     },
+     "decoding": null,
+     "pooled": {
+      "node_precision": 0.2451678535096643,
+      "node_recall": 0.3292349726775956,
+      "node_f1": 0.28104956268221576,
+      "edge_precision": 0.12879581151832462,
+      "edge_recall": 0.15891472868217055,
+      "edge_f1": 0.14227877385772122,
+      "centreline_precision": 0.8182715731410236,
+      "centreline_recall": 0.5081253841425938,
+      "beta0_per_volume": 35.4,
+      "gt_beta0_per_volume": 12.0,
+      "beta1_per_volume": 29.8,
+      "gt_beta1_per_volume": 20.4,
+      "nodes_per_volume": 196.6,
+      "edges_per_volume": 191.0
+     },
+     "cut_nodes_per_volume": 301.0,
+     "merged_pairs_per_volume": 85.2,
+     "unmatched_cuts_per_volume": 130.6,
+     "share_of_cut_points_matched": 0.5661129568106312,
+     "pooled_matches_file": true,
+     "per_subject": {
+      "000028": {
+       "node_f1": 0.22784810126582278,
+       "edge_f1": 0.11733333333333333
+      },
+      "000033": {
+       "node_f1": 0.3057324840764331,
+       "edge_f1": 0.15894039735099338
+      },
+      "000037": {
+       "node_f1": 0.2696078431372549,
+       "edge_f1": 0.10741687979539642
+      },
+      "000038": {
+       "node_f1": 0.34385964912280703,
+       "edge_f1": 0.17582417582417584
+      },
+      "000044": {
+       "node_f1": 0.28936170212765955,
+       "edge_f1": 0.16326530612244897
+      }
+     }
+    },
+    "flipavg": {
+     "file": "TopBrainCTA-simp2-traced_unet_wide_long_r1111-overlap-nms5-flipavg.json",
+     "thresholds": {
+      "node": 0.3,
+      "edge": 0.65
+     },
+     "decoding": {
+      "nms": 5,
+      "flip_average": true,
+      "record": "final-v2-nms5-flipavg.json",
+      "record_thresholds": {
+       "node": 0.3,
+       "edge": 0.65,
+       "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+      }
+     },
+     "pooled": {
+      "node_precision": 0.29078947368421054,
+      "node_recall": 0.30191256830601093,
+      "node_f1": 0.29624664879356566,
+      "edge_precision": 0.17725258493353027,
+      "edge_recall": 0.15503875968992248,
+      "edge_f1": 0.16540317022742937,
+      "centreline_precision": 0.8222584919685854,
+      "centreline_recall": 0.4861708666256915,
+      "beta0_per_volume": 29.8,
+      "gt_beta0_per_volume": 12.0,
+      "beta1_per_volume": 13.2,
+      "gt_beta1_per_volume": 20.4,
+      "nodes_per_volume": 152.0,
+      "edges_per_volume": 135.4
+     },
+     "cut_nodes_per_volume": 239.2,
+     "merged_pairs_per_volume": 70.8,
+     "unmatched_cuts_per_volume": 97.6,
+     "share_of_cut_points_matched": 0.5919732441471572,
+     "pooled_matches_file": true,
+     "per_subject": {
+      "000028": {
+       "node_f1": 0.23796033994334279,
+       "edge_f1": 0.12578616352201258
+      },
+      "000033": {
+       "node_f1": 0.30656934306569344,
+       "edge_f1": 0.18181818181818182
+      },
+      "000037": {
+       "node_f1": 0.27976190476190477,
+       "edge_f1": 0.09523809523809523
+      },
+      "000038": {
+       "node_f1": 0.33460076045627374,
+       "edge_f1": 0.16923076923076924
+      },
+      "000044": {
+       "node_f1": 0.3325062034739454,
+       "edge_f1": 0.23943661971830985
+      }
+     }
+    },
+    "flipavg_edges": {
+     "file": "TopBrainCTA-simp2-traced_unet_wide_long_r1111-overlap-nms5-flipavg-edges.json",
+     "thresholds": {
+      "node": 0.3,
+      "edge": 0.65
+     },
+     "decoding": {
+      "nms": 5,
+      "flip_average": true,
+      "record": "final-v2-nms5-flipavg-edges.json",
+      "record_thresholds": {
+       "node": 0.3,
+       "edge": 0.65,
+       "policy": "train monitor only; candidates = geodesic contacts U 16-NN over retained nodes"
+      },
+      "flip_average_edges": true
+     },
+     "pooled": {
+      "node_precision": 0.3284241531664212,
+      "node_recall": 0.3046448087431694,
+      "node_f1": 0.3160878809355067,
+      "edge_precision": 0.20097244732576985,
+      "edge_recall": 0.16020671834625322,
+      "edge_f1": 0.17828900071890727,
+      "centreline_precision": 0.8317163732183495,
+      "centreline_recall": 0.4858020897357099,
+      "beta0_per_volume": 23.2,
+      "gt_beta0_per_volume": 12.0,
+      "beta1_per_volume": 10.8,
+      "gt_beta1_per_volume": 20.4,
+      "nodes_per_volume": 135.8,
+      "edges_per_volume": 123.4
+     },
+     "cut_nodes_per_volume": 216.4,
+     "merged_pairs_per_volume": 68.4,
+     "unmatched_cuts_per_volume": 79.6,
+     "share_of_cut_points_matched": 0.6321626617375231,
+     "pooled_matches_file": true,
+     "per_subject": {
+      "000028": {
+       "node_f1": 0.25925925925925924,
+       "edge_f1": 0.14666666666666667
+      },
+      "000033": {
+       "node_f1": 0.3088235294117647,
+       "edge_f1": 0.16923076923076924
+      },
+      "000037": {
+       "node_f1": 0.310126582278481,
+       "edge_f1": 0.10067114093959731
+      },
+      "000038": {
+       "node_f1": 0.35684647302904565,
+       "edge_f1": 0.205761316872428
+      },
+      "000044": {
+       "node_f1": 0.34517766497461927,
+       "edge_f1": 0.24285714285714285
+      }
+     }
+    }
+   },
+   "paired": {
+    "flipavg_edges_minus_flipavg": {
+     "node_f1": {
+      "point": 0.019841232141941056,
+      "ci95": [
+       0.012113941792870231,
+       0.025678211607578105
+      ],
+      "p": 0.0
+     },
+     "edge_f1": {
+      "point": 0.012885830491477901,
+      "ci95": [
+       0.001790518350563708,
+       0.025843563721733437
+      ],
+      "p": 0.034
+     },
+     "node_precision": {
+      "point": 0.037634679482210665,
+      "ci95": [
+       0.02327404875483602,
+       0.0470886242223282
+      ],
+      "p": 0.0
+     },
+     "node_recall": {
+      "point": 0.002732240437158473,
+      "ci95": [
+       -0.0034904013961605806,
+       0.008120649651972178
+      ],
+      "p": 0.545
+     },
+     "edge_precision": {
+      "point": 0.023719862392239582,
+      "ci95": [
+       0.00799475501803562,
+       0.03930785388595728
+      ],
+      "p": 0.001
+     },
+     "edge_recall": {
+      "point": 0.00516795865633074,
+      "ci95": [
+       -0.0027586206896551835,
+       0.015172413793103467
+      ],
+      "p": 0.27
+     },
+     "centreline_precision": {
+      "point": 0.0094578812497641,
+      "ci95": [
+       -0.001850962255669275,
+       0.02589774271546974
+      ],
+      "p": 0.1
+     },
+     "centreline_recall": {
+      "point": -0.0003687768899816035,
+      "ci95": [
+       -0.009720365418894816,
+       0.008928121059268601
+      ],
+      "p": 0.946
+     },
+     "beta0_per_volume": {
+      "point": -6.600000000000001,
+      "ci95": [
+       -9.800000000000004,
+       -3.3999999999999986
+      ],
+      "p": 0.0
+     },
+     "beta1_per_volume": {
+      "point": -2.3999999999999986,
+      "ci95": [
+       -3.200000000000001,
+       -1.5999999999999996
+      ],
+      "p": 0.0
+     },
+     "subjects_better_node_f1": 5,
+     "subjects_better_edge_f1": 4
+    },
+    "flipavg_edges_minus_original": {
+     "node_f1": {
+      "point": 0.035038318253290957,
+      "ci95": [
+       0.016728050236371472,
+       0.04784832661822702
+      ],
+      "p": 0.0
+     },
+     "edge_f1": {
+      "point": 0.036010226861186045,
+      "ci95": [
+       0.007397112778103204,
+       0.06467807517272536
+      ],
+      "p": 0.009
+     },
+     "node_precision": {
+      "point": 0.0832562996567569,
+      "ci95": [
+       0.06609541974027433,
+       0.09448617214792399
+      ],
+      "p": 0.0
+     },
+     "node_recall": {
+      "point": -0.0245901639344262,
+      "ci95": [
+       -0.04285714285714287,
+       -0.009814612868048023
+      ],
+      "p": 0.0
+     },
+     "edge_precision": {
+      "point": 0.07217663580744524,
+      "ci95": [
+       0.04114611624117327,
+       0.09896774142724986
+      ],
+      "p": 0.0
+     },
+     "edge_recall": {
+      "point": 0.0012919896640826711,
+      "ci95": [
+       -0.02066590126291619,
+       0.02133850630455869
+      ],
+      "p": 0.925
+     },
+     "centreline_precision": {
+      "point": 0.013444800077325847,
+      "ci95": [
+       -0.019664719648093465,
+       0.04605652606953436
+      ],
+      "p": 0.494
+     },
+     "centreline_recall": {
+      "point": -0.02232329440688391,
+      "ci95": [
+       -0.03918762560136413,
+       -0.010905417663065853
+      ],
+      "p": 0.0
+     },
+     "beta0_per_volume": {
+      "point": -12.2,
+      "ci95": [
+       -17.400000000000002,
+       -6.800000000000001
+      ],
+      "p": 0.0
+     },
+     "beta1_per_volume": {
+      "point": -19.0,
+      "ci95": [
+       -34.0,
+       -7.0
+      ],
+      "p": 0.0
+     },
+     "subjects_better_node_f1": 5,
+     "subjects_better_edge_f1": 4
+    },
+    "flipavg_minus_original (context)": {
+     "node_f1": {
+      "point": 0.0151970861113499,
+      "ci95": [
+       -0.0013526483783844467,
+       0.03150408004649874
+      ],
+      "p": 0.076
+     },
+     "edge_f1": {
+      "point": 0.023124396369708144,
+      "ci95": [
+       -0.0037905493638467486,
+       0.055847111182713405
+      ],
+      "p": 0.204
+     },
+     "node_precision": {
+      "point": 0.04562162017454624,
+      "ci95": [
+       0.024987172412457737,
+       0.06481560761761837
+      ],
+      "p": 0.0
+     },
+     "node_recall": {
+      "point": -0.027322404371584674,
+      "ci95": [
+       -0.04531722054380666,
+       -0.013333333333333364
+      ],
+      "p": 0.0
+     },
+     "edge_precision": {
+      "point": 0.048456773415205656,
+      "ci95": [
+       0.013550753164950385,
+       0.08712542421835512
+      ],
+      "p": 0.0
+     },
+     "edge_recall": {
+      "point": -0.003875968992248069,
+      "ci95": [
+       -0.025108445541843414,
+       0.01899441340782121
+      ],
+      "p": 0.743
+     },
+     "centreline_precision": {
+      "point": 0.003986918827561747,
+      "ci95": [
+       -0.02329006053581658,
+       0.0384498903764694
+      ],
+      "p": 0.813
+     },
+     "centreline_recall": {
+      "point": -0.021954517516902305,
+      "ci95": [
+       -0.03645619140755571,
+       -0.011399567315693138
+      ],
+      "p": 0.0
+     },
+     "beta0_per_volume": {
+      "point": -5.599999999999998,
+      "ci95": [
+       -11.0,
+       0.1999999999999993
+      ],
+      "p": 0.066
+     },
+     "beta1_per_volume": {
+      "point": -16.6,
+      "ci95": [
+       -30.599999999999998,
+       -5.199999999999999
+      ],
+      "p": 0.0
+     },
+     "subjects_better_node_f1": 4,
+     "subjects_better_edge_f1": 3
+    }
+   }
+  }
+ }
+}

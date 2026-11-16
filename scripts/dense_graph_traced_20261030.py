@@ -110,6 +110,13 @@ def apply_saved_mode(final):
     MODE.update(MODE_DEFAULTS, **final.get('mode', {}))
     MODE['k_min_arc'] = tuple(MODE['k_min_arc'])
 PROB_HOOK = None  # analysis only: f(prob, nodes, geometry) -> centreline probability used by predict()
+# Test-time flip averaging of the edge scores (16 Nov 2026, --flip-average-edges; evaluation only, default off = every
+# earlier run). In predict(), nodes and candidate paths are obtained as without it; the edge logit of every candidate is
+# then the mean over the 8 axis flips of the input of the logit scored in the flipped frame (flipped network pass,
+# candidate path mirrored x -> SIZE-1-x on the flipped axes); curves stay those of the unflipped pass. The flipped passes
+# of D.decoding_output are reused when D.FLIP_AVERAGE is set. Adopted from scripts/edge_flip_average_study_20261113.py
+# (arm edge_logit).
+FLIP_AVERAGE_EDGES = False
 GAP_FEATURES = 5
 VIA_FEATURES = 3
 MAX_VIA_DEGREE = 6  # skip pass-through pairs around nodes touching more regions than this
@@ -702,19 +709,51 @@ def contract(row, node_t, edge_t, tau):
     return {**row, 'node_scores': ns, 'edge_scores': es, 'contracted': contracted}
 
 
+def mirror_points(pts, dims):
+    """Continuous voxel coordinates (..., 3) into / out of the frame of the input flipped on image dims `dims`
+    (subset of (2, 3, 4); point axis = dim - 2): x -> SIZE - 1 - x on the flipped axes."""
+    if not dims:
+        return pts
+    q = pts.clone()
+    for d in dims:
+        q[..., d - 2] = SIZE - 1 - q[..., d - 2]
+    return q
+
+
+def flip_passes(model, images):
+    """The 7 flipped network passes (dims, raw output in the flipped frame), in D.decoding_output order."""
+    from itertools import combinations
+    return [(dims, model.forward_image(images.flip(dims))) for n in (1, 2, 3) for dims in combinations((2, 3, 4), n)]
+
+
+def flip_edge_logits(model, flipped, b, paths, logit0):
+    """Mean edge logit (float64) over the unflipped logit0 and the flipped passes, each scored in its own frame."""
+    logits = [logit0]
+    for dims, o in flipped:
+        fk, hk, pk = o[b, 5:].float(), o[b, :1].float().sigmoid(), o[b, 4].float().sigmoid()
+        logits.append(model.edge_head(model.path_features(fk, hk, mirror_points(paths, dims), pk, None)).squeeze(-1))
+    return torch.stack(logits, 1).double().mean(1)
+
+
 @torch.no_grad()
 def predict(model, ds, device, node_threshold, workers, batch=8):
     model.eval()
     rows = []
     loader = torch.utils.data.DataLoader(ds, batch_size=batch, num_workers=workers, collate_fn=collate)
     offset = 0
+    if FLIP_AVERAGE_EDGES and (MODE['two_hop'] or MODE['passthrough'] or MODE['roles'] or PROB_HOOK is not None):
+        raise NotImplementedError('--flip-average-edges: only without two-hop / pass-through / node roles / PROB_HOOK')
     for images, nodes, edges, geometry in loader:
+        flipped = [] if FLIP_AVERAGE_EDGES else None
         with torch.autocast('cuda', dtype=torch.bfloat16):
             out = model.forward_image(images.to(device))
+            decoded = D.decoding_output(model, images.to(device), out, keep=flipped)  # = out unless D.FLIP_AVERAGE (nodes only)
+            if FLIP_AVERAGE_EDGES and not D.FLIP_AVERAGE:
+                flipped = flip_passes(model, images.to(device))
         feats, heat, prob = out[:, 5:].float(), out[:, :1].float().sigmoid(), out[:, 4].float().sigmoid()
         if PROB_HOOK is not None:
             prob = PROB_HOOK(prob, nodes, geometry)
-        found = D.peaks(out, node_threshold)
+        found = D.peaks(decoded, node_threshold)
         role_probs = None
         if MODE['roles']:  # intermediate nodes are removed before tracing
             found, role_probs = drop_intermediate(model, feats, heat, prob, found)
@@ -744,7 +783,10 @@ def predict(model, ds, device, node_threshold, workers, batch=8):
                 if MODE['compress_tol']:
                     curves, kept = compress_curves(curves, MODE['compress_tol'], interior)
                     row['interior_compressed'] = kept.cpu().numpy()
-                row.update(pairs=pairs.cpu().numpy(), edge_scores=model.edge_head(x).squeeze(-1).sigmoid().cpu().numpy(),
+                edge_logit = model.edge_head(x).squeeze(-1)
+                if flipped is not None:  # --flip-average-edges
+                    edge_logit = flip_edge_logits(model, flipped, b, paths, edge_logit)
+                row.update(pairs=pairs.cpu().numpy(), edge_scores=edge_logit.sigmoid().cpu().numpy(),
                            curves=(curves / SIZE).cpu().numpy(), traced=traced.cpu().numpy(), interior=interior.cpu().numpy())
             record = ds.records[offset + b]
             row.update(sample_id=record.sample_id, cache=str(record.graph.parent.parent / 'spline' / f'{record.sample_id}.npz'))
@@ -808,7 +850,8 @@ def final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final.js
     result = dict(dataset=a.dataset, model='traced+adaptive', seed=getattr(a, 'seed', 364505), mode=dict(MODE), offset_radius=getattr(a, 'offset_radius', 0.0), backbone=getattr(a, 'backbone', 'unet'),
                   feature_channels=getattr(a, 'feature_channels', FEATURE_CHANNELS),
                   updates=a.updates, batch=a.batch, lr=a.lr, augment=not getattr(a, 'no_augment', False),
-                  sigma=float(getattr(a, 'sigma', None) or D.SIGMA), nms=D.NMS,
+                  flip=bool(getattr(a, 'flip', False)), sigma=float(getattr(a, 'sigma', None) or D.SIGMA), nms=D.NMS,
+                  flip_average=D.FLIP_AVERAGE, flip_average_edges=FLIP_AVERAGE_EDGES,
                   thresholds=dict(node=node_t, edge=edge_t, policy='train monitor only; candidates = geodesic contacts' + (' U 16-NN over retained nodes' if MODE['knn_fallback'] else ' only')),
                   train_monitor=D.evaluate(train_rows, node_t, edge_t), validation=D.evaluate(val_rows, node_t, edge_t),
                   validation_by_arc_length=length_breakdown(val_rows, node_t, edge_t),
@@ -917,6 +960,19 @@ def main():
                         '--evaluate-only, else 1.5 (every run before 13 Nov 2026); D.resolve_heat')
     p.add_argument('--nms', type=int, default=None,
                    help='Odd local-maximum window of node decoding (D.peaks) in training and evaluation; default as --sigma, else 3')
+    p.add_argument('--flip', action='store_true',
+                   help='Add random axis flips (each axis with probability 1/2) to the training augmentation; default off '
+                        '= quarter turns + image noise only, as every run before 13 Nov 2026')
+    p.add_argument('--flip-average', action='store_true',
+                   help='Evaluation node decoding from the heat averaged over the 8 axis flips of the input '
+                        '(D.decoding_output); tracing, features and training stay single-pass. Default off = every run '
+                        'before 13 Nov 2026. Outputs are named ...-flipavg.json (D.eval_name)')
+    p.add_argument('--flip-average-edges', action='store_true',
+                   help='Evaluation edge scores: mean over the 8 axis flips of the input of the edge logit, each candidate '
+                        'scored in the flipped frame (nodes, candidate paths and curves as without it; FLIP_AVERAGE_EDGES). '
+                        'Independent of --flip-average (whose flipped passes it reuses). Default off = every run before '
+                        '16 Nov 2026. Outputs are named ...-flipavg-edges.json / ...-edgeflipavg.json (D.eval_name); an '
+                        'existing file of that name is never overwritten')
     p.add_argument('--evaluate-only', action='store_true')
     p.add_argument('--breakdown-rows', type=Path, help='Only compute the arc-length breakdown for saved rows (CPU)')
     p.add_argument('--breakdown-thresholds', type=float, nargs=2)
@@ -952,6 +1008,9 @@ def main():
     MODE['single_head'] = bool(saved.get('single_head', False)) if a.evaluate_only else True
     a.backbone = D.resolve_backbone(a, out_dir)
     heat_record = D.resolve_heat(a, out_dir)  # sets D.NMS: stage 2 decodes (and trains its heat) as its stage 1 did
+    D.FLIP_AVERAGE = bool(a.flip_average)
+    global FLIP_AVERAGE_EDGES
+    FLIP_AVERAGE_EDGES = bool(a.flip_average_edges)
     plan = json.loads(PLAN.read_text())['datasets'][a.dataset]
     train_ids, val_ids, monitor = plan['train_ids'], plan['val_ids'], plan['monitor_train']
     if a.smoke:
@@ -960,12 +1019,17 @@ def main():
     model = TracedDenseGraph(gap_features=MODE['gap_features'], two_hop=MODE['two_hop'], passthrough=MODE['passthrough'],
                              backbone=a.backbone, feature_channels=a.feature_channels).to(device)
     if a.evaluate_only:
-        model.load_state_dict(torch.load(out_dir / 'model.pt', map_location=device)['model'])
-        final_evaluation(model, a, monitor, val_ids, device, out_dir, name=D.eval_name('final-v2.json', a.nms, heat_record['nms']))
+        state = torch.load(out_dir / 'model.pt', map_location=device)
+        model.load_state_dict(state['model'])
+        a.flip = a.flip or state.get('args', {}).get('flip') == 'True'  # record the run's training augmentation
+        name = D.eval_name('final-v2.json', a.nms, heat_record['nms'], D.FLIP_AVERAGE, FLIP_AVERAGE_EDGES)
+        if FLIP_AVERAGE_EDGES and ((out_dir / name).exists() or (out_dir / name.replace('.json', '-validation-rows.pkl')).exists()):
+            raise SystemExit(f'{out_dir / name} (or its validation rows) exists; not overwriting')
+        final_evaluation(model, a, monitor, val_ids, device, out_dir, name=name)
         return
     if a.init_from:
         (out_dir / 'warm-start.json').write_text(json.dumps(warm_start(model, a.init_from, device), indent=1))
-    train_ds = make_dataset(a.dataset, train_ids, augment=not a.no_augment)
+    train_ds = make_dataset(a.dataset, train_ids, augment=not a.no_augment, flip=a.flip)
     opt =torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=1e-4)
     sched = torch.optim.lr_scheduler.OneCycleLR(opt, max_lr=a.lr, total_steps=a.updates, pct_start=0.05)
     sampler = torch.utils.data.RandomSampler(train_ds, replacement=True, num_samples=a.updates * a.batch)
@@ -1053,7 +1117,7 @@ def main():
         if a.eval_every and (step % a.eval_every == 0 or step == a.updates):
             D.log_curve(out_dir, step, start, D.curve_point(predict, model, a, *curve_ds, device, plain))
     torch.save(dict(model=model.state_dict(), args={k: str(v) for k, v in vars(a).items()}), out_dir / 'model.pt')
-    final_evaluation(model, a, monitor, val_ids, device, out_dir)
+    final_evaluation(model, a, monitor, val_ids, device, out_dir, name=D.eval_name('final.json', a.nms, a.nms, D.FLIP_AVERAGE, FLIP_AVERAGE_EDGES))
 
 
 if __name__ == '__main__':

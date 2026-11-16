@@ -20,9 +20,21 @@ Checks (the run stops on any failure):
            stored validation starts against the run's final-validation-rows.pkl.
 
 usage: predict_volume_grid_20261112.py <entry> <run> [--split val|train] [--subjects N] [--grids overlap thin tile0]
-       [--node-thresholds t ...] [--out DIR]
+       [--node-thresholds t ...] [--out DIR] [--flip-average] [--flip-average-edges] [--nms K]
 Writes <out>/<grid>/<patient>-node<t>.pkl (rows with extra keys start, patient), <out>/<grid>/meta/<patient>.json and
 <out>/<grid>/meta.json (all patients of the grid).
+
+Node decoding (13 Nov 2026): --flip-average / --nms K set D.FLIP_AVERAGE / D.NMS (scripts/dense_graph_20261030.py) as
+--flip-average / --nms of dense_graph_traced_20261030.py --evaluate-only do. Without them: the run's recorded decoding
+(final.json; window 3, single pass), thresholds of final.json, rows in rows/<entry>-<run>, as before. With them: the
+run's evaluate-only record of that decoding (D.eval_name('final-v2.json', ...), e.g. final-v2-nms5-flipavg.json) gives
+the default node threshold and the rows check (its -validation-rows.pkl), and the default output is
+rows/<entry>-<run>-<suffix> (suffix e.g. nms5-flipavg). The decoding is recorded in meta ('decoding'); the script
+refuses to write into a grid folder whose meta records another decoding (older meta without the key = legacy decoding).
+--flip-average-edges (16 Nov 2026) sets T.FLIP_AVERAGE_EDGES (stage-2 edge logits averaged over the 8 flips) in the same
+way: record D.eval_name(..., flip_average_edges=True), e.g. final-v2-nms5-flipavg-edges.json, rows suffix
+nms5-flipavg-edges, 'flip_average_edges' in the meta decoding (absent = False). The rows check then also compares the
+edge scores where the candidate pairs agree.
 """
 import argparse
 import csv
@@ -43,6 +55,7 @@ import torch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT), str(ROOT / 'scripts')]
+import dense_graph_20261030 as D  # noqa: E402
 import dense_graph_traced_20261030 as T  # noqa: E402
 from node_heatmap_probe_20261030 import PLAN  # noqa: E402
 from scripts.generate_synthetic_mri_dataset import endpoint_axis_starts, normalize_vessel_image, normalize_window  # noqa: E402
@@ -110,8 +123,40 @@ def main():
     ap.add_argument('--workers', type=int, default=4)
     ap.add_argument('--batch', type=int, default=8)
     ap.add_argument('--no-dataset-check', action='store_true', help='skip the make_dataset comparison (needs pyvista)')
+    ap.add_argument('--flip-average', action='store_true', help='node heat averaged over the 8 axis flips (D.FLIP_AVERAGE)')
+    ap.add_argument('--nms', type=int, default=None, help="node decoding window (D.NMS); default: the run's recorded window")
+    ap.add_argument('--flip-average-edges', action='store_true', help='edge logits averaged over the 8 axis flips (T.FLIP_AVERAGE_EDGES)')
     a = ap.parse_args()
-    out = a.out or OUT / f'{a.entry}-{a.run}'
+    run_dir = RUNS / a.entry / a.run
+    final = json.loads((run_dir / 'final.json').read_text())
+    # ---- node decoding: module flags read by D.decoding_output / D.peaks inside T.predict
+    trained_nms = int(final.get('nms', D.NMS_DEFAULT))
+    nms = trained_nms if a.nms is None else int(a.nms)
+    assert nms >= 1 and nms % 2 == 1, '--nms must be an odd positive integer'
+    D.NMS, D.FLIP_AVERAGE, T.FLIP_AVERAGE_EDGES = nms, bool(a.flip_average), bool(a.flip_average_edges)
+    edges = bool(a.flip_average_edges)
+    legacy = nms == trained_nms and not a.flip_average and not edges
+    record_name = 'final.json' if legacy else D.eval_name('final-v2.json', nms, trained_nms, a.flip_average, edges)
+    record = final if legacy else json.loads((run_dir / record_name).read_text())
+    if not legacy:
+        if int(record['nms']) != nms or bool(record['flip_average']) != bool(a.flip_average) or bool(record.get('flip_average_edges', False)) != edges:
+            raise SystemExit(f'{record_name}: decoding nms {record["nms"]} flip_average {record["flip_average"]} flip_average_edges '
+                             f'{record.get("flip_average_edges", False)} differs from the requested one')
+        T.apply_saved_mode(record)
+        mode_record = dict(T.MODE)
+        T.apply_saved_mode(final)
+        if mode_record != T.MODE:
+            raise SystemExit(f'{record_name}: MODE {mode_record} differs from final.json {T.MODE}')
+    decoding = dict(nms=nms, flip_average=bool(a.flip_average), record=record_name, record_thresholds=record['thresholds'])
+    if edges:  # key only when set, so earlier decodings keep their meta unchanged
+        decoding['flip_average_edges'] = True
+    suffix = '' if legacy else record_name[len('final-v2-'):-len('.json')]
+    out = a.out or OUT / (f'{a.entry}-{a.run}' + (f'-{suffix}' if suffix else ''))
+    for grid in a.grids:  # never mix decodings in one grid folder (meta without 'decoding' = legacy window 3, single pass)
+        for f in sorted((out / grid / 'meta').glob('*.json')):
+            prev = json.loads(f.read_text()).get('decoding', dict(nms=D.NMS_DEFAULT, flip_average=False))
+            if (int(prev['nms']), bool(prev['flip_average']), bool(prev.get('flip_average_edges', False))) != (nms, bool(a.flip_average), edges):
+                raise SystemExit(f'{f}: rows of another decoding ({prev}); use another --out')
     plan = json.loads(PLAN.read_text())['datasets'][a.entry]
     simplified = Path(plan['root'])
     original = Path(json.loads((simplified / 'simplify_manifest.json').read_text())['source'])
@@ -129,10 +174,8 @@ def main():
     for r in index:
         stored[r['patient_id']].append(r)
 
-    run_dir = RUNS / a.entry / a.run
-    final = json.loads((run_dir / 'final.json').read_text())
     T.apply_saved_mode(final)
-    own = final['thresholds']
+    own = record['thresholds']  # the run's thresholds under this decoding (final.json for the legacy decoding)
     thresholds = [round(t, 4) for t in (a.node_thresholds or [own['node']])]
     device = 'cuda'
     model = T.TracedDenseGraph(gap_features=T.MODE['gap_features'], two_hop=T.MODE['two_hop'], passthrough=T.MODE['passthrough'],
@@ -140,10 +183,11 @@ def main():
     model.load_state_dict(torch.load(run_dir / 'model.pt', map_location=device)['model'])
     model.eval()
     print(f'{a.entry} {a.run}: split {a.split}, {len(patients)} patients {patients}, grids {a.grids}, node thresholds {thresholds}, '
-          f'own thresholds {own["node"]} / {own["edge"]}, normalization {normalization}, maximum stride {maximum_stride}', flush=True)
+          f'own thresholds {own["node"]} / {own["edge"]}, normalization {normalization}, maximum stride {maximum_stride}, '
+          f'decoding nms {nms} flip_average {bool(a.flip_average)} flip_average_edges {edges} ({record_name}), out {out}', flush=True)
     saved_val = None
     if a.split == 'val' and 'overlap' in a.grids and own['node'] in thresholds:
-        saved_val = {r['sample_id']: r for r in pickle.loads((run_dir / 'final-validation-rows.pkl').read_bytes())}
+        saved_val = {r['sample_id']: r for r in pickle.loads((run_dir / record_name.replace('.json', '-validation-rows.pkl')).read_bytes())}
     dataset_checked = a.no_dataset_check
     for patient in patients:
         t0 = time.time()
@@ -217,11 +261,11 @@ def main():
             meta = dict(patient=patient, split=a.split, grid=grid, shape=list(shape), A=A.tolist(), starts=starts_axis,
                         node_thresholds=sorted(set(prev.get('node_thresholds', [])) | set(thresholds)), run_thresholds=own,
                         normalization=normalization, maximum_stride=maximum_stride, positions=len(starts),
-                        padded_shape=list(vol.shape))
+                        padded_shape=list(vol.shape), decoding=decoding)
             mfile.write_text(json.dumps(meta, indent=1, default=float) + '\n')
             merged = {json.loads(f.read_text())['patient']: json.loads(f.read_text()) for f in sorted((gdir / 'meta').glob('*.json'))}
             tmp = gdir / f'meta.json.tmp{os.getpid()}'
-            tmp.write_text(json.dumps(dict(entry=a.entry, run=a.run, grid=grid, patients=merged), indent=1, default=float) + '\n')
+            tmp.write_text(json.dumps(dict(entry=a.entry, run=a.run, grid=grid, decoding=decoding, patients=merged), indent=1, default=float) + '\n')
             os.replace(tmp, gdir / 'meta.json')
         print(f'{patient}: shape {shape}, {time.time() - t0:.0f} s', flush=True)
 
@@ -230,6 +274,7 @@ def rowcheck(entry, patient, rows, sids, by_sample, saved):
     """Diagnostic: rows at the stored validation starts against the run's saved validation rows."""
     at = {r['start']: r for r in rows}
     same, n, worst, count_diff = 0, 0, 0.0, []
+    same_pairs, edge_worst = 0, 0.0
     for sid in sids:
         if sid not in saved:
             continue
@@ -243,9 +288,12 @@ def rowcheck(entry, patient, rows, sids, by_sample, saved):
                 a_ = np.sort(mine['nodes'] * SIZE, axis=0)
                 b_ = np.sort(ref['nodes'] * SIZE, axis=0)
                 worst = max(worst, float(np.abs(a_ - b_).max()))
-    print(f'ROWCHECK {entry} {patient}: {n} stored validation patches, {same} with the same node count as final-validation-rows '
+            if mine['edge_scores'] is not None and ref['edge_scores'] is not None and np.array_equal(mine['pairs'], ref['pairs']):
+                same_pairs += 1
+                edge_worst = max(edge_worst, float(np.abs(mine['edge_scores'] - ref['edge_scores']).max(initial=0)))
+    print(f'ROWCHECK {entry} {patient}: {n} stored validation patches, {same} with the same node count as the saved validation rows '
           f'(node-count differences: sum |d| {int(np.abs(count_diff).sum()) if count_diff else 0}), max sorted-coordinate difference '
-          f'where counts agree {worst:.3g} voxels', flush=True)
+          f'where counts agree {worst:.3g} voxels; {same_pairs} with identical candidate pairs, max edge-score difference there {edge_worst:.3g}', flush=True)
 
 
 if __name__ == '__main__':

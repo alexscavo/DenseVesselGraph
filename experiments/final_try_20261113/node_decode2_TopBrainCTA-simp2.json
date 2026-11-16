@@ -1,0 +1,1617 @@
+{
+ "entry": "TopBrainCTA-simp2",
+ "stage1_run": "spline6_unet_wide_long_r1111",
+ "smoke": false,
+ "floor": 0.02,
+ "tolerance_mm": 2.0,
+ "single_threshold_grid": [
+  0.02,
+  0.95,
+  0.01
+ ],
+ "two_threshold_grid": {
+  "bands_voxels": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "thresholds": [
+   0.1,
+   0.6,
+   0.01
+  ]
+ },
+ "face_band_rule": "candidate in the face band iff min over axes of min(x + 0.5, 63.5 - x) < b (refined position, voxels)",
+ "class_rule": "boundary = cache boundary flag; else junction (degree >= 3), terminal (degree 1), other; inserted anchors excluded",
+ "gt_nodes_by_class": {
+  "monitor": {
+   "fixed": {
+    "boundary": 1078,
+    "junction": 439,
+    "terminal": 471,
+    "other": 0
+   },
+   "geometric_part1": {
+    "boundary": 187,
+    "junction": 449,
+    "terminal": 1287,
+    "other": 65
+   }
+  },
+  "val": {
+   "fixed": {
+    "boundary": 4025,
+    "junction": 1533,
+    "terminal": 1535,
+    "other": 0
+   },
+   "geometric_part1": {
+    "boundary": 601,
+    "junction": 1561,
+    "terminal": 4709,
+    "other": 222
+   }
+  }
+ },
+ "transform_check": {
+  "transforms": 48,
+  "delta_roundtrip": "ok",
+  "offset_roundtrip": "ok",
+  "rot24_equals_training_quarter_turn_group": true,
+  "set_sizes": {
+   "id": 1,
+   "flip8": 8,
+   "rot24": 24,
+   "all48": 48
+  }
+ },
+ "timing": {
+  "monitor": {
+   "patches": 256,
+   "seconds_forward_all_48_views": 43.97540307044983,
+   "seconds_per_view_per_patch": 0.0035787274634155133,
+   "seconds_total": 49.86322736740112,
+   "heat_correlation_with_identity_first_batch": {
+    "id": 0.9999999403953552,
+    "flip8": 0.977326512336731,
+    "rot24": 0.9725200533866882,
+    "all48": 0.9724701642990112
+   }
+  },
+  "val": {
+   "patches": 803,
+   "seconds_forward_all_48_views": 137.86308002471924,
+   "seconds_per_view_per_patch": 0.00357677148258404,
+   "seconds_total": 143.98333072662354,
+   "heat_correlation_with_identity_first_batch": {
+    "id": 1.0,
+    "flip8": 0.9756767749786377,
+    "rot24": 0.9675113558769226,
+    "all48": 0.9675140380859375
+   }
+  }
+ },
+ "patches": {
+  "monitor": 256,
+  "val": 803
+ },
+ "V0": "id:raw3|single",
+ "item4_choices": {
+  "a_flip_single": "flip8:raw3|single",
+  "b_flip_two": "flip8:raw3|two",
+  "c_best_set_two": "rot24:raw3|two"
+ },
+ "variants": {
+  "id:raw3|single": {
+   "map": "id:raw3",
+   "rule": [
+    "single",
+    0.3
+   ],
+   "train_monitor": {
+    "precision": 0.6180520142784294,
+    "recall": 0.6096579476861167,
+    "f1": 0.6138262851354773,
+    "tp": 1212,
+    "fp": 749,
+    "fn": 776,
+    "recall_by_class": {
+     "boundary": 0.8228200371057514,
+     "junction": 0.530751708428246,
+     "terminal": 0.19532908704883228,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 1078,
+     "junction": 439,
+     "terminal": 471,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 123,
+     "within_1p5mm_of_gt_centreline": 134,
+     "elsewhere": 492,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 552,
+     "interior": 197
+    },
+    "patches": 256,
+    "node_ap_2mm": {
+     "node_ap": 0.6321476902296318,
+     "max_recall": 0.9528210116731517,
+     "proposals": 46945,
+     "gt_nodes": 2056
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.6413550664150156,
+     "max_recall": 0.959758551307847,
+     "proposals": 46894,
+     "gt_nodes": 1988
+    }
+   },
+   "validation": {
+    "precision": 0.5109654350417163,
+    "recall": 0.6043987029465671,
+    "f1": 0.5537686494865336,
+    "tp": 4287,
+    "fp": 4103,
+    "fn": 2806,
+    "recall_by_class": {
+     "boundary": 0.8119254658385093,
+     "junction": 0.5368558382257013,
+     "terminal": 0.1276872964169381,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 4025,
+     "junction": 1533,
+     "terminal": 1535,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 445,
+     "within_1p5mm_of_gt_centreline": 817,
+     "elsewhere": 2841,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 2922,
+     "interior": 1181
+    },
+    "patches": 803,
+    "node_ap_2mm": {
+     "node_ap": 0.5668282237637132,
+     "max_recall": 0.95602268012723,
+     "proposals": 161822,
+     "gt_nodes": 7231
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.5728779480474981,
+     "max_recall": 0.9591146200479346,
+     "proposals": 161712,
+     "gt_nodes": 7093
+    }
+   },
+   "validation_node_f1_minus_V0": null,
+   "validation_node_f1_minus_same_map_single": null
+  },
+  "id:raw3|two": {
+   "map": "id:raw3",
+   "rule": [
+    "two",
+    1,
+    0.33,
+    0.28
+   ],
+   "train_monitor": {
+    "precision": 0.6353944562899787,
+    "recall": 0.5995975855130785,
+    "f1": 0.6169772256728778,
+    "tp": 1192,
+    "fp": 684,
+    "fn": 796,
+    "recall_by_class": {
+     "boundary": 0.7736549165120594,
+     "junction": 0.571753986332574,
+     "terminal": 0.22717622080679406,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 1078,
+     "junction": 439,
+     "terminal": 471,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 108,
+     "within_1p5mm_of_gt_centreline": 151,
+     "elsewhere": 425,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 417,
+     "interior": 267
+    },
+    "patches": 256
+   },
+   "validation": {
+    "precision": 0.5171097981290005,
+    "recall": 0.5922740730297477,
+    "f1": 0.5521456266018269,
+    "tp": 4201,
+    "fp": 3923,
+    "fn": 2892,
+    "recall_by_class": {
+     "boundary": 0.7741614906832298,
+     "junction": 0.5649054142204827,
+     "terminal": 0.14267100977198696,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 4025,
+     "junction": 1533,
+     "terminal": 1535,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 429,
+     "within_1p5mm_of_gt_centreline": 949,
+     "elsewhere": 2545,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 2394,
+     "interior": 1529
+    },
+    "patches": 803
+   },
+   "monitor_f1_best_per_band": {
+    "1": 0.6169772256728778,
+    "2": 0.6164206164206164,
+    "3": 0.6159439106725526,
+    "4": 0.6160667709963484
+   },
+   "monitor_f1_single_threshold_best": 0.6138262851354773,
+   "monitor_f1_two_threshold_best": 0.6169772256728778,
+   "validation_node_f1_minus_V0": {
+    "point": -0.0016230228847067263,
+    "ci95": [
+     -0.0040528018981571545,
+     0.0011877199717410525
+    ],
+    "p": 0.271
+   },
+   "validation_node_f1_minus_same_map_single": {
+    "point": -0.0016230228847067263,
+    "ci95": [
+     -0.0040528018981571545,
+     0.0011877199717410525
+    ],
+    "p": 0.271
+   }
+  },
+  "id:raw5|single": {
+   "map": "id:raw5",
+   "rule": [
+    "single",
+    0.28
+   ],
+   "train_monitor": {
+    "precision": 0.6085686465433301,
+    "recall": 0.6287726358148893,
+    "f1": 0.6185056902523504,
+    "tp": 1250,
+    "fp": 804,
+    "fn": 738,
+    "recall_by_class": {
+     "boundary": 0.8423005565862709,
+     "junction": 0.5466970387243736,
+     "terminal": 0.21656050955414013,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 1078,
+     "junction": 439,
+     "terminal": 471,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 78,
+     "within_1p5mm_of_gt_centreline": 158,
+     "elsewhere": 568,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 570,
+     "interior": 234
+    },
+    "patches": 256,
+    "node_ap_2mm": {
+     "node_ap": 0.61636691170084,
+     "max_recall": 0.8681906614785992,
+     "proposals": 28077,
+     "gt_nodes": 2056
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.6286257827499346,
+     "max_recall": 0.8817907444668008,
+     "proposals": 28045,
+     "gt_nodes": 1988
+    }
+   },
+   "validation": {
+    "precision": 0.5027045689952814,
+    "recall": 0.6158184125193853,
+    "f1": 0.5535420098846787,
+    "tp": 4368,
+    "fp": 4321,
+    "fn": 2725,
+    "recall_by_class": {
+     "boundary": 0.8238509316770186,
+     "junction": 0.5420743639921722,
+     "terminal": 0.14397394136807817,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 4025,
+     "junction": 1533,
+     "terminal": 1535,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 299,
+     "within_1p5mm_of_gt_centreline": 895,
+     "elsewhere": 3127,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 2997,
+     "interior": 1324
+    },
+    "patches": 803,
+    "node_ap_2mm": {
+     "node_ap": 0.557336875836533,
+     "max_recall": 0.8760890609874153,
+     "proposals": 97167,
+     "gt_nodes": 7231
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.5642058756597594,
+     "max_recall": 0.8828422388270125,
+     "proposals": 97094,
+     "gt_nodes": 7093
+    }
+   },
+   "validation_node_f1_minus_V0": {
+    "point": -0.0002266396018548722,
+    "ci95": [
+     -0.0026384830376138257,
+     0.001614473052231391
+    ],
+    "p": 0.859
+   },
+   "validation_node_f1_minus_same_map_single": null
+  },
+  "id:raw5|two": {
+   "map": "id:raw5",
+   "rule": [
+    "two",
+    1,
+    0.3,
+    0.28
+   ],
+   "train_monitor": {
+    "precision": 0.6245524296675192,
+    "recall": 0.614185110663984,
+    "f1": 0.6193253867613492,
+    "tp": 1221,
+    "fp": 734,
+    "fn": 767,
+    "recall_by_class": {
+     "boundary": 0.8181818181818182,
+     "junction": 0.5444191343963554,
+     "terminal": 0.21231422505307856,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 1078,
+     "junction": 439,
+     "terminal": 471,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 74,
+     "within_1p5mm_of_gt_centreline": 154,
+     "elsewhere": 506,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 501,
+     "interior": 233
+    },
+    "patches": 256
+   },
+   "validation": {
+    "precision": 0.5156702025072324,
+    "recall": 0.603129846327365,
+    "f1": 0.555981545259601,
+    "tp": 4278,
+    "fp": 4018,
+    "fn": 2815,
+    "recall_by_class": {
+     "boundary": 0.8037267080745342,
+     "junction": 0.5420743639921722,
+     "terminal": 0.13811074918566776,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 4025,
+     "junction": 1533,
+     "terminal": 1535,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 295,
+     "within_1p5mm_of_gt_centreline": 877,
+     "elsewhere": 2846,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 2694,
+     "interior": 1324
+    },
+    "patches": 803
+   },
+   "monitor_f1_best_per_band": {
+    "1": 0.6193253867613492,
+    "2": 0.6189751395230847,
+    "3": 0.6185881157948198,
+    "4": 0.6185056902523504
+   },
+   "monitor_f1_single_threshold_best": 0.6185056902523504,
+   "monitor_f1_two_threshold_best": 0.6193253867613492,
+   "validation_node_f1_minus_V0": {
+    "point": 0.0022128957730673804,
+    "ci95": [
+     0.0005320761927235518,
+     0.0037998557639016273
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": {
+    "point": 0.0024395353749222526,
+    "ci95": [
+     0.0013302209710627233,
+     0.0035723843114445417
+    ],
+    "p": 0.0
+   }
+  },
+  "flip8:raw3|single": {
+   "map": "flip8:raw3",
+   "rule": [
+    "single",
+    0.29
+   ],
+   "train_monitor": {
+    "precision": 0.6692781197537773,
+    "recall": 0.6016096579476862,
+    "f1": 0.6336423841059603,
+    "tp": 1196,
+    "fp": 591,
+    "fn": 792,
+    "recall_by_class": {
+     "boundary": 0.8283858998144712,
+     "junction": 0.5239179954441914,
+     "terminal": 0.15498938428874734,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 1078,
+     "junction": 439,
+     "terminal": 471,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 47,
+     "within_1p5mm_of_gt_centreline": 111,
+     "elsewhere": 433,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 455,
+     "interior": 136
+    },
+    "patches": 256,
+    "node_ap_2mm": {
+     "node_ap": 0.6581906308013401,
+     "max_recall": 0.9406614785992218,
+     "proposals": 39924,
+     "gt_nodes": 2056
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.6706651485458374,
+     "max_recall": 0.9502012072434608,
+     "proposals": 39879,
+     "gt_nodes": 1988
+    }
+   },
+   "validation": {
+    "precision": 0.5477031802120141,
+    "recall": 0.611870858592979,
+    "f1": 0.5780115868682161,
+    "tp": 4340,
+    "fp": 3584,
+    "fn": 2753,
+    "recall_by_class": {
+     "boundary": 0.8250931677018634,
+     "junction": 0.542726679712981,
+     "terminal": 0.12182410423452769,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 4025,
+     "junction": 1533,
+     "terminal": 1535,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 230,
+     "within_1p5mm_of_gt_centreline": 770,
+     "elsewhere": 2584,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 2664,
+     "interior": 920
+    },
+    "patches": 803,
+    "node_ap_2mm": {
+     "node_ap": 0.5962232656998927,
+     "max_recall": 0.9486931268151017,
+     "proposals": 137851,
+     "gt_nodes": 7231
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.6035285840715793,
+     "max_recall": 0.953757225433526,
+     "proposals": 137756,
+     "gt_nodes": 7093
+    }
+   },
+   "validation_node_f1_minus_V0": {
+    "point": 0.024242937381682483,
+    "ci95": [
+     0.01909821215667762,
+     0.02776425473576849
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": null
+  },
+  "flip8:raw3|two": {
+   "map": "flip8:raw3",
+   "rule": [
+    "two",
+    1,
+    0.31,
+    0.26
+   ],
+   "train_monitor": {
+    "precision": 0.6675704989154013,
+    "recall": 0.619215291750503,
+    "f1": 0.6424843423799582,
+    "tp": 1231,
+    "fp": 613,
+    "fn": 757,
+    "recall_by_class": {
+     "boundary": 0.8089053803339518,
+     "junction": 0.5831435079726651,
+     "terminal": 0.21868365180467092,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 1078,
+     "junction": 439,
+     "terminal": 471,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 50,
+     "within_1p5mm_of_gt_centreline": 157,
+     "elsewhere": 406,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 372,
+     "interior": 241
+    },
+    "patches": 256
+   },
+   "validation": {
+    "precision": 0.5388991960420532,
+    "recall": 0.6142675877625828,
+    "f1": 0.5741204374752932,
+    "tp": 4357,
+    "fp": 3728,
+    "fn": 2736,
+    "recall_by_class": {
+     "boundary": 0.7997515527950311,
+     "junction": 0.5975212002609263,
+     "terminal": 0.14462540716612377,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 4025,
+     "junction": 1533,
+     "terminal": 1535,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 248,
+     "within_1p5mm_of_gt_centreline": 979,
+     "elsewhere": 2501,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 2318,
+     "interior": 1410
+    },
+    "patches": 803
+   },
+   "monitor_f1_best_per_band": {
+    "1": 0.6424843423799582,
+    "2": 0.6421299921691465,
+    "3": 0.6412092283214001,
+    "4": 0.6414893617021277
+   },
+   "monitor_f1_single_threshold_best": 0.6336423841059603,
+   "monitor_f1_two_threshold_best": 0.6424843423799582,
+   "validation_node_f1_minus_V0": {
+    "point": 0.020351787988759584,
+    "ci95": [
+     0.015519808739640095,
+     0.024336767585702777
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": {
+    "point": -0.003891149392922899,
+    "ci95": [
+     -0.00645985861734133,
+     -0.0021723255045696943
+    ],
+    "p": 0.0
+   }
+  },
+  "flip8:raw5|single": {
+   "map": "flip8:raw5",
+   "rule": [
+    "single",
+    0.29
+   ],
+   "train_monitor": {
+    "precision": 0.681554524361949,
+    "recall": 0.5910462776659959,
+    "f1": 0.6330818965517241,
+    "tp": 1175,
+    "fp": 549,
+    "fn": 813,
+    "recall_by_class": {
+     "boundary": 0.8218923933209648,
+     "junction": 0.5011389521640092,
+     "terminal": 0.1464968152866242,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 1078,
+     "junction": 439,
+     "terminal": 471,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 18,
+     "within_1p5mm_of_gt_centreline": 110,
+     "elsewhere": 421,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 422,
+     "interior": 127
+    },
+    "patches": 256,
+    "node_ap_2mm": {
+     "node_ap": 0.6405237238195637,
+     "max_recall": 0.8613813229571985,
+     "proposals": 24896,
+     "gt_nodes": 2056
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.6537181386856642,
+     "max_recall": 0.8757545271629779,
+     "proposals": 24866,
+     "gt_nodes": 1988
+    }
+   },
+   "validation": {
+    "precision": 0.568166644411804,
+    "recall": 0.5998872127449598,
+    "f1": 0.583596214511041,
+    "tp": 4255,
+    "fp": 3234,
+    "fn": 2838,
+    "recall_by_class": {
+     "boundary": 0.8159006211180124,
+     "junction": 0.5172863666014351,
+     "terminal": 0.11596091205211727,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 4025,
+     "junction": 1533,
+     "terminal": 1535,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 87,
+     "within_1p5mm_of_gt_centreline": 680,
+     "elsewhere": 2467,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 2423,
+     "interior": 811
+    },
+    "patches": 803,
+    "node_ap_2mm": {
+     "node_ap": 0.5839829637586508,
+     "max_recall": 0.8675148665468123,
+     "proposals": 86639,
+     "gt_nodes": 7231
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.5918936224424415,
+     "max_recall": 0.8759340194558015,
+     "proposals": 86579,
+     "gt_nodes": 7093
+    }
+   },
+   "validation_node_f1_minus_V0": {
+    "point": 0.029827565024507452,
+    "ci95": [
+     0.026349478858561648,
+     0.03259364989559144
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": null
+  },
+  "flip8:raw5|two": {
+   "map": "flip8:raw5",
+   "rule": [
+    "two",
+    1,
+    0.31,
+    0.26
+   ],
+   "train_monitor": {
+    "precision": 0.6791171477079796,
+    "recall": 0.6036217303822937,
+    "f1": 0.6391478029294274,
+    "tp": 1200,
+    "fp": 567,
+    "fn": 788,
+    "recall_by_class": {
+     "boundary": 0.8033395176252319,
+     "junction": 0.55125284738041,
+     "terminal": 0.19532908704883228,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 1078,
+     "junction": 439,
+     "terminal": 471,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 19,
+     "within_1p5mm_of_gt_centreline": 149,
+     "elsewhere": 399,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 351,
+     "interior": 216
+    },
+    "patches": 256
+   },
+   "validation": {
+    "precision": 0.5605145707534787,
+    "recall": 0.6020019737769632,
+    "f1": 0.5805179797430494,
+    "tp": 4270,
+    "fp": 3348,
+    "fn": 2823,
+    "recall_by_class": {
+     "boundary": 0.7927950310559007,
+     "junction": 0.5675146771037182,
+     "terminal": 0.13615635179153093,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 4025,
+     "junction": 1533,
+     "terminal": 1535,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 94,
+     "within_1p5mm_of_gt_centreline": 847,
+     "elsewhere": 2407,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 2135,
+     "interior": 1213
+    },
+    "patches": 803
+   },
+   "monitor_f1_best_per_band": {
+    "1": 0.6391478029294274,
+    "2": 0.6387852956846031,
+    "3": 0.6373210910072914,
+    "4": 0.6372495939361126
+   },
+   "monitor_f1_single_threshold_best": 0.6330818965517241,
+   "monitor_f1_two_threshold_best": 0.6391478029294274,
+   "validation_node_f1_minus_V0": {
+    "point": 0.026749330256515824,
+    "ci95": [
+     0.02318906717620095,
+     0.029703247492207097
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": {
+    "point": -0.0030782347679916278,
+    "ci95": [
+     -0.006585923489869632,
+     -0.0006076294213704925
+    ],
+    "p": 0.005
+   }
+  },
+  "rot24:raw3|single": {
+   "map": "rot24:raw3",
+   "rule": [
+    "single",
+    0.29
+   ],
+   "train_monitor": {
+    "precision": 0.6861520998864926,
+    "recall": 0.608148893360161,
+    "f1": 0.6448,
+    "tp": 1209,
+    "fp": 553,
+    "fn": 779,
+    "recall_by_class": {
+     "boundary": 0.8358070500927643,
+     "junction": 0.5148063781321185,
+     "terminal": 0.1740976645435244,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 1078,
+     "junction": 439,
+     "terminal": 471,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 48,
+     "within_1p5mm_of_gt_centreline": 97,
+     "elsewhere": 408,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 428,
+     "interior": 125
+    },
+    "patches": 256,
+    "node_ap_2mm": {
+     "node_ap": 0.676449901662595,
+     "max_recall": 0.9445525291828794,
+     "proposals": 38905,
+     "gt_nodes": 2056
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.6873766601563417,
+     "max_recall": 0.9527162977867203,
+     "proposals": 38857,
+     "gt_nodes": 1988
+    }
+   },
+   "validation": {
+    "precision": 0.5611269061773068,
+    "recall": 0.6121528267305795,
+    "f1": 0.5855303081383588,
+    "tp": 4342,
+    "fp": 3396,
+    "fn": 2751,
+    "recall_by_class": {
+     "boundary": 0.8278260869565217,
+     "junction": 0.542726679712981,
+     "terminal": 0.11596091205211727,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 4025,
+     "junction": 1533,
+     "terminal": 1535,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 216,
+     "within_1p5mm_of_gt_centreline": 725,
+     "elsewhere": 2455,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 2543,
+     "interior": 853
+    },
+    "patches": 803,
+    "node_ap_2mm": {
+     "node_ap": 0.6073241567658219,
+     "max_recall": 0.947448485686627,
+     "proposals": 135033,
+     "gt_nodes": 7231
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.6143180088480701,
+     "max_recall": 0.9515014803327224,
+     "proposals": 134931,
+     "gt_nodes": 7093
+    }
+   },
+   "validation_node_f1_minus_V0": {
+    "point": 0.03176165865182523,
+    "ci95": [
+     0.027054180740281764,
+     0.034923087492669036
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": null
+  },
+  "rot24:raw3|two": {
+   "map": "rot24:raw3",
+   "rule": [
+    "two",
+    1,
+    0.34,
+    0.27
+   ],
+   "train_monitor": {
+    "precision": 0.7231430325352978,
+    "recall": 0.5925553319919518,
+    "f1": 0.6513685374619851,
+    "tp": 1178,
+    "fp": 451,
+    "fn": 810,
+    "recall_by_class": {
+     "boundary": 0.7810760667903525,
+     "junction": 0.5466970387243736,
+     "terminal": 0.20382165605095542,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 1078,
+     "junction": 439,
+     "terminal": 471,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 42,
+     "within_1p5mm_of_gt_centreline": 119,
+     "elsewhere": 290,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 265,
+     "interior": 186
+    },
+    "patches": 256
+   },
+   "validation": {
+    "precision": 0.586623577350007,
+    "recall": 0.5886084872409417,
+    "f1": 0.5876143560872625,
+    "tp": 4175,
+    "fp": 2942,
+    "fn": 2918,
+    "recall_by_class": {
+     "boundary": 0.7677018633540372,
+     "junction": 0.5799086757990868,
+     "terminal": 0.1276872964169381,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 4025,
+     "junction": 1533,
+     "terminal": 1535,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 189,
+     "within_1p5mm_of_gt_centreline": 796,
+     "elsewhere": 1957,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 1807,
+     "interior": 1135
+    },
+    "patches": 803
+   },
+   "monitor_f1_best_per_band": {
+    "1": 0.6513685374619851,
+    "2": 0.6510402949697129,
+    "3": 0.6508438818565401,
+    "4": 0.6503387180823346
+   },
+   "monitor_f1_single_threshold_best": 0.6448,
+   "monitor_f1_two_threshold_best": 0.6513685374619851,
+   "validation_node_f1_minus_V0": {
+    "point": 0.03384570660072894,
+    "ci95": [
+     0.027402885954830092,
+     0.04117438372989901
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": {
+    "point": 0.002084047948903711,
+    "ci95": [
+     -0.0030546778578097733,
+     0.006524744919325087
+    ],
+    "p": 0.298
+   }
+  },
+  "rot24:raw5|single": {
+   "map": "rot24:raw5",
+   "rule": [
+    "single",
+    0.29
+   ],
+   "train_monitor": {
+    "precision": 0.69782480893592,
+    "recall": 0.5970824949698189,
+    "f1": 0.643534833288154,
+    "tp": 1187,
+    "fp": 514,
+    "fn": 801,
+    "recall_by_class": {
+     "boundary": 0.8283858998144712,
+     "junction": 0.489749430523918,
+     "terminal": 0.16772823779193205,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 1078,
+     "junction": 439,
+     "terminal": 471,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 20,
+     "within_1p5mm_of_gt_centreline": 95,
+     "elsewhere": 399,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 402,
+     "interior": 112
+    },
+    "patches": 256,
+    "node_ap_2mm": {
+     "node_ap": 0.6556998512433189,
+     "max_recall": 0.8657587548638133,
+     "proposals": 24504,
+     "gt_nodes": 2056
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.6676915105912374,
+     "max_recall": 0.8782696177062375,
+     "proposals": 24470,
+     "gt_nodes": 1988
+    }
+   },
+   "validation": {
+    "precision": 0.5796983285772523,
+    "recall": 0.6014380375017623,
+    "f1": 0.590368115139773,
+    "tp": 4266,
+    "fp": 3093,
+    "fn": 2827,
+    "recall_by_class": {
+     "boundary": 0.8198757763975155,
+     "junction": 0.5179386823222439,
+     "terminal": 0.11205211726384365,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 4025,
+     "junction": 1533,
+     "terminal": 1535,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 77,
+     "within_1p5mm_of_gt_centreline": 658,
+     "elsewhere": 2358,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 2331,
+     "interior": 762
+    },
+    "patches": 803,
+    "node_ap_2mm": {
+     "node_ap": 0.5941365038170496,
+     "max_recall": 0.869450974968884,
+     "proposals": 85236,
+     "gt_nodes": 7231
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.6024547569402148,
+     "max_recall": 0.8786127167630058,
+     "proposals": 85181,
+     "gt_nodes": 7093
+    }
+   },
+   "validation_node_f1_minus_V0": {
+    "point": 0.03659946565323946,
+    "ci95": [
+     0.03229701535981608,
+     0.0410168854473959
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": null
+  },
+  "rot24:raw5|two": {
+   "map": "rot24:raw5",
+   "rule": [
+    "two",
+    1,
+    0.34,
+    0.27
+   ],
+   "train_monitor": {
+    "precision": 0.7358370464672184,
+    "recall": 0.5814889336016097,
+    "f1": 0.6496206799662827,
+    "tp": 1156,
+    "fp": 415,
+    "fn": 832,
+    "recall_by_class": {
+     "boundary": 0.7764378478664193,
+     "junction": 0.5216400911161732,
+     "terminal": 0.1910828025477707,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 1078,
+     "junction": 439,
+     "terminal": 471,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 16,
+     "within_1p5mm_of_gt_centreline": 113,
+     "elsewhere": 286,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 250,
+     "interior": 165
+    },
+    "patches": 256
+   },
+   "validation": {
+    "precision": 0.6035929907230158,
+    "recall": 0.5778936980121246,
+    "f1": 0.5904638432728321,
+    "tp": 4099,
+    "fp": 2692,
+    "fn": 2994,
+    "recall_by_class": {
+     "boundary": 0.7629813664596273,
+     "junction": 0.5499021526418787,
+     "terminal": 0.12052117263843648,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 4025,
+     "junction": 1533,
+     "terminal": 1535,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 72,
+     "within_1p5mm_of_gt_centreline": 714,
+     "elsewhere": 1906,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 1694,
+     "interior": 998
+    },
+    "patches": 803
+   },
+   "monitor_f1_best_per_band": {
+    "1": 0.6496206799662827,
+    "2": 0.6491416309012875,
+    "3": 0.6485906040268457,
+    "4": 0.648023662274805
+   },
+   "monitor_f1_single_threshold_best": 0.643534833288154,
+   "monitor_f1_two_threshold_best": 0.6496206799662827,
+   "validation_node_f1_minus_V0": {
+    "point": 0.036695193786298486,
+    "ci95": [
+     0.03099190931687923,
+     0.04371547667927678
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": {
+    "point": 9.572813305902539e-05,
+    "ci95": [
+     -0.0036588042307062613,
+     0.003118346040249964
+    ],
+    "p": 0.886
+   }
+  },
+  "all48:raw3|single": {
+   "map": "all48:raw3",
+   "rule": [
+    "single",
+    0.29
+   ],
+   "train_monitor": {
+    "precision": 0.683371298405467,
+    "recall": 0.6036217303822937,
+    "f1": 0.6410256410256411,
+    "tp": 1200,
+    "fp": 556,
+    "fn": 788,
+    "recall_by_class": {
+     "boundary": 0.8320964749536178,
+     "junction": 0.5034168564920274,
+     "terminal": 0.1740976645435244,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 1078,
+     "junction": 439,
+     "terminal": 471,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 46,
+     "within_1p5mm_of_gt_centreline": 99,
+     "elsewhere": 411,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 445,
+     "interior": 111
+    },
+    "patches": 256,
+    "node_ap_2mm": {
+     "node_ap": 0.6730830241197079,
+     "max_recall": 0.941147859922179,
+     "proposals": 38830,
+     "gt_nodes": 2056
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.6840270579741301,
+     "max_recall": 0.9491951710261569,
+     "proposals": 38782,
+     "gt_nodes": 1988
+    }
+   },
+   "validation": {
+    "precision": 0.5600517129928895,
+    "recall": 0.6107429860425772,
+    "f1": 0.5842999730240086,
+    "tp": 4332,
+    "fp": 3403,
+    "fn": 2761,
+    "recall_by_class": {
+     "boundary": 0.826583850931677,
+     "junction": 0.5407697325505545,
+     "terminal": 0.11465798045602606,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 4025,
+     "junction": 1533,
+     "terminal": 1535,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 220,
+     "within_1p5mm_of_gt_centreline": 729,
+     "elsewhere": 2454,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 2662,
+     "interior": 741
+    },
+    "patches": 803,
+    "node_ap_2mm": {
+     "node_ap": 0.6070089807208972,
+     "max_recall": 0.9463421380168718,
+     "proposals": 134619,
+     "gt_nodes": 7231
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.6143232226561041,
+     "max_recall": 0.9510785281263218,
+     "proposals": 134522,
+     "gt_nodes": 7093
+    }
+   },
+   "validation_node_f1_minus_V0": {
+    "point": 0.030531323537475008,
+    "ci95": [
+     0.02552579973453406,
+     0.03448485622077224
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": null
+  },
+  "all48:raw3|two": {
+   "map": "all48:raw3",
+   "rule": [
+    "two",
+    4,
+    0.3,
+    0.26
+   ],
+   "train_monitor": {
+    "precision": 0.6746594005449591,
+    "recall": 0.6227364185110664,
+    "f1": 0.6476589066178394,
+    "tp": 1238,
+    "fp": 597,
+    "fn": 750,
+    "recall_by_class": {
+     "boundary": 0.8218923933209648,
+     "junction": 0.5580865603644647,
+     "terminal": 0.22717622080679406,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 1078,
+     "junction": 439,
+     "terminal": 471,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 46,
+     "within_1p5mm_of_gt_centreline": 138,
+     "elsewhere": 413,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 400,
+     "interior": 197
+    },
+    "patches": 256
+   },
+   "validation": {
+    "precision": 0.5496498249124562,
+    "recall": 0.6196249823769914,
+    "f1": 0.5825435747895819,
+    "tp": 4395,
+    "fp": 3601,
+    "fn": 2698,
+    "recall_by_class": {
+     "boundary": 0.8134161490683229,
+     "junction": 0.5903457273320287,
+     "terminal": 0.14071661237785016,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 4025,
+     "junction": 1533,
+     "terminal": 1535,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 224,
+     "within_1p5mm_of_gt_centreline": 905,
+     "elsewhere": 2472,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 2472,
+     "interior": 1129
+    },
+    "patches": 803
+   },
+   "monitor_f1_best_per_band": {
+    "1": 0.6474271712496596,
+    "2": 0.6467377177021055,
+    "3": 0.6475495307612096,
+    "4": 0.6476589066178394
+   },
+   "monitor_f1_single_threshold_best": 0.6410256410256411,
+   "monitor_f1_two_threshold_best": 0.6476589066178394,
+   "validation_node_f1_minus_V0": {
+    "point": 0.02877492530304826,
+    "ci95": [
+     0.02332110809771404,
+     0.032892877784200136
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": {
+    "point": -0.0017563982344267481,
+    "ci95": [
+     -0.003232770862474421,
+     -0.0001306887006664592
+    ],
+    "p": 0.03
+   }
+  },
+  "all48:raw5|single": {
+   "map": "all48:raw5",
+   "rule": [
+    "single",
+    0.29
+   ],
+   "train_monitor": {
+    "precision": 0.6933019976498237,
+    "recall": 0.5935613682092555,
+    "f1": 0.6395663956639567,
+    "tp": 1180,
+    "fp": 522,
+    "fn": 808,
+    "recall_by_class": {
+     "boundary": 0.8256029684601113,
+     "junction": 0.48291571753986334,
+     "terminal": 0.16560509554140126,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 1078,
+     "junction": 439,
+     "terminal": 471,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 21,
+     "within_1p5mm_of_gt_centreline": 97,
+     "elsewhere": 404,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 407,
+     "interior": 115
+    },
+    "patches": 256,
+    "node_ap_2mm": {
+     "node_ap": 0.6513354421666802,
+     "max_recall": 0.8599221789883269,
+     "proposals": 24465,
+     "gt_nodes": 2056
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.6632503720459186,
+     "max_recall": 0.8722334004024145,
+     "proposals": 24431,
+     "gt_nodes": 1988
+    }
+   },
+   "validation": {
+    "precision": 0.579291553133515,
+    "recall": 0.5994642605385592,
+    "f1": 0.5892052934247904,
+    "tp": 4252,
+    "fp": 3088,
+    "fn": 2841,
+    "recall_by_class": {
+     "boundary": 0.817639751552795,
+     "junction": 0.5153294194390085,
+     "terminal": 0.11140065146579804,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 4025,
+     "junction": 1533,
+     "terminal": 1535,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 75,
+     "within_1p5mm_of_gt_centreline": 656,
+     "elsewhere": 2357,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 2329,
+     "interior": 759
+    },
+    "patches": 803,
+    "node_ap_2mm": {
+     "node_ap": 0.5939151757306561,
+     "max_recall": 0.8677914534642511,
+     "proposals": 85112,
+     "gt_nodes": 7231
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.6024407214724761,
+     "max_recall": 0.877484844212604,
+     "proposals": 85061,
+     "gt_nodes": 7093
+    }
+   },
+   "validation_node_f1_minus_V0": {
+    "point": 0.03543664393825685,
+    "ci95": [
+     0.03168253322266163,
+     0.03970136399211199
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": null
+  },
+  "all48:raw5|two": {
+   "map": "all48:raw5",
+   "rule": [
+    "two",
+    1,
+    0.34,
+    0.25
+   ],
+   "train_monitor": {
+    "precision": 0.7067624177139438,
+    "recall": 0.5940643863179075,
+    "f1": 0.6455315660016397,
+    "tp": 1181,
+    "fp": 490,
+    "fn": 807,
+    "recall_by_class": {
+     "boundary": 0.7708719851576994,
+     "junction": 0.5671981776765376,
+     "terminal": 0.21443736730360935,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 1078,
+     "junction": 439,
+     "terminal": 471,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 22,
+     "within_1p5mm_of_gt_centreline": 149,
+     "elsewhere": 319,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 255,
+     "interior": 235
+    },
+    "patches": 256
+   },
+   "validation": {
+    "precision": 0.5809510528517641,
+    "recall": 0.5873396306217398,
+    "f1": 0.5841278743690409,
+    "tp": 4166,
+    "fp": 3005,
+    "fn": 2927,
+    "recall_by_class": {
+     "boundary": 0.7607453416149068,
+     "junction": 0.5779517286366601,
+     "terminal": 0.14201954397394137,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 4025,
+     "junction": 1533,
+     "terminal": 1535,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 79,
+     "within_1p5mm_of_gt_centreline": 846,
+     "elsewhere": 2080,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 1698,
+     "interior": 1307
+    },
+    "patches": 803
+   },
+   "monitor_f1_best_per_band": {
+    "1": 0.6455315660016397,
+    "2": 0.6451612903225806,
+    "3": 0.6449315068493151,
+    "4": 0.6446280991735537
+   },
+   "monitor_f1_single_threshold_best": 0.6395663956639567,
+   "monitor_f1_two_threshold_best": 0.6455315660016397,
+   "validation_node_f1_minus_V0": {
+    "point": 0.030359224882507307,
+    "ci95": [
+     0.02602560272783061,
+     0.034704063551510234
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": {
+    "point": -0.0050774190557495436,
+    "ci95": [
+     -0.008832531101350516,
+     -0.0024278779521278437
+    ],
+    "p": 0.0
+   }
+  }
+ },
+ "notes": [
+  "all choices (thresholds, band, windows, item-4 picks) on monitor_train only",
+  "V0 = identity heat, 3^3 peaks, single threshold chosen on the 0.02..0.95 grid (as part 1)",
+  "node AP is given for single-score maps only (the two-threshold rule has no single ranking)"
+ ]
+}

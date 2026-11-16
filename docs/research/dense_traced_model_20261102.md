@@ -49,6 +49,12 @@ patches (`monitor_train`) only. No test data has been used.
   +0.08 edge F1, but neither the node-role head nor the two-hop candidates reach it (no edge F1 gain). At the long
   schedule U-Net wide is the best backbone on IXI and BRAVA (BRAVA edge F1 +0.060); stage 2 is converged at 7.5k.
 
+- **Final try (13–16 Nov, §4.18).** Averaging the node heat and the edge scores over the 8 mirror images of the
+  patch at test time, with a 5×5×5 peak window, is adopted: edge F1 +0.036 (IXI), +0.070 (BRAVA), +0.047 (TopBrain
+  CTA) with the trained models unchanged. A wider heat target, mirrored training augmentation, face / interior thresholds, heat-mass scoring and
+  a centreline-topology rule do not help. Terminals (recall 0.11–0.31) stay the main miss: the GT ends where the
+  annotation stops, while the predicted vessel usually continues.
+
 ## 2. The new approach: two-stage dense model with traced connectivity
 
 ### 2.1 The idea
@@ -1853,6 +1859,125 @@ It was run on the original IXI GT (`IXI-loops`) with the 15k recipe plus an exte
   matches the stage-2 length result of §4.15.
 - **Decision (user, 12 Nov 2026): not pursued.** Not tested on the 2 mm GT; the judgment rests on the mechanism and on
   the colleague's numbers.
+
+### 4.18 Final try on nodes and edges: flip-averaged decoding adopted, five other ideas not (DONE, 13 Nov 2026)
+
+**Question (user).** One last attempt at the node and edge problems, with one method for all datasets (only
+thresholds may differ, chosen on each dataset's training monitor). All on `IXI-simp2`, `BRAVA-simp2`,
+`TopBrainCTA-simp2`, U-Net wide at the long schedule; single seed; validation only.
+
+**Starting facts.**
+- BRAVA is not a generalisation problem: node F1 is 0.629 on its training monitor and 0.619 on validation
+  (IXI 0.794 / 0.766, TopBrain CTA 0.621 / 0.553).
+- Recall by node class with the current decoding (validation; boundary / junction / terminal): IXI
+  0.88 / 0.76 / 0.31, BRAVA 0.74 / 0.42 / 0.11, TopBrain CTA 0.81 / 0.54 / 0.13. Terminals are about half of the
+  missed nodes on IXI and TopBrain CTA and about 40% on BRAVA.
+
+**What is adopted: the node heat averaged over the 8 mirror images of the patch, peaks in a 5×5×5 window.**
+Stage 1 is run on the patch flipped along each subset of its three axes, each heat map is flipped back, and the
+8 maps are averaged; offsets, centreline, tracing and stage 2 come from the unflipped pass. Options
+`--flip-average --nms 5` of both stage scripts (evaluation only; off by default; thresholds are selected on the
+training monitor with the same decoding; an evaluate-only run writes `final-v2-nms5-flipavg.json`). No retraining.
+Same run `traced_unet_wide_long_r1111`, new − current decoding, subject-paired 95% intervals
+(`experiments/final_try_20261113/flip_stage2.json`):
+
+| Dataset | Node F1 | Edge F1 | Branch F1 | \|β₁\| error |
+|---|---|---|---|---|
+| IXI | 0.766 → 0.782 (+0.016 [+0.013, +0.019]) | 0.524 → 0.551 (+0.028 [+0.023, +0.033]) | 0.368 → 0.392 (+0.023 [+0.017, +0.030]) | 1.21 → 0.73 |
+| BRAVA | 0.619 → 0.664 (+0.045 [+0.036, +0.055]) | 0.335 → 0.396 (+0.060 [+0.051, +0.070]) | 0.136 → 0.195 (+0.060 [+0.045, +0.074]) | 1.27 → 0.67 |
+| TopBrain CTA | 0.553 → 0.589 (+0.035 [+0.030, +0.042]) | 0.306 → 0.344 (+0.038 [+0.029, +0.044]) | 0.184 → 0.222 (+0.037 [+0.034, +0.041]) | 1.62 → 0.70 |
+
+Averaging over the 24 quarter-turn rotations gives the same node F1 as the 8 flips at three times the cost. The
+5×5×5 window alone is neutral on IXI and TopBrain CTA and worth +0.02 node F1 on BRAVA (fewer duplicates). This is
+test-time augmentation, as in nnU-Net and CenterNet; the journal tables should give both decodings.
+
+**What does not help (none adopted).**
+
+| Idea | Test | Result |
+|---|---|---|
+| Score a peak by the heat around it instead of its height | decoding study, 13 filters | +0.004 (IXI), +0.013 (BRAVA), +0.018 (TopBrain CTA) node F1 over a plain window without flips, nothing once the heat is flip-averaged; weak nodes have low heat, not spread heat |
+| Separate thresholds at the patch face and in the interior | decoding study | ≤ +0.003 node F1; more junctions found, as many false detections added |
+| Wider heat target (σ 2.0, 2.5, 3.5 voxels against 1.5) | 6k-update fine-tunes, 3 datasets | peaks more confident (BRAVA recall at 0.5: 0.21 → 0.38) but node F1 unchanged or lower (IXI −0.004 [−0.006, −0.002]) |
+| Mirrored patches in the training augmentation | fine-tuned stage 1 + stage 2, with control | edge F1 −0.001 to +0.010 at the new decoding, intervals span zero |
+| Threshold by the number of centreline arms around a peak (1 = tip, 2 = mid-vessel, 3+ = junction) | decoding study + stage 2 | node F1 +0.000, −0.001, −0.000; edge F1 −0.003 to +0.004 |
+| Averaging the centreline map over the flips as well | stage 2 | no further gain |
+
+**Why terminals stay missed.** Around a GT terminal the predicted centreline usually goes on: of the interior
+candidates matched to a GT terminal, it continues in two directions for 53% (IXI), 49% (BRAVA) and 27% (TopBrain
+CTA), and ends there for 34%, 42% and 33%. The terminal is where the mask or the tracing stops, which the image
+does not fix to within 2 mm. Reported as a limitation.
+
+Scripts: `node_decode_study_20261113.py`, `node_topology_study_20261113.py`, `sigma_finetune_summary_20261113.py`,
+`flip_stage2_summary_20261113.py`; launchers `submit_sigma_finetune_20261113.sh`, `flip_stage2_20261113.slurm`;
+results in `experiments/final_try_20261113/`. New opt-in flags of the stage scripts: `--sigma`, `--nms`,
+`--extra-nms`, `--eval-at-start`, `--flip`, `--flip-average` (defaults unchanged).
+
+**Edge scores averaged over the flips as well (DONE 13 Nov; adopted by the user on 16 Nov, option
+`--flip-average-edges`).**
+Nodes and candidate paths fixed to those of the adopted decoding; for each of the 8 flips the network is run on
+the flipped patch and every candidate is scored in the flipped frame; the 8 edge logits are averaged and the edge
+threshold re-selected on the training monitor (`scripts/edge_flip_average_study_20261113.py`,
+`experiments/final_try_20261113/edge_flip_average_<entry>.json`; the reference arm reproduces
+`final-v2-nms5-flipavg.json` exactly). Averaged − adopted decoding, validation, subject-paired:
+
+| Dataset | Edge F1 | Branch F1 | \|β₀\| / \|β₁\| error | Edge F1 on the training monitor |
+|---|---|---|---|---|
+| IXI | 0.551 → 0.560 (+0.009 [+0.007, +0.011]) | 0.392 → 0.403 (+0.012 [+0.009, +0.015]) | 1.34 / 0.73 → 1.29 / 0.67 | +0.004 |
+| BRAVA | 0.396 → 0.405 (+0.009 [+0.005, +0.013]) | 0.195 → 0.209 (+0.014 [+0.009, +0.017]) | 2.53 / 0.67 → 3.02 / 0.33 | +0.008 |
+| TopBrain CTA | 0.344 → 0.353 (+0.009 [+0.005, +0.012]) | 0.222 → 0.238 (+0.017 [+0.012, +0.022]) | 2.03 / 0.70 → 2.07 / 0.63 | −0.009 |
+
+Averaging logits is better than averaging probabilities on the training monitor of all three datasets. The gain
+is +0.009 edge F1 on every validation set, but the training monitor of TopBrain CTA disagrees (−0.009, 256
+patches), and BRAVA gets more spurious components. Averaging the curves too changes Curve F1 by +0.006 on BRAVA
+(only dataset where it was run). Inference per patch goes from 0.06 s to about 0.08–0.11 s. Adopted on the validation evidence (user's decision, 16 Nov). In the
+pipeline since 16 Nov: `--flip-average-edges` of stage 2 (off by default; evaluate-only with all three options writes
+`final-v2-nms5-flipavg-edges.json`); it reuses the flipped passes of `--flip-average`. The pipeline reproduces the
+study arm exactly on the three datasets (same nodes and pairs on every validation patch, largest edge-score
+difference 2e-16; `scripts/edge_flip_pipeline_check_20261116.py`), and the earlier decodings bit for bit.
+
+**Full-volume check (DONE 13 and 16 Nov): the adopted decoding also improves the stitched graphs.** Every grid
+position of the validation subjects predicted with each decoding (`predict_volume_grid_20261112.py`, rows in
+`…/rows/<entry>-<run>-nms5-flipavg[-edges]/`), stitched as in §4.16 (overlap grid, core + Hungarian 2 mm, cleaned),
+at the thresholds selected on the training monitor under each decoding (on BRAVA the node threshold moves from 0.30
+to 0.25 and the edge threshold to 0.80). Results `experiments/stitching_20261112/<entry>-…-overlap-nms5-flipavg[-edges].json`,
+comparison `experiments/final_try_20261113/stitch_overlap_flipavg-edges_vs_others.json`
+(`scripts/stitch_decoding_compare_20261113.py`). Node F1 / edge F1 / components per volume (GT) / cut points matched:
+
+| Dataset (subjects) | Decoding before 13 Nov | + node heat averaged, 5×5×5 window | + edge scores averaged (adopted) |
+|---|---|---|---|
+| IXI (26) | 0.536 / 0.372 / 38.2 (14.4) / 70% | 0.561 / 0.408 / 30.8 / 75% | 0.576 / 0.425 / 28.4 / 78% |
+| BRAVA (8) | 0.211 / 0.088 / 103.8 (1.0) / 49% | 0.250 / 0.112 / 91.0 / 56% | 0.275 / 0.134 / 71.4 / 59% |
+| TopBrain CTA (5) | 0.281 / 0.142 / 35.4 (12.0) / 57% | 0.296 / 0.165 / 29.8 / 59% | 0.316 / 0.178 / 23.2 / 63% |
+
+Adopted − decoding before 13 Nov, subject-paired: IXI node F1 +0.040 [+0.032, +0.048], edge F1 +0.053
+[+0.045, +0.061]; BRAVA +0.064 [+0.044, +0.079], +0.046 [+0.030, +0.060]; TopBrain CTA +0.035 [+0.017, +0.048],
++0.036 [+0.007, +0.065]. The gain is mostly precision (fewer nodes and edges per volume, fewer components and
+loops, more cut points matched). Centreline recall falls slightly on IXI (0.668 → 0.650) and TopBrain CTA
+(0.508 → 0.486) and is unchanged on BRAVA (0.378 → 0.381). Node F1 moves with the edge averaging although the patch
+nodes are the same, because the cleaning removes nodes left without an edge. BRAVA and TopBrain CTA have 8 and 5
+subjects.
+
+Whole-volume figures with the adopted decoding (static, and interactive HTML to download and open in a browser):
+
+![IXI validation subject, adopted decoding](figures/stitching_flipavg_20261113/IXI-simp2-000001.png)
+
+![BRAVA validation subject, adopted decoding](figures/stitching_flipavg_20261113/BRAVA-simp2-000000.png)
+
+Others: [IXI 000006](figures/stitching_flipavg_20261113/IXI-simp2-000006.png),
+[BRAVA 000001](figures/stitching_flipavg_20261113/BRAVA-simp2-000001.png),
+[TopBrain CTA 000028](figures/stitching_flipavg_20261113/TopBrainCTA-simp2-000028.png),
+[TopBrain CTA 000033](figures/stitching_flipavg_20261113/TopBrainCTA-simp2-000033.png). Interactive:
+[IXI 000001](figures/stitching_flipavg_20261113/IXI-simp2-000001.html), [IXI 000006](figures/stitching_flipavg_20261113/IXI-simp2-000006.html),
+[BRAVA 000000](figures/stitching_flipavg_20261113/BRAVA-simp2-000000.html), [BRAVA 000001](figures/stitching_flipavg_20261113/BRAVA-simp2-000001.html),
+[TopBrain CTA 000028](figures/stitching_flipavg_20261113/TopBrainCTA-simp2-000028.html),
+[TopBrain CTA 000033](figures/stitching_flipavg_20261113/TopBrainCTA-simp2-000033.html).
+
+**Where the numbers stand after the final try** (validation patches, `traced_unet_wide_long_r1111`, thresholds
+from the training monitor; node / edge / Branch F1): IXI 0.782 / 0.560 / 0.403, BRAVA 0.664 / 0.405 / 0.209,
+TopBrain CTA 0.589 / 0.353 / 0.238, against 0.766 / 0.524 / 0.368, 0.619 / 0.335 / 0.136 and 0.553 / 0.306 / 0.184
+before it. Decoding of the recipe: `--flip-average --flip-average-edges --nms 5`; training is unchanged. Single
+seed, validation only. The throw-away figures and the fine-tune runs of the arms that were not adopted were
+deleted on 16 Nov; their result files stay in `experiments/final_try_20261113/`.
 
 ## 5. 2D (validation; node / edge F1 @2 units)
 

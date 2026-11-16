@@ -41,6 +41,10 @@ SIZE = 64
 # helper scripts that call peaks() without an argument decode with the module value.
 NMS_DEFAULT = 3
 NMS = NMS_DEFAULT
+# Test-time flip averaging of the node heat (13 Nov 2026, --flip-average; evaluation only, default off = every earlier
+# run). Set by a run from its flag; read by decoding_output(), which both predict() functions (stage 1 here, stage 2 in
+# dense_graph_traced_20261030) use for node decoding. Training decodes its predicted candidates single-pass.
+FLIP_AVERAGE = False
 L, S = 24, 11
 NEIGHBOURS = 16
 MAX_NEGATIVES = 256
@@ -112,9 +116,40 @@ def resolve_heat(a, out_dir, device='cpu'):
     return record
 
 
-def eval_name(base, nms, trained_nms):
-    """Output name of an evaluation: `base` at the window the run was trained with, else base-nms<K>.json."""
-    return base if nms == trained_nms else base.replace('.json', f'-nms{nms}.json')
+def eval_name(base, nms, trained_nms, flip_average=False, flip_average_edges=False):
+    """Output name of an evaluation: `base` at the window the run was trained with, else base-nms<K>.json; with
+    flip-averaged decoding (--flip-average) '-flipavg' is appended (base[-nms<K>]-flipavg.json); with flip-averaged
+    stage-2 edge scores (--flip-average-edges, 16 Nov 2026) '-edges' follows (base[-nms<K>]-flipavg-edges.json, or
+    base[-nms<K>]-edgeflipavg.json without --flip-average)."""
+    name = base if nms == trained_nms else base.replace('.json', f'-nms{nms}.json')
+    name = name.replace('.json', '-flipavg.json') if flip_average else name
+    if flip_average_edges:
+        name = name.replace('.json', '-edges.json' if flip_average else '-edgeflipavg.json')
+    return name
+
+
+@torch.no_grad()
+def decoding_output(model, images, out, keep=None):
+    """Network output from which nodes are decoded at evaluation (peaks). `out` = model.forward_image(images), returned
+    unchanged unless FLIP_AVERAGE. With FLIP_AVERAGE: a float32 copy of `out` whose channel 0 is the logit of the sigmoid
+    node heat averaged over the 8 axis-flip combinations of the input (each output flipped back before averaging; the
+    unflipped pass is `out`); offsets and every other channel stay those of the unflipped pass. Heat sum order and
+    averaging as flip_maps() in scripts/node_decode_study_20261113.py. Call inside the caller's autocast context.
+    keep (optional list, 16 Nov 2026): with FLIP_AVERAGE, each flipped pass is appended as (dims, raw output in the
+    flipped frame), for reuse by the stage-2 edge flip average; nothing else changes."""
+    if not FLIP_AVERAGE:
+        return out
+    from itertools import combinations
+    heat = out[:, :1].float().sigmoid()
+    for n in (1, 2, 3):
+        for dims in combinations((2, 3, 4), n):
+            flipped = model.forward_image(images.flip(dims))
+            if keep is not None:
+                keep.append((dims, flipped))
+            heat = heat + flipped[:, :1].float().sigmoid().flip(dims)
+    out = out.float().clone()
+    out[:, :1] = torch.logit((heat / 8).clamp(1e-7, 1 - 1e-7))
+    return out
 
 
 class DenseGraph(nn.Module):
@@ -277,9 +312,10 @@ def predict(model, ds, device, node_threshold, workers, batch=8):
     for images, nodes, edges, geometry in loader:
         with torch.autocast('cuda', dtype=torch.bfloat16):
             out = model.forward_image(images.to(device))
+            decoded = decoding_output(model, images.to(device), out)  # = out unless FLIP_AVERAGE
         feats = out[:, 5:].float()
         heat = out[:, :1].float().sigmoid()
-        for b, (p, score) in enumerate(peaks(out, node_threshold)):
+        for b, (p, score) in enumerate(peaks(decoded, node_threshold)):
             metric = geometry[b]['metric'].to(device) / SIZE
             pairs = candidate_pairs(p @ metric.T)
             probs = curves = None
@@ -437,7 +473,13 @@ def main():
                         'the training monitor); written to final[-v2]-nms<K>.json')
     p.add_argument('--eval-at-start', action='store_true',
                    help='With --eval-every: also write a curve point at step 0 (before the first update; checks a warm start)')
+    p.add_argument('--flip-average', action='store_true',
+                   help='Evaluation decoding (threshold selection, final evaluations, curve points): node heat averaged '
+                        'over the 8 axis flips of the input (decoding_output). Training stays single-pass. Default off = '
+                        'every run before 13 Nov 2026. Outputs are named ...-flipavg.json (eval_name)')
     a = p.parse_args()
+    global FLIP_AVERAGE
+    FLIP_AVERAGE = bool(a.flip_average)
     torch.manual_seed(a.seed)
     np.random.seed(a.seed)
     out_dir = a.output / a.dataset / (a.run_name or (a.mode + (str(a.interior) if a.mode != 'chord' else '')))
@@ -455,7 +497,9 @@ def main():
     if a.init_from and not a.evaluate_only:
         (out_dir / 'warm-start.json').write_text(json.dumps(warm_start(model, a.init_from, device), indent=1))
     if a.evaluate_only:
-        model.load_state_dict(torch.load(out_dir / 'model.pt', map_location=device)['model'])
+        state = torch.load(out_dir / 'model.pt', map_location=device)
+        model.load_state_dict(state['model'])
+        a.flip = a.flip or state.get('args', {}).get('flip') == 'True'  # record the run's training augmentation
         final_evaluations(model, a, monitor, val_ids, device, out_dir, 'final-v2.json', trained_nms)
         return
     opt = torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=1e-4)
@@ -521,7 +565,7 @@ def final_evaluations(model, a, monitor, val_ids, device, out_dir, base, trained
     for k in [a.nms] + [k for k in getattr(a, 'extra_nms', []) if k != a.nms]:
         assert k >= 1 and k % 2 == 1, 'decoding windows must be odd positive integers'
         NMS = k
-        final_evaluation(model, a, monitor, val_ids, device, out_dir, name=eval_name(base, k, trained_nms))
+        final_evaluation(model, a, monitor, val_ids, device, out_dir, name=eval_name(base, k, trained_nms, FLIP_AVERAGE))
     NMS = a.nms
 
 
@@ -537,7 +581,7 @@ def final_evaluation(model, a, monitor, val_ids, device, out_dir, name='final.js
     fixed = predict(model, val_ds, device, 0.5, a.workers, a.eval_batch)
     result = dict(dataset=a.dataset, mode=a.mode, seed=getattr(a, 'seed', 364505), backbone=getattr(a, 'backbone', 'unet'), feature_channels=getattr(a, 'feature_channels', 32), interior=a.interior, updates=a.updates, batch=a.batch, lr=a.lr,
                   augment=not getattr(a, 'no_augment', False), flip=bool(getattr(a, 'flip', False)), sigma=float(getattr(a, 'sigma', None) or SIGMA), nms=NMS,
-                  thresholds=dict(node=node_t, edge=edge_t, policy='train monitor only; candidates = 16-NN over retained nodes'),
+                  flip_average=FLIP_AVERAGE, thresholds=dict(node=node_t, edge=edge_t, policy='train monitor only; candidates = 16-NN over retained nodes'),
                   train_monitor=evaluate(train_rows, node_t, edge_t), validation=evaluate(val_rows, node_t, edge_t),
                   validation_fixed_0p5=evaluate(fixed, 0.5, 0.5))
     (out_dir / name).write_text(json.dumps(result, indent=1))

@@ -664,6 +664,16 @@ def rows_main(a):
     missing = [p for p in patients if p not in meta]
     if missing:
         raise SystemExit(f'no rows for patients {missing} in {grid_dir}')
+    # node decoding of the rows (predict_volume_grid --flip-average / --nms, 13 Nov 2026; no key = legacy window 3, single
+    # pass). With a recorded decoding, the default thresholds are the run's thresholds under that decoding.
+    decodings = {json.dumps(meta[p].get('decoding'), sort_keys=True) for p in patients}
+    if len(decodings) != 1:
+        raise SystemExit(f'rows of several decodings in {grid_dir}: {decodings}')
+    decoding = meta[patients[0]].get('decoding')
+    if decoding is not None:
+        own = dict(decoding['record_thresholds'])
+        print(f"rows decoding: nms {decoding['nms']} flip_average {decoding['flip_average']} flip_average_edges {decoding.get('flip_average_edges', False)}; default thresholds from {decoding['record']}: "
+              f"{own['node']} / {own['edge']}", flush=True)
     workers = int(os.environ.get('SLURM_CPUS_PER_TASK', '4'))
     dst = ROOT / 'experiments/stitching_20261112'
     dst.mkdir(parents=True, exist_ok=True)
@@ -757,9 +767,9 @@ def rows_main(a):
                             pred_open_cuts=np.asarray([g.pos[v] for v in getattr(g, 'open_cuts', []) if v in g.adj and len(g.adj[v]) == 1]).reshape(-1, 3))
         if a.dump:
             dump.update(patient=patient, entry=a.entry, run=a.run, A=A, gt_volume=gt, grid=meta[patient]['starts'], grid_name=a.grid,
-                        thresholds=dict(node=node_t, edge=edge_t), raw=str(source_root / 'raw' / f'{patient}.nii.gz'))
+                        thresholds=dict(node=node_t, edge=edge_t), raw=str(source_root / 'raw' / f'{patient}.nii.gz'), decoding=decoding)
             DUMP.mkdir(parents=True, exist_ok=True)
-            (DUMP / f'{a.entry}-{a.grid}-{patient}.pkl').write_bytes(pickle.dumps(dump))
+            (DUMP / (f'{a.entry}-{a.grid}' + (f'-{a.tag}' if a.tag else '') + f'-{patient}.pkl')).write_bytes(pickle.dumps(dump))
         print(f'{patient}: {len(patches)} grid positions ({a.grid}), GT {len(gt[0])} nodes / {len(gt[1])} edges', flush=True)
         return patient, dict(per), dict(counts)
 
@@ -773,7 +783,7 @@ def rows_main(a):
             for k, v in c_.items():
                 counts[k].update(v)
     out = dict(entry=a.entry, run=a.run, grid=a.grid, split=a.split, thresholds=dict(node=node_t, edge=edge_t), run_thresholds=own,
-               subjects=len(patients), patients=patients, scale_mm=a.scale_mm, gt_limit_mm=gt_limit, rows_dir=str(a.rows_dir), results={},
+               subjects=len(patients), patients=patients, scale_mm=a.scale_mm, gt_limit_mm=gt_limit, rows_dir=str(a.rows_dir), decoding=decoding, results={},
                per_subject={p: per_subject[p] for p in sorted(per_subject)},
                thresholds_from=str(a.thresholds_from) if a.thresholds_from else None)
     for (source, name, stage), rs in per.items():

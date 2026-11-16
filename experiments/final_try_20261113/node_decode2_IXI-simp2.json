@@ -1,0 +1,1617 @@
+{
+ "entry": "IXI-simp2",
+ "stage1_run": "spline6_unet_wide_long_r1111",
+ "smoke": false,
+ "floor": 0.02,
+ "tolerance_mm": 2.0,
+ "single_threshold_grid": [
+  0.02,
+  0.95,
+  0.01
+ ],
+ "two_threshold_grid": {
+  "bands_voxels": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "thresholds": [
+   0.1,
+   0.6,
+   0.01
+  ]
+ },
+ "face_band_rule": "candidate in the face band iff min over axes of min(x + 0.5, 63.5 - x) < b (refined position, voxels)",
+ "class_rule": "boundary = cache boundary flag; else junction (degree >= 3), terminal (degree 1), other; inserted anchors excluded",
+ "gt_nodes_by_class": {
+  "monitor": {
+   "fixed": {
+    "boundary": 2373,
+    "junction": 967,
+    "terminal": 874,
+    "other": 0
+   },
+   "geometric_part1": {
+    "boundary": 450,
+    "junction": 988,
+    "terminal": 2629,
+    "other": 147
+   }
+  },
+  "val": {
+   "fixed": {
+    "boundary": 26247,
+    "junction": 10793,
+    "terminal": 9812,
+    "other": 0
+   },
+   "geometric_part1": {
+    "boundary": 5073,
+    "junction": 10995,
+    "terminal": 29242,
+    "other": 1542
+   }
+  }
+ },
+ "transform_check": {
+  "transforms": 48,
+  "delta_roundtrip": "ok",
+  "offset_roundtrip": "ok",
+  "rot24_equals_training_quarter_turn_group": true,
+  "set_sizes": {
+   "id": 1,
+   "flip8": 8,
+   "rot24": 24,
+   "all48": 48
+  }
+ },
+ "timing": {
+  "monitor": {
+   "patches": 256,
+   "seconds_forward_all_48_views": 45.00811767578125,
+   "seconds_per_view_per_patch": 0.0036627699931462607,
+   "seconds_total": 56.7807297706604,
+   "heat_correlation_with_identity_first_batch": {
+    "id": 1.0,
+    "flip8": 0.9879462122917175,
+    "rot24": 0.9851568937301636,
+    "all48": 0.9854652285575867
+   }
+  },
+  "val": {
+   "patches": 2961,
+   "seconds_forward_all_48_views": 508.29407143592834,
+   "seconds_per_view_per_patch": 0.00357631199648154,
+   "seconds_total": 525.3645210266113,
+   "heat_correlation_with_identity_first_batch": {
+    "id": 1.0,
+    "flip8": 0.9882494211196899,
+    "rot24": 0.9851415753364563,
+    "all48": 0.9851018190383911
+   }
+  }
+ },
+ "patches": {
+  "monitor": 256,
+  "val": 2961
+ },
+ "V0": "id:raw3|single",
+ "item4_choices": {
+  "a_flip_single": "flip8:raw5|single",
+  "b_flip_two": "flip8:raw5|two",
+  "c_best_set_two": "rot24:raw5|two"
+ },
+ "variants": {
+  "id:raw3|single": {
+   "map": "id:raw3",
+   "rule": [
+    "single",
+    0.37
+   ],
+   "train_monitor": {
+    "precision": 0.8346313603322949,
+    "recall": 0.7629330802088277,
+    "f1": 0.7971733201090999,
+    "tp": 3215,
+    "fp": 637,
+    "fn": 999,
+    "recall_by_class": {
+     "boundary": 0.9005478297513696,
+     "junction": 0.7993795243019648,
+     "terminal": 0.3489702517162471,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 2373,
+     "junction": 967,
+     "terminal": 874,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 216,
+     "within_1p5mm_of_gt_centreline": 152,
+     "elsewhere": 269,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 358,
+     "interior": 279
+    },
+    "patches": 256,
+    "node_ap_2mm": {
+     "node_ap": 0.8453960530474164,
+     "max_recall": 0.958053302433372,
+     "proposals": 36679,
+     "gt_nodes": 4315
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.8533531376849782,
+     "max_recall": 0.9622686283815852,
+     "proposals": 36600,
+     "gt_nodes": 4214
+    }
+   },
+   "validation": {
+    "precision": 0.8050247949423018,
+    "recall": 0.7310893878596432,
+    "f1": 0.7662777821277167,
+    "tp": 34253,
+    "fp": 8296,
+    "fn": 12599,
+    "recall_by_class": {
+     "boundary": 0.8761382253209891,
+     "junction": 0.757620680070416,
+     "terminal": 0.31390134529147984,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 26247,
+     "junction": 10793,
+     "terminal": 9812,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 2075,
+     "within_1p5mm_of_gt_centreline": 2374,
+     "elsewhere": 3847,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 4489,
+     "interior": 3807
+    },
+    "patches": 2961,
+    "node_ap_2mm": {
+     "node_ap": 0.8151708833598892,
+     "max_recall": 0.9555870935425972,
+     "proposals": 414176,
+     "gt_nodes": 47914
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.8237954636598335,
+     "max_recall": 0.9613250234781866,
+     "proposals": 413430,
+     "gt_nodes": 46852
+    }
+   },
+   "validation_node_f1_minus_V0": null,
+   "validation_node_f1_minus_same_map_single": null
+  },
+  "id:raw3|two": {
+   "map": "id:raw3",
+   "rule": [
+    "two",
+    1,
+    0.37,
+    0.37
+   ],
+   "train_monitor": {
+    "precision": 0.8346313603322949,
+    "recall": 0.7629330802088277,
+    "f1": 0.7971733201090999,
+    "tp": 3215,
+    "fp": 637,
+    "fn": 999,
+    "recall_by_class": {
+     "boundary": 0.9005478297513696,
+     "junction": 0.7993795243019648,
+     "terminal": 0.3489702517162471,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 2373,
+     "junction": 967,
+     "terminal": 874,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 216,
+     "within_1p5mm_of_gt_centreline": 152,
+     "elsewhere": 269,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 358,
+     "interior": 279
+    },
+    "patches": 256
+   },
+   "validation": {
+    "precision": 0.8050247949423018,
+    "recall": 0.7310893878596432,
+    "f1": 0.7662777821277167,
+    "tp": 34253,
+    "fp": 8296,
+    "fn": 12599,
+    "recall_by_class": {
+     "boundary": 0.8761382253209891,
+     "junction": 0.757620680070416,
+     "terminal": 0.31390134529147984,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 26247,
+     "junction": 10793,
+     "terminal": 9812,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 2075,
+     "within_1p5mm_of_gt_centreline": 2374,
+     "elsewhere": 3847,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 4489,
+     "interior": 3807
+    },
+    "patches": 2961
+   },
+   "monitor_f1_best_per_band": {
+    "1": 0.7971733201090999,
+    "2": 0.7971733201090999,
+    "3": 0.7971733201090999,
+    "4": 0.7971733201090999
+   },
+   "monitor_f1_single_threshold_best": 0.7971733201090999,
+   "monitor_f1_two_threshold_best": 0.7971733201090999,
+   "validation_node_f1_minus_V0": {
+    "point": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p": 1.0
+   },
+   "validation_node_f1_minus_same_map_single": {
+    "point": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p": 1.0
+   }
+  },
+  "id:raw5|single": {
+   "map": "id:raw5",
+   "rule": [
+    "single",
+    0.37
+   ],
+   "train_monitor": {
+    "precision": 0.8540877097996752,
+    "recall": 0.7486948267679164,
+    "f1": 0.7979261507334345,
+    "tp": 3155,
+    "fp": 539,
+    "fn": 1059,
+    "recall_by_class": {
+     "boundary": 0.8828487147071218,
+     "junction": 0.7869700103412617,
+     "terminal": 0.34210526315789475,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 2373,
+     "junction": 967,
+     "terminal": 874,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 134,
+     "within_1p5mm_of_gt_centreline": 143,
+     "elsewhere": 262,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 301,
+     "interior": 238
+    },
+    "patches": 256,
+    "node_ap_2mm": {
+     "node_ap": 0.8210943051183012,
+     "max_recall": 0.9019698725376594,
+     "proposals": 23475,
+     "gt_nodes": 4315
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.8322290706737254,
+     "max_recall": 0.9119601328903655,
+     "proposals": 23426,
+     "gt_nodes": 4214
+    }
+   },
+   "validation": {
+    "precision": 0.8226435456574526,
+    "recall": 0.7158712541620422,
+    "f1": 0.7655524234504639,
+    "tp": 33540,
+    "fp": 7231,
+    "fn": 13312,
+    "recall_by_class": {
+     "boundary": 0.8606316912409038,
+     "junction": 0.7365885296025202,
+     "terminal": 0.3058499796167958,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 26247,
+     "junction": 10793,
+     "terminal": 9812,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 1348,
+     "within_1p5mm_of_gt_centreline": 2201,
+     "elsewhere": 3682,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 3958,
+     "interior": 3273
+    },
+    "patches": 2961,
+    "node_ap_2mm": {
+     "node_ap": 0.7897906224624047,
+     "max_recall": 0.8924114037650791,
+     "proposals": 264113,
+     "gt_nodes": 47914
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.8004357265727364,
+     "max_recall": 0.9023093998121745,
+     "proposals": 263629,
+     "gt_nodes": 46852
+    }
+   },
+   "validation_node_f1_minus_V0": {
+    "point": -0.0007253586772527632,
+    "ci95": [
+     -0.002049748224443218,
+     0.000549012544567734
+    ],
+    "p": 0.241
+   },
+   "validation_node_f1_minus_same_map_single": null
+  },
+  "id:raw5|two": {
+   "map": "id:raw5",
+   "rule": [
+    "two",
+    1,
+    0.37,
+    0.34
+   ],
+   "train_monitor": {
+    "precision": 0.8348006214396686,
+    "recall": 0.7650688182249644,
+    "f1": 0.7984150569588906,
+    "tp": 3224,
+    "fp": 638,
+    "fn": 990,
+    "recall_by_class": {
+     "boundary": 0.8836915297092288,
+     "junction": 0.81282316442606,
+     "terminal": 0.3901601830663616,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 2373,
+     "junction": 967,
+     "terminal": 874,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 142,
+     "within_1p5mm_of_gt_centreline": 198,
+     "elsewhere": 298,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 301,
+     "interior": 337
+    },
+    "patches": 256
+   },
+   "validation": {
+    "precision": 0.8071113833973468,
+    "recall": 0.7310893878596432,
+    "f1": 0.7672217804705962,
+    "tp": 34253,
+    "fp": 8186,
+    "fn": 12599,
+    "recall_by_class": {
+     "boundary": 0.86086028879491,
+     "junction": 0.7629945334939312,
+     "terminal": 0.3488585405625764,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 26247,
+     "junction": 10793,
+     "terminal": 9812,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 1411,
+     "within_1p5mm_of_gt_centreline": 2693,
+     "elsewhere": 4082,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 3962,
+     "interior": 4224
+    },
+    "patches": 2961
+   },
+   "monitor_f1_best_per_band": {
+    "1": 0.7984150569588906,
+    "2": 0.7983651226158038,
+    "3": 0.7979672781358453,
+    "4": 0.7983109786388475
+   },
+   "monitor_f1_single_threshold_best": 0.7979261507334345,
+   "monitor_f1_two_threshold_best": 0.7984150569588906,
+   "validation_node_f1_minus_V0": {
+    "point": 0.000943998342879504,
+    "ci95": [
+     -0.0006290651360874617,
+     0.002521433319998262
+    ],
+    "p": 0.258
+   },
+   "validation_node_f1_minus_same_map_single": {
+    "point": 0.0016693570201322672,
+    "ci95": [
+     0.00018325127112325535,
+     0.0030785118118422214
+    ],
+    "p": 0.029
+   }
+  },
+  "flip8:raw3|single": {
+   "map": "flip8:raw3",
+   "rule": [
+    "single",
+    0.33
+   ],
+   "train_monitor": {
+    "precision": 0.8339575530586767,
+    "recall": 0.7925961082107261,
+    "f1": 0.8127509429370969,
+    "tp": 3340,
+    "fp": 665,
+    "fn": 874,
+    "recall_by_class": {
+     "boundary": 0.9199325747998315,
+     "junction": 0.8293691830403309,
+     "terminal": 0.4061784897025172,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 2373,
+     "junction": 967,
+     "terminal": 874,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 133,
+     "within_1p5mm_of_gt_centreline": 183,
+     "elsewhere": 349,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 396,
+     "interior": 269
+    },
+    "patches": 256,
+    "node_ap_2mm": {
+     "node_ap": 0.8661235843591729,
+     "max_recall": 0.9538818076477404,
+     "proposals": 31158,
+     "gt_nodes": 4315
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.8753119047137289,
+     "max_recall": 0.9596582819174181,
+     "proposals": 31086,
+     "gt_nodes": 4214
+    }
+   },
+   "validation": {
+    "precision": 0.8050491832867069,
+    "recall": 0.761611030478955,
+    "f1": 0.7827279108537334,
+    "tp": 35683,
+    "fp": 8641,
+    "fn": 11169,
+    "recall_by_class": {
+     "boundary": 0.8964072084428697,
+     "junction": 0.7939405170017604,
+     "terminal": 0.3654708520179372,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 26247,
+     "junction": 10793,
+     "terminal": 9812,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 1188,
+     "within_1p5mm_of_gt_centreline": 2753,
+     "elsewhere": 4700,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 4915,
+     "interior": 3726
+    },
+    "patches": 2961,
+    "node_ap_2mm": {
+     "node_ap": 0.8325229154747658,
+     "max_recall": 0.9481988562841758,
+     "proposals": 350834,
+     "gt_nodes": 47914
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.8419565244152333,
+     "max_recall": 0.9546230683855546,
+     "proposals": 350128,
+     "gt_nodes": 46852
+    }
+   },
+   "validation_node_f1_minus_V0": {
+    "point": 0.0164501287260167,
+    "ci95": [
+     0.013657207308935309,
+     0.019262474314910714
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": null
+  },
+  "flip8:raw3|two": {
+   "map": "flip8:raw3",
+   "rule": [
+    "two",
+    3,
+    0.36,
+    0.33
+   ],
+   "train_monitor": {
+    "precision": 0.851937984496124,
+    "recall": 0.782392026578073,
+    "f1": 0.8156853043047996,
+    "tp": 3297,
+    "fp": 573,
+    "fn": 917,
+    "recall_by_class": {
+     "boundary": 0.9072903497682259,
+     "junction": 0.8241985522233712,
+     "terminal": 0.39702517162471396,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 2373,
+     "junction": 967,
+     "terminal": 874,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 118,
+     "within_1p5mm_of_gt_centreline": 170,
+     "elsewhere": 285,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 304,
+     "interior": 269
+    },
+    "patches": 256
+   },
+   "validation": {
+    "precision": 0.8206836887392442,
+    "recall": 0.7491462477589004,
+    "f1": 0.7832849810310198,
+    "tp": 35099,
+    "fp": 7669,
+    "fn": 11753,
+    "recall_by_class": {
+     "boundary": 0.8802529812931001,
+     "junction": 0.7900491059019735,
+     "terminal": 0.3534447615165104,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 26247,
+     "junction": 10793,
+     "terminal": 9812,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 1038,
+     "within_1p5mm_of_gt_centreline": 2617,
+     "elsewhere": 4014,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 3945,
+     "interior": 3724
+    },
+    "patches": 2961
+   },
+   "monitor_f1_best_per_band": {
+    "1": 0.8156465942744324,
+    "2": 0.8154093097913323,
+    "3": 0.8156853043047996,
+    "4": 0.8155219439623109
+   },
+   "monitor_f1_single_threshold_best": 0.8127509429370969,
+   "monitor_f1_two_threshold_best": 0.8156853043047996,
+   "validation_node_f1_minus_V0": {
+    "point": 0.017007198903303156,
+    "ci95": [
+     0.014688217655978594,
+     0.019346562165845432
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": {
+    "point": 0.0005570701772864561,
+    "ci95": [
+     -0.0008021195055056496,
+     0.0018848924417543646
+    ],
+    "p": 0.383
+   }
+  },
+  "flip8:raw5|single": {
+   "map": "flip8:raw5",
+   "rule": [
+    "single",
+    0.32
+   ],
+   "train_monitor": {
+    "precision": 0.8457026268808977,
+    "recall": 0.7869008068343617,
+    "f1": 0.8152427781192378,
+    "tp": 3316,
+    "fp": 605,
+    "fn": 898,
+    "recall_by_class": {
+     "boundary": 0.9089759797724399,
+     "junction": 0.8169596690796277,
+     "terminal": 0.42219679633867274,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 2373,
+     "junction": 967,
+     "terminal": 874,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 51,
+     "within_1p5mm_of_gt_centreline": 193,
+     "elsewhere": 361,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 328,
+     "interior": 277
+    },
+    "patches": 256,
+    "node_ap_2mm": {
+     "node_ap": 0.8400950826973375,
+     "max_recall": 0.8998841251448436,
+     "proposals": 20001,
+     "gt_nodes": 4315
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.8519714895934755,
+     "max_recall": 0.9105363075462743,
+     "proposals": 19955,
+     "gt_nodes": 4214
+    }
+   },
+   "validation": {
+    "precision": 0.8146545740595067,
+    "recall": 0.7515367540339793,
+    "f1": 0.7818238337367054,
+    "tp": 35211,
+    "fp": 8011,
+    "fn": 11641,
+    "recall_by_class": {
+     "boundary": 0.8811292719167905,
+     "junction": 0.7793940517001761,
+     "terminal": 0.374235629841011,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 26247,
+     "junction": 10793,
+     "terminal": 9812,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 407,
+     "within_1p5mm_of_gt_centreline": 2751,
+     "elsewhere": 4853,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 4159,
+     "interior": 3852
+    },
+    "patches": 2961,
+    "node_ap_2mm": {
+     "node_ap": 0.8041072110437454,
+     "max_recall": 0.8855240639479066,
+     "proposals": 225185,
+     "gt_nodes": 47914
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.8155908361271207,
+     "max_recall": 0.8962477589003671,
+     "proposals": 224747,
+     "gt_nodes": 46852
+    }
+   },
+   "validation_node_f1_minus_V0": {
+    "point": 0.015546051608988698,
+    "ci95": [
+     0.012345772541243156,
+     0.01875661731556619
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": null
+  },
+  "flip8:raw5|two": {
+   "map": "flip8:raw5",
+   "rule": [
+    "two",
+    1,
+    0.36,
+    0.32
+   ],
+   "train_monitor": {
+    "precision": 0.8642366613840465,
+    "recall": 0.7764594209776934,
+    "f1": 0.818,
+    "tp": 3272,
+    "fp": 514,
+    "fn": 942,
+    "recall_by_class": {
+     "boundary": 0.8938053097345132,
+     "junction": 0.8138572905894519,
+     "terminal": 0.41647597254004576,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 2373,
+     "junction": 967,
+     "terminal": 874,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 46,
+     "within_1p5mm_of_gt_centreline": 179,
+     "elsewhere": 289,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 237,
+     "interior": 277
+    },
+    "patches": 256
+   },
+   "validation": {
+    "precision": 0.8304645922232344,
+    "recall": 0.7393921284043371,
+    "f1": 0.7822866562789332,
+    "tp": 34642,
+    "fp": 7072,
+    "fn": 12210,
+    "recall_by_class": {
+     "boundary": 0.8630319655579686,
+     "junction": 0.7781895673121467,
+     "terminal": 0.3659804321239299,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 26247,
+     "junction": 10793,
+     "terminal": 9812,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 384,
+     "within_1p5mm_of_gt_centreline": 2645,
+     "elsewhere": 4043,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 3223,
+     "interior": 3849
+    },
+    "patches": 2961
+   },
+   "monitor_f1_best_per_band": {
+    "1": 0.818,
+    "2": 0.8176132099074306,
+    "3": 0.8169901688933703,
+    "4": 0.8166203586764335
+   },
+   "monitor_f1_single_threshold_best": 0.8152427781192378,
+   "monitor_f1_two_threshold_best": 0.818,
+   "validation_node_f1_minus_V0": {
+    "point": 0.016008874151216546,
+    "ci95": [
+     0.01321589676462607,
+     0.018740634775305524
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": {
+    "point": 0.0004628225422278476,
+    "ci95": [
+     -0.0008952314269803808,
+     0.0018453529162790908
+    ],
+    "p": 0.482
+   }
+  },
+  "rot24:raw3|single": {
+   "map": "rot24:raw3",
+   "rule": [
+    "single",
+    0.33
+   ],
+   "train_monitor": {
+    "precision": 0.8418149912258711,
+    "recall": 0.7968675842429995,
+    "f1": 0.8187248567597221,
+    "tp": 3358,
+    "fp": 631,
+    "fn": 856,
+    "recall_by_class": {
+     "boundary": 0.9262536873156342,
+     "junction": 0.828335056876939,
+     "terminal": 0.4107551487414188,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 2373,
+     "junction": 967,
+     "terminal": 874,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 133,
+     "within_1p5mm_of_gt_centreline": 179,
+     "elsewhere": 319,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 411,
+     "interior": 220
+    },
+    "patches": 256,
+    "node_ap_2mm": {
+     "node_ap": 0.8706327797425626,
+     "max_recall": 0.9497103128621089,
+     "proposals": 30270,
+     "gt_nodes": 4315
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.8797839593121006,
+     "max_recall": 0.9556241101091599,
+     "proposals": 30199,
+     "gt_nodes": 4214
+    }
+   },
+   "validation": {
+    "precision": 0.8096177838266985,
+    "recall": 0.7618031247332024,
+    "f1": 0.7849830102158637,
+    "tp": 35692,
+    "fp": 8393,
+    "fn": 11160,
+    "recall_by_class": {
+     "boundary": 0.8956833161885168,
+     "junction": 0.7959788751968869,
+     "terminal": 0.3660823481451284,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 26247,
+     "junction": 10793,
+     "terminal": 9812,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 1127,
+     "within_1p5mm_of_gt_centreline": 2697,
+     "elsewhere": 4569,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 5168,
+     "interior": 3225
+    },
+    "patches": 2961,
+    "node_ap_2mm": {
+     "node_ap": 0.8349661768023143,
+     "max_recall": 0.9467379054138665,
+     "proposals": 341903,
+     "gt_nodes": 47914
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.8445009848626978,
+     "max_recall": 0.95347050286007,
+     "proposals": 341213,
+     "gt_nodes": 46852
+    }
+   },
+   "validation_node_f1_minus_V0": {
+    "point": 0.018705228088147008,
+    "ci95": [
+     0.016177625713809197,
+     0.02123655776005218
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": null
+  },
+  "rot24:raw3|two": {
+   "map": "rot24:raw3",
+   "rule": [
+    "two",
+    4,
+    0.36,
+    0.31
+   ],
+   "train_monitor": {
+    "precision": 0.8490996703018007,
+    "recall": 0.7944945420028476,
+    "f1": 0.8208900331004045,
+    "tp": 3348,
+    "fp": 595,
+    "fn": 866,
+    "recall_by_class": {
+     "boundary": 0.911504424778761,
+     "junction": 0.8324715615305067,
+     "terminal": 0.43478260869565216,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 2373,
+     "junction": 967,
+     "terminal": 874,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 124,
+     "within_1p5mm_of_gt_centreline": 178,
+     "elsewhere": 293,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 319,
+     "interior": 276
+    },
+    "patches": 256
+   },
+   "validation": {
+    "precision": 0.8127961542863683,
+    "recall": 0.7578545206181166,
+    "f1": 0.78436440350354,
+    "tp": 35507,
+    "fp": 8178,
+    "fn": 11345,
+    "recall_by_class": {
+     "boundary": 0.8791099935230693,
+     "junction": 0.8002408968776058,
+     "terminal": 0.386873216469629,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 26247,
+     "junction": 10793,
+     "terminal": 9812,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 1076,
+     "within_1p5mm_of_gt_centreline": 2955,
+     "elsewhere": 4147,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 4035,
+     "interior": 4143
+    },
+    "patches": 2961
+   },
+   "monitor_f1_best_per_band": {
+    "1": 0.820855614973262,
+    "2": 0.8203381583748935,
+    "3": 0.8204564872452094,
+    "4": 0.8208900331004045
+   },
+   "monitor_f1_single_threshold_best": 0.8187248567597221,
+   "monitor_f1_two_threshold_best": 0.8208900331004045,
+   "validation_node_f1_minus_V0": {
+    "point": 0.018086621375823286,
+    "ci95": [
+     0.01577286906424147,
+     0.0204289318636216
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": {
+    "point": -0.0006186067123237216,
+    "ci95": [
+     -0.0018648385852848893,
+     0.0007380859017761185
+    ],
+    "p": 0.356
+   }
+  },
+  "rot24:raw5|single": {
+   "map": "rot24:raw5",
+   "rule": [
+    "single",
+    0.33
+   ],
+   "train_monitor": {
+    "precision": 0.8662286465177398,
+    "recall": 0.7821547223540579,
+    "f1": 0.8220476368624516,
+    "tp": 3296,
+    "fp": 509,
+    "fn": 918,
+    "recall_by_class": {
+     "boundary": 0.9102402022756005,
+     "junction": 0.811789038262668,
+     "terminal": 0.40160183066361554,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 2373,
+     "junction": 967,
+     "terminal": 874,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 42,
+     "within_1p5mm_of_gt_centreline": 164,
+     "elsewhere": 303,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 285,
+     "interior": 224
+    },
+    "patches": 256,
+    "node_ap_2mm": {
+     "node_ap": 0.8465849634223966,
+     "max_recall": 0.9012746234067207,
+     "proposals": 19517,
+     "gt_nodes": 4315
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.8590705740398185,
+     "max_recall": 0.9129093497864262,
+     "proposals": 19475,
+     "gt_nodes": 4214
+    }
+   },
+   "validation": {
+    "precision": 0.8295130302453871,
+    "recall": 0.7446000170750449,
+    "f1": 0.7847662752508211,
+    "tp": 34886,
+    "fp": 7170,
+    "fn": 11966,
+    "recall_by_class": {
+     "boundary": 0.8784242008610508,
+     "junction": 0.7716112295006022,
+     "terminal": 0.3569099062372605,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 26247,
+     "junction": 10793,
+     "terminal": 9812,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 367,
+     "within_1p5mm_of_gt_centreline": 2472,
+     "elsewhere": 4331,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 3806,
+     "interior": 3364
+    },
+    "patches": 2961,
+    "node_ap_2mm": {
+     "node_ap": 0.808383033898312,
+     "max_recall": 0.8872980757189965,
+     "proposals": 220006,
+     "gt_nodes": 47914
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.8196377038503306,
+     "max_recall": 0.8976991377102365,
+     "proposals": 219551,
+     "gt_nodes": 46852
+    }
+   },
+   "validation_node_f1_minus_V0": {
+    "point": 0.01848849312310441,
+    "ci95": [
+     0.01599399916228969,
+     0.02092382164355639
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": null
+  },
+  "rot24:raw5|two": {
+   "map": "rot24:raw5",
+   "rule": [
+    "two",
+    1,
+    0.36,
+    0.31
+   ],
+   "train_monitor": {
+    "precision": 0.8659874608150471,
+    "recall": 0.7866635026103465,
+    "f1": 0.8244217856254663,
+    "tp": 3315,
+    "fp": 513,
+    "fn": 899,
+    "recall_by_class": {
+     "boundary": 0.898440792246102,
+     "junction": 0.8241985522233712,
+     "terminal": 0.4416475972540046,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 2373,
+     "junction": 967,
+     "terminal": 874,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 44,
+     "within_1p5mm_of_gt_centreline": 182,
+     "elsewhere": 287,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 230,
+     "interior": 283
+    },
+    "patches": 256
+   },
+   "validation": {
+    "precision": 0.8275119503999243,
+    "recall": 0.7463715529753265,
+    "f1": 0.7848501851644035,
+    "tp": 34969,
+    "fp": 7289,
+    "fn": 11883,
+    "recall_by_class": {
+     "boundary": 0.8634891606659809,
+     "junction": 0.7849532104141573,
+     "terminal": 0.39064410925397475,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 26247,
+     "junction": 10793,
+     "terminal": 9812,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 394,
+     "within_1p5mm_of_gt_centreline": 2824,
+     "elsewhere": 4071,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 3082,
+     "interior": 4207
+    },
+    "patches": 2961
+   },
+   "monitor_f1_best_per_band": {
+    "1": 0.8244217856254663,
+    "2": 0.8237929318068691,
+    "3": 0.8237175544347398,
+    "4": 0.8239063462723352
+   },
+   "monitor_f1_single_threshold_best": 0.8220476368624516,
+   "monitor_f1_two_threshold_best": 0.8244217856254663,
+   "validation_node_f1_minus_V0": {
+    "point": 0.018572403036686835,
+    "ci95": [
+     0.01568449059349325,
+     0.02155163707899677
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": {
+    "point": 8.390991358242506e-05,
+    "ci95": [
+     -0.0011213043679774437,
+     0.0013015178735737347
+    ],
+    "p": 0.892
+   }
+  },
+  "all48:raw3|single": {
+   "map": "all48:raw3",
+   "rule": [
+    "single",
+    0.33
+   ],
+   "train_monitor": {
+    "precision": 0.8405215646940822,
+    "recall": 0.7954437588989084,
+    "f1": 0.8173616191172884,
+    "tp": 3352,
+    "fp": 636,
+    "fn": 862,
+    "recall_by_class": {
+     "boundary": 0.9249894648124737,
+     "junction": 0.8262668045501551,
+     "terminal": 0.4096109839816934,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 2373,
+     "junction": 967,
+     "terminal": 874,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 132,
+     "within_1p5mm_of_gt_centreline": 176,
+     "elsewhere": 328,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 350,
+     "interior": 286
+    },
+    "patches": 256,
+    "node_ap_2mm": {
+     "node_ap": 0.8695487792238191,
+     "max_recall": 0.9508690614136732,
+     "proposals": 30256,
+     "gt_nodes": 4315
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.8789710764659913,
+     "max_recall": 0.9570479354532511,
+     "proposals": 30186,
+     "gt_nodes": 4214
+    }
+   },
+   "validation": {
+    "precision": 0.8096761749154696,
+    "recall": 0.7615469990608725,
+    "f1": 0.7848744486850934,
+    "tp": 35680,
+    "fp": 8387,
+    "fn": 11172,
+    "recall_by_class": {
+     "boundary": 0.8957976149655199,
+     "junction": 0.7952376540350227,
+     "terminal": 0.3653689359967387,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 26247,
+     "junction": 10793,
+     "terminal": 9812,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 1141,
+     "within_1p5mm_of_gt_centreline": 2688,
+     "elsewhere": 4558,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 4319,
+     "interior": 4068
+    },
+    "patches": 2961,
+    "node_ap_2mm": {
+     "node_ap": 0.8349309916560308,
+     "max_recall": 0.9467170346871479,
+     "proposals": 341482,
+     "gt_nodes": 47914
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.8444503899139213,
+     "max_recall": 0.9534491590540425,
+     "proposals": 340792,
+     "gt_nodes": 46852
+    }
+   },
+   "validation_node_f1_minus_V0": {
+    "point": 0.018596666557376684,
+    "ci95": [
+     0.016162469307215606,
+     0.021114711895047045
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": null
+  },
+  "all48:raw3|two": {
+   "map": "all48:raw3",
+   "rule": [
+    "two",
+    1,
+    0.36,
+    0.32
+   ],
+   "train_monitor": {
+    "precision": 0.8475393201420599,
+    "recall": 0.7928334124347414,
+    "f1": 0.8192741539970574,
+    "tp": 3341,
+    "fp": 601,
+    "fn": 873,
+    "recall_by_class": {
+     "boundary": 0.910661609776654,
+     "junction": 0.8366080661840745,
+     "terminal": 0.4244851258581236,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 2373,
+     "junction": 967,
+     "terminal": 874,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 132,
+     "within_1p5mm_of_gt_centreline": 180,
+     "elsewhere": 289,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 280,
+     "interior": 321
+    },
+    "patches": 256
+   },
+   "validation": {
+    "precision": 0.8141243456699422,
+    "recall": 0.7568513617348246,
+    "f1": 0.7844438545261482,
+    "tp": 35460,
+    "fp": 8096,
+    "fn": 11392,
+    "recall_by_class": {
+     "boundary": 0.8795290890387473,
+     "junction": 0.8020012971370333,
+     "terminal": 0.379025682837342,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 26247,
+     "junction": 10793,
+     "terminal": 9812,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 1140,
+     "within_1p5mm_of_gt_centreline": 2851,
+     "elsewhere": 4105,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 3502,
+     "interior": 4594
+    },
+    "patches": 2961
+   },
+   "monitor_f1_best_per_band": {
+    "1": 0.8192741539970574,
+    "2": 0.8188957055214724,
+    "3": 0.8186183967491688,
+    "4": 0.8189229249011858
+   },
+   "monitor_f1_single_threshold_best": 0.8173616191172884,
+   "monitor_f1_two_threshold_best": 0.8192741539970574,
+   "validation_node_f1_minus_V0": {
+    "point": 0.018166072398431488,
+    "ci95": [
+     0.015551076230386091,
+     0.020923021767417484
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": {
+    "point": -0.0004305941589451967,
+    "ci95": [
+     -0.0014939440863219772,
+     0.0006260347931409748
+    ],
+    "p": 0.45
+   }
+  },
+  "all48:raw5|single": {
+   "map": "all48:raw5",
+   "rule": [
+    "single",
+    0.33
+   ],
+   "train_monitor": {
+    "precision": 0.8649500788229112,
+    "recall": 0.7812055054579972,
+    "f1": 0.8209476309226933,
+    "tp": 3292,
+    "fp": 514,
+    "fn": 922,
+    "recall_by_class": {
+     "boundary": 0.909818794774547,
+     "junction": 0.8097207859358841,
+     "terminal": 0.40045766590389015,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 2373,
+     "junction": 967,
+     "terminal": 874,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 42,
+     "within_1p5mm_of_gt_centreline": 163,
+     "elsewhere": 309,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 289,
+     "interior": 225
+    },
+    "patches": 256,
+    "node_ap_2mm": {
+     "node_ap": 0.8441207674076728,
+     "max_recall": 0.8994206257242179,
+     "proposals": 19471,
+     "gt_nodes": 4315
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.8567238826952583,
+     "max_recall": 0.9110109159943047,
+     "proposals": 19429,
+     "gt_nodes": 4214
+    }
+   },
+   "validation": {
+    "precision": 0.8298829240434038,
+    "recall": 0.7443652352087424,
+    "f1": 0.7848012961879473,
+    "tp": 34875,
+    "fp": 7149,
+    "fn": 11977,
+    "recall_by_class": {
+     "boundary": 0.8782718024917133,
+     "junction": 0.7717965347910682,
+     "terminal": 0.35599266204647373,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 26247,
+     "junction": 10793,
+     "terminal": 9812,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 371,
+     "within_1p5mm_of_gt_centreline": 2459,
+     "elsewhere": 4319,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 3813,
+     "interior": 3336
+    },
+    "patches": 2961,
+    "node_ap_2mm": {
+     "node_ap": 0.808255156604619,
+     "max_recall": 0.8871102391785282,
+     "proposals": 219828,
+     "gt_nodes": 47914
+    },
+    "node_ap_2mm_loop_aware": {
+     "node_ap": 0.8194743566827534,
+     "max_recall": 0.8974856996499616,
+     "proposals": 219372,
+     "gt_nodes": 46852
+    }
+   },
+   "validation_node_f1_minus_V0": {
+    "point": 0.01852351406023056,
+    "ci95": [
+     0.01607327032603345,
+     0.020894119632127568
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": null
+  },
+  "all48:raw5|two": {
+   "map": "all48:raw5",
+   "rule": [
+    "two",
+    1,
+    0.36,
+    0.32
+   ],
+   "train_monitor": {
+    "precision": 0.8710533297957018,
+    "recall": 0.7790697674418605,
+    "f1": 0.8224978078416635,
+    "tp": 3283,
+    "fp": 486,
+    "fn": 931,
+    "recall_by_class": {
+     "boundary": 0.8971765697429415,
+     "junction": 0.8179937952430196,
+     "terminal": 0.41533180778032036,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 2373,
+     "junction": 967,
+     "terminal": 874,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 42,
+     "within_1p5mm_of_gt_centreline": 169,
+     "elsewhere": 275,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 235,
+     "interior": 251
+    },
+    "patches": 256
+   },
+   "validation": {
+    "precision": 0.835365265998458,
+    "recall": 0.7400110987791343,
+    "f1": 0.7848023903300285,
+    "tp": 34671,
+    "fp": 6833,
+    "fn": 12181,
+    "recall_by_class": {
+     "boundary": 0.8632224635196404,
+     "junction": 0.7779116093764477,
+     "terminal": 0.3687321646962903,
+     "other": null
+    },
+    "gt_by_class": {
+     "boundary": 26247,
+     "junction": 10793,
+     "terminal": 9812,
+     "other": 0
+    },
+    "false_detections": {
+     "duplicate_within_2mm_of_matched_gt": 373,
+     "within_1p5mm_of_gt_centreline": 2593,
+     "elsewhere": 3867,
+     "near_unmatched_gt_node_expected_0": 0,
+     "in_face_band": 3097,
+     "interior": 3736
+    },
+    "patches": 2961
+   },
+   "monitor_f1_best_per_band": {
+    "1": 0.8224978078416635,
+    "2": 0.8221010901883052,
+    "3": 0.8220570012391574,
+    "4": 0.8220265409897061
+   },
+   "monitor_f1_single_threshold_best": 0.8209476309226933,
+   "monitor_f1_two_threshold_best": 0.8224978078416635,
+   "validation_node_f1_minus_V0": {
+    "point": 0.018524608202311832,
+    "ci95": [
+     0.015783143811934342,
+     0.02137725066312876
+    ],
+    "p": 0.0
+   },
+   "validation_node_f1_minus_same_map_single": {
+    "point": 1.094142081270455e-06,
+    "ci95": [
+     -0.0010792039781294754,
+     0.0010207944752524927
+    ],
+    "p": 0.963
+   }
+  }
+ },
+ "notes": [
+  "all choices (thresholds, band, windows, item-4 picks) on monitor_train only",
+  "V0 = identity heat, 3^3 peaks, single threshold chosen on the 0.02..0.95 grid (as part 1)",
+  "node AP is given for single-score maps only (the two-threshold rule has no single ranking)"
+ ]
+}

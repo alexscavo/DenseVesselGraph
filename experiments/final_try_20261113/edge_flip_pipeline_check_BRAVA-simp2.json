@@ -1,0 +1,217 @@
+{
+ "description": "Verification of --flip-average-edges in scripts/dense_graph_traced_20261030.py (16 Nov 2026, GPU, one entry per job).\n\nRuns the stage-2 CLI (--evaluate-only, run traced_unet_wide_long_r1111) three times:\n  edges   --flip-average --flip-average-edges --nms 5, in the run directory -> final-v2-nms5-flipavg-edges.json (new file;\n          the CLI refuses to overwrite it). Must reproduce the edge_logit arm of\n          experiments/final_try_20261113/edge_flip_average_<entry>.json (thresholds, validation node / edge / Branch F1),\n          and its validation rows must equal the study's rows ($SCRATCH/experiments/gnbm/edge_flip_average_20261113/\n          <entry>-rows.pkl: same nodes, pairs and curves; edge score = sigmoid(mean of the 8 flip logits)).\n  flipavg --flip-average --nms 5, in a shadow run directory (symlinks to model.pt and final.json under\n          $SCRATCH/experiments/gnbm/edge_flip_pipeline_check_20261116/) -> must equal the run's final-v2-nms5-flipavg.json.\n  plain   no option, same shadow directory -> must equal the run's final.json (and final-v2.json).\nNothing in the run directory is overwritten. With --smoke all three go to a separate shadow directory with the CLI's\n--smoke (4 monitor / 4 validation patches) and only the row-level comparison with the study is meaningful.\nWrites experiments/final_try_20261113/edge_flip_pipeline_check_<entry>[-smoke].json.",
+ "entry": "BRAVA-simp2",
+ "smoke": false,
+ "seconds": {
+  "edges": 247.4340009689331,
+  "flipavg": 203.90496110916138,
+  "plain": 159.4438877105713
+ },
+ "edges_file": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/dense_graph_20261030/BRAVA-simp2/traced_unet_wide_long_r1111/final-v2-nms5-flipavg-edges.json",
+ "flip_average_edges_recorded": true,
+ "rows_vs_study": {
+  "patches": 1796,
+  "identical_nodes_and_pairs": 1796,
+  "max_abs_edge_score_difference": 2.220446049250313e-16,
+  "max_abs_curve_difference": 0.0
+ },
+ "edges_vs_study_edge_logit": {
+  "node_threshold": [
+   0.25,
+   0.25
+  ],
+  "edge_threshold": [
+   0.8,
+   0.8
+  ],
+  "validation": {
+   "node_f1": [
+    0.6637453616513453,
+    0.6637453616513453
+   ],
+   "edge_f1": [
+    0.4045448451535058,
+    0.4045448451535058
+   ],
+   "common_branch_f1": [
+    0.20896971507524553,
+    0.20896971507524553
+   ],
+   "common_curve_f1": [
+    0.5855945519703413,
+    0.5855945519703413
+   ],
+   "node_precision": [
+    0.6731976700204252,
+    0.6731976700204252
+   ],
+   "node_recall": [
+    0.6545548159317421,
+    0.6545548159317421
+   ],
+   "edge_precision": [
+    0.48618383952308064,
+    0.48618383952308064
+   ],
+   "edge_recall": [
+    0.3463812202261379,
+    0.3463812202261379
+   ]
+  },
+  "train_monitor": {
+   "node_f1": [
+    0.6737193763919822,
+    0.6737193763919822
+   ],
+   "edge_f1": [
+    0.4169364881693649,
+    0.4169364881693649
+   ],
+   "common_branch_f1": [
+    0.20609418282548475,
+    0.20609418282548475
+   ],
+   "common_curve_f1": [
+    0.5886453185608743,
+    0.5886453185608743
+   ],
+   "node_precision": [
+    0.698009806749351,
+    0.698009806749351
+   ],
+   "node_recall": [
+    0.6510626849609901,
+    0.6510626849609901
+   ],
+   "edge_precision": [
+    0.5169857936998147,
+    0.5169857936998147
+   ],
+   "edge_recall": [
+    0.3493322203672788,
+    0.3493322203672788
+   ]
+  },
+  "max_abs_validation_difference": 0.0
+ },
+ "flipavg_vs_existing": {
+  "thresholds_equal": true,
+  "train_monitor_equal": true,
+  "validation_equal": true,
+  "max_abs_metric_difference": 0.0,
+  "validation": {
+   "node_f1": [
+    0.6637453616513453,
+    0.6637453616513453
+   ],
+   "edge_f1": [
+    0.39557645862463453,
+    0.39557645862463453
+   ],
+   "common_branch_f1": [
+    0.1954312891835411,
+    0.1954312891835411
+   ],
+   "common_curve_f1": [
+    0.5942514698096455,
+    0.5942514698096455
+   ],
+   "node_precision": [
+    0.6731976700204252,
+    0.6731976700204252
+   ],
+   "node_recall": [
+    0.6545548159317421,
+    0.6545548159317421
+   ],
+   "edge_precision": [
+    0.4431470274118903,
+    0.4431470274118903
+   ],
+   "edge_recall": [
+    0.3572289502381909,
+    0.3572289502381909
+   ]
+  }
+ },
+ "plain_vs_final_json": {
+  "thresholds_equal": true,
+  "train_monitor_equal": true,
+  "validation_equal": false,
+  "max_abs_metric_difference": 2.4833064438123387e-07,
+  "validation": {
+   "node_f1": [
+    0.6187951632230655,
+    0.6187951632230655
+   ],
+   "edge_f1": [
+    0.3351750627862313,
+    0.3351750627862313
+   ],
+   "common_branch_f1": [
+    0.13589752442771813,
+    0.13589752442771813
+   ],
+   "common_curve_f1": [
+    0.5701044898974373,
+    0.5701044210022318
+   ],
+   "node_precision": [
+    0.6110732599419084,
+    0.6110732599419084
+   ],
+   "node_recall": [
+    0.6267147217829429,
+    0.6267147217829429
+   ],
+   "edge_precision": [
+    0.3453903300450615,
+    0.3453903300450615
+   ],
+   "edge_recall": [
+    0.3255466911553693,
+    0.3255466911553693
+   ]
+  }
+ },
+ "plain_vs_existing_final_v2": {
+  "thresholds_equal": true,
+  "train_monitor_equal": true,
+  "validation_equal": true,
+  "max_abs_metric_difference": 0.0,
+  "validation": {
+   "node_f1": [
+    0.6187951632230655,
+    0.6187951632230655
+   ],
+   "edge_f1": [
+    0.3351750627862313,
+    0.3351750627862313
+   ],
+   "common_branch_f1": [
+    0.13589752442771813,
+    0.13589752442771813
+   ],
+   "common_curve_f1": [
+    0.5701044898974373,
+    0.5701044898974373
+   ],
+   "node_precision": [
+    0.6110732599419084,
+    0.6110732599419084
+   ],
+   "node_recall": [
+    0.6267147217829429,
+    0.6267147217829429
+   ],
+   "edge_precision": [
+    0.3453903300450615,
+    0.3453903300450615
+   ],
+   "edge_recall": [
+    0.3255466911553693,
+    0.3255466911553693
+   ]
+  }
+ }
+}

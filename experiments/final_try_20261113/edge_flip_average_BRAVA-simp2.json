@@ -1,0 +1,627 @@
+{
+ "description": "Test-time flip averaging of the stage-2 EDGE scores, on top of the adopted flip-averaged node decoding (13 Nov 2026;\nno retraining). Run: traced_unet_wide_long_r1111 of each entry, decoding --flip-average --nms 5.\n\nArms (nodes and candidate paths are identical in every arm: nodes = D.peaks on the flip-averaged heat\n(D.decoding_output), candidates traced once on the unflipped centreline map, exactly as T.predict):\n  reference   T.predict as is (single-pass edge scores and curves); thresholds of final-v2-nms5-flipavg.json; the edge\n              threshold is also re-selected on monitor_train as a check.\n  edge_prob   for each of the 8 axis flips k of the input patch: network pass on the flipped patch, every candidate\n              path (and its end nodes) mirrored into the flipped frame (continuous voxel coordinate x -> 63 - x on the\n              flipped axes), features sampled and scored with the edge head there; edge score = mean of the 8\n              probabilities. Curves = reference (unflipped) curves.\n  edge_logit  same with sigmoid(mean of the 8 logits).\n  The better of edge_prob / edge_logit on monitor_train edge F1 (each at its own monitor-selected edge threshold) is the\n  'edge_avg' arm.\n  curve_avg   (variant B, only if edge_avg gains >= 0.005 monitor_train edge F1 over the reference) edge_avg scores and\n              curves averaged over the 8 flips (each flip's uncompressed curve mirrored back to the original frame, same\n              interior control count as the reference, then compress_curves as T.predict).\nNode threshold = that of final-v2-nms5-flipavg.json (nodes unchanged); edge threshold re-selected on monitor_train\n(D.select_edge_threshold) per arm. Validation is reported only; no test split is read.\n\nChecks: (1) reference rows equal the saved final-v2-nms5-flipavg-validation-rows.pkl and its validation node / edge F1;\n(2) the mirrored scorer on the identity flip (a second network pass, no mirroring) equals the T.predict scores;\n(3) node anatomy: heat of the flipped pass sampled at mirrored node coordinates vs the unflipped heat at the nodes\n(controls: same flipped heat at the unmirrored coordinates; flipped heat flipped back as a volume, sampled at the nodes,\nmust equal the mirrored sample).\n\nPer-patch counts: node_decode_study_20261113.stage2_counts; subject-paired bootstrap: protocol_report_20261106.paired\n(2000 resamples of subjects, seed 261030). Output: experiments/final_try_20261113/edge_flip_average_<entry>.json\n(never overwritten; -smoke variant for the smoke test); rows under $SCRATCH/experiments/gnbm/edge_flip_average_20261113/.\nT and D are imported unchanged (T.predict is replicated here for this run's mode, not modified).",
+ "entry": "BRAVA-simp2",
+ "run": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/dense_graph_20261030/BRAVA-simp2/traced_unet_wide_long_r1111",
+ "reference_file": "final-v2-nms5-flipavg.json",
+ "smoke": false,
+ "mode": {
+  "soft": false,
+  "knn_fallback": true,
+  "gap_features": false,
+  "two_hop": false,
+  "passthrough": false,
+  "k_min_arc": [
+   8.0,
+   20.0
+  ],
+  "arc_penalty": 0.1,
+  "k_rule": "fixed24",
+  "k_fit_tol": 0.5,
+  "k_fit_smooth_mm": 1.0,
+  "compress_tol": 0.5,
+  "roles": false,
+  "role_tau": 0.5,
+  "single_head": false
+ },
+ "nms": 5,
+ "flip_average_nodes": true,
+ "monitor_patches": 256,
+ "validation_patches": 1796,
+ "validation_subjects": 8,
+ "check_reference_reproduction": {
+  "saved_rows_same_nodes_and_pairs": true,
+  "max_abs_node_difference": 0.0,
+  "max_abs_edge_score_difference": 0.0,
+  "max_abs_curve_difference": 0.0,
+  "validation_node_f1": {
+   "this_script": 0.6637453616513453,
+   "json": 0.6637453616513453
+  },
+  "validation_edge_f1": {
+   "this_script": 0.39557645862463453,
+   "json": 0.39557645862463453
+  },
+  "validation_branch_f1": {
+   "this_script": 0.1954312891835411,
+   "json": 0.1954312891835411
+  },
+  "train_monitor_edge_f1": {
+   "this_script": 0.40922861803775346,
+   "json": 0.40922861803775346
+  },
+  "edge_threshold": {
+   "reselected_on_monitor": 0.75,
+   "json": 0.75
+  },
+  "pooled_counts_reproduce_evaluate": {
+   "node_f1": true,
+   "edge_f1": true,
+   "common_branch_f1": true
+  }
+ },
+ "check_mirrored_scoring": {
+  "train_monitor": {
+   "identity_flip_max_abs_prob_difference": 0.0,
+   "identity_flip_patches": 243
+  },
+  "validation": {
+   "identity_flip_max_abs_prob_difference": 0.0,
+   "identity_flip_patches": 1728,
+   "node_anatomy_first_batches": {
+    "(2,)": {
+     "nodes": 285,
+     "mean_abs_mirrored_minus_unflipped": 0.023767614737153053,
+     "corr_mirrored": 0.8427007664561518,
+     "mean_abs_unmirrored_minus_unflipped_control": 0.22254250943660736,
+     "corr_unmirrored_control": 0.0483867481602378,
+     "mean_unflipped_heat_at_nodes": 0.22493092715740204,
+     "mean_mirrored_heat_at_nodes": 0.22580917179584503,
+     "max_abs_flipback_volume_minus_mirrored_sample": 4.9173831939697266e-06
+    },
+    "(3,)": {
+     "nodes": 285,
+     "mean_abs_mirrored_minus_unflipped": 0.023903939872980118,
+     "corr_mirrored": 0.8406249896690906,
+     "mean_abs_unmirrored_minus_unflipped_control": 0.2063622772693634,
+     "corr_unmirrored_control": 0.00058566878632695,
+     "mean_unflipped_heat_at_nodes": 0.22493092715740204,
+     "mean_mirrored_heat_at_nodes": 0.22872892022132874,
+     "max_abs_flipback_volume_minus_mirrored_sample": 4.827976226806641e-06
+    },
+    "(4,)": {
+     "nodes": 285,
+     "mean_abs_mirrored_minus_unflipped": 0.023908639326691628,
+     "corr_mirrored": 0.8483998250409495,
+     "mean_abs_unmirrored_minus_unflipped_control": 0.20654018223285675,
+     "corr_unmirrored_control": -0.006805530349868917,
+     "mean_unflipped_heat_at_nodes": 0.22493092715740204,
+     "mean_mirrored_heat_at_nodes": 0.2258302867412567,
+     "max_abs_flipback_volume_minus_mirrored_sample": 4.32133674621582e-06
+    },
+    "(2, 3)": {
+     "nodes": 285,
+     "mean_abs_mirrored_minus_unflipped": 0.029375610873103142,
+     "corr_mirrored": 0.7904077385882805,
+     "mean_abs_unmirrored_minus_unflipped_control": 0.22278937697410583,
+     "corr_unmirrored_control": 0.22640897443039187,
+     "mean_unflipped_heat_at_nodes": 0.22493092715740204,
+     "mean_mirrored_heat_at_nodes": 0.2317090481519699,
+     "max_abs_flipback_volume_minus_mirrored_sample": 5.21540641784668e-06
+    },
+    "(2, 4)": {
+     "nodes": 285,
+     "mean_abs_mirrored_minus_unflipped": 0.02532365545630455,
+     "corr_mirrored": 0.8422911813755884,
+     "mean_abs_unmirrored_minus_unflipped_control": 0.22278939187526703,
+     "corr_unmirrored_control": 0.14869923262687315,
+     "mean_unflipped_heat_at_nodes": 0.22493092715740204,
+     "mean_mirrored_heat_at_nodes": 0.22856177389621735,
+     "max_abs_flipback_volume_minus_mirrored_sample": 4.410743713378906e-06
+    },
+    "(3, 4)": {
+     "nodes": 285,
+     "mean_abs_mirrored_minus_unflipped": 0.027940262109041214,
+     "corr_mirrored": 0.8168958722270697,
+     "mean_abs_unmirrored_minus_unflipped_control": 0.2151399850845337,
+     "corr_unmirrored_control": -0.04436936548321817,
+     "mean_unflipped_heat_at_nodes": 0.22493092715740204,
+     "mean_mirrored_heat_at_nodes": 0.2286476194858551,
+     "max_abs_flipback_volume_minus_mirrored_sample": 5.185604095458984e-06
+    },
+    "(2, 3, 4)": {
+     "nodes": 285,
+     "mean_abs_mirrored_minus_unflipped": 0.028582582250237465,
+     "corr_mirrored": 0.7998653775112124,
+     "mean_abs_unmirrored_minus_unflipped_control": 0.22286896407604218,
+     "corr_unmirrored_control": 0.1787968444884481,
+     "mean_unflipped_heat_at_nodes": 0.22493092715740204,
+     "mean_mirrored_heat_at_nodes": 0.22835281491279602,
+     "max_abs_flipback_volume_minus_mirrored_sample": 5.155801773071289e-06
+    }
+   }
+  }
+ },
+ "averaging_choice": {
+  "train_monitor_edge_f1_prob": 0.4158799322198015,
+  "train_monitor_edge_f1_logit": 0.4169364881693649,
+  "chosen": "edge_logit",
+  "train_monitor_edge_f1_gain_over_reference": 0.0077078701316114495,
+  "variant_b_run": true,
+  "variant_b_rule": "gain >= 0.005"
+ },
+ "arms": {
+  "reference": {
+   "node_threshold": 0.25,
+   "edge_threshold": 0.75,
+   "edge_threshold_selected_on_monitor": 0.75,
+   "train_monitor": {
+    "node_precision": 0.698009806749351,
+    "node_recall": 0.6510626849609901,
+    "node_f1": 0.6737193763919822,
+    "edge_precision": 0.4633245382585752,
+    "edge_recall": 0.3664440734557596,
+    "edge_f1": 0.40922861803775346,
+    "common_branch_f1": 0.19581899973537972,
+    "common_curve_f1": 0.6160693005466479,
+    "common_curve_precision": 0.7744320870799811,
+    "common_curve_recall": 0.5114777618364419,
+    "beta0_mae": 2.04296875,
+    "beta1_mae": 0.59375
+   },
+   "validation": {
+    "node_precision": 0.6731976700204252,
+    "node_recall": 0.6545548159317421,
+    "node_f1": 0.6637453616513453,
+    "edge_precision": 0.4431470274118903,
+    "edge_recall": 0.3572289502381909,
+    "edge_f1": 0.39557645862463453,
+    "common_branch_f1": 0.1954312891835411,
+    "common_curve_f1": 0.5942514698096455,
+    "common_curve_precision": 0.7585258624289387,
+    "common_curve_recall": 0.48846443872457124,
+    "beta0_mae": 2.5261692650334076,
+    "beta1_mae": 0.6703786191536748
+   },
+   "validation_pooled_counts": {
+    "node_f1": 0.6637453616513453,
+    "edge_f1": 0.39557645862463453,
+    "branch_f1": 0.1954312891835411,
+    "curve_f1": 0.5942514698096455,
+    "mae_beta0": 2.5261692650334076,
+    "mae_beta1": 0.6703786191536748
+   }
+  },
+  "edge_prob": {
+   "node_threshold": 0.25,
+   "edge_threshold": 0.75,
+   "edge_threshold_selected_on_monitor": 0.75,
+   "train_monitor": {
+    "node_precision": 0.698009806749351,
+    "node_recall": 0.6510626849609901,
+    "node_f1": 0.6737193763919822,
+    "edge_precision": 0.49510086455331415,
+    "edge_recall": 0.35851419031719534,
+    "edge_f1": 0.4158799322198015,
+    "common_branch_f1": 0.2047372719847536,
+    "common_curve_f1": 0.6066106900397672,
+    "common_curve_precision": 0.8066131086509258,
+    "common_curve_recall": 0.48608442963791554,
+    "beta0_mae": 2.37109375,
+    "beta1_mae": 0.375
+   },
+   "validation": {
+    "node_precision": 0.6731976700204252,
+    "node_recall": 0.6545548159317421,
+    "node_f1": 0.6637453616513453,
+    "edge_precision": 0.46755307093752363,
+    "edge_recall": 0.35522011134707,
+    "edge_f1": 0.40371819960861055,
+    "common_branch_f1": 0.20668180819107626,
+    "common_curve_f1": 0.597451168789559,
+    "common_curve_precision": 0.7880030496682956,
+    "common_curve_recall": 0.48111079750104263,
+    "beta0_mae": 2.7293986636971046,
+    "beta1_mae": 0.4515590200445434
+   },
+   "validation_pooled_counts": {
+    "node_f1": 0.6637453616513453,
+    "edge_f1": 0.40371819960861055,
+    "branch_f1": 0.20668180819107626,
+    "curve_f1": 0.597451168789559,
+    "mae_beta0": 2.7293986636971046,
+    "mae_beta1": 0.4515590200445434
+   }
+  },
+  "edge_logit": {
+   "node_threshold": 0.25,
+   "edge_threshold": 0.8,
+   "edge_threshold_selected_on_monitor": 0.8,
+   "train_monitor": {
+    "node_precision": 0.698009806749351,
+    "node_recall": 0.6510626849609901,
+    "node_f1": 0.6737193763919822,
+    "edge_precision": 0.5169857936998147,
+    "edge_recall": 0.3493322203672788,
+    "edge_f1": 0.4169364881693649,
+    "common_branch_f1": 0.20609418282548475,
+    "common_curve_f1": 0.5886453185608743,
+    "common_curve_precision": 0.8132836470575745,
+    "common_curve_recall": 0.46124431583298886,
+    "beta0_mae": 2.69140625,
+    "beta1_mae": 0.2890625
+   },
+   "validation": {
+    "node_precision": 0.6731976700204252,
+    "node_recall": 0.6545548159317421,
+    "node_f1": 0.6637453616513453,
+    "edge_precision": 0.48618383952308064,
+    "edge_recall": 0.3463812202261379,
+    "edge_f1": 0.4045448451535058,
+    "common_branch_f1": 0.20896971507524553,
+    "common_curve_f1": 0.5855945519703413,
+    "common_curve_precision": 0.7977429293749804,
+    "common_curve_recall": 0.46257840836805275,
+    "beta0_mae": 3.0211581291759466,
+    "beta1_mae": 0.33240534521158127
+   },
+   "validation_pooled_counts": {
+    "node_f1": 0.6637453616513453,
+    "edge_f1": 0.4045448451535058,
+    "branch_f1": 0.20896971507524553,
+    "curve_f1": 0.5855945519703413,
+    "mae_beta0": 3.0211581291759466,
+    "mae_beta1": 0.33240534521158127
+   }
+  },
+  "curve_avg": {
+   "node_threshold": 0.25,
+   "edge_threshold": 0.8,
+   "edge_threshold_selected_on_monitor": 0.8,
+   "train_monitor": {
+    "node_precision": 0.698009806749351,
+    "node_recall": 0.6510626849609901,
+    "node_f1": 0.6737193763919822,
+    "edge_precision": 0.5169857936998147,
+    "edge_recall": 0.3493322203672788,
+    "edge_f1": 0.4169364881693649,
+    "common_branch_f1": 0.20609418282548475,
+    "common_curve_f1": 0.5950580818080123,
+    "common_curve_precision": 0.8253678822776711,
+    "common_curve_recall": 0.46523843104831847,
+    "beta0_mae": 2.69140625,
+    "beta1_mae": 0.2890625
+   },
+   "validation": {
+    "node_precision": 0.6731976700204252,
+    "node_recall": 0.6545548159317421,
+    "node_f1": 0.6637453616513453,
+    "edge_precision": 0.48618383952308064,
+    "edge_recall": 0.3463812202261379,
+    "edge_f1": 0.4045448451535058,
+    "common_branch_f1": 0.20896971507524553,
+    "common_curve_f1": 0.5915831508892372,
+    "common_curve_precision": 0.8083121751041673,
+    "common_curve_recall": 0.46650209159192685,
+    "beta0_mae": 3.0211581291759466,
+    "beta1_mae": 0.33240534521158127
+   },
+   "validation_pooled_counts": {
+    "node_f1": 0.6637453616513453,
+    "edge_f1": 0.4045448451535058,
+    "branch_f1": 0.20896971507524553,
+    "curve_f1": 0.5915831508892372,
+    "mae_beta0": 3.0211581291759466,
+    "mae_beta1": 0.33240534521158127
+   }
+  }
+ },
+ "paired_validation": {
+  "edge_prob_minus_reference": {
+   "node_f1": {
+    "point": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p": 1.0
+   },
+   "edge_f1": {
+    "point": 0.00814174098397602,
+    "ci95": [
+     0.004121174736073675,
+     0.011582827302507483
+    ],
+    "p": 0.0
+   },
+   "branch_f1": {
+    "point": 0.011250519007535154,
+    "ci95": [
+     0.006416788347427734,
+     0.015679470793090504
+    ],
+    "p": 0.0
+   },
+   "curve_f1": {
+    "point": 0.0031996989799134568,
+    "ci95": [
+     -0.0010720509079926582,
+     0.007144306185013102
+    ],
+    "p": 0.181
+   },
+   "mae_beta0": {
+    "point": 0.20322939866369705,
+    "ci95": [
+     0.16666214750542285,
+     0.2416578431769718
+    ],
+    "p": 0.0
+   },
+   "mae_beta1": {
+    "point": -0.2188195991091314,
+    "ci95": [
+     -0.2486035073110408,
+     -0.1889389034471913
+    ],
+    "p": 0.0
+   }
+  },
+  "edge_logit_minus_reference": {
+   "node_f1": {
+    "point": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p": 1.0
+   },
+   "edge_f1": {
+    "point": 0.008968386528871275,
+    "ci95": [
+     0.004966741036931524,
+     0.01249294901620773
+    ],
+    "p": 0.0
+   },
+   "branch_f1": {
+    "point": 0.013538425891704425,
+    "ci95": [
+     0.009295824607843351,
+     0.0173551564898409
+    ],
+    "p": 0.0
+   },
+   "curve_f1": {
+    "point": -0.008656917839304223,
+    "ci95": [
+     -0.015511278251381655,
+     -0.002392340995695852
+    ],
+    "p": 0.006
+   },
+   "mae_beta0": {
+    "point": 0.49498886414253906,
+    "ci95": [
+     0.42710842242192737,
+     0.5710377239396298
+    ],
+    "p": 0.0
+   },
+   "mae_beta1": {
+    "point": -0.33797327394209353,
+    "ci95": [
+     -0.3888982102908277,
+     -0.2839218003721749
+    ],
+    "p": 0.0
+   }
+  },
+  "curve_avg_minus_reference": {
+   "node_f1": {
+    "point": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p": 1.0
+   },
+   "edge_f1": {
+    "point": 0.008968386528871275,
+    "ci95": [
+     0.004966741036931524,
+     0.01249294901620773
+    ],
+    "p": 0.0
+   },
+   "branch_f1": {
+    "point": 0.013538425891704425,
+    "ci95": [
+     0.009295824607843351,
+     0.0173551564898409
+    ],
+    "p": 0.0
+   },
+   "curve_f1": {
+    "point": -0.002668318920408308,
+    "ci95": [
+     -0.010241664099367775,
+     0.0041452098181823166
+    ],
+    "p": 0.438
+   },
+   "mae_beta0": {
+    "point": 0.49498886414253906,
+    "ci95": [
+     0.42710842242192737,
+     0.5710377239396298
+    ],
+    "p": 0.0
+   },
+   "mae_beta1": {
+    "point": -0.33797327394209353,
+    "ci95": [
+     -0.3888982102908277,
+     -0.2839218003721749
+    ],
+    "p": 0.0
+   }
+  },
+  "curve_avg_minus_edge_logit": {
+   "branch_f1": {
+    "point": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p": 1.0
+   },
+   "curve_f1": {
+    "point": 0.0059885989188959154,
+    "ci95": [
+     0.004680731236488378,
+     0.007239141351102952
+    ],
+    "p": 0.0
+   }
+  }
+ },
+ "score_correlation_reference_vs_averaged": {
+  "train_monitor_edge_prob": {
+   "candidates": 26050,
+   "pearson": 0.9755065105434827,
+   "spearman": 0.9573491050933288,
+   "mean_abs_difference": 0.02298982340995795
+  },
+  "train_monitor_edge_logit": {
+   "candidates": 26050,
+   "pearson": 0.9741462250391552,
+   "spearman": 0.9612385956777175,
+   "mean_abs_difference": 0.022593051400569428
+  },
+  "validation_edge_prob": {
+   "candidates": 204472,
+   "pearson": 0.9757504462006434,
+   "spearman": 0.9560966667708781,
+   "mean_abs_difference": 0.022148563816106668
+  },
+  "validation_edge_logit": {
+   "candidates": 204472,
+   "pearson": 0.9745953242627489,
+   "spearman": 0.9605736509586487,
+   "mean_abs_difference": 0.02152255172792602
+  }
+ },
+ "validation_decision_changes": {
+  "edge_prob": {
+   "validation_candidates": 204472,
+   "accepted_reference": 14045,
+   "accepted_arm": 13237,
+   "flipped_decisions": 2630
+  },
+  "edge_logit": {
+   "validation_candidates": 204472,
+   "accepted_reference": 14045,
+   "accepted_arm": 12413,
+   "flipped_decisions": 2826
+  }
+ },
+ "per_flip_scores": {
+  "train_monitor": {
+   "()": {
+    "mean_abs_prob_minus_identity": 0.0,
+    "pearson_with_identity": 1.0
+   },
+   "(2,)": {
+    "mean_abs_prob_minus_identity": 0.03556720210821173,
+    "pearson_with_identity": 0.9393356460008855
+   },
+   "(3,)": {
+    "mean_abs_prob_minus_identity": 0.0360155074987945,
+    "pearson_with_identity": 0.9381418680728837
+   },
+   "(4,)": {
+    "mean_abs_prob_minus_identity": 0.03477153582764791,
+    "pearson_with_identity": 0.9422105383772337
+   },
+   "(2, 3)": {
+    "mean_abs_prob_minus_identity": 0.030680588654958495,
+    "pearson_with_identity": 0.9529170918289079
+   },
+   "(2, 4)": {
+    "mean_abs_prob_minus_identity": 0.031136535318814072,
+    "pearson_with_identity": 0.9511173951615718
+   },
+   "(3, 4)": {
+    "mean_abs_prob_minus_identity": 0.02909092100024903,
+    "pearson_with_identity": 0.9569523386091567
+   },
+   "(2, 3, 4)": {
+    "mean_abs_prob_minus_identity": 0.037343586851307835,
+    "pearson_with_identity": 0.9335348505798896
+   }
+  },
+  "validation": {
+   "()": {
+    "mean_abs_prob_minus_identity": 0.0,
+    "pearson_with_identity": 1.0
+   },
+   "(2,)": {
+    "mean_abs_prob_minus_identity": 0.03406109145054355,
+    "pearson_with_identity": 0.9406570198991944
+   },
+   "(3,)": {
+    "mean_abs_prob_minus_identity": 0.03413459645779831,
+    "pearson_with_identity": 0.9409102328073705
+   },
+   "(4,)": {
+    "mean_abs_prob_minus_identity": 0.03406270488327025,
+    "pearson_with_identity": 0.940322965059975
+   },
+   "(2, 3)": {
+    "mean_abs_prob_minus_identity": 0.029777963473822652,
+    "pearson_with_identity": 0.9519358732537131
+   },
+   "(2, 4)": {
+    "mean_abs_prob_minus_identity": 0.03011130780139215,
+    "pearson_with_identity": 0.9511795677793455
+   },
+   "(3, 4)": {
+    "mean_abs_prob_minus_identity": 0.028251837980343482,
+    "pearson_with_identity": 0.9564591348330939
+   },
+   "(2, 3, 4)": {
+    "mean_abs_prob_minus_identity": 0.0350399331921418,
+    "pearson_with_identity": 0.9379571746288723
+   }
+  }
+ },
+ "timing": {
+  "train_monitor": {
+   "reference_seconds_per_patch": 0.057147580198943615,
+   "flip_forward_seconds_per_patch": 0.02888943813741207,
+   "flip_scoring_seconds_per_patch": 0.01860478427261114,
+   "patches": 256,
+   "batch": 8,
+   "reference_arm_seconds_per_patch": 0.057147580198943615,
+   "edge_avg_arm_as_run_seconds_per_patch": 0.10464180260896683,
+   "edge_avg_arm_shared_forwards_estimate_seconds_per_patch": 0.07575236447155476,
+   "note": "reference = node flip-average (8 passes) + decode + trace + score; as_run adds 8 separate passes (identity included) and 8 mirrored scorings; shared_forwards_estimate (inference) assumes the 7 flipped passes of the node average are reused, so only the scorings are added"
+  },
+  "validation": {
+   "reference_seconds_per_patch": 0.04790974765153133,
+   "flip_forward_seconds_per_patch": 0.028893267391519185,
+   "flip_scoring_seconds_per_patch": 0.020444226822502628,
+   "patches": 1796,
+   "batch": 8,
+   "reference_arm_seconds_per_patch": 0.04790974765153133,
+   "edge_avg_arm_as_run_seconds_per_patch": 0.09724724186555314,
+   "edge_avg_arm_shared_forwards_estimate_seconds_per_patch": 0.06835397447403396,
+   "note": "reference = node flip-average (8 passes) + decode + trace + score; as_run adds 8 separate passes (identity included) and 8 mirrored scorings; shared_forwards_estimate (inference) assumes the 7 flipped passes of the node average are reused, so only the scorings are added"
+  }
+ },
+ "notes": [
+  "nodes and candidate paths are identical in all arms (single tracing on the unflipped centreline map)",
+  "node threshold from the reference file; edge thresholds selected on monitor_train only (D.EDGE_THRESHOLDS)",
+  "paired = subject bootstrap (protocol_report_20261106.paired), arm minus reference; single seed, validation only"
+ ]
+}

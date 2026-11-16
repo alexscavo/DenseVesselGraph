@@ -1,0 +1,18 @@
+{
+ "description": "Verification of --flip-average-edges in scripts/dense_graph_traced_20261030.py (16 Nov 2026, GPU, one entry per job).\n\nRuns the stage-2 CLI (--evaluate-only, run traced_unet_wide_long_r1111) three times:\n  edges   --flip-average --flip-average-edges --nms 5, in the run directory -> final-v2-nms5-flipavg-edges.json (new file;\n          the CLI refuses to overwrite it). Must reproduce the edge_logit arm of\n          experiments/final_try_20261113/edge_flip_average_<entry>.json (thresholds, validation node / edge / Branch F1),\n          and its validation rows must equal the study's rows ($SCRATCH/experiments/gnbm/edge_flip_average_20261113/\n          <entry>-rows.pkl: same nodes, pairs and curves; edge score = sigmoid(mean of the 8 flip logits)).\n  flipavg --flip-average --nms 5, in a shadow run directory (symlinks to model.pt and final.json under\n          $SCRATCH/experiments/gnbm/edge_flip_pipeline_check_20261116/) -> must equal the run's final-v2-nms5-flipavg.json.\n  plain   no option, same shadow directory -> must equal the run's final.json (and final-v2.json).\nNothing in the run directory is overwritten. With --smoke all three go to a separate shadow directory with the CLI's\n--smoke (4 monitor / 4 validation patches) and only the row-level comparison with the study is meaningful.\nWrites experiments/final_try_20261113/edge_flip_pipeline_check_<entry>[-smoke].json.",
+ "entry": "TopBrainCTA-simp2",
+ "smoke": true,
+ "seconds": {
+  "edges": 39.251362562179565,
+  "flipavg": 16.82095217704773,
+  "plain": 16.863298654556274
+ },
+ "edges_file": "/lustre/fsn1/projects/rech/vnc/upz25mj/experiments/gnbm/edge_flip_pipeline_check_20261116/smoke/TopBrainCTA-simp2/traced_unet_wide_long_r1111/final-v2-nms5-flipavg-edges.json",
+ "flip_average_edges_recorded": true,
+ "rows_vs_study": {
+  "patches": 4,
+  "identical_nodes_and_pairs": 1,
+  "max_abs_edge_score_difference": 0.0,
+  "max_abs_curve_difference": 0.0
+ }
+}

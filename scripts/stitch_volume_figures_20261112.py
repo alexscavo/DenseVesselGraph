@@ -10,7 +10,10 @@ Per subject, in docs/research/figures/stitching_20261112/:
   <entry>-<patient>.html  interactive 3D (plotly.js from cdnjs, data embedded): GT graph, stitched prediction, stitched
                           GT patches, unmatched cut ends and the core planes as legend toggles; a table of the scores.
 Colours: slots 1-3 of the dataviz reference palette (blue, orange, aqua), light and dark steps.
-usage: stitch_volume_figures_20261112.py <entry> [<entry> ...]
+usage: stitch_volume_figures_20261112.py <entry> [<entry> ...] [--rows GRID [--tag TAG]] [--out DIR] [--prefix P]
+Whole-volume dumps (13 Nov 2026): --rows GRID [--tag TAG] reads the dumps of the --rows-dir mode instead
+(<entry>-<grid>[-<tag>]-<patient>.pkl; they have no stitched GT patches, so that trace and table row are left out) and
+writes <out>/<prefix><entry>-<patient>.png / .html. Without --rows only the stored-patch dumps are read, as before.
 """
 import json
 import os
@@ -58,7 +61,7 @@ def f1(s, a, b, tp):
     return 2 * s[tp] / max(1, s[a] + s[b])
 
 
-def static(d, name):
+def static(d, name, out, prefix):
     import nibabel as nib
     A, Minv = d['A'], np.linalg.inv(d['A'])
     image = nib.load(d['raw']).get_fdata()
@@ -102,9 +105,14 @@ def static(d, name):
                Line2D([], [], marker='o', ls='', color='white', markeredgecolor=INK, markersize=4, label='node'),
                Line2D([], [], color='#9a9a96', lw=0.8, label='planes where patch cores meet')]
     fig.legend(handles=handles, loc='lower center', ncol=3, frameon=False, fontsize=7.5, labelcolor=INK)
-    fig.suptitle(f"{name}, validation subject {d['patient']}: full volume from stitched 64³ patches ({d['run']})", fontsize=10, color=INK, x=0.01, ha='left')
+    dec = d.get('decoding')
+    if dec and dec.get('flip_average_edges'):  # shorter wording: the title has room for about 10 more characters only
+        dec = f"; {'heat and edge logits' if dec['flip_average'] else 'edge logits'} averaged over 8 flips, {dec['nms']}³ peaks"
+    else:
+        dec = f"; node heat {'averaged over 8 flips' if dec['flip_average'] else 'single pass'}, {dec['nms']}³ peaks" if dec else ''
+    fig.suptitle(f"{name}, validation subject {d['patient']}: full volume from stitched 64³ patches ({d['run']}{dec})", fontsize=10, color=INK, x=0.01, ha='left')
     fig.tight_layout(rect=(0, 0.07, 1, 0.96))
-    path = OUT / f"{d['entry']}-{d['patient']}.png"
+    path = out / f"{prefix}{d['entry']}-{d['patient']}.png"
     fig.savefig(path, dpi=140, facecolor=SURFACE)
     plt.close(fig)
     return path
@@ -118,9 +126,9 @@ def lines(edges, centre):
     return list(map(list, zip(*xs))) if xs else [[], [], []]
 
 
-def interactive(d, name):
+def interactive(d, name, out, prefix):
     A = d['A']
-    (gn, ge), (pn, pe), (sn, se) = d['gt_volume'], d['pred'], d['gt']
+    (gn, ge), (pn, pe), (sn, se) = d['gt_volume'], d['pred'], d.get('gt', (np.zeros((0, 3)), []))
     centre = gn.mean(0)
     pts = lambda n: np.round(n - centre, 2).T.tolist() if len(n) else [[], [], []]  # noqa: E731
     planes = [[(st[i] + 64 + st[i + 1]) / 2 for i in range(len(st) - 1)] for st in d['grid']]
@@ -136,19 +144,22 @@ def interactive(d, name):
                 c[k], c[i], c[j] = v, a, b
                 corners.append(c)
             box += (np.round(np.asarray(corners) @ A.T - centre, 2)).tolist() + [[None, None, None]]
-    s, o = d['pred_score'], d['gt_score']
+    s, o = d['pred_score'], d.get('gt_score')
     row = lambda label, x: [label, x['nodes'], x['edges'], f"{f1(x, 'nodes', 'gt_nodes', 'node_tp'):.3f}", f"{f1(x, 'edges', 'gt_edges', 'edge_tp'):.3f}",  # noqa: E731
                             f"{x['cl_pred_ok'] / max(1, x['cl_pred']):.3f}", f"{x['cl_gt_ok'] / max(1, x['cl_gt']):.3f}", x['beta0'], x['beta1']]
     table = [['GT volume graph', len(gn), len(ge), '', '', '', '', s['gt_beta0'], s['gt_beta1']],
-             row('Stitched GT patches (test of the stitching alone)', o), row('Stitched prediction', s)]
+             *([row('Stitched GT patches (test of the stitching alone)', o)] if o is not None else []), row('Stitched prediction', s)]
+    dec = d.get('decoding')
+    decoding = (f"; node decoding: heat {'averaged over the 8 axis flips' if dec['flip_average'] else 'single pass'}, peaks in a {dec['nms']}³ window"
+                + ('; edge scores: logits averaged over the 8 axis flips' if dec.get('flip_average_edges') else '') if dec else '')
     data = dict(gt=lines(ge, centre), gt_nodes=pts(gn), pred=lines(pe, centre), pred_nodes=pts(pn), stitched_gt=lines(se, centre),
                 cuts=pts(d['pred_open_cuts']), planes=list(map(list, zip(*box))) if box else [[], [], []], table=table)
     html = TEMPLATE.replace('__TITLE__', f'{name} {d["patient"]} stitched volume').replace(
         '__HEAD__', f'{name}, validation subject {d["patient"]}: full-volume graph stitched from 64³ patches').replace(
-        '__SUB__', f'Model {d["run"]} at its own thresholds (node {d["thresholds"]["node"]}, edge {d["thresholds"]["edge"]}). Each patch keeps its core; edges are cut at the '
+        '__SUB__', f'Model {d["run"]} at its own thresholds (node {d["thresholds"]["node"]}, edge {d["thresholds"]["edge"]}{decoding}). Each patch keeps its core; edges are cut at the '
                    'planes where cores meet and the cut points of neighbouring patches are matched one-to-one within 2 mm. Coordinates in mm. '
                    'Click a legend entry to show or hide it; drag to rotate.').replace('__DATA__', json.dumps(data, separators=(',', ':')))
-    path = OUT / f"{d['entry']}-{d['patient']}.html"
+    path = out / f"{prefix}{d['entry']}-{d['patient']}.html"
     path.write_text(html)
     return path
 
@@ -197,14 +208,26 @@ matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw);
 '''
 
 
-def main(entries):
-    OUT.mkdir(parents=True, exist_ok=True)
-    for entry in entries:
-        for f in sorted(DUMP.glob(f'{entry}-*.pkl')):
+def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument('entries', nargs='+')
+    ap.add_argument('--rows', choices=('overlap', 'thin', 'tile0'), help='read the whole-volume (--rows-dir) dumps of this grid')
+    ap.add_argument('--tag', default='', help='with --rows: the tag of the dumps')
+    ap.add_argument('--out', type=Path, default=OUT)
+    ap.add_argument('--prefix', default='')
+    a = ap.parse_args()
+    a.out.mkdir(parents=True, exist_ok=True)
+    for entry in a.entries:
+        if a.rows:
+            files = sorted(DUMP.glob(f'{entry}-{a.rows}' + (f'-{a.tag}' if a.tag else '') + '-[0-9]*.pkl'))
+        else:  # stored-patch dumps <entry>-<patient>.pkl only
+            files = [f for f in sorted(DUMP.glob(f'{entry}-*.pkl')) if f.stem[len(entry) + 1:].isdigit()]
+        for f in files:
             d = pickle.loads(f.read_bytes())
             name = NAMES.get(entry, entry)
-            print(static(d, name), interactive(d, name), flush=True)
+            print(f, static(d, name, a.out, a.prefix), interactive(d, name, a.out, a.prefix), flush=True)
 
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    main()
